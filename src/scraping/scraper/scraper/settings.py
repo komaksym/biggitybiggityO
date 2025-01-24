@@ -41,6 +41,14 @@ ROBOTSTXT_OBEY = True
 #    "Accept-Language": "en",
 # }
 
+# Playwright
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
+# asyncio reactor
+TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
+
 # Scrapy server address
 # SPLASH_URL = "http://localhost:8050/"
 
@@ -48,7 +56,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # Splash middlewares
 # SPIDER_MIDDLEWARES = {
-#   "scrapy_splash.SplashDeduplicateArgsMiddleware": 100,
+#    "scrapy_splash.SplashDeduplicateArgsMiddleware": 100,
 # }
 
 # Enable or disable downloader middlewares

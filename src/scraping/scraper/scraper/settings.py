@@ -49,26 +49,6 @@ DOWNLOAD_HANDLERS = {
 # asyncio reactor
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 
-# Scrapy server address
-# SPLASH_URL = "http://localhost:8050/"
-
-# Enable or disable spider middlewares
-# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-# Splash middlewares
-# SPIDER_MIDDLEWARES = {
-#    "scrapy_splash.SplashDeduplicateArgsMiddleware": 100,
-# }
-
-# Enable or disable downloader middlewares
-# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    "scrapy_splash.SplashCookiesMiddleware": 723,
-#    "scrapy_splash.SplashMiddleware": 725,
-#    "scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware": 810,
-# }
-
-# REQUEST_FINGERPRINTER_CLASS = "scrapy_splash.SplashRequestFingerprinter"
-
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 # EXTENSIONS = {

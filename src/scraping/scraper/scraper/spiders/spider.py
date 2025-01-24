@@ -1,30 +1,57 @@
 import scrapy
 from scrapy import Request
+from scrapy.http.response import Response
+from typing import Generator, List, Match
 import json
 import re
 from ..items import ScraperItem
-import pdb
 
 
 class NeetcodeSpider(scrapy.Spider):
+    """Spider for scraping coding problems and solutions from Neetcode.io."""
+
     name = "neetcode"
 
-    def start_requests(self):
+    def start_requests(self) -> Generator[Request, None, None]:
+        """Initialize the spider with the starting URL.
+
+        Returns:
+            Generator yielding the initial request with playwright enabled.
+        """
         url = "https://neetcode.io/practice?tab=neetcode150"
         yield Request(url, self.parse_problem_names, meta={"playwright": True})
 
-    def parse_problem_names(self, response):
+    def parse_problem_names(self, response: Response) -> Generator[Request, None, None]:
+        """Extract problem names from the response and initiate solution parsing.
+
+        Args:
+            response: Response object containing the webpage data.
+
+        Returns:
+            Generator yielding requests for each problem's solutions.
+        """
         problem_names = response.xpath(
             "//a[contains(@class, 'table-text text-color ng-star-inserted')]/@href"
         ).getall()
 
-        # Stripping the excess part to have a needed format
+        # Stripping the excess part to have a needed format in problem name
         clean_problem_names = [link.replace("/problems/", "") for link in problem_names]
 
-        for name in clean_problem_names:
-            yield from self.parse_solution([name])
+        # Send names to solution parser
+        for problem_name in clean_problem_names:
+            yield from self.parse_solutions([problem_name])
 
-    def parse_solution(self, problem_names):
+    def parse_solutions(
+        self, problem_names: List[str]
+    ) -> Generator[Request, None, None]:
+        """Generate requests for fetching solution metadata for each problem.
+
+        Args:
+            problem_names: List of problem identifiers to fetch solutions for.
+
+        Returns:
+            Generator yielding POST requests for solution metadata.
+        """
         url = "https://us-central1-neetcode-dd170.cloudfunctions.net/getProblemMetadataFunction"
 
         headers = {
@@ -46,16 +73,7 @@ class NeetcodeSpider(scrapy.Spider):
             "TE": "trailers",
         }
 
-        #        body = '{"data":{"problemId":"duplicate-integer"}}'
-        #        yield Request(
-        #            url=url,
-        #            callback=self.parse_response,
-        #            method="POST",
-        #            dont_filter=True,
-        #            headers=headers,
-        #            body=body,
-        #        )
-
+        # Parse every single problem solution
         for problem_name in problem_names:
             body = json.dumps({"data": {"problemId": problem_name}})
             yield Request(
@@ -67,33 +85,79 @@ class NeetcodeSpider(scrapy.Spider):
                 body=body,
             )
 
-    def regex_find_code(self, json_load):
+    def regex_find_code(self, json_load: str) -> List[Match[str]]:
+        """Extract Python code blocks from the solution text.
+
+        Args:
+            json_load: JSON string containing the solution article body.
+
+        Returns:
+            List of regex match objects containing Python code blocks.
+        """
         pattern = r"(?<=python\n)(.*\n)*?(?=`{3})"
         python_code = re.finditer(pattern, json_load)
         return list(python_code)
 
-    def regex_find_complexity(self, json_load):
+    def regex_find_complexity(self, json_load: str) -> List[str]:
+        """Extract time complexity annotations from the solution text.
+
+        Args:
+            json_load: JSON string containing the solution article body.
+
+        Returns:
+            List of time complexity strings.
+        """
         pattern = r"(?<=Time complexity: \$)O.+(?=\$)"
         time_complexity = re.findall(pattern, json_load)
         return time_complexity
 
-    def populate_items(self, code, complexities):
+    def populate_items(
+        self, code: List[Match[str]], complexities: List[str]
+    ) -> Generator[ScraperItem, None, None]:
+        """Create ScraperItems from matched code and complexity pairs.
+
+        Args:
+            code: List of regex matches containing code blocks.
+            complexities: List of corresponding time complexities.
+
+        Returns:
+            Generator yielding ScraperItems with populated fields.
+        """
         item = ScraperItem()
 
+        # Populating items
         for i, sample in enumerate(code):
             item["code"] = sample.group()
             item["time_complexity"] = complexities[i]
             yield item
 
-    def check_total_parsed(self, code, complexities):
+    def check_total_parsed(
+        self, code: List[Match[str]], complexities: List[str]
+    ) -> None:
+        """Verify that the number of code blocks matches the number of complexities.
+
+        Args:
+            code: List of regex matches containing code blocks.
+            complexities: List of corresponding time complexities.
+
+        Raises:
+            AssertionError: If the lengths of code and complexities lists don't match.
+        """
         assert len(code) == len(complexities), (
             "The length of codes does not equal to the length of time complexities."
             "Expected: len(code) == len(complexities)."
             f"Got: len(code) = {len(code)}, len(complexities) = {len(complexities)}."
         )
 
-    def parse_response(self, response):
-        #        pdb.set_trace()
+    def parse_response(self, response: Response) -> Generator[ScraperItem, None, None]:
+        """Parse the solution metadata response and extract code and complexity information.
+
+        Args:
+            response: Response object containing the solution metadata.
+
+        Returns:
+            Generator yielding ScraperItems containing solution data.
+        """
         solutions_json = json.loads(response.text)["result"]["article_body"]
 
         # Regex parsing the data

@@ -8,6 +8,5 @@ import scrapy
 
 class ScraperItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    code = scrapy.Field()
-    time_complexity = scrapy.Field()
+    code: str = scrapy.Field()
+    time_complexity: str = scrapy.Field()

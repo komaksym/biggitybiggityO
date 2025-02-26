@@ -5,6 +5,6 @@ accelerate==0.24.1
 attrdict
 tqdm
 
-deepspeed==0.12.2
 datasets
 tensorboardX
+numpy==1.26.4

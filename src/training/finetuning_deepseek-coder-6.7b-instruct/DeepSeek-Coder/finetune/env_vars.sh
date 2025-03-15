@@ -1,15 +1,11 @@
 
-DATA_PATH="<your_data_path>"         # e.g., "/home/user/data"
-OUTPUT_PATH="<your_output_path>"     # e.g., "/home/user/output"
+DATA_PATH="train_set.json"        
+OUTPUT_PATH="output_model/"     
 MODEL_PATH="deepseek-ai/deepseek-coder-6.7b-instruct"
 
-# Optional: Add PyTorch allocator tweak for VRAM fragmentation (from your OOM fix)
 export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:128
 
-
-
-# Run the DeepSpeed command
-deepspeed --num_gpus 2 finetune_deepseekcoder.py \
+deepspeed finetune_deepseekcoder.py \
             --model_name_or_path "$MODEL_PATH" \
                 --data_path "$DATA_PATH" \
                     --output_dir "$OUTPUT_PATH" \

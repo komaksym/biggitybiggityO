@@ -239,22 +239,23 @@ def set_training_args(checkpoint, batch_size=16):
                                       #eval_steps=5,
                                       #learning_rate=2e-4, # Testing
                                       bf16=True,
+                                      gradient_checkpointing=True,
                                       report_to='mlflow',
                                       num_train_epochs=3,
                                       warmup_steps=100, # Testing
                                       label_names=['labels'],
                                       per_device_train_batch_size=batch_size,
                                       per_device_eval_batch_size=batch_size,
-                                      gradient_accumulation_steps = 4,
+                                      gradient_accumulation_steps = 16,
                                       load_best_model_at_end=True,
-                                      #deepspeed="configs/ds_config.json",
+                                      deepspeed="configs/ds_config.json",
                                      )
     return training_args
 
 
 # Trainer
 # Checkpoint
-checkpoint = "deepseek-ai/deepseek-coder-33b-base"
+checkpoint = "codellama/CodeLlama-70b-Python-hf"
 
 
 # Set up tokenizer, datasets, and model (as before)
@@ -272,7 +273,7 @@ print(f"Model: {model}")
 
 
 # Collecting
-training_args = set_training_args(checkpoint=checkpoint, batch_size=4)
+training_args = set_training_args(checkpoint=checkpoint, batch_size=1)
 
 # Building
 trainer = Trainer(
@@ -296,5 +297,5 @@ trainer.save_metrics(split="test", metrics=test_metrics)
 if trainer.is_fsdp_enabled:
     trainer.accelerator.state.fsdp_plugin.set_state_dict_type("FULL_STATE_DICT")
 
-trainer.save_model("./best_model")
+trainer.save_model(f"./best_model/{checkpoint}/")
 print("The best model was saved.")

@@ -23,21 +23,24 @@ for p in paths:
     # Parsing the data
     data = json.loads(p.read_text())
 
-    eval_acc = round(data['eval_accuracy'], 2) * 100
-    eval_f1_macro = round(data['eval_f1_macro'], 2) * 100
-    hc_score = round(data['eval_hierarchy_score'], 2) * 100
+    eval_acc = round(data['eval_accuracy'] * 100, 2)
+    eval_f1_macro = round(data['eval_f1_macro'] * 100, 2)
+    hc_score = round(data['eval_hierarchy_score'] * 100, 2)
 
     # Populating the leaderboard
     new_row = {
         'checkpoint': checkpoint,
         'eval_accuracy': eval_acc,
         'eval_f1_macro': eval_f1_macro,
-        'hc_score (tltb)': hc_score
+        'eval_hc_score (tltb)': hc_score
     }
-    
+
     # Add the new row
     new_row = pd.DataFrame([new_row])
     models_lb = pd.concat([models_lb, new_row], ignore_index=True)
+
+# Sort by f1_macro
+models_lb.sort_values(by=['eval_f1_macro'], axis=0, ascending=False, inplace=True)
 
 # Save the model leaderboard
 models_lb.to_csv("models_leaderboard.csv", index=False)

@@ -8,5 +8,6 @@ import scrapy
 
 class LeetcodeItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    code = scrapy.Field()
+    label = scrapy.Field()
+    

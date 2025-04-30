@@ -9,5 +9,8 @@ from itemadapter import ItemAdapter
 
 
 class LeetcodePipeline:
+    def __init__(self):
+        self.ids_seen = set()
+
     def process_item(self, item, spider):
         return item

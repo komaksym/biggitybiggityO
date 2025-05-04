@@ -1,7 +1,6 @@
 import re
 
-
-f = open('solutions/wiggle-sort-ii.py')
+f = open('solutions/maximum-compatibility-score-sum.py')
 file = f.read()
 
 """
@@ -25,8 +24,10 @@ until we meet a return clause, which is suffixed with a non-greedy amount of sym
 in the same row
 """
 
-labels_pattern = re.compile(r"class.*?return.*?", flags=re.DOTALL)
+labels_pattern = re.compile(r"(?:^#\s?Space.*?\n+?)(.*?)((?:\n^#\s?Time)|(?:\Z))", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
+filter_pattern = re.compile(r"#\s*(Time|Space).*?$", "", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 matches = re.findall(labels_pattern, file)
 
 for m in matches:
-    print(m + "\n\n")
+    m = re.sub("#\s*(Time|Space).*?$", "", m[0], flags=re.DOTALL | re.MULTILINE | re.IGNORECASE) 
+    print(m, "\n")

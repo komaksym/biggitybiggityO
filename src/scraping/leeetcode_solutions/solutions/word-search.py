@@ -1,5 +1,4 @@
 # Time:  O(m * n * 4 * 3^(l - 1)) ~= O(m * n * 3^l), l is the length of the word
-# Space: O(l)
 
 class Solution(object):
     # @param board, a list of lists of 1 length string

@@ -1,6 +1,5 @@
 # Time:  precompute: O(max_s^(1/5) * log(max_s))
 #        runtime:    O(log(max_s))
-# Space: O(max_s^(1/5))
 
 import bisect 
 

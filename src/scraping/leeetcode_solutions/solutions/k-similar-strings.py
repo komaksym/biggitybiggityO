@@ -1,7 +1,6 @@
 # Time:  O(n * n!/(c_a!*...*c_z!), n is the length of A, B,
 #                                  c_a...c_z is the count of each alphabet,
 #                                  n = sum(c_a...c_z)
-# Space: O(n * n!/(c_a!*...*c_z!)
 
 import collections
 

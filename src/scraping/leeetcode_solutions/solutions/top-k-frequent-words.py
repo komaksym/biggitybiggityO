@@ -1,5 +1,4 @@
 # Time:  O(n + klogk) on average
-# Space: O(n)
 
 import collections
 import heapq
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(nlogk)
-# Space: O(n)
 # Heap Solution
 class Solution2(object):
     def topKFrequent(self, words, k):
@@ -84,7 +82,6 @@ class Solution2(object):
 
 
 # Time:  O(n + klogk) ~ O(n + nlogn)
-# Space: O(n)
 # Bucket Sort Solution
 class Solution3(object):
     def topKFrequent(self, words, k):

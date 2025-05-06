@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(c), c is unique count of pattern
 
   # Generator version of zip.
 
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def wordPattern(self, pattern, str):
         """
@@ -52,8 +50,7 @@ class Solution2(object):
         :type str: str
         :rtype: bool
         """
-        words = str.split()  # Space: O(n)
-        if len(pattern) != len(words):
+        words = str.split()          if len(pattern) != len(words):
             return False
 
         w2p, p2w = {}, {}

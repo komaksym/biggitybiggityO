@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def prisonAfterNDays(self, cells, N):
@@ -15,7 +14,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 class Solution2(object):
     def prisonAfterNDays(self, cells, N):
         """

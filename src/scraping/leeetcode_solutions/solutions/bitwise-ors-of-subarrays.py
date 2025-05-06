@@ -1,5 +1,4 @@
 # Time:  O(32 * n)
-# Space: O(1)
 
 class Solution(object):
     def subarrayBitwiseORs(self, A):

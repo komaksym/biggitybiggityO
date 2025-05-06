@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Node(object):
     def __init__(self, x):
@@ -36,7 +35,6 @@ class Solution(object):
         return dummy.__next__
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     # @param head, a RandomListNode
     # @return a RandomListNode

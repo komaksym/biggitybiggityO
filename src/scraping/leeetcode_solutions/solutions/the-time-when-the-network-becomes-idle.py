@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|) = O(|E|) since graph is connected, O(|E|) >= O(|V|) 
-# Space: O(|V| + |E|) = O(|E|)
 
 class Solution(object):
     def networkBecomesIdle(self, edges, patience):

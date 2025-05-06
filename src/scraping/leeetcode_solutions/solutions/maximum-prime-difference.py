@@ -1,5 +1,4 @@
 # Time:  O(r + n), r = max(nums)
-# Space: O(r)
 
 # linear sieve of eratosthenes, number theory
 def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)

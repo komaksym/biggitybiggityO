@@ -1,5 +1,4 @@
 # Time:  O(klog*k) ~= O(k), k is the length of the positions
-# Space: O(k)
 
 class Solution(object):
     def numIslands2(self, m, n, positions):

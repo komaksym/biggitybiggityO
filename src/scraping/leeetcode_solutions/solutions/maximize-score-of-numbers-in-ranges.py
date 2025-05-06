@@ -1,5 +1,4 @@
 # Time:  O(nlogn + nlogr) = O(nlogr)
-# Space: O(1)
 
 # binary search, greedy
 class Solution(object):

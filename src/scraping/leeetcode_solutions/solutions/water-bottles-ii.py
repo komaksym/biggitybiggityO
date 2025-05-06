@@ -1,5 +1,4 @@
 # Time:  O(sqrt(n))
-# Space: O(1)
 
 # simulation
 class Solution(object):

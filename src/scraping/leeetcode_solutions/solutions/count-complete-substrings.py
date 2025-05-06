@@ -1,5 +1,4 @@
 # Time:  O(26 + d * n), d = len(set(word))
-# Space: O(26)
 
 # freq table, two pointers, sliding window
 class Solution(object):

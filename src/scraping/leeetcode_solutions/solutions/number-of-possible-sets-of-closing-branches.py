@@ -1,5 +1,4 @@
 # Time:  O(r + 2^n * n^2)
-# Space: O(n^3)
 
 # graph, bitmasks, Floyd-Warshall algorithm, backtracking
 class Solution(object):
@@ -38,7 +37,6 @@ class Solution(object):
     
 
 # Time:  O(r + 2^n * n^3)
-# Space: O(n^2)
 # bitmasks, Floyd-Warshall algorithm
 class Solution2(object):
     def numberOfSets(self, n, maxDistance, roads):

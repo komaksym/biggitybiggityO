@@ -1,5 +1,4 @@
 # Time:  O(n + sqrt(k))
-# Space: O(n)
 
 # number theory, prefix sum, freq table
 class Solution(object):
@@ -35,7 +34,6 @@ class Solution(object):
     
 
 # Time:  O(n^2)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def beautifulSubstrings(self, s, k):

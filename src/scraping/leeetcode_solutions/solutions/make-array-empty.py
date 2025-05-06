@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort
 class Solution(object):
@@ -14,7 +13,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort, bit, fenwick tree
 class Solution2(object):
     def countOperationsToEmptyArray(self, nums):

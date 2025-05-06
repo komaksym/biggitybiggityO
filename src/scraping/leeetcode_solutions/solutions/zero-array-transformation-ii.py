@@ -1,5 +1,4 @@
 # Time:  O((n + q) * logn)
-# Space: O(n)
 
 # binary search, line sweep
 class Solution(object):

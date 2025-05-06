@@ -1,5 +1,4 @@
 # Time:  O((logn)^2), n is the bound
-# Space: O(r), r is the size of the result
 
 import math
 

@@ -1,5 +1,4 @@
 # Time:  O(C(ceil(log2(n)), k))
-# Space: O(1)
 
 # bit manipulation, hakmem-175
 class Solution(object):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # bit manipulation
 class Solution2(object):
     def sumIndicesWithKSetBits(self, nums, k):

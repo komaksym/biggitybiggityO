@@ -1,5 +1,4 @@
 # Time:  O(n) on average
-# Space: O(1)
 
 # quick select solution
 from random import randint
@@ -43,7 +42,6 @@ class Solution(object):
 
     
 # Time:  O(nlogk)
-# Space: O(k)
 import heapq
 
 

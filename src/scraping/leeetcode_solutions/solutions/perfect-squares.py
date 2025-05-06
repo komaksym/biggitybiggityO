@@ -1,5 +1,4 @@
 # Time:  O(n * sqrt(n))
-# Space: O(n)
 
 class Solution(object):
     _num = [0]

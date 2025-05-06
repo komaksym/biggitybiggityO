@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # iterative dfs
 class Solution(object):
@@ -37,7 +36,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dfs
 class Solution2(object):
     def countPairsOfConnectableServers(self, edges, signalSpeed):
@@ -69,7 +67,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # bfs
 class Solution3(object):
     def countPairsOfConnectableServers(self, edges, signalSpeed):

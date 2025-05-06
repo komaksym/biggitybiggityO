@@ -1,5 +1,4 @@
 # Time:  O(n + klogn)
-# Space: O(1)
 
 import heapq
 
@@ -32,7 +31,6 @@ class Solution(object):
   
 
 # Time:  O(n + klogn)
-# Space: O(1)
 import heapq
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(n)
 
 import collections
 import itertools

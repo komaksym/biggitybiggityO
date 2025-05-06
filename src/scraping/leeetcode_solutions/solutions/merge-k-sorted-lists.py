@@ -1,5 +1,4 @@
 # Time:  O(nlogk)
-# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(nlogk)
-# Space: O(logk)
 # Divide and Conquer solution.
 class Solution2(object):
     # @param a list of ListNode
@@ -75,7 +73,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogk)
-# Space: O(k)
 # Heap solution.
 import heapq
 class Solution3(object):

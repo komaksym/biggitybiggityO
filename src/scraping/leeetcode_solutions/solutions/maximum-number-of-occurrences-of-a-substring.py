@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(m * n), m = 26
-# Space: O(m * n)
 class Solution2(object):
     def maxFreq(self, s, maxLetters, minSize, maxSize):
         """

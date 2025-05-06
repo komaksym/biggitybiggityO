@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # sort, two pointers, sliding window
 class Solution(object):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sort, two pointers, sliding window
 class Solution2(object):
     def maxFrequencyScore(self, nums, k):
@@ -49,7 +47,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort, prefix sum, binary search
 class Solution3(object):
     def maxFrequencyScore(self, nums, k):

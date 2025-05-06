@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(min(m, n))
 
 class Solution(object):
     def maxUncrossedLines(self, A, B):

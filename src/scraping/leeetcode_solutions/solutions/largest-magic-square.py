@@ -1,5 +1,4 @@
 # Time:  O(max(m, n) * min(m, n)^3)
-# Space: O(m + n)
 
 class Solution(object):
     def largestMagicSquare(self, grid):

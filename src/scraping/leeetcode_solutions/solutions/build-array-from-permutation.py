@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # inplace solution
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def buildArray(self, nums):
         """

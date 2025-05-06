@@ -1,5 +1,4 @@
 # Time:  O(n * (n + 26))
-# Space: O(n + 26)
 
 # dp, freq table
 class Solution(object):

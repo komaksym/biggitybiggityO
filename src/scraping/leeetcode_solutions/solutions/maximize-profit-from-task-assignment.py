@@ -1,5 +1,4 @@
 # Time:  O(n + tlogt)
-# Space: O(n)
 
 import collections
 

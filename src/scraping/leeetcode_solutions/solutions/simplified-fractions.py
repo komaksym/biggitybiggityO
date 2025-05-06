@@ -1,5 +1,4 @@
 # Time:  O(n^2 * logn)
-# Space: O(n^2)
 
 import fractions
 

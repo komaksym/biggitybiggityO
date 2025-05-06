@@ -1,5 +1,4 @@
 # Time:  O(n) ~ O(n^2)
-# Space: O(n)
 
 class Solution(object):
     def maxProduct(self, words):
@@ -36,7 +35,6 @@ class Solution(object):
         return max_product
 
 # Time:  O(nlogn) ~ O(n^2)
-# Space: O(n)
 # Sorting + Pruning + Bit Manipulation
 class Solution2(object):
     def maxProduct(self, words):

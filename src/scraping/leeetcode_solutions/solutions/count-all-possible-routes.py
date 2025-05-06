@@ -1,5 +1,4 @@
 # Time:  O(nlogn + n * f)
-# Space: O(n * f)
 
 import bisect
 from functools import reduce
@@ -50,7 +49,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * f)
-# Space: O(n * f)
 class Solution2(object):
     def countRoutes(self, locations, start, finish, fuel):
         """

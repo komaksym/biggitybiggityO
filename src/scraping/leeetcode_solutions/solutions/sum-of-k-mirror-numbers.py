@@ -1,5 +1,4 @@
 # Time:  O(10^6), the most times of finding x is 665502 (k = 7, n = 30)
-# Space: O(1)
 
 class Solution(object):
     def kMirror(self, k, n):
@@ -48,7 +47,6 @@ class Solution(object):
 
 
 # Time:  O(10^6), the most times of finding x is 665502 (k = 7, n = 30)
-# Space: O(1)
 class Solution2(object):
     def kMirror(self, k, n):
         """

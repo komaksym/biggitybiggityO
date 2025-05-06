@@ -1,5 +1,4 @@
 # Time:  O(n^2 * m)
-# Space: O(n)
 
 # graph, flood fill, bfs
 class Solution(object):
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * m)
-# Space: O(n)
 # graph, union find
 class Solution2(object):
     def numberOfComponents(self, properties, k):

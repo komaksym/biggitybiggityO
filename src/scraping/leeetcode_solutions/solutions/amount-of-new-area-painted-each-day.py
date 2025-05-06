@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import collections
 import heapq
@@ -35,7 +34,6 @@ class Solution(object):
                     
             
 # Time:  O(nlogn)
-# Space: O(n)
 from sortedcontainers import SortedList
 
 
@@ -148,7 +146,6 @@ class SegmentTree(object):
 
 
 # Time:  O(nlogr), r is the max position
-# Space: O(r)
 # segment tree
 class SolutionTLE(object):
     def amountPainted(self, paint):

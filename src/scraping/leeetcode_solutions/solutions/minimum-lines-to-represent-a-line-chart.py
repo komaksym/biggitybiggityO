@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # sort, math, gcd
 class Solution(object):

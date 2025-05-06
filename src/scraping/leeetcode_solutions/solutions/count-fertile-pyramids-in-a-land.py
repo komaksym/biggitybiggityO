@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(n)
 
 class Solution(object):
     def countPyramids(self, grid):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 class Solution2(object):
     def countPyramids(self, grid):
         """

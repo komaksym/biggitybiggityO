@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(r), r = max(nums)
 
 # freq table
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(r), r = max(nums)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(m * logn), m is the number of schedule, n is the number of employees, m >= n
-# Space: O(n)
 
 import heapq
 

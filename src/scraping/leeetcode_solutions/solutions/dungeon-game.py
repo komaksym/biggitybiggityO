@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 class Solution(object):
     # @param dungeon, a list of lists of integers
@@ -17,7 +16,6 @@ class Solution(object):
         return DP[0]
 
 # Time:  O(m * n logk), where k is the possible maximum sum of loses
-# Space: O(m + n)
 class Solution2(object):
     # @param dungeon, a list of lists of integers
     # @return a integer

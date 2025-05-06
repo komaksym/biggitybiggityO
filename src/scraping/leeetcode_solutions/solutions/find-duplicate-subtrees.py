@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n * h)
-# Space: O(n * h)
 class Solution2(object):
     def findDuplicateSubtrees(self, root):
         """

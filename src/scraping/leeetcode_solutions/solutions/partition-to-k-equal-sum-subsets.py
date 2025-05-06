@@ -1,5 +1,4 @@
 # Time:  O(n*2^n)
-# Space: O(2^n)
 
 class Solution(object):
     def canPartitionKSubsets(self, nums, k):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(k^(n-k) * k!)
-# Space: O(n)
 # DFS solution with pruning.
 class Solution2(object):
     def canPartitionKSubsets(self, nums, k):

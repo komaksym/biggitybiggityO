@@ -1,6 +1,5 @@
 # Time:  precompute: O(t + 26)
 #        runtime:    O(n)
-# Space: O(t + 26)
 
 # precompute, dp
 MOD = 10**9+7
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n + t + 26)
-# Space: O(26)
 # dp
 class Solution2(object):
     def lengthAfterTransformations(self, s, t):
@@ -38,7 +36,6 @@ class Solution2(object):
 
 
 # Time:  O(n + 26^3 * logt)
-# Space: O(26^2)
 import itertools
 from functools import reduce
 
@@ -80,7 +77,6 @@ class Solution3(object):
 
 
 # Time:  O(n + t * 26)
-# Space: O(26)
 # dp
 class Solution4(object):
     def lengthAfterTransformations(self, s, t):

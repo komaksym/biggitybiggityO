@@ -1,5 +1,4 @@
 # Time:  O(26 * n) = O(n)
-# Space: O(26) = O(1)
 
 class Solution(object):
     def longestSubstring(self, s, k):

@@ -1,5 +1,4 @@
 # Time:  O(n * 2^(n/2))
-# Space: O(2^(n/2))
 
 import bisect
 

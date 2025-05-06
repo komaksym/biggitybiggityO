@@ -1,5 +1,4 @@
 # Time:  O(nlogn + r^2), r = max(rewardValues)
-# Space: O(r)
 
 # sort, dp, bitset
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + r^2), r = max(rewardValues)
-# Space: O(r)
 # sort, dp, bitset
 class Solution2(object):
     def maxTotalReward(self, rewardValues):

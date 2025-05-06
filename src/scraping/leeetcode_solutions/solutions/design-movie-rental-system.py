@@ -3,7 +3,6 @@
 #        rent:   O(logn)
 #        drop:   O(logn)
 #        report: O(logn)
-# Space: O(n)
 
 import collections
 from sortedcontainers import SortedList

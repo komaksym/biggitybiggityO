@@ -1,5 +1,4 @@
 # Time:  O(rlogr), r is the number of result
-# Space: O(r)
 
 class Solution(object):
     def filterRestaurants(self, restaurants, veganFriendly, maxPrice, maxDistance):

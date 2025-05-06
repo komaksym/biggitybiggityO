@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class UndirectedGraphNode(object):
     def __init__(self, x):

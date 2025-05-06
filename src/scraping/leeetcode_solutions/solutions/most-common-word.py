@@ -1,5 +1,4 @@
 # Time:  O(m + n), m is the size of banned, n is the size of paragraph
-# Space: O(m + n)
 
 import collections
 

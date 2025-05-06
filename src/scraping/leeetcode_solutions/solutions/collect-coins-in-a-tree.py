@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # tree, bfs
 class Solution(object):

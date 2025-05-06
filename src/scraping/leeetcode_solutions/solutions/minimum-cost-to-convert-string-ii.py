@@ -1,5 +1,4 @@
 # Time:  O(o * l + k * eloge + n * c * l), e is the number of edges reachable from a given node u, o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
-# Space: O(o * l + k * v + c + l), v is the number of nodes reachable from a given node u
 
 import collections
 import itertools
@@ -72,7 +71,6 @@ class Solution(object):
 
 
 # Time:  O(o * l + k^3 + n * c * l), o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
-# Space: O(o * l + k^2 + c + l)
 import collections
 import itertools
 
@@ -133,7 +131,6 @@ class Solution2(object):
 
 
 # Time:  O(o * l + k * eloge + n * c * l), e is the number of edges reachable from a given node u, o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
-# Space: O(t + k * v + c + l), v is the number of nodes reachable from a given node u
 import collections
 import itertools
 
@@ -205,7 +202,6 @@ class Solution3(object):
 
 
 # Time:  O(o * l + k^3 + n * c * l), o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
-# Space: O(o * l + k^2 + c + l)
 import collections
 import itertools
 
@@ -268,7 +264,6 @@ class Solution4(object):
 
 
 # Time:  O(o * l + k * eloge + n * l), e is the number of edges reachable from a given node u, o = len(original), l = max(len(x) for x in original), k = trie.k
-# Space: O(t + k * v + l), v is the number of nodes reachable from a given node u
 import itertools
 import heapq
 
@@ -375,7 +370,6 @@ class Solution5(object):
 
 
 # Time:  O(o * l + k^3 + n * l), o = len(original), l = max(len(x) for x in original), k = trie.k
-# Space: O(t + k^2 + l)
 import itertools
 
 

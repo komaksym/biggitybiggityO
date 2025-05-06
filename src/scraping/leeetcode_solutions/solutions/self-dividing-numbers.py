@@ -1,5 +1,4 @@
 # Time:  O(nlogr) = O(n)
-# Space: O(logr) = O(1)
 
 class Solution(object):
     def selfDividingNumbers(self, left, right):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr) = O(n)
-# Space: O(logr) = O(1)
 import itertools
 
 

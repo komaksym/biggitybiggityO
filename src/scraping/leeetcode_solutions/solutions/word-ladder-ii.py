@@ -1,5 +1,4 @@
 # Time:  O(b^(d/2)), b is the branch factor of bfs, d is the result depth
-# Space: O(w * l), w is the number of words, l is the max length of words
 
 from collections import defaultdict
 from string import ascii_lowercase
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(b^d), b is the branch factor of bfs, d is the result depth
-# Space: O(w * l), w is the number of words, l is the max length of words
 class Solution2(object):
     def findLadders(self, beginWord, endWord, wordList):
         """

@@ -1,5 +1,4 @@
 # Time:  O(q + r)
-# Space: O(q + r)
 
 
 class Solution(object):

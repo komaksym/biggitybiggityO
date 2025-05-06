@@ -1,5 +1,4 @@
 # Time:  O(logn), logn is the length of the number string
-# Space: O(logn)
 
 class Solution(object):
     def maximumSwap(self, num):

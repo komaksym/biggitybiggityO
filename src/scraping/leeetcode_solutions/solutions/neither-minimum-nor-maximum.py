@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # one pass, array
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # array
 class Solution2(object):
     def findNonMinOrMax(self, nums):

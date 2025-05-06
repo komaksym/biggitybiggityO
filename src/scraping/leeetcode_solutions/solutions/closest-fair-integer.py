@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(logn)
 
 # constructive algorithms, greedy
 class Solution(object):

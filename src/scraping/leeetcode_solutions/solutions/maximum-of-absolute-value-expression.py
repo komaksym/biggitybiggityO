@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def maxAbsValExpr(self, arr1, arr2):
@@ -29,7 +28,6 @@ class Solution(object):
 
     
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def maxAbsValExpr(self, arr1, arr2):
         """

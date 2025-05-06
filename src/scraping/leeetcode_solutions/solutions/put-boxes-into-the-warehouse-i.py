@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 class Solution(object):
     def maxBoxesInWarehouse(self, boxes, warehouse):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + m)
-# Space: O(1)
 class Solution2(object):
     def maxBoxesInWarehouse(self, boxes, warehouse):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n * l) ~ O(n^2 * l^2)
-# Space: O(n * l)
 
 import collections
 

@@ -1,5 +1,4 @@
 # Time:  O(m + n)
-# Space: O(1)
 
 # Definition for an interval.
 class Interval(object):

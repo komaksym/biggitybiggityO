@@ -1,5 +1,4 @@
 # Time:  O(m^2 * (n + m))
-# Space: O(m^2)
 
 import itertools
 
@@ -59,7 +58,6 @@ class Solution(object):
 
 
 # Time:  O(m * (n + 2^m))
-# Space: O(2^m)
 # dp solution
 class Solution2(object):
     def maxCompatibilitySum(self, students, mentors):

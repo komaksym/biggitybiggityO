@@ -1,5 +1,4 @@
 # Time:  O(9^2 * 2^9)
-# Space: O(9 * 2^9)
 
 
 # DP solution.
@@ -64,7 +63,6 @@ class Solution(object):
 
 
 # Time:  O(9^2 * 2^9)
-# Space: O(9 * 2^9)
 # DP solution.
 class Solution2(object):
     def numberOfPatterns(self, m, n):
@@ -130,7 +128,6 @@ class Solution2(object):
 
 
 # Time:  O(9!)
-# Space: O(9)
 # Backtracking solution. (TLE)
 class Solution_TLE(object):
     def numberOfPatterns(self, m, n):

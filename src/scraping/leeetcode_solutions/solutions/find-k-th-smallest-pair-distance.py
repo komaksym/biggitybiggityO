@@ -1,5 +1,4 @@
 # Time:  O(nlogn + nlogw), n = len(nums), w = max(nums)-min(nums)
-# Space: O(1)
 
 class Solution(object):
     def smallestDistancePair(self, nums, k):

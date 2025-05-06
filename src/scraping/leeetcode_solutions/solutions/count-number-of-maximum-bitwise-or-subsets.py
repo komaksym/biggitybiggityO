@@ -1,5 +1,4 @@
 # Time:  O(min(2^n, m * n)), m is the 'bitwise or' of nums
-# Space: O(min(2^n, m))
 
 import collections
 from functools import reduce

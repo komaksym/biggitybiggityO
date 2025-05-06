@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(1)
-# Space: O(1)
 
 # math, parity
 class Solution(object):

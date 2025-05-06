@@ -1,5 +1,4 @@
 # Time:  O(n + l)
-# Space: O(l)
 
 class Solution(object):
     def stringShift(self, s, shift):

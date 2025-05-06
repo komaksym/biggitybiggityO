@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -29,7 +28,6 @@ class Solution(object):
 
 # BFS solution
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     # @param root, a tree node
     # @return a list of integers

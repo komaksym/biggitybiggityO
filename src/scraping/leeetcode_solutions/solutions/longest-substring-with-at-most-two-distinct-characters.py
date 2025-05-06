@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     # @param s, a string
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 from collections import Counter
 
 

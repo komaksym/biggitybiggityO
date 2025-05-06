@@ -1,5 +1,4 @@
 # Time:  O(l)
-# Space: O(l)
 
 # brute force, longest prefix suffix, kmp algorithm
 class Solution(object):
@@ -47,7 +46,6 @@ class Solution(object):
 
 
 # Time:  O(l^2)
-# Space: O(l)
 # brute force
 class Solution2(object):
     def minimumString(self, a, b, c):

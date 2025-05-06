@@ -1,5 +1,4 @@
 # Time:  O(n^2), n is the length of S
-# Space: O(1)
 
 class Solution(object):
     def queryString(self, S, N):

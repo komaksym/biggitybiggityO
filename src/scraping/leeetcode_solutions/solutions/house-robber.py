@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     # @param num, a list of integer

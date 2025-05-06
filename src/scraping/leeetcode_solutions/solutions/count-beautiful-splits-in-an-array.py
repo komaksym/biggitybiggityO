@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # z-function
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # dp
 class Solution2(object):
     def beautifulSplits(self, nums):
@@ -53,7 +51,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # z-function
 class Solution_TLE(object):
     def beautifulSplits(self, nums):

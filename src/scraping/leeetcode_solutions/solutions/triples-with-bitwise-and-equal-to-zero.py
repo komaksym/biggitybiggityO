@@ -1,5 +1,4 @@
 # Time:  O(nlogn), n is the max of A
-# Space: O(n)
 
 import collections
 
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(n^3), n is the length of A
-# Space: O(n^2)
 import collections
 
 

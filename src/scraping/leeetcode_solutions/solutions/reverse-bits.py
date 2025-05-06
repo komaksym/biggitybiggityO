@@ -1,5 +1,4 @@
 # Time : O(32)
-# Space: O(1)
 
 class Solution(object):
     # @param n, an integer
@@ -14,7 +13,6 @@ class Solution(object):
 
 
 # Time : O(logn) = O(32)
-# Space: O(1)
 class Solution2(object):
     # @param n, an integer
     # @return an integer

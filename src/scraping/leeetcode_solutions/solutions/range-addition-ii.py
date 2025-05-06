@@ -1,5 +1,4 @@
 # Time:  O(p), p is the number of ops
-# Space: O(1)
 
 class Solution(object):
     def maxCount(self, m, n, ops):

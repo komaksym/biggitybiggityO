@@ -1,5 +1,4 @@
 # Time:  O(n * m^2), n is the number of rows with 1s, m is the number of cols with 1s
-# Space: O(n * m)
 
 class Solution(object):
     def countCornerRectangles(self, grid):

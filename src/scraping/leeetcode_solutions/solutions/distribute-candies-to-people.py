@@ -1,5 +1,4 @@
 # Time:  O(n + logc), c is the number of candies
-# Space: O(1)
 
 class Solution(object):
     def distributeCandies(self, candies, num_people):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n + logc), c is the number of candies
-# Space: O(1)
 class Solution2(object):
     def distributeCandies(self, candies, num_people):
         """
@@ -56,7 +54,6 @@ class Solution2(object):
 
 
 # Time:  O(sqrt(c)), c is the number of candies
-# Space: O(1)
 class Solution3(object):
     def distributeCandies(self, candies, num_people):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n + klogk), k is the distinct number of changed
-# Space: O(k)
 
 class Solution(object):
     def findOriginalArray(self, changed):

@@ -1,5 +1,4 @@
 # Time:  O(sqrt(n))
-# Space: O(sqrt(n))
 
 class Solution(object):
     def reinitializePermutation(self, n):
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def reinitializePermutation(self, n):
         """
@@ -46,7 +44,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution3(object):
     def reinitializePermutation(self, n):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def maxPower(self, s):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import itertools
 
 

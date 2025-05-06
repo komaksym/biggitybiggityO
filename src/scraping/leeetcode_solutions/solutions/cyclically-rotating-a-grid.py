@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(1)
 
 import fractions
 
@@ -37,7 +36,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(1)
 # inplace rotation
 class Solution2(object):
     def rotateGrid(self, grid, k):

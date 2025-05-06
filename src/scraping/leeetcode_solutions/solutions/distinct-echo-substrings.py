@@ -1,5 +1,4 @@
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
-# Space: O(r), r is the size of result substrings set
 
 class Solution(object):
     def distinctEchoSubstrings(self, text):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
-# Space: O(r), r is the size of result substrings set
 class Solution2(object):
     def distinctEchoSubstrings(self, text):
         """
@@ -52,7 +50,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
-# Space: O(r), r is the size of result substrings set
 class Solution3(object):
     def distinctEchoSubstrings(self, text):
         """
@@ -74,7 +71,6 @@ class Solution3(object):
 
 
 # Time:  O(n^3 + d), d is the duplicated of result substrings size
-# Space: O(r), r is the size of result substrings set
 class Solution_TLE(object):
     def distinctEchoSubstrings(self, text):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k), k = value
 
 import collections
 
@@ -18,7 +17,6 @@ class Solution(object):
         
 
 # Time:  O(n)
-# Space: O(k), k = value
 import collections
 
 

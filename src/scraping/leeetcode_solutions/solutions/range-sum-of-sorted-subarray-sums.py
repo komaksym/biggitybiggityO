@@ -1,5 +1,4 @@
 # Time:  O(nlog(sum(nums)))
-# Space: O(n)
 
 # binary search + sliding window solution
 class Solution(object):
@@ -53,7 +52,6 @@ class Solution(object):
 
     
 # Time:  O(rlogr), worst: O(n^2 * logn)
-# Space: O(n)
 import heapq
 
 

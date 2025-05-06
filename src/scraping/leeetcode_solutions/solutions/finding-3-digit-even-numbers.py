@@ -1,5 +1,4 @@
 # Time:  O(1) ~ O(n), n is 10^3
-# Space: O(1)
 
 class Solution(object):
     def findEvenNumbers(self, digits):
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(n), n is 10^3
-# Space: O(1)
 import collections
 from functools import reduce
 
@@ -51,7 +49,6 @@ class Solution2(object):
 
 
 # Time:  O(1) ~ O(n), n is 10^3
-# Space: O(1)
 import collections
 
 
@@ -105,7 +102,6 @@ class Solution3(object):
 
 
 # Time:  O(1) ~ O(nlogn), n is 10^3
-# Space: O(1)
 import collections
 
 

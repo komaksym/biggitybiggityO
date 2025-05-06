@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # hash table, combinatorics
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # hash table, two pointers
 class Solution2(object):
     def sumImbalanceNumbers(self, nums):

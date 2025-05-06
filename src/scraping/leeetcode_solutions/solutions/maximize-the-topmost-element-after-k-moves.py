@@ -1,5 +1,4 @@
 # Time:  O(min(n, k))
-# Space: O(1)
 
 # constructive algorithms
 class Solution(object):

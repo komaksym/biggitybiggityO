@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def areNumbersAscending(self, s):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def areNumbersAscending(self, s):
         """

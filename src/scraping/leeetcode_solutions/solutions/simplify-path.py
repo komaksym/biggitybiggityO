@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     # @param path, a string

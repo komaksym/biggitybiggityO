@@ -2,7 +2,6 @@
 #                           , m is the total size of query string
 #                           , z is the number of all matched strings
 #                           , O(n) = O(1), O(z) = O(m) in this problem
-# Space: O(t) = O(1), t is the total size of ac automata trie
 #                   , O(t) = O(1) in this problem
 
 import collections
@@ -94,7 +93,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def entityParser(self, text):
         """

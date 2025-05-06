@@ -1,5 +1,4 @@
 # Time:  O(d * n)
-# Space: O(d)
 
 # case works, math, freq table
 class Solution(object):
@@ -60,7 +59,6 @@ class Solution(object):
 
 
 # Time:  O(d * n)
-# Space: O(d)
 # case works, math, freq table
 class Solution2(object):
     def countSubstrings(self, s):
@@ -102,7 +100,6 @@ class Solution2(object):
 
 
 # Time:  O(d^2 * n)
-# Space: O(d^2)
 # dp
 class Solution3(object):
     def countSubstrings(self, s):

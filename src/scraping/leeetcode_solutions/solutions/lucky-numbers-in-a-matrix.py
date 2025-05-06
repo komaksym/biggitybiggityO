@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 import itertools
 
@@ -17,7 +16,6 @@ class Solution(object):
 
     
 # Time:  O(m * n)
-# Space: O(m + n)
 import itertools
 
 

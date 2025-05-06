@@ -1,5 +1,4 @@
 # Time:  O(h)
-# Space: O(1)
 
 # Definition for a rope tree node.
 class RopeTreeNode(object):

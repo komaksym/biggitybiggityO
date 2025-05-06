@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(nums)
-# Space: O(t)
 
 class Solution(object):
     def findMaximumXOR(self, nums):
@@ -46,7 +45,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
-# Space: O(n)
 class Solution2(object):
     def findMaximumXOR(self, nums):
         """

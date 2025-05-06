@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def isAnagram(self, s, t):
         """
@@ -36,7 +34,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution3(object):
     def isAnagram(self, s, t):
         """

@@ -1,5 +1,4 @@
 # Time:  O(logn), pow is O(logn).
-# Space: O(1)
 
 class Solution(object):
     def integerBreak(self, n):
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # DP solution.
 class Solution2(object):
     def integerBreak(self, n):

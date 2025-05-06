@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(nums)
-# Space: O(logr)
 
 # dp
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def subarrayGCD(self, nums, k):

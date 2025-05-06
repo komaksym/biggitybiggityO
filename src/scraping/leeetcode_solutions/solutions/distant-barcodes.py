@@ -1,5 +1,4 @@
 # Time:  O(n), k is the number of distinct barcodes
-# Space: O(k)
 
 import collections
 import itertools
@@ -26,7 +25,6 @@ class Solution(object):
 
     
 # Time:  O(n + klogk), k is the number of distinct barcodes
-# Space: O(k)
 import collections
 
 

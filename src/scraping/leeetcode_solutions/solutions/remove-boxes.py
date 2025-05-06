@@ -1,5 +1,4 @@
 # Time:  O(n^3) ~ O(n^4)
-# Space: O(n^3)
 
 class Solution(object):
     def removeBoxes(self, boxes):

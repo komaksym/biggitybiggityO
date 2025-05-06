@@ -1,5 +1,4 @@
 # Time:  O(m * n * α(m * n)) ~= O(m * n)
-# Space: O(m * n)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -47,7 +46,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # dfs solution
 class Solution2(object):
     def numIslands(self, grid):
@@ -82,7 +80,6 @@ class Solution2(object):
 
  
 # Time:  O(m * n)
-# Space: O(m * n)
 import collections
 
 

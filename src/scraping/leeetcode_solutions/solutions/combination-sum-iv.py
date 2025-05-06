@@ -1,5 +1,4 @@
 # Time:  O(nlon + n * t), t is the value of target.
-# Space: O(t)
 
 class Solution(object):
     def combinationSum4(self, nums, target):

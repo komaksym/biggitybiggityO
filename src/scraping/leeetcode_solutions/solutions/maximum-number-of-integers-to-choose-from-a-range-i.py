@@ -1,5 +1,4 @@
 # Time:  O(b)
-# Space: O(b)
 
 # math
 class Solution(object):
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(blogb + logn * logb)
-# Space: O(b)
 import bisect
 
 
@@ -60,7 +58,6 @@ class Solution2(object):
 
  
 # Time:  O(n)
-# Space: O(b)
 # greedy
 class Solution3(object):
     def maxCount(self, banned, n, maxSum):

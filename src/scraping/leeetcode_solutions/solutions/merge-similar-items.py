@@ -1,5 +1,4 @@
 # Time:  O((m + n) * log(m + n))
-# Space: O(m + n)
 
 # freq table, sort
 class Solution(object):

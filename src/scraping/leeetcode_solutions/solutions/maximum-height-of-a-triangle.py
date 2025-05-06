@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # math
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(sqrt(n))
-# Space: O(1)
 # simulation
 class Solution2(object):
     def maxHeightOfTriangle(self, red, blue):

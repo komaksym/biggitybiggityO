@@ -1,5 +1,4 @@
 # Time:  O(nlogn) on average, O(n^2) on worst case
-# Space: O(n)
 
 class Node(object):
     def __init__(self, start, end):
@@ -42,7 +41,6 @@ class MyCalendar(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class MyCalendar2(object):
 
     def __init__(self):

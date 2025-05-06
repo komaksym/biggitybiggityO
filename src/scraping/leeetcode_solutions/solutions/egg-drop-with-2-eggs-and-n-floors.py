@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 import math
 
@@ -15,7 +14,6 @@ class Solution(object):
     
 
 # Time:  O(k * n^2)
-# Space: O(n)
 class Solution2(object):
     def twoEggDrop(self, n):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def numberOfWays(self, num_people):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution2(object):
     def numberOfWays(self, num_people):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(c)
 
 import collections
 import itertools
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 import itertools
 
@@ -63,7 +61,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 import itertools
 
@@ -91,7 +88,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogc), c is the count of unique characters.
-# Space: O(c)
 from collections import Counter
 from heapq import heappush, heappop
 class Solution4(object):

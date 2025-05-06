@@ -1,5 +1,4 @@
 # Time:  O(n * nlogn + n^3 + n^2 * k) = O(n^3)
-# Space: O(n * nlogn) = O(n^2 * logn)
 
 # number theory, dp
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n * nlogn + n^3 + n^2 * k) = O(n^3)
-# Space: O(n * nlogn) = O(n^2 * logn)
 # number theory, dp
 class Solution2(object):
     def minimumChanges(self, s, k):
@@ -62,7 +60,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * nlogn + n^2 * k) = O(n^3 * logn)
-# Space: O(nlogn + n * k)
 # number theory, dp
 class Solution3(object):
     def minimumChanges(self, s, k):

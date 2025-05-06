@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # array
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # array
 class Solution2(object):
     def longestMonotonicSubarray(self, nums):
@@ -33,7 +31,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # array
 class Solution3(object):
     def longestMonotonicSubarray(self, nums):

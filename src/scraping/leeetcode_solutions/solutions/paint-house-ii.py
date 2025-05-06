@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n * k)
-# Space: O(k)
 
 class Solution2(object):
     def minCostII(self, costs):

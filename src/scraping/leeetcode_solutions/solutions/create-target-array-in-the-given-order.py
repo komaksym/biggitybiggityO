@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 class Solution(object):
     def createTargetArray(self, nums, index):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 import itertools
 
 

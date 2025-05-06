@@ -1,5 +1,4 @@
 # Time:  O(a + d), a is the number of grids covered by artifacts, d is the size of dig
-# Space: O(d)
 
 # hash table
 class Solution(object):
@@ -15,7 +14,6 @@ class Solution(object):
     
 
 # Time:  O(a + d), a is the number of grids covered by artifacts, d is the size of dig
-# Space: O(a)
 # hash table
 class Solution2(object):
     def digArtifacts(self, n, artifacts, dig):

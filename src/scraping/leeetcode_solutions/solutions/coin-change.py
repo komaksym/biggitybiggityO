@@ -1,5 +1,4 @@
 # Time:  O(n * k), n is the number of coins, k is the amount of money
-# Space: O(k)
 
 class Solution(object):
     def coinChange(self, coins, amount):

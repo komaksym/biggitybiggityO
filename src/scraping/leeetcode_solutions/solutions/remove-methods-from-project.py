@@ -1,5 +1,4 @@
 # Time:  O(n + e)
-# Space: O(n + e)
 
 # bfs
 class Solution(object):

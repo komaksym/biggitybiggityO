@@ -1,5 +1,4 @@
 # Time:  O((m + n) * k), where m is string length, n is dictionary size, k is word length
-# Space: O(n * k)
 
 import collections
 
@@ -20,8 +19,7 @@ class Solution(object):
 
         lookup = collections.defaultdict(int)
         for i in words:
-            lookup[i] += 1                # Space: O(n * k)
-
+            lookup[i] += 1                
         for i in range(k):               # Time:  O(k)
             left, count = i, 0
             tmp = collections.defaultdict(int)
@@ -44,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(m * n * k), where m is string length, n is dictionary size, k is word length
-# Space: O(n * k)
 class Solution2(object):
     def findSubstring(self, s, words):
         """
@@ -58,8 +55,7 @@ class Solution2(object):
 
         lookup = collections.defaultdict(int)
         for i in words:
-            lookup[i] += 1                            # Space: O(n * k)
-
+            lookup[i] += 1                            
         for i in range(m+1-k*n):                     # Time: O(m)
             cur, j = collections.defaultdict(int), 0
             while j < n:                              # Time: O(n)

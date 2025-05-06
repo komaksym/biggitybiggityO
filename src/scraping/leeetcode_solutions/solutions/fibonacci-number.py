@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 import itertools
 
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def fib(self, N):
         """

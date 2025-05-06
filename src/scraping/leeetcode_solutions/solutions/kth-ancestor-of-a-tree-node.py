@@ -1,6 +1,5 @@
 # Time:  ctor: O(n * logh)
 #        get:  O(logh)
-# Space: O(n * logh)
 
 # binary jump solution (frequently used in competitive programming)
 # Template:

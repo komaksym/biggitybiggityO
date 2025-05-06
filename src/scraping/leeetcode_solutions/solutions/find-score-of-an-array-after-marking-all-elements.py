@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # simulation, sort, hash table
 class Solution(object):

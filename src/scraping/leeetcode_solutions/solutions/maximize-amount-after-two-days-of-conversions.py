@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # Bellman-Ford Algorithm
 class Solution(object):
@@ -26,7 +25,6 @@ class Solution(object):
                 
 
 # Time:  O(n^2)
-# Space: O(n)
 import collections
 
 

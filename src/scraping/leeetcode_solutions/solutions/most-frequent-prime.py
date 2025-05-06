@@ -1,6 +1,5 @@
 # Time:  precompute: O(10^MAX_N_M)
 #        runtime:    O(n * m * (n + m))
-# Space: O(10^MAX_N_M + n * m * (n + m))
 
 import collections
 
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(n * m * (n + m) * sqrt(10^MAX_N_M))
-# Space: O(n * m * (n + m))
 import collections
 
 

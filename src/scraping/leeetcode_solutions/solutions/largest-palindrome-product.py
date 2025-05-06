@@ -1,5 +1,4 @@
 # Time:  O(n * 10^n)
-# Space: O(n)
 
 class Solution(object):
     def largestPalindrome(self, n):
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(10^(2n))
-# Space: O(n)
 class Solution2(object):
     def largestPalindrome(self, n):
         """

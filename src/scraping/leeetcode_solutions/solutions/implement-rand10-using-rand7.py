@@ -1,5 +1,4 @@
 # Time:  O(1.189), counted by statistics, limit would be O(log10/log7) = O(1.183)
-# Space: O(1)
 
 import random
 
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(2 * (1 + (9/49) + (9/49)^2 + ...)) = O(2/(1-(9/49)) = O(2.45)
-# Space: O(1)
 class Solution2(object):
     def rand10(self):
         """

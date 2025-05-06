@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for Node.
 class Node(object):
@@ -58,7 +57,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 class Solution_Recu(object):
     def copyRandomBinaryTree(self, root):
         """
@@ -95,7 +93,6 @@ class Solution_Recu(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 
 
@@ -122,7 +119,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 
 

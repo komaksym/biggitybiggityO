@@ -1,5 +1,4 @@
 # Time:  O(n) on average
-# Space: O(n)
 
 import random
 import itertools
@@ -58,7 +57,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 
 
@@ -127,7 +125,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 
 
@@ -191,7 +188,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 
 

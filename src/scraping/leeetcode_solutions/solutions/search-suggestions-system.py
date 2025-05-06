@@ -1,7 +1,6 @@
 # Time:  ctor: O(n * l), n is the number of products
 #                      , l is the average length of product name
 #        suggest: O(l^2)
-# Space: O(t), t is the number of nodes in trie
 
 import collections
 
@@ -48,7 +47,6 @@ class Solution(object):
 # Time:  ctor: O(n * l * log(n * l)), n is the number of products
 #                                   , l is the average length of product name
 #        suggest: O(l^2)
-# Space: O(t), t is the number of nodes in trie
 class TrieNode2(object):
 
     def __init__(self):
@@ -91,7 +89,6 @@ class Solution2(object):
 # Time:  ctor: O(n * l * log(n * l)), n is the number of products
 #                                   , l is the average length of product name
 #        suggest: O(l^2 * n)
-# Space: O(n * l)
 import bisect
 
 

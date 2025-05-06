@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class BIT(object):  # 0-indexed.
     def __init__(self, n):

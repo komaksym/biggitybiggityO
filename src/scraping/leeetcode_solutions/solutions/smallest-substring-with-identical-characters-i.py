@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # binary search, greedy
 class Solution(object):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # binary search, greedy
 class Solution2(object):
     def minLength(self, s, numOps):

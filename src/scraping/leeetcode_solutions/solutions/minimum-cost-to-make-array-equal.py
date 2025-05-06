@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import itertools
 
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 
 
@@ -64,7 +62,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # prefix sum
 class Solution3(object):
     def minCost(self, nums, cost):

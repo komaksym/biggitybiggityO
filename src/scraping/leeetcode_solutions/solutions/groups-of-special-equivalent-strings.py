@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(n)
 
 class Solution(object):
     def numSpecialEquivGroups(self, A):

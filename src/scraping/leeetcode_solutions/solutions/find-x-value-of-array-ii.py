@@ -1,5 +1,4 @@
 # Time:  O(n * k + q * k * logn)
-# Space: O(n * k)
 
 # segment tree
 class Solution(object):

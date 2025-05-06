@@ -1,5 +1,4 @@
 # Time:  O(n), n is the length of key
-# Space: O(t), t is the number of nodes in trie
 
 import collections
 

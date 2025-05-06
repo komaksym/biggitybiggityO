@@ -1,6 +1,5 @@
 # Time:  precompute: O(max(m * n))
 #        runtime:    O(1)
-# Space: O(max(m * n))
 
 # combinatorics
 MOD = 10**9+7

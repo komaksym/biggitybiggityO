@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # Monotone Chain Algorithm
 # Template: https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain#Python

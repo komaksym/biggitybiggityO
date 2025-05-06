@@ -1,5 +1,4 @@
 # Time:  O(w * b * 2^b)
-# Space: O(b * 2^b)
 
 # if w = b, we can even apply Hungarian algorithm (see https://en.wikipedia.org/wiki/Hungarian_algorithm),
 # it can be improved to O(w^3), see https://github.com/t3nsor/codebook/blob/master/bipartite-mincost.cpp
@@ -29,7 +28,6 @@ class Solution(object):  # this is slower than Solution2 in python
 
 
 # Time:  O((w * b * 2^b) * log(w * b * 2^b))
-# Space: O(w * b * 2^b)
 import heapq
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(t), t is the number of nodes in trie
 
 import collections
 import string
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(t), t is the number of nodes in trie
 import collections
 import string
 

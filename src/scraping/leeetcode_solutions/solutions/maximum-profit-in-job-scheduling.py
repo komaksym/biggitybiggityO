@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import itertools
 import bisect
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import heapq
 class Solution(object):
     def jobScheduling(self, startTime, endTime, profit):

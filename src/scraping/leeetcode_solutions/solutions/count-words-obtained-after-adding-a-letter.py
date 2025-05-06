@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def wordCount(self, startWords, targetWords):

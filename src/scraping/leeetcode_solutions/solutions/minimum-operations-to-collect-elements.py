@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k)
 
 # hash table
 class Solution(object):

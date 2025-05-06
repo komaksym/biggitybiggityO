@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(1)
 
 import collections
 
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * p)
-# Space: O(n^2 * p)
 # Hash solution. (224ms)
 class Solution2(object):
     def fourSum(self, nums, target):
@@ -73,7 +71,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * p) ~ O(n^4)
-# Space: O(n^2)
 class Solution3(object):
     def fourSum(self, nums, target):
         """

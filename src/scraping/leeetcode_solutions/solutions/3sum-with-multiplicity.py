@@ -1,5 +1,4 @@
 # Time:  O(n^2), n is the number of disctinct A[i]
-# Space: O(n)
 
 import collections
 import itertools

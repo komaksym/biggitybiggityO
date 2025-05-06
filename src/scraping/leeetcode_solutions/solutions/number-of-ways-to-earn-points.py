@@ -1,5 +1,4 @@
 # Time:  O(n * t * c)
-# Space: O(t)
 
 # knapsack dp
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n * t * c)
-# Space: O(t)
 # knapsack dp
 class Solution2(object):
     def waysToReachTarget(self, target, types):

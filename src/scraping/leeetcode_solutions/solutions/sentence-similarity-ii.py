@@ -1,5 +1,4 @@
 # Time:  O(n + p)
-# Space: O(p)
 
 import itertools
 

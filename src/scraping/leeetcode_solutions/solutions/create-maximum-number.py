@@ -1,5 +1,4 @@
 # Time:  O(k * (m + n + k)) ~ O(k * (m + n + k^2))
-# Space: O(m + n + k^2)
 
 class Solution(object):
     def maxNumber(self, nums1, nums2, k):

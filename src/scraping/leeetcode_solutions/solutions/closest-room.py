@@ -1,5 +1,4 @@
 # Time:  O(nlogn + klogk + klogn)
-# Space: O(n + k)
 
 from sortedcontainers import SortedList
 
@@ -38,7 +37,6 @@ class Solution(object):
 
     
 # Time:  O(nlogn + klogk + klogn)
-# Space: O(n + k)
 from sortedcontainers import SortedList
 
 

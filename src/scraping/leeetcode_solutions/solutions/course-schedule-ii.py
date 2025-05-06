@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 
 import collections
 
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 import collections
 
 
@@ -62,7 +60,6 @@ class Solution2(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 import collections
 
 
@@ -97,7 +94,6 @@ class Solution3(object):
 
     
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 import collections
 
 

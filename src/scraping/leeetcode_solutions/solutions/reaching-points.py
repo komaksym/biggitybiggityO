@@ -1,5 +1,4 @@
 # Time:  O(log(max(m, n)))
-# Space: O(1)
 
 class Solution(object):
     def reachingPoints(self, sx, sy, tx, ty):

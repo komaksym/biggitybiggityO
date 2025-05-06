@@ -2,7 +2,6 @@
 #        birth:   O(1)
 #        death:   O(1)
 #        inherit: O(n)
-# Space: O(n)
 
 import collections
 

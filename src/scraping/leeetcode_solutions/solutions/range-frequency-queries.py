@@ -1,6 +1,5 @@
 # Time:  ctor:  O(n)
 #        query: O(logn)
-# Space: O(n)
 
 import collections
 import bisect

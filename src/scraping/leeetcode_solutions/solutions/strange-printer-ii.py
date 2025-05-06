@@ -1,6 +1,5 @@
 # Time:  O(c * m * n + e), c is the number of colors
 #                        , e is the number of edges in adj, at most O(c^2)
-# Space: O(e)
 
 import collections
 
@@ -49,7 +48,6 @@ class Solution(object):
 
 # Time:  O(c * m * n + e), c is the number of colors
 #                        , e is the number of edges in adj, at most O(c^2)
-# Space: O(e)
 class Solution2(object):
     def isPrintable(self, targetGrid):
         """

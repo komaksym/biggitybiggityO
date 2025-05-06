@@ -1,5 +1,4 @@
 # Time:  O(n * l^4)
-# Space: O(n * l^2 + min(n * l^4, n^2)) = O(n * l^4)
 
 import collections
 
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(n * l^(2 * k)) = O(n * l^4)
-# Space: O(n + l^(2 * k)) = O(n + l^4) = O(n)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(p), p is the number of paths
 
 import collections
 

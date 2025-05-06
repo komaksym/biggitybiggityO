@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(h), h is height of binary tree
 
 class TreeNode(object):
     def __init__(self, x):

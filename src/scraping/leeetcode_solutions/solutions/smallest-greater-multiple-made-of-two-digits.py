@@ -1,5 +1,4 @@
 # Time:  sum(O(l * 2^l) for l in range(1, 11)) = O(20 * 2^10) = O(1)
-# Space: O(1)
 
 class Solution(object):
     def findInteger(self, k, digit1, digit2):

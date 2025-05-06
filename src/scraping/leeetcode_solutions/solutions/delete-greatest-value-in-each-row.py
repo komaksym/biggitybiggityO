@@ -1,5 +1,4 @@
 # Time:  O(m * nlogn)
-# Space: O(1)
 
 # array
 class Solution(object):

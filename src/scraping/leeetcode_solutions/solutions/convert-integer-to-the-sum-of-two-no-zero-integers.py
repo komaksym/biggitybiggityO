@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 class Solution(object):
     def getNoZeroIntegers(self, n):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(logn)
 class Solution2(object):
     def getNoZeroIntegers(self, n):
         """

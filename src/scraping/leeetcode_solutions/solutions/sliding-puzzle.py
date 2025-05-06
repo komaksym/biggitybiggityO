@@ -1,5 +1,4 @@
 # Time:  O((m * n) * (m * n)!)
-# Space: O((m * n) * (m * n)!)
 
 import heapq
 import itertools
@@ -62,7 +61,6 @@ class Solution(object):
 
 
 # Time:  O((m * n) * (m * n)! * log((m * n)!))
-# Space: O((m * n) * (m * n)!)
 # A* Search Algorithm
 class Solution2(object):
     def slidingPuzzle(self, board):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(logn)
 
 class TreeNode(object):
     def __init__(self, x):

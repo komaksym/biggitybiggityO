@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import itertools
 
@@ -29,7 +28,6 @@ class Solution(object):
         return 0
 
 # Time:  O(n)
-# Space: O(n)
 
 
 class Solution2(object):

@@ -1,5 +1,4 @@
 # Time:  O(n^6)
-# Space: O(n^3)
 
 import collections
 
@@ -51,7 +50,6 @@ class Solution(object):
     
 
 # Time:  O(n * 2^n)
-# Space: O(n)
 import collections
 import math
 

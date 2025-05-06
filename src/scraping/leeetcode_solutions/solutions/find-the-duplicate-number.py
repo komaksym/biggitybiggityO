@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def findDuplicate(self, nums):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # Binary search method.
 class Solution2(object):
     def findDuplicate(self, nums):
@@ -49,7 +47,6 @@ class Solution2(object):
         return left
 
 # Time:  O(n)
-# Space: O(n)
 class Solution3(object):
     def findDuplicate(self, nums):
         """

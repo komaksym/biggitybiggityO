@@ -1,5 +1,4 @@
 # Time:  O(klogn), k = len(set(nums))
-# Space: O(1)
 
 # Definition for BigArray.
 class BigArray:

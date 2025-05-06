@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(logn)
 
 class Solution(object):
     # @param {integer} n

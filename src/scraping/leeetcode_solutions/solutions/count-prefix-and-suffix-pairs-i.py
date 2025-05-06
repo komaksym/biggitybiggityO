@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(t)
 
 import collections
 
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * l)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def countPrefixSuffixPairs(self, words):

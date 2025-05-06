@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(n * m)
 
 # dp
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n * m * l)
-# Space: O(n * m)
 # dp
 class Solution2(object):
     def numberOfStableArrays(self, zero, one, limit):

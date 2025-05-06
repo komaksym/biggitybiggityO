@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2)
 
 class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
     def __init__(self, n):
@@ -73,7 +72,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * logn)
-# Space: O(n^2)
 import heapq
 
 
@@ -123,7 +121,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * logn)
-# Space: O(n^2)
 import heapq
 
 

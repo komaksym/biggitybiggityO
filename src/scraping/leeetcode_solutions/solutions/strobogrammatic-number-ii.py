@@ -1,5 +1,4 @@
 # Time:  O(n * 5^(n/2))
-# Space: O(n)
 
 class Solution(object):
     def findStrobogrammatic(self, n):
@@ -15,7 +14,6 @@ class Solution(object):
 
 
 # Time:  O(n * 5^(n/2))
-# Space: O(n)
 class Solution2(object):
     def findStrobogrammatic(self, n):
         """

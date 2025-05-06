@@ -1,5 +1,4 @@
 # Time:  O(C(n, c)), try out all possible substrings with the minimum c deletion.
-# Space: O(c), the depth is at most c, and it costs n at each depth
 
 class Solution(object):
     def removeInvalidParentheses(self, s):

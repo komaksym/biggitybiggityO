@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(logn)
 
 # combinatorics
 class Solution(object):

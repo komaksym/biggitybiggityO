@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class Solution(object):
     def findBottomLeftValue(self, root):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O()
 import collections
 
 

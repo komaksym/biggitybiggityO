@@ -1,5 +1,4 @@
 # Time:  O(nlog(logm)), n the length of nums, m is the max value of nums
-# Space: O(logm)
 
 import bisect
 
@@ -26,7 +25,6 @@ class Solution(object):
     
 
 # Time:  O(nlogm), n the length of nums, m is the max value of nums
-# Space: O(logm)
 class Solution2(object):
     def findNumbers(self, nums):
         """
@@ -44,7 +42,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogm), n the length of nums, m is the max value of nums
-# Space: O(logm)
 class Solution3(object):
     def findNumbers(self, nums):
         """

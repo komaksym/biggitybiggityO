@@ -1,5 +1,4 @@
 # Time:  O(n), per operation
-# Space: O(1)
 
 class TrieNode(object):
     # Initialize your data structure here.

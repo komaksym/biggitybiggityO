@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # freq table, contructive algorithms
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
   
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sort, greedy, two pointers
 class Solution2(object):
     def maximizeGreatness(self, nums):

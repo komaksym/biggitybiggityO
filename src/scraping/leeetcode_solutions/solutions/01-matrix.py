@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(1)
 
 # dp solution
 class Solution(object):
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # dp solution
 class Solution2(object):
     def updateMatrix(self, matrix):
@@ -60,7 +58,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 import collections
 
 

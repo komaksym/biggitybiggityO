@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(n * m)
 
 # dp
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n * m)
-# Space: O(n * m)
 # dp
 class Solution2(object):
     def numberOfSubmatrices(self, grid):

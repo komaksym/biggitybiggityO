@@ -1,5 +1,4 @@
 # Time:  O((n + m) * log(min(n, m)))
-# Space: O(min(n, m))
 
 # binary search, rolling hash
 class Solution(object):
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(n * m)
-# Space: O(1)
 # dp
 class Solution2(object):
     def minOperations(self, initial, target):
@@ -65,7 +63,6 @@ class Solution2(object):
 
 
 # Time:  O(n * m)
-# Space: O(min(n, m))
 # dp
 class Solution3(object):
     def minOperations(self, initial, target):

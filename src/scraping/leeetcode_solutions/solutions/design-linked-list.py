@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Node(object):
     def __init__(self, value):

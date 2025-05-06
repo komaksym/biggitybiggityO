@@ -1,5 +1,4 @@
 # Time:  O(k), per operation
-# Space: O(k)
 
 import itertools
 
@@ -30,7 +29,6 @@ class CombinationIterator(object):
 
 
 # Time:  O(k), per operation
-# Space: O(k)
 import functools
 
 

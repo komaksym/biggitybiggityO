@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 class Solution(object):
     # @return a list of integers
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution2(object):
     # @return a list of integers
     def getRow(self, rowIndex):

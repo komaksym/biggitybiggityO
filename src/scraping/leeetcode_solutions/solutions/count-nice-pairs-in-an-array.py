@@ -1,5 +1,4 @@
 # Time:  O(nlogm), m is max of nums
-# Space: O(n)
 
 import collections
 

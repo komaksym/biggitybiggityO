@@ -1,5 +1,4 @@
 # Time:  O(n + l)
-# Space: O(h + l)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -57,7 +56,6 @@ class Solution(object):
     
 
 # Time:  O(n * min(h, l))
-# Space: O(h)
 # dfs solution
 class Solution2(object):
     def isSubPath(self, head, root):

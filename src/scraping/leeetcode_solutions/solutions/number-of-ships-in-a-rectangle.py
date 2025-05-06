@@ -1,5 +1,4 @@
 # Time:  O(s * log(m * n)), s is the max number of ships, which is 10 in this problem
-# Space: O(log(m * n))
 
 # """
 # This is Sea's API interface.

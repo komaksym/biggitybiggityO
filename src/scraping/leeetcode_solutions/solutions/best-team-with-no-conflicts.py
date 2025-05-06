@@ -1,5 +1,4 @@
 # Time:  O(nloga)
-# Space: O(n)
 
 # Range Maximum Query
 class SegmentTree(object):  # 0-based index
@@ -100,7 +99,6 @@ class Solution(object):
 
 
 # Time:  O(nlogs)
-# Space: O(n)
 # optimized from Solution4
 class Solution2(object):
     def bestTeamScore(self, scores, ages):
@@ -120,7 +118,6 @@ class Solution2(object):
  
 
 # Time:  O(n * a)
-# Space: O(n)
 import collections
 
 
@@ -142,7 +139,6 @@ class Solution3(object):
 
 
 # Time:  O(n * s)
-# Space: O(n)
 import collections
 
 
@@ -164,7 +160,6 @@ class Solution4(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # longest_increasing_subsequence like dp solution
 class Solution5(object):
     def bestTeamScore(self, scores, ages):
@@ -186,7 +181,6 @@ class Solution5(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # longest_increasing_subsequence like dp solution
 class Solution6(object):
     def bestTeamScore(self, scores, ages):

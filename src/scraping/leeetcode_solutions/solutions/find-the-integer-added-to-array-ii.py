@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import heapq
 import collections
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 
 
@@ -53,7 +51,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sort
 class Solution3(object):
     def minimumAddedInteger(self, nums1, nums2):

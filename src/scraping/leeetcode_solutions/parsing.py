@@ -28,7 +28,6 @@ def parse_data(files_path, files):
         label_matches = re.findall(LABELS_PATTERN, file)
 
         if len(code_matches) != len(label_matches):
-            #pdb.set_trace()
             corrupted_data.append(path)
             continue
 
@@ -40,11 +39,9 @@ def parse_data(files_path, files):
             parsed_data['code'].append(code)
 
 
-
 CODES_PATTERN = set_regex_pattern(r"(?:^#\s?Space.*?\n+?)(class.*?)((?:\n^#\s?Time)(?:)|(?:\Z))", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 LABELS_PATTERN = set_regex_pattern(r"^#\s*Time.*?\bO\(([^()]+(?:\([^()]*\)[^()]*)*)\)", flags=re.IGNORECASE | re.MULTILINE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-
 
 raw_data = search_files(files_path)
 parse_data(raw_data['file_paths'], raw_data['files'])

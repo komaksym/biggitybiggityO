@@ -1,5 +1,4 @@
 # Time:  O(m * 2^m)
-# Space: O(2^m)
 
 # bitmasks, knapsack dp
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(m * 2^m)
-# Space: O(2^m)
 # bitmasks, bfs
 class Solution2(object):
     def maxHammingDistances(self, nums, m):

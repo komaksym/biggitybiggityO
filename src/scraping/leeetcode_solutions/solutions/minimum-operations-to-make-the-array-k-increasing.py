@@ -1,5 +1,4 @@
 # Time:  O(k * (n/k)log(n/k)) = O(nlog(n/k))
-# Space: O(n/k)
 
 import bisect
 

@@ -1,5 +1,4 @@
 # Time:  O(n), n is the total length of word1 and word2
-# Space: O(1)
 
 class Solution(object):
     def arrayStringsAreEqual(self, word1, word2):

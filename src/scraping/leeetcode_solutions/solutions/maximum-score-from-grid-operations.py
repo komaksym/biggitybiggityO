@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n)
 
 # prefix sum, dp
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
     
 
 # Time:  O(n^3)
-# Space: O(n)
 # prefix sum, dp
 class Solution2(object):
     def maximumScore(self, grid):

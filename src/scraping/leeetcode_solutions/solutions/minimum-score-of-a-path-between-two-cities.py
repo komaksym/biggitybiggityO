@@ -1,5 +1,4 @@
 # Time:  O(n + m), m = len(roads)
-# Space: O(n + m)
 
 # bfs
 class Solution(object):

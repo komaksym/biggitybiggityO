@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # observation:
 # i*(i-1)/(i-2) = i+1+2/(i-2)

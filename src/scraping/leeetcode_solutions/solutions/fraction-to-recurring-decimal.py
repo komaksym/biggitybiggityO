@@ -1,5 +1,4 @@
 # Time:  O(logn), where logn is the length of result strings
-# Space: O(1)
 
 class Solution(object):
     def fractionToDecimal(self, numerator, denominator):

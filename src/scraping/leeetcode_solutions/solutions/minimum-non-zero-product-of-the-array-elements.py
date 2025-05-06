@@ -1,5 +1,4 @@
 # Time:  O(min(p, logM))
-# Space: O(1)
 
 class Solution(object):
     def minNonZeroProduct(self, p):

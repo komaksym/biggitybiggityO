@@ -1,6 +1,5 @@
 # Time:  O(mlogm + nlogn), m is the number of workers,
 #                        , n is the number of jobs
-# Space: O(n)
 
 class Solution(object):
     def maxProfitAssignment(self, difficulty, profit, worker):

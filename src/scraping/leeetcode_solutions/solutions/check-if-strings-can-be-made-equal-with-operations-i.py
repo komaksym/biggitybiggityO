@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 import collections
 
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def canBeEqual(self, s1, s2):

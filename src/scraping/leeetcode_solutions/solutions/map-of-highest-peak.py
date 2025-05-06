@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n)
 
 class Solution(object):
     def highestPeak(self, isWater):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 class Solution2(object):
     def highestPeak(self, isWater):
         """

@@ -1,6 +1,5 @@
 # Time:  O(p*l * log(p*l)), p is the production of all number of options
 #                         , l is the length of a word
-# Space: O(p*l)
 
 import itertools
 

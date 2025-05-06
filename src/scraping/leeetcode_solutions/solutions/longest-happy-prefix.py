@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # kmp solution
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n) on average
-# Space: O(1)
 # rolling-hash solution
 class Solution2(object):
     def longestPrefix(self, s):

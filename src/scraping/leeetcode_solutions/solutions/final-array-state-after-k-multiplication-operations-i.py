@@ -1,5 +1,4 @@
 # Time:  O(n + (n + logr) + nlog(logr) + nlogn) = O(nlogn), assumed log(x) takes O(1) time
-# Space: O(n)
 
 import math
 
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(n + min(n, k) * log(logr) + nlog(logr) + nlogn) = O(nlogr), assumed log(x) takes O(1) time
-# Space: O(n)
 import math
 
 
@@ -96,7 +94,6 @@ class Solution2(object):
 
 
 # Time:  O(min(nlogr, k) * logn + nlogn) = O(nlogn * logr)
-# Space: O(n)
 import heapq
 
 
@@ -131,7 +128,6 @@ class Solution3(object):
 
 
 # Time:  O(n + klogn)
-# Space: O(n)
 import heapq
 
 
@@ -156,7 +152,6 @@ class Solution4(object):
 
 
 # Time:  O(k * n)
-# Space: O(1)
 # simulation
 class Solution5(object):
     def getFinalState(self, nums, k, multiplier):

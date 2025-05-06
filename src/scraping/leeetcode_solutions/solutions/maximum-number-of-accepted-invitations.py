@@ -1,10 +1,8 @@
 # Time:  O(m * n * sqrt(m + n))
-# Space: O(m * n)
 
 from functools import partial
 
 # Time:  O(E * sqrt(V))
-# Space: O(V)
 # Source code from http://code.activestate.com/recipes/123641-hopcroft-karp-bipartite-matching/
 # Hopcroft-Karp bipartite max-cardinality matching and max independent set
 # David Eppstein, UC Irvine, 27 Apr 2002
@@ -137,7 +135,6 @@ class Solution(object):
 
 
 # Time:  O(|V| * |E|) = O(min(m, n) * (m * n))
-# Space: O(|V|) = O(min(m, n))
 # Hungarian bipartite matching with less space
 class Solution2(object):
     def maximumInvitations(self, grid):
@@ -167,7 +164,6 @@ class Solution2(object):
 
 
 # Time:  O(|V| * |E|) = O(min(m, n) * (m * n))
-# Space: O(|E|) = O(m * n)
 import collections
 
 

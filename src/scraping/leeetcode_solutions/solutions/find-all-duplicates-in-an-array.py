@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def findDuplicates(self, nums):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def findDuplicates(self, nums):
         """
@@ -39,7 +37,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n), this doesn't satisfy the question
 from collections import Counter
 class Solution3(object):
     def findDuplicates(self, nums):

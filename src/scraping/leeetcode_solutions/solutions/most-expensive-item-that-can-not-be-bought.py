@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # Chicken McNugget Theorem
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(p1 * p2)
-# Space: O(p1 + p2)
 # dp
 class Solution2(object):
     def mostExpensiveItem(self, primeOne, primeTwo):

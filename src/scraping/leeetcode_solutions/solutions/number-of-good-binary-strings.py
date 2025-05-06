@@ -1,5 +1,4 @@
 # Time:  O(n), n = maxLength
-# Space: O(w), w = max(oneGroup, zeroGroup)+1
 
 # dp
 class Solution(object):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n), n = maxLength
-# Space: O(w), w = max(oneGroup, zeroGroup)+1
 # dp
 class Solution(object):
     def goodBinaryStrings(self, minLength, maxLength, oneGroup, zeroGroup):

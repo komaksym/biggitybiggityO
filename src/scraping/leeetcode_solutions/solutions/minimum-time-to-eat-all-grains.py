@@ -1,5 +1,4 @@
 # Time:  O(mlogm + nlogn + (m + n) * logr), r = 2*(max(max(hens), max(grains))-min(min(hens), min(grains))
-# Space: O(1)
 
 # binary search, greedy
 class Solution(object):

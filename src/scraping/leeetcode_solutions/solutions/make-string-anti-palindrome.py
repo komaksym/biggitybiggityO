@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(26)
 
 # counting sort, greedy
 class Solution(object):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n + 26)
-# Space: O(26)
 # counting sort, greedy, two pointers
 class Solution2(object):
     def makeAntiPalindrome(self, s):
@@ -48,7 +46,6 @@ class Solution2(object):
     
 
 # Time:  O(n * 26)
-# Space: O(26)
 # freq table, greedy
 class Solution3(object):
     def makeAntiPalindrome(self, s):

@@ -2,7 +2,6 @@
 #        setCell:       O(logn)
 #        unsetCell:     O(logn)
 #        largestMatrix: O(logn)
-# Space: O(n^3)
 
 import collections
 from sortedcontainers import SortedList
@@ -73,7 +72,6 @@ class Matrix3D(object):
 #        setCell:       O(logn)
 #        unsetCell:     O(logn)
 #        largestMatrix: O(logn) on average
-# Space: O(n^3)
 import collections
 import heapq
 

@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m)
 
 import itertools
 import collections
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 class Solution2(object):
     def findDiagonalOrder(self, nums):
         """

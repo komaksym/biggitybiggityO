@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort, line sweep, coordinate compression
 class Solution(object):
@@ -26,7 +25,6 @@ class Solution(object):
     
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort, line sweep
 class Solution2(object):
     def maxIntersectionCount(self, y):

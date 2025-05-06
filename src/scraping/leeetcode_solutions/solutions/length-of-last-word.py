@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     # @param s, a string
@@ -15,7 +14,6 @@ class Solution(object):
         return length
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     # @param s, a string
     # @return an integer

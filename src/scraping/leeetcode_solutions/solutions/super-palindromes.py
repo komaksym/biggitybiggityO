@@ -1,5 +1,4 @@
 # Time:  O(n^0.25 * logn)
-# Space: O(logn)
 
 class Solution(object):
     def superpalindromesInRange(self, L, R):

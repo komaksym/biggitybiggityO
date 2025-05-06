@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # bfs
 class Solution(object):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # bfs
 class Solution2(object):
     def lastMarkedNodes(self, edges):
@@ -95,7 +93,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # bfs
 class Solution3(object):
     def lastMarkedNodes(self, edges):
@@ -150,7 +147,6 @@ class Solution3(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # iterative dfs, tree dp
 class Solution4(object):
     def lastMarkedNodes(self, edges):
@@ -208,7 +204,6 @@ class Solution4(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dfs, tree dp
 class Solution5(object):
     def lastMarkedNodes(self, edges):

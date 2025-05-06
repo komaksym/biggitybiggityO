@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # iterative dfs
 class Solution(object):
@@ -41,7 +40,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # bfs
 class Solution2(object):
     def canReachCorner(self, X, Y, circles):
@@ -84,7 +82,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # iterative dfs
 class Solution3(object):
     def canReachCorner(self, X, Y, circles):
@@ -131,7 +128,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # bfs
 class Solution4(object):
     def canReachCorner(self, X, Y, circles):
@@ -178,7 +174,6 @@ class Solution4(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # union find
 class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
     def __init__(self, n):

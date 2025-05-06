@@ -1,5 +1,4 @@
 # Time:  O(n) on average, using Median of Medians could achieve O(n) (Intro Select)
-# Space: O(n)
 
 import random
 
@@ -72,7 +71,6 @@ class Solution(object):
 
 
 # Time:  O(k * n)
-# Space: O(k)
 class Solution2(object):
     def maxProfit(self, k, prices):
         """

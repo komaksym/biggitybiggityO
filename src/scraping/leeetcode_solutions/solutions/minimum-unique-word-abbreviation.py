@@ -1,5 +1,4 @@
 # Time:  O((d + n) * 2^n)
-# Space: O(d)
 
 # optimized from Solution2
 class Solution(object):
@@ -54,7 +53,6 @@ class Solution(object):
     
 
 # Time:  O((d + n) * 2^n)
-# Space: O(d + n)
 class Solution2(object):
     def minAbbreviation(self, target, dictionary):
         """

@@ -1,6 +1,5 @@
 # Time:  O(n^1.5) on average
 #        O(n^2) on worst
-# Space: O(n)
 
 import collections
 
@@ -36,7 +35,6 @@ class Solution(object):
  
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution2(object):
     def minAreaRect(self, points):
         """

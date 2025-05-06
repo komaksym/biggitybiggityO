@@ -1,5 +1,4 @@
 # Time:  O(l * nlogn)
-# Space: O(n)
 
 # sort, sliding window, prefix sum
 class Solution(object):
@@ -40,7 +39,6 @@ class Solution(object):
         
 
 # Time:  O(n * l)
-# Space: O(t)
 # trie
 class Solution2(object):
     def longestCommonPrefix(self, words, k):
@@ -87,7 +85,6 @@ class Solution2(object):
 
 
 # Time:  O(n * l)
-# Space: O(t)
 # trie
 class Solution_TLE(object):
     def longestCommonPrefix(self, words, k):

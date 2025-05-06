@@ -1,7 +1,6 @@
 # Time:  O(k * n^k + d), n is the number of alphabets,
 #                        k is the length of target,
 #                        d is the size of deadends
-# Space: O(k * n^k + d)
 
 class Solution(object):
     def openLock(self, deadends, target):

@@ -1,6 +1,5 @@
 # Time:  precompute:  O(sqrt(r))
 #        runtime:     O(logr + log(sqrt(r))) = O(logr)
-# Space: O(sqrt(r))
 
 import bisect
 

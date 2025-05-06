@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n), the max depth of dfs may be m * n
 
 class Solution(object):
     def maxAreaOfIsland(self, grid):

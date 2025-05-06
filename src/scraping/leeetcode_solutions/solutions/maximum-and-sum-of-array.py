@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n^2)
 
 # weighted bipartite matching solution
 class Solution(object):
@@ -53,7 +52,6 @@ class Solution(object):
 
 
 # Time:  O(n^3)
-# Space: O(n^2)
 from scipy.optimize import linear_sum_assignment as hungarian
 import itertools
 
@@ -71,7 +69,6 @@ class Solution2(object):
 
 
 # Time:  O(n * 3^n)
-# Space: O(3^n)
 # bottom-up dp (hard to implement but faster)
 class Solution3(object):
     def maximumANDSum(self, nums, numSlots):
@@ -100,7 +97,6 @@ class Solution3(object):
 
 
 # Time:  O(n * 3^n)
-# Space: O(3^n)
 # memoization, top-down dp (easy to implement but slower)
 class Solution4(object):
     def maximumANDSum(self, nums, numSlots):

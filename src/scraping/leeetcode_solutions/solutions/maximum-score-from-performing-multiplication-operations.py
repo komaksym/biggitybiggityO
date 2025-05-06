@@ -1,5 +1,4 @@
 # Time:  O(m^2)
-# Space: O(m)
 
 class Solution(object):
     def maximumScore(self, nums, multipliers):

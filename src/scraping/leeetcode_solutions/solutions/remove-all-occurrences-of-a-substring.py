@@ -1,5 +1,4 @@
 # Time:  O(n + m)
-# Space: O(n + m)
 
 # kmp solution
 class Solution(object):

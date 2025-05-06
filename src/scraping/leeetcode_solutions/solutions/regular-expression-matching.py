@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(n)
 
 class Solution(object):
     # @return a boolean
@@ -25,7 +24,6 @@ class Solution(object):
 
 # dp
 # Time:  O(m * n)
-# Space: O(m * n)
 class Solution2(object):
     # @return a boolean
     def isMatch(self, s, p):

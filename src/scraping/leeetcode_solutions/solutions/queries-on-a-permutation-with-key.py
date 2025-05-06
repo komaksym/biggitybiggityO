@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class BIT(object):  # Fenwick Tree, 1-indexed
     def __init__(self, n):

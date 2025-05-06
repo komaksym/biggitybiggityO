@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class Solution(object):
     def averageHeightOfBuildings(self, buildings):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import collections
 
 

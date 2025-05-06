@@ -1,5 +1,4 @@
 # Time:  O(|V|^2 + |V| * |E|)
-# Space: O(|V| + |E|)
 
 # bfs solution
 class Solution(object):
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(|V|^2 + |V| * |E|)
-# Space: O(|V| + |E|)
 # dfs solution
 class Solution2(object):
     def maximumDetonation(self, bombs):

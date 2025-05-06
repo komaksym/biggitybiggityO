@@ -1,5 +1,4 @@
 # Time:  O(n + m)
-# Space: O(n + m)
 
 # kmp, two pointers (three pointers)
 class Solution(object):
@@ -58,7 +57,6 @@ class Solution(object):
             
 
 # Time:  O(n + m)
-# Space: O(n + m)
 # kmp, two pointers (three pointers)
 class Solution2(object):
     def shortestMatchingSubstring(self, s, p):

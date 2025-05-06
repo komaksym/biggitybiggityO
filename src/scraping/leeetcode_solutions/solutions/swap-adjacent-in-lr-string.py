@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # the followings are invariant if the number of 'X' in both strings are the same
 # 1. the ordering of 'L', 'R' in both strings are the same

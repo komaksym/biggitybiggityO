@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(n)
 
 # dp with rolling window
 class Solution(object):

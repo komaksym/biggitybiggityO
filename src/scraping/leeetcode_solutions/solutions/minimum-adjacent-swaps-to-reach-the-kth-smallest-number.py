@@ -1,5 +1,4 @@
 # Time:  O((k + n) * n)
-# Space: O(n)
 
 class Solution(object):
     def getMinSwaps(self, num, k):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # string
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # string
 class Solution2(object):
     def largestGoodInteger(self, num):

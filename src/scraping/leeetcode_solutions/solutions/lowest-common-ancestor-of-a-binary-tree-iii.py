@@ -1,5 +1,4 @@
 # Time:  O(h)
-# Space: O(1)
 
 # Definition for a Node.
 class Node:
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(h)
-# Space: O(1)
 class Solution2(object):
     def lowestCommonAncestor(self, p, q):
         """

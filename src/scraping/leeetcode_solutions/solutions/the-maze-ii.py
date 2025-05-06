@@ -1,5 +1,4 @@
 # Time:  O(max(r, c) * wlogw)
-# Space: O(w)
 
 import heapq
 

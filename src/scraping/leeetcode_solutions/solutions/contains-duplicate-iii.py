@@ -1,5 +1,4 @@
 # Time:  O(n * t)
-# Space: O(max(k, t))
 
 import collections
 

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import itertools
 import heapq

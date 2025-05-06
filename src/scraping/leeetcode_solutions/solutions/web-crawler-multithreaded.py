@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|V|)
 
 import threading
 import queue
@@ -70,7 +69,6 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|V|)
 import threading
 import collections
 

@@ -6,7 +6,6 @@
 #        one:      O(1)
 #        count:    O(1)
 #        toString: O(n)
-# Space: O(n)
 
 # design
 class Bitset(object):

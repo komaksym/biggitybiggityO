@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # stars and bars, combinatorics, principle of inclusion-exclusion 
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # optimized brute force
 class Solution2(object):
     def distributeCandies(self, n, limit):

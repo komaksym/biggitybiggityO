@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def areSentencesSimilar(self, sentence1, sentence2):

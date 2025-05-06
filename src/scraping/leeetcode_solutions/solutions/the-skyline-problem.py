@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 start, end, height = 0, 1, 2
 class Solution(object):

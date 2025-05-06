@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 class Solution(object):
     # @param {character[][]} matrix
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # DP.
 class Solution2(object):
     # @param {character[][]} matrix
@@ -71,7 +69,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # DP.
 class Solution3(object):
     # @param {character[][]} matrix

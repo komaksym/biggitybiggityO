@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # Definition for singly-linked list.
 class ListNode(object):

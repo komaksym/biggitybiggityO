@@ -1,5 +1,4 @@
 # Time:  O(n * 4^n / n^(3/2)) ~= sum of Catalan numbers from 1 .. N
-# Space: O(n * 4^n / n^(3/2)) ~= sum of Catalan numbers from 1 .. N
 
 class TreeNode(object):
     def __init__(self, x):

@@ -1,5 +1,4 @@
 # Time:  O((n - w + 1)^2 * w^2)
-# Space: O(1)
 
 import collections
 

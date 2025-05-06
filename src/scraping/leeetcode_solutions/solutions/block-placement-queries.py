@@ -1,5 +1,4 @@
 # Time:  O(qlogq)
-# Space: O(q)
 
 from sortedcontainers import SortedList
 
@@ -50,7 +49,6 @@ class Solution(object):
 
 
 # Time:  O(qlogq)
-# Space: O(q)
 from sortedcontainers import SortedList
 
 

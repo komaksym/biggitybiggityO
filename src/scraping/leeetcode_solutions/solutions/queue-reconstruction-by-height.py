@@ -1,5 +1,4 @@
 # Time:  O(n * sqrt(n))
-# Space: O(n)
 
 class Solution(object):
     def reconstructQueue(self, people):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution2(object):
     def reconstructQueue(self, people):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(10) = O(1)
 
 import operator
 

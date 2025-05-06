@@ -1,5 +1,4 @@
 # Time:  O(k * n^2)
-# Space: O(n^2)
 
 class Solution(object):
     def palindromePartition(self, s, k):

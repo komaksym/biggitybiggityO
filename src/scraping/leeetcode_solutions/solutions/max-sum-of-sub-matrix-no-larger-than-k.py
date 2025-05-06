@@ -1,5 +1,4 @@
 # Time:  O(min(m, n)^2 * max(m, n) * log(max(m, n)))
-# Space: O(max(m, n))
 
 from bisect import bisect_left, insort
 
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(min(m, n)^2 * max(m, n) * log(max(m, n))) ~ O(min(m, n)^2 * max(m, n)^2)
-# Space: O(max(m, n))
 class Solution_TLE(object):
     def maxSumSubmatrix(self, matrix, k):
         """

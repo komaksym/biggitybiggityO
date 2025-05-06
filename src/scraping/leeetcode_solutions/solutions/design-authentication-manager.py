@@ -2,7 +2,6 @@
 #        generate: O(1), amortized
 #        renew:    O(1), amortized
 #        count:    O(1), amortized
-# Space: O(n)
 
 import collections
 

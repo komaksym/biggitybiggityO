@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # bitmasks, hash table
 class Solution(object):

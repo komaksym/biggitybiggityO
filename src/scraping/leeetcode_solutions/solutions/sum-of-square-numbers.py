@@ -1,5 +1,4 @@
 # Time:  O(sqrt(c) * logc)
-# Space: O(1)
 
 import math
 

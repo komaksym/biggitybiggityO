@@ -1,5 +1,4 @@
 # Time:  O(sqrt(n))
-# Space: O(1)
 
 class Solution(object):
     def closestDivisors(self, num):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(sqrt(n))
-# Space: O(1)
 class Solution2(object):
     def closestDivisors(self, num):
         """

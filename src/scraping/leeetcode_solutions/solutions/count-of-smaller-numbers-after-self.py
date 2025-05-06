@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class Solution(object):
     def countSmaller(self, nums):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # BIT solution.
 class Solution2(object):
     def countSmaller(self, nums):
@@ -75,7 +73,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn) ~ O(n^2)
-# Space: O(n)
 # BST solution.
 class Solution3(object):
     def countSmaller(self, nums):

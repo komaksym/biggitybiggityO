@@ -1,5 +1,4 @@
 # Time:  O(n * 2^n)
-# Space: O(1)
 
 class Solution(object):
     def subsets(self, nums):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n * 2^n)
-# Space: O(1)
 class Solution2(object):
     def subsets(self, nums):
         """
@@ -41,7 +39,6 @@ class Solution2(object):
 
 
 # Time:  O(n * 2^n)
-# Space: O(1)
 class Solution3(object):
     def subsets(self, nums):
         """

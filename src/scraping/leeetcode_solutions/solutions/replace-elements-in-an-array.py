@@ -1,5 +1,4 @@
 # Time:  O(n + m)
-# Space: O(n)
 
 # hash table, optimized from solution2
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n + m)
-# Space: O(n)
 # hash table
 class Solution2(object):
     def arrayChange(self, nums, operations):

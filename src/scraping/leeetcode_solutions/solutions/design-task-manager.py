@@ -3,7 +3,6 @@
 #        edit:    O(logt)
 #        rmv:     O(logt)
 #        execTop: O(logt)
-# Space: O(t)
 
 from sortedcontainers import SortedList
 

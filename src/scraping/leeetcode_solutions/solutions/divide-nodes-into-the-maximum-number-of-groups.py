@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # iterative dfs, bfs
 class Solution(object):
@@ -59,7 +58,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # bfs
 class Solution2(object):
     def magnificentSets(self, n, edges):

@@ -1,5 +1,4 @@
 # Time:  O(n * n!)
-# Space: O(n)
 
 class Solution(object):
     def permuteUnique(self, nums):

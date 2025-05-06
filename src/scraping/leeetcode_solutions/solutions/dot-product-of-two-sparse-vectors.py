@@ -1,6 +1,5 @@
 # Time:  ctor: O(n)
 #        dot_product: O(min(n, m))
-# Space: O(n)
 
 class SparseVector:
     def __init__(self, nums):

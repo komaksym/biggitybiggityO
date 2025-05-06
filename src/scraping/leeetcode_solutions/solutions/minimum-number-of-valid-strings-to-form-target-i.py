@@ -1,5 +1,4 @@
 # Time:  O(n + w * l)
-# Space: O(n + w * l)
 
 # rolling hash, hash table, two pointers, sliding window, dp
 class Solution(object):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(n + w * l)
-# Space: O(n + t), t is the total size of ac automata trie
 import collections
 
 
@@ -118,7 +116,6 @@ class Solution2(object):
 
 
 # Time:  O(w * (l + n))
-# Space: O(l + n)
 # kmp, dp
 class Solution3(object):
     def minValidStrings(self, words, target):
@@ -165,7 +162,6 @@ class Solution3(object):
 
 
 # Time:  O(w * l + n * l)
-# Space: O(n + t), t is the total size of trie
 # trie, dp
 class Solution4(object):
     def minValidStrings(self, words, target):

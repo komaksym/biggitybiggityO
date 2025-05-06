@@ -1,7 +1,6 @@
 # Time:  ctor:        O(1)
 #        popSmallest: O(logn)
 #        addBack:     O(logn)
-# Space: O(n)
 
 import heapq
 

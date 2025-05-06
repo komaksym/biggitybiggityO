@@ -1,5 +1,4 @@
 # Time:  O(h)
-# Space: O(1)
 
 class Solution(object):
     def inorderSuccessor(self, root, p):

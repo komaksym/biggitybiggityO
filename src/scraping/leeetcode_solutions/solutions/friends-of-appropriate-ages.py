@@ -1,6 +1,5 @@
 # Time:  O(a^2 + n), a is the number of ages,
 #                    n is the number of people
-# Space: O(a)
 
 import collections
 

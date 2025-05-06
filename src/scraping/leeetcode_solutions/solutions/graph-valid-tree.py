@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|V| + |E|)
 
 import collections
 
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|V| + |E|)
 # BFS solution.
 class Solution2(object):
     # @param {integer} n

@@ -1,5 +1,4 @@
 # Time:  O(n * k)
-# Space: O(k * 2^k)
 
 class Solution(object):
     def hasAllCodes(self, s, k):
@@ -12,7 +11,6 @@ class Solution(object):
     
 
 # Time:  O(n * k)
-# Space: O(2^k)
 class Solution2(object):
     def hasAllCodes(self, s, k):
         """

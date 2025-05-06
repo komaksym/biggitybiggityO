@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # dp
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dp, kmp algorithm
 class Solution2(object):
     def deleteString(self, s):
@@ -52,7 +50,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dp, rolling hash
 class Solution3(object):
     def deleteString(self, s):

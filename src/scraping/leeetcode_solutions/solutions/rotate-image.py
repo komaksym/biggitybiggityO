@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 class Solution(object):
     # @param matrix, a list of lists of integers
@@ -20,7 +19,6 @@ class Solution(object):
         return matrix
 
 # Time:  O(n^2)
-# Space: O(n^2)
 class Solution2(object):
     # @param matrix, a list of lists of integers
     # @return a list of lists of integers

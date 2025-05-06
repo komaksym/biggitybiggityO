@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|V| + |E|)
 
 import collections
 
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|V| + |E|)
 # bfs solution
 class Solution2(object):
     def validPath(self, n, edges, start, end):
@@ -80,7 +78,6 @@ class Solution2(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|V| + |E|)
 # dfs solution
 class Solution3(object):
     def validPath(self, n, edges, start, end):

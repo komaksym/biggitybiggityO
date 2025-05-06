@@ -1,5 +1,4 @@
 # Time:  O(a^2 * n), a is the size of alphabets
-# Space: O(a)
 
 import itertools
 

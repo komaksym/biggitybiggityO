@@ -44,7 +44,7 @@ def parse_data(problem_name):
 
 
 CODES_PATTERN = set_regex_pattern(r"(?:^#\s?Space.*?\n+?)(class.*?)((?:\n^#\s?Time)(?:)|(?:\Z))", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-LABELS_PATTERN = set_regex_pattern(r"^#\s*Time.*?\bO\(([^()]+(?:\([^()]*\)[^()]*)*)\)", flags=re.IGNORECASE | re.MULTILINE)
+LABELS_PATTERN = set_regex_pattern(r"O\((?:[^()]+|\([^()]*\))*\)", flags=re.IGNORECASE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
 problem = "find-a-peak-element-ii.py"

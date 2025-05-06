@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 def read4(buf):
     global file_content

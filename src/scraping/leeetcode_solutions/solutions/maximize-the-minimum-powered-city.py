@@ -1,5 +1,4 @@
 # Time:  O(nlogk)
-# Space: O(n)
 
 # binary search, sliding window, greedy
 class Solution(object):

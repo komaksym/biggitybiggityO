@@ -1,5 +1,4 @@
 # Time:  O(nlogr)
-# Space: O(n)
 
 # prefix sum
 class Solution(object):

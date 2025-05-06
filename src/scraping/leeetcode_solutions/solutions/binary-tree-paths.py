@@ -1,5 +1,4 @@
 # Time:  O(n * h)
-# Space: O(h)
 
 class Solution(object):
     # @param {TreeNode} root

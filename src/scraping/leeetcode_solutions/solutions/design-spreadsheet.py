@@ -2,7 +2,6 @@
 #        setCell:   O(1)
 #        resetCell: O(1)
 #        getValue:  O(1)
-# Space: O(n)
 
 import collections
 

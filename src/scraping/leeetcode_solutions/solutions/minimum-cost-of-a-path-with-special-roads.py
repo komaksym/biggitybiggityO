@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2)
 
 import collections
 
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * logn)
-# Space: O(n^2)
 import collections
 import heapq
 # dijkstra's algorithm

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import operator
 
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     # @param {string} s
     # @return {integer}

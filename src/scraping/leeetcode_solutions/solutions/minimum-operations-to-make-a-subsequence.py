@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import bisect
 
@@ -105,7 +104,6 @@ class SegmentTree(object):  # 0-based index
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # segment tree solution
 class Solution2(object):
     def minOperations(self, target, arr):

@@ -1,5 +1,4 @@
 # Time:  O(N * m * n)
-# Space: O(m * n)
 
 class Solution(object):
     def findPaths(self, m, n, N, x, y):

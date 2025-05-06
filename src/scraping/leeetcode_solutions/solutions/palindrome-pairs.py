@@ -1,5 +1,4 @@
 # Time:  O(n * k^2), n is the number of the words, k is the max length of the words.
-# Space: O(n * k)
 
 import collections
 
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(n * k^2), n is the number of the words, k is the max length of the words.
-# Space: O(n * k^2)
 # Manacher solution.
 class Solution_TLE(object):
     def palindromePairs(self, words):
@@ -91,7 +89,6 @@ class Solution_TLE(object):
 
 
 # Time:  O(n * k^2), n is the number of the words, k is the max length of the words.
-# Space: O(n * k)
 # Trie solution.
 class TrieNode(object):
     def __init__(self):

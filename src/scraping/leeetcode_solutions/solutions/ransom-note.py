@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def canConstruct(self, ransomNote, magazine):
@@ -26,7 +25,6 @@ class Solution(object):
         return letters == 0
 
 # Time:  O(n)
-# Space: O(1)
 import collections
 
 class Solution2(object):

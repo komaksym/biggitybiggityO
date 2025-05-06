@@ -1,5 +1,4 @@
 # Time:  O(n * d * l), l is the average string length
-# Space: O(n)
 
 import collections
 import functools
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(n * l), l is the average string length
-# Space: O(t)    , t is the size of trie
 # trie solution, 439ms
 class Solution2(object):
     def addBoldTag(self, s, words):

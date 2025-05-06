@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # math, sort
 class Solution(object):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n + k)
-# Space: O(n)
 import collections
 from functools import reduce
 
@@ -50,7 +48,6 @@ class Solution2(object):
 
 
 # Time:  O(n + klogn)
-# Space: O(1)
 import heapq
 
 

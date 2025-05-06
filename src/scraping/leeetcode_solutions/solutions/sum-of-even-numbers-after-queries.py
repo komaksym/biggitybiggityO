@@ -1,5 +1,4 @@
 # Time:  O(n + q)
-# Space: O(1)
 
 class Solution(object):
     def sumEvenAfterQueries(self, A, queries):

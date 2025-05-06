@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -54,7 +53,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # dfs solution with recursion
 class Solution2(object):
     def balanceBST(self, root):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import threading
 
@@ -35,7 +34,6 @@ class H2O(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # TLE
 class H2O2(object):
     def __init__(self):

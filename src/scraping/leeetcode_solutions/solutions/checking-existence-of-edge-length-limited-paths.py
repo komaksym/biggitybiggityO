@@ -1,5 +1,4 @@
 # Time:  O(nlogn + mlogm + n * α(n)) = O(nlogn + mlogm)
-# Space: O(n)
 
 class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
     def __init__(self, n):

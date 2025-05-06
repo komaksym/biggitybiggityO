@@ -1,5 +1,4 @@
 # Time:  O(rlogr)
-# Space: O(r)
 
 # brute force, memoization
 MAX_R = 10**4

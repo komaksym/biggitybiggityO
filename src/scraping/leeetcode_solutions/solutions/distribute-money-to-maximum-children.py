@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # greedy
 class Solution(object):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 # greedy
 class Solution2(object):
     def distMoney(self, money, children):

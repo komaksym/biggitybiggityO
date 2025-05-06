@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n)
 
 import collections
 
@@ -23,7 +22,6 @@ class Solution(object):
 
     
 # Time:  O(n^2) ~ O(n^4)
-# Space: O(n^2)
 import collections
 
 

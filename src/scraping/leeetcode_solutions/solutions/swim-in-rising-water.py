@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2)
 
 class UnionFind(object):
     def __init__(self, n):

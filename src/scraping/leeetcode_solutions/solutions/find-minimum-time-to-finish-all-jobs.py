@@ -1,5 +1,4 @@
 # Time:  O(k^n * logr), the real complexity shoud be much less, but hard to analyze
-# Space: O(n + k)
 
 class Solution(object):
     def minimumTimeRequired(self, jobs, k):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(k * k^n), the real complexity shoud be less, but hard to analyze
-# Space: O(n + k)
 class Solution2(object):
     def minimumTimeRequired(self, jobs, k):
         """

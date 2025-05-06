@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # math, implementation
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 # math, implementation
 class Solution2(object):
     def categorizeBox(self, length, width, height, mass):

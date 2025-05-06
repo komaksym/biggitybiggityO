@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(logn)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -42,7 +41,6 @@ class Solution(object):
                                # has more nodes and the right subtree is perfect.
 
 # Time:  O(n)
-# Space: O(logn)
 class Solution2(object):
     def sortedArrayToBST(self, nums):
         """

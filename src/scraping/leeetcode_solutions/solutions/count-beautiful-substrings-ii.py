@@ -1,5 +1,4 @@
 # Time:  O(n + sqrt(k))
-# Space: O(1)
 
 import collections
 

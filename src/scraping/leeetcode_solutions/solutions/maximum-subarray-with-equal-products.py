@@ -1,6 +1,5 @@
 # Time:  precompute: O(r * log(logr)), r = MAX_NUM
 #        runtime:    O(n * log(logr))
-# Space: O(r * log(logr))
 
 import collections
 

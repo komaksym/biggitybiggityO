@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 class Solution(object):
     def minimumEffort(self, tasks):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 class Solution2(object):
     def minimumEffort(self, tasks):
         """

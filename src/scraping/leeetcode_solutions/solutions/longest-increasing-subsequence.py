@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import bisect
 
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     def lengthOfLIS(self, nums):
         """
@@ -55,7 +53,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # bit, fenwick tree
 class Solution3(object):
     def lengthOfLIS(self, nums):
@@ -171,7 +168,6 @@ class SegmentTree(object):  # 0-based index
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # optimized from Solution5
 class Solution4(object):
     def lengthOfLIS(self, nums):
@@ -187,7 +183,6 @@ class Solution4(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # Traditional DP solution.
 class Solution5(object):
     def lengthOfLIS(self, nums):

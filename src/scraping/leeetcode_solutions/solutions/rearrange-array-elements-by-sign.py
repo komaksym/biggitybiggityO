@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # two pointers
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # generator
 class Solution2(object):
     def rearrangeArray(self, nums):
@@ -45,7 +43,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # array, implementation
 class Solution3(object):
     def rearrangeArray(self, nums):

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort, line sweep
 class Solution(object):

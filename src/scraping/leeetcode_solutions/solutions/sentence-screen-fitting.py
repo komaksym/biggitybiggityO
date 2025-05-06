@@ -1,5 +1,4 @@
 # Time:  O(r + n * c)
-# Space: O(n)
 
 class Solution(object):
     def wordsTyping(self, sentence, rows, cols):

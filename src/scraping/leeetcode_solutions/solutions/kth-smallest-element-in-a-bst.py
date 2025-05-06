@@ -1,5 +1,4 @@
 # Time:  O(max(h, k))
-# Space: O(h)
 
 class Solution(object):
     # @param {TreeNode} root

@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(n + m)
 
 class Solution(object):
     # @return an integer
@@ -24,7 +23,6 @@ class Solution(object):
         return distance[-1]
 
 # Time:  O(n * m)
-# Space: O(n * m)
 class Solution2(object):
     # @return an integer
     def minDistance(self, word1, word2):

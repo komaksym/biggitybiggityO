@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(n) ~ O(n^2), O(n) on average.
-# Space: O(n)
 # Quick Select Solution
 from random import randint
 class Solution2(object):
@@ -73,7 +71,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogk)
-# Space: O(n)
 class Solution3(object):
     def topKFrequent(self, nums, k):
         """

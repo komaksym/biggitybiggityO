@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 import collections

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class BIT(object):  # 0-indexed.
     def __init__(self, n):
@@ -47,7 +46,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # merge sort solution
 class Solution2(object):
     def pancakeSort(self, arr):
@@ -101,7 +99,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 class Solution3(object):
     def pancakeSort(self, A):
         """

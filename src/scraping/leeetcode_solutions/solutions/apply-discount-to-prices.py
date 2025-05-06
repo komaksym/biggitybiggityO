@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n)
-# Space: O(1)
 
 # string
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
     
 # Time:  O(n)
-# Space: O(n)
 # string
 class Solution2(object):
     def discountPrices(self, sentence, discount):

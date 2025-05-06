@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def findDifferentBinaryString(self, nums):
@@ -12,7 +11,6 @@ class Solution(object):
 
 # Time:  O(k * n) = O(n^2), k is len(nums)
 #                         , n is len(nums[0])
-# Space: O(k) = O(n)
 class Solution2(object):
     def findDifferentBinaryString(self, nums):
         """
@@ -25,7 +23,6 @@ class Solution2(object):
 
 # Time:  O(k * n + n * 2^n) = O(n * 2^n), k is len(nums)
 #                                       , n is len(nums[0])
-# Space: O(k) = O(1) ~ O(2^n)
 class Solution_Extra(object):
     def findAllDifferentBinaryStrings(self, nums):
         """

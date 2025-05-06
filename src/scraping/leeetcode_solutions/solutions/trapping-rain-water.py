@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def trap(self, height):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     # @param A, a list of integers
     # @return an integer
@@ -48,7 +46,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution3(object):
     def trap(self, height):
         """
@@ -68,7 +65,6 @@ class Solution3(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution4(object):
     def trap(self, height):
         """

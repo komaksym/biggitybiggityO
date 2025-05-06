@@ -1,5 +1,4 @@
 # Time:  O(n * p * g)
-# Space: O(p * g)
 
 import itertools
 

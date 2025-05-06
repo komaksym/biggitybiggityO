@@ -1,5 +1,4 @@
 # Time:  O((logn)^2)
-# Space: O(1)
 
 class Solution(object):
     def preimageSizeFZF(self, K):

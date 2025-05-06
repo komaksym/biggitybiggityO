@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # two pointers
 class Solution(object):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n^3)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def incremovableSubarrayCount(self, nums):

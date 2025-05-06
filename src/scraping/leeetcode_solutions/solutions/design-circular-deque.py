@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(k)
 
 class MyCircularDeque(object):
 

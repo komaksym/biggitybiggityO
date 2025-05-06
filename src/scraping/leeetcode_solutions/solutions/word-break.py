@@ -1,5 +1,4 @@
 # Time:  O(n * l^2)
-# Space: O(n)
 
 class Solution(object):
     def wordBreak(self, s, wordDict):

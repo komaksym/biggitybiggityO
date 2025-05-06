@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def numTrees(self, n):
@@ -20,7 +19,6 @@ class Solution(object):
         return combination(2 * n, n) - combination(2 * n, n - 1)
 
 # Time:  O(n^2)
-# Space: O(n)
 # DP solution.
 class Solution2(object):
     # @return an integer

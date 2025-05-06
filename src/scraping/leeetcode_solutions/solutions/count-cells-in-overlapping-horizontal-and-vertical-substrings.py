@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(n * m)
 
 # z-function
 class Solution(object):

@@ -1,7 +1,6 @@
 # Time:  ctor: O(k)
 #        add: O(1)
 #        showFirstUnique: O(1)
-# Space: O(n)
 
 import collections
 

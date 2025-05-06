@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(logn)
 
 class Solution(object):
     def confusingNumber(self, N):

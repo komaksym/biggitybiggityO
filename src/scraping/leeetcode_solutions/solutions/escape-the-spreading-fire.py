@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n)
 
 import collections
 
@@ -49,7 +48,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # bfs
 class Solution2(object):
     def maximumMinutes(self, grid):

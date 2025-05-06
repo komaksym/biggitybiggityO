@@ -1,5 +1,4 @@
 # Time:  O(sum(i*d * nCr(i*d, d) * nCr(n, i*d) for i in xrange(1, k+1))) < O(sum(n * 2^m * nCr(n, m) for m in xrange(n+1))) = O(n * 3^n)
-# Space: O(n * k)
 
 import itertools
 
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(max(n * 2^n, 3^n))
-# Space: O(2^n)
 class Solution_TLE(object):
     def minimumIncompatibility(self, nums, k):
         """
@@ -96,7 +94,6 @@ class Solution_TLE(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import collections
 import sortedcontainers
 # wrong with greedy solution
@@ -156,7 +153,6 @@ class Solution_Wrong_Greedy_SortedList(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import collections
 from random import randint, seed
 
@@ -329,7 +325,6 @@ class Solution_Wrong_Greedy_SkipList(object):
 
 
 # Time:  O(nlogn + k * n), could be improved to O(nlogn) by skiplist or orderedlist
-# Space: O(n)
 import collections
 # wrong with greedy solution
 # nums = [15, 9, 7, 10, 15, 14, 12, 2, 10, 8, 10, 13, 4, 11, 2]

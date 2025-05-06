@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import collections
 import itertools
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import collections
 import itertools
 from sortedcontainers import SortedList

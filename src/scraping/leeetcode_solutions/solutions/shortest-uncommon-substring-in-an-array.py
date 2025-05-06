@@ -1,5 +1,4 @@
 # Time:  O(n * l^2)
-# Space: O(t)
 
 # trie
 class Solution(object):

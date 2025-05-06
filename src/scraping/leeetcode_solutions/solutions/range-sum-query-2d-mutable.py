@@ -1,7 +1,6 @@
 # Time:  ctor:   O(m * n)
 #        update: O(logm * logn)
 #        query:  O(logm * logn)
-# Space: O(m * n)
 
 class NumMatrix(object):
     def __init__(self, matrix):

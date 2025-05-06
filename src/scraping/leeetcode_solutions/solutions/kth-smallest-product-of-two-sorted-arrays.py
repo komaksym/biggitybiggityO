@@ -1,5 +1,4 @@
 # Time:  O((m + n) * logr), r is the range size of [min(products), max(products)]
-# Space: O(1)
 
 class Solution(object):
     def kthSmallestProduct(self, nums1, nums2, k):

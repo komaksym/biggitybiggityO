@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # hash table
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 from functools import reduce
 

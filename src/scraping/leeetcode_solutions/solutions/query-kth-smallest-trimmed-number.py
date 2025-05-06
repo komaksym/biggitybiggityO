@@ -1,5 +1,4 @@
 # Time:  O(q + n * t)
-# Space: O(t + n + q)
 
 # radix sort
 class Solution(object):
@@ -34,7 +33,6 @@ class Solution(object):
 
             
 # Time:  O(q * n * t) on average
-# Space: O(n + q)
 import random
 
 
@@ -89,7 +87,6 @@ class Solution2(object):
 
 
 # Time:  O(q + nlogn * t)
-# Space: O(t + n + q)
 # sort
 class Solution3(object):
     def smallestTrimmedNumbers(self, nums, queries):

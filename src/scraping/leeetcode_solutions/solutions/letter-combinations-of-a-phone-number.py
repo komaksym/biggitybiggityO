@@ -1,5 +1,4 @@
 # Time:  O(n * 4^n)
-# Space: O(1)
 
 # iterative solution
 class Solution(object):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n * 4^n)
-# Space: O(1)
 # iterative solution
 class Solution2(object):
     def letterCombinations(self, digits):
@@ -50,7 +48,6 @@ class Solution2(object):
 
 
 # Time:  O(n * 4^n)
-# Space: O(n)
 # recursive solution
 class Solution3(object):
     def letterCombinations(self, digits):

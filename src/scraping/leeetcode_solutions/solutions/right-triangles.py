@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(min(n, m))
 
 # combinatorics
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n * m)
-# Space: O(n + m)
 # combinatorics
 class Solution2(object):
     def numberOfRightTriangles(self, grid):
@@ -36,7 +34,6 @@ class Solution2(object):
 
 
 # Time:  O(n * m)
-# Space: O(min(n, m))
 # freq table
 class Solution3(object):
     def numberOfRightTriangles(self, grid):

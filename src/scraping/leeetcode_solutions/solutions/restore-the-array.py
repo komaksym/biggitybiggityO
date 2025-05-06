@@ -1,5 +1,4 @@
 # Time:  O(nlogk)
-# Space: O(logk)
 
 class Solution(object):
     def numberOfArrays(self, s, k):

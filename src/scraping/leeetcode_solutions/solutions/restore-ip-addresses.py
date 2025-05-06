@@ -1,5 +1,4 @@
 # Time:  O(n^m) = O(3^4)
-# Space: O(n * m) = O(3 * 4)
 
 class Solution(object):
     # @param s, a string

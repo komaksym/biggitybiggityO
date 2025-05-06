@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def xorOperation(self, n, start):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 import operator
 from functools import reduce
 

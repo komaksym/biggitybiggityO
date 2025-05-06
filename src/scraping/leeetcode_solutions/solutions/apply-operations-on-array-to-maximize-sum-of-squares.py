@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(nlogr), r = max(nums)
-# Space: O(logr)
 
 # bit manipulation, greedy, freq table
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def maximumGap(self, nums):
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     def maximumGap(self, nums):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # bit manipulation
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(n * r)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def minBitwiseArray(self, nums):

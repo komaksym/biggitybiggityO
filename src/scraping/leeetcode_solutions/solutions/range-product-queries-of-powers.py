@@ -1,5 +1,4 @@
 # Time:  O(logn + qlogr), r = MOD
-# Space: O(logn)
 
 # prefix sum
 class Solution(object):

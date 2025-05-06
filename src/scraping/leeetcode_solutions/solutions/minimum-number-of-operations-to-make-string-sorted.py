@@ -1,5 +1,4 @@
 # Time:  O(26 * n) = O(n)
-# Space: O(max_n) = O(max_n)
 
 inv = [0, 1]
 

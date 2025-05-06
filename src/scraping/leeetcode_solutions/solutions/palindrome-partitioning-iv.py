@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 class Solution(object):
     def checkPartitioning(self, s):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 class Solution2(object):
     def checkPartitioning(self, s):
         """

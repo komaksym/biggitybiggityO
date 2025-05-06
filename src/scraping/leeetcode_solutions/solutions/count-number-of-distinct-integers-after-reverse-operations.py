@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(nums)
-# Space: O(n)
 
 # hash table   
 class Solution(object):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
-# Space: O(n)
 # hash table   
 class Solution2(object):
     def countDistinctIntegers(self, nums):

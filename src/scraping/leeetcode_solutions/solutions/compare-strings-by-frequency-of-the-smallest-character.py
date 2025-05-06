@@ -1,5 +1,4 @@
 # Time:  O((m + n)logn), m is the number of queries, n is the number of words
-# Space: O(n)
 
 import bisect
 

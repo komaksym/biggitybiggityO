@@ -1,5 +1,4 @@
 # Time:  O(n * l), l is the average length of file content
-# Space: O(n * l)
 
 import collections
 

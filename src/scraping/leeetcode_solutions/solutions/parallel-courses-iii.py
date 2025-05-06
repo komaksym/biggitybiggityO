@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 
 class Solution(object):
     def minimumTime(self, n, relations, time):

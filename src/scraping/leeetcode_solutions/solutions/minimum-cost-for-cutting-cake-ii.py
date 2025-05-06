@@ -1,5 +1,4 @@
 # Time:  O(mlogm + nlogn)
-# Space: O(1)
 
 # sort, greedy
 class Solution(object):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(mlogm + nlogn)
-# Space: O(1)
 # sort, greedy
 class Solution2(object):
     def minimumCost(self, m, n, horizontalCut, verticalCut):

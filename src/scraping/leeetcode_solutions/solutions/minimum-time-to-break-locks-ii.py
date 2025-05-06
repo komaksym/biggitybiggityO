@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n^2)
 
 # hungarian algorithm, weighted bipartite matching
 class Solution(object):

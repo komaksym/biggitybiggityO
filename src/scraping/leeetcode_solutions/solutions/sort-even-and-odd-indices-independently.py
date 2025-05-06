@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(c), c is the max of nums
 
 # counting sort, inplace solution
 class Solution(object):
@@ -46,7 +45,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort, inplace solution
 class Solution2(object):
     def sortEvenOdd(self, nums):
@@ -70,7 +68,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort
 class Solution3(object):
     def sortEvenOdd(self, nums):

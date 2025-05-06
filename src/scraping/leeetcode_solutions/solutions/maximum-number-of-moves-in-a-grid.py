@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m)
 
 # dp
 class Solution(object):
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m)
 # dp
 class Solution2(object):
     def maxMoves(self, grid):
@@ -53,7 +51,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n)
-# Space: O(m)
 # bfs
 class Solution3(object):
     def maxMoves(self, grid):

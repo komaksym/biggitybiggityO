@@ -1,5 +1,4 @@
 # Time:  O(logn),  n is the max of (x, y)
-# Space: O(1)
 
 class Solution(object):
     def canMeasureWater(self, x, y, z):

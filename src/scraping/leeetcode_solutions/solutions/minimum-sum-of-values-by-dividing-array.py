@@ -1,5 +1,4 @@
 # Time:  O(n * m * logr), r = max(nums)
-# Space: O(n + logr)
 
 import collections
 from functools import reduce
@@ -60,7 +59,6 @@ class Solution(object):
 
 
 # Time:  O(n * m * (logn + logr)), r = max(nums)
-# Space: O(n + logr)
 # dp, sparse table
 class Solution2(object):
     def minimumValueSum(self, nums, andValues):
@@ -74,8 +72,7 @@ class Solution2(object):
         # Template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20D/genetic_sequences2.py3
         # Time:  ctor:  O(NlogN) * O(fn)
         #        query: O(fn)
-        # Space: O(NlogN)
-        class SparseTable(object):
+                class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn
                 self.bit_length = [0]
@@ -115,7 +112,6 @@ class Solution2(object):
 
 
 # Time:  O(n * m * logr), r = max(nums)
-# Space: O(n * m * logr)
 import collections
 
 

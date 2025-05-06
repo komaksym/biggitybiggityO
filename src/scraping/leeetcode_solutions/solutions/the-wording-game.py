@@ -1,5 +1,4 @@
 # Time:  O(m + n), m = sum(len(w) for w in a), n = sum(len(w) for w in b)
-# Space: O(1)
 
 # game, greedy
 class Solution(object):

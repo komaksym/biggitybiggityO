@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(1)
 
 import collections
 

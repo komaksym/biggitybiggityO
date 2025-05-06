@@ -1,5 +1,4 @@
 # Time:  O(nlogn * logr)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 

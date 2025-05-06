@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 class Solution(object):
     # @return a list of lists of integers

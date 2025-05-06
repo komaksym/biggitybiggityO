@@ -1,5 +1,4 @@
 # Time:  O(31)
-# Space: O(1)
 
 class Solution(object):
     def minFlips(self, a, b, c):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(31)
-# Space: O(1)
 class Solution2(object):
     def minFlips(self, a, b, c):
         """

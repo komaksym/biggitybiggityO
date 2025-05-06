@@ -1,5 +1,4 @@
 # Time:  O(4^n / n^(3/2)) ~= Catalan numbers
-# Space: O(n)
 
 # iterative solution
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(4^n / n^(3/2)) ~= Catalan numbers
-# Space: O(n)
 # recursive solution
 class Solution2(object):
     def generateParenthesis(self, n):

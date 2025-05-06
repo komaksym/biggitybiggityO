@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n + r), r = max(nums)
-# Space: O(n + r)
 
 # combinatorics, stars and bars
 class Solution(object):
@@ -30,7 +29,6 @@ class Solution(object):
     
 
 # Time:  O(n * r), r = max(nums)
-# Space: O(r)
 # dp, prefix sum
 class Solution2(object):
     def countOfPairs(self, nums):

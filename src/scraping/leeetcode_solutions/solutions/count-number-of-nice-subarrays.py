@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k)
 
 class Solution(object):
     def numberOfSubarrays(self, nums, k):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(k)
 import collections
 
 

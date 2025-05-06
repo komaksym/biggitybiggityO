@@ -1,5 +1,4 @@
 # Time:  O(n + q)
-# Space: O(n)
 
 class Solution(object):
     def platesBetweenCandles(self, s, queries):

@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 class Solution(object):
     def maximalRectangle(self, matrix):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # DP solution.
 class Solution2(object):
     def maximalRectangle(self, matrix):

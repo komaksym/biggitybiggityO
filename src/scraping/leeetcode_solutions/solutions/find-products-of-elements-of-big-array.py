@@ -1,5 +1,4 @@
 # Time:  O(q * (logr)^2)
-# Space: O(1)
 
 # binary search, combinatorics, bitmasks, fast exponentiation
 class Solution(object):

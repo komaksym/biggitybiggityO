@@ -1,6 +1,5 @@
 # Time:  precompute: O(max_r^2 * log(max_r))
 #        runtime:    O(n + r^2)
-# Space: O(max_r^2)
 
 # number theory, mobius function, principle of inclusion-exclusion
 MOD = 10**9+7
@@ -55,7 +54,6 @@ class Solution(object):
 
 
 # Time:  O(n * r^2 * logr)
-# Space: O(r^2)
 import collections
 from functools import reduce
 
@@ -87,7 +85,6 @@ class Solution2(object):
 
 
 # Time:  O(n * r^2 * logr)
-# Space: O(r^2)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     # @param {integer} s
@@ -19,7 +18,6 @@ class Solution(object):
         return min_size if min_size != float("inf") else 0
 
 # Time:  O(nlogn)
-# Space: O(n)
 # Binary search solution.
 class Solution2(object):
     # @param {integer} s

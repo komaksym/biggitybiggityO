@@ -1,5 +1,4 @@
 # Time:  O(n), n is the total number of the bricks
-# Space: O(m), m is the total number different widths
 
 import collections
 

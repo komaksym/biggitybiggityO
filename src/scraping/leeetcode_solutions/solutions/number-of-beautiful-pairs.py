@@ -1,5 +1,4 @@
 # Time:  O(nlogr)
-# Space: O(1)
 
 # number theory, freq table
 class Solution(object):

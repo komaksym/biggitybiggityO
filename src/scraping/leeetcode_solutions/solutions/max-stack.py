@@ -3,7 +3,6 @@
 #        popMax:  O(n)
 #        top:     O(1)
 #        peekMax: O(1)
-# Space: O(n), n is the number of values in the current stack
 
 import collections
 

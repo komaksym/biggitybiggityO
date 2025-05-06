@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n^2)
-# Space: O(n)
 
 # dfs with stack
 class Solution(object):
@@ -57,7 +56,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dfs with recursion
 class Solution2(object):
     def minimumScore(self, nums, edges):
@@ -101,7 +99,6 @@ class Solution2(object):
             
 
 # Time:  O(n^2)
-# Space: O(n)
 # dfs with recursion
 class Solution3(object):
     def minimumScore(self, nums, edges):
@@ -139,7 +136,6 @@ class Solution3(object):
             
 
 # Time:  O(n^2)
-# Space: O(n)
 # dfs with stk (slower, sometimes TLE)
 class Solution4(object):
     def minimumScore(self, nums, edges):

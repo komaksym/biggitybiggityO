@@ -1,5 +1,4 @@
 # Time:  O(nlogm)
-# Space: O(logm)
 
 import collections
 import itertools

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 
@@ -15,7 +14,6 @@ class Solution(object):
 
  
 # Time:  O(n)
-# Space: O(1)
 class Solution(object):
     def judgeCircle(self, moves):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n^2 * m), m is the length of targetPath
-# Space: O(n * m)
 
 class Solution(object):
     def mostSimilar(self, n, roads, names, targetPath):

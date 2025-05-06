@@ -1,5 +1,4 @@
 # Time:  O((m + n) * logn), m is the number of the houses, n is the number of the heaters.
-# Space: O(1)
 
 import bisect
 

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class Solution(object):
     def wiggleSort(self, nums):
@@ -13,7 +12,6 @@ class Solution(object):
 
 
 # Time:  O(n) ~ O(n^2)
-# Space: O(1)
 # Tri Partition (aka Dutch National Flag Problem) with virtual index solution.
 from random import randint
 

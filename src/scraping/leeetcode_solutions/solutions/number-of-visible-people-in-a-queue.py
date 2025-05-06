@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def canSeePersonsCount(self, heights):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def canSeePersonsCount(self, heights):
         """

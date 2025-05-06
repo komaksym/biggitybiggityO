@@ -1,5 +1,4 @@
 # Time:  O(m * n * l), A is m x n matrix, B is n x l matrix
-# Space: O(m * l)
 
 class Solution(object):
     def multiply(self, A, B):

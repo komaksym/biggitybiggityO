@@ -1,5 +1,4 @@
 # Time:  O(n * k)
-# Space: O(k)
 
 class Solution(object):
     def waysToDistribute(self, n, k):

@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 import math
 
@@ -37,7 +36,6 @@ class Solution(object):
                              
 
 # Time:  O(1)
-# Space: O(1)
 class Solution2(object):
     def minimumPerimeter(self, neededApples):
         """
@@ -78,7 +76,6 @@ class Solution2(object):
 
 
 # Time:  O(logn)
-# Space: O(1)
 class Solution3(object):
     def minimumPerimeter(self, neededApples):
         """

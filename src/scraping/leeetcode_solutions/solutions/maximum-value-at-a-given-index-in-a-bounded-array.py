@@ -1,5 +1,4 @@
 # Time:  O(logm)
-# Space: O(1)
 
 class Solution(object):
     def maxValue(self, n, index, maxSum):

@@ -1,5 +1,4 @@
 # Time:  O(n^2), could be improved to O(nlogn) in cpp by ordered map (bst)
-# Space: O(n)
 
 import bisect
 
@@ -174,7 +173,6 @@ class SegmentTree2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # Segment Tree solution.
 class Solution2(object):
     def fallingSquares(self, positions):
@@ -197,7 +195,6 @@ class Solution2(object):
 
 
 # Time:  O(n * sqrt(n))
-# Space: O(n)
 class Solution3(object):
     def fallingSquares(self, positions):
         def query(heights, left, right, B, blocks, blocks_read):
@@ -249,7 +246,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution4(object):
     def fallingSquares(self, positions):
         """

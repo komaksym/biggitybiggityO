@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(max(a), max(b), max(c))
-# Space: O(1)
 
 # bit manipulation, parity
 class Solution(object):
@@ -22,7 +21,6 @@ class Solution(object):
     
 
 # Time:  O(nlogr), r = max(max(a), max(b), max(c))
-# Space: O(1)
 # bit manipulation, parity
 class Solution2(object):
     def tripletCount(self, a, b, c):

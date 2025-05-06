@@ -1,5 +1,4 @@
 # Time:  O(m + n)
-# Space: O(1)
 
 class BinaryMatrix(object):
     def get(self, row, col):

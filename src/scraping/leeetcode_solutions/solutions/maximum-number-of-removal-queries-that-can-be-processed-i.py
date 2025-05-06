@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2)
 
 # dp
 class Solution(object):

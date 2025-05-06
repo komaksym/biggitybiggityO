@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class Solution(object):
     def pruneTree(self, root):

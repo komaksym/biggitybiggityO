@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def numWays(self, n, k):
@@ -20,7 +19,6 @@ class Solution(object):
         return ways[(n - 1) % 3]
 
 # Time:  O(n)
-# Space: O(n)
 # DP solution.
 class Solution2(object):
     def numWays(self, n, k):

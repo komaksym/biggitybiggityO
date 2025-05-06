@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class Solution(object):
     # @param {Interval[]} intervals
@@ -15,7 +14,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     # @param {Interval[]} intervals
     # @return {integer}
@@ -44,7 +42,6 @@ class Solution2(object):
 
 
 # Time: O(nlogn)
-# Space: O(n)
 from heapq import heappush, heappop
 
 

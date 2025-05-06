@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(1)
-# Space: O(1)
 
 # math
 class Solution(object):
@@ -185,7 +184,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 # math
 class Solution2(object):
     def numberOfWays(self, n):
@@ -203,7 +201,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # math
 class Solution3(object):
     def numberOfWays(self, n):
@@ -222,7 +219,6 @@ class Solution3(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dp
 class Solution4(object):
     def numberOfWays(self, n):

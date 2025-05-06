@@ -1,5 +1,4 @@
 # Time:  O(k * n^2)
-# Space: O(k * n)
 
 class Solution(object):
     def minSpaceWastedKResizing(self, nums, k):

@@ -1,5 +1,4 @@
 # Time:  O(n^3 * 4^n) = O(1), n = 4
-# Space: O(n^2) = O(1)
 
 from operator import add, sub, mul, truediv
 from fractions import Fraction
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(n^3 * 4^n) = O(1), n = 4
-# Space: O(n^2) = O(1)
 class Solution2(object):
     def judgePoint24(self, nums):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n * m), m is max x
-# Space: O(m)
 
 class Solution(object):
     def minimumOperations(self, nums, start, goal):

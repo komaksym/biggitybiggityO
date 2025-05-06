@@ -1,5 +1,4 @@
 # Time:  O(n + m)
-# Space: O(n + m)
 
 class Solution(object):
     def largestPathValue(self, colors, edges):

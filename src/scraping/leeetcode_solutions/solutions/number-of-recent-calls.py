@@ -1,5 +1,4 @@
 # Time:  O(1) on average
-# Space: O(w), w means the size of the last milliseconds.
 
 import collections
 

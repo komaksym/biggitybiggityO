@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def nthPersonGetsNthSeat(self, n):
@@ -22,7 +21,6 @@ class Solution(object):
         return 0.5 if n != 1 else 1.0
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def nthPersonGetsNthSeat(self, n):
         """

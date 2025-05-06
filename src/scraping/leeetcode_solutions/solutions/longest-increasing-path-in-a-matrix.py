@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n)
 
 # topological sort solution
 class Solution(object):
@@ -47,7 +46,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # dfs + memoization solution
 class Solution2(object):
     def longestIncreasingPath(self, matrix):

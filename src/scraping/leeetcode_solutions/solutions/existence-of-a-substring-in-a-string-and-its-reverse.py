@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(min(n, 26^2))
 
 # hash table
 class Solution(object):
@@ -15,7 +14,6 @@ class Solution(object):
     
 
 # Time:  O(n)
-# Space: O(min(n, 26^2))
 import collections
 
 

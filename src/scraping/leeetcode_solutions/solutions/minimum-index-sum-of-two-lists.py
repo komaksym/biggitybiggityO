@@ -1,5 +1,4 @@
 # Time:  O((m + n) * l), m is the size of list1, n is the size of list2
-# Space: O(m * l), l is the average length of string
 
 class Solution(object):
     def findRestaurant(self, list1, list2):

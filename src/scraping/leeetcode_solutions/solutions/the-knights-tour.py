@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(1)
 
 # backtracking, greedy, warnsdorff's rule
 class Solution(object):
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(8^(m * n - 1))
-# Space: O(1)
 # backtracking
 class Solution2(object):
     def tourOfKnight(self, m, n, r, c):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -35,7 +34,6 @@ class Solution(object):
         
 
 # Time:  O(n * log(logr)) = O(9 * n)
-# Space: O(n)
 import collections
 
 

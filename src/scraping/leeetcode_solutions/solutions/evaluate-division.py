@@ -1,6 +1,5 @@
 # Time:  O((e + q) * α(n)) ~= O(e + q), using either one of "path compression" and "union by rank" results in amortized O(logn)
 #                                     , using  both results in α(n) ~= O(1)
-# Space: O(n)
 
 import collections
 import itertools
@@ -86,7 +85,6 @@ class Solution(object):
 
 
 # Time:  O(e + q * n), at most O(n^3 + q)
-# Space: O(n^2)
 # bfs solution
 import collections
 import itertools
@@ -130,7 +128,6 @@ class Solution2(object):
 
 
 # Time:  O(n^3 + q)
-# Space: O(n^2)
 import collections
 import itertools
 
@@ -157,7 +154,6 @@ class Solution3(object):
 
     
 # Time:  O(e + q * n), at most O(n^3 + q)
-# Space: O(e)
 import collections
 
 

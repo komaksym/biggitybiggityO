@@ -1,5 +1,4 @@
 # Time:  O(n * m * k)
-# Space: O(m * k)
 
 class Solution(object):
     def numOfArrays(self, n, m, k):

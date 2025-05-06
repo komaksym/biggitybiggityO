@@ -1,5 +1,4 @@
 # Time:  O(n * 2^(n - 1))
-# Space: O(n)
 
 class Solution(object):
     def maxUniqueSplit(self, s):

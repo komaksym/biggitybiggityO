@@ -1,5 +1,4 @@
 # Time:  O(n * (logn)^(2*logn))
-# Space: O(2*logn)
 
 # backtracking
 class Solution(object):

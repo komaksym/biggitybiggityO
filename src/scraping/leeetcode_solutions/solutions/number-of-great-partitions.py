@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n * k)
-# Space: O(k)
 
 # knapsack dp
 class Solution(object):

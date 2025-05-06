@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class MinStack(object):
     def __init__(self):
@@ -36,7 +35,6 @@ class MinStack(object):
         return self.min
 
 # Time:  O(n)
-# Space: O(n)
 class MinStack2(object):
     def __init__(self):
         self.stack, self.minStack = [], []

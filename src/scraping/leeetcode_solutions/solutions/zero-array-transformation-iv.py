@@ -1,5 +1,4 @@
 # Time:  O(n^2 * r * logq), r = max(nums)
-# Space: O(r)
 
 # binary search, dp
 class Solution(object):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(q * n * 2^n)
-# Space: O(n * 2^n)
 # dp
 class Solution2(object):
     def minZeroArray(self, nums, queries):

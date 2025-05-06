@@ -1,5 +1,4 @@
 # Time:  O(m * n * log(m * n))
-# Space: O(m * n)
 
 # binary search + dfs solution
 class Solution(object):
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(m * n * log(m * n))
-# Space: O(m * n)
 import heapq
 
 

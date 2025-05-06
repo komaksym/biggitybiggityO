@@ -1,5 +1,4 @@
 # Time:  O(n + k)
-# Space: O(k)
 
 # prefix sum, difference array
 class Solution(object):

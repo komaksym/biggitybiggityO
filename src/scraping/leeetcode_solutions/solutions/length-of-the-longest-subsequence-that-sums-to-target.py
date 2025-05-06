@@ -1,5 +1,4 @@
 # Time:  O(n * t)
-# Space: O(t)
 
 # knapsack dp
 class Solution(object):

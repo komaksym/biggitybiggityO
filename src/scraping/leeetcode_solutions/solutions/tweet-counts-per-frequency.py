@@ -1,6 +1,5 @@
 # Time:  add:   O(logn),
 #        query: O(c), c is the total count of matching records
-# Space: O(n)
 
 import collections
 import random
@@ -137,7 +136,6 @@ class TweetCounts(object):
 
 # Time:  add:   O(n),
 #        query: O(rlogn), r is the size of result
-# Space: O(n)
 import bisect
 class TweetCounts2(object):
 
@@ -174,7 +172,6 @@ class TweetCounts2(object):
     
 # Time:  add:   O(1),
 #        query: O(n)
-# Space: O(n)
 class TweetCounts3(object):
 
     def __init__(self):

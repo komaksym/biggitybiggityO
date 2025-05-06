@@ -1,5 +1,4 @@
 # Time:  O(|E|)
-# Space: O(|E|)
 
 import collections
 import itertools

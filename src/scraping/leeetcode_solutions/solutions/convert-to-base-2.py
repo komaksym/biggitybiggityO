@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 class Solution(object):
     def baseNeg2(self, N):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(1)
 class Solution2(object):
     def baseNeg2(self, N):
         """

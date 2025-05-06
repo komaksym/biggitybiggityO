@@ -1,5 +1,4 @@
 # Time:  O(n^2 * m^2 * m^(n * m)), given m < n
-# Space: O(n * m)
 
 class Solution(object):
     def tilingRectangle(self, n, m):

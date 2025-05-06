@@ -1,5 +1,4 @@
 # Time:  O(t * n)
-# Space: O(n)
 
 # iterative dfs, tree dp
 class Solution(object):
@@ -70,7 +69,6 @@ class Solution(object):
     
 
 # Time:  O(t * n)
-# Space: O(n)
 # dfs, tree dp
 class Solution2(object):
     def minimumTotalPrice(self, n, edges, price, trips):

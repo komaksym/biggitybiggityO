@@ -1,5 +1,4 @@
 # Time:  O(n*(logn)^2)
-# Space: O(nlogn)
 
 class Solution(object):
     def stoneGameII(self, piles):

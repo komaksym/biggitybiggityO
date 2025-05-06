@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # dp
 class Solution(object):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dp
 class Solution2(object):
     def minimumTime(self, s):

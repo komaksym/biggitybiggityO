@@ -1,5 +1,4 @@
 # Time:  O(n * k)
-# Space: O(n * k)
 
 import collections
 
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n * k)
-# Space: O(n * k)
 import collections
 
 

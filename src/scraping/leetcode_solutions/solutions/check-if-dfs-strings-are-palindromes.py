@@ -4,7 +4,7 @@
 class Solution(object):
     def findAnswer(self, parent, s):
         def manacher(s):
-            s = '^#' + '#'.join(s) + '#$'
+            s = '
             P = [0]*len(s)
             C, R = 0, 0
             for i in range(1, len(s)-1):
@@ -49,7 +49,7 @@ class Solution(object):
 class Solution2(object):
     def findAnswer(self, parent, s):
         def manacher(s):
-            s = '^#' + '#'.join(s) + '#$'
+            s = '
             P = [0]*len(s)
             C, R = 0, 0
             for i in range(1, len(s)-1):

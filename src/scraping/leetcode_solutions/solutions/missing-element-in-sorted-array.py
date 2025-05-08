@@ -9,7 +9,7 @@ class Solution(object):
             return k > missing_count(nums, x)
 
         left, right = 0, len(nums)-1
-        while left <= right:  # find the largest right s.t. k > missingCount(nums, x)
+        while left <= right: 
             mid = left + (right-left)//2
             if not check(nums, k, mid):
                 right = mid-1

@@ -11,7 +11,7 @@ class Solution(object):
                     j = (j + 1) % len(s2)
                     count += (j == 0)
 
-            if j in lookup:   # cyclic
+            if j in lookup:  
                 i = lookup[j]
                 prefix_count = repeat_count[i]
                 pattern_count = (count - repeat_count[i]) * ((n1 - i) // (k - i))
@@ -20,5 +20,5 @@ class Solution(object):
             lookup[j] = k
             repeat_count[k] = count
 
-        return repeat_count[n1] / n2  # not cyclic iff n1 <= s2
+        return repeat_count[n1] / n2 
 

@@ -6,9 +6,9 @@ import math
 class Solution(object):
     def minimumPerimeter(self, neededApples):
         a, b, c, d = 4.0, 6.0, 2.0, float(-neededApples)
-        p = (3*a*c-b**2)/(3*a**2)  # -1/4.0
-        q = (2*b**3-9*a*b*c+27*a**2*d)/(27*a**3)  # -neededApples/4.0
-        assert((q/2)**2+(p/3)**3 > 0)  # case of only one real root
+        p = (3*a*c-b**2)/(3*a**2) 
+        q = (2*b**3-9*a*b*c+27*a**2*d)/(27*a**3) 
+        assert((q/2)**2+(p/3)**3 > 0) 
         x = (-q/2 + ((q/2)**2+(p/3)**3)**0.5)**(1.0/3) + \
             (-q/2 - ((q/2)**2+(p/3)**3)**0.5)**(1.0/3)
         return 8*int(math.ceil(x - b/(3*a)))

@@ -7,7 +7,7 @@ import collections
 class Solution(object):
     def maxProduct(self, nums, k, limit):
         total = sum(nums)
-        if k > total or k < -total:  # optimized to speed up
+        if k > total or k < -total: 
             return -1
         dp = collections.defaultdict(set)
         for x in nums:

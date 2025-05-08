@@ -6,7 +6,7 @@ class Solution(object):
         directions = {"rook": [(0, 1), (1, 0), (0, -1), (-1, 0)],
                       "bishop": [(1, 1), (1, -1), (-1, 1), (-1, -1)],
                       "queen" : [(0, 1), (1, 0), (0, -1), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]}
-        all_mask = 2**7-1  # at most 7 seconds in 8x8 board
+        all_mask = 2**7-1 
         def backtracking(pieces, positions, i, lookup):
             if i == len(pieces):
                 return 1
@@ -15,16 +15,16 @@ class Solution(object):
             r, c = r-1, c-1
             mask = all_mask
             if not (lookup[r][c]&mask):
-                lookup[r][c] += mask  # stopped at (r, c)
+                lookup[r][c] += mask 
                 result += backtracking(pieces, positions, i+1, lookup)
                 lookup[r][c] -= mask          
             for dr, dc in directions[pieces[i]]:
                 bit, nr, nc = 1, r+dr, c+dc
-                mask = all_mask  # (mask&bit == 1): (log2(bit)+1)th second is occupied
+                mask = all_mask 
                 while 0 <= nr < 8 and 0 <= nc < 8 and not (lookup[nr][nc]&bit):
                     lookup[nr][nc] += bit
                     mask -= bit
-                    if not (lookup[nr][nc]&mask):  # stopped at (nr, nc)
+                    if not (lookup[nr][nc]&mask): 
                         lookup[nr][nc] += mask
                         result += backtracking(pieces, positions, i+1, lookup)
                         lookup[nr][nc] -= mask

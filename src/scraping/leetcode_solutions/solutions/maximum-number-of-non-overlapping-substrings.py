@@ -53,7 +53,7 @@ class Solution2(object):
             left, right = first[c], find_right_from_left(s, first, last, first[c])
             if right != -1:
                 intervals.append((right, left))
-        intervals.sort()  # Time: O(26log26)
+        intervals.sort() 
         result, prev = [], -1
         for right, left in intervals:
             if left <= prev:

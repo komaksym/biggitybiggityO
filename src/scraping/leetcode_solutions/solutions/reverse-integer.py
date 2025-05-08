@@ -9,7 +9,7 @@ class Solution(object):
         while x:
             result = result * 10 + x % 10
             x //= 10
-        return result if result <= 0x7fffffff else 0  # Handle overflow.
+        return result if result <= 0x7fffffff else 0 
 
     def reverse2(self, x):
         if x < 0:

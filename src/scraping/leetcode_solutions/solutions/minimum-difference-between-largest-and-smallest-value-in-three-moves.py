@@ -24,7 +24,7 @@ class Solution(object):
                     return
                 elif new_pivot_idx > n:
                     right = new_pivot_idx - 1
-                else:  # new_pivot_idx < n
+                else: 
                     left = new_pivot_idx + 1
 
         k = 4

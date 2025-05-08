@@ -19,7 +19,7 @@ class Solution(object):
                     max_dq.popleft()
                 if min_dq[0] == left:
                     min_dq.popleft()
-                left += 1  # advance left by one to not count in result
+                left += 1 
         return len(nums)-left
 
 
@@ -38,7 +38,7 @@ class Solution2(object):
             while min_dq and nums[min_dq[-1]] >= num:
                 min_dq.pop()
             min_dq.append(right)
-            while nums[max_dq[0]]-nums[min_dq[0]] > limit:  # both always exist "right" element
+            while nums[max_dq[0]]-nums[min_dq[0]] > limit: 
                 if max_dq[0] == left:
                     max_dq.popleft()
                 if min_dq[0] == left:

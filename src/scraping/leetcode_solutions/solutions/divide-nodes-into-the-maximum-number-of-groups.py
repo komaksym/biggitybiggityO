@@ -12,7 +12,7 @@ class Solution(object):
                 group.append(u)
                 for v in adj[u]:
                     if lookup[v] != -1:
-                        if lookup[v] == lookup[u]:  # odd-length cycle, not bipartite
+                        if lookup[v] == lookup[u]: 
                             return []
                         continue
                     lookup[v] = lookup[u]^1

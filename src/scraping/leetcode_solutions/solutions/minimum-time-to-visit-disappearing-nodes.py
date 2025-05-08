@@ -17,7 +17,7 @@ class Solution(object):
                 if curr != best[u]:
                     continue
                 for v, w in adj[u]: 
-                    if not curr+w < min(best[v] if best[v] != -1 else INF, disappear[v]):  # modified
+                    if not curr+w < min(best[v] if best[v] != -1 else INF, disappear[v]): 
                         continue
                     best[v] = curr+w
                     heapq.heappush(min_heap, (best[v], v))

@@ -7,7 +7,7 @@ from functools import reduce
 class Solution(object):
     def getNumberOfBacklogOrders(self, orders):
         MOD = 10**9 + 7
-        buy, sell  = [], []  # max_heap, min_heap
+        buy, sell  = [], [] 
         for p, a, t in orders:
             if t == 0:
                 heapq.heappush(buy, [-p, a])

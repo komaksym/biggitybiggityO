@@ -9,4 +9,4 @@ class Solution(object):
             return a
     
         g = gcd(targetX, targetY)
-        return g == (g&~(g-1))  # co-prime other than factor 2
+        return g == (g&~(g-1)) 

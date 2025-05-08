@@ -52,4 +52,4 @@ class Solution(object):
         for x in nums:
             x -= 1
             st.update(num_to_idx[x], st.query(bisect.bisect_left(sorted_nums, x-k), num_to_idx[x]-1)+1)
-        return st.tree[1]  # st.query(0, len(num_to_idx)-1)
+        return st.tree[1] 

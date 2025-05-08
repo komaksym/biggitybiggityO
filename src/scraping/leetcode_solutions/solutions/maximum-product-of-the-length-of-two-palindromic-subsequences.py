@@ -22,7 +22,7 @@ class Solution(object):
         dp = [palindromic_subsequence_length(s, mask) for mask in range(1<<len(s))]
         result = 0
         for mask in range(len(dp)):
-            if dp[mask]*(len(s)-dp[mask]) <= result:  # optimize
+            if dp[mask]*(len(s)-dp[mask]) <= result: 
                 continue
             submask = inverse_mask = (len(dp)-1)^mask
             while submask:

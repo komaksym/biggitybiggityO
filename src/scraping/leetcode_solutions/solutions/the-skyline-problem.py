@@ -39,7 +39,7 @@ class Solution(object):
             elif left_skyline[i][start] <= right_skyline[j][start]:
                 i, j = self.MergeIntersectSkylines(merged, left_skyline[i], i,\
                                                    right_skyline[j], j)
-            else: # left_skyline[i][start] > right_skyline[j][start].
+            else:
                 j, i = self.MergeIntersectSkylines(merged, right_skyline[j], j, \
                                                    left_skyline[i], i)
 
@@ -49,23 +49,23 @@ class Solution(object):
 
     def MergeIntersectSkylines(self, merged, a, a_idx, b, b_idx):
         if a[end] <= b[end]:
-            if a[height] > b[height]:   # |aaa|
-                if b[end] != a[end]:    # |abb|b
+            if a[height] > b[height]:  
+                if b[end] != a[end]:   
                     b[start] = a[end]
                     merged.append(a)
                     a_idx += 1
-                else:             # aaa
-                    b_idx += 1    # abb
-            elif a[height] == b[height]:  # abb
-                b[start] = a[start]       # abb
+                else:            
+                    b_idx += 1   
+            elif a[height] == b[height]: 
+                b[start] = a[start]      
                 a_idx += 1
-            else:  # a[height] < b[height].
-                if a[start] != b[start]:                            #    bb
-                    merged.append([a[start], b[start], a[height]])  # |a|bb
+            else: 
+                if a[start] != b[start]:                           
+                    merged.append([a[start], b[start], a[height]]) 
                 a_idx += 1
-        else:  # a[end] > b[end].
-            if a[height] >= b[height]:  # aaaa
-                b_idx += 1              # abba
+        else: 
+            if a[height] >= b[height]: 
+                b_idx += 1             
             else:
                 if a[start] != b[start]:
                     merged.append([a[start], b[start], a[height]])

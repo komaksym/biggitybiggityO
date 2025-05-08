@@ -14,8 +14,8 @@ class Solution(object):
             closer, detour = [p1], []
             lookup = set()
             while True:
-                if not closer:  # cannot find a path in the closer expansions
-                    if not detour:  # no other possible path
+                if not closer: 
+                    if not detour: 
                         return -1
                     min_steps += 2
                     closer, detour = detour, closer

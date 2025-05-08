@@ -8,8 +8,8 @@ class Solution(object):
         max_len = 2 * (n-1)
         directions = [(0, 0), (-1, 0), (0, -1), (-1, -1)]
         for k in range(1, max_len+1):
-            for i in reversed(range(max(0, k-n+1), min(k+1, n))):  # 0 <= i < n, 0 <= k-i < n
-                for j in reversed(range(i, min(k+1, n))):          # i <= j < n, 0 <= k-j < n
+            for i in reversed(range(max(0, k-n+1), min(k+1, n))): 
+                for j in reversed(range(i, min(k+1, n))):         
                     if grid[i][k-i] == -1 or grid[j][k-j] == -1:
                         dp[i][j] = -1
                         continue

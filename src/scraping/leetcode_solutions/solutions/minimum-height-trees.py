@@ -15,7 +15,7 @@ class Solution(object):
 
         pre_level, unvisited = [], set()
         for i in range(n):
-            if len(neighbors[i]) == 1:  # A leaf.
+            if len(neighbors[i]) == 1: 
                 pre_level.append(i)
             unvisited.add(i)
 

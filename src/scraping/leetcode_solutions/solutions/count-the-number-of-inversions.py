@@ -11,7 +11,7 @@ class Solution(object):
         dp = [1]
         prev = 0
         for i in range(n):
-            if lookup[i] != -1:  # optimized
+            if lookup[i] != -1: 
                 dp = [reduce(lambda total, i: (total+dp[i])%MOD, range(max((lookup[i]-i)-prev, 0), min((lookup[i]+1)-prev, len(dp))), 0)]
                 prev = lookup[i]
                 continue
@@ -38,7 +38,7 @@ class Solution2(object):
         dp[0] = 1
         for i in range(n):
             new_dp = [0]*len(dp)
-            if lookup[i] != -1:  # optimized
+            if lookup[i] != -1: 
                 new_dp[lookup[i]] = reduce(lambda total, i: (total+dp[i])%MOD, range(max(lookup[i]-i, 0), lookup[i]+1), 0)
             else:
                 for j in range(len(dp)):

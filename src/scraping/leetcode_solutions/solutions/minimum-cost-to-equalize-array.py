@@ -23,7 +23,7 @@ class Solution(object):
         cnt2 = total-cnt1
         result = min(result, (cnt1+cnt2%2)*cost1 + (cnt2//2)*cost2)
 
-        for _ in range(2):  # increase twice is for odd n
+        for _ in range(2): 
             total += n
             result = min(result, total%2*cost1 + total//2*cost2)
         return result%MOD

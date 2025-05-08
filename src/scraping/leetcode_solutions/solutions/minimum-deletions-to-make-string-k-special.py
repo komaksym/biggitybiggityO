@@ -3,7 +3,7 @@
 # freq table, counting sort, two pointers
 class Solution(object):
     def minimumDeletions(self, word, k):
-        def counting_sort(arr, key=lambda x:x, reverse=False):  # Time: O(n), Space: O(n)
+        def counting_sort(arr, key=lambda x:x, reverse=False): 
             count = [0]*(max(arr, key=key)+1)
             for x in arr:
                 count[key(x)] += 1
@@ -11,11 +11,11 @@ class Solution(object):
                 count[i] += count[i-1]
             result = [0]*len(arr)
             if not reverse:
-                for x in reversed(arr):  # stable sort
+                for x in reversed(arr): 
                     count[key(x)] -= 1
                     result[count[key(x)]] = x
             else:
-                for x in arr:  # stable sort
+                for x in arr: 
                     count[key(x)] -= 1
                     result[count[key(x)]] = x
                 result.reverse()

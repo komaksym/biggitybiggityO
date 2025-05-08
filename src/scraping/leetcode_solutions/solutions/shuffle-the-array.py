@@ -9,7 +9,7 @@ class Solution(object):
             j = i
             while nums[i] >= 0:
                 j = index(j)
-                nums[i], nums[j] = nums[j], ~nums[i]  # processed
+                nums[i], nums[j] = nums[j], ~nums[i] 
         for i in range(len(nums)):
             nums[i] = ~nums[i]
         return nums

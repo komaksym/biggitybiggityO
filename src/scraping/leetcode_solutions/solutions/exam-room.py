@@ -16,7 +16,7 @@ class ExamRoom(object):
               self.__max_heap[0][2] not in self.__seats or \
               self.__seats[self.__max_heap[0][1]][1] != self.__max_heap[0][2] or \
               self.__seats[self.__max_heap[0][2]][0] !=  self.__max_heap[0][1]:
-            heapq.heappop(self.__max_heap)  # lazy deletion
+            heapq.heappop(self.__max_heap) 
 
         _, left, right = heapq.heappop(self.__max_heap)
         mid = 0 if left == -1 \

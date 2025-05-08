@@ -20,7 +20,7 @@ class Solution(object):
                 i += 1
                 has_word = True
             if has_word:
-                left += 1  # keep one space
+                left += 1 
             i += 1
 
         equal_count = space_count//(word_count-1) if word_count-1 > 0 else 0
@@ -34,6 +34,6 @@ class Solution(object):
                 i -= 1
                 has_word = True
             if has_word:
-                right -= equal_count  # keep equal_count spaces
+                right -= equal_count 
             i -= 1
         return "".join(text)

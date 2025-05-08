@@ -27,7 +27,7 @@ class Solution(object):
                 if step == 1:
                     node, ret = args
                     if not node:
-                        ret[None] = 0 # null object pattern
+                        ret[None] = 0
                         continue
                     if node.left == node.right:
                         ret[True] = node.val^1
@@ -64,7 +64,7 @@ class Solution2(object):
         
         def dfs(node):
             if not node:
-                return {None: 0}  # null object pattern
+                return {None: 0} 
             if node.left == node.right:
                 return {True: node.val^1, False: node.val^0}
             left = dfs(node.left)

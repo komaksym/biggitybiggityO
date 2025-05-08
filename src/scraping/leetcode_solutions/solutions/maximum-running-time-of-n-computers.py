@@ -8,7 +8,7 @@ class Solution(object):
     def maxRunTime(self, n, batteries):
         total = sum(batteries)
         for i in range(len(batteries)):
-            batteries[i] = -batteries[i]  # max_heap
+            batteries[i] = -batteries[i] 
         heapq.heapify(batteries)
         while -batteries[0] > total//n:
             n -= 1

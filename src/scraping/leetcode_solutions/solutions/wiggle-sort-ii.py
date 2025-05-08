@@ -37,7 +37,7 @@ class Solution2(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         def reversedTriPartitionWithVI(nums, val):

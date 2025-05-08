@@ -5,14 +5,14 @@ import collections
 
 class Solution(object):
     def getProbability(self, balls):
-        def nCrs(n):  # Time: O(n), Space: O(1)
+        def nCrs(n): 
             c = 1
             for k in range(n+1):
                 yield c
                 c *= n-(k+1)+1
                 c //= k+1
         
-        def nCr(n, r):  # Time: O(n), Space: O(1)
+        def nCr(n, r): 
             if n-r < r:
                 return nCr(n, n-r)
             c = 1
@@ -22,11 +22,11 @@ class Solution(object):
             return c
         
         dp = collections.defaultdict(int)
-        dp[0, 0] = 1  # dp[i, j] is the number of ways with number difference i and color difference j
-        for n in balls:  # O(k) times
+        dp[0, 0] = 1 
+        for n in balls: 
             new_dp = collections.defaultdict(int)
-            for (ndiff, cdiff), count in dp.items():  # O(k^2 * n) times
-                for k, new_count in enumerate(nCrs(n)):  # O(n) times
+            for (ndiff, cdiff), count in dp.items(): 
+                for k, new_count in enumerate(nCrs(n)): 
                     new_ndiff = ndiff+(k-(n-k))
                     new_cdiff = cdiff-1 if k == 0 else (cdiff+1 if k == n else cdiff)
                     new_dp[new_ndiff, new_cdiff] += count*new_count

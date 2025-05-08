@@ -57,7 +57,7 @@ class Solution(object):
                     left = mid + 1
             return left
 
-        nums1.sort(), nums2.sort()  # Make sure it is sorted, doesn't count in time.
+        nums1.sort(), nums2.sort() 
 
         res = []
         left = 0
@@ -75,7 +75,7 @@ class Solution(object):
 # Two pointers solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        nums1.sort(), nums2.sort()  # Make sure it is sorted, doesn't count in time.
+        nums1.sort(), nums2.sort() 
 
         res = []
 
@@ -98,7 +98,7 @@ class Solution(object):
 # Two pointers solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        nums1.sort(), nums2.sort()  # O(max(m, n) * log(max(m, n)))
+        nums1.sort(), nums2.sort() 
 
         res = []
 

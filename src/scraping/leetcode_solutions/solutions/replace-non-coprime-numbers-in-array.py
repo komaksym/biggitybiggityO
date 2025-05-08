@@ -3,7 +3,7 @@
 # math, stack
 class Solution(object):
     def replaceNonCoprimes(self, nums):
-        def gcd(a, b):  # Time: O(log(min(a, b)))
+        def gcd(a, b): 
             while b:
                 a, b = b, a%b
             return a

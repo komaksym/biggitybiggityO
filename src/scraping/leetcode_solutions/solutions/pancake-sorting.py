@@ -1,17 +1,17 @@
 # Time:  O(nlogn)
 
-class BIT(object):  # 0-indexed.
+class BIT(object): 
     def __init__(self, n):
-        self.__bit = [0]*(n+1)  # Extra one for dummy node.
+        self.__bit = [0]*(n+1) 
 
     def add(self, i, val):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         while i < len(self.__bit):
             self.__bit[i] += val
             i += (i & -i)
 
     def query(self, i):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         ret = 0
         while i > 0:
             ret += self.__bit[i]
@@ -26,18 +26,18 @@ class Solution(object):
         for i in range(len(arr)):
             n = bit.query((arr[i]-1)-1)
             bit.add(arr[i]-1, 1)
-            if n == i:  # already sorted
+            if n == i: 
                 continue
-            if n == 0:                # (0..i-1)i
+            if n == 0:               
                 if i > 1:
-                    result.append(i)  # (i-1..0)i
-                result.append(i+1)    # i(0..i-1)
-            else:                     # (0..n-1)n(n+1..i-1)i
+                    result.append(i) 
+                result.append(i+1)   
+            else:                    
                 if n > 1:
-                    result.append(n)  # (n-1..0)n(n+1..i-1)i
-                result.append(i)      # (i-1..n+1)n(0..n-1)i
-                result.append(i+1)    # i(n-1..0)n(n+1..i-1)
-                result.append(n+1)    # (0..n-1)in(n+1..i-1)
+                    result.append(n) 
+                result.append(i)     
+                result.append(i+1)   
+                result.append(n+1)   
         return result
 
 
@@ -46,7 +46,7 @@ class Solution(object):
 class Solution2(object):
     def pancakeSort(self, arr):
         def smallerMergeSort(idxs, start, end, counts):
-            if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
+            if end - start <= 0: 
                 return 0
 
             mid = start + (end - start) // 2
@@ -73,18 +73,18 @@ class Solution2(object):
         smallerMergeSort(idxs, 0, len(idxs)-1, smaller_counts)
         result = []
         for i, n in enumerate(smaller_counts):
-            if n == i:  # already sorted
+            if n == i: 
                 continue
-            if n == 0:                # (0..i-1)i
+            if n == 0:               
                 if i > 1:
-                    result.append(i)  # (i-1..0)i
-                result.append(i+1)    # i(0..i-1)
-            else:                     # (0..n-1)n(n+1..i-1)i
+                    result.append(i) 
+                result.append(i+1)   
+            else:                    
                 if n > 1:
-                    result.append(n)  # (n-1..0)n(n+1..i-1)i
-                result.append(i)      # (i-1..n+1)n(0..n-1)i
-                result.append(i+1)    # i(n-1..0)n(n+1..i-1)
-                result.append(n+1)    # (0..n-1)in(n+1..i-1)
+                    result.append(n) 
+                result.append(i)     
+                result.append(i+1)   
+                result.append(n+1)   
         return result
 
 

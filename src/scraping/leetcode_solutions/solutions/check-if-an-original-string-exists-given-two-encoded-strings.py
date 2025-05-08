@@ -3,7 +3,7 @@
 # top-down dp (faster since accessing less states)
 class Solution(object):
     def possiblyEquals(self, s1, s2):
-        def general_possible_numbers(s):  # Time: O(2^l), Space: O(2^l), l is the length of consecutive digits, and l is at most 3
+        def general_possible_numbers(s): 
             dp = [set() for _ in range(len(s))]
             for i in range(len(s)):
                 curr, basis = 0, 1

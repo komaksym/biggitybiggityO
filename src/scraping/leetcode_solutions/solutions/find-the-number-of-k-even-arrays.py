@@ -9,9 +9,9 @@ class Solution(object):
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 
@@ -29,7 +29,7 @@ class Solution(object):
         result = 0
         if k == 0:
             result = (result+pow(odd, n))%MOD
-        for x in range(1, (n+1-k)//2+1):  # since (n-(k+x))-((x+1)-2) >= 0, so x <= (n+1-k)/2
+        for x in range(1, (n+1-k)//2+1): 
             result = (result+(nHr(x, (k+x)-x)*nHr(x+1, (n-(k+x))-((x+1)-2))*pow(even, k+x)*pow(odd, n-(k+x))%MOD))%MOD
         return result
 

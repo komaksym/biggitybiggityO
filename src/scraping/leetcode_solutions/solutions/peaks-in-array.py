@@ -3,9 +3,9 @@
 # bit, fenwick tree
 class Solution(object):
     def countOfPeaks(self, nums, queries):
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, nums):
-                self.__bit = [0]*(len(nums)+1)  # Extra one for dummy node.
+                self.__bit = [0]*(len(nums)+1) 
                 for i in range(1, len(self.__bit)):
                     self.__bit[i] = nums[i-1] + self.__bit[i-1]
                 for i in reversed(range(1, len(self.__bit))):
@@ -13,13 +13,13 @@ class Solution(object):
                     self.__bit[i] -= self.__bit[last_i]
 
             def add(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] += val
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = 0
                 while i > 0:
                     ret += self.__bit[i]
@@ -50,18 +50,18 @@ class Solution(object):
 # bit, fenwick tree
 class Solution2(object):
     def countOfPeaks(self, nums, queries):
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, n):
-                self.__bit = [0]*(n+1)  # Extra one for dummy node.
+                self.__bit = [0]*(n+1) 
 
             def add(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] += val
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = 0
                 while i > 0:
                     ret += self.__bit[i]

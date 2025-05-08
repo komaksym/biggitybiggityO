@@ -3,7 +3,7 @@
 class Solution(object):
     def findNumberOfLIS(self, nums):
         result, max_len = 0, 0
-        dp = [[1, 1] for _ in range(len(nums))]  # {length, number} pair
+        dp = [[1, 1] for _ in range(len(nums))] 
         for i in range(len(nums)):
             for j in range(i):
                 if nums[i] > nums[j]:

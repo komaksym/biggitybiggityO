@@ -7,7 +7,7 @@ import itertools
 class Solution(object):
     def minimumCosts(self, regular, express, expressCost):
         result = []
-        dp = [0, expressCost]  # dp[0]: min cost of regular route to curr stop, dp[1]: min cost of express route to curr stop
+        dp = [0, expressCost] 
         for r, e in zip(regular, express):
             dp = [min(dp[0]+r, dp[1]+e), min(dp[0]+(r+expressCost), dp[1]+e)]
             result.append(min(dp[0], dp[1]))

@@ -22,7 +22,7 @@ class Solution(object):
             pairs.append([nums1[i], nums2[j]])
             push(i, j + 1)
             if j == 0:
-                push(i + 1, 0)  # at most queue min(n, m) space
+                push(i + 1, 0) 
         return pairs
 
 

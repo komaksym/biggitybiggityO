@@ -16,7 +16,7 @@ class Solution2(object):
     def countNumbersWithUniqueDigits(self, n):
         fact = [1]*2
         def nPr(n, k):
-            while len(fact) <= n:  # lazy initialization
+            while len(fact) <= n: 
                 fact.append(fact[-1]*len(fact))
             return fact[n]//fact[n-k]
 

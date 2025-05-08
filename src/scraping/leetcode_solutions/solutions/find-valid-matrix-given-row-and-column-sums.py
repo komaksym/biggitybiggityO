@@ -6,12 +6,12 @@ class Solution(object):
         matrix = [[0]*len(colSum) for _ in range(len(rowSum))]
         i = j = 0
         while i < len(matrix) and j < len(matrix[0]):
-            matrix[i][j] = min(rowSum[i], colSum[j])  # greedily used
+            matrix[i][j] = min(rowSum[i], colSum[j]) 
             rowSum[i] -= matrix[i][j]
             colSum[j] -= matrix[i][j]
-            if not rowSum[i]:  # won't be used in row i, ++i
+            if not rowSum[i]: 
                 i += 1
-            if not colSum[j]:  # won't be used in col j, ++j
+            if not colSum[j]: 
                 j += 1
         return matrix
 
@@ -22,7 +22,7 @@ class Solution2(object):
         matrix = [[0]*len(colSum) for _ in range(len(rowSum))]
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
-                matrix[i][j] = min(rowSum[i], colSum[j])  # greedily used
+                matrix[i][j] = min(rowSum[i], colSum[j]) 
                 rowSum[i] -= matrix[i][j]
                 colSum[j] -= matrix[i][j]
         return matrix

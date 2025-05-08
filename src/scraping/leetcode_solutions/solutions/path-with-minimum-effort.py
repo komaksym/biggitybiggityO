@@ -34,14 +34,14 @@ class Solution(object):
 import collections
 
 
-class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
+class UnionFind(object): 
     def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -52,7 +52,7 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]:  # union by rank
+        if self.rank[x_root] < self.rank[y_root]: 
             self.set[x_root] = y_root
         elif self.rank[x_root] > self.rank[y_root]:
             self.set[y_root] = x_root
@@ -90,7 +90,7 @@ class Solution2(object):
 class Solution3(object):
     def minimumEffortPath(self, heights):
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-        def check(heights, x):  # bi-bfs
+        def check(heights, x): 
             lookup = [[False]*len(heights[0]) for _ in range(len(heights))]
             left, right = {(0, 0)}, {(len(heights)-1, len(heights[0])-1)}
             while left:

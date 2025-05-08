@@ -49,7 +49,7 @@ class Trie(object):
         curr.pcnt -= 1
         for c in word:
             if curr.children[ord(c)-ord('a')].pcnt == 1:
-                curr.children[ord(c)-ord('a')] = None  # delete all unused nodes
+                curr.children[ord(c)-ord('a')] = None 
                 return
             curr = curr.children[ord(c)-ord('a')]
             curr.pcnt -= 1

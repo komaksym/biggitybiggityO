@@ -30,7 +30,7 @@ class Solution(object):
             I[1] += A[1]
             return [I, dist(I, A)]
 
-        def trivial(boundaries):  # circumscribed circle
+        def trivial(boundaries): 
             if not boundaries:
                 return None
             if len(boundaries) == 1:

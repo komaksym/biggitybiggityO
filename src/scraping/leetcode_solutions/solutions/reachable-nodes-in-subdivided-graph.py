@@ -17,7 +17,7 @@ class Solution(object):
         count = collections.defaultdict(lambda: collections.defaultdict(int))
         result = 0
         while min_heap:
-            curr_total, u = heapq.heappop(min_heap)  # O(|V|*log|V|) in total
+            curr_total, u = heapq.heappop(min_heap) 
             if best[u] < curr_total:
                 continue
             result += 1
@@ -26,7 +26,7 @@ class Solution(object):
                 next_total = curr_total+w+1
                 if next_total <= M and next_total < best[v]:
                     best[v] = next_total
-                    heapq.heappush(min_heap, (next_total, v))  # binary heap O(|E|*log|V|) in total
+                    heapq.heappush(min_heap, (next_total, v)) 
         for u, v, w in edges:
             result += min(w, count[u][v]+count[v][u])
         return result

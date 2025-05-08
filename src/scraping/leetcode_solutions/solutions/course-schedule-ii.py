@@ -64,7 +64,7 @@ class Solution3(object):
             if any(not dfs(v) for v in adj[u]):
                 return False
             lookup[u] = BLACK
-            result.append(u)  # should be postorder
+            result.append(u) 
             return True
 
         result = []
@@ -91,7 +91,7 @@ class Solution4(object):
             if any(not dfs(v) for v in adj[u]):
                 return False
             lookup[u] = BLACK
-            result.append(u)  # should be postorder
+            result.append(u) 
             return True
 
         result = []

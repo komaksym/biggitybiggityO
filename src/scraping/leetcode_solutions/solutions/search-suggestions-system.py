@@ -84,14 +84,14 @@ import bisect
 
 class Solution3(object):
     def suggestedProducts(self, products, searchWord):
-        products.sort()  # Time: O(n * l * log(n * l))
+        products.sort() 
         result = []
         prefix = ""
-        for i, c in enumerate(searchWord):  # Time: O(l)
+        for i, c in enumerate(searchWord): 
             prefix += c
-            start = bisect.bisect_left(products, prefix)  # Time: O(log(n * l))
+            start = bisect.bisect_left(products, prefix) 
             new_products = []
-            for j in range(start, len(products)):  # Time: O(n * l)
+            for j in range(start, len(products)): 
                 if not (i < len(products[j]) and products[j][i] == c):
                     break
                 new_products.append(products[j])

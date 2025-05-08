@@ -13,7 +13,7 @@ class Solution(object):
                     change[requests[i][0]] -= 1
                     change[requests[i][1]] += 1
                 if all(c == 0 for c in change):
-                    return k  # early return
+                    return k 
         return 0
 # full search solution (much slower)
 class Solution2(object):

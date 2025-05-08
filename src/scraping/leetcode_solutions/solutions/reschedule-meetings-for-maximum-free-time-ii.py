@@ -3,7 +3,7 @@
 # array
 class Solution(object):
     def maxFreeTime(self, eventTime, startTime, endTime):
-        def topk(a, k):  # Time: O(k * n)
+        def topk(a, k): 
             result = [[float("-inf")]*2 for _ in range(k)]
             for x in a:
                 for i in range(len(result)):

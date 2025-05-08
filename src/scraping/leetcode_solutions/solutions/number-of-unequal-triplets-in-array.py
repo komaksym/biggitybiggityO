@@ -8,7 +8,7 @@ class Solution(object):
     def unequalTriplets(self, nums):
         K = 3
         cnt = collections.Counter()
-        dp = [0]*K  # dp[i]: number of unequal (i+1)-plets
+        dp = [0]*K 
         for x in nums:
             cnt[x] += 1
             other_cnt = 1

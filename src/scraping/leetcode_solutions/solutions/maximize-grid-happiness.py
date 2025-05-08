@@ -26,7 +26,7 @@ class Solution(object):
                     if len(curr) == m*n or (i == 0 and e == 0):
                         result = max(result, total)                
                         continue
-                    if total + (i+e)*120 < result:  # pruning
+                    if total + (i+e)*120 < result: 
                         continue
                     if e > 0:
                         stk.append((3, tuple()))
@@ -36,7 +36,7 @@ class Solution(object):
                         stk.append((3, tuple()))
                         stk.append((2, (i-1, e, count_total(curr, 1, total))))
                         stk.append((1, (1,)))
-                    if left(curr) or up(curr):  # leave unoccupied iff left or up is occupied
+                    if left(curr) or up(curr): 
                         stk.append((3, tuple()))
                         stk.append((2, (i, e, total)))
                         stk.append((1, (0,)))
@@ -70,9 +70,9 @@ class Solution2(object):
             if len(curr) == m*n or (i == 0 and e == 0):
                 result[0] = max(result[0], total)                
                 return
-            if total + (i+e)*120 < result[0]:  # pruning
+            if total + (i+e)*120 < result[0]: 
                 return
-            if left(curr) or up(curr):  # leave unoccupied iff left or up is occupied
+            if left(curr) or up(curr): 
                 curr.append(0)
                 backtracking(i, e, total, curr, result)
                 curr.pop()

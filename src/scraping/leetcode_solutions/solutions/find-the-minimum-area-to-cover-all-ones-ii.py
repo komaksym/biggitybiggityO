@@ -83,17 +83,17 @@ class Solution2(object):
                 self.fn = fn
                 self.bit_length = [0]
                 n = len(arr)
-                k = n.bit_length()-1  # log2_floor(n)
+                k = n.bit_length()-1 
                 for i in range(k+1):
                     self.bit_length.extend(i+1 for _ in range(min(1<<i, (n+1)-len(self.bit_length))))
                 self.st = [[0]*n for _ in range(k+1)]
                 self.st[0] = arr[:]
-                for i in range(1, k+1):  # Time: O(NlogN) * O(fn)
+                for i in range(1, k+1): 
                     for j in range((n-(1<<i))+1):
                         self.st[i][j] = fn(self.st[i-1][j], self.st[i-1][j+(1<<(i-1))])
         
-            def query(self, L, R):  # Time: O(fn)
-                i = self.bit_length[R-L+1]-1  # log2_floor(R-L+1)
+            def query(self, L, R): 
+                i = self.bit_length[R-L+1]-1 
                 return self.fn(self.st[i][L], self.st[i][R-(1<<i)+1])
 
         def minimumArea(min_i, max_i, min_j, max_j):
@@ -180,17 +180,17 @@ class Solution3(object):
                 self.fn = fn
                 self.bit_length = [0]
                 n = len(arr)
-                k = n.bit_length()-1  # log2_floor(n)
+                k = n.bit_length()-1 
                 for i in range(k+1):
                     self.bit_length.extend(i+1 for _ in range(min(1<<i, (n+1)-len(self.bit_length))))
                 self.st = [[0]*n for _ in range(k+1)]
                 self.st[0] = arr[:]
-                for i in range(1, k+1):  # Time: O(NlogN) * O(fn)
+                for i in range(1, k+1): 
                     for j in range((n-(1<<i))+1):
                         self.st[i][j] = fn(self.st[i-1][j], self.st[i-1][j+(1<<(i-1))])
         
-            def query(self, L, R):  # Time: O(fn)
-                i = self.bit_length[R-L+1]-1  # log2_floor(R-L+1)
+            def query(self, L, R): 
+                i = self.bit_length[R-L+1]-1 
                 return self.fn(self.st[i][L], self.st[i][R-(1<<i)+1])
 
         def minimumArea(min_i, max_i, min_j, max_j):

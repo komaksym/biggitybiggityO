@@ -8,6 +8,6 @@ class Solution(object):
                 continue
             x1 += int(s1[i] == 'x')
             y1 += int(s1[i] == 'y')
-        if x1%2 !=  y1%2:  # impossible
+        if x1%2 !=  y1%2: 
             return -1
         return (x1//2 + y1//2) + (x1%2 + y1%2)

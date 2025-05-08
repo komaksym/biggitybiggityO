@@ -4,7 +4,7 @@ class Solution(object):
     def encode(self, s):
         def encode_substr(dp, s, i, j):
             temp = s[i:j+1]
-            pos = (temp + temp).find(temp, 1)  # O(n) on average
+            pos = (temp + temp).find(temp, 1) 
             if pos >= len(temp):
                 return temp
             return str(len(temp)/pos) + '[' + dp[i][i + pos - 1] + ']'

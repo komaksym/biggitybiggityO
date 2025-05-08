@@ -18,7 +18,7 @@ class Solution(object):
                         if new_color in lookup:
                             if lookup[new_color] == VISITED:
                                 continue
-                            return True  # VISITING
+                            return True 
                         stk.append((1, new_color))
                 elif step == 2:
                     lookup[color] = VISITED

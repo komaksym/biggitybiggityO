@@ -9,13 +9,13 @@ class Solution(object):
 #                         , n is len(nums[0])
 class Solution2(object):
     def findDifferentBinaryString(self, nums):
-        lookup = set([int(x, 2) for x in nums])  # Time: O(k * n) = O(n^2)
-        return next(bin(i)[2:].zfill(len(nums[0])) for i in range(2**len(nums[0])) if i not in lookup)  # Time: O(k + n) = O(n)
+        lookup = set([int(x, 2) for x in nums]) 
+        return next(bin(i)[2:].zfill(len(nums[0])) for i in range(2**len(nums[0])) if i not in lookup) 
 
 
 # Time:  O(k * n + n * 2^n) = O(n * 2^n), k is len(nums)
 #                                       , n is len(nums[0])
 class Solution_Extra(object):
     def findAllDifferentBinaryStrings(self, nums):
-        lookup = set([int(x, 2) for x in nums])  # Time: O(k * n) = O(n * 2^n)
-        return [bin(i)[2:].zfill(len(nums[0])) for i in range(2**len(nums[0])) if i not in lookup]  # Time: O(2^n + n * (2^n - k))
+        lookup = set([int(x, 2) for x in nums]) 
+        return [bin(i)[2:].zfill(len(nums[0])) for i in range(2**len(nums[0])) if i not in lookup] 

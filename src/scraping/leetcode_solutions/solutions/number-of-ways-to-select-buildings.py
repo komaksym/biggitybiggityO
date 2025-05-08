@@ -4,7 +4,7 @@
 class Solution(object):
     def numberOfWays(self, s):
         K = 3
-        dp = [[0]*2 for _ in range(K)]  # dp[i][j]: number of ways of selecting i+1 buildings ending with type j
+        dp = [[0]*2 for _ in range(K)] 
         for c in s:
             j = ord(c)-ord('0')
             dp[0][j] += 1

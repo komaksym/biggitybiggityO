@@ -69,7 +69,7 @@ def bipartiteMatch(graph):
                 L = preds[v]
                 del preds[v]
                 for u in L :
-                    if u in pred and pred[u] is unmatched:  # early return
+                    if u in pred and pred[u] is unmatched: 
                         del pred[u]
                         matching[v] = u
                         ret[0] = True

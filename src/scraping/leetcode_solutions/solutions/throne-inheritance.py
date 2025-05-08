@@ -25,7 +25,7 @@ class ThroneInheritance(object):
     def getInheritanceOrder(self):
         result = []
         stk = [self.__king]
-        while stk:  # preorder traversal
+        while stk: 
             node = stk.pop()
             if node not in self.__dead:
                 result.append(node)

@@ -2,7 +2,7 @@
 
 class Solution(object):
     def longestPalindromeSubseq(self, s):
-        if s == s[::-1]:  # optional, to optimize special case
+        if s == s[::-1]: 
             return len(s)
 
         dp = [[1] * len(s) for _ in range(2)]

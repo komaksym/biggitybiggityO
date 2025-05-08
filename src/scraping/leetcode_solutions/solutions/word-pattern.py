@@ -36,7 +36,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def wordPattern(self, pattern, str):
-        words = str.split()  # Space: O(n)
+        words = str.split() 
         if len(pattern) != len(words):
             return False
 

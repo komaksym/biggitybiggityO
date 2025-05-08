@@ -22,7 +22,7 @@ class Solution(object):
                 nr, nc = r+dr, c+dc
                 if 0 <= nr < m and 0 <= nc < n and result[nr][nc] == -1:
                     candidates.append((nr, nc))
-            for nr, nc in sorted(candidates, key=degree):  # warnsdorff's rule
+            for nr, nc in sorted(candidates, key=degree): 
                 result[nr][nc] = i
                 if backtracking(nr, nc, i+1):
                     return True

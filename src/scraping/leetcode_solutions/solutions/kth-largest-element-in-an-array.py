@@ -29,7 +29,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         nth_element(nums, k-1, compare=lambda a, b: a > b)
@@ -47,7 +47,7 @@ class Solution2(object):
                 return nums[new_pivot_idx]
             elif new_pivot_idx > k - 1:
                 right = new_pivot_idx - 1
-            else:  # new_pivot_idx < k - 1.
+            else: 
                 left = new_pivot_idx + 1
 
     def PartitionAroundPivot(self, left, right, pivot_idx, nums):

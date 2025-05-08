@@ -30,7 +30,7 @@ class Solution(object):
             for node in trees:
                 if node.val in leaf_vals_set:
                     continue
-                if root:  # multiple roots
+                if root: 
                     return None
                 root = node
             return root

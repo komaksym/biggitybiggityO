@@ -20,25 +20,25 @@ class Solution(object):
 class Solution2(object):
     def specialArray(self, nums):
         MAX_NUM = 1000
-        def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
+        def inplace_counting_sort(nums, reverse=False): 
             count = [0]*(MAX_NUM+1)
             for num in nums:
                 count[num] += 1
             for i in range(1, len(count)):
                 count[i] += count[i-1]
-            for i in reversed(range(len(nums))):  # inplace but unstable sort
+            for i in reversed(range(len(nums))): 
                 while nums[i] >= 0:
                     count[nums[i]] -= 1
                     j = count[nums[i]]
                     nums[i], nums[j] = nums[j], ~nums[i]
             for i in range(len(nums)):
-                nums[i] = ~nums[i]  # restore values
-            if reverse:  # unstable sort
+                nums[i] = ~nums[i] 
+            if reverse: 
                 nums.reverse()
     
         inplace_counting_sort(nums, reverse=True)
         left, right = 0, len(nums)-1
-        while left <= right:  # Time: O(logn)
+        while left <= right: 
             mid = left + (right-left)//2
             if nums[mid] <= mid:
                 right = mid-1
@@ -52,7 +52,7 @@ class Solution2(object):
 class Solution3(object):
     def specialArray(self, nums):
         MAX_NUM = 1000
-        def counting_sort(nums, reverse=False):  # Time: O(n), Space: O(n)
+        def counting_sort(nums, reverse=False): 
             count = [0]*(MAX_NUM+1)
             for num in nums:
                 count[num] += 1
@@ -60,19 +60,19 @@ class Solution3(object):
                 count[i] += count[i-1]
             result = [0]*len(nums)
             if not reverse:
-                for num in reversed(nums):  # stable sort
+                for num in reversed(nums): 
                     count[num] -= 1
                     result[count[num]] = num
             else:
-                for num in nums:  # stable sort
+                for num in nums: 
                     count[num] -= 1
                     result[count[num]] = num
                 result.reverse()
             return result
     
-        nums = counting_sort(nums, reverse=True)  # extra O(n) space for stable sort
+        nums = counting_sort(nums, reverse=True) 
         left, right = 0, len(nums)-1
-        while left <= right:  # Time: O(logn)
+        while left <= right: 
             mid = left + (right-left)//2
             if nums[mid] <= mid:
                 right = mid-1
@@ -85,8 +85,8 @@ class Solution3(object):
 # sort solution
 class Solution4(object):
     def specialArray(self, nums):
-        nums.sort(reverse=True)  # Time: O(nlogn)
-        for i in range(len(nums)):  # Time: O(n)
+        nums.sort(reverse=True) 
+        for i in range(len(nums)): 
             if nums[i] <= i:
                 break
         else:

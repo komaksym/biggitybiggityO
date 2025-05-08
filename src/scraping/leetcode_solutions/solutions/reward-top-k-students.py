@@ -30,7 +30,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         pos, neg = set(positive_feedback), set(negative_feedback)

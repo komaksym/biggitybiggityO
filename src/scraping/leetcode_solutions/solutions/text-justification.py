@@ -8,7 +8,7 @@ class Solution(object):
             return 0
 
         def connect(words, maxWidth, begin, end, length, is_last):
-            s = []  # The extra space O(k) is spent here.
+            s = [] 
             n = end - begin
             for i in range(n):
                 s += words[begin + i],

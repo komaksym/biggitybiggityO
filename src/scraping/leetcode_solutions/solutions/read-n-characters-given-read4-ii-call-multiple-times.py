@@ -27,15 +27,15 @@ class Solution(object):
     def read(self, buf, n):
         i = 0
         while i < n:
-            if self.__i4 < self.__n4:  # Any characters in buf4.
+            if self.__i4 < self.__n4: 
                 buf[i] = self.__buf4[self.__i4]
                 i += 1
                 self.__i4 += 1
             else:
-                self.__n4 = read4(self.__buf4)  # Read more characters.
+                self.__n4 = read4(self.__buf4) 
                 if self.__n4:
                     self.__i4 = 0
-                else:  # Buffer has been empty.
+                else: 
                     break
 
         return i

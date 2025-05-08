@@ -36,7 +36,7 @@ class Leaderboard(object):
                     return
                 elif new_pivot_idx > k:
                     right = new_pivot_idx - 1
-                else:  # new_pivot_idx < k.
+                else: 
                     left = new_pivot_idx + 1
         
         scores = list(self.__lookup.values())

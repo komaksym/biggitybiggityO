@@ -45,20 +45,20 @@ class Solution2(object):
 # bit, fenwick tree
 class Solution3(object):
     def lengthOfLIS(self, nums):
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, n, default=0, fn=lambda x, y: x+y):
-                self.__bit = [default]*(n+1)  # Extra one for dummy node.
+                self.__bit = [default]*(n+1) 
                 self.__default = default
                 self.__fn = fn
 
             def update(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] = self.__fn(self.__bit[i], val)
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = self.__default
                 while i > 0:
                     ret = self.__fn(ret, self.__bit[i])
@@ -73,10 +73,10 @@ class Solution3(object):
 
 
 # Range Maximum Query
-class SegmentTree(object):  # 0-based index
+class SegmentTree(object): 
     def __init__(self, N,
                  build_fn=lambda x, y: [y]*(2*x),
-                 query_fn=lambda x, y: y if x is None else max(x, y),  # (lambda x, y: y if x is None else min(x, y))
+                 query_fn=lambda x, y: y if x is None else max(x, y), 
                  update_fn=lambda x, y: y,
                  default_val=0):
         self.N = N
@@ -92,7 +92,7 @@ class SegmentTree(object):  # 0-based index
         if x < self.N:
             self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-    def update(self, L, R, h):  # Time: O(logN), Space: O(N)
+    def update(self, L, R, h): 
         def pull(x):
             while x > 1:
                 x //= 2
@@ -104,10 +104,10 @@ class SegmentTree(object):  # 0-based index
         R += self.N
         L0, R0 = L, R
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 self.__apply(L, h) 
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 self.__apply(R, h)
                 R -= 1
             L //= 2
@@ -115,7 +115,7 @@ class SegmentTree(object):  # 0-based index
         pull(L0)
         pull(R0)
 
-    def query(self, L, R):  # Time: O(logN), Space: O(N)
+    def query(self, L, R): 
         def push(x):
             n = 2**self.H
             while n != 1:
@@ -135,10 +135,10 @@ class SegmentTree(object):  # 0-based index
         push(L)
         push(R)
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 result = self.query_fn(result, self.tree[L])
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 result = self.query_fn(result, self.tree[R])
                 R -= 1
             L //= 2
@@ -167,7 +167,7 @@ class Solution4(object):
 # Traditional DP solution.
 class Solution5(object):
     def lengthOfLIS(self, nums):
-        dp = []  # dp[i]: the length of LIS ends with nums[i]
+        dp = [] 
         for i in range(len(nums)):
             dp.append(1)
             for j in range(i):

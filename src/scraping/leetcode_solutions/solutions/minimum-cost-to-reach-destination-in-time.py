@@ -17,12 +17,12 @@ class Solution(object):
         min_heap = [(passingFees[0], 0, 0)]
         while min_heap:
             result, u, w = heapq.heappop(min_heap)
-            if w > maxTime:  # state with best[u] < w can't be filtered, which may have less cost
+            if w > maxTime: 
                 continue
             if u == len(passingFees)-1:
                 return result
             for v, nw in adj[u]:
-                if w+nw < best[v]:  # from less cost to more cost, only need to check state with less time
+                if w+nw < best[v]: 
                     best[v] = w+nw
                     heapq.heappush(min_heap, (result+passingFees[v], v, w+nw))
         return -1

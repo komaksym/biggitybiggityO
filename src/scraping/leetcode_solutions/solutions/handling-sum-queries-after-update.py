@@ -3,7 +3,7 @@
 # segment tree
 class Solution(object):
     def handleQuery(self, nums1, nums2, queries):
-        class SegmentTree(object):  # 0-based index
+        class SegmentTree(object): 
             def __init__(self, N,
                         build_fn=lambda _: 0,
                         query_fn=lambda x, y: y if x is None else max(x, y),
@@ -24,7 +24,7 @@ class Solution(object):
                 if x < self.base:
                     self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-            def update(self, L, R, h):  # Time: O(logN), Space: O(N)
+            def update(self, L, R, h): 
                 def pull(x):
                     while x > 1:
                         x >>= 1
@@ -38,10 +38,10 @@ class Solution(object):
                 R += self.base
                 L0, R0 = L, R
                 while L <= R:
-                    if L & 1:  # is right child
+                    if L & 1: 
                         self.__apply(L, h)
                         L += 1
-                    if R & 1 == 0:  # is left child
+                    if R & 1 == 0: 
                         self.__apply(R, h)
                         R -= 1
                     L >>= 1
@@ -49,7 +49,7 @@ class Solution(object):
                 pull(L0)
                 pull(R0)
 
-            def query(self, L, R):  # Time: O(logN), Space: O(N)
+            def query(self, L, R): 
                 def push(x):
                     n = self.H
                     while n:
@@ -69,10 +69,10 @@ class Solution(object):
                 push(L)
                 push(R)
                 while L <= R:
-                    if L & 1:  # is right child
+                    if L & 1: 
                         result = self.query_fn(result, self.tree[L])
                         L += 1
-                    if R & 1 == 0:  # is left child
+                    if R & 1 == 0: 
                         result = self.query_fn(result, self.tree[R])
                         R -= 1
                     L >>= 1

@@ -9,6 +9,6 @@ class Solution(object):
             if deleted:
                 return False
             deleted = True
-            if i >= 2 and nums[i-2] > nums[i]:  # delete nums[i] or nums[i-1]
+            if i >= 2 and nums[i-2] > nums[i]: 
                 nums[i] = nums[i-1]
         return True

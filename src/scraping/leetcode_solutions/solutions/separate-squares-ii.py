@@ -11,7 +11,7 @@ class Solution(object):
                 self.tree = [0]*l
                 self.cnt = [0]*l
         
-            def update(self, ql, qr, v, l, r, i):  # update [ql, qr) by v, interval [l, r) in sorted_x is covered by i
+            def update(self, ql, qr, v, l, r, i): 
                 if ql >= r or qr <= l:
                     return
                 if ql <= l and r <= qr:

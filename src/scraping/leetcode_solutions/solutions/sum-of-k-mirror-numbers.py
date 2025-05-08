@@ -36,7 +36,7 @@ class Solution(object):
                     break
             return x
 
-        base1, base2 = k, 10  # (10, k) is slower
+        base1, base2 = k, 10 
         gen = num_gen(base1)
         return sum(mirror_num(gen, base2) for _ in range(n))
 

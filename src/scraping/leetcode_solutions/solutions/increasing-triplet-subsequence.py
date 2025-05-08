@@ -11,7 +11,7 @@ class Solution(object):
                 min_num = c
             elif b >= c:
                 a, b = min_num, c
-            else:  # a < b < c
+            else: 
                 return True
         return False
 

@@ -64,7 +64,7 @@ class Solution2(object):
             while True:
                 if x > s:
                     result = min(result, int("".join(x)))
-                if not next_permutation(x, 0, len(x)):  # distinct permutations
+                if not next_permutation(x, 0, len(x)): 
                     break
         return result
 
@@ -90,7 +90,7 @@ class Solution3(object):
             if len(x) > len(s):
                 result = min(result, int("".join(x)))
                 continue
-            for perm in itertools.permutations(x):  # not distinct permutations
+            for perm in itertools.permutations(x): 
                 if perm > s:
                     result = min(result, int("".join(perm)))
         return result

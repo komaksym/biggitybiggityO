@@ -49,7 +49,7 @@ class Solution(object):
         return result
 class Solution2(object):
     def closestToTarget(self, arr, target):
-        result, dp = float("inf"), set()  # at most O(logm) dp states
+        result, dp = float("inf"), set() 
         for x in arr:
             dp = {x}|{f&x for f in dp}
             for f in dp:

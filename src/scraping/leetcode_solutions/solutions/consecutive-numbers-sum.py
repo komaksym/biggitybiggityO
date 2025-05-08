@@ -13,7 +13,7 @@ class Solution(object):
                 count += 1
             result *= count+1
             i += 2
-        if N != 1:  # N is the last prime if N != 1
+        if N != 1: 
             result *= 1+1
         return result
 

@@ -25,22 +25,22 @@ class Solution(object):
         for key, val in self.lookup.items():
             if can_start_with_0 or key != '0':
                 if num[0] > key:
-                    if len(num) == 2:  # num is like "21"
+                    if len(num) == 2: 
                         count += 1
-                    else:  # num is like "201"
+                    else: 
                         count += self.countStrobogrammaticUntil('9' * (len(num) - 2), True)
                 elif num[0] == key:
-                    if len(num) == 2:  # num is like 12".
+                    if len(num) == 2: 
                         if num[-1] >= val:
                             count += 1
                     else:
-                        if num[-1] >= val:  # num is like "102".
+                        if num[-1] >= val: 
                             count += self.countStrobogrammaticUntil(self.getMid(num), True)
-                        elif (self.getMid(num) != '0' * (len(num) - 2)):  # num is like "110".
+                        elif (self.getMid(num) != '0' * (len(num) - 2)): 
                             count += self.countStrobogrammaticUntil(self.getMid(num), True) - \
                                      self.isStrobogrammatic(self.getMid(num))
 
-        if not can_start_with_0: # Sum up each length.
+        if not can_start_with_0:
             for i in range(len(num) - 1, 0, -1):
                 count += self.countStrobogrammaticByLength(i)
         else:

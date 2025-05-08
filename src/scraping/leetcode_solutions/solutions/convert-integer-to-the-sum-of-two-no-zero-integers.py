@@ -6,7 +6,7 @@ class Solution(object):
         while curr: 
             if curr % 10 == 0 or (curr % 10 == 1 and curr != 1):
                 a += base
-                curr -= 10  # carry
+                curr -= 10 
             a += base
             base *= 10
             curr //= 10

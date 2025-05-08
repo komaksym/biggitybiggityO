@@ -24,7 +24,7 @@ class Solution(object):
                         result[1] += 1
             return result[1]
 
-        adj = [[] for _ in range(len(parents))]  # Space: O(n)
+        adj = [[] for _ in range(len(parents))] 
         for i in range(1, len(parents)):
             adj[parents[i]].append(i)
         return iter_dfs(adj)
@@ -43,7 +43,7 @@ class Solution2(object):
                 result[1] += 1
             return total
 
-        adj = [[] for _ in range(len(parents))]  # Space: O(n)
+        adj = [[] for _ in range(len(parents))] 
         for i in range(1, len(parents)):
             adj[parents[i]].append(i)
         result = [0]*2

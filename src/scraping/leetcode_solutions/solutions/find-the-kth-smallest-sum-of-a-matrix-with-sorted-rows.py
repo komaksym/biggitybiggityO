@@ -27,7 +27,7 @@ class Solution(object):
 # Time:  O((k + m) * log(m * MAX_NUM)) ~ O(k * m * log(m * MAX_NUM))
 class Solution2(object):
     def kthSmallest(self, mat, k):
-        def countArraysHaveSumLessOrEqual(mat, k, r, target):  # Time: O(k + m) ~ O(k * m)
+        def countArraysHaveSumLessOrEqual(mat, k, r, target): 
             if target < 0:
                 return 0
             if r == len(mat):

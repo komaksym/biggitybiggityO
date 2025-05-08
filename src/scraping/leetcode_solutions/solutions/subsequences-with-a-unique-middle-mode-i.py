@@ -15,11 +15,11 @@ class Solution(object):
         right = collections.defaultdict(int)
         for x in nums:
             right[x] += 1
-        left_x_sq = 0  # sum(left[x]^2 for x != v)
-        right_x_sq = sum(v**2 for v in right.values())  # sum(right[x]^2 for x != v)
-        left_x_right_x = 0  # sum(left[x]*right[x] for x != v)
-        left_x_sq_right_x = 0  # sum(left[x]^2*right[x] for x != v)
-        left_x_right_x_sq = 0  # sum(left[x]*right[x]^2 for x != v)
+        left_x_sq = 0 
+        right_x_sq = sum(v**2 for v in right.values()) 
+        left_x_right_x = 0 
+        left_x_sq_right_x = 0 
+        left_x_right_x_sq = 0 
         for i, v in enumerate(nums):
             left_x_sq -= left[v]**2
             right_x_sq -= right[v]**2

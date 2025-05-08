@@ -61,4 +61,4 @@ class Solution_TLE(object):
                                    matrix_expo([[int((mask1 & mask2) == 0)
                                                  for mask2 in patterns] 
                                                  for mask1 in patterns], height-1))[0],
-                      0)  # Time: O(p^3 * logh), Space: O(p^2)
+                      0) 

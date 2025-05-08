@@ -49,7 +49,7 @@ class Solution2(object):
                     stk[-1] = [min(stk[-1][0]+dp0, min(stk[-1][0], dp0)+1),
                                min(stk[-1][1], dp1),
                                None]
-                else:  # operand
+                else: 
                     stk[-1] = [dp0, dp1, None]
             else:
                 stk[-1][2] = c

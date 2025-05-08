@@ -13,7 +13,7 @@ class Solution(object):
             while len(g) <= p:
                 g += min(set(range(p)) - {x^y for x, y in zip(g[:len(g)/2], g[-2:-len(g)/2-2:-1])}),
             g_final ^= g[p]
-        return g_final > 0  # Theorem 1: First player must win iff g(current_state) != 0
+        return g_final > 0 
 
 
 # Time:  O(n + c^3 * 2^c * logc), n is length of string, c is count of "++"
@@ -28,13 +28,13 @@ class Solution2(object):
     def canWin(self, s):
         lookup = {}
 
-        def canWinHelper(consecutives):                                         # O(2^c) time
-            consecutives = tuple(sorted(c for c in consecutives if c >= 2))     # O(clogc) time
+        def canWinHelper(consecutives):                                        
+            consecutives = tuple(sorted(c for c in consecutives if c >= 2))    
             if consecutives not in lookup:
-                lookup[consecutives] = any(not canWinHelper(consecutives[:i] + (j, c-2-j) + consecutives[i+1:])  # O(c) time
-                                           for i, c in enumerate(consecutives)  # O(c) time
-                                           for j in range(c - 1))              # O(c) time
-            return lookup[consecutives]                                         # O(c) time
+                lookup[consecutives] = any(not canWinHelper(consecutives[:i] + (j, c-2-j) + consecutives[i+1:]) 
+                                           for i, c in enumerate(consecutives) 
+                                           for j in range(c - 1))             
+            return lookup[consecutives]                                        
 
         return canWinHelper(list(map(len, re.findall(r'\+\++', s))))
 
@@ -45,10 +45,10 @@ class Solution3(object):
     def canWin(self, s):
         i, n = 0, len(s) - 1
         is_win = False
-        while not is_win and i < n:                                     # O(n) time
+        while not is_win and i < n:                                    
             if s[i] == '+':
-                while not is_win and i < n and s[i+1] == '+':           # O(c) time
-                    is_win = not self.canWin(s[:i] + '--' + s[i+2:])    # O(n) space
+                while not is_win and i < n and s[i+1] == '+':          
+                    is_win = not self.canWin(s[:i] + '--' + s[i+2:])   
                     i += 1
             i += 1
         return is_win

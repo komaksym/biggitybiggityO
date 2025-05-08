@@ -33,7 +33,7 @@ class Solution(object):
             count[i%len(count)] += 1
         result = count[0]
         count[0] = 0
-        for i in range(1, len(count)//2+1):  # optimization
+        for i in range(1, len(count)//2+1): 
             pair_count = min(count[i], count[len(count)-i]) if 2*i != len(count) else count[i]//2
             result += pair_count
             count[i] -= pair_count
@@ -53,7 +53,7 @@ class Solution2(object):
             count[i%len(count)] += 1
         result = count[0]
         count[0] = 0
-        for i in range(1, len(count)//2+1):  # optimization
+        for i in range(1, len(count)//2+1): 
             pair_count = min(count[i], count[len(count)-i]) if 2*i != len(count) else count[i]//2
             result += pair_count
             count[i] -= pair_count

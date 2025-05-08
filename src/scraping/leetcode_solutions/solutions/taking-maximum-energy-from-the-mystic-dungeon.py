@@ -6,7 +6,7 @@ class Solution(object):
         result = float("-inf")
         for i in range(k):
             curr = 0
-            for j in reversed(range(((len(energy)-i)-1)%k, len(energy)-i, k)):  # xrange(len(energy)-1-i, -1, -k)
+            for j in reversed(range(((len(energy)-i)-1)%k, len(energy)-i, k)): 
                 curr += energy[j]
                 result = max(result, curr)
         return result

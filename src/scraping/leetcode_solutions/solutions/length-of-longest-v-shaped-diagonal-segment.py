@@ -37,22 +37,22 @@ class Solution(object):
                     ni = i-down_right[i][j]
                     nj = j-down_right[i][j]
                     if 0 <= ni < n and 0 <= nj < m and grid[ni][nj] == 1:
-                        result = max(result, down_right[i][j]+up_right[i][j])  # >
+                        result = max(result, down_right[i][j]+up_right[i][j]) 
                 if (down_left[i][j]%2 == 0 and x == 0) or (down_left[i][j]%2 == 1 and x == 2):
                     ni = i-down_left[i][j]
                     nj = j+down_left[i][j]
                     if 0 <= ni< n and 0 <= nj < m and grid[ni][nj] == 1:
-                        result = max(result, down_left[i][j]+down_right[i][j])  # v
+                        result = max(result, down_left[i][j]+down_right[i][j]) 
                 if (up_left[i][j]%2 == 0 and x == 0) or (up_left[i][j]%2 == 1 and x == 2):
                     ni = i+up_left[i][j]
                     nj = j+up_left[i][j]
                     if 0 <= ni < n and 0 <= nj < m and grid[ni][nj] == 1:
-                        result = max(result, up_left[i][j]+down_left[i][j])  # <
+                        result = max(result, up_left[i][j]+down_left[i][j]) 
                 if (up_right[i][j]%2 == 0 and x == 0) or (up_right[i][j]%2 == 1 and x == 2):
                     ni = i+up_right[i][j]
                     nj = j-up_right[i][j]
                     if 0 <= ni < n and 0 <= nj < m and grid[ni][nj] == 1:
-                        result = max(result, up_right[i][j]+up_left[i][j])  # ^
+                        result = max(result, up_right[i][j]+up_left[i][j]) 
         return result
 
 
@@ -77,7 +77,7 @@ class Solution2(object):
 
         n, m = len(grid), len(grid[0])
         directions = ((1, 1), (1, -1), (-1, -1), (-1, 1))
-        lookup = [[[[[0]*m for _ in range(n)] for _ in range(4)] for _ in range(3)] for _ in range(2)]  # be careful with the order, going from smaller dimensions to larger dimensions
+        lookup = [[[[[0]*m for _ in range(n)] for _ in range(4)] for _ in range(3)] for _ in range(2)] 
         result = 0
         for i in range(n):
             for j in range(m):

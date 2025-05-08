@@ -7,11 +7,11 @@ import collections
 class Solution(object):
     def minimumTotalDistance(self, robot, factory):
         robot.sort(), factory.sort()
-        dp = [float("inf")]*(len(robot)+1)  # dp[j] at i: min of factory[:i+1] and robot[:j]
+        dp = [float("inf")]*(len(robot)+1) 
         dp[0] = 0
         for i in range(len(factory)):
             prefix = 0
-            dq = collections.deque([(dp[0]-prefix, 0)])  # pattern of min in the sliding window with size (limit+1)
+            dq = collections.deque([(dp[0]-prefix, 0)]) 
             for j in range(1, len(robot)+1):
                 prefix += abs(robot[j-1]-factory[i][0])
                 if j-dq[0][1] == factory[i][1]+1:
@@ -31,7 +31,7 @@ import collections
 class Solution2(object):
     def minimumTotalDistance(self, robot, factory):
         robot.sort(), factory.sort()
-        dp = [float("inf")]*(len(robot)+1)  # dp[j] at i: min of factory[:i+1] and robot[:j]
+        dp = [float("inf")]*(len(robot)+1) 
         dp[0] = 0
         for i in range(len(factory)):
             for j in reversed(range(1, len(robot)+1)):

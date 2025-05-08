@@ -51,7 +51,7 @@ class Solution2(object):
         left, right = 0, min(len(A), len(B)) + 1
         while left < right:
             mid = left + (right-left)/2
-            if not check(mid):  # find the min idx such that check(idx) == false
+            if not check(mid): 
                 right = mid
             else:
                 left = mid+1
@@ -75,7 +75,7 @@ class Solution3(object):
         left, right = 0, min(len(A), len(B)) + 1
         while left < right:
             mid = left + (right-left)/2
-            if not check(mid):  # find the min idx such that check(idx) == false
+            if not check(mid): 
                 right = mid
             else:
                 left = mid+1

@@ -3,7 +3,7 @@
 # binary search, greedy
 class Solution(object):
     def maximumTastiness(self, price, k):
-        def check(x):  # max cnt if smallest absolute difference >= x
+        def check(x): 
             cnt = prev = 0
             for i in range(len(price)):
                 if prev and price[i]-prev < x:

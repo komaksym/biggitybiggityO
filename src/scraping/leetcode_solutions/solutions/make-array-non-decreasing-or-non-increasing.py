@@ -28,7 +28,7 @@ class Solution2(object):
     def convertArray(self, nums):
         vals = sorted(set(nums))
         def f(nums):
-            dp = collections.defaultdict(int)  # dp[i]: min(cnt(j) for j in vals if j <= i)
+            dp = collections.defaultdict(int) 
             for x in nums:
                 prev = -1
                 for i in vals:

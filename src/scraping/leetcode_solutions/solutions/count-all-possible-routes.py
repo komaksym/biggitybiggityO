@@ -12,8 +12,8 @@ class Solution(object):
         locations.sort()
         start, finish = bisect.bisect_left(locations, s), bisect.bisect_left(locations, f)
 
-        left = [[0]*(fuel+1) for _ in range(len(locations))]  # left[i][f], last move is toward left to location i by f fuel
-        right = [[0]*(fuel+1) for _ in range(len(locations))]  # right[i][f], last move is toward right to location i by f fuel
+        left = [[0]*(fuel+1) for _ in range(len(locations))] 
+        right = [[0]*(fuel+1) for _ in range(len(locations))] 
         for f in range(1, fuel+1):
             for j in range(len(locations)-1):
                 d = locations[j+1]-locations[j]

@@ -98,8 +98,8 @@ class SegmentTree(object):
             return
         L += self.base
         R += self.base
-        self.__push(L)  # key point
-        self.__push(R)  # key point
+        self.__push(L) 
+        self.__push(R) 
         L0, R0 = L, R
         while L <= R:
             if L & 1:

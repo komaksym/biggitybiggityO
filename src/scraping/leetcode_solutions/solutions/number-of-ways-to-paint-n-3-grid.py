@@ -23,7 +23,7 @@ class Solution(object):
         MOD = 10**9 + 7
         T = [[3, 2],
              [2, 2]]
-        return sum(matrix_mult([[6, 6]], matrix_expo(T, n-1))[0]) % MOD  # [a1, a0] * T^(n-1)
+        return sum(matrix_mult([[6, 6]], matrix_expo(T, n-1))[0]) % MOD 
 
 
 # Time:  O(n)

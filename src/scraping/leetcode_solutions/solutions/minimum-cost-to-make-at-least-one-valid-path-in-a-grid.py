@@ -54,4 +54,4 @@ class Solution2(object):
                     dq.appendleft((nb, d))
                 else:
                     dq.append((nb, d+1))
-        return -1  # never reach here
+        return -1 

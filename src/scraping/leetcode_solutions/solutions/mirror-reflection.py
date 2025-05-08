@@ -16,7 +16,7 @@ class Solution2(object):
         lcm = p*q // gcd(p, q)
         if lcm // p % 2 == 1:
             if lcm // q % 2 == 1:
-                return 1  # a is odd, b is odd <=> (p & -p) == (q & -q)
-            return 2  # a is odd, b is even <=> (p & -p) > (q & -q)
-        return 0  # a is even, b is odd <=> (p & -p) < (q & -q)
+                return 1 
+            return 2 
+        return 0 
 

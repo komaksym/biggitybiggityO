@@ -11,7 +11,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -56,7 +56,7 @@ class Solution(object):
                     word[j1], word[j2] = word[j2], word[j1]
                     buckets["".join(word)].append(i)
                     word[j1], word[j2] = word[j2], word[j1]
-            for word in A:  # Time:  O(n * l^4)
+            for word in A: 
                 for i1, i2 in itertools.combinations(buckets[word], 2):
                     union_find.union_set(i1, i2)
         return union_find.size()

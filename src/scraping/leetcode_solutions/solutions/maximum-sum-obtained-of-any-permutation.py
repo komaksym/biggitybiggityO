@@ -5,14 +5,14 @@ import itertools
 
 class Solution(object):
     def maxSumRangeQuery(self, nums, requests):
-        def addmod(a, b, mod):  # avoid overflow in other languages
+        def addmod(a, b, mod): 
             a %= mod
             b %= mod
             if mod-a <= b:
                 b -= mod
             return a+b
         
-        def mulmod(a, b, mod):  # avoid overflow in other languages
+        def mulmod(a, b, mod): 
             a %= mod
             b %= mod
             if a < b:

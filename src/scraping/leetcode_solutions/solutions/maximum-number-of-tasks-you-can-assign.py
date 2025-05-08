@@ -7,7 +7,7 @@ class Solution(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
         def check(tasks, workers, pills, strength, x):
             t = SortedList(tasks[:x])
-            for worker in workers[-x:]:  # enumerate from the weakest worker to the strongest worker, greedily assign him to the hardest task which he can do
+            for worker in workers[-x:]: 
                 i = t.bisect_right(worker)-1
                 if i != -1:
                     t.pop(i)
@@ -41,7 +41,7 @@ class Solution2(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
         def check(tasks, workers, pills, strength, x):
             w = SortedList(workers[-x:])
-            for task in tasks[-x:]:  # enumerate from the hardest task to the easiest task, greedily assign it to the weakest worker whom it can be done by
+            for task in tasks[-x:]: 
                 i = w.bisect_left(task)
                 if i != len(w):
                     w.pop(i)
@@ -75,7 +75,7 @@ class Solution3(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
         def check(tasks, workers, pills, strength, x):
             t = tasks[:x]
-            for worker in workers[-x:]:  # enumerate from the weakest worker to the strongest worker, greedily assign him to the hardest task which he can do
+            for worker in workers[-x:]: 
                 i = bisect.bisect_right(t, worker)-1
                 if i != -1:
                     t.pop(i)
@@ -109,7 +109,7 @@ class Solution4(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
         def check(tasks, workers, pills, strength, x):
             w = workers[-x:]
-            for task in tasks[-x:]:  # enumerate from the hardest task to the easiest task, greedily assign it to the weakest worker whom it can be done by
+            for task in tasks[-x:]: 
                 i = bisect.bisect_left(w, task)
                 if i != len(w):
                     w.pop(i)

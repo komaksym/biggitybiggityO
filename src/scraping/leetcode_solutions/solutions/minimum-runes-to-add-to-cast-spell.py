@@ -2,7 +2,7 @@
 
 # tarjan's algorithm, SCC, strongly connected compoenents
 # reference: https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
-def strongly_connected_components(adj):  # Time: O(|V| + |E|) = O(N + 2N) = O(N), Space: O(|V|) = O(N)
+def strongly_connected_components(adj): 
     def strongconnect(v):
         index[v] = index_counter[0]
         lowlinks[v] = index_counter[0]

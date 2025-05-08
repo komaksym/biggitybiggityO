@@ -7,15 +7,15 @@ from functools import partial
 # Template:
 # https://github.com/kamyu104/GoogleKickStart-2021/blob/main/Round%20H/dependent_events3.py
 # Tarjan's Offline LCA Algorithm
-class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+class UnionFind(object): 
     def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
-        self.ancestor = list(range(n))  # added
+        self.ancestor = list(range(n)) 
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -26,21 +26,21 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]:  # union by rank
+        if self.rank[x] > self.rank[y]: 
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
             self.rank[y] += 1
         return True
 
-    def find_ancestor_of_set(self, x):  # added
+    def find_ancestor_of_set(self, x): 
         return self.ancestor[self.find_set(x)]
 
-    def update_ancestor_of_set(self, x):  # added
+    def update_ancestor_of_set(self, x): 
         self.ancestor[self.find_set(x)] = x
 
 
-class TreeInfos(object):  # Time: O(N), Space: O(N + Q), N is the number of nodes
+class TreeInfos(object): 
     def __init__(self, children, pairs):
         def preprocess(curr, parent):
             D[curr] = 1 if parent == -1 else D[parent]+1
@@ -96,8 +96,8 @@ from functools import partial
 
 # Template:
 # https://github.com/kamyu104/GoogleKickStart-2021/blob/main/Round%20H/dependent_events2.py
-class TreeInfos2(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of nodes
-    def __init__(self, children):  # modified
+class TreeInfos2(object): 
+    def __init__(self, children): 
         def preprocess(curr, parent):
             D[curr] = 1 if parent == -1 else D[parent]+1
             if parent != -1:
@@ -130,7 +130,7 @@ class TreeInfos2(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of
         assert(C[0] == N-1)
         self.L, self.R, self.D, self.P = L, R, D, P
 
-    def is_ancestor(self, a, b):  # includes itself
+    def is_ancestor(self, a, b): 
         return self.L[a] <= self.L[b] <= self.R[b] <= self.R[a]
 
     def lca(self, a, b):
@@ -138,7 +138,7 @@ class TreeInfos2(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of
             a, b = b, a
         if self.is_ancestor(a, b):
             return a
-        for i in reversed(range(len(self.P[a]))):  # O(logN)
+        for i in reversed(range(len(self.P[a]))): 
             if i < len(self.P[a]) and not self.is_ancestor(self.P[a][i], b):
                 a = self.P[a][i]
         return self.P[a][0]
@@ -160,8 +160,8 @@ from functools import partial
 
 # Template:
 # https://github.com/kamyu104/GoogleKickStart-2021/blob/main/Round%20H/dependent_events2.py
-class TreeInfos3(object):  # Time: O(N), Space: O(N), N is the number of nodes
-    def __init__(self, children):  # modified
+class TreeInfos3(object): 
+    def __init__(self, children): 
         def preprocess(curr, parent):
             D[curr] = 1 if parent == -1 else D[parent]+1
             P[curr] = parent
@@ -182,7 +182,7 @@ class TreeInfos3(object):  # Time: O(N), Space: O(N), N is the number of nodes
             stk.pop()()
         self.D, self.P = D, P
 
-    def lca(self, a, b):  # Time: O(h)
+    def lca(self, a, b): 
         while self.D[a] > self.D[b]:
             a = self.P[a]
         while self.D[a] < self.D[b]:

@@ -9,5 +9,5 @@ class Solution(object):
         if h*(h+1)*(h+2) > 6*n:
             h -= 1
         n -= h*(h+1)*(h+2)//6
-        d = int(math.ceil((-1+(1+8*n)**0.5)/2))  # find min d s.t. d*(d+1)//2 >= n
+        d = int(math.ceil((-1+(1+8*n)**0.5)/2)) 
         return h*(h+1)//2 + d

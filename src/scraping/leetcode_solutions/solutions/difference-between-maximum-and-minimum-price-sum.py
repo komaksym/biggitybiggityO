@@ -19,7 +19,7 @@ class Solution(object):
                     v = adj[u][i]
                     if v == p:
                         continue
-                    new_ret = [price[v], 0]  # [max_path_sum, max_path_sum_without_last_node]
+                    new_ret = [price[v], 0] 
                     stk.append((3, (u, new_ret, ret)))
                     stk.append((1, (v, u, new_ret)))
                 elif step == 3:
@@ -41,7 +41,7 @@ class Solution(object):
 class Solution2(object):
     def maxOutput(self, n, edges, price):
         def dfs(u, p):
-            dp = [price[u], 0]  # [max_path_sum, max_path_sum_without_last_node]
+            dp = [price[u], 0] 
             for v in adj[u]:
                 if v == p:
                     continue
@@ -65,7 +65,7 @@ class Solution2(object):
 class Solution3(object):
     def maxOutput(self, n, edges, price):
         def iter_dfs():
-            dp = [0]*n  # max_sum
+            dp = [0]*n 
             stk = [(1, 0, -1)]
             while stk:
                 step, u, p = stk.pop()
@@ -139,7 +139,7 @@ class Solution4(object):
                 dfs2(v, u, (top2[0][0] if top2[0][1] != v else top2[1][0])+price[u])
     
         result = [0]
-        dp = [0]*n  # max_sum
+        dp = [0]*n 
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v)

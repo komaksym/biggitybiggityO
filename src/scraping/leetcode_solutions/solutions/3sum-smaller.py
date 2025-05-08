@@ -8,7 +8,7 @@ class Solution(object):
         count, k = 0, 2
         while k < n:
             i, j = 0, k - 1
-            while i < j:  # Two Pointers, linear time.
+            while i < j: 
                 if nums[i] + nums[j] + nums[k] >= target:
                     j -= 1
                 else:

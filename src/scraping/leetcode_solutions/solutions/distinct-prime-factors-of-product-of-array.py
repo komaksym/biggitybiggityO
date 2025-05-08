@@ -4,7 +4,7 @@
 # number theory
 def linear_sieve_of_eratosthenes(n):
     primes = []
-    spf = [-1]*(n+1)  # the smallest prime factor
+    spf = [-1]*(n+1) 
     for i in range(2, n+1):
         if spf[i] == -1:
             spf[i] = i
@@ -13,7 +13,7 @@ def linear_sieve_of_eratosthenes(n):
             if i*p > n or p > spf[i]:
                 break
             spf[i*p] = p
-    return primes  # len(primes) = O(n/(logn-1)), reference: https://math.stackexchange.com/questions/264544/how-to-find-number-of-prime-numbers-up-to-to-n
+    return primes 
 
 
 MAX_N = 10**3
@@ -21,7 +21,7 @@ PRIMES = linear_sieve_of_eratosthenes(int(MAX_N**0.5))
 class Solution(object):
     def distinctPrimeFactors(self, nums):
         result = set()
-        for x in set(nums):  # Time: O(n/p1 + n/p2 + ... + n/pk) = O(n * (1/p1 + 1/p2 + ... + 1/pk)) = O(nlog(logn))
+        for x in set(nums): 
             for p in PRIMES:
                 if p > x:
                     break
@@ -30,6 +30,6 @@ class Solution(object):
                 result.add(p)
                 while x%p == 0:
                     x //= p
-            if x != 1:  # x is a prime
+            if x != 1: 
                 result.add(x)
         return len(result)

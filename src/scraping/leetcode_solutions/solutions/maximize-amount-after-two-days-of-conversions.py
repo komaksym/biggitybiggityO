@@ -43,7 +43,7 @@ class Solution2(object):
         dist = collections.defaultdict(int)
         dist[initialCurrency] = 1.0
         adj1 = find_adj(pairs1, rates1)
-        bfs(dist, adj1)  # Time: O(n)
+        bfs(dist, adj1) 
         adj2 = find_adj(pairs2, rates2)
-        bfs(dist, adj2)  # Time: O(n^2)
+        bfs(dist, adj2) 
         return dist[initialCurrency]

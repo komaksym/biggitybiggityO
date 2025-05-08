@@ -1,7 +1,7 @@
 # Time:  O(nlogn)
 
 # Monotone Chain Algorithm
-# Template: https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain#Python
+# Template: https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chai
 class Solution(object):
     def outerTrees(self, points):
         points = sorted(set(tuple(x) for x in points))
@@ -14,15 +14,15 @@ class Solution(object):
 
         lower = []
         for p in points:
-            while len(lower) >= 2 and cross(lower[-2], lower[-1], p) < 0:  # modified
+            while len(lower) >= 2 and cross(lower[-2], lower[-1], p) < 0: 
                 lower.pop()
             lower.append(p)
 
         upper = []
         for p in reversed(points):
-            while len(upper) >= 2 and cross(upper[-2], upper[-1], p) < 0:  # modified
+            while len(upper) >= 2 and cross(upper[-2], upper[-1], p) < 0: 
                 upper.pop()
             upper.append(p)
 
         result = lower[:-1] + upper[:-1]
-        return result if result[1] != result[-1] else result[:len(result)//2+1]  # modified
+        return result if result[1] != result[-1] else result[:len(result)//2+1] 

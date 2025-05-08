@@ -7,7 +7,7 @@ from functools import reduce
 # hash
 class Solution(object):
     def twoEditWords(self, queries, dictionary):
-        MOD = (1<<64)-59  # largest 64-bit prime
+        MOD = (1<<64)-59 
         BASE = 113
         POW = [1]
         def add(a, b):

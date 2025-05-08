@@ -8,6 +8,6 @@ class Solution(object):
             accu += num
             if accu-target in lookup and lookup[accu-target] >= right:
                 right = i
-                result += 1  # greedy
+                result += 1 
             lookup[accu] = i
         return result

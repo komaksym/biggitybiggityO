@@ -3,7 +3,7 @@
 class Solution(object):
     def countSmaller(self, nums):
         def countAndMergeSort(num_idxs, start, end, counts):
-            if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
+            if end - start <= 0: 
                 return
 
             mid = start + (end - start) // 2
@@ -32,18 +32,18 @@ class Solution(object):
 # BIT solution.
 class Solution2(object):
     def countSmaller(self, nums):
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, n):
-                self.__bit = [0]*(n+1)  # Extra one for dummy node.
+                self.__bit = [0]*(n+1) 
 
             def add(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] += val
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = 0
                 while i > 0:
                     ret += self.__bit[i]
@@ -90,13 +90,13 @@ class Solution3(object):
             curr = self.root
             while curr:
                 if node.val < curr.val:
-                    curr.count += 1  # Increase the number of left children.
+                    curr.count += 1 
                     if curr.left:
                         curr = curr.left
                     else:
                         curr.left = node
                         break
-                else:  # Insert right if larger or equal.
+                else: 
                     if curr.right:
                         curr = curr.right
                     else:
@@ -110,9 +110,9 @@ class Solution3(object):
                 if val < curr.val:
                     curr = curr.left
                 elif val > curr.val:
-                    count += 1 + curr.count  # Count the number of the smaller nodes.
+                    count += 1 + curr.count 
                     curr = curr.right
-                else:  # Equal.
+                else: 
                     return count + curr.count
             return 0
 

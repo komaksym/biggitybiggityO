@@ -7,8 +7,8 @@ class Solution(object):
         has_zero = False
         for b in binary:
             if b == '1':
-                ends1 = (ends0+ends1+1)%MOD  # curr subsequences end with 1 is all prev distinct subsequences appended by 1 and plus "1"
+                ends1 = (ends0+ends1+1)%MOD 
             else:
-                ends0 = (ends0+ends1)%MOD  # curr subsequences end with 0 is all prev distinct subsequences appended by 0 and don't plus "0"
+                ends0 = (ends0+ends1)%MOD 
                 has_zero = True
-        return (ends0+ends1+int(has_zero))%MOD  # add "0" if has_zero
+        return (ends0+ends1+int(has_zero))%MOD 

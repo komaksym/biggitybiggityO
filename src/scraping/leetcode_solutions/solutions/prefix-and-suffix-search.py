@@ -15,7 +15,7 @@ class WordFilter(object):
         self.__trie = _trie()
 
         for weight, word in enumerate(words):
-            word += '#'
+            word += 
             for i in range(len(word)):
                 cur = self.__trie
                 cur["_weight"] = weight
@@ -30,7 +30,7 @@ class WordFilter(object):
         :rtype: int
         """
         cur = self.__trie
-        for letter in suffix + '#' + prefix:
+        for letter in suffix + 
             if letter not in cur:
                 return -1
             cur = cur[letter]

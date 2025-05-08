@@ -31,7 +31,7 @@ class Solution(object):
         :type fontInfo: FontInfo
         :rtype: int
         """
-        def check(count, w, h, fonts, fontInfo, x):  # Time: O(1)
+        def check(count, w, h, fonts, fontInfo, x): 
             return (fontInfo.getHeight(fonts[x]) <= h and
                     sum(cnt * fontInfo.getWidth(fonts[x], c) for c, cnt in count.items()) <= w)
 

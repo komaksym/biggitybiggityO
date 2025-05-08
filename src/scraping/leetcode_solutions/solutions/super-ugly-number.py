@@ -71,7 +71,7 @@ class Solution3(object):
             min_val, k = heap[0]
             uglies += [min_val]
 
-            while heap[0][0] == min_val:  # worst time: O(klogk)
+            while heap[0][0] == min_val: 
                 min_val, k = heapq.heappop(heap)
                 idx[k] += 1
                 heapq.heappush(heap, (primes[k] * uglies[idx[k]], k))

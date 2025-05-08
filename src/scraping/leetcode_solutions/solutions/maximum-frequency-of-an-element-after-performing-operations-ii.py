@@ -44,7 +44,7 @@ class Solution2(object):
         :type numOperations: int
         :rtype: int
         """
-        cnt = collections.defaultdict(int)  # defaultdict is much faster than Counter
+        cnt = collections.defaultdict(int) 
         for x in nums:
             cnt[x] += 1
         diff = defaultdict(int)

@@ -10,7 +10,7 @@ class Solution(object):
         :type endTime: List[int]
         :rtype: int
         """
-        def topk(a, k):  # Time: O(k * n)
+        def topk(a, k): 
             result = [[float("-inf")]*2 for _ in range(k)]
             for x in a:
                 for i in range(len(result)):

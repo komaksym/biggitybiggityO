@@ -74,7 +74,7 @@ class Solution2(object):
             return prefix
 
         def KMP(text, pattern):
-            prefix = getPrefix(pattern+'#'+text)
+            prefix = getPrefix(pattern+
             return ((i-(len(pattern)+1))-(len(pattern)-1) for i in range((len(pattern)+1)+(len(pattern)-1) , len(prefix)) if prefix[i]+1 == len(pattern))
     
         result = []

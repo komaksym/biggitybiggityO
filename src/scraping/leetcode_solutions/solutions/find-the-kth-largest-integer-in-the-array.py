@@ -34,7 +34,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
         
         nth_element(nums, k-1, compare=lambda a, b: a > b if len(a) == len(b) else len(a) > len(b))

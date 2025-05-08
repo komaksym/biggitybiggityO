@@ -77,7 +77,7 @@ class Solution2(object):
                 a, b = b, a%b
             return a
 
-        def find_candidates(t, l):  # Time: O(logt)
+        def find_candidates(t, l): 
             candidates = []
             for x in reversed(range(2, 9+1)):
                 while t%x == 0:

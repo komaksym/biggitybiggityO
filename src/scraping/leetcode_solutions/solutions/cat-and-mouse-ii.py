@@ -34,21 +34,21 @@ class Solution(object):
                     CAT_START = r*C + c
                 elif grid[r][c] == 'F':
                     FOOD = r*C + c
-                elif grid[r][c] == '#':
+                elif grid[r][c] == 
                     WALLS.add(r*C + c)
 
         graph = collections.defaultdict(set)
         jump = {MOUSE:mouseJump, CAT:catJump}
         for r in range(R):
             for c in range(C):
-                if grid[r][c] == '#':
+                if grid[r][c] == 
                     continue
                 pos = r*C + c
                 for t in [MOUSE, CAT]:
                     for dr, dc in directions:
                         for d in range(jump[t]+1):
                             nr, nc = r+dr*d, c+dc*d
-                            if not (0 <= nr < R and 0 <= nc < C and grid[nr][nc] != '#'):
+                            if not (0 <= nr < R and 0 <= nc < C and grid[nr][nc] != 
                                 break
                             graph[pos, t].add(nr*C + nc)
 
@@ -120,20 +120,20 @@ class Solution2(object):
                     CAT_START = r*C + c
                 elif grid[r][c] == 'F':
                     FOOD = r*C + c
-                elif grid[r][c] == '#':
+                elif grid[r][c] == 
                     WALLS.add(r*C + c)
         graph = collections.defaultdict(set)
         jump = {MOUSE:mouseJump, CAT:catJump}
         for r in range(R):
             for c in range(C):
-                if grid[r][c] == '#':
+                if grid[r][c] == 
                     continue
                 pos = r*C + c
                 for t in [MOUSE, CAT]:
                     for dr, dc in directions:
                         for d in range(jump[t]+1):
                             nr, nc = r+dr*d, c+dc*d
-                            if not (0 <= nr < R and 0 <= nc < C and grid[nr][nc] != '#'):
+                            if not (0 <= nr < R and 0 <= nc < C and grid[nr][nc] != 
                                 break
                             graph[pos, t].add(nr*C + nc)
 

@@ -61,7 +61,7 @@ class Solution2(object):
         :type target: int
         :rtype: int
         """
-        result, dp = float("inf"), set()  # at most O(logm) dp states
+        result, dp = float("inf"), set() 
         for x in arr:
             dp = {x}|{f&x for f in dp}
             for f in dp:

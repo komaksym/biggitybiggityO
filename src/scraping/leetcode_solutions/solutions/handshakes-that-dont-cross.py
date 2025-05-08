@@ -8,8 +8,8 @@ class Solution(object):
         :rtype: int
         """
         MOD = 10**9+7
-        def inv(x, m):  # Euler's Theorem
-            return pow(x, m-2, m)  # O(logMOD) = O(1)
+        def inv(x, m): 
+            return pow(x, m-2, m) 
 
         def nCr(n, k, m):
             if n-k < k:
@@ -20,7 +20,7 @@ class Solution(object):
             return result
 
         n = num_people//2
-        return nCr(2*n, n, MOD)*inv(n+1, MOD) % MOD  # Catalan number
+        return nCr(2*n, n, MOD)*inv(n+1, MOD) % MOD 
 
 
 # Time:  O(n^2)

@@ -25,7 +25,7 @@ class Solution(object):
             result.append(sorted_p[i][1])
         return result
 
-    def kthElement(self, nums, k):  # O(n) on average
+    def kthElement(self, nums, k): 
         def PartitionAroundPivot(left, right, pivot_idx, nums):
             pivot_value = nums[pivot_idx]
             new_pivot_idx = left
@@ -46,7 +46,7 @@ class Solution(object):
                 return
             elif new_pivot_idx > k:
                 right = new_pivot_idx - 1
-            else:  # new_pivot_idx < k.
+            else: 
                 left = new_pivot_idx + 1
 
 

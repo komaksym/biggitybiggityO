@@ -27,7 +27,7 @@ class Solution(object):
                             0 <= nc < len(grid[0]) and
                             grid[nr][nc] != 'X'):
                         continue
-                    if grid[nr][nc] == '#':
+                    if grid[nr][nc] == 
                         return result
                     grid[nr][nc] = 'X'
                     new_q.append((nr, nc))

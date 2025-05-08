@@ -31,6 +31,6 @@ class Solution(object):
                     heapq.heappush(min_heap, (dist[v], v))
                 elif w > dist[v]:
                     dp[u] = (dp[u]+dp[v])%MOD
-            if u == 0:  # early return
+            if u == 0: 
                 break
         return dp[0]

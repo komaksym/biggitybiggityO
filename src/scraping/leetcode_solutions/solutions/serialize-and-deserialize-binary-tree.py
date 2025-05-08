@@ -18,7 +18,7 @@ class Codec(object):
         """
         def serializeHelper(node):
             if not node:
-                vals.append('#')
+                vals.append(
                 return
             vals.append(str(node.val))
             serializeHelper(node.left)
@@ -36,7 +36,7 @@ class Codec(object):
         """
         def deserializeHelper():
             val = next(vals)
-            if val == '#':
+            if val == 
                 return None
             node = TreeNode(int(val))
             node.left = deserializeHelper()
@@ -69,7 +69,7 @@ class Codec2(object):
         """
         def gen_preorder(node):
             if not node:
-                yield '#'
+                yield 
             else:
                 yield str(node.val)
                 for n in gen_preorder(node.left):
@@ -87,7 +87,7 @@ class Codec2(object):
         """
         def builder(chunk_iter):
             val = next(chunk_iter)
-            if val == '#':
+            if val == 
                 return None
             node = TreeNode(int(val))
             node.left = builder(chunk_iter)

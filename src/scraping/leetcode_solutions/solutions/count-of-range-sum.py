@@ -10,7 +10,7 @@ class Solution(object):
         :rtype: int
         """
         def countAndMergeSort(sums, start, end, lower, upper):
-            if end - start <= 1:  # The size of range [start, end) less than 2 is always with count 0.
+            if end - start <= 1: 
                 return 0
             mid = start + (end - start) / 2
             count = countAndMergeSort(sums, start, mid, lower, upper) + \
@@ -47,7 +47,7 @@ class Solution2(object):
         :rtype: int
         """
         def countAndMergeSort(sums, start, end, lower, upper):
-            if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
+            if end - start <= 0: 
                 return 0
 
             mid = start + (end - start) / 2

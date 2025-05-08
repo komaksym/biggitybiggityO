@@ -26,10 +26,10 @@ class MRUQueue(object):
 
 # Time:  ctor:  O(n + m), m is the max number of calls
 # Space: fetch: O(log(n + m))
-class BIT(object):  # 0-indexed.
+class BIT(object): 
     def __init__(self, n):
         MAX_CALLS = 2000
-        self.__bit = [0]*(n+MAX_CALLS+1)  # Extra one for dummy node.
+        self.__bit = [0]*(n+MAX_CALLS+1) 
         for i in range(1, len(self.__bit)):
             self.__bit[i] = (1 if i-1 < n else 0) + self.__bit[i-1]
         for i in reversed(range(1, len(self.__bit))):
@@ -37,13 +37,13 @@ class BIT(object):  # 0-indexed.
             self.__bit[i] -= self.__bit[last_i]
 
     def add(self, i, val):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         while i < len(self.__bit):
             self.__bit[i] += val
             i += (i & -i)
 
     def query(self, i):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         ret = 0
         while i > 0:
             ret += self.__bit[i]
@@ -53,13 +53,13 @@ class BIT(object):  # 0-indexed.
     def binary_lift(self, k):
         floor_log2_n = (len(self.__bit)-1).bit_length()-1
         pow_i = 2**floor_log2_n
-        total = pos = 0  # 1-indexed
-        for i in reversed(range(floor_log2_n+1)):  # O(logN)
+        total = pos = 0 
+        for i in reversed(range(floor_log2_n+1)): 
             if pos+pow_i < len(self.__bit) and not (total+self.__bit[pos+pow_i] >= k):
                 total += self.__bit[pos+pow_i]
                 pos += pow_i
             pow_i >>= 1
-        return (pos+1)-1  # 0-indexed
+        return (pos+1)-1 
 
 
 # fenwick / bit solution

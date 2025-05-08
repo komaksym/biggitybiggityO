@@ -7,7 +7,7 @@ import collections
 # BFS solution. Same complexity but faster version.
 class Solution(object):
     def validTree(self, n, edges):
-        if len(edges) != n - 1:  # Check number of edges.
+        if len(edges) != n - 1: 
             return False
 
         neighbors = collections.defaultdict(list)

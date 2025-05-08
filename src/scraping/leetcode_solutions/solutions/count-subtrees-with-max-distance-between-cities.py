@@ -23,13 +23,13 @@ class Solution(object):
                 new_dp_curr = [row[:] for row in dp[curr]]
                 for curr_d in range(count[curr]):
                     for curr_max_d in range(curr_d, min(2*curr_d+1, count[curr])):
-                        if not dp[curr][curr_d][curr_max_d]:  # pruning
+                        if not dp[curr][curr_d][curr_max_d]: 
                             continue
                         for child_d in range(count[child]):
                             for child_max_d in range(child_d, min(2*child_d+1, count[child])):
                                 new_dp_curr[max(curr_d, child_d+1)][max(curr_max_d, child_max_d, curr_d+child_d+1)] += \
-                                    dp[curr][curr_d][curr_max_d]*dp[child][child_d][child_max_d]  # count subtrees with new child
-                count[curr] += count[child]  # merge new child
+                                    dp[curr][curr_d][curr_max_d]*dp[child][child_d][child_max_d] 
+                count[curr] += count[child] 
                 dp[curr] = new_dp_curr
 
         adj = collections.defaultdict(list)
@@ -39,13 +39,13 @@ class Solution(object):
             adj[u].append(v)
             adj[v].append(u)
         lookup, result = [0]*n, [0]*(n-1)
-        for i in range(n):  # Time: sum(O(k^5) for k in [1, n]) = O(n^6)
+        for i in range(n): 
             dp = [[[0]*n for _ in range(n)] for _ in range(n)]
             count = [1]*n
-            dfs(n, adj, i, -1, lookup, count, dp)  # Time: O(k^5), k is the number of the remaining cities
+            dfs(n, adj, i, -1, lookup, count, dp) 
             lookup[i] = 1
-            for d in range(1, n):  # for each depth from city i
-                for max_d in range(d, min(2*d+1, n)):  # for each max distance
+            for d in range(1, n): 
+                for max_d in range(d, min(2*d+1, n)): 
                     result[max_d-1] += dp[i][d][max_d]
         return result
 # Space: O(n)

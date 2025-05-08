@@ -20,7 +20,7 @@ class Solution(object):
                 for row in get_vecs(board, transposed):
                     it, matched = direction(word), True
                     for c in row:
-                        if c == '#':
+                        if c == 
                             if next(it, None) is None and matched:
                                 return True
                             it, matched = direction(word), True
@@ -46,7 +46,7 @@ class Solution2(object):
         words = [word, word[::-1]]
         for mat in (board, list(zip(*board))):
             for row in mat:
-                blocks = ''.join(row).split('#')
+                blocks = ''.join(row).split(
                 for s in blocks:
                     if len(s) != len(word):
                         continue

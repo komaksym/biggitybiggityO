@@ -66,7 +66,7 @@ class Solution2(object):
         :type k: int
         :rtype: int
         """
-        result, dp = float("inf"), set()  # at most O(logr) dp states
+        result, dp = float("inf"), set() 
         for x in nums:
             dp = {x}|{f|x for f in dp}
             for f in dp:

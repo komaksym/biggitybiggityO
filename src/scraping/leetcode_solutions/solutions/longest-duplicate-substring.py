@@ -28,7 +28,7 @@ class Solution(object):
                 curr = ((D*curr) % M + ord(S[i])-ord('a') -
                         ((ord(S[i-L])-ord('a'))*p) % M) % M
                 if curr in lookup:
-                    for j in lookup[curr]:  # check if string is the same when hash is the same
+                    for j in lookup[curr]: 
                         if S[j-L+1:j+1] == S[i-L+1:i+1]:
                             return i-L+1
                 lookup[curr].append(i)

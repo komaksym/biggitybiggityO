@@ -40,7 +40,7 @@ class Solution2(object):
                     del to_remove[sign*heap[0]]
                 heapq.heappop(heap)
 
-        def full_delete(heap, to_remove, sign):  # Time: O(k), Space: O(k)
+        def full_delete(heap, to_remove, sign): 
             result = []
             for x in heap:
                 if sign*x not in to_remove:

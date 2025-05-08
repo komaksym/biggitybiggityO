@@ -14,7 +14,7 @@ class Solution(object):
 
         def f(a, d, x):
             r = int((-(2*a-d)+((2*a-d)**2+8*d*x)**0.5)/(2*d))
-            if s(a, d, r) > x:  # adjust float accuracy
+            if s(a, d, r) > x: 
                 r -= 1
             return r
 

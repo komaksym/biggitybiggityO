@@ -16,4 +16,4 @@ class Solution(object):
             if not result:
                 return N
         assert(False)
-        return -1  # never reach
+        return -1 

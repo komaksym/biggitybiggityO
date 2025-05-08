@@ -40,9 +40,9 @@ def parse_data(files_path, files):
 
 
 
-CODES_PATTERN = set_regex_pattern(r"(?:^#\s?Space.*?\n+?)(class.*?)((?:\n^#\s?Time)(?:)|(?:\Z))", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-LABELS_PATTERN = set_regex_pattern(r"^#\s*Time.*?\bO\(([^()]+(?:\([^()]*\)[^()]*)*)\)", flags=re.IGNORECASE | re.MULTILINE)
-FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
+CODES_PATTERN = set_regex_pattern(r"(?:
+LABELS_PATTERN = set_regex_pattern(r"
+FILTER_PATTERN = set_regex_pattern(r"
 
 
 raw_data = search_files(files_path)

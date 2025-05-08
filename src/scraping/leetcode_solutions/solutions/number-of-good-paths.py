@@ -4,33 +4,33 @@
 import collections
 
 
-class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+class UnionFind(object): 
     def __init__(self, vals):
         self.set = list(range(len(vals)))
         self.rank = [0]*len(vals)
-        self.cnt = [collections.Counter({v:1}) for v in vals]   # added
+        self.cnt = [collections.Counter({v:1}) for v in vals]  
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
             self.set[stk.pop()] = x
         return x
 
-    def union_set(self, x, y, v):  # modified
+    def union_set(self, x, y, v): 
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
-            return 0  # modified
-        if self.rank[x] > self.rank[y]:  # union by rank
+            return 0 
+        if self.rank[x] > self.rank[y]: 
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
             self.rank[y] += 1
-        cx, cy = self.cnt[x][v], self.cnt[y][v]  # added
-        self.cnt[y] = collections.Counter({v:cx+cy})  # added
-        return cx*cy  # modified
+        cx, cy = self.cnt[x][v], self.cnt[y][v] 
+        self.cnt[y] = collections.Counter({v:cx+cy}) 
+        return cx*cy 
 
 
 # tree, sort, union find

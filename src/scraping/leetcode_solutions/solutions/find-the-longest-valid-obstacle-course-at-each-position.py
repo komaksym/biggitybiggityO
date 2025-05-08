@@ -19,10 +19,10 @@ class Solution(object):
                 stk.append(0)
             stk[i] = x
         return result
-class SegmentTree(object):  # 0-based index
+class SegmentTree(object): 
     def __init__(self, N,
                  build_fn=lambda x, y: [y]*(2*x),
-                 query_fn=lambda x, y: y if x is None else max(x, y),  # (lambda x, y: y if x is None else min(x, y))
+                 query_fn=lambda x, y: y if x is None else max(x, y), 
                  update_fn=lambda x, y: y,
                  default_val=0):
         self.N = N
@@ -38,7 +38,7 @@ class SegmentTree(object):  # 0-based index
         if x < self.N:
             self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-    def update(self, L, R, h):  # Time: O(logN), Space: O(N)
+    def update(self, L, R, h): 
         def pull(x):
             while x > 1:
                 x //= 2
@@ -50,10 +50,10 @@ class SegmentTree(object):  # 0-based index
         R += self.N
         L0, R0 = L, R
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 self.__apply(L, h) 
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 self.__apply(R, h)
                 R -= 1
             L //= 2
@@ -61,7 +61,7 @@ class SegmentTree(object):  # 0-based index
         pull(L0)
         pull(R0)
 
-    def query(self, L, R):  # Time: O(logN), Space: O(N)
+    def query(self, L, R): 
         def push(x):
             n = 2**self.H
             while n != 1:
@@ -81,10 +81,10 @@ class SegmentTree(object):  # 0-based index
         push(L)
         push(R)
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 result = self.query_fn(result, self.tree[L])
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 result = self.query_fn(result, self.tree[R])
                 R -= 1
             L //= 2

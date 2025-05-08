@@ -10,7 +10,7 @@ class Solution(object):
         result, carry = 0, 0
         for i in reversed(range(1, len(s))):
             if int(s[i]) + carry == 1:
-                carry = 1  # once it was set, it would keep carrying forever
+                carry = 1 
                 result += 2
             else:
                 result += 1

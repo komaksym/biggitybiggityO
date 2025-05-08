@@ -82,7 +82,7 @@ class LinkedList(object):
         self.tail = None
 
     def append(self, node):
-        node.next, node.prev = None, None  # avoid dirty node
+        node.next, node.prev = None, None 
         if self.head is None:
             self.head = node
         else:
@@ -99,7 +99,7 @@ class LinkedList(object):
             node.next.prev = node.prev
         else:
             self.tail = node.prev
-        node.next, node.prev = None, None  # make node clean
+        node.next, node.prev = None, None 
 
 
 class LFUCache2(object):

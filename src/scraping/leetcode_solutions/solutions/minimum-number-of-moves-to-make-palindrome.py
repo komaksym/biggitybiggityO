@@ -1,7 +1,7 @@
 # Time:  O(nlogn)
 # Space: O(n)
 
-class BIT(object):  # 0-indexed
+class BIT(object): 
     def __init__(self, n):
         self.__bit = [0]*(n+1)
 
@@ -42,7 +42,7 @@ class Solution(object):
         bit = BIT(len(s))
         result = 0
         for i in targets:
-            result += i-bit.query(i-1)  # move from bit.query(i-1) to i
+            result += i-bit.query(i-1) 
             bit.add(i, 1)
         return result
 

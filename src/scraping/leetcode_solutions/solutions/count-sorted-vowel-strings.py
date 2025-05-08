@@ -7,7 +7,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        def nCr(n, r):  # Time: O(n), Space: O(1)
+        def nCr(n, r): 
             if n-r < r:
                 return nCr(n, n-r)
             c = 1
@@ -16,4 +16,4 @@ class Solution(object):
                 c //= k
             return c
     
-        return nCr(n+4, 4)  # H(5, n) = C(n+5-1, n) = C(n+4, 4)
+        return nCr(n+4, 4) 

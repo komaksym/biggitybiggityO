@@ -4,14 +4,14 @@
 import itertools
 
 
-class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
+class UnionFind(object): 
     def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -22,7 +22,7 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]:  # union by rank
+        if self.rank[x_root] < self.rank[y_root]: 
             self.set[x_root] = y_root
         elif self.rank[x_root] > self.rank[y_root]:
             self.set[y_root] = x_root
@@ -38,7 +38,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        def modified_sieve_of_eratosthenes(n, lookup, uf):  # Time: O(n * log(logn)), Space: O(n)
+        def modified_sieve_of_eratosthenes(n, lookup, uf): 
             if n < 2:
                 return
             is_prime = [True]*(n+1)
@@ -47,7 +47,7 @@ class Solution(object):
                     continue
                 for j in range(i+i, len(is_prime), i):
                     is_prime[j] = False
-                    if j in lookup:  # modified
+                    if j in lookup: 
                         uf.union_set(i-1, j-1)
 
         max_num = max(nums)

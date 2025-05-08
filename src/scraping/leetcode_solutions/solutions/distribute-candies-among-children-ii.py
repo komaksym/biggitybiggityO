@@ -9,7 +9,7 @@ class Solution(object):
         :type limit: int
         :rtype: int
         """
-        def nCr(n, r):  # Time: O(n), Space: O(1)
+        def nCr(n, r): 
             if not 0 <= r <= n:
                 return 0
             if n-r < r:

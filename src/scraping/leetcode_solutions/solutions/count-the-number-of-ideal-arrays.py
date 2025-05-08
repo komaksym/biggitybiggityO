@@ -15,15 +15,15 @@ class Solution(object):
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 
-        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+        def linear_sieve_of_eratosthenes(n): 
             primes = []
-            spf = [-1]*(n+1)  # the smallest prime factor
+            spf = [-1]*(n+1) 
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i
@@ -51,7 +51,7 @@ class Solution(object):
         for k in range(1, maxValue+1):
             total = 1
             for c in prime_factors(k).values():
-                total = (total*nCr(n+c-1, c))%MOD  # H(n, c) = nCr(n+c-1, n)
+                total = (total*nCr(n+c-1, c))%MOD 
             result = (result+total)%MOD
         return result
 
@@ -72,9 +72,9 @@ class Solution2(object):
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 

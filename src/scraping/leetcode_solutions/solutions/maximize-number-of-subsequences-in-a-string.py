@@ -16,4 +16,4 @@ class Solution(object):
                 cnt2 += 1
             if c == pattern[0]:
                 cnt1 += 1
-        return result + max(cnt1, cnt2)  # add pattern[1] at back or pattern[0] at front
+        return result + max(cnt1, cnt2) 

@@ -23,7 +23,7 @@ class Solution(object):
                         if v != p:
                             stk.append((1, v, u))
                 elif step == 2:
-                    dp[u] = min(sum(dp[v] for v in adj[u] if v != p), values[u])  # min(pick u, not pick u)
+                    dp[u] = min(sum(dp[v] for v in adj[u] if v != p), values[u]) 
             return dp[0]
 
         adj = [[] for _ in range(len(values))]
@@ -46,7 +46,7 @@ class Solution2(object):
         def dfs(u, p):
             if len(adj[u]) == (1 if u else 0):
                 return values[u]
-            return min(sum(dfs(v, u) for v in adj[u] if v != p), values[u])  # min(pick u, not pick u)
+            return min(sum(dfs(v, u) for v in adj[u] if v != p), values[u]) 
 
         adj = [[] for _ in range(len(values))]
         for u, v in edges:

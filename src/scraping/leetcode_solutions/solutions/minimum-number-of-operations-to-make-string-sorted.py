@@ -5,15 +5,15 @@ inv = [0, 1]
 
 
 class Solution(object):
-    def makeStringSorted(self, s):  # count of prev_permutation
+    def makeStringSorted(self, s): 
         """
         :type s: str
         :rtype: int
         """
         def inverse(n, m):
             i = len(inv)
-            while len(inv) <= n:  # lazy initialization
-                inv.append(inv[m%i]*(m-m//i) % m)  # https://cp-algorithms.com/algebra/module-inverse.html
+            while len(inv) <= n: 
+                inv.append(inv[m%i]*(m-m//i) % m) 
                 i += 1
             return inv[n]
     

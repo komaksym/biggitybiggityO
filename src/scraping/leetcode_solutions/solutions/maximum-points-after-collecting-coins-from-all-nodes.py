@@ -14,11 +14,11 @@ class Solution(object):
         def dfs(u, p, base):
             if base >= max_base:
                 return 0
-            if lookup[u]&base:  # we prefer the first way to the second way, so the visited state cannot improve the current chosen ways
+            if lookup[u]&base: 
                 return NEG_INF
             lookup[u] |= base
             return max(((coins[u]//base)-k)+sum(dfs(v, u, base) for v in adj[u] if v != p),
-                        (coins[u]//(base<<1))+sum(dfs(v, u, base<<1) for v in adj[u] if v != p) if (coins[u]//base)-k < coins[u]//(base*2) else NEG_INF)  #  if (coins[u]//base)-k >= coins[u]//(base*2), the first way is always better
+                        (coins[u]//(base<<1))+sum(dfs(v, u, base<<1) for v in adj[u] if v != p) if (coins[u]//base)-k < coins[u]//(base*2) else NEG_INF) 
 
         adj = [[] for _ in range(len(coins))]
         for u, v in edges:

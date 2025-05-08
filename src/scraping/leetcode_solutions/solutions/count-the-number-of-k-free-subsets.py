@@ -18,7 +18,7 @@ class Solution(object):
             y = x
             while y-k in cnt:
                 y -= k
-            dp = [1, 0]  # dp[0]: count without i, dp[1]: count with i
+            dp = [1, 0] 
             for i in range(y, x+1, k):
                 dp = [dp[0]+dp[1], dp[0]*((1<<cnt[i])-1)]
             return sum(dp)

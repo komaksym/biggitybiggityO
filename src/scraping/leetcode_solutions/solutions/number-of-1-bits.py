@@ -1,5 +1,5 @@
 # Time:  O(32), bit shift in python is not O(1), it's O(k), k is the number of bits shifted
-#             , see https://github.com/python/cpython/blob/2.7/Objects/longobject.c#L3652
+#             , see https://github.com/python/cpython/blob/2.7/Objects/longobject.
 # Space: O(1)
 
 class Solution(object):
@@ -14,7 +14,7 @@ class Solution(object):
 
 # Time:  O(logn/4) = O(32/4 + 8*4) = O(32)
 # Space: O(1) 
-# https://github.com/gcc-mirror/gcc/blob/master/libgcc/libgcc2.c#L856
+# https://github.com/gcc-mirror/gcc/blob/master/libgcc/libgcc2.
 class Solution2(object):
     def __init__(self):
         self.__popcount_tab = \

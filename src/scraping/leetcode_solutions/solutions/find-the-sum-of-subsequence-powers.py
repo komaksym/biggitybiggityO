@@ -14,9 +14,9 @@ class Solution(object):
             for i in range(len(nums)):
                 j = next((j for j in range(j, len(nums)) if nums[i]-nums[j] < mn), len(nums))
                 for l in range(1, k+1):
-                    dp[i+1][l] = (dp[i+1][l]+dp[(j-1)+1][l-1])%MOD  # dp[i+1][l]: count of subsequences of length l ending at i having min diff >= mn
+                    dp[i+1][l] = (dp[i+1][l]+dp[(j-1)+1][l-1])%MOD 
                 for l in range(k+1):
-                    dp[i+1][l] = (dp[i+1][l]+dp[i][l])%MOD  # dp[i+1][l]: accumulated count of subsequences of length l ending at [0, i] having min diff >= mn
+                    dp[i+1][l] = (dp[i+1][l]+dp[i][l])%MOD 
             cnt = (dp[-1][k]-prev)%MOD
             result = (result+mn*cnt)%MOD
             prev = dp[-1][k]

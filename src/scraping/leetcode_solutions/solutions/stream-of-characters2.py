@@ -27,13 +27,13 @@ class AhoTrie(object):
         while self.__node and letter not in self.__node.children:
             self.__node = self.__node.suffix
         self.__node = self.__node.children[letter] if self.__node else self.__root
-        return self.__node.outputs  # Time:  O(z), it would be O(m) if we don't use all the matched patterns
+        return self.__node.outputs 
     
     def __init__(self, patterns):
         self.__root = self.__create_ac_trie(patterns)
         self.__node = self.__create_ac_suffix_and_output_links(self.__root)
     
-    def __create_ac_trie(self, patterns):  # Time:  O(n), Space: O(t)
+    def __create_ac_trie(self, patterns): 
         root = AhoNode()
         for i, pattern in enumerate(patterns):
             node = root
@@ -42,7 +42,7 @@ class AhoTrie(object):
             node.outputs.append(i)
         return root
 
-    def __create_ac_suffix_and_output_links(self, root):  # Time:  O(n + p^2), Space: O(t + p^2)
+    def __create_ac_suffix_and_output_links(self, root): 
         queue = collections.deque()
         for node in root.children.values():
             queue.append(node)
@@ -56,7 +56,7 @@ class AhoTrie(object):
                 while suffix and c not in suffix.children:
                     suffix = suffix.suffix
                 child.suffix = suffix.children[c] if suffix else root
-                child.outputs += child.suffix.outputs  # Time: O(p^2)
+                child.outputs += child.suffix.outputs 
         
         return root
 
@@ -69,7 +69,7 @@ class StreamChecker(object):
         """
         self.__trie = AhoTrie(words)
 
-    def query(self, letter):  # O(m) times
+    def query(self, letter): 
         """
         :type letter: str
         :rtype: bool

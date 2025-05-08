@@ -20,13 +20,13 @@ class Solution(object):
 
         lookup = collections.defaultdict(int)
         for i in words:
-            lookup[i] += 1                # Space: O(n * k)
+            lookup[i] += 1               
 
-        for i in range(k):               # Time:  O(k)
+        for i in range(k):              
             left, count = i, 0
             tmp = collections.defaultdict(int)
-            for j in range(i, m-k+1, k): # Time:  O(m / k)
-                s1 = s[j:j+k]             # Time:  O(k)
+            for j in range(i, m-k+1, k):
+                s1 = s[j:j+k]            
                 if s1 in lookup:
                     tmp[s1] += 1
                     count += 1
@@ -58,12 +58,12 @@ class Solution2(object):
 
         lookup = collections.defaultdict(int)
         for i in words:
-            lookup[i] += 1                            # Space: O(n * k)
+            lookup[i] += 1                           
 
-        for i in range(m+1-k*n):                     # Time: O(m)
+        for i in range(m+1-k*n):                    
             cur, j = collections.defaultdict(int), 0
-            while j < n:                              # Time: O(n)
-                word = s[i+j*k:i+j*k+k]               # Time: O(k)
+            while j < n:                             
+                word = s[i+j*k:i+j*k+k]              
                 if word not in lookup:
                     break
                 cur[word] += 1

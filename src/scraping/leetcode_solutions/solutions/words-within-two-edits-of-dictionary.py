@@ -13,7 +13,7 @@ class Solution(object):
         :type dictionary: List[str]
         :rtype: List[str]
         """
-        MOD = (1<<64)-59  # largest 64-bit prime
+        MOD = (1<<64)-59 
         BASE = 113
         POW = [1]
         def add(a, b):

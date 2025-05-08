@@ -18,20 +18,20 @@ class Solution(object):
             best = collections.defaultdict(lambda:float("inf"))
             best[start] = 0
             min_heap = [(0, start)]
-            dp = [0]*(len(adj))  # modified, add dp to keep number of ways
+            dp = [0]*(len(adj)) 
             dp[0] = 1
             while min_heap:
                 curr, u = heapq.heappop(min_heap)
                 if best[u] < curr:
                     continue
-                if u == target:  # modified, early return
+                if u == target: 
                     break
                 for v, w in adj[u]:                
                     if v in best and best[v] <= curr+w:
-                        if best[v] == curr+w:  # modified, update number of ways in this minimal time
+                        if best[v] == curr+w: 
                             dp[v] = (dp[v]+dp[u])%MOD
                         continue
-                    dp[v] = dp[u]  # modified, init number of ways in this minimal time
+                    dp[v] = dp[u] 
                     best[v] = curr+w
                     heapq.heappush(min_heap, (curr+w, v))
             return dp[target]

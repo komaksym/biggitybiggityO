@@ -9,9 +9,9 @@ class Solution(object):
         :type edges: List[List[int]]
         :rtype: int
         """
-        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+        def linear_sieve_of_eratosthenes(n): 
             primes = []
-            spf = [-1]*(n+1)  # the smallest prime factor
+            spf = [-1]*(n+1) 
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i
@@ -74,9 +74,9 @@ class Solution2(object):
         :type edges: List[List[int]]
         :rtype: int
         """
-        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+        def linear_sieve_of_eratosthenes(n): 
             primes = []
-            spf = [-1]*(n+1)  # the smallest prime factor
+            spf = [-1]*(n+1) 
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i
@@ -118,7 +118,7 @@ class Solution2(object):
 # Time:  O(n)
 # Space: O(n)
 # number theory, union find
-class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+class UnionFind(object): 
     def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
@@ -126,7 +126,7 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -137,7 +137,7 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]:  # union by rank
+        if self.rank[x] > self.rank[y]: 
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -156,9 +156,9 @@ class Solution3(object):
         :type edges: List[List[int]]
         :rtype: int
         """
-        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+        def linear_sieve_of_eratosthenes(n): 
             primes = []
-            spf = [-1]*(n+1)  # the smallest prime factor
+            spf = [-1]*(n+1) 
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i

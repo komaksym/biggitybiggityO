@@ -69,7 +69,7 @@ class Solution_TLE(object):
                     return
                 elif new_pivot_idx > n:
                     right = new_pivot_idx - 1
-                else:  # new_pivot_idx < n
+                else: 
                     left = new_pivot_idx + 1
         
         nth_element(arr, (len(arr)-1)//2)

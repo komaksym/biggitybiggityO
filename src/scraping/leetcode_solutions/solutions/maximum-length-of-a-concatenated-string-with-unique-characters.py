@@ -63,9 +63,9 @@ class Solution2(object):
         for i in range(power[len(arr)]):
             curr_bitset, curr_len = 0, 0
             while i:
-                j = i & -i  # rightmost bit
+                j = i & -i 
                 i ^= j
-                j = log2[j]  # log2(j)
+                j = log2[j] 
                 if not bitsets[j] or (curr_bitset & bitsets[j]):
                     break
                 curr_bitset |= bitsets[j]

@@ -40,7 +40,7 @@ class Solution(object):
                     elif right[1] >= 0:
                         d = right[1]+1
                         result = max(result, left[0]+1+d)
-                    ret[:] = [max(left[0], right[0])+1, d]  # [height, dist_to_start]
+                    ret[:] = [max(left[0], right[0])+1, d] 
             return result
 
         return iter_dfs(root, start)
@@ -71,7 +71,7 @@ class Solution2(object):
             elif right[1] >= 0:
                 d = right[1]+1
                 result[0] = max(result[0], left[0]+1+d)
-            return [max(left[0], right[0])+1, d]  # [height, dist_to_start]
+            return [max(left[0], right[0])+1, d] 
 
         result = [-1]
         dfs(root, start, result)

@@ -11,7 +11,7 @@ class Solution(object):
         :rtype: int
         """
         max_f = max(forbidden)
-        max_val = x+b if a >= b else max(x, max_f)+a+(b+a)  # a may be a non-periodic area, (a+b) is a periodic area which is divided by gcd(a, b) and all points are reachable
+        max_val = x+b if a >= b else max(x, max_f)+a+(b+a) 
         lookup = set()      
         for pos in forbidden:
             lookup.add((pos, True))

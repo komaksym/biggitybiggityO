@@ -21,7 +21,7 @@ class Solution(object):
         depth, cnt = 0, preorder.count(',') + 1
         for tok in split_iter(preorder, ','):
             cnt -= 1
-            if tok == "#":
+            if tok == 
                 depth -= 1
                 if depth < 0:
                     break

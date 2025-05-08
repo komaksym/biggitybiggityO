@@ -10,7 +10,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        return int((math.sqrt(8*n+1)-1) / 2)  # sqrt is O(logn) time.
+        return int((math.sqrt(8*n+1)-1) / 2) 
 
 
 # Time:  O(logn)

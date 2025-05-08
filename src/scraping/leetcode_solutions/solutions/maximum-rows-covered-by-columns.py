@@ -10,7 +10,7 @@ class Solution(object):
         :type numSelect: int
         :rtype: int
         """
-        def next_popcount(n):  # reference: https://massivealgorithms.blogspot.com/2014/06/hakmem-item-175.html
+        def next_popcount(n): 
             lowest_bit = n&-n
             left_bits = n+lowest_bit
             changed_bits = n^left_bits

@@ -1,18 +1,18 @@
 # Time:  O(nlogm)
 # Space: O(m)
 
-class BIT(object):  # 0-indexed.
+class BIT(object): 
     def __init__(self, n):
-        self.__bit = [0]*(n+1)  # Extra one for dummy node.
+        self.__bit = [0]*(n+1) 
 
     def add(self, i, val):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         while i < len(self.__bit):
             self.__bit[i] += val
             i += (i & -i)
 
     def query(self, i):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         ret = 0
         while i > 0:
             ret += self.__bit[i]
@@ -46,7 +46,7 @@ class Solution_TLE(object):
         """
         MOD = 10**9 + 7
         def smallerMergeSort(idxs, start, end, counts):
-            if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
+            if end - start <= 0: 
                 return 0
 
             mid = start + (end - start) // 2
@@ -66,7 +66,7 @@ class Solution_TLE(object):
             idxs[start:start+len(tmp)] = tmp
         
         def largerMergeSort(idxs, start, end, counts):
-            if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
+            if end - start <= 0: 
                 return 0
 
             mid = start + (end - start) // 2

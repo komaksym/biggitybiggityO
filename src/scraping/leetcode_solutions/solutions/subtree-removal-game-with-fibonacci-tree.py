@@ -18,7 +18,7 @@ class Solution2(object):
         :type n: int
         :rtype: bool
         """ 
-        grundy = [0, 1]  # 0-indexed
+        grundy = [0, 1] 
         for i in range(2, n):
-            grundy[i%2] = (grundy[(i-1)%2]+1)^(grundy[(i-2)%2]+1)  # colon principle, replace the branches by a non-branching stalk of length equal to their nim sum
+            grundy[i%2] = (grundy[(i-1)%2]+1)^(grundy[(i-2)%2]+1) 
         return grundy[(n-1)%2] > 0

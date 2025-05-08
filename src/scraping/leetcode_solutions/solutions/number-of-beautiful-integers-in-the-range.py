@@ -18,7 +18,7 @@ class Solution(object):
                 if i == len(digits):
                     return int(state != UNBOUND and diff == total == 0)
                 if lookup[i][state][diff][total] == -1:
-                    result = int(i != 0 and diff == total == 0)  # count if the beautiful integer x s.t. len(str(x)) < len(digits)
+                    result = int(i != 0 and diff == total == 0) 
                     for d in range(1 if i == 0 else 0, 10):
                         new_state = state
                         if state == TIGHT and d != digits[i]:
@@ -55,7 +55,7 @@ class Solution2(object):
             for i in reversed(range(len(digits))):
                 new_dp = [[[0]*k for _ in range(2*len(digits)+1)] for _ in range(3)]
                 for state in (TIGHT, UNTIGHT, UNBOUND):
-                    new_dp[state][0][0] = int(i != 0)  # count if the beautiful integer x s.t. len(str(x)) < len(digits)
+                    new_dp[state][0][0] = int(i != 0) 
                     for d in range(1 if i == 0 else 0, 10):
                         new_state = state
                         if state == TIGHT and d != digits[i]:

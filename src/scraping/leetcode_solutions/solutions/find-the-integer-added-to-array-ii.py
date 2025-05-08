@@ -14,7 +14,7 @@ class Solution(object):
         :rtype: int
         """
         def check(cnt2, cnt1):
-            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items())  # for python2
+            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items()) 
             
         mx = max(nums2)
         cnt2 = collections.Counter(nums2)
@@ -35,9 +35,9 @@ class Solution2(object):
         :rtype: int
         """
         def check(cnt2, cnt1):
-            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items())  # for python2
+            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items()) 
         
-        def topk(a, k):  # Time: O(k * n)
+        def topk(a, k): 
             result = [float("-inf")]*k
             for x in a:
                 for i in range(len(result)):

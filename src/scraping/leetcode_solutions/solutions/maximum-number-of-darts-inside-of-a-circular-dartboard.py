@@ -27,7 +27,7 @@ class Solution(object):
                 angles.append((angle-delta, 0)), angles.append((angle+delta, 1))
             angles.sort()
             result, count = 1, 1
-            for _, is_closed in angles:  # angle sweep
+            for _, is_closed in angles: 
                 if not is_closed:
                     count += 1
                 else:

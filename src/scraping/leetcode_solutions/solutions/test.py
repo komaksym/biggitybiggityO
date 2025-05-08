@@ -34,7 +34,7 @@ def parse_data(problem_name):
     
         code = re.sub(FILTER_PATTERN, "", code[0]).strip() 
 
-        print(f"\nSAMPLE #{i+1}:\n")
+        print(f"\nSAMPLE
         print("CODE:\n", code, "\n")
         print("LABEL:\n", label, "\n")
 
@@ -43,9 +43,9 @@ def parse_data(problem_name):
 
 
 
-CODES_PATTERN = set_regex_pattern(r"(?:^#\s?Space.*?\n+?)(class.*?)((?:\n^#\s?Time)(?:)|(?:\Z))", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-LABELS_PATTERN = set_regex_pattern(r"^#\s*Time.*?\bO\(([^()]+(?:\([^()]*\)[^()]*)*)\)", flags=re.IGNORECASE | re.MULTILINE)
-FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
+CODES_PATTERN = set_regex_pattern(r"(?:
+LABELS_PATTERN = set_regex_pattern(r"
+FILTER_PATTERN = set_regex_pattern(r"
 
 problem = "find-a-peak-element-ii.py"
 parse_data(problem)

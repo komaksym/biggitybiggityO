@@ -13,7 +13,7 @@ class Solution(object):
         :rtype: int
         """
         arr2 = sorted(set(arr2))
-        dp = {0: -1}  # dp[min_cost] = end_with_val
+        dp = {0: -1} 
         for val1 in arr1:
             next_dp = collections.defaultdict(lambda: float("inf"))
             for cost, val in dp.items():

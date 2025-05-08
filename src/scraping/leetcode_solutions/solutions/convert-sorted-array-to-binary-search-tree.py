@@ -30,12 +30,12 @@ class Solution(object):
         Find the point to partition n keys for a perfect binary search tree
         """
         x = 1
-        x = 1 << (n.bit_length() - 1)  # use the left bit shift, same as multiplying x by 2**n-1
+        x = 1 << (n.bit_length() - 1) 
 
         if x // 2 - 1 <= (n - x):
-            return x - 1  # case 1: the left subtree of the root is perfect and the right subtree has less nodes
+            return x - 1 
         else:
-            return n - x // 2  # case 2 == n - (x//2 - 1) - 1 : the left subtree of the root
+            return n - x // 2 
 
 # Time:  O(n)
 # Space: O(logn)

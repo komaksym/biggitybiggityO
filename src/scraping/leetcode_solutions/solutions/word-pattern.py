@@ -48,7 +48,7 @@ class Solution2(object):
         :type str: str
         :rtype: bool
         """
-        words = str.split()  # Space: O(n)
+        words = str.split() 
         if len(pattern) != len(words):
             return False
 

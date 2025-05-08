@@ -79,9 +79,9 @@ class Solution2(object):
         a, b, c = p.split('*')
         n = len(s)
         la, lb, lc = len(a), len(b), len(c)
-        prefix1 = getPrefix(a+'#'+s)
-        prefix2 = getPrefix(b+'#'+s)
-        prefix3 = getPrefix(c+'#'+s)
+        prefix1 = getPrefix(a+
+        prefix2 = getPrefix(b+
+        prefix3 = getPrefix(c+
         result = INF
         i = j = k = 0
         while i+lb+lc < n:

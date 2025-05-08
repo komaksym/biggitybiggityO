@@ -14,7 +14,7 @@ class Solution(object):
         :rtype: int
         """
         total = sum(nums)
-        if k > total or k < -total:  # optimized to speed up
+        if k > total or k < -total: 
             return -1
         dp = collections.defaultdict(set)
         for x in nums:

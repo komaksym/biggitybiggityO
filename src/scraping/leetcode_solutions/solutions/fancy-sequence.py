@@ -40,7 +40,7 @@ class Fancy(object):
             return -1
         a1, b1 = self.__ops[idx]
         a2, b2 = self.__ops[-1]
-        a = a2*pow(a1, MOD-2, MOD)%MOD  # O(logMOD), we treat it as O(1) here
+        a = a2*pow(a1, MOD-2, MOD)%MOD 
         b = (b2 - b1*a) % MOD
         return (self.__arr[idx]*a + b) % MOD
 
@@ -58,7 +58,7 @@ class Fancy2(object):
         :type val: int
         :rtype: None
         """
-        self.__arr.append((val-self.__op[1])*pow(self.__op[0], MOD-2, MOD)%MOD)  # O(logMOD), we treat it as O(1) here
+        self.__arr.append((val-self.__op[1])*pow(self.__op[0], MOD-2, MOD)%MOD) 
 
     def addAll(self, inc):
         """

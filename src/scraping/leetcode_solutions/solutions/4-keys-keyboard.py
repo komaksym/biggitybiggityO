@@ -11,9 +11,9 @@ class Solution(object):
         if N < 7:
             return N
         if N == 10:
-            return 20  # the following rule doesn't hold when N = 10
+            return 20 
 
-        n = N // 5 + 1  # n3 + n4 increases one every 5 keys
+        n = N // 5 + 1 
         n3 = 5*n - N - 1
         n4 = n - n3
         return 3**n3 * 4**n4

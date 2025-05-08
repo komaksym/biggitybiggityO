@@ -17,9 +17,9 @@ class Solution(object):
                         count += board[I][J] & 1
 
                 if (count == 4 and board[i][j]) or count == 3:
-                    board[i][j] |= 2  # Mark as live.
+                    board[i][j] |= 2 
 
         for i in range(m):
             for j in range(n):
-                board[i][j] >>= 1  # Update to the next state.
+                board[i][j] >>= 1 
 

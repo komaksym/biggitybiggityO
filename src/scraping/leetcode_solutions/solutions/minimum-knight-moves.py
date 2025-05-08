@@ -12,7 +12,7 @@ class Solution(object):
         x, y = abs(x), abs(y)
         if x < y:
             x, y = y, x
-        lookup = {(1, 0):3, (2, 2):4}  # special cases
+        lookup = {(1, 0):3, (2, 2):4} 
         if (x, y) in lookup:
             return lookup[(x, y)]
         k = x-y
@@ -25,7 +25,7 @@ class Solution(object):
 # Space: O(n^2)
 class Solution2(object):
     def __init__(self):
-        self.__lookup = {(0, 0):0, (1, 1):2, (1, 0):3}  # special cases
+        self.__lookup = {(0, 0):0, (1, 1):2, (1, 0):3} 
 
     def minKnightMoves(self, x, y):
         """
@@ -37,7 +37,7 @@ class Solution2(object):
             x, y = abs(x), abs(y)
             if x < y:
                 x, y = y, x
-            if (x, y) not in self.__lookup:  # greedy, smaller x, y is always better if not special cases
+            if (x, y) not in self.__lookup: 
                 self.__lookup[(x, y)] = min(dp(x-1, y-2), dp(x-2, y-1)) + 1
             return self.__lookup[(x, y)]
         return dp(x, y)

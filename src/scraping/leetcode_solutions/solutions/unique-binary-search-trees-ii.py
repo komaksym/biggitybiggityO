@@ -20,11 +20,11 @@ class TreeNode(object):
                     queue.append(cur.left)
                     queue.append(cur.right)
                 else:
-                    serial.append("#")
+                    serial.append(
 
                 queue = queue[1:]
 
-            while serial[-1] == "#":
+            while serial[-1] == 
                 serial.pop()
 
             return repr(serial)

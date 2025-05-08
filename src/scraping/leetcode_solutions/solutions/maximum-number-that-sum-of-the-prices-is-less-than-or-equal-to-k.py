@@ -122,4 +122,4 @@ class Solution4(object):
                 i += x
             return cnt
 
-        return binary_search_right(1, max(k<<2, 1<<x), lambda v: count(v) <= k)  # right bound is verified by checking all possible (k, v) values, or just set right = solution.findMaximumNumber(10**15, 8) <= 10**15
+        return binary_search_right(1, max(k<<2, 1<<x), lambda v: count(v) <= k) 

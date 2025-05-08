@@ -29,4 +29,4 @@ class Solution2(object):
         n, c = len(nums1), len(lookup1&lookup2)
         d1, d2 = min(len(lookup1)-c, n//2), min(len(lookup2)-c, n//2)
         r1, r2 = n//2-d1, n//2-d2
-        return d1+d2+min(r1+r2, c)  # = min(d1+d2+r1+r2, d1+d2+c) = min(d1+d2+(n//2-d1)+(n//2-d2), d1+d2+c) = min(n, d1+d2+c)
+        return d1+d2+min(r1+r2, c) 

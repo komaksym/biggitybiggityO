@@ -13,15 +13,15 @@ class UnionFind(object):
     def find_set(self, x):
         xp, xr = self.set.setdefault(x, (x, 1.0))
         if x != xp:
-            pp, pr = self.find_set(xp)  # path compression.
-            self.set[x] = (pp, xr*pr)  # x/pp = xr*pr
+            pp, pr = self.find_set(xp) 
+            self.set[x] = (pp, xr*pr) 
         return self.set[x]
 
     def union_set(self, x, y, r):
         (xp, xr), (yp, yr) =  list(map(self.find_set, (x, y)))
         if xp == yp:
             return False
-        if self.rank[xp] < self.rank[yp]:  # union by rank
+        if self.rank[xp] < self.rank[yp]: 
             self.set[xp] = (yp, r*yr/xr)
         elif self.rank[xp] > self.rank[yp]:
             self.set[yp] = (xp, 1.0/r*xr/yr)

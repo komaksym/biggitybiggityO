@@ -24,7 +24,7 @@ class Solution(object):
                     return n*p-vals[curr]
             return -1
 
-        return 1+discrete_log(2, n//2, n-1)  # find min x s.t. 2^x mod (n-1) = n/2, result is x + 1
+        return 1+discrete_log(2, n//2, n-1) 
 
 
 # Time:  O(n)
@@ -53,7 +53,7 @@ class Solution3(object):
         :rtype: int
         """
         result, i = 0, 1
-        while not result or i != 1:  # find cycle length
+        while not result or i != 1: 
             i = (i//2 if not i%2 else n//2+(i-1)//2)
             result += 1
         return result

@@ -15,8 +15,8 @@ class SkipNode(object):
 
 
 class Skiplist(object):
-    P_NUMERATOR, P_DENOMINATOR = 1, 2  # P = 1/4 in redis implementation
-    MAX_LEVEL = 32  # enough for 2^32 elements
+    P_NUMERATOR, P_DENOMINATOR = 1, 2 
+    MAX_LEVEL = 32 
 
     def __init__(self):
         self.__head = SkipNode()

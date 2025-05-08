@@ -16,7 +16,7 @@ class Solution(object):
         :rtype: int
         """
         MOD = 10**9+7
-        def backtracking(mask1, mask2, basis, result):  # Time: O(2^m), Space: O(2^m)
+        def backtracking(mask1, mask2, basis, result): 
             if not basis:
                 result.append(mask2)
                 return
@@ -52,13 +52,13 @@ class Solution(object):
             m, n = n, m
         basis = 3**(m-1)
         masks = []
-        backtracking(-1, -1, basis, masks)  # Time: O(2^m), Space: O(2^m)
+        backtracking(-1, -1, basis, masks) 
         assert(len(masks) == 3 * 2**(m-1))
-        lookup = {mask:normalize(basis, mask) for mask in masks}  # Time: O(m * 2^m)
+        lookup = {mask:normalize(basis, mask) for mask in masks} 
         normalized_mask_cnt = collections.Counter(lookup[mask] for mask in masks)
-        assert(len(normalized_mask_cnt) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
+        assert(len(normalized_mask_cnt) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1)) 
         adj = collections.defaultdict(list)
-        for mask in normalized_mask_cnt.keys():  # O(3^m) leaves which are all in depth m => Time: O(3^m), Space: O(3^m)
+        for mask in normalized_mask_cnt.keys(): 
             backtracking(mask, -1, basis, adj[mask])
         normalized_adj = collections.defaultdict(lambda:collections.defaultdict(int))
         for mask1, masks2 in adj.items():
@@ -70,7 +70,7 @@ class Solution(object):
                                    matrix_expo([[normalized_adj[mask1][mask2]
                                                  for mask2 in normalized_mask_cnt.keys()] 
                                                  for mask1 in normalized_mask_cnt.keys()], n-1))[0],
-                      0)  # Time: O((2^m)^3 * logn), Space: O((2^m)^2)
+                      0) 
 
 
 # Time:  O(n * 3^m)
@@ -87,34 +87,34 @@ class Solution2(object):
         :rtype: int
         """
         MOD = 10**9+7
-        def find_masks(m, basis):  # Time: 3 + 3*2 + 3*2*2 + ... + 3*2^(m-1) = 3 * (2^m - 1) = O(2^m), Space: O(2^m)
+        def find_masks(m, basis): 
             masks = [0]
             for c in range(m):
                 new_masks = []
                 for mask in masks:
                     choices = {0, 1, 2}
                     if c > 0:
-                        choices.discard(mask//basis)  # get left grid
+                        choices.discard(mask//basis) 
                     for x in choices:
-                        new_masks.append((x*basis)+(mask//3))  # encoding mask
+                        new_masks.append((x*basis)+(mask//3)) 
                 masks = new_masks
             return masks
 
         def find_adj(m, basis, dp):
             adj = collections.defaultdict(list)
-            for mask in dp.keys():  # O(2^m)
+            for mask in dp.keys(): 
                 adj[mask].append(mask)
             for c in range(m):
-                assert(sum(len(v) for v in adj.values()) == (3**c * 2**(m-(c-1)) if c >= 1 else 3 * 2**(m-1)) // 3 // (2 if m >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
+                assert(sum(len(v) for v in adj.values()) == (3**c * 2**(m-(c-1)) if c >= 1 else 3 * 2**(m-1)) // 3 // (2 if m >= 2 else 1)) 
                 new_adj = collections.defaultdict(list)
                 for mask1, mask2s in adj.items():
                     for mask in mask2s:
                         choices = {0, 1, 2}
-                        choices.discard(mask%3)  # get up grid
+                        choices.discard(mask%3) 
                         if c > 0:
-                            choices.discard(mask//basis)  # get left grid
+                            choices.discard(mask//basis) 
                         for x in choices:
-                            new_adj[mask1].append((x*basis)+(mask//3))  # encoding mask
+                            new_adj[mask1].append((x*basis)+(mask//3)) 
                 adj = new_adj
             assert(sum(3**c * 2**(m-(c-1)) if c >= 1 else 3 * 2**(m-1) for c in range(m)) == 4*3**m-9*2**(m-1))
             return adj
@@ -133,24 +133,24 @@ class Solution2(object):
         if m > n:
             m, n = n, m
         basis = 3**(m-1)
-        masks = find_masks(m, basis)  # alternative of backtracking, Time: O(2^m), Space: O(2^m)
+        masks = find_masks(m, basis) 
         assert(len(masks) == 3 * 2**(m-1))
-        lookup = {mask:normalize(basis, mask) for mask in masks}  # Time: O(m * 2^m)
-        dp = collections.Counter(lookup[mask] for mask in masks)  # normalize colors to speed up performance
-        adj = find_adj(m, basis, dp)  # alternative of backtracking, Time: O(3^m), Space: O(3^m)
+        lookup = {mask:normalize(basis, mask) for mask in masks} 
+        dp = collections.Counter(lookup[mask] for mask in masks) 
+        adj = find_adj(m, basis, dp) 
         normalized_adj = collections.defaultdict(lambda:collections.defaultdict(int))
         for mask1, mask2s in adj.items():
             for mask2 in mask2s:
                 normalized_adj[lookup[mask1]][lookup[mask2]] = (normalized_adj[lookup[mask1]][lookup[mask2]]+1)%MOD
         assert(2*3**m // 3 // 2 // 3 <= sum(len(v) for v in normalized_adj.values()) <= 2*3**m // 3 // 2)
-        for _ in range(n-1):  # Time: O(n * 3^m), Space: O(2^m)
-            assert(len(dp) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
+        for _ in range(n-1): 
+            assert(len(dp) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1)) 
             new_dp = collections.Counter()
             for mask, v in dp.items():
                 for new_mask, cnt in normalized_adj[mask].items():
                     new_dp[lookup[new_mask]] = (new_dp[lookup[new_mask]] + v*cnt) % MOD
             dp = new_dp
-        return reduce(lambda x,y: (x+y)%MOD, iter(dp.values()), 0)  # Time: O(2^m)
+        return reduce(lambda x,y: (x+y)%MOD, iter(dp.values()), 0) 
 
 
 # Time:  (m * n grids) * (O(3*3*2^(m-2)) possible states per grid) = O(n * m * 2^m)
@@ -167,7 +167,7 @@ class Solution3(object):
         :rtype: int
         """
         MOD = 10**9+7
-        def normalize(basis, mask, lookup):  # compute and cache, at most O(3*2^(m-3)) time and space
+        def normalize(basis, mask, lookup): 
             if mask not in lookup[basis]:
                 norm = {}
                 result, b = 0, basis
@@ -188,20 +188,20 @@ class Solution3(object):
         for idx in range(m*n):
             r, c = divmod(idx, m)
             assert(r != 0 or c != 0 or len(dp) == 1)
-            assert(r != 0 or c == 0 or len(dp) == 3*2**(c-1) // 3 // (2 if c >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
-            assert(r == 0 or c != 0 or len(dp) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
-            assert(r == 0 or c == 0 or len(dp) == (1 if m == 1 else 2 if m == 2 else 3*3 * 2**(m-2) // 3 // 2))  # divided by 3 * 2 for m >= 3 is since the first two colors of window are normalized to speed up performance
+            assert(r != 0 or c == 0 or len(dp) == 3*2**(c-1) // 3 // (2 if c >= 2 else 1)) 
+            assert(r == 0 or c != 0 or len(dp) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1)) 
+            assert(r == 0 or c == 0 or len(dp) == (1 if m == 1 else 2 if m == 2 else 3*3 * 2**(m-2) // 3 // 2)) 
             new_dp = collections.Counter()
             for mask, v in dp.items():
                 choices = {0, 1, 2}
                 if r > 0:
-                    choices.discard(mask%3)  # get up grid
+                    choices.discard(mask%3) 
                 if c > 0:
-                    choices.discard(mask//basis)  # get left grid
+                    choices.discard(mask//basis) 
                 for x in choices:
-                    new_mask = normalize(basis//b, ((x*basis)+(mask//3))//b, lookup)*b  # encoding mask
+                    new_mask = normalize(basis//b, ((x*basis)+(mask//3))//b, lookup)*b 
                     new_dp[new_mask] = (new_dp[new_mask]+v)%MOD
             if b > 1:
                 b //= 3
             dp = new_dp
-        return reduce(lambda x,y: (x+y)%MOD, iter(dp.values()), 0)  # Time: O(2^m)
+        return reduce(lambda x,y: (x+y)%MOD, iter(dp.values()), 0) 

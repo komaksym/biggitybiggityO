@@ -8,7 +8,7 @@ class Solution(object):
         :type k: int
         :rtype: str
         """
-        def nCr(n, r):  # Time: O(n), Space: O(1)
+        def nCr(n, r): 
             if n < r:
                 return 0
             if n-r < r:
@@ -22,12 +22,12 @@ class Solution(object):
         r, c = destination        
         result = []
         while r+c:
-            count = nCr(r+(c-1), r)  # the number of HX..X combinations
-            if k <= count:  # the kth instruction is one of HX..X combinations, so go right
+            count = nCr(r+(c-1), r) 
+            if k <= count: 
                 c -= 1
                 result.append('H')
-            else:  # the kth instruction is one of VX..X combinations, so go down
-                k -= count  # the kth one of XX..X combinations is the (k-count)th one of VX..X combinations
+            else: 
+                k -= count 
                 r -= 1
                 result.append('V')
         return "".join(result)

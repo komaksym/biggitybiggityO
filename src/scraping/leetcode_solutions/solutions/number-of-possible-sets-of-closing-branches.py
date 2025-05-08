@@ -53,10 +53,10 @@ class Solution2(object):
                 if mask&(1<<k) == 0:
                     continue
                 for i in range(len(dist)):
-                    if mask&(1<<i) == 0:  # optional, to speed up performance
+                    if mask&(1<<i) == 0: 
                         continue
                     for j in range(i+1, len(dist[i])):
-                        if mask&(1<<j) == 0:  # optional, to speed up performance
+                        if mask&(1<<j) == 0: 
                              continue
                         dist[j][i] = dist[i][j] = min(dist[i][j], dist[i][k]+dist[k][j])
             return check(mask, dist)

@@ -14,6 +14,6 @@ class Solution(object):
         if len(word1) != len(word2):
             return False 
         
-        cnt1, cnt2 = collections.Counter(word1), collections.Counter(word2)   # Reuse of keys
+        cnt1, cnt2 = collections.Counter(word1), collections.Counter(word2)  
         return set(cnt1.keys()) == set(cnt2.keys()) and \
                collections.Counter(iter(cnt1.values())) == collections.Counter(iter(cnt2.values()))

@@ -53,8 +53,8 @@ class Solution_TLE(object):
                     return ['^', '$']
                 T = ['^']
                 for c in s:
-                    T +=  ["#", c]
-                T += ['#', '$']
+                    T +=  [
+                T += [
                 return T
 
             T = preProcess(s)

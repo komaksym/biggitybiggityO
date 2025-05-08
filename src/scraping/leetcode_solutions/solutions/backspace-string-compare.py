@@ -14,7 +14,7 @@ class Solution(object):
         def findNextChar(S):
             skip = 0
             for i in reversed(range(len(S))):
-                if S[i] == '#':
+                if S[i] == 
                     skip += 1
                 elif skip:
                     skip -= 1

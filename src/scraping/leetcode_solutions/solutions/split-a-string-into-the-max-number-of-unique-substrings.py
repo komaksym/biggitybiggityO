@@ -26,7 +26,7 @@ class Solution(object):
                 curr.append(s[i])
                 if (mask&base) or base == 0:
                     if "".join(curr) in lookup:
-                        mask = (mask | (base-1)) + 1 if base else mask+1  # pruning, try next mask without base
+                        mask = (mask | (base-1)) + 1 if base else mask+1 
                         break
                     lookup.add("".join(curr))
                     curr = []

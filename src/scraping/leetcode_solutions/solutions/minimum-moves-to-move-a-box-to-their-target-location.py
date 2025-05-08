@@ -27,7 +27,7 @@ class Solution(object):
                 for dx, dy in directions:
                     np = (p[0]+dx, p[1]+dy)
                     if not (0 <= np[0] < len(grid) and 0 <= np[1] < len(grid[0]) and
-                       grid[np[0]][np[1]] != '#' and np not in lookup):
+                       grid[np[0]][np[1]] != 
                         continue
                     (closer if dot((dx, dy), (t[0]-p[0], t[1]-p[1])) > 0 else detour).append(np)
             return False
@@ -53,7 +53,7 @@ class Solution(object):
                     nb, np = (b[0]+dx, b[1]+dy), (b[0]-dx, b[1]-dy)
                     if not (0 <= nb[0] < len(grid) and 0 <= nb[1] < len(grid[0]) and
                             0 <= np[0] < len(grid) and 0 <= np[1] < len(grid[0]) and
-                            grid[nb[0]][nb[1]] != '#' and grid[np[0]][np[1]] != '#' and
+                            grid[nb[0]][nb[1]] != 
                             (nb, b) not in lookup and can_reach(grid, b, p, np)):
                         continue
                     (closer if dot((dx, dy), (t[0]-b[0], t[1]-b[1])) > 0 else detour).append((nb, b))

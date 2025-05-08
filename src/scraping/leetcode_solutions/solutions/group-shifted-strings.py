@@ -7,7 +7,7 @@ import collections
 class Solution(object):
     def groupStrings(self, strings):
         groups = collections.defaultdict(list)
-        for s in strings:  # Grouping.
+        for s in strings: 
             groups[self.hashStr(s)].append(s)
 
         result = []

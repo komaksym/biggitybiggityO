@@ -28,7 +28,7 @@ class Solution(object):
                 for i in range(len(rotations_and_reflections)):
                     shapes[i].append(rotations_and_reflections[i])
             for shape in shapes:
-                shape.sort()  # Time: O(ilogi), i is the size of the island, the max would be (m * n)
+                shape.sort() 
                 origin = list(shape[0])
                 for p in shape:
                     p[0] -= origin[0]

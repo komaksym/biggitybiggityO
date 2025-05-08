@@ -31,7 +31,7 @@ class Solution(object):
                     return nums[new_pivot_idx]
                 elif new_pivot_idx > k:
                     right = new_pivot_idx - 1
-                else:  # new_pivot_idx < k.
+                else: 
                     left = new_pivot_idx + 1
 
         median = kthElement(nums, len(nums)//2)

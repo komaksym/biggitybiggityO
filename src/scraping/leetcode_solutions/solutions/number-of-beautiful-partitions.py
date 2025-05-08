@@ -12,7 +12,7 @@ class Solution(object):
         """
         MOD = 10**9+7
         PRIMES = {'2', '3', '5', '7'}
-        dp = [0]*len(s)  # dp[i] at j : number of j beautiful partitions in s[:i+1] 
+        dp = [0]*len(s) 
         for i in range(minLength-1, len(s)):
             if s[0] in PRIMES and s[i] not in PRIMES:
                 dp[i] = 1

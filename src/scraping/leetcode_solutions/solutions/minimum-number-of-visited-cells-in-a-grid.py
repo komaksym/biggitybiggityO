@@ -2,15 +2,15 @@
 # Space: O(m * n)
 
 # bfs, union find
-class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+class UnionFind(object): 
     def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
-        self.right = list(range(n))  # added
+        self.right = list(range(n)) 
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -21,15 +21,15 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]:  # union by rank
+        if self.rank[x] > self.rank[y]: 
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
             self.rank[y] += 1
-        self.right[y] = max(self.right[x], self.right[y])  # added
+        self.right[y] = max(self.right[x], self.right[y]) 
         return True
 
-    def right_set(self, x):  # added
+    def right_set(self, x): 
         return self.right[self.find_set(x)]
 
 

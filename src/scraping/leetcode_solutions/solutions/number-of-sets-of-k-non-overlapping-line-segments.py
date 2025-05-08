@@ -10,7 +10,7 @@ inv_fact = [0]*(2*MAX_N-1+1)
 fact[0] = inv_fact[0] = fact[1] = inv_fact[1] = inv[1] = 1
 for i in range(2, len(fact)):
     fact[i] = fact[i-1]*i % MOD
-    inv[i] = inv[MOD%i]*(MOD-MOD//i) % MOD  # https://cp-algorithms.com/algebra/module-inverse.html
+    inv[i] = inv[MOD%i]*(MOD-MOD//i) % MOD 
     inv_fact[i] = inv_fact[i-1]*inv[i] % MOD
 
 class Solution(object):
@@ -35,7 +35,7 @@ class Solution2(object):
         :rtype: int
         """
         MOD = 10**9+7
-        def nCr(n, r):  # Time: O(n), Space: O(1)
+        def nCr(n, r): 
             if n-r < r:
                 return nCr(n, n-r)
             c = 1

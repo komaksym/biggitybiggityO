@@ -14,7 +14,7 @@ class Solution(object):
 
         def find_set(x):
            if set[x] != x:
-               set[x] = find_set(set[x])  # path compression.
+               set[x] = find_set(set[x]) 
            return set[x]
 
         def union_set(x, y):

@@ -25,8 +25,8 @@ class Solution2(object):
         :type nums: List[int]
         :rtype: int
         """
-        a = sorted(nums) #sort the list
-        left, right = 0, len(nums) -1 #define left and right pointer
+        a = sorted(nums)
+        left, right = 0, len(nums) -1
         while (nums[left] == a[left] or nums[right] == a[right]):
             if right - left <= 1:
                 return 0

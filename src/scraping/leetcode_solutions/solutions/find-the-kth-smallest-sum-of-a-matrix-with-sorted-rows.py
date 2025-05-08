@@ -39,7 +39,7 @@ class Solution2(object):
         :type k: int
         :rtype: int
         """        
-        def countArraysHaveSumLessOrEqual(mat, k, r, target):  # Time: O(k + m) ~ O(k * m)
+        def countArraysHaveSumLessOrEqual(mat, k, r, target): 
             if target < 0:
                 return 0
             if r == len(mat):

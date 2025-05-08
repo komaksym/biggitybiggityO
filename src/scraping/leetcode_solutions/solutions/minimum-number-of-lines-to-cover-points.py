@@ -11,7 +11,7 @@ class Solution(object):
         :type points: List[List[int]]
         :rtype: int
         """
-        def gcd(a, b):  # Time: O(log(a + b))
+        def gcd(a, b): 
             while b:
                 a, b = b, a % b
             return a
@@ -35,8 +35,8 @@ class Solution(object):
                 a, b, c = a//g, b//g, c//g
                 lookup[(a, b, c)].add((x1, y1))
                 lookup[(a, b, c)].add((x2, y2))
-        lines = [l for l, p in lookup.items() if len(p) > 2]  # filter to improve complexity
-        assert(len(lines) <= (len(points))//2)  # 1 extra colinear point per 2 points
+        lines = [l for l, p in lookup.items() if len(p) > 2] 
+        assert(len(lines) <= (len(points))//2) 
         result = float("inf")
         for mask in range(1<<len(lines)):
             covered = set()

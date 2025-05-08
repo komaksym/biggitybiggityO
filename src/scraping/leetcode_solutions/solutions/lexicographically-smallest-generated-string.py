@@ -39,7 +39,7 @@ class Solution(object):
             else:
                 candidate[i:i+m] = str2
             prev = i
-        result = list(str2)+['#']+candidate
+        result = list(str2)+[
         idxs = []
         for i in range(m+1, len(result)):
             if result[i] == '*':
@@ -77,7 +77,7 @@ class Solution2(object):
         :type str2: str
         :rtype: str
         """
-        def z_function(s):  # Time: O(n), Space: O(n)
+        def z_function(s): 
             z = [0]*len(s)
             l, r = 0, 0
             for i in range(1, len(z)):
@@ -105,7 +105,7 @@ class Solution2(object):
             else:
                 candidate[i:i+m] = str2
             prev = i
-        result = list(str2)+['#']+candidate
+        result = list(str2)+[
         idxs = []
         for i in range(m+1, len(result)):
             if result[i] == '*':

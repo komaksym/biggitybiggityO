@@ -26,7 +26,7 @@ class DinnerPlates(object):
             if l < len(self.__stks):
                 self.__stks[l].append(val)
                 return
-            self.__min_heap = []  # nothing is valid in min heap
+            self.__min_heap = [] 
         if not self.__stks or len(self.__stks[-1]) == self.__c:
             self.__stks.append([])
         self.__stks[-1].append(val)

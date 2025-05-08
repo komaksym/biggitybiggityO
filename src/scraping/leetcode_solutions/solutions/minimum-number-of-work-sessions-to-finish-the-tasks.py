@@ -18,7 +18,7 @@ class Solution(object):
                 if new_mask == mask:
                     continue
                 if dp[mask]%sessionTime + task > sessionTime:
-                    task += sessionTime-dp[mask]%sessionTime  # take a break
+                    task += sessionTime-dp[mask]%sessionTime 
                 dp[new_mask] = min(dp[new_mask], dp[mask]+task)
         return (dp[-1]+sessionTime-1)//sessionTime
 

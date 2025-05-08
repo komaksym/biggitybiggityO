@@ -21,7 +21,7 @@ class Solution(object):
             degree[v] += 1
         cnt = [0]*(2*(max(degree[1:])+1))
         count = collections.Counter(degree[1:])
-        for i, j in itertools.product(count, count):  # Time: O(d^2) = O(e)
+        for i, j in itertools.product(count, count): 
             if i < j:
                 cnt[i+j] += count[i]*count[j]
             elif i == j:
@@ -29,7 +29,7 @@ class Solution(object):
         for (i, j), shared_degree in shared.items():
             cnt[degree[i]+degree[j]] -= 1
             cnt[degree[i]+degree[j]-shared_degree] += 1
-        for i in reversed(range(len(cnt)-1)):  # accumulate
+        for i in reversed(range(len(cnt)-1)): 
             cnt[i] += cnt[i+1]
         return [cnt[q+1] if q+1 < len(cnt) else 0 for q in queries]
 

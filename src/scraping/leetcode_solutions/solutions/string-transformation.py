@@ -94,7 +94,7 @@ class Solution2(object):
         T = [[0, 1],
              [n-1, (n-1)-1]]
         dp = [1, 0]
-        dp = matrix_mult([dp], matrix_expo(T, k))[0]  # [dp[0], dp[1]] * T^k
+        dp = matrix_mult([dp], matrix_expo(T, k))[0] 
         return reduce(lambda a, b: (a+b)%MOD, (dp[int(i != 0)] for i in KMP(s+s[:-1], t)), 0)
 
 
@@ -123,7 +123,7 @@ class Solution3(object):
                 K /= 2
             return result
 
-        def z_function(s):  # Time: O(n), Space: O(n)
+        def z_function(s): 
             z = [0]*len(s)
             l, r = 0, 0
             for i in range(1, len(z)):
@@ -139,6 +139,6 @@ class Solution3(object):
         T = [[0, 1],
              [n-1, (n-1)-1]]
         dp = [1, 0]
-        dp = matrix_mult([dp], matrix_expo(T, k))[0]  # [dp[0], dp[1]] * T^k
+        dp = matrix_mult([dp], matrix_expo(T, k))[0] 
         z = z_function(t+s+s[:-1])
         return reduce(lambda a, b: (a+b)%MOD, (dp[int(i != 0)] for i in range(n) if z[i+len(t)] >= len(t)), 0)

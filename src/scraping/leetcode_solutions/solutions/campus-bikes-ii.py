@@ -3,7 +3,7 @@
 
 # if w = b, we can even apply Hungarian algorithm (see https://en.wikipedia.org/wiki/Hungarian_algorithm),
 # it can be improved to O(w^3), see https://github.com/t3nsor/codebook/blob/master/bipartite-mincost.cpp
-class Solution(object):  # this is slower than Solution2 in python
+class Solution(object): 
     def assignBikes(self, workers, bikes):
         """
         :type workers: List[List[int]]
@@ -55,7 +55,7 @@ class Solution2(object):
             for j in range(len(bikes)):
                 if taken & (1<<j):
                     continue
-                heapq.heappush(min_heap, (cost+manhattan(workers[i], bikes[j]),  # O(b)
-                                          i+1,            # O(w)
-                                          taken|(1<<j)))  # O(2^b)
+                heapq.heappush(min_heap, (cost+manhattan(workers[i], bikes[j]), 
+                                          i+1,           
+                                          taken|(1<<j))) 
 

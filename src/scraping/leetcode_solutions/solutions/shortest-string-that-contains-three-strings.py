@@ -36,8 +36,8 @@ class Solution(object):
         def merge(a, b):
             if KMP(b, a) != -1:
                 return b
-            prefix = getPrefix(b+'#'+a)            
-            l = prefix[-1]+1  # longest prefix suffix length
+            prefix = getPrefix(b+
+            l = prefix[-1]+1 
             return a+b[l:]
 
         result = [merge(a, merge(b, c)), merge(a, merge(c, b)),

@@ -46,7 +46,7 @@ def main():
 
 
     # Clean the data up
-    clean_files(raw_data['files'], raw_data['file_paths'], line_commnts_ptrn)
+    clean_files(raw_data['files'], raw_data['file_paths'], inline_commnts_ptrn)
 
 
 if __name__ == '__main__':

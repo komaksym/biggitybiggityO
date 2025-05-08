@@ -14,8 +14,8 @@ class Solution(object):
             l = bisect.bisect_right(pos, left)
             r = bisect.bisect_left(pos, left+side)
             high = max(heights[l-1:r] or [0]) + side
-            pos[l:r] = [left, left+side]         # Time: O(n)
-            heights[l:r] = [high, heights[r-1]]  # Time: O(n)
+            pos[l:r] = [left, left+side]        
+            heights[l:r] = [high, heights[r-1]] 
             maxH = max(maxH, high)
             result.append(maxH)
         return result
@@ -263,7 +263,7 @@ class Solution4(object):
             for j in range(i+1, len(positions)):
                 left_j, size_j = positions[j]
                 right_j = left_j + size_j
-                if left_j < right_i and left_i < right_j:  # intersect
+                if left_j < right_i and left_i < right_j: 
                     heights[j] = max(heights[j], heights[i])
 
         result = []

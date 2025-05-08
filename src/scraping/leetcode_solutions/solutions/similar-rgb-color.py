@@ -12,7 +12,7 @@ class Solution(object):
             if r > 8: q += 1
             return '{:02x}'.format(17*q)
 
-        return '#' + \
+        return 
                 rounding(color[1:3]) + \
                 rounding(color[3:5]) + \
                 rounding(color[5:7])

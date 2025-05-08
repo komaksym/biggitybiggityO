@@ -22,10 +22,10 @@ class Solution(object):
             p = pattern[i]
             if p in p2w:
                 w = p2w[p]
-                if w == str[j:j+len(w)]:  # Match pattern.
+                if w == str[j:j+len(w)]: 
                     is_match = self.match(pattern, str, i + 1, j + len(w), w2p, p2w)
             else:
-                for k in range(j, len(str)):  # Try any possible word
+                for k in range(j, len(str)): 
                     w = str[j:k+1]
                     if w not in w2p:
                         w2p[w], p2w[p] = p, w

@@ -42,12 +42,12 @@ class Solution(object):
 
             for i in range(start, len(s)):
                 if right_removed == 0 and left_removed > 0 and s[i] == '(':
-                    if i == start or s[i] != s[i - 1]:  # Skip duplicated.
+                    if i == start or s[i] != s[i - 1]: 
                         removed[i] = True
                         removeInvalidParenthesesHelper(i + 1, left_removed - 1, right_removed)
                         del removed[i]
                 elif right_removed > 0 and s[i] == ')':
-                    if i == start or s[i] != s[i - 1]:  # Skip duplicated.
+                    if i == start or s[i] != s[i - 1]: 
                         removed[i] = True
                         removeInvalidParenthesesHelper(i + 1, left_removed, right_removed - 1)
                         del removed[i]

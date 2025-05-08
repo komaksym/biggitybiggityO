@@ -9,7 +9,7 @@ class Solution(object):
         :type pattern: str
         :rtype: int
         """
-        def z_function(s):  # Time: O(n), Space: O(n)
+        def z_function(s): 
             z = [0]*len(s)
             l, r = 0, 0
             for i in range(1, len(z)):

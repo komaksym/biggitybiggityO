@@ -121,11 +121,11 @@ class Solution_TLE(object):
         for i, x in enumerate(nums):
             groups[x].append(i)
         st = SegmentTree(len(nums), build_fn=build, query_fn=query)
-        result = st.tree[1][0]  # st.query(0, len(nums)-1)[0]
+        result = st.tree[1][0] 
         for k, v in groups.items():
             for i in v:
                 st.update(i, None)
-            result = max(result, st.tree[1][0])  # st.query(0, len(nums)-1)[0]
+            result = max(result, st.tree[1][0]) 
             for i in v:
                 st.update(i, [k]*4)
         return result

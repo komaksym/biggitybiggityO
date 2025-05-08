@@ -22,7 +22,7 @@ class Solution(object):
         if not s:
             return s
 
-        A = s + '#' + s[::-1]
+        A = s + 
         return s[getPrefix(A)[-1]+1:][::-1] + s
 
 
@@ -70,8 +70,8 @@ class Solution3(object):
                 return ['^', '$']
             string = ['^']
             for c in s:
-                string +=  ['#', c]
-            string += ['#', '$']
+                string +=  [
+            string += [
             return string
 
         string = preProcess(s)

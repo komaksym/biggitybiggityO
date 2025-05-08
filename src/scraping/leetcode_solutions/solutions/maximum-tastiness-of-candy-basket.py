@@ -9,7 +9,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        def check(x):  # max cnt if smallest absolute difference >= x
+        def check(x): 
             cnt = prev = 0
             for i in range(len(price)):
                 if prev and price[i]-prev < x:

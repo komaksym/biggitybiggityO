@@ -14,7 +14,7 @@ class MajorityChecker(object):
         :type arr: List[int]
         """
         Q, ERROR_RATE = 10000, 0.001
-        self.__K = int(Q/ERROR_RATE).bit_length()  # floor(log2(Q/ERROR_RATE))+1 = 24
+        self.__K = int(Q/ERROR_RATE).bit_length() 
         self.__arr = arr
         self.__inv_idx = collections.defaultdict(list)
         for i, x in enumerate(self.__arr):
@@ -98,7 +98,7 @@ class MajorityChecker2(object):
 import functools
 
 
-class SegmentTreeRecu(object):  # 0-based index
+class SegmentTreeRecu(object): 
     def __init__(self, nums, count):
         """
         initialize your data structure here.

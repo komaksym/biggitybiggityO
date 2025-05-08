@@ -2,7 +2,7 @@
 # Space: O(n)
 
 # Range Maximum Query
-class SegmentTree(object):  # 0-based index
+class SegmentTree(object): 
     def __init__(self, N,
                  build_fn=lambda x, y: [y]*(2*x),
                  query_fn=lambda x, y: y if x is None else max(x, y),
@@ -21,7 +21,7 @@ class SegmentTree(object):  # 0-based index
         if x < self.N:
             self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-    def update(self, L, R, h):  # Time: O(logN), Space: O(N)
+    def update(self, L, R, h): 
         def pull(x):
             while x > 1:
                 x //= 2
@@ -33,10 +33,10 @@ class SegmentTree(object):  # 0-based index
         R += self.N
         L0, R0 = L, R
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 self.__apply(L, h)
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 self.__apply(R, h)
                 R -= 1
             L //= 2
@@ -44,7 +44,7 @@ class SegmentTree(object):  # 0-based index
         pull(L0)
         pull(R0)
 
-    def query(self, L, R):  # Time: O(logN), Space: O(N)
+    def query(self, L, R): 
         def push(x):
             n = 2**self.H
             while n != 1:
@@ -64,10 +64,10 @@ class SegmentTree(object):  # 0-based index
         push(L)
         push(R)
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 result = self.query_fn(result, self.tree[L])
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 result = self.query_fn(result, self.tree[R])
                 R -= 1
             L //= 2
@@ -94,7 +94,7 @@ class Solution(object):
             intervals.append([[x0,   +1], [y0, y1]])
             intervals.append([[x1+1, -1], [y0, y1]])
 
-        def check(points, k, l):  # Time: O(nlogn), Space: O(n)
+        def check(points, k, l): 
             intervals = []
             y_set = set()
             for x, y in points:
@@ -102,15 +102,15 @@ class Solution(object):
                 y_set.add(y-l)
                 y_set.add(y+l)
             intervals.sort()
-            y_to_idx = {y:i for i, y in enumerate(sorted(y_set))}  # coordinate compression
+            y_to_idx = {y:i for i, y in enumerate(sorted(y_set))} 
             st = SegmentTree(len(y_to_idx))
-            for [_, v], [y0, y1] in intervals:  # line sweep
+            for [_, v], [y0, y1] in intervals: 
                 st.update(y_to_idx[y0], y_to_idx[y1], v)
                 if st.query(0, len(y_to_idx)-1) >= k:
                     return True
             return False
                 
-        points = [[x+y, x-y] for x, y in points]  # rotate
+        points = [[x+y, x-y] for x, y in points] 
         min_x = min(points)[0]
         max_x = max(points)[0]
         min_y = min(points, key=lambda x: x[1])[1]
@@ -145,7 +145,7 @@ class Solution2(object):
             intervals[x1+1][y0] -= 1
             intervals[x1+1][y1+1] += 1
 
-        def check(points, k, l):  # Time: O(n^2), Space: O(n)
+        def check(points, k, l): 
             intervals = collections.defaultdict(lambda:collections.defaultdict(int))
             y_set = set()
             for x, y in points:
@@ -155,7 +155,7 @@ class Solution2(object):
             sorted_y = sorted(y_set)
             sorted_x = sorted(intervals.keys())
             count = collections.Counter()
-            for x in sorted_x:  # line sweep
+            for x in sorted_x: 
                 for y, c in intervals[x].items():
                     count[y] += c
                 cnt = 0
@@ -165,7 +165,7 @@ class Solution2(object):
                         return True
             return False
                 
-        points = [[x+y, x-y] for x, y in points]  # rotate
+        points = [[x+y, x-y] for x, y in points] 
         min_x = min(points)[0]
         max_x = max(points)[0]
         min_y = min(points, key=lambda x: x[1])[1]

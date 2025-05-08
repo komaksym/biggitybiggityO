@@ -19,7 +19,7 @@ class Solution(object):
             x = y-remain
             if x <= 0:
                 return False
-            if x > remain:  # for case [1, 1000000000]
+            if x > remain: 
                 x = x%remain + remain
             heapq.heappush(max_heap, -x)
             total = x+remain

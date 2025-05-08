@@ -2,8 +2,8 @@
 # Space: O(m * n)
 
 # template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20B/railroad_maintenance.py3
-# Reference: https://en.wikipedia.org/wiki/Biconnected_component#Algorithms
-def iter_get_articulation_points(graph, v):  # modified
+# Reference: https://en.wikipedia.org/wiki/Biconnected_componen
+def iter_get_articulation_points(graph, v): 
     def iter_dfs(v, p):
         stk = [(1, (v, p))]
         while stk:
@@ -39,7 +39,7 @@ def iter_get_articulation_points(graph, v):  # modified
                     cutpoints.append(v)
     index_counter, index, lowlinks = [0], [-1]*len(graph), [0]*len(graph)
     cutpoints = []
-    iter_dfs(v, -1)  # modified
+    iter_dfs(v, -1) 
     return cutpoints
 
 
@@ -97,21 +97,21 @@ class Solution(object):
 # Time:  O((m * n) * log(m * n))
 # Space: O((m * n) * log(m * n))
 # Template: https://github.com/kamyu104/MetaHackerCup-2022/blob/main/Final%20Round/tile_transposing.py3
-class PersistentUnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+class PersistentUnionFind(object): 
     def __init__(self, n):
         self.set = list(range(n))
         self.size = [1]*n
-        self.snapshots = []  # added
-        self.undos = []  # added
+        self.snapshots = [] 
+        self.undos = [] 
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
             y = stk.pop()
-            self.undos.append((~y, self.set[y]))  # added
+            self.undos.append((~y, self.set[y])) 
             self.set[y] = x
         return x
 
@@ -119,9 +119,9 @@ class PersistentUnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.size[x] > self.size[y]:  # union by size
+        if self.size[x] > self.size[y]: 
             x, y = y, x
-        self.undos.append((x, y))  # added
+        self.undos.append((x, y)) 
         self.set[x] = self.set[y]
         self.size[y] += self.size[x]
         return True
@@ -129,10 +129,10 @@ class PersistentUnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
     def total(self, x):
         return self.size[self.find_set(x)]
 
-    def snapshot(self):  # added
+    def snapshot(self): 
         self.snapshots.append(len(self.undos))
 
-    def rollback(self):  # added
+    def rollback(self): 
         for _ in range(len(self.undos)-self.snapshots.pop()):
             x, y = self.undos.pop()
             if x >= 0:

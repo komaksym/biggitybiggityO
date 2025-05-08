@@ -21,7 +21,7 @@ class Codec(object):
             vals.append(str(node.val))
             for child in node.children:
                 dfs(child, vals)
-            vals.append("#")
+            vals.append(
         
         vals = []
         dfs(root, vals)
@@ -47,7 +47,7 @@ class Codec(object):
                 
         def dfs(vals):
             val = next(vals)
-            if val == "#":
+            if val == 
                 return None
             root = Node(int(val), [])
             child = dfs(vals)

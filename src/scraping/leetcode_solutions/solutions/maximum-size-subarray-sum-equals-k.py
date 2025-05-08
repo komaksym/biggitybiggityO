@@ -17,6 +17,6 @@ class Solution(object):
             elif cur_sum - k in sums:
                 max_len = max(max_len, i - sums[cur_sum - k])
             if cur_sum not in sums:
-                sums[cur_sum] = i  # Only keep the smallest index.
+                sums[cur_sum] = i 
         return max_len
 

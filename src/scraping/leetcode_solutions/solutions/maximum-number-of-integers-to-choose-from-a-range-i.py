@@ -10,7 +10,7 @@ class Solution(object):
         :type maxSum: int
         :rtype: int
         """
-        k = min(int((-1+(1+8*maxSum))**0.5/2), n)  # k = argmax((k+1)*k//2 <= maxSum)
+        k = min(int((-1+(1+8*maxSum))**0.5/2), n) 
         total = (k+1)*k//2
         result = k
         lookup = set(banned)

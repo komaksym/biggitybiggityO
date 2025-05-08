@@ -9,7 +9,7 @@ class Solution(object):
         """
         lookup = {"0":"0", "1":"1", "6":"9", "8":"8", "9":"6"}
         centers = {"0":"0", "1":"1", "8":"8"}
-        def totalCount(n):  # count all numbers in the pattern of [01689]{1,len(n)} in the range of [1, n]
+        def totalCount(n): 
             s = str(n)
             total = 0 
             p = len(lookup)**(len(s)-1)
@@ -22,25 +22,25 @@ class Solution(object):
                 if s[i] not in lookup:
                     break
                 p //= len(lookup)
-            return total-1  # exclude 0
+            return total-1 
 
-        def validCountInLessLength(n):  # count unconfusing numbers in the pattern of [01689]{1,len(n)-1} in the range of [1, n]
+        def validCountInLessLength(n): 
             s = str(n)
             valid = 0
             total = len(centers)
-            for i in range(1, len(s), 2):  # count unconfusing numbers for each odd length less than s
+            for i in range(1, len(s), 2): 
                 if i == 1:
                     valid += len({c for c in centers.keys() if c != '0'})
                 else:
                     valid += total * (len(lookup)-1)
                     total *= len(lookup)
             total = 1
-            for i in range(2, len(s), 2):  # count unconfusing numbers for each even length less than s
+            for i in range(2, len(s), 2): 
                 valid += total * (len(lookup)-1)
                 total *= len(lookup)
             return valid
 
-        def validCountInFullLength(n):  # count unconfusing numbers in the pattern of [01689]{len(n)} in the range of [1, n]
+        def validCountInFullLength(n): 
             s = str(n)
             half_s = s[:(len(s)+1)//2]
             total = 0
@@ -74,7 +74,7 @@ class Solution2(object):
         """
         lookup = {"0":"0", "1":"1", "6":"9", "8":"8", "9":"6"}
         centers = {"0":"0", "1":"1", "8":"8"}
-        def totalCount(n):  # count all numbers in the pattern of [01689]{1,len(n)} in the range of [0, n]
+        def totalCount(n): 
             s = str(n)
             total = 0 
             p = len(lookup)**(len(s)-1)
@@ -89,23 +89,23 @@ class Solution2(object):
                 p //= len(lookup)
             return total
 
-        def validCountInLessLength(n):  # count unconfusing numbers in the pattern of [01689]{1,len(n)-1} in the range of [0, n]
+        def validCountInLessLength(n): 
             s = str(n)
             valid = 0
             total = len(centers)
-            for i in range(1, len(s), 2):  # count unconfusing numbers for each odd length less than s
+            for i in range(1, len(s), 2): 
                 if i == 1:
                     valid += len(centers)
                 else:
                     valid += total * (len(lookup)-1)
                     total *= len(lookup)
             total = 1
-            for i in range(2, len(s), 2):  # count unconfusing numbers for each even length less than s
+            for i in range(2, len(s), 2): 
                 valid += total * (len(lookup)-1)
                 total *= len(lookup)
             return valid
 
-        def validCountInFullLength(n):  # count unconfusing numbers in the pattern of [01689]{len(n)} in the range of [0, n]
+        def validCountInFullLength(n): 
             s = str(n)
             half_s = s[:(len(s)+1)//2]
             total = 0
@@ -126,7 +126,7 @@ class Solution2(object):
                 p //= len(lookup)
             return total
 
-        def f(n):  # count confusing numbers in the range of [0, n]
+        def f(n): 
             return totalCount(n) - validCountInLessLength(n) - validCountInFullLength(n)
 
-        return f(n) - f(0)  # f(0) is always 0 and could be ignored
+        return f(n) - f(0) 

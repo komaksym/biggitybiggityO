@@ -9,7 +9,7 @@ class Solution(object):
         :rtype: int
         """
         sorted_nums = sorted(set(nums))
-        squares = {x for x in sorted_nums if x%2 < 2}  # squared_num % 4 in [0, 1] 
+        squares = {x for x in sorted_nums if x%2 < 2} 
         result = 0
         for x in sorted_nums:
             square, cnt = x**2, 1

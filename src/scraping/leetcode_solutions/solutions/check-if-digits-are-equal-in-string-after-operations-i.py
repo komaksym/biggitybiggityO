@@ -9,7 +9,7 @@ class Solution(object):
         :rtype: bool
         """
         def check(mod):
-            def decompose(x, mod):  # x = a * mod^cnt
+            def decompose(x, mod): 
                 cnt = 0
                 while x > 1 and x%mod == 0:
                     x //= mod

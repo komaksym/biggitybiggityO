@@ -8,7 +8,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        def nCr(n, r):  # Time: O(n), Space: O(1)
+        def nCr(n, r): 
             if n-r < r:
                 r = n-r
             c = 1

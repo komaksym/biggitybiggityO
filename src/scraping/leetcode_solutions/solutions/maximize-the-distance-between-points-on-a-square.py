@@ -149,7 +149,7 @@ class Solution3(object):
         p.sort()
         result = 1
         for i in range(len(p)-k+1):
-            if p[-1]-p[i] <= result*(k-1):  # to speed up
+            if p[-1]-p[i] <= result*(k-1): 
                 break
             result = binary_search_right(result+1, 4*side//k, lambda x: check(i, x))
         return result

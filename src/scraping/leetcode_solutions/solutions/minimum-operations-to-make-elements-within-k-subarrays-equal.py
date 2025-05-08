@@ -133,8 +133,8 @@ class Solution2(object):
 
         class SlidingWindow(object):
             def __init__(self):
-                self.left = LazyHeap(-1)   # max heap
-                self.right = LazyHeap(+1)  # min heap
+                self.left = LazyHeap(-1)  
+                self.right = LazyHeap(+1) 
                 self.total1 = self.total2 = 0
 
             def add(self, val):

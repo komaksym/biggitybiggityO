@@ -4,7 +4,7 @@
 import collections
 
 
-class BIT(object):  # Fenwick Tree, 1-indexed
+class BIT(object): 
     def __init__(self, n):
         self.__bit = [0] * n
 

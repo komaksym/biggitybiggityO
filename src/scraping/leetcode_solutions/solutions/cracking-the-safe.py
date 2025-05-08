@@ -9,7 +9,7 @@ class Solution(object):
         :rtype: str
         """
         M = k**(n-1)
-        P = [q*k+i for i in range(k) for q in range(M)]  # rotate: i*k^(n-1) + q => q*k + i
+        P = [q*k+i for i in range(k) for q in range(M)] 
         result = [str(k-1)]*(n-1)
         for i in range(k**n):
             j = i
@@ -34,7 +34,7 @@ class Solution2(object):
         result = [str(0)]*(n-1)
         lookup = set()
         while len(lookup) < total:
-            for i in reversed(range(k)):  # preorder like traversal relative to initial result to avoid getting stuck, i.e. don't use 0 until there is no other choice
+            for i in reversed(range(k)): 
                 new_unique_rolling_hash = unique_rolling_hash*k + i
                 if new_unique_rolling_hash not in lookup:
                     lookup.add(new_unique_rolling_hash)
@@ -55,7 +55,7 @@ class Solution3(object):
         """
         M = k**(n-1)
         def dfs(k, unique_rolling_hash, lookup, result):
-            for i in reversed(range(k)):  # preorder like traversal relative to initial result to avoid getting stuck, i.e. don't use 0 until there is no other choice
+            for i in reversed(range(k)): 
                 new_unique_rolling_hash = unique_rolling_hash*k + i
                 if new_unique_rolling_hash not in lookup:
                     lookup.add(new_unique_rolling_hash)
@@ -84,7 +84,7 @@ class Solution4(object):
         total = k**n
         while len(lookup) < total:
             node = result[len(result)-n+1:]
-            for i in range(k):  # preorder like traversal relative to initial result to avoid getting stuck, i.e. don't use k-1 until there is no other choice
+            for i in range(k): 
                 neighbor = "".join(node) + str(i)
                 if neighbor not in lookup:
                     lookup.add(neighbor)
@@ -103,7 +103,7 @@ class Solution5(object):
         :rtype: str
         """
         def dfs(k, node, lookup, result):
-            for i in range(k):  # preorder like traversal relative to initial result to avoid getting stuck, i.e. don't use k-1 until there is no other choice
+            for i in range(k): 
                 neighbor = node + str(i)
                 if neighbor not in lookup:
                     lookup.add(neighbor)

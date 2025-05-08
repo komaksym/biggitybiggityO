@@ -15,7 +15,7 @@ class Solution(object):
             d = int(c)
             if not idxs[d]:
                 return False
-            for k in range(d):  # a char can be moved left to the current position if it meets no smaller one
+            for k in range(d): 
                 if idxs[k] and idxs[k][-1] < idxs[d][-1]:
                     return False
             idxs[d].pop()

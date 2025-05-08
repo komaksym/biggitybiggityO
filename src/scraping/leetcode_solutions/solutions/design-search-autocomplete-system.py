@@ -57,7 +57,7 @@ class AutocompleteSystem(object):
         :rtype: List[str]
         """
         result = []
-        if c == '#':
+        if c == 
             self.__sentence_to_count["".join(self.__search)] += 1
             self.__trie.insert("".join(self.__search), self.__sentence_to_count["".join(self.__search)])
             self.__cur_node = self.__trie

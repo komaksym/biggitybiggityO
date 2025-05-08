@@ -21,7 +21,7 @@ class Solution(object):
         for left in reversed(range(len(word))):
             node = trie
             for i in range(left, right+1):
-                if word[i] not in node:  # O(l) times
+                if word[i] not in node: 
                     break
                 node = node[word[i]]
                 if "_end" in node:

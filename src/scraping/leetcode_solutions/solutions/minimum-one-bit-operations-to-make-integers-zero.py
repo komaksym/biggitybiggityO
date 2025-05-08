@@ -27,6 +27,6 @@ class Solution2(object):
         """
         result = 0
         while n:
-            result = -result - (n^(n-1))  # 2^(pos[i]+1)-1
+            result = -result - (n^(n-1)) 
             n &= n-1
         return abs(result)

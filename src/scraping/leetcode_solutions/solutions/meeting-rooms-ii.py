@@ -28,11 +28,11 @@ class Solution2(object):
         min_rooms, cnt_rooms = 0, 0
         while s < len(starts):
             if starts[s] < ends[e]:
-                cnt_rooms += 1  # Acquire a room.
+                cnt_rooms += 1 
                 min_rooms = max(min_rooms, cnt_rooms)
                 s += 1
             else:
-                cnt_rooms -= 1  # Release a room.
+                cnt_rooms -= 1 
                 e += 1
 
         return min_rooms

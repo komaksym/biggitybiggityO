@@ -11,9 +11,9 @@ class Solution(object):
         """
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
     
@@ -32,7 +32,7 @@ class Solution2(object):
         :rtype: int
         """
         MOD = 10**9+7
-        dp = [int(i <= nums[0]) for i in range(max(nums)+1)]  # dp[j]: numbers of arr1, which is of length i+1 and arr1[i] is j
+        dp = [int(i <= nums[0]) for i in range(max(nums)+1)] 
         for i in range(1, len(nums)):
             new_dp = [0]*len(dp)
             diff = max(nums[i]-nums[i-1], 0)

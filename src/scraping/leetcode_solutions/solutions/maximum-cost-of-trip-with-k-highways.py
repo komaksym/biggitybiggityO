@@ -14,7 +14,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        if k+1 > n:  # optionally optimize
+        if k+1 > n: 
             return -1
         adj = [[] for _ in range(n)]
         for c1, c2, t in highways:
@@ -56,7 +56,7 @@ class Solution2(object):
         :type k: int
         :rtype: int
         """
-        if k+1 > n:  # required to optimize, otherwise, TLE or MLE
+        if k+1 > n: 
             return -1
         adj = [[] for _ in range(n)]
         for c1, c2, t in highways:

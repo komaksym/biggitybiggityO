@@ -78,7 +78,7 @@ def bipartiteMatch(graph):
                 L = preds[v]
                 del preds[v]
                 for u in L :
-                    if u in pred and pred[u] is unmatched:  # early return
+                    if u in pred and pred[u] is unmatched: 
                         del pred[u]
                         matching[v] = u
                         ret[0] = True
@@ -195,7 +195,7 @@ class Solution3(object):
         
         dp = {0: 0}
         for row in seats:
-            invalid_mask = sum(1 << c for c, v in enumerate(row) if v == '#')
+            invalid_mask = sum(1 << c for c, v in enumerate(row) if v == 
             new_dp = {}
             for mask1, v1 in dp.items():
                 for mask2 in range(1 << len(seats[0])):

@@ -16,7 +16,7 @@ class Solution(object):
         lookup = {}
         def powmod(n, p):
             if (n, p) not in lookup:
-                lookup[n, p] = (lookup[n, p-1]*n)%MOD if p >= 2 else n%MOD  # assumed powmod(n, p-1) was accessed before powmod(n, p)
+                lookup[n, p] = (lookup[n, p-1]*n)%MOD if p >= 2 else n%MOD 
             return lookup[n, p]
 
         result = curr = 0

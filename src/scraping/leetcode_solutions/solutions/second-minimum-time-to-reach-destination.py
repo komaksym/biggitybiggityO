@@ -14,15 +14,15 @@ class Solution(object):
             left, right = {start}, {target}
             lookup = set()
             result = steps = 0
-            while left and (not result or result+2 > steps):  # modified
+            while left and (not result or result+2 > steps): 
                 for u in left:
                     lookup.add(u)
                 new_left = set()
                 for u in left: 
                     if u in right:
-                        if not result:  # modified
+                        if not result: 
                             result = steps
-                        elif result < steps:  # modifeid
+                        elif result < steps: 
                             return result+1
                     for v in adj[u]:
                         if v in lookup:
@@ -32,7 +32,7 @@ class Solution(object):
                 steps += 1
                 if len(left) > len(right): 
                     left, right = right, left
-            return result+2  # modified
+            return result+2 
 
         def calc_time(time, change, dist):
             result = 0
@@ -90,11 +90,11 @@ class Solution2(object):
             adj[v-1].append(u-1)
         dist_to_end, dist_to_start = bfs(adj, 0), bfs(adj, n-1)
 
-        dist = dist_to_end[n-1]+2  # always exists
-        for i in range(n):  # case of detour
+        dist = dist_to_end[n-1]+2 
+        for i in range(n): 
             if dist_to_end[i]+dist_to_start[i] == dist_to_end[n-1]:
                 continue
-            dist = min(dist, dist_to_end[i]+dist_to_start[i])  # find second min
+            dist = min(dist, dist_to_end[i]+dist_to_start[i]) 
             if dist == dist_to_end[n-1]+1:
                 break
         return calc_time(time, change, dist)

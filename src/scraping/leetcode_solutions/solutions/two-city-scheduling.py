@@ -31,7 +31,7 @@ class Solution(object):
                     return
                 elif new_pivot_idx > k:
                     right = new_pivot_idx - 1
-                else:  # new_pivot_idx < k.
+                else: 
                     left = new_pivot_idx + 1
                     
         kthElement(costs, len(costs)//2, lambda a, b: a[0]-a[1] < b[0]-b[1])

@@ -38,7 +38,7 @@ def main():
     ## Remove space complexity comments
     space_comp_pttrn = set_regex_pattern(r"^#\s*Space.*?\n", flags=re.MULTILINE | re.DOTALL | re.IGNORECASE)
     ## Remove inline comments
-    inline_commnts_ptrn = set_regex_pattern(r"[^\n]#.*")
+    inline_commnts_ptrn = set_regex_pattern(r"[^\n'\"]#.*")
     ## Remove docstrings 
     docstrings_pttrn = set_regex_pattern(r"(\"{3}.*?\"{3}\s*)|('{3}.*?'{3}\s*)", flags=re.DOTALL | re.IGNORECASE)
     ## Code comments
@@ -46,7 +46,11 @@ def main():
 
 
     # Clean the data up
+<<<<<<< HEAD
     clean_files(raw_data['files'], raw_data['file_paths'], docstrings_pttrn)
+=======
+    clean_files(raw_data['files'], raw_data['file_paths'], inline_commnts_ptrn)
+>>>>>>> test
 
 
 if __name__ == '__main__':

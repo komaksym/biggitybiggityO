@@ -3,10 +3,7 @@
 # array
 class Solution(object):
     def minElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def f(x):
             result = 0
             while x:

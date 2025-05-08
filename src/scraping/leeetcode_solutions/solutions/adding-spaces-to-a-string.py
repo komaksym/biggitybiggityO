@@ -2,18 +2,8 @@
 
 # inplace solution
 class Solution(object):
-    def addSpaces(self, s, spaces):
-        """
-        :type s: str
-        :type spaces: List[int]
-        :rtype: str
-        """
+    def add        
         prev = len(s)
         s = list(s)
-        s.extend([None]*len(spaces))
-        for i in reversed(range(len(spaces))):
-            for j in reversed(range(spaces[i], prev)):
-                s[j+1+i] = s[j]
-            s[spaces[i]+i] = ' '
-            prev = spaces[i]
-        return "".join(s)
+        s.extend([None]*len(        for i in reversed(range(len(            for j in reversed(range(                s[j+1+i] = s[j]
+            s[            prev =         return "".join(s)

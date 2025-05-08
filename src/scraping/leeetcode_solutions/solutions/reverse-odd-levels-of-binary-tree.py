@@ -9,10 +9,7 @@ class TreeNode(object):
 # bfs
 class Solution(object):
     def reverseOddLevels(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: Optional[TreeNode]
-        """
+        
         q = [root]
         parity = 0
         while q:

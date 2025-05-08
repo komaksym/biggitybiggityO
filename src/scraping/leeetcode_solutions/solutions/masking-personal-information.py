@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maskPII(self, S):
-        """
-        :type S: str
-        :rtype: str
-        """
+        
         if '@' in S:
             first, after = S.split('@')
             return "{}*****{}@{}".format(first[0], first[-1], after).lower()

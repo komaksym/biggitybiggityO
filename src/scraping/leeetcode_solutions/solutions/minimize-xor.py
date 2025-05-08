@@ -3,11 +3,7 @@
 # bit manipulation, greedy
 class Solution(object):
     def minimizeXor(self, num1, num2):
-        """
-        :type num1: int
-        :type num2: int
-        :rtype: int
-        """
+        
         def popcount(x):
             return bin(x)[2:].count('1')
         

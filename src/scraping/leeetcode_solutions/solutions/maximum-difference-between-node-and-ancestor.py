@@ -11,10 +11,7 @@ class TreeNode(object):
 # iterative stack solution
 class Solution(object):
     def maxAncestorDiff(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         result = 0
         stack = [(root, 0, float("inf"))]
         while stack:
@@ -33,10 +30,7 @@ class Solution(object):
 # recursive solution
 class Solution2(object):
     def maxAncestorDiff(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def maxAncestorDiffHelper(node, mx, mn): 
             if not node:
                 return 0

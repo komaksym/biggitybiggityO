@@ -7,11 +7,7 @@ from sortedcontainers import SortedList
 # heap, sorted list, greedy
 class Solution(object):
     def findMaximumElegance(self, items, k):
-        """
-        :type items: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         curr = 0
         lookup = set()
         stk = []
@@ -49,11 +45,7 @@ import collections
 # quick select, sort, greedy
 class Solution2(object):
     def findMaximumElegance(self, items, k):
-        """
-        :type items: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -77,7 +69,7 @@ class Solution2(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
     
         def nlargest(k, nums):
@@ -110,11 +102,7 @@ class Solution2(object):
 # sort, greedy
 class Solution3(object):
     def findMaximumElegance(self, items, k):
-        """
-        :type items: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         items.sort(reverse=True)
         result = curr = 0
         lookup = set()

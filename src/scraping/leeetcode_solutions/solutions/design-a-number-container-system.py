@@ -13,11 +13,7 @@ class NumberContainers(object):
         self.__num_to_idxs = collections.defaultdict(SortedList)
 
     def change(self, index, number):
-        """
-        :type index: int
-        :type number: int
-        :rtype: None
-        """
+        
         if index in self.__idx_to_num:
             self.__num_to_idxs[self.__idx_to_num[index]].remove(index)
             if not self.__num_to_idxs[self.__idx_to_num[index]]:
@@ -26,8 +22,5 @@ class NumberContainers(object):
         self.__num_to_idxs[number].add(index)
 
     def find(self, number):
-        """
-        :type number: int
-        :rtype: int
-        """
+        
         return self.__num_to_idxs[number][0] if number in self.__num_to_idxs else -1

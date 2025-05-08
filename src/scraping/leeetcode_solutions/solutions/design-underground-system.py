@@ -14,30 +14,16 @@ class UndergroundSystem(object):
         
 
     def checkIn(self, id, stationName, t):
-        """
-        :type id: int
-        :type stationName: str
-        :type t: int
-        :rtype: None
-        """
+        
         self.__live[id] = (stationName, t)
 
     def checkOut(self, id, stationName, t):
-        """
-        :type id: int
-        :type stationName: str
-        :type t: int
-        :rtype: None
-        """
+        
         startStation, startTime = self.__live.pop(id)
         self.__statistics[startStation, stationName][0] += t-startTime
         self.__statistics[startStation, stationName][1] += 1
         
     def getAverageTime(self, startStation, endStation):
-        """
-        :type startStation: str
-        :type endStation: str
-        :rtype: float
-        """
+        
         total_time, cnt = self.__statistics[startStation, endStation]
         return float(total_time) / cnt

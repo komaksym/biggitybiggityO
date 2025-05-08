@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maxDiff(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
+        
         digits = str(num)
         for b in digits:
             if b < '9':

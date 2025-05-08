@@ -3,10 +3,7 @@
 # math
 class Solution(object):
     def triangleType(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: str
-        """
+        
         nums.sort()
         a, b, c = nums
         if a+b <= c:

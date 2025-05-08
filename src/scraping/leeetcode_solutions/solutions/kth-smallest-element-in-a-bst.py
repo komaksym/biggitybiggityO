@@ -1,9 +1,9 @@
 # Time:  O(max(h, k))
 
 class Solution(object):
-    # @param {TreeNode} root
-    # @param {integer} k
-    # @return {integer}
+   
+   
+   
     def kthSmallest(self, root, k):
         s, cur, rank = [], root, 0
 
@@ -22,18 +22,13 @@ class Solution(object):
 
 
 # time: O(max(h, k))
-# space: O(h)
 
 from itertools import islice
 
 
 class Solution2(object):
     def kthSmallest(self, root, k):
-        """
-        :type root: TreeNode
-        :type k: int
-        :rtype: int
-        """
+        
         def gen_inorder(root):
             if root:
                 for n in gen_inorder(root.left):

@@ -6,11 +6,7 @@ import collections
 # freq table, binary search
 class Solution(object):
     def repairCars(self, ranks, cars):
-        """
-        :type ranks: List[int]
-        :type cars: int
-        :rtype: int
-        """
+        
         def check(x):
             return sum(int((x//k)**0.5)*v for k, v in cnt.items()) >= cars
 
@@ -33,11 +29,7 @@ import heapq
 # freq table, heap, simulation
 class Solution2(object):
     def repairCars(self, ranks, cars):
-        """
-        :type ranks: List[int]
-        :type cars: int
-        :rtype: int
-        """
+        
         cnt = collections.Counter(ranks)
         min_heap = [(r*1**2, 1) for r in cnt.keys()]
         heapq.heapify(min_heap)

@@ -3,16 +3,13 @@
 # case works, math, freq table
 class Solution(object):
     def countSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = 0
-        # digit 1, 2, 5
+       
         for i in range(len(s)):
             if s[i] in ('1', '2', '5'):
                 result += i+1
-        # digit 3, 6
+       
         remain = 0
         cnt = [0]*3
         cnt[0] = 1
@@ -21,7 +18,7 @@ class Solution(object):
             if s[i] in ('3', '6'):
                 result += cnt[remain]
             cnt[remain] += 1
-        # digit 9
+       
         remain = 0
         cnt = [0]*9
         cnt[0] = 1
@@ -30,13 +27,13 @@ class Solution(object):
             if s[i] == '9':
                 result += cnt[remain]
             cnt[remain] += 1
-        # digit 4
+       
         for i in range(len(s)):
             if s[i] == '4':
                 result += 1
                 if i-1 >= 0 and int(s[i-1:i+1])%4 == 0:
                     result += i
-        # digit 8
+       
         for i in range(len(s)):
             if s[i] == '8':
                 result += 1
@@ -44,7 +41,7 @@ class Solution(object):
                     result += 1
                 if i-2 >= 0 and int(s[i-2:i+1])%8 == 0:
                     result += i-1
-        # digit 7
+       
         base = 1
         remain = 0
         cnt = [0]*7
@@ -62,18 +59,15 @@ class Solution(object):
 # case works, math, freq table
 class Solution2(object):
     def countSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = 0
-        # digit 4
+       
         for i in range(len(s)):
             if s[i] == '4':
                 result += 1
                 if i-1 >= 0 and int(s[i-1:i+1])%4 == 0:
                     result += i
-        # digit 8
+       
         for i in range(len(s)):
             if s[i] == '8':
                 result += 1
@@ -103,10 +97,7 @@ class Solution2(object):
 # dp
 class Solution3(object):
     def countSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = 0
         dp = [[0]*10 for _ in range(10)]
         for i in range(1, len(s)+1):

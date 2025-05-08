@@ -2,12 +2,7 @@
 
 class Solution(object):
     def findMissingRanges(self, nums, lower, upper):
-        """
-        :type nums: List[int]
-        :type lower: int
-        :type upper: int
-        :rtype: List[str]
-        """
+        
         def getRange(lower, upper):
             if lower == upper:
                 return "{}".format(lower)

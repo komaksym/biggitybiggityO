@@ -2,11 +2,7 @@
 
 class Solution(object):
     def numKLenSubstrNoRepeats(self, S, K):
-        """
-        :type S: str
-        :type K: int
-        :rtype: int
-        """
+        
         result, i = 0, 0
         lookup = set()
         for j in range(len(S)):

@@ -6,10 +6,7 @@ import collections
 # freq table, combinatorics
 class Solution(object):
     def beautifulSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         cnt = collections.Counter()
         cnt[0] = 1
         result = curr = 0

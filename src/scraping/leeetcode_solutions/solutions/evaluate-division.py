@@ -13,25 +13,25 @@ class UnionFind(object):
     def find_set(self, x):
         xp, xr = self.set.setdefault(x, (x, 1.0))
         if x != xp:
-            pp, pr = self.find_set(xp)  # path compression.
-            self.set[x] = (pp, xr*pr)  # x/pp = xr*pr
+            pp, pr = self.find_set(xp) 
+            self.set[x] = (pp, xr*pr) 
         return self.set[x]
 
     def union_set(self, x, y, r):
         (xp, xr), (yp, yr) =  list(map(self.find_set, (x, y)))
         if xp == yp:
             return False
-        if self.rank[xp] < self.rank[yp]:  # union by rank
-            # to make x/yp = r*yr and merge xp into yp
-            # => since x/xp = xr, we can merge with xp/yp = r*yr/xr 
+        if self.rank[xp] < self.rank[yp]: 
+           
+           
             self.set[xp] = (yp, r*yr/xr)
         elif self.rank[xp] > self.rank[yp]:
-            # to make y/xp = 1/r*xr and merge xp into yp
-            # => since y/yp = yr, we can merge with yp/xp = 1/r*xr/yr 
+           
+           
             self.set[yp] = (xp, 1.0/r*xr/yr)
         else:
-            # to make y/xp = 1/r*xr and merge xp into yp
-            # => since y/yp = yr, we can merge with yp/xp = 1/r*xr/yr 
+           
+           
             self.set[yp] = (xp, 1.0/r*xr/yr)
             self.rank[xp] += 1 
         return True
@@ -50,16 +50,16 @@ class UnionFindPathCompressionOnly(object):
     def find_set(self, x):
         xp, xr = self.set.setdefault(x, (x, 1.0))
         if x != xp:
-            pp, pr = self.find_set(xp)  # path compression.
-            self.set[x] = (pp, xr*pr)  # x/pp = xr*pr
+            pp, pr = self.find_set(xp) 
+            self.set[x] = (pp, xr*pr) 
         return self.set[x]
 
     def union_set(self, x, y, r):
         (xp, xr), (yp, yr) =  list(map(self.find_set, (x, y)))
         if xp == yp:
             return False
-        # to make x/yp = r*yr and merge xp into yp
-        # => since x/xp = xr, we can merge with xp/yp = r*yr/xr 
+       
+       
         self.set[xp] = (yp, r*yr/xr)
         return True
 
@@ -72,12 +72,7 @@ class UnionFindPathCompressionOnly(object):
 
 class Solution(object):
     def calcEquation(self, equations, values, queries):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type queries: List[List[str]]
-        :rtype: List[float]
-        """
+        
         union_find = UnionFind()
         for (a, b), k in zip(equations, values):
             union_find.union_set(a, b, k)
@@ -92,12 +87,7 @@ import itertools
 
 class Solution2(object):
     def calcEquation(self, equations, values, queries):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type queries: List[List[str]]
-        :rtype: List[float]
-        """
+        
         adj = collections.defaultdict(dict)
         for (a, b), k in zip(equations, values):
             adj[a][b] = k
@@ -135,12 +125,7 @@ import itertools
 # variant of floyd–warshall algorithm solution
 class Solution3(object):
     def calcEquation(self, equations, values, queries):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type queries: List[List[str]]
-        :rtype: List[float]
-        """
+        
         adj = collections.defaultdict(dict)
         for (a, b), k in zip(equations, values):
             adj[a][a] = adj[b][b] = 1.0
@@ -159,12 +144,7 @@ import collections
 
 class Solution4(object):
     def calcEquation(self, equations, values, query):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type query: List[List[str]]
-        :rtype: List[float]
-        """
+        
         def check(up, down, lookup, visited):
             if up in lookup and down in lookup[up]:
                 return (True, lookup[up][down])

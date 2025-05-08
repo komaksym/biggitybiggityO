@@ -2,11 +2,7 @@
 
 class Solution(object):
     def maxTaxiEarnings(self, n, rides):
-        """
-        :type n: int
-        :type rides: List[List[int]]
-        :rtype: int
-        """
+        
         rides.sort()
         dp = [0]*(n+1)
         j = 0

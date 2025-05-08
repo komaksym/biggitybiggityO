@@ -3,11 +3,7 @@
 # bitmasks
 class Solution(object):
     def kthCharacter(self, k, operations):
-        """
-        :type k: int
-        :type operations: List[int]
-        :rtype: str
-        """
+        
         result = 0
         k -= 1
         for i in range(min(len(operations), k.bit_length())):

@@ -10,10 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def sumEvenGrandparent(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def sumEvenGrandparentHelper(root, p, gp):
             return sumEvenGrandparentHelper(root.left, root.val, p) + \
                    sumEvenGrandparentHelper(root.right, root.val, p) + \

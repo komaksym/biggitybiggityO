@@ -3,10 +3,7 @@
 # dp solution
 class Solution(object):
     def updateMatrix(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[List[int]]
-        """
+        
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
                 if not matrix[i][j]:
@@ -31,10 +28,7 @@ class Solution(object):
 # dp solution
 class Solution2(object):
     def updateMatrix(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[List[int]]
-        """
+        
         dp = [[float("inf")]*len(matrix[0]) for _ in range(len(matrix))]
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):
@@ -63,10 +57,7 @@ import collections
 
 class Solution3(object):
     def updateMatrix(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[List[int]]
-        """
+        
         queue = collections.deque()
         for i in range(len(matrix)):
             for j in range(len(matrix[0])):

@@ -5,9 +5,8 @@ import collections
 
 
 # number theory, freq table
-def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
-    primes = []
-    spf = [-1]*(n+1)  # the smallest prime factor
+def linear_sieve_of_eratosthenes(n): 
+    spf = [-1]*(n+1) 
     for i in range(2, n+1):
         if spf[i] == -1:
             spf[i] = i
@@ -23,10 +22,7 @@ MAX_M_N = 6
 SPF = linear_sieve_of_eratosthenes(10**MAX_M_N-1)
 class Solution(object):
     def mostFrequentPrime(self, mat):
-        """
-        :type mat: List[List[int]]
-        :rtype: int
-        """
+        
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1))
         def numbers(i, j, di, dj):
             curr = 0
@@ -58,10 +54,7 @@ def is_prime(n):
 
 class Solution2(object):
     def mostFrequentPrime(self, mat):
-        """
-        :type mat: List[List[int]]
-        :rtype: int
-        """
+        
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1))
         def numbers(i, j, di, dj):
             curr = 0

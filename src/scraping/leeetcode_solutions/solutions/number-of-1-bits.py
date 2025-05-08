@@ -1,9 +1,9 @@
 # Time:  O(32), bit shift in python is not O(1), it's O(k), k is the number of bits shifted
-#             , see https://github.com/python/cpython/blob/2.7/Objects/longobject.c#L3652
+#             , see https://github.com/python/cpython/blob/2.7/Objects/longobject.
 
 class Solution(object):
-    # @param n, an integer
-    # @return an integer
+   
+   
     def hammingWeight(self, n):
         n = (n & 0x55555555) + ((n >> 1) & 0x55555555)
         n = (n & 0x33333333) + ((n >> 2) & 0x33333333)
@@ -14,7 +14,7 @@ class Solution(object):
 
 
 # Time:  O(logn/4) = O(32/4 + 8*4) = O(32)
-# https://github.com/gcc-mirror/gcc/blob/master/libgcc/libgcc2.c#L856
+# https://github.com/gcc-mirror/gcc/blob/master/libgcc/libgcc2.
 class Solution2(object):
     def __init__(self):
         self.__popcount_tab = \
@@ -29,8 +29,8 @@ class Solution2(object):
             3,4,4,5,4,5,5,6,4,5,5,6,5,6,6,7,4,5,5,6,5,6,6,7,5,6,6,7,6,7,7,8 \
         ]
 
-    # @param n, an integer
-    # @return an integer
+   
+   
     def hammingWeight(self, n):
         result = 0
         while n:
@@ -41,8 +41,8 @@ class Solution2(object):
     
 # Time:  O(logn) = O(32)
 class Solution3(object):
-    # @param n, an integer
-    # @return an integer
+   
+   
     def hammingWeight(self, n):
         result = 0
         while n:
@@ -52,8 +52,8 @@ class Solution3(object):
 
 # Time:  O(logn) = O(32)
 class Solution4(object):
-    # @param n, an integer
-    # @return an integer
+   
+   
     def hammingWeight(self, n: int) -> int:
         b="{0:b}".format(n)
         result=b.count("1")

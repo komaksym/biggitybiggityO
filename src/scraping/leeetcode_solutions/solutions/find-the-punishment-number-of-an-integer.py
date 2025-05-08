@@ -3,10 +3,7 @@
 # backtracking
 class Solution(object):
     def punishmentNumber(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         def backtracking(curr, target):
             if target == 0:
                 return curr == 0

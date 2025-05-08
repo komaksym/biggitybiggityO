@@ -2,11 +2,7 @@
 
 class Solution(object):
     def ways(self, pizza, k):
-        """
-        :type pizza: List[str]
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         prefix = [[0]*len(pizza[0]) for _ in range(len(pizza))]
         for j in reversed(range(len(pizza[0]))):

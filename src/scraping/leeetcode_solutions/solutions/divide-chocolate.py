@@ -2,11 +2,7 @@
 
 class Solution(object):
     def maximizeSweetness(self, sweetness, K):
-        """
-        :type sweetness: List[int]
-        :type K: int
-        :rtype: int
-        """
+        
         def check(sweetness, K, x):
             curr, cuts = 0, 0
             for s in sweetness:

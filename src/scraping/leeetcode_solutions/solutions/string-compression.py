@@ -2,10 +2,7 @@
 
 class Solution(object):
     def compress(self, chars):
-        """
-        :type chars: List[str]
-        :rtype: int
-        """
+        
         anchor, write = 0, 0
         for read, c in enumerate(chars):
             if read+1 == len(chars) or chars[read+1] != c:

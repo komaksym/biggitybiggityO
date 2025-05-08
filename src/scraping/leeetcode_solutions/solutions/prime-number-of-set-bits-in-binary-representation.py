@@ -2,11 +2,7 @@
 
 class Solution(object):
     def countPrimeSetBits(self, L, R):
-        """
-        :type L: int
-        :type R: int
-        :rtype: int
-        """
+        
         def bitCount(n):
             result = 0
             while n:

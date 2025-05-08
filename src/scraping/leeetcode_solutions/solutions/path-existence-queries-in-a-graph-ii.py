@@ -3,13 +3,7 @@
 # prefix sum, greedy, binary lifting
 class Solution(object):
     def pathExistenceQueries(self, n, nums, maxDiff, queries):
-        """
-        :type n: int
-        :type nums: List[int]
-        :type maxDiff: int
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def ceil_log2_x(x):
             return (x-1).bit_length() if x-1 >= 0 else -1
 

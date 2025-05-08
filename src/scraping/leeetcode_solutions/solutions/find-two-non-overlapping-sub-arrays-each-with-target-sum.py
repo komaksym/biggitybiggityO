@@ -2,12 +2,8 @@
 
 class Solution(object):
     def minSumOfLengths(self, arr, target):
-        """
-        :type arr: List[int]
-        :type target: int
-        :rtype: int
-        """
-        prefix, dp = {0: -1}, [0]*len(arr)  # dp[i], min len of target subarray until i
+        
+        prefix, dp = {0: -1}, [0]*len(arr) 
         result = min_len = float("inf")
         accu = 0
         for right in range(len(arr)):

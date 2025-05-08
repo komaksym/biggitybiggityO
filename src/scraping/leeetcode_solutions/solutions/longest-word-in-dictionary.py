@@ -6,16 +6,13 @@ from operator import getitem
 
 class Solution(object):
     def longestWord(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
+        
         _trie = lambda: defaultdict(_trie)
         trie = _trie()
         for i, word in enumerate(words):
             reduce(getitem, word, trie)["_end"] = i
 
-        # DFS
+       
         stack = list(trie.values())
         result = ""
         while stack:

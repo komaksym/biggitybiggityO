@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findLUSlength(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: int
-        """
+        
         def isSubsequence(a, b):
             i = 0
             for j in range(len(b)):

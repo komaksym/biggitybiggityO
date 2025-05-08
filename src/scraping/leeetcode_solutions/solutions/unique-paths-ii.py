@@ -1,13 +1,10 @@
 # Time:  O(m * n)
 
 class Solution(object):
-    # @param obstacleGrid, a list of lists of integers
-    # @return an integer
+   
+   
     def uniquePathsWithObstacles(self, obstacleGrid):
-        """
-        :type obstacleGrid: List[List[int]]
-        :rtype: int
-        """
+        
         m, n = len(obstacleGrid), len(obstacleGrid[0])
 
         ways = [0]*n

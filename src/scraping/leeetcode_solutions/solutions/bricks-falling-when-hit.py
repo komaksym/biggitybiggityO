@@ -8,7 +8,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -25,11 +25,7 @@ class UnionFind(object):
 
 class Solution(object):
     def hitBricks(self, grid, hits):
-        """
-        :type grid: List[List[int]]
-        :type hits: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def index(C, r, c):
             return r*C+c
 

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findIntegers(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
+        
         dp = [0] * 32
         dp[0], dp[1] = 1, 2
         for i in range(2, len(dp)):

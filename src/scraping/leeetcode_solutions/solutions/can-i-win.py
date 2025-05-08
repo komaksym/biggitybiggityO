@@ -2,11 +2,7 @@
 
 class Solution(object):
     def canIWin(self, maxChoosableInteger, desiredTotal):
-        """
-        :type maxChoosableInteger: int
-        :type desiredTotal: int
-        :rtype: bool
-        """
+        
         def canIWinHelper(maxChoosableInteger, desiredTotal, visited, lookup):
             if visited in lookup:
                 return lookup[visited]

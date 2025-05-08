@@ -2,11 +2,7 @@
 
 class Solution(object):
     def findLatestStep(self, arr, m):
-        """
-        :type arr: List[int]
-        :type m: int
-        :rtype: int
-        """
+        
         if m == len(arr):
             return m
         length = [0]*(len(arr)+2)

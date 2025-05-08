@@ -2,10 +2,7 @@
 
 class Solution(object):
     def isValid(self, S):
-        """
-        :type S: str
-        :rtype: bool
-        """
+        
         stack = []
         for i in S:
             if i == 'c':

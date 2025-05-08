@@ -2,11 +2,7 @@
 
 class Solution(object):
     def maxScore(self, cardPoints, k):
-        """
-        :type cardPoints: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         result, total, curr, left = float("inf"), 0, 0, 0
         for right, point in enumerate(cardPoints):
             total += point

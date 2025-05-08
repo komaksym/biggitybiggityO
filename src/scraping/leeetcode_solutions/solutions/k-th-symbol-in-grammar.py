@@ -2,11 +2,7 @@
 
 class Solution(object):
     def kthGrammar(self, N, K):
-        """
-        :type N: int
-        :type K: int
-        :rtype: int
-        """
+        
         def bitCount(n):
             result = 0
             while n:

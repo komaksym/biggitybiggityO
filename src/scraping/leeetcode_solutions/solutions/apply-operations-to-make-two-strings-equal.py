@@ -3,12 +3,7 @@
 # dp
 class Solution(object):
     def minOperations(self, s1, s2, x):
-        """
-        :type s1: str
-        :type s2: str
-        :type x: int
-        :rtype: int
-        """
+        
         parity = curr = prev = 0
         j = -1
         for i in range(len(s1)):

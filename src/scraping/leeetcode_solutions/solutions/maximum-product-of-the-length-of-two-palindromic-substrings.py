@@ -5,12 +5,9 @@ import collections
 
 class Solution(object):
     def maxProduct(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         def manacher(s):
-            s = '^#' + '#'.join(s) + '#$'
+            s = '
             P = [0]*len(s)
             C, R = 0, 0
             for i in range(1, len(s)-1):
@@ -45,12 +42,9 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def maxProduct(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         def manacher(s):
-            s = '^#' + '#'.join(s) + '#$'
+            s = '
             P = [0]*len(s)
             C, R = 0, 0
             for i in range(1, len(s)-1):

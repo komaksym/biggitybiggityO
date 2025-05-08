@@ -2,18 +2,14 @@
 
 class Solution(object):
     def addOperators(self, num, target):
-        """
-        :type num: str
-        :type target: int
-        :rtype: List[str]
-        """
+        
         result, expr = [], []
         val, i = 0, 0
         val_str = ""
         while i < len(num):
             val = val * 10 + ord(num[i]) - ord('0')
             val_str += num[i]
-            # Avoid "00...".
+           
             if str(val) != val_str:
                 break
             expr.append(val_str)
@@ -31,21 +27,21 @@ class Solution(object):
             while i < len(num):
                 val = val * 10 + ord(num[i]) - ord('0')
                 val_str += num[i]
-                # Avoid "00...".
+               
                 if str(val) != val_str:
                     break
 
-                # Case '+':
+               
                 expr.append("+" + val_str)
                 self.addOperatorsDFS(num, target, i + 1, operand1 + operand2, val, expr, result)
                 expr.pop()
 
-                # Case '-':
+               
                 expr.append("-" + val_str)
                 self.addOperatorsDFS(num, target, i + 1, operand1 + operand2, -val, expr, result)
                 expr.pop()
 
-                # Case '*':
+               
                 expr.append("*" + val_str)
                 self.addOperatorsDFS(num, target, i + 1, operand1, operand2 * val, expr, result)
                 expr.pop()

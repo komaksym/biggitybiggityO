@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def orangesRotting(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
         count = 0

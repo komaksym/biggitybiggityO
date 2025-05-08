@@ -3,11 +3,7 @@
 # two pointers
 class Solution(object):
     def longestCommonPrefix(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: int
-        """
+        
         result = i = j = 0
         removed = False
         while i < len(s) and j < len(t):

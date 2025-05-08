@@ -2,10 +2,7 @@
 
 class Solution(object):
     def strangePrinter(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         def dp(s, i, j, lookup):
             if i > j:
                 return 0

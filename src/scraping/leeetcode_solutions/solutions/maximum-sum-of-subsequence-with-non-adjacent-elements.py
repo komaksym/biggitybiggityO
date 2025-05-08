@@ -3,15 +3,11 @@
 # segment tree
 class Solution(object):
     def maximumSumSubsequence(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         L0R0, L1R0, L0R1, L1R1 = list(range(4))
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/block-placement-queries.py
+       
+       
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: None,

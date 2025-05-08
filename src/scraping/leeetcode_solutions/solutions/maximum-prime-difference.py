@@ -1,9 +1,8 @@
 # Time:  O(r + n), r = max(nums)
 
 # linear sieve of eratosthenes, number theory
-def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
-    primes = []
-    spf = [-1]*(n+1)  # the smallest prime factor
+def linear_sieve_of_eratosthenes(n): 
+    spf = [-1]*(n+1) 
     for i in range(2, n+1):
         if spf[i] == -1:
             spf[i] = i
@@ -19,10 +18,7 @@ MAX_N = 100
 SPF = linear_sieve_of_eratosthenes(MAX_N)
 class Solution(object):
     def maximumPrimeDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         left = next(i for i in range(len(nums)) if SPF[nums[i]] == nums[i])
         right = next(i for i in reversed(range(len(nums))) if SPF[nums[i]] == nums[i])
         return right-left

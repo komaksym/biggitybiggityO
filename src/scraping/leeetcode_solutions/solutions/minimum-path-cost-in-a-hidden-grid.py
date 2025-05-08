@@ -17,10 +17,7 @@ import heapq
 
 class Solution(object):
     def findShortestPath(self, master):
-        """
-        :type master: GridMaster
-        :rtype: int
-        """
+        
         directions = {'L': (0, -1), 'R': (0, 1), 'U': (-1, 0), 'D': (1, 0)}
         rollback = {'L': 'R', 'R': 'L', 'U': 'D', 'D': 'U'}
 

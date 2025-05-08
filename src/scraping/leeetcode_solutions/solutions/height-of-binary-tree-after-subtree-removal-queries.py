@@ -11,11 +11,7 @@ class TreeNode(object):
 # iterative dfs
 class Solution(object):
     def treeQueries(self, root, queries):
-        """
-        :type root: Optional[TreeNode]
-        :type queries: List[int]
-        :rtype: List[int]
-        """
+        
         def iter_dfs(root):
             top = collections.defaultdict(lambda: [0]*2)
             depth, height = {}, {}
@@ -49,11 +45,7 @@ import collections
 # dfs
 class Solution2(object):
     def treeQueries(self, root, queries):
-        """
-        :type root: Optional[TreeNode]
-        :type queries: List[int]
-        :rtype: List[int]
-        """
+        
         def dfs(curr, d):
             if not curr:
                 return 0

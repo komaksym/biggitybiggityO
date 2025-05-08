@@ -2,11 +2,7 @@
 
 class Solution(object):
     def numberOfLines(self, widths, S):
-        """
-        :type widths: List[int]
-        :type S: str
-        :rtype: List[int]
-        """
+        
         result = [1, 0]
         for c in S:
             w = widths[ord(c)-ord('a')]

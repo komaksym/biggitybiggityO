@@ -6,10 +6,7 @@ import collections
 # freq table, two pointers, sliding window
 class Solution(object):
     def countCompleteSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         nums_set = set(nums)
         result = left = 0
         cnt = collections.Counter()

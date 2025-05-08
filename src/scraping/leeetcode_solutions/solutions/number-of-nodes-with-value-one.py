@@ -6,11 +6,7 @@ import collections
 # bfs
 class Solution(object):
     def numberOfNodes(self, n, queries):
-        """
-        :type n: int
-        :type queries: List[int]
-        :rtype: int
-        """
+        
         def bfs():
             result = 0
             q = [(1, 0)]
@@ -35,11 +31,7 @@ import collections
 # iterative dfs
 class Solution2(object):
     def numberOfNodes(self, n, queries):
-        """
-        :type n: int
-        :type queries: List[int]
-        :rtype: int
-        """
+        
         def iter_dfs():
             result = 0
             stk = [(1, 0)]
@@ -62,11 +54,7 @@ import collections
 # dfs
 class Solution3(object):
     def numberOfNodes(self, n, queries):
-        """
-        :type n: int
-        :type queries: List[int]
-        :rtype: int
-        """
+        
         def dfs(u, curr):
             curr ^= cnt[u]%2
             return curr+sum(dfs(v, curr) for v in range(2*u, min(2*u+1, n)+1))

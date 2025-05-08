@@ -2,12 +2,8 @@
 
 class Solution(object):
     def minSessions(self, tasks, sessionTime):
-        """
-        :type tasks: List[int]
-        :type sessionTime: int
-        :rtype: int
-        """
-        # dp[mask]: min used time by choosing tasks in mask bitset
+        
+       
         dp = [float("inf") for _ in range(1<<len(tasks))]
         dp[0] = 0
         for mask in range(len(dp)-1):
@@ -18,7 +14,7 @@ class Solution(object):
                 if new_mask == mask:
                     continue
                 if dp[mask]%sessionTime + task > sessionTime:
-                    task += sessionTime-dp[mask]%sessionTime  # take a break
+                    task += sessionTime-dp[mask]%sessionTime 
                 dp[new_mask] = min(dp[new_mask], dp[mask]+task)
         return (dp[-1]+sessionTime-1)//sessionTime
 
@@ -26,13 +22,9 @@ class Solution(object):
 # Time:  O(n * 2^n)
 class Solution2(object):
     def minSessions(self, tasks, sessionTime):
-        """
-        :type tasks: List[int]
-        :type sessionTime: int
-        :rtype: int
-        """
-        # dp[mask][0]: min number of sessions by choosing tasks in mask bitset
-        # dp[mask][1]: min used time of last session by choosing tasks in mask bitset
+        
+       
+       
         dp = [[float("inf")]*2 for _ in range(1<<len(tasks))]
         dp[0] = [0, sessionTime]
         for mask in range(len(dp)-1):

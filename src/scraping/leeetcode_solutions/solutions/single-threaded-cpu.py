@@ -5,10 +5,7 @@ import heapq
 
 class Solution(object):
     def getOrder(self, tasks):
-        """
-        :type tasks: List[List[int]]
-        :rtype: List[int]
-        """
+        
         idx = list(range(len(tasks)))
         idx.sort(key=lambda x: tasks[x][0])
         result, min_heap = [], []

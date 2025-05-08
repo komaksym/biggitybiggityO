@@ -6,10 +6,7 @@ from sortedcontainers import SortedList
 # sorted list, binary search, mono stack
 class Solution(object):
     def maxBalancedSubsequenceSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         NEG_INF = float("-inf")
         def query(sl, k):
             j = sl.bisect_left((k,))
@@ -38,25 +35,22 @@ class Solution(object):
 # bit, fenwick tree
 class Solution2(object):
     def maxBalancedSubsequenceSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         NEG_INF = float("-inf")
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, n, default=0, fn=lambda x, y: x+y):
-                self.__bit = [NEG_INF]*(n+1)  # Extra one for dummy node.
+                self.__bit = [NEG_INF]*(n+1) 
                 self.__default = default
                 self.__fn = fn
 
             def update(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] = self.__fn(self.__bit[i], val)
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = self.__default
                 while i > 0:
                     ret = self.__fn(ret, self.__bit[i])
@@ -75,12 +69,9 @@ class Solution2(object):
 # segment tree
 class Solution3(object):
     def maxBalancedSubsequenceSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         NEG_INF = float("-inf")
-        # Range Maximum Query
+       
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=lambda _: None,

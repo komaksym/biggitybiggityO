@@ -9,10 +9,7 @@ class TreeNode(object):
 
 class Solution(object):
     def diameterOfBinaryTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def iter_dfs(node):
             result = 0
             stk = [(1, [node, [0]])]
@@ -38,10 +35,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def diameterOfBinaryTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def dfs(root):
             if not root: 
                 return 0, 0

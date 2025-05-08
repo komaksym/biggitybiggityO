@@ -2,11 +2,7 @@
 
 class Solution(object):
     def canFormArray(self, arr, pieces):
-        """
-        :type arr: List[int]
-        :type pieces: List[List[int]]
-        :rtype: bool
-        """
+        
         lookup = {x[0]: i for i, x in enumerate(pieces)}
         i = 0
         while i < len(arr): 

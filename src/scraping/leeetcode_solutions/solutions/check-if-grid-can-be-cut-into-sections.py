@@ -3,11 +3,7 @@
 # sort, merge intervals
 class Solution(object):
     def checkValidCuts(self, n, rectangles):
-        """
-        :type n: int
-        :type rectangles: List[List[int]]
-        :rtype: bool
-        """
+        
         def check(idx):
             cnt = 0
             curr = rectangles[0][idx+2]

@@ -4,16 +4,11 @@ import itertools
 
 
 class Solution(object):
-    def backspaceCompare(self, S, T):
-        """
-        :type S: str
-        :type T: str
-        :rtype: bool
-        """
+    def back        
         def findNextChar(S):
             skip = 0
             for i in reversed(range(len(S))):
-                if S[i] == '#':
+                if S[i] == 
                     skip += 1
                 elif skip:
                     skip -= 1

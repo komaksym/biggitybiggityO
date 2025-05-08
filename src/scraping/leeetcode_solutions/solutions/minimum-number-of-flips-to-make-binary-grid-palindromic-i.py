@@ -3,10 +3,7 @@
 # array, greedy
 class Solution(object):
     def minFlips(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         def count(m, n, get):
             return sum(get(i, j) != get(i, ~j) for i in range(m) for j in range(n//2))
 

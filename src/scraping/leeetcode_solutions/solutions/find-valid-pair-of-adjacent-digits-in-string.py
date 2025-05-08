@@ -3,10 +3,7 @@
 # freq table
 class Solution(object):
     def findValidPair(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         cnt = [0]*9
         for x in s:
             cnt[ord(x)-ord('1')] += 1

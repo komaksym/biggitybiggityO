@@ -6,10 +6,7 @@ import collections
 
 class Solution(object):
     def findItinerary(self, tickets):
-        """
-        :type tickets: List[List[str]]
-        :rtype: List[str]
-        """
+        
         adj = collections.defaultdict(list)
         for ticket in tickets:
             adj[ticket[0]].append(ticket[1])
@@ -34,10 +31,7 @@ import collections
 
 class Solution2(object):
     def findItinerary(self, tickets):
-        """
-        :type tickets: List[List[str]]
-        :rtype: List[str]
-        """
+        
         def route_helper(origin, ticket_cnt, graph, ans):
             if ticket_cnt == 0:
                 return True

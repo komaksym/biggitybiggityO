@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def judgeCircle(self, moves):
-        """
-        :type moves: str
-        :rtype: bool
-        """
+        
         count = collections.Counter(moves)
         return count['L'] == count['R'] and count['U'] == count['D']
 
@@ -16,10 +13,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution(object):
     def judgeCircle(self, moves):
-        """
-        :type moves: str
-        :rtype: bool
-        """
+        
         v, h = 0, 0
         for move in moves:
             if move == 'U':

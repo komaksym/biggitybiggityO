@@ -2,16 +2,11 @@
 
 class Solution(object):
     def dayOfTheWeek(self, day, month, year):
-        """
-        :type day: int
-        :type month: int
-        :type year: int
-        :rtype: str
-        """
+        
         DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", \
                 "Thursday", "Friday", "Saturday"]
 
-        # Zeller Formula
+       
         if month < 3:
             month += 12
             year -= 1

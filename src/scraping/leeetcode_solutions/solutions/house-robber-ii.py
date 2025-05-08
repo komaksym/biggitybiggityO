@@ -1,8 +1,8 @@
 # Time:  O(n)
 
 class Solution(object):
-    # @param {integer[]} nums
-    # @return {integer}
+   
+   
     def rob(self, nums):
         if len(nums) == 0:
             return 0

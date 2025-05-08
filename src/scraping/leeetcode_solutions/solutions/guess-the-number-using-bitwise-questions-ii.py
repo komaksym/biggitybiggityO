@@ -4,9 +4,7 @@ from functools import reduce
 # bit manipulation
 class Solution(object):
     def findNumber(self):
-        """
-        :rtype: int
-        """
+        
         BIT_COUNT = 30
         result = 0
         prev = commonBits(0)
@@ -22,8 +20,6 @@ class Solution(object):
 # bit manipulation
 class Solution2(object):
     def findNumber(self):
-        """
-        :rtype: int
-        """
+        
         BIT_COUNT = 30
         return reduce(lambda accu, i: accu|(1<<i if commonBits(1<<i)-commonBits(1<<i) == 1 else 0), range(BIT_COUNT), 0)

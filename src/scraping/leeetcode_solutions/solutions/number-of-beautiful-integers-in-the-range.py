@@ -1,14 +1,8 @@
 # Time:  O(n^2 * k), n = len(str(high))
 
-# memoization (faster but more space)
-class Solution(object):
+# memoization (faster but more class Solution(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
+        
         TIGHT, UNTIGHT, UNBOUND = list(range(3))
         def f(x):
             digits = list(map(int, str(x)))
@@ -17,7 +11,7 @@ class Solution(object):
                 if i == len(digits):
                     return int(state != UNBOUND and diff == total == 0)
                 if lookup[i][state][diff][total] == -1:
-                    result = int(i != 0 and diff == total == 0)  # count if the beautiful integer x s.t. len(str(x)) < len(digits)
+                    result = int(i != 0 and diff == total == 0) 
                     for d in range(1 if i == 0 else 0, 10):
                         new_state = state
                         if state == TIGHT and d != digits[i]:
@@ -34,15 +28,9 @@ class Solution(object):
 
 
 # Time:  O(n^2 * k), n = len(str(high))
-# dp (slower but less space)
-class Solution2(object):
+# dp (slower but less class Solution2(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
+        
         TIGHT, UNTIGHT, UNBOUND = list(range(3))
         def f(x):
             digits = list(map(int, str(x)))
@@ -53,7 +41,7 @@ class Solution2(object):
             for i in reversed(range(len(digits))):
                 new_dp = [[[0]*k for _ in range(2*len(digits)+1)] for _ in range(3)]
                 for state in (TIGHT, UNTIGHT, UNBOUND):
-                    new_dp[state][0][0] = int(i != 0)  # count if the beautiful integer x s.t. len(str(x)) < len(digits)
+                    new_dp[state][0][0] = int(i != 0) 
                     for d in range(1 if i == 0 else 0, 10):
                         new_state = state
                         if state == TIGHT and d != digits[i]:
@@ -70,15 +58,9 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * k), n = len(str(high))
-# memoization (faster but more space)
-class Solution3(object):
+# memoization (faster but more class Solution3(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
+        
         def f(x):
             digits = list(map(int, str(x)))
             lookup = [[[[[-1]*k for _ in range(2*len(digits)+1)] for _ in range(2)] for _ in range(2)] for _ in range(len(digits))]
@@ -102,15 +84,9 @@ class Solution3(object):
 
 
 # Time:  O(n^2 * k), n = len(str(high))
-# dp (slower but less space)
-class Solution4(object):
+# dp (slower but less class Solution4(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
+        
         def f(x):
             digits = list(map(int, str(x)))
             dp = [[[[0]*k for _ in range(2*len(digits)+1)] for _ in range(2)] for _ in range(2)]

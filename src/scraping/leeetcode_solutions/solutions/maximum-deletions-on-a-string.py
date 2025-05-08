@@ -3,14 +3,11 @@
 # dp
 class Solution(object):
     def deleteString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         if all(x == s[0] for x in s):
             return len(s)
-        dp2 = [[0]*(len(s)+1) for i in range(2)]  # dp2[i%2][j]: max prefix length of s[i:] and s[j:]
-        dp = [1]*len(s)  # dp[i]: max operation count of s[i:]
+        dp2 = [[0]*(len(s)+1) for i in range(2)] 
+        dp = [1]*len(s) 
         for i in reversed(range(len(s)-1)):
             for j in range(i+1, len(s)):
                 dp2[i%2][j] = dp2[(i+1)%2][j+1]+1 if s[j] == s[i] else 0
@@ -23,10 +20,7 @@ class Solution(object):
 # dp, kmp algorithm
 class Solution2(object):
     def deleteString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         def getPrefix(pattern, start):
             prefix = [-1]*(len(pattern)-start)
             j = -1
@@ -40,9 +34,9 @@ class Solution2(object):
 
         if all(x == s[0] for x in s):
             return len(s)
-        dp = [1]*len(s)  # dp[i]: max operation count of s[i:]
+        dp = [1]*len(s) 
         for i in reversed(range(len(s)-1)):
-            prefix = getPrefix(s, i)  # prefix[j]+1: longest prefix suffix length of s[i:j+1]
+            prefix = getPrefix(s, i) 
             for j in range(1, len(prefix), 2):
                 if 2*(prefix[j]+1) == j+1:
                     dp[i] = max(dp[i], dp[i+(prefix[j]+1)]+1)
@@ -53,10 +47,7 @@ class Solution2(object):
 # dp, rolling hash
 class Solution3(object):
     def deleteString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         MOD, P = 10**9+7, (113, 109)
         def hash(i, j):
             return [(prefix[idx][j+1]-prefix[idx][i]*power[idx][j-i+1])%MOD for idx in range(len(P))]
@@ -70,7 +61,7 @@ class Solution3(object):
             for idx, p in enumerate(P):
                 power[idx].append((power[idx][-1]*p)%MOD)
                 prefix[idx].append((prefix[idx][-1]*p+(ord(x)-ord('a')))%MOD)
-        dp = [1]*len(s)  # dp[i]: max operation count of s[i:]
+        dp = [1]*len(s) 
         for i in reversed(range(len(s)-1)):
             for j in range(1, (len(s)-i)//2+1):
                 if hash(i, i+j-1) == hash(i+j, i+2*j-1):

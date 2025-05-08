@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def maxNumberOfFamilies(self, n, reservedSeats):
-        """
-        :type n: int
-        :type reservedSeats: List[List[int]]
-        :rtype: int
-        """
+        
         lookup = collections.defaultdict(lambda: [False]*3)
         for r, c in reservedSeats:
             if 2 <= c <= 5:
@@ -32,11 +28,7 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def maxNumberOfFamilies(self, n, reservedSeats):
-        """
-        :type n: int
-        :type reservedSeats: List[List[int]]
-        :rtype: int
-        """
+        
         reservedSeats.sort()
         result, i = 2*n, 0
         while i < len(reservedSeats):

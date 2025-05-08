@@ -2,10 +2,7 @@
 
 class Solution(object):
     def numPrimeArrangements(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         def count_primes(n):
             if n <= 1:
                 return 0

@@ -6,11 +6,7 @@ import collections
 # Two pointer solution. (1356ms)
 class Solution(object):
     def fourSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
+        
         nums.sort()
         result = []
         for i in range(len(nums) - 3):
@@ -41,11 +37,7 @@ class Solution(object):
 # Hash solution. (224ms)
 class Solution2(object):
     def fourSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
+        
         nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
         for i in range(0, len(nums) - 1):
             for j in range(i + 1, len(nums)):
@@ -73,11 +65,7 @@ class Solution2(object):
 # Time:  O(n^2 * p) ~ O(n^4)
 class Solution3(object):
     def fourSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[List[int]]
-        """
+        
         nums, result, lookup = sorted(nums), [], collections.defaultdict(list)
         for i in range(0, len(nums) - 1):
             for j in range(i + 1, len(nums)):

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def minOperations(self, logs):
-        """
-        :type logs: List[str]
-        :rtype: int
-        """
+        
         result = 0
         for log in logs:
             if log == "../":

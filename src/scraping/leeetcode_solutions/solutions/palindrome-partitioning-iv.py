@@ -2,12 +2,9 @@
 
 class Solution(object):
     def checkPartitioning(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+        
         def manacher(s):
-            s = '^#' + '#'.join(s) + '#$'
+            s = '
             P = [0]*len(s)
             C, R = 0, 0
             for i in range(1, len(s)-1):
@@ -41,10 +38,7 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution2(object):
     def checkPartitioning(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """        
+                
         dp = [[False]*len(s) for _ in range(len(s))]
         for i in reversed(range(len(s))):
             for j in range(i, len(s)):

@@ -5,12 +5,7 @@ import bisect
 
 class Solution(object):
     def findClosestElements(self, arr, k, x):
-        """
-        :type arr: List[int]
-        :type k: int
-        :type x: int
-        :rtype: List[int]
-        """
+        
         i = bisect.bisect_left(arr, x)
         left, right = i-1, i
         while k:

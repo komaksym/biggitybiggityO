@@ -2,11 +2,8 @@
 
 class Solution(object):
     def sortByBits(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
-        def popcount(n):  # Time: O(logn) ~= O(1) if n is a 32-bit number
+        
+        def popcount(n): 
             result = 0
             while n:
                 n &= n - 1

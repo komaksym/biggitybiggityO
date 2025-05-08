@@ -2,10 +2,7 @@
 
 class Solution(object):
     def minimumDeletions(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = b_cnt = 0
         for c in s:
             if c == 'b':

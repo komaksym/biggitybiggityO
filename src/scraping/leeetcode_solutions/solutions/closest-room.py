@@ -5,11 +5,7 @@ from sortedcontainers import SortedList
 
 class Solution(object):
     def closestRoom(self, rooms, queries):
-        """
-        :type rooms: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def find_closest(ids, r):
             result, min_dist = -1, float("inf")
             i = ids.bisect_right(r)
@@ -42,11 +38,7 @@ from sortedcontainers import SortedList
 
 class Solution2(object):
     def closestRoom(self, rooms, queries):
-        """
-        :type rooms: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def find_closest(ids, r):
             result, min_dist = -1, float("inf")
             i = ids.bisect_right(r)

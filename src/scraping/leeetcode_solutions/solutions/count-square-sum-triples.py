@@ -2,10 +2,7 @@
 
 class Solution(object):
     def countTriples(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         lookup = set()
         for i in range(1, n+1):
             lookup.add(i**2)

@@ -3,10 +3,7 @@
 # combinatorics
 class Solution(object):
     def numberOfRightTriangles(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         def get(i, j):
             return grid[i][j] if n < m else grid[j][i]
 
@@ -23,10 +20,7 @@ class Solution(object):
 # combinatorics
 class Solution2(object):
     def numberOfRightTriangles(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         n, m = len(grid), len(grid[0])
         cnt1 = [sum(grid[i][j] for j in range(m)) for i in range(n)]
         cnt2 = [sum(grid[i][j] for i in range(n)) for j in range(m)]
@@ -37,10 +31,7 @@ class Solution2(object):
 # freq table
 class Solution3(object):
     def numberOfRightTriangles(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         def get(i, j):
             return grid[i][j] if n < m else grid[j][i]
 

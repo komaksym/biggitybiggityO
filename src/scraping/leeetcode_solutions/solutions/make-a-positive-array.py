@@ -3,10 +3,7 @@
 # prefix sum, greedy
 class Solution(object):
     def makeArrayPositive(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MAX_VAL = 10**18
         result = 0
         prev1 = nums[0]+nums[1]

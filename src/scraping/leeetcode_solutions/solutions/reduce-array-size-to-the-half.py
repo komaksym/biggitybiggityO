@@ -5,10 +5,7 @@ import collections
         
 class Solution(object):
     def minSetSize(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
+        
         counting_sort = [0]*len(arr)
         count = collections.Counter(arr)
         for c in count.values():

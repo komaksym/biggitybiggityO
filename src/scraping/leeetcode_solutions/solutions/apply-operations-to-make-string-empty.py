@@ -3,10 +3,7 @@
 # freq table
 class Solution(object):
     def lastNonEmptyString(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         cnt = [0]*26
         for x in s:
             cnt[ord(x)-ord('a')] += 1

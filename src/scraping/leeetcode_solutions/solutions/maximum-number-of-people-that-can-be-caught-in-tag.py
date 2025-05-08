@@ -3,11 +3,7 @@
 # greedy with two pointers solution
 class Solution(object):
     def catchMaximumAmountofPeople(self, team, dist):
-        """
-        :type team: List[int]
-        :type dist: int
-        :rtype: int
-        """
+        
         result = i = j = 0
         while i < len(team) and j < len(team):
             if i+dist < j or team[i] != 1:
@@ -25,11 +21,7 @@ class Solution(object):
 # greedy with sliding window solution
 class Solution2(object):
     def catchMaximumAmountofPeople(self, team, dist):
-        """
-        :type team: List[int]
-        :type dist: int
-        :rtype: int
-        """
+        
         result = j = 0
         for i in range(len(team)):
             if not team[i]:

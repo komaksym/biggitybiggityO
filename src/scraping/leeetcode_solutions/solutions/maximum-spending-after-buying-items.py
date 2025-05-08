@@ -6,10 +6,7 @@ import heapq
 # greedy, heap
 class Solution(object):
     def maxSpending(self, values):
-        """
-        :type values: List[List[int]]
-        :rtype: int
-        """
+        
         m, n = len(values), len(values[0])
         min_heap = [(values[i].pop(), i) for i in range(m)]
         heapq.heapify(min_heap)

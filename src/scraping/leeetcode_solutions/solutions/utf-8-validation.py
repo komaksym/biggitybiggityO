@@ -2,10 +2,7 @@
 
 class Solution(object):
     def validUtf8(self, data):
-        """
-        :type data: List[int]
-        :rtype: bool
-        """
+        
         count = 0
         for c in data:
             if count == 0:

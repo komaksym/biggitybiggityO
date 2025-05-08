@@ -2,12 +2,8 @@
 
 class Solution(object):
     def isValidPalindrome(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: bool
-        """
-        if s == s[::-1]:  # optional, to optimize special case
+        
+        if s == s[::-1]: 
             return True
 
         dp = [[1] * len(s) for _ in range(2)]

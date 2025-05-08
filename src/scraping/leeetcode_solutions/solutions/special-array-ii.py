@@ -3,11 +3,7 @@
 # prefix sum
 class Solution(object):
     def isArraySpecial(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
+        
         prefix = [0]*len(nums)
         for i in range(len(nums)-1):
             prefix[i+1] = prefix[i]+int(nums[i+1]&1 != nums[i]&1)

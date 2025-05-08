@@ -7,9 +7,9 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-    # @param root, a tree node
-    # @param sum, an integer
-    # @return a list of lists of integers
+   
+   
+   
     def pathSum(self, root, sum):
         return self.pathSumRecu([], [], root, sum)
 

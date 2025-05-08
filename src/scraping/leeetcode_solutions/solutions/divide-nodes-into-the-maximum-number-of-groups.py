@@ -3,11 +3,7 @@
 # iterative dfs, bfs
 class Solution(object):
     def magnificentSets(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         def iter_dfs(u):
             group = []
             stk = [u]
@@ -17,7 +13,7 @@ class Solution(object):
                 group.append(u)
                 for v in adj[u]:
                     if lookup[v] != -1:
-                        if lookup[v] == lookup[u]:  # odd-length cycle, not bipartite
+                        if lookup[v] == lookup[u]: 
                             return []
                         continue
                     lookup[v] = lookup[u]^1
@@ -61,11 +57,7 @@ class Solution(object):
 # bfs
 class Solution2(object):
     def magnificentSets(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         def bfs(u):
             group = []
             q = {u}

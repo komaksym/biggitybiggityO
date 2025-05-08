@@ -6,10 +6,7 @@ from functools import reduce
 
 class Solution(object):
     def countMaxOrSubsets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         dp = collections.Counter([0])
         for x in nums:
             for k, v in list(dp.items()):

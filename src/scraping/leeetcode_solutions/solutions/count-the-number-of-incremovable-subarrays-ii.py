@@ -3,10 +3,7 @@
 # two pointers
 class Solution(object):
     def incremovableSubarrayCount(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         for j in reversed(range(1, len(nums))):
             if not nums[j-1] < nums[j]:
                 break

@@ -4,11 +4,7 @@
 
 class Solution(object):
     def wordPatternMatch(self, pattern, str):
-        """
-        :type pattern: str
-        :type str: str
-        :rtype: bool
-        """
+        
         w2p, p2w = {}, {}
         return self.match(pattern, str, 0, 0, w2p, p2w)
 
@@ -21,15 +17,14 @@ class Solution(object):
             p = pattern[i]
             if p in p2w:
                 w = p2w[p]
-                if w == str[j:j+len(w)]:  # Match pattern.
+                if w == str[j:j+len(w)]: 
                     is_match = self.match(pattern, str, i + 1, j + len(w), w2p, p2w)
-                # Else return false.
+               
             else:
-                for k in range(j, len(str)):  # Try any possible word
+                for k in range(j, len(str)): 
                     w = str[j:k+1]
                     if w not in w2p:
-                        # Build mapping. Space: O(n + c)
-                        w2p[w], p2w[p] = p, w
+                       
                         is_match = self.match(pattern, str, i + 1, k + 1, w2p, p2w)
                         w2p.pop(w), p2w.pop(p)
                     if is_match:

@@ -3,10 +3,7 @@
 # two pointers, sliding window
 class Solution(object):
     def numberOfSpecialSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = left = 0
         lookup = [-1]*26
         for right in range(len(s)):
@@ -21,10 +18,7 @@ class Solution(object):
 # two pointers, sliding window
 class Solution2(object):
     def numberOfSpecialSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = left = 0
         lookup = [False]*26
         for right in range(len(s)):

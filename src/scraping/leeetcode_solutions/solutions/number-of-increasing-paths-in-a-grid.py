@@ -3,10 +3,7 @@
 # topological sort, bottom-up dp
 class Solution(object):
     def countPaths(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         in_degree = [[0]*len(grid[0]) for _ in range(len(grid))]
@@ -41,10 +38,7 @@ class Solution(object):
 # top-down dp, memoization
 class Solution2(object):
     def countPaths(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def memoization(grid, i, j, lookup):

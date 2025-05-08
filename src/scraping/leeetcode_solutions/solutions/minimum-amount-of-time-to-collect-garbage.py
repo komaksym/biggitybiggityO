@@ -3,11 +3,7 @@
 # simulation, prefix sum
 class Solution(object):
     def garbageCollection(self, garbage, travel):
-        """
-        :type garbage: List[str]
-        :type travel: List[int]
-        :rtype: int
-        """
+        
         result = 0
         lookup = {}
         for i in range(len(garbage)):
@@ -24,11 +20,7 @@ class Solution(object):
 # simulation, prefix sum
 class Solution2(object):
     def garbageCollection(self, garbage, travel):
-        """
-        :type garbage: List[str]
-        :type travel: List[int]
-        :rtype: int
-        """
+        
         result = 0
         for t in 'MPG':
             curr = 0

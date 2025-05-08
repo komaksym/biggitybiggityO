@@ -3,11 +3,7 @@
 # number theory, prefix sum, freq table
 class Solution(object):
     def beautifulSubstrings(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
+        
         VOWELS = set("aeiou")
         prefix = [0]*(len(s)+1)
         for i in range(len(s)):
@@ -37,11 +33,7 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def beautifulSubstrings(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
+        
         VOWELS = set("aeiou")
         result = 0
         for i in range(len(s)):

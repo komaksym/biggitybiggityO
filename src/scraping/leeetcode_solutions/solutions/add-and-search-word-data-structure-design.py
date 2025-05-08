@@ -1,7 +1,7 @@
 # Time:  O(min(n, h)), per operation
 
 class TrieNode(object):
-    # Initialize your data structure here.
+   
     def __init__(self):
         self.is_string = False
         self.leaves = {}
@@ -11,9 +11,9 @@ class WordDictionary(object):
     def __init__(self):
         self.root = TrieNode()
 
-    # @param {string} word
-    # @return {void}
-    # Adds a word into the data structure.
+   
+   
+   
     def addWord(self, word):
         curr = self.root
         for c in word:
@@ -22,10 +22,10 @@ class WordDictionary(object):
             curr = curr.leaves[c]
         curr.is_string = True
 
-    # @param {string} word
-    # @return {boolean}
-    # Returns if the word is in the data structure. A word could
-    # contain the dot character '.' to represent any one letter.
+   
+   
+   
+   
     def search(self, word):
         return self.searchHelper(word, 0, self.root)
 

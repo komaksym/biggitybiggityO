@@ -14,9 +14,7 @@ class SmallestInfiniteSet(object):
         self.__min_heap = []
 
     def popSmallest(self):
-        """
-        :rtype: int
-        """
+        
         if self.__min_heap:
             result = heapq.heappop(self.__min_heap)
             self.__lookup.remove(result)
@@ -26,10 +24,7 @@ class SmallestInfiniteSet(object):
         return result
 
     def addBack(self, num):
-        """
-        :type num: int
-        :rtype: None
-        """
+        
         if num >= self.__n or num in self.__lookup:
             return
         self.__lookup.add(num)

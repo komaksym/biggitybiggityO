@@ -3,10 +3,7 @@
 # dp with bitsets
 class Solution(object):
     def hasValidPath(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: bool
-        """
+        
         if (len(grid)+len(grid[0])-1)%2:
             return False
         dp = [0]*(len(grid[0])+1)
@@ -21,10 +18,7 @@ class Solution(object):
 # dp, optimized from solution1 (wrong answer)
 class Solution_WA(object):
     def hasValidPath(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: bool
-        """
+        
         if (len(grid)+len(grid[0])-1)%2:
             return False
         dp = [[float("inf"), float("-inf")] for _ in range(len(grid[0])+1)]
@@ -33,7 +27,7 @@ class Solution_WA(object):
             for j in range(len(grid[0])):
                 d = 1 if grid[i][j] == '(' else -1
                 dp[j+1] = [min(dp[j+1][0], dp[j][0])+d, max(dp[j+1][1], dp[j][1])+d]
-                # bitset pattern is like xxx1010101xxxx (in fact, it is not always true in this problem where some paths are invalid)
+               
                 if dp[j+1][1] < 0:
                     dp[j+1] = [float("inf"), float("-inf")]
                 else:

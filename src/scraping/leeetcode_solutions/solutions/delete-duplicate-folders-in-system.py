@@ -9,10 +9,7 @@ from functools import reduce
 
 class Solution(object):
     def deleteDuplicateFolder(self, paths):
-        """
-        :type paths: List[List[str]]
-        :rtype: List[List[str]]
-        """
+        
         def mark(node, lookup, node_ids):
             id_pairs = []
             for subfolder_id, child in node.items():
@@ -67,10 +64,7 @@ import collections
 
 class Solution2(object):
     def deleteDuplicateFolder(self, paths):
-        """
-        :type paths: List[List[str]]
-        :rtype: List[List[str]]
-        """
+        
         def mark(node, lookup):
             serialized_tree = "(" + "".join(subfolder + mark(child, lookup) for subfolder, child in sorted(node.items()) if child != "_del") + ")"
             if serialized_tree != "()":

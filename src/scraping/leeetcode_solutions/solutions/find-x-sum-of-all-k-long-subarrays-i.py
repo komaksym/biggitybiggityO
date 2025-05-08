@@ -7,12 +7,7 @@ import collections
 # freq table, sorted list, two pointers, sliding window
 class Solution(object):
     def findXSum(self, nums, k, x):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type x: int
-        :rtype: List[int]
-        """
+        
         def update(v, d, curr):
             if d == 1:
                 sl.add((-cnt[v], -v))

@@ -7,7 +7,7 @@ class UnionFind(object):
 
     def find_set(self, x):
        if self.set[x] != x:
-           self.set[x] = self.find_set(self.set[x])  # path compression.
+           self.set[x] = self.find_set(self.set[x]) 
        return self.set[x]
 
     def union_set(self, x, y):
@@ -19,11 +19,7 @@ class UnionFind(object):
 
 class Solution(object):
     def countComponents(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         union_find = UnionFind(n)
         for i, j in edges:
             union_find.union_set(i, j)

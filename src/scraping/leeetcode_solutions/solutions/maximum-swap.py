@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maximumSwap(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
+        
         digits = list(str(num))
         left, right = 0, 0
         max_idx = len(digits)-1

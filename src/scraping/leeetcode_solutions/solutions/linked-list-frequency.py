@@ -3,10 +3,7 @@
 # linked list
 class Solution(object):
     def frequenciesOfElements(self, head):
-        """
-        :type head: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
+        
         curr = dummy = ListNode(0)
         cnt = 0
         while head:

@@ -3,10 +3,7 @@
 # dp, bitmasks
 class Solution(object):
     def removeOnes(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         rows = [0]*len(grid)
         mask, bit = 0, 1
         for _ in range(len(grid[0])):

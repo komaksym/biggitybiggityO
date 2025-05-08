@@ -8,8 +8,8 @@ class TreeNode(object):
 
 
 class Solution(object):
-    # @param root, a tree node
-    # @return root of the upside down tree
+   
+   
     def upsideDownBinaryTree(self, root):
         p, parent, parent_right = root, None, None
 
@@ -26,8 +26,8 @@ class Solution(object):
 
 # Time:  O(n)
 class Solution2(object):
-    # @param root, a tree node
-    # @return root of the upside down tree
+   
+   
     def upsideDownBinaryTree(self, root):
         return self.upsideDownBinaryTreeRecu(root, None)
 

@@ -2,11 +2,7 @@
 
 class Solution(object):
     def superpalindromesInRange(self, L, R):
-        """
-        :type L: str
-        :type R: str
-        :rtype: int
-        """
+        
         def is_palindrome(k):
             return str(k) == str(k)[::-1]
 
@@ -15,7 +11,7 @@ class Solution(object):
 
         result = 0
 
-        # count odd length
+       
         for k in range(K):
             s = str(k)
             t = s + s[-2::-1]
@@ -25,7 +21,7 @@ class Solution(object):
             if v >= l and is_palindrome(v):
                 result += 1
 
-        # count even length
+       
         for k in range(K):
             s = str(k)
             t = s + s[::-1]

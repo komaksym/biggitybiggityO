@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findTilt(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def postOrderTraverse(root, tilt):
             if not root:
                 return 0, tilt

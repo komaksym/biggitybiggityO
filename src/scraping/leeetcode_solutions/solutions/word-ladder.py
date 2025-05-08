@@ -6,12 +6,7 @@ from string import ascii_lowercase
 # two-end bfs
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
-        """
-        :type beginWord: str
-        :type endWord: str
-        :type wordList: List[str]
-        :rtype: int
-        """
+        
         words = set(wordList)
         if endWord not in words:
             return 0
@@ -37,12 +32,7 @@ class Solution(object):
 # Time:  O(b^d), b is the branch factor of bfs, d is the result depth
 class Solution2(object):
     def ladderLength(self, beginWord, endWord, wordList):
-        """
-        :type beginWord: str
-        :type endWord: str
-        :type wordList: List[str]
-        :rtype: int
-        """
+        
         lookup = set(wordList)
         if endWord not in lookup:
             return 0

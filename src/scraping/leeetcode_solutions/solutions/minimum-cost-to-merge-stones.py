@@ -2,11 +2,7 @@
 
 class Solution(object):
     def mergeStones(self, stones, K):
-        """
-        :type stones: List[int]
-        :type K: int
-        :rtype: int
-        """
+        
         if (len(stones)-1) % (K-1):
             return -1
         prefix = [0]

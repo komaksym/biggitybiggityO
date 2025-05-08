@@ -6,11 +6,7 @@ import collections
 # greedy
 class Solution(object):
     def repeatLimitedString(self, s, repeatLimit):
-        """
-        :type s: str
-        :type repeatLimit: int
-        :rtype: str
-        """
+        
         cnt = collections.Counter([ord(x)-ord('a') for x in s])
         result = []
         top1 = 25

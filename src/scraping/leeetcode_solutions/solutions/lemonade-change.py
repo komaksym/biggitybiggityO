@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def lemonadeChange(self, bills):
-        """
-        :type bills: List[int]
-        :rtype: bool
-        """
+        
         coins = [20, 10, 5]
         counts = collections.defaultdict(int)
         for bill in bills:
@@ -28,10 +25,7 @@ class Solution(object):
 
 class Solution2(object):
     def lemonadeChange(self, bills):
-        """
-        :type bills: List[int]
-        :rtype: bool
-        """
+        
         five, ten = 0, 0
         for bill in bills:
             if bill == 5:

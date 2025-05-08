@@ -5,16 +5,11 @@ import heapq
 
 class Solution(object):
     def minAvailableDuration(self, slots1, slots2, duration):
-        """
-        :type slots1: List[List[int]]
-        :type slots2: List[List[int]]
-        :type duration: int
-        :rtype: List[int]
-        """
+        
         min_heap = list([slot for slot in slots1 + slots2 if slot[1] - slot[0] >= duration])
-        heapq.heapify(min_heap)  # Time: O(n)
+        heapq.heapify(min_heap) 
         while len(min_heap) > 1:
-            left = heapq.heappop(min_heap)  # Time: O(logn)
+            left = heapq.heappop(min_heap) 
             right = min_heap[0]
             if left[1]-right[0] >= duration:
                 return [right[0], right[0]+duration] 
@@ -24,12 +19,7 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def minAvailableDuration(self, slots1, slots2, duration):
-        """
-        :type slots1: List[List[int]]
-        :type slots2: List[List[int]]
-        :type duration: int
-        :rtype: List[int]
-        """
+        
         slots1.sort(key = lambda x: x[0])
         slots2.sort(key = lambda x: x[0])
         i, j = 0, 0

@@ -6,10 +6,7 @@ import collections
 # freq table, greedy
 class Solution(object):
     def minOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def ceil_divide(a, b):
             return (a+b-1)//b
 

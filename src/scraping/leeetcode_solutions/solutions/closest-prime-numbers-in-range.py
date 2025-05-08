@@ -35,7 +35,7 @@ class SegmentTree(object):
 # number theory, segment tree
 def linear_sieve_of_eratosthenes(n):
     primes = []
-    spf = [-1]*(n+1)  # the smallest prime factor
+    spf = [-1]*(n+1) 
     for i in range(2, n+1):
         if spf[i] == -1:
             spf[i] = i
@@ -44,7 +44,7 @@ def linear_sieve_of_eratosthenes(n):
             if i*p > n or p > spf[i]:
                 break
             spf[i*p] = p
-    return primes  # len(primes) = O(n/(logn-1)), reference: https://math.stackexchange.com/questions/264544/how-to-find-number-of-prime-numbers-up-to-to-n
+    return primes 
 
 
 MAX_N = 10**6
@@ -54,11 +54,7 @@ ST = SegmentTree(len(PRIMES)-1,
                  query_fn=lambda x, y: y if x is None else x if y is None else min(x, y))
 class Solution(object):
     def closestPrimes(self, left, right):
-        """
-        :type left: int
-        :type right: int
-        :rtype: List[int]
-        """
+        
         i = bisect.bisect_left(PRIMES, left)
         j = bisect.bisect_right(PRIMES, right)-1
         return ST.query(i, j-1)[1] if i <= j-1 else [-1]*2

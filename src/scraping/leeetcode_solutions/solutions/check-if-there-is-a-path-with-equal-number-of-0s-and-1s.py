@@ -3,10 +3,7 @@
 # dp
 class Solution(object):
     def isThereAPath(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: bool
-        """
+        
         if (len(grid)+len(grid[0])-1)%2:
             return False
         dp_left = [[float("inf")]*(len(grid[0])+1) for _ in range(2)]

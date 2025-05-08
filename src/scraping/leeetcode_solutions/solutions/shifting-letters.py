@@ -2,11 +2,7 @@
 
 class Solution(object):
     def shiftingLetters(self, S, shifts):
-        """
-        :type S: str
-        :type shifts: List[int]
-        :rtype: str
-        """
+        
         result = []
         times = sum(shifts) % 26
         for i, c in enumerate(S):

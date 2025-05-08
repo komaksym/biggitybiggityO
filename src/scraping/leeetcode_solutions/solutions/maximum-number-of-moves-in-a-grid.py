@@ -3,10 +3,7 @@
 # dp
 class Solution(object):
     def maxMoves(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         dp = [True]*len(grid)
         result = 0
         for c in range(len(grid[0])-1):
@@ -32,10 +29,7 @@ class Solution(object):
 # dp
 class Solution2(object):
     def maxMoves(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         dp = [0]*len(grid)
         for c in reversed(range(len(grid[0])-1)):
             new_dp = [0]*len(grid)
@@ -54,10 +48,7 @@ class Solution2(object):
 # bfs
 class Solution3(object):
     def maxMoves(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         q = set(range(len(grid)))
         for c in range(len(grid[0])-1):
             new_q = set()

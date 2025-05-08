@@ -3,10 +3,7 @@
 # dp
 class Solution(object):
     def countAlternatingSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = curr = 0
         for i in range(len(nums)):
             if i-1 >= 0 and nums[i-1] == nums[i]:

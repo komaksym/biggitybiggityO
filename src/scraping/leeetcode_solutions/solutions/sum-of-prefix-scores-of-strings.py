@@ -6,10 +6,7 @@ import collections
 # trie
 class Solution(object):
     def sumPrefixScores(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[int]
-        """
+        
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         for w in words:

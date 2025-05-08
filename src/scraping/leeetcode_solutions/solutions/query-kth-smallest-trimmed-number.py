@@ -3,11 +3,7 @@
 # radix sort
 class Solution(object):
     def smallestTrimmedNumbers(self, nums, queries):
-        """
-        :type nums: List[str]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         max_t = max(t for _, t in queries)
         lookup = [[] for _ in range(max_t+1)]
         for i, (k, t) in enumerate(queries):
@@ -39,11 +35,7 @@ import random
 # quick select
 class Solution2(object):
     def smallestTrimmedNumbers(self, nums, queries):
-        """
-        :type nums: List[str]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -67,7 +59,7 @@ class Solution2(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         def compare(a, b):
@@ -90,11 +82,7 @@ class Solution2(object):
 # sort
 class Solution3(object):
     def smallestTrimmedNumbers(self, nums, queries):
-        """
-        :type nums: List[str]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def compare(a, b):
             for i in range(len(nums[a])-t, len(nums[a])):
                 if nums[a][i] < nums[b][i]:

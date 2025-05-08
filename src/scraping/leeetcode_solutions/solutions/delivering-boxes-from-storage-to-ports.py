@@ -2,13 +2,7 @@
 
 class Solution(object):
     def boxDelivering(self, boxes, portsCount, maxBoxes, maxWeight):
-        """
-        :type boxes: List[List[int]]
-        :type portsCount: int
-        :type maxBoxes: int
-        :type maxWeight: int
-        :rtype: int
-        """
+        
         dp = [0]*(len(boxes)+1)
         left, cost, curr = 0, 1, 0
         for right in range(len(boxes)):
@@ -17,7 +11,7 @@ class Solution(object):
             curr += boxes[right][1]
             while right-left+1 > maxBoxes or \
                   curr > maxWeight or \
-                  (left+1 < right+1 and dp[left+1] == dp[left]):  # greedily drop box to make cost as smaller as possible
+                  (left+1 < right+1 and dp[left+1] == dp[left]): 
                 curr -= boxes[left][1]
                 if boxes[left+1][0] != boxes[left][0]:
                     cost -= 1

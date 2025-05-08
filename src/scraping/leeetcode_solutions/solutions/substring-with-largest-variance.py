@@ -6,10 +6,7 @@ import itertools
 # kadane's algorithm
 class Solution(object):
     def largestVariance(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         def modified_kadane(a, x, y):
             result = curr = 0
             lookup = [0]*2
@@ -21,9 +18,9 @@ class Solution(object):
                 remain[c != x] -= 1
                 curr += 1 if c == x else -1
                 if curr < 0 and remain[0] and remain[1]:
-                    curr = lookup[0] = lookup[1] = 0  # reset states if the remain has both x, y
+                    curr = lookup[0] = lookup[1] = 0 
                 if lookup[0] and lookup[1]:
-                    result = max(result, curr)  # update result if x, y both exist
+                    result = max(result, curr) 
             return result
 
         alphabets = set(s)

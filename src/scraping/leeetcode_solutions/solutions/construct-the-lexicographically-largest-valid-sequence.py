@@ -2,10 +2,7 @@
 
 class Solution(object):
     def constructDistancedSequence(self, n):
-        """
-        :type n: int
-        :rtype: List[int]
-        """
+        
         def backtracking(n, i, result, lookup):
             if i == len(result):
                 return True

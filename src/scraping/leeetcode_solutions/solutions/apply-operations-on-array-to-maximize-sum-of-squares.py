@@ -4,11 +4,7 @@ from functools import reduce
 # bit manipulation, greedy, freq table
 class Solution(object):
     def maxSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         l = max(nums).bit_length()
         cnt = [0]*l

@@ -3,10 +3,7 @@
 
 class Solution(object):
     def countBattleships(self, board):
-        """
-        :type board: List[List[str]]
-        :rtype: int
-        """
+        
         if not board or not board[0]:
             return 0
 

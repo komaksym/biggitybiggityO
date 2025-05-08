@@ -3,11 +3,7 @@
 # binary search, greedy
 class Solution(object):
     def minimumTime(self, hens, grains):
-        """
-        :type hens: List[int]
-        :type grains: List[int]
-        :rtype: int
-        """
+        
         def check(x):
             i = 0
             for h in hens:
@@ -15,7 +11,7 @@ class Solution(object):
                     return False
                 elif h-grains[i] > 0:
                     d = h-grains[i]
-                    c = max(x-2*d, (x-d)//2)  # max(go left then right, go right then left)
+                    c = max(x-2*d, (x-d)//2) 
                 else:
                     c = x                   
                 while i < len(grains) and grains[i] <= h+c:

@@ -3,10 +3,7 @@
 # array, greedy
 class Solution(object):
     def minFlips(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         m, n = len(grid), len(grid[0])
         result = 0
         for i in range(m//2):

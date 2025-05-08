@@ -2,10 +2,7 @@
 
 class Solution(object):
     def getMaxLen(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result, neg_cnt, last_zero_pos, first_valid_neg_pos = 0, 0, -1, -1
         for i in range(len(nums)):
             if nums[i] == 0:

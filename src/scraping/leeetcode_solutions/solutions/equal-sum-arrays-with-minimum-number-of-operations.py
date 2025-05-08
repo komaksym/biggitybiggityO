@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def minOperations(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
+        
         if len(nums1)*6 < len(nums2) or len(nums1) > len(nums2)*6:
             return -1
         diff = sum(nums2)-sum(nums1)

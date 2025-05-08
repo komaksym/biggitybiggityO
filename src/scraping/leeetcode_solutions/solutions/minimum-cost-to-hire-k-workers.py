@@ -6,12 +6,7 @@ import heapq
 
 class Solution(object):
     def mincostToHireWorkers(self, quality, wage, K):
-        """
-        :type quality: List[int]
-        :type wage: List[int]
-        :type K: int
-        :rtype: float
-        """
+        
         result, qsum = float("inf"), 0
         max_heap = []
         for r, q in sorted([float(w)/q, q] for w, q in zip(wage, quality)):

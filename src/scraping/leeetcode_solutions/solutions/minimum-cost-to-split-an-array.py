@@ -6,11 +6,7 @@ import collections
 # dp
 class Solution(object):
     def minCost(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         dp = [float("inf")]*(len(nums)+1)
         dp[0] = 0
         for i in range(len(dp)-1):

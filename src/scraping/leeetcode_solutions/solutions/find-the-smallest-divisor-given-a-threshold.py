@@ -2,11 +2,7 @@
 
 class Solution(object):
     def smallestDivisor(self, nums, threshold):
-        """
-        :type nums: List[int]
-        :type threshold: int
-        :rtype: int
-        """
+        
         def check(A, d, threshold):
             return sum((i-1)//d+1 for i in nums) <= threshold
 

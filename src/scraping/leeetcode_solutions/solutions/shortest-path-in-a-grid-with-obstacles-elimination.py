@@ -3,11 +3,7 @@
 # A* Search Algorithm without heap
 class Solution(object):
     def shortestPath(self, grid, k):
-        """
-        :type grid: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def dot(a, b):
             return a[0]*b[0]+a[1]*b[1]

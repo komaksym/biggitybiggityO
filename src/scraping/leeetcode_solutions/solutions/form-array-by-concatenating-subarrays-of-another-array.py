@@ -2,11 +2,7 @@
 
 class Solution(object):
     def canChoose(self, groups, nums):
-        """
-        :type groups: List[List[int]]
-        :type nums: List[int]
-        :rtype: bool
-        """
+        
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

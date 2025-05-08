@@ -3,11 +3,7 @@
 # sort, binary search, prefix sum
 class Solution(object):
     def minOperations(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[int]
-        :rtype: List[int]
-        """
+        
         nums.sort()
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):

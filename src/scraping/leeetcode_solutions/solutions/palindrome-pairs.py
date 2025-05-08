@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def palindromePairs(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[List[int]]
-        """
+        
         def is_palindrome(s, i, j):
             while i < j:
                 if s[i] != s[j]:
@@ -41,18 +38,15 @@ class Solution(object):
 # Manacher solution.
 class Solution_TLE(object):
     def palindromePairs(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[List[int]]
-        """
+        
         def manacher(s, P):
             def preProcess(s):
                 if not s:
                     return ['^', '$']
                 T = ['^']
                 for c in s:
-                    T +=  ["#", c]
-                T += ['#', '$']
+                    T +=  [
+                T += [
                 return T
 
             T = preProcess(s)
@@ -125,10 +119,7 @@ class TrieNode(object):
 
 class Solution_MLE(object):
     def palindromePairs(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[List[int]]
-        """
+        
         res = []
         trie = TrieNode()
         for i in range(len(words)):

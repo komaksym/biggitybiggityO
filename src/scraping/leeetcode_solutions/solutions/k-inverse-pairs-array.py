@@ -4,11 +4,7 @@ from functools import reduce
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution(object):
     def kInversePairs(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [1]
         for i in range(n):
@@ -27,11 +23,7 @@ class Solution(object):
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution2(object):
     def kInversePairs(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [0]*(k+1)
         dp[0] = 1
@@ -51,11 +43,7 @@ class Solution2(object):
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution3(object):
     def kInversePairs(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [0]*(k+1)
         dp[0] = 1
@@ -75,11 +63,7 @@ class Solution3(object):
 # knapsack dp, combinatorics
 class Solution_TLE(object):
     def kInversePairs(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [0]*(k+1)
         dp[0] = 1
@@ -90,11 +74,7 @@ class Solution_TLE(object):
 
 class Solution_ConstructPermutation(object):
     def kInversePairs(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [[] for _ in range(k+1)]
         dp[0].append([])
@@ -106,11 +86,7 @@ class Solution_ConstructPermutation(object):
 
 class Solution_ConstructPermutation2(object):
     def kInversePairs(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [[] for _ in range(k+1)]
         dp[0].append([])

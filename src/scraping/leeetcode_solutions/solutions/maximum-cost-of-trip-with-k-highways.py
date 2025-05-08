@@ -7,13 +7,8 @@ from functools import reduce
 # combination based dp
 class Solution(object):
     def maximumCost(self, n, highways, k):
-        """
-        :type n: int
-        :type highways: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
-        if k+1 > n:  # optionally optimize
+        
+        if k+1 > n: 
             return -1
         adj = [[] for _ in range(n)]
         for c1, c2, t in highways:
@@ -48,13 +43,8 @@ class Solution(object):
 # bfs based dp
 class Solution2(object):
     def maximumCost(self, n, highways, k):
-        """
-        :type n: int
-        :type highways: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
-        if k+1 > n:  # required to optimize, otherwise, TLE or MLE
+        
+        if k+1 > n: 
             return -1
         adj = [[] for _ in range(n)]
         for c1, c2, t in highways:

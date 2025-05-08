@@ -3,10 +3,7 @@
 # mono stack
 class Solution(object):
     def maximumBooks(self, books):
-        """
-        :type books: List[int]
-        :rtype: int
-        """
+        
         def count(right, l):
             left = max(right-l+1, 0)
             return (left+right)*(right-left+1)//2

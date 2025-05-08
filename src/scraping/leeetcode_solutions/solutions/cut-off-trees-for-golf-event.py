@@ -6,10 +6,7 @@ import heapq
 
 class Solution(object):
     def cutOffTree(self, forest):
-        """
-        :type forest: List[List[int]]
-        :rtype: int
-        """
+        
         def dot(p1, p2):
             return p1[0]*p2[0]+p1[1]*p2[1]
 
@@ -18,10 +15,10 @@ class Solution(object):
             closer, detour = [p1], []
             lookup = set()
             while True:
-                if not closer:  # cannot find a path in the closer expansions
-                    if not detour:  # no other possible path
+                if not closer: 
+                    if not detour: 
                         return -1
-                    # try other possible paths in detour expansions with extra 2-step cost
+                   
                     min_steps += 2
                     closer, detour = detour, closer
                 i, j = closer.pop()
@@ -57,10 +54,7 @@ class Solution(object):
 # Time:  O(t * (logt + m * n)), t is the number of trees
 class Solution_TLE(object):
     def cutOffTree(self, forest):
-        """
-        :type forest: List[List[int]]
-        :rtype: int
-        """
+        
         def minStep(p1, p2):
             min_steps = 0
             lookup = {p1}

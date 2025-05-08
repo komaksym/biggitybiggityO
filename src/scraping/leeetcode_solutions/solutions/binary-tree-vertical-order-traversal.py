@@ -6,10 +6,7 @@ import collections
 # BFS + hash solution.
 class Solution(object):
     def verticalOrder(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
+        
         cols = collections.defaultdict(list)
         queue = [(root, 0)]
         for node, i in queue:

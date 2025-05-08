@@ -2,11 +2,7 @@
 
 class Solution(object):
     def numSubseq(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         MOD = 10**9 + 7
         nums.sort()
         result = 0

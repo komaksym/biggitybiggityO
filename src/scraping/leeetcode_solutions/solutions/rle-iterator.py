@@ -3,18 +3,13 @@
 class RLEIterator(object):
 
     def __init__(self, A):
-        """
-        :type A: List[int]
-        """
+        
         self.__A = A
         self.__i = 0
         self.__cnt = 0
 
     def next(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         while self.__i < len(self.__A):
             if  n > self.__A[self.__i] - self.__cnt:
                 n -= self.__A[self.__i] - self.__cnt

@@ -3,11 +3,7 @@
 # hash table
 class Solution(object):
     def firstCompleteIndex(self, arr, mat):
-        """
-        :type arr: List[int]
-        :type mat: List[List[int]]
-        :rtype: int
-        """
+        
         lookup = {mat[i][j]: (i, j) for i in range(len(mat)) for j in range(len(mat[0]))}
         row = [0]*len(mat)
         col = [0]*len(mat[0])

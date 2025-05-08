@@ -3,10 +3,7 @@ from functools import reduce
 
 class Solution(object):
     def countHighestScoreNodes(self, parents):
-        """
-        :type parents: List[int]
-        :rtype: int
-        """
+        
         def iter_dfs(adj):
             result = [0]*2
             stk = [(1, (0, [0]))]
@@ -36,10 +33,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def countHighestScoreNodes(self, parents):
-        """
-        :type parents: List[int]
-        :rtype: int
-        """
+        
         def dfs(adj, i, result):
             cnts = [dfs(adj, child, result) for child in adj[i]]
             total = sum(cnts)+1

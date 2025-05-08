@@ -9,8 +9,8 @@ class TreeNode(object):
 
 # Iterative solution
 class Solution(object):
-    # @param root, a tree node
-    # @return a boolean
+   
+   
     def isSymmetric(self, root):
         if root is None:
             return True
@@ -37,8 +37,8 @@ class Solution(object):
 
 # Recursive solution
 class Solution2(object):
-    # @param root, a tree node
-    # @return a boolean
+   
+   
     def isSymmetric(self, root):
         if root is None:
             return True

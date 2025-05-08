@@ -3,11 +3,7 @@ from functools import reduce
 
 class Solution(object):
     def wordCount(self, startWords, targetWords):
-        """
-        :type startWords: List[str]
-        :type targetWords: List[str]
-        :rtype: int
-        """
+        
         def bitmask(w):
             return reduce(lambda x, y: x|y, (1 << (ord(c)-ord('a')) for i, c in enumerate(w)))
 

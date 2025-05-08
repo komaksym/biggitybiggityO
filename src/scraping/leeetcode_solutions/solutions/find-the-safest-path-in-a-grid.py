@@ -1,13 +1,12 @@
 # Time:  O(n^2)
 
-class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
-    def __init__(self, n):
+class UnionFind(object): 
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -18,7 +17,7 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]:  # union by rank
+        if self.rank[x] > self.rank[y]: 
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -29,10 +28,7 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 # bfs, bucket sort, union find
 class Solution(object):
     def maximumSafenessFactor(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs():
             dist = [[0 if grid[r][c] == 1 else -1 for c in range(len(grid[0]))] for r in range(len(grid))]
@@ -78,10 +74,7 @@ import heapq
 # bfs, dijkstra's algorithm
 class Solution2(object):
     def maximumSafenessFactor(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs():
             dist = [[0 if grid[r][c] == 1 else -1 for c in range(len(grid[0]))] for r in range(len(grid))]
@@ -127,10 +120,7 @@ import heapq
 # bfs, binary search
 class Solution3(object):
     def maximumSafenessFactor(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs():
             dist = [[0 if grid[r][c] == 1 else -1 for c in range(len(grid[0]))] for r in range(len(grid))]

@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def largestMerge(self, word1, word2):
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: str
-        """
+        
         q1 = collections.deque(word1)
         q2 = collections.deque(word2)
         result = []

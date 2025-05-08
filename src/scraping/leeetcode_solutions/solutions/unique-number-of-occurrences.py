@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def uniqueOccurrences(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: bool
-        """
+        
         count = collections.Counter(arr)
         lookup = set()
         for v in count.values():
@@ -21,9 +18,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def uniqueOccurrences(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: bool
-        """
+        
         count = collections.Counter(arr)
         return len(count) == len(set(count.values()))

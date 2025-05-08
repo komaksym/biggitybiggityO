@@ -3,10 +3,7 @@
 # greedy
 class Solution(object):
     def maximumSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def sum_digits(x):
             result = 0
             while x:

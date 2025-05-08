@@ -7,12 +7,7 @@ from functools import reduce
 # trie, dp
 class Solution(object):
     def minimumCost(self, target, words, costs):
-        """
-        :type target: str
-        :type words: List[str]
-        :type costs: List[int]
-        :rtype: int
-        """
+        
         INF = float("inf")
         def query(i):
             curr = trie
@@ -47,12 +42,7 @@ import itertools
 # trie, dp
 class Solution2(object):
     def minimumCost(self, target, words, costs):
-        """
-        :type target: str
-        :type words: List[str]
-        :type costs: List[int]
-        :rtype: int
-        """
+        
         INF = float("inf")
         class Trie(object):
             def __init__(self):

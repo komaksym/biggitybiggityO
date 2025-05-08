@@ -6,10 +6,7 @@ import string
 
 class Solution(object):
     def longestWord(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
+        
         def iter_dfs(words, node):
             result = -1
             stk = [node]
@@ -39,10 +36,7 @@ import string
 
 class Solution2(object):
     def longestWord(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
+        
         def dfs(words, node, result):
             if result[0] == -1 or len(words[node["_end"]]) > len(words[result[0]]):
                 result[0] = node["_end"]

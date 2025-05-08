@@ -2,10 +2,7 @@
 
 class Solution(object):
     def numOfSubarrays(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         result, accu = 0, 0
         dp = [1, 0]

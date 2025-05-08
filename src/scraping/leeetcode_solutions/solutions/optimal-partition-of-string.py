@@ -3,10 +3,7 @@
 # hash table
 class Solution(object):
     def partitionString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result, left = 1, 0
         lookup = {}
         for i, x in enumerate(s):

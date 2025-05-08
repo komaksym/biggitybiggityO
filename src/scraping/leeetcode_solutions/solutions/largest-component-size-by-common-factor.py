@@ -10,7 +10,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -24,11 +24,8 @@ class UnionFind(object):
 
 class Solution(object):
     def largestComponentSize(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
-        def prime_factors(i):  # prime factor decomposition
+        
+        def prime_factors(i): 
             result = []
             d = 2
             if i%d == 0:
@@ -67,7 +64,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -81,11 +78,8 @@ class UnionFind(object):
 
 class Solution2(object):
     def largestComponentSize(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
-        def prime_factors(x):  # prime factor decomposition
+        
+        def prime_factors(x): 
             result = []
             p = 2
             while p*p <= x:

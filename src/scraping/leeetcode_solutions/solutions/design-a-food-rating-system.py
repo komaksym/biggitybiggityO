@@ -11,11 +11,7 @@ from sortedcontainers import SortedList
 class FoodRatings(object):
 
     def __init__(self, foods, cuisines, ratings):
-        """
-        :type foods: List[str]
-        :type cuisines: List[str]
-        :type ratings: List[int]
-        """
+        
         self.__food_to_cuisine = {}
         self.__food_to_rating = {}
         self.__cusine_to_rating_foods = collections.defaultdict(SortedList)
@@ -25,11 +21,7 @@ class FoodRatings(object):
             self.__cusine_to_rating_foods[cuisine].add((-rating, food))
 
     def changeRating(self, food, newRating):
-        """
-        :type food: str
-        :type newRating: int
-        :rtype: None
-        """
+        
         old_rating = self.__food_to_rating[food]
         cuisine = self.__food_to_cuisine[food]
         self.__cusine_to_rating_foods[cuisine].remove((-old_rating, food))
@@ -37,8 +29,5 @@ class FoodRatings(object):
         self.__cusine_to_rating_foods[cuisine].add((-newRating, food))
 
     def highestRated(self, cuisine):
-        """
-        :type cuisine: str
-        :rtype: str
-        """
+        
         return self.__cusine_to_rating_foods[cuisine][0][1]

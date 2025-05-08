@@ -7,9 +7,9 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-    # @param p, a tree node
-    # @param q, a tree node
-    # @return a boolean
+   
+   
+   
     def isSameTree(self, p, q):
         if p is None and q is None:
             return True

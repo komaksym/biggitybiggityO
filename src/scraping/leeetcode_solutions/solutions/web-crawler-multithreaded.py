@@ -4,16 +4,10 @@ import threading
 import queue
 
 
-# """
-# This is HtmlParser's API interface.
-# You should not implement it, or speculate about its implementation
-# """
+# 
 class HtmlParser(object):
    def getUrls(self, url):
-       """
-       :type url: str
-       :rtype List[str]
-       """
+       
        pass
 
 
@@ -25,11 +19,7 @@ class Solution(object):
         self.__q = queue.Queue()
 
     def crawl(self, startUrl, htmlParser):
-        """
-        :type startUrl: str
-        :type htmlParser: HtmlParser
-        :rtype: List[str]
-        """
+        
         SCHEME = "http://"
         def hostname(url):
             pos = url.find('/', len(SCHEME))
@@ -82,11 +72,7 @@ class Solution2(object):
         self.__working_count = 0
 
     def crawl(self, startUrl, htmlParser):
-        """
-        :type startUrl: str
-        :type htmlParser: HtmlParser
-        :rtype: List[str]
-        """
+        
         SCHEME = "http://"
         def hostname(url):
             pos = url.find('/', len(SCHEME))

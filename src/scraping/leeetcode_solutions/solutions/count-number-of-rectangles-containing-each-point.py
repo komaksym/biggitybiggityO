@@ -6,11 +6,7 @@ import bisect
 # bucket sort, binary search
 class Solution(object):
     def countRectangles(self, rectangles, points):
-        """
-        :type rectangles: List[List[int]]
-        :type points: List[List[int]]
-        :rtype: List[int]
-        """
+        
         max_y = max(y for _, y in rectangles)
         buckets = [[] for _ in range(max_y+1)]
         for x, y in rectangles:

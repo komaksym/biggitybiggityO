@@ -2,14 +2,11 @@
 
 class Solution(object):
     def hIndex(self, citations):
-        """
-        :type citations: List[int]
-        :rtype: int
-        """
+        
         n = len(citations)
         count = [0] * (n + 1)
         for x in citations:
-            # Put all x >= n in the same bucket.
+           
             if x >= n:
                 count[n] += 1
             else:
@@ -25,10 +22,7 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def hIndex(self, citations):
-        """
-        :type citations: List[int]
-        :rtype: int
-        """
+        
         citations.sort(reverse=True)
         h = 0
         for x in citations:
@@ -41,10 +35,7 @@ class Solution2(object):
 # Time:  O(nlogn)
 class Solution3(object):
     def hIndex(self, citations):
-        """
-        :type citations: List[int]
-        :rtype: int
-        """
+        
         return sum(x >= i + 1 for i, x in enumerate(sorted(citations, reverse=True)))
 
 

@@ -2,18 +2,15 @@
 
 class Solution(object):
     def waysToBuildRooms(self, prevRoom):
-        """
-        :type prevRoom: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         fact = [1, 1]
         inv = [0, 1]
         inv_fact = [1, 1]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 

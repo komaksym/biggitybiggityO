@@ -3,11 +3,7 @@ from functools import reduce
 
 class Solution(object):
     def getLucky(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
+        
         total = reduce(lambda total, x: total+sum(divmod((ord(x)-ord('a')+1), 10)), s, 0)
         while k > 1 and total > 9:
             new_total = 0

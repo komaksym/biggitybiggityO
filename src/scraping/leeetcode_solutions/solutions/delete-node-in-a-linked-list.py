@@ -1,8 +1,8 @@
 # Time:  O(1)
 
 class Solution(object):
-    # @param {ListNode} node
-    # @return {void} Do not return anything, modify node in-place instead.
+   
+   
     def deleteNode(self, node):
         if node and node.__next__:
             node_to_delete = node.__next__

@@ -3,10 +3,7 @@
 # prefix sum
 class Solution(object):
     def findPrefixScore(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         curr = 0
         for i in range(len(nums)):
             curr = max(curr, nums[i])

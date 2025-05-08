@@ -3,17 +3,14 @@
 # math
 class Solution(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
-        # 1. if we get an even, we can choose x = 1
-        #    to make the opponent always get an odd
-        # 2. if the opponent gets an odd, he can only choose x = 1 or other odds
-        #    and we can still get an even
-        # 3. at the end, the opponent can only choose x = 1 and we win
-        # 4. in summary, we win if only if we get an even and 
-        #    keeps even until the opponent loses
+        
+       
+       
+       
+       
+       
+       
+       
         return n % 2 == 0
 
 
@@ -21,10 +18,7 @@ class Solution(object):
 # dp, number theory
 class Solution2(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+        
         def factors(n):
             result = [[] for _ in range(n+1)]
             for i in range(1, n+1):
@@ -43,10 +37,7 @@ class Solution2(object):
 # memoization, number theory
 class Solution3(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+        
         def factors(n):
             result = [[] for _ in range(n+1)]
             for i in range(1, n+1):
@@ -68,10 +59,7 @@ class Solution3(object):
 # memoization
 class Solution4(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+        
         def factors(n):
             for i in range(1, n+1):
                 if i*i > n:
@@ -95,10 +83,7 @@ class Solution4(object):
 # memoization
 class Solution5(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
+        
         def factors(n):
             for i in range(1, n+1):
                 if n%i:

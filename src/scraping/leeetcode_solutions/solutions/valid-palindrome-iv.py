@@ -3,10 +3,7 @@
 # string, two pointers
 class Solution(object):
     def makePalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+        
         return sum(s[i] != s[~i] for i in range(len(s)//2)) <= 2
 
 
@@ -14,10 +11,7 @@ class Solution(object):
 # string, two pointers
 class Solution2(object):
     def makePalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+        
         cnt = 0
         left, right = 0, len(s)-1
         while left < right:

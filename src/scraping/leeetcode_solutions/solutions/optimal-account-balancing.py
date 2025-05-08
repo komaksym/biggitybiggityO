@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def minTransfers(self, transactions):
-        """
-        :type transactions: List[List[int]]
-        :rtype: int
-        """
+        
         accounts = collections.defaultdict(int)
         for src, dst, amount in transactions:
             accounts[src] += amount

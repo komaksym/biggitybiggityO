@@ -2,13 +2,7 @@
 
 class Solution(object):
     def smallestSubsequence(self, s, k, letter, repetition):
-        """
-        :type s: str
-        :type k: int
-        :type letter: str
-        :type repetition: int
-        :rtype: str
-        """
+        
         stk = []
         suffix = [0]*(len(s)+1)
         for i in reversed(range(len(suffix)-1)):

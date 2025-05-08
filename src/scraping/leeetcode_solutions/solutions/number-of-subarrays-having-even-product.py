@@ -3,10 +3,7 @@
 # dp, math
 class Solution(object):
     def evenProduct(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = (len(nums)+1)*len(nums)//2
         cnt = 0
         for x in nums:
@@ -19,10 +16,7 @@ class Solution(object):
 # dp, math
 class Solution2(object):
     def evenProduct(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = cnt = 0
         for i, x in enumerate(nums):
             if x%2 == 0:

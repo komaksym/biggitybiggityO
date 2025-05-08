@@ -3,10 +3,7 @@
 # tree dp, bfs
 class Solution(object):
     def timeTaken(self, edges):
-        """
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def topological_traversal():
             p = [-2]*len(adj)
             p[0] = -1
@@ -53,10 +50,7 @@ class Solution(object):
 # tree dp, dfs
 class Solution2(object):
     def timeTaken(self, edges):
-        """
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def dfs1(u, p):
             for v in adj[u]:
                 if v == p:

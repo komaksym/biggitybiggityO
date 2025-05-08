@@ -2,11 +2,7 @@
 
 class Solution(object):
     def minCost(self, n, cuts):
-        """
-        :type n: int
-        :type cuts: List[int]
-        :rtype: int
-        """
+        
         sorted_cuts = sorted(cuts + [0, n])
         dp = [[0]*len(sorted_cuts) for _ in range(len(sorted_cuts))]
         for l in range(2, len(sorted_cuts)):

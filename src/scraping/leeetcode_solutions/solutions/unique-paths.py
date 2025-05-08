@@ -2,12 +2,8 @@
 
 class Solution(object):
     def uniquePaths(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
-        def nCr(n, r):  # Time: O(n), Space: O(1)
+        
+        def nCr(n, r): 
             if n-r < r:
                 r = n-r
             c = 1
@@ -22,11 +18,7 @@ class Solution(object):
 # Time:  O(m * n)
 class Solution2(object):
     def uniquePaths(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
+        
         if m < n:
             m, n  = n, m
 

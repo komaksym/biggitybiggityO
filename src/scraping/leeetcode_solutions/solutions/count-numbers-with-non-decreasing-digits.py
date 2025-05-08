@@ -3,18 +3,13 @@
 # math, stars and bars, combinatorics
 class Solution(object):
     def countNumbers(self, l, r, b):
-        """
-        :type l: str
-        :type r: str
-        :type b: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 
@@ -46,18 +41,13 @@ class Solution(object):
 # math, stars and bars, combinatorics
 class Solution2(object):
     def countNumbers(self, l, r, b):
-        """
-        :type l: str
-        :type r: str
-        :type b: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 

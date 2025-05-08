@@ -3,12 +3,7 @@
 # math
 class Solution(object):
     def generateKey(self, num1, num2, num3):
-        """
-        :type num1: int
-        :type num2: int
-        :type num3: int
-        :rtype: int
-        """
+        
         L = 4
         result = 0
         base = pow(10, L-1)

@@ -2,12 +2,7 @@
 
 class Solution(object):
     def reconstructMatrix(self, upper, lower, colsum):
-        """
-        :type upper: int
-        :type lower: int
-        :type colsum: List[int]
-        :rtype: List[List[int]]
-        """
+        
         upper_matrix, lower_matrix = [0]*len(colsum), [0]*len(colsum)
         for i in range(len(colsum)):
             upper_matrix[i] = int(upper > 0 and colsum[i] != 0)

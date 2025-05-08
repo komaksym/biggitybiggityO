@@ -7,10 +7,7 @@ from functools import reduce
 # dp
 class Solution(object):
     def countWinningSequences(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         lookup = {x:i for i, x in enumerate("FWE")}
         dp = [collections.defaultdict(int) for _ in range(3)]

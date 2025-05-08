@@ -2,11 +2,7 @@
 
 class Solution(object):
     def findKthNumber(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         result = 0
 
         cnts = [0] * 10
@@ -47,11 +43,7 @@ class Solution(object):
 # Time:  O(logn * logn)
 class Solution2(object):
     def findKthNumber(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         def count(n, prefix):
             result, number = 0, 1
             while prefix <= n:

@@ -5,10 +5,7 @@ import random
 
 class Solution(object):
     def minDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def nth_element(nums, left, n, right, compare=lambda a, b: a < b):
             def partition_around_pivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left
@@ -28,7 +25,7 @@ class Solution(object):
                     return
                 elif new_pivot_idx > n:
                     right = new_pivot_idx - 1
-                else:  # new_pivot_idx < n
+                else: 
                     left = new_pivot_idx + 1
 
         k = 4

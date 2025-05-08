@@ -3,10 +3,7 @@
 # dp
 class Solution(object):
     def secondsToRemoveOccurrences(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = cnt = 0
         for c in s: 
             if c == '0':

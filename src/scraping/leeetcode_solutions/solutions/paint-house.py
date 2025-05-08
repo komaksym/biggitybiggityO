@@ -2,10 +2,7 @@
 
 class Solution(object):
     def minCost(self, costs):
-        """
-        :type costs: List[List[int]]
-        :rtype: int
-        """
+        
         if not costs:
             return 0
 
@@ -25,10 +22,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def minCost(self, costs):
-        """
-        :type costs: List[List[int]]
-        :rtype: int
-        """
+        
         if not costs:
             return 0
 

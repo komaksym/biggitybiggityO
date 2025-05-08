@@ -2,11 +2,7 @@
 
 class Solution(object):
     def largestNumber(self, cost, target):
-        """
-        :type cost: List[int]
-        :type target: int
-        :rtype: str
-        """
+        
         dp = [0]
         for t in range(1, target+1):
             dp.append(-1)
@@ -27,11 +23,7 @@ class Solution(object):
 # Time:  O(t)
 class Solution2(object):
     def largestNumber(self, cost, target):
-        """
-        :type cost: List[int]
-        :type target: int
-        :rtype: str
-        """
+        
         def key(bag):
             return sum(bag), bag
         
@@ -53,11 +45,7 @@ class Solution2(object):
 # Time:  O(t^2)
 class Solution3(object):
     def largestNumber(self, cost, target):
-        """
-        :type cost: List[int]
-        :type target: int
-        :rtype: str
-        """
+        
         dp = [0]
         for t in range(1, target+1):
             dp.append(-1)

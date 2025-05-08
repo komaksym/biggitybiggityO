@@ -8,8 +8,8 @@ import re
 
 
 class Solution(object):
-    # @param {string} input
-    # @return {integer[]}
+   
+   
     def diffWaysToCompute(self, input):
         tokens = re.split('(\D)', input)
         nums = list(map(int, tokens[::2]))
@@ -30,8 +30,8 @@ class Solution(object):
         return diffWaysToComputeRecu(0, len(nums) - 1)
 
 class Solution2(object):
-    # @param {string} input
-    # @return {integer[]}
+   
+   
     def diffWaysToCompute(self, input):
         lookup = [[None for _ in range(len(input) + 1)] for _ in range(len(input) + 1)]
         ops = {'+': operator.add, '-': operator.sub, '*': operator.mul}

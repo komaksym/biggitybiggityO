@@ -3,12 +3,8 @@
 # bit manipulation, hakmem-175
 class Solution(object):
     def sumIndicesWithKSetBits(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
-        def next_popcount(n):  # reference: https://massivealgorithms.blogspot.com/2014/06/hakmem-item-175.html
+        
+        def next_popcount(n): 
             lowest_bit = n&-n
             left_bits = n+lowest_bit
             changed_bits = n^left_bits
@@ -29,11 +25,7 @@ class Solution(object):
 # bit manipulation
 class Solution2(object):
     def sumIndicesWithKSetBits(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def popcount(x):
             return bin(x)[1:].count('1')
         

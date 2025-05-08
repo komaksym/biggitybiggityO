@@ -3,10 +3,7 @@
 # greedy
 class Solution(object):
     def maxActiveSectionsAfterTrade(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         curr = prev = mx = cnt1 = 0
         for x in s:
             if x == '0':

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def isMonotonic(self, A):
-        """
-        :type A: List[int]
-        :rtype: bool
-        """
+        
         inc, dec = False, False
         for i in range(len(A)-1):
             if A[i] < A[i+1]:

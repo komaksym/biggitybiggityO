@@ -3,8 +3,8 @@
 class Solution(object):
     lookup = {'0':'0', '1':'1', '6':'9', '8':'8', '9':'6'}
 
-    # @param {string} num
-    # @return {boolean}
+   
+   
     def isStrobogrammatic(self, num):
         n = len(num)
         for i in range((n+1) / 2):

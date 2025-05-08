@@ -2,10 +2,7 @@
 
 class Solution(object):
     def transformArray(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
+        
         def is_changable(arr):
             return any(arr[i-1] > arr[i] < arr[i+1] or 
                        arr[i-1] < arr[i] > arr[i+1]

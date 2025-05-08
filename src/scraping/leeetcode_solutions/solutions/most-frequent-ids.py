@@ -8,11 +8,7 @@ import heapq
 # heap
 class Solution(object):
     def mostFrequentIDs(self, nums, freq):
-        """
-        :type nums: List[int]
-        :type freq: List[int]
-        :rtype: List[int]
-        """
+        
         result = []
         cnt = collections.Counter()
         max_heap = []
@@ -34,11 +30,7 @@ from sortedcontainers import SortedList
 # sorted list
 class Solution2(object):
     def mostFrequentIDs(self, nums, freq):
-        """
-        :type nums: List[int]
-        :type freq: List[int]
-        :rtype: List[int]
-        """
+        
         result = []
         cnt = collections.Counter()
         cnt2 = collections.Counter()

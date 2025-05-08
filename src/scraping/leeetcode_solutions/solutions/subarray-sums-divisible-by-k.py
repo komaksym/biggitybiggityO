@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def subarraysDivByK(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
+        
         count = collections.defaultdict(int)
         count[0] = 1
         result, prefix = 0, 0

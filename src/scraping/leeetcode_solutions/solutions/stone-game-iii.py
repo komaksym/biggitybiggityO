@@ -2,10 +2,7 @@
 
 class Solution(object):
     def stoneGameIII(self, stoneValue):
-        """
-        :type stoneValue: List[int]
-        :rtype: str
-        """
+        
         dp = [float("-inf")]*3
         dp[len(stoneValue)%3] = 0
         for i in reversed(range(len(stoneValue))):

@@ -3,10 +3,7 @@
 # kmp solution
 class Solution(object):
     def longestPrefix(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -25,10 +22,7 @@ class Solution(object):
 # rolling-hash solution
 class Solution2(object):
     def longestPrefix(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         M = 10**9+7
         D = 26
         def check(l, s):
@@ -43,7 +37,7 @@ class Solution2(object):
             suffix = (suffix + (ord(s[len(s)-(i+1)])-ord('a'))*power) % M
             power = (power*D)%M
             if prefix == suffix:
-                # we assume M is a very large prime without hash collision
-                # assert(check(i+1, s))
+               
+               
                 result = i+1
         return s[:result]

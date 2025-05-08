@@ -2,11 +2,7 @@
 
 class Solution(object):
     def equalCountSubstrings(self, s, count):
-        """
-        :type s: str
-        :type count: int
-        :rtype: int
-        """
+        
         result = 0
         for l in range(1, min(len(set(s)), len(s)//count)+1):
             cnt, equal_cnt = collections.Counter(), 0

@@ -6,10 +6,7 @@ import collections
 # Hash solution.
 class Solution(object):
     def isReflected(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: bool
-        """
+        
         if not points:
             return True
         groups_by_y = collections.defaultdict(set)
@@ -29,10 +26,7 @@ class Solution(object):
 # Two pointers solution.
 class Solution2(object):
     def isReflected(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: bool
-        """
+        
         if not points:
             return True
         points.sort()

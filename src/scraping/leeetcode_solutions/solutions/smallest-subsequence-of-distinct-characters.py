@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def smallestSubsequence(self, text):
-        """
-        :type text: str
-        :rtype: str
-        """
+        
         count = collections.Counter(text)
 
         lookup, stk = set(), []

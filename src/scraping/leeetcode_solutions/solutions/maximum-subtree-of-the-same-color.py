@@ -3,11 +3,7 @@
 # iterative dfs
 class Solution(object):
     def maximumSubtreeSize(self, edges, colors):
-        """
-        :type edges: List[List[int]]
-        :type colors: List[int]
-        :rtype: int
-        """
+        
         def iter_dfs():
             result = 0
             stk = [(1, (0, -1, [1]))]
@@ -52,11 +48,7 @@ class Solution(object):
 # dfs
 class Solution2(object):
     def maximumSubtreeSize(self, edges, colors):
-        """
-        :type edges: List[List[int]]
-        :type colors: List[int]
-        :rtype: int
-        """
+        
         def dfs(u, p):
             cnt = 1
             for v in adj[u]:

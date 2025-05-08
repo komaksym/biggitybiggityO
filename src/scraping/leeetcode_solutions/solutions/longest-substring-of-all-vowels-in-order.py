@@ -2,10 +2,7 @@
 
 class Solution(object):
     def longestBeautifulSubstring(self, word):
-        """
-        :type word: str
-        :rtype: int
-        """
+        
         result = 0
         l = cnt = 1
         for i in range(len(word)-1):

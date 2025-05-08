@@ -3,10 +3,7 @@
 # string
 class Solution(object):
     def isValid(self, word):
-        """
-        :type word: str
-        :rtype: bool
-        """
+        
         VOWELS = "aeiou"
 
         if len(word) < 3:

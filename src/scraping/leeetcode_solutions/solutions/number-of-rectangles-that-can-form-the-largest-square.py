@@ -2,10 +2,7 @@
 
 class Solution(object):
     def countGoodRectangles(self, rectangles):
-        """
-        :type rectangles: List[List[int]]
-        :rtype: int
-        """
+        
         result = mx = 0
         for l, w in rectangles:
             side = min(l, w)

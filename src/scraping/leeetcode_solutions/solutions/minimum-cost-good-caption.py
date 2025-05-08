@@ -3,10 +3,7 @@
 # dp, backtracing
 class Solution(object):
     def minCostGoodCaption(self, caption):
-        """
-        :type caption: str
-        :rtype: str
-        """
+        
         L = 3
         n = len(caption)
         if n < L:

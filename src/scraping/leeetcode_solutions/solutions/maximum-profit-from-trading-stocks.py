@@ -6,12 +6,7 @@ import itertools
 # dp, optimized from solution2
 class Solution(object):
     def maximumProfit(self, present, future, budget):
-        """
-        :type present: List[int]
-        :type future: List[int]
-        :type budget: int
-        :rtype: int
-        """
+        
         dp = [0]*(budget+1)
         for i, (p, f) in enumerate(zip(present, future)):
             if f-p < 0:
@@ -28,12 +23,7 @@ import itertools
 # dp
 class Solution2(object):
     def maximumProfit(self, present, future, budget):
-        """
-        :type present: List[int]
-        :type future: List[int]
-        :type budget: int
-        :rtype: int
-        """
+        
         dp = [[0]*(budget+1) for _ in range(2)]
         for i, (p, f) in enumerate(zip(present, future)):
             for b in range(budget+1):

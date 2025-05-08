@@ -9,10 +9,7 @@ class ListNode(object):
 
 class Solution(object):
     def nodesBetweenCriticalPoints(self, head):
-        """
-        :type head: Optional[ListNode]
-        :rtype: List[int]
-        """
+        
         first = last = -1
         result = float("inf")
         i, prev, head = 0, head.val, head.__next__

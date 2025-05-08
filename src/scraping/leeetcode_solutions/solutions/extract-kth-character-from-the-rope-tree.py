@@ -9,11 +9,7 @@ class RopeTreeNode(object):
 # binary search tree
 class Solution(object):
     def getKthCharacter(self, root, k):
-        """
-        :type root: Optional[RopeTreeNode]
-        :type k: int
-        :rtype: str
-        """
+        
         while root.len:
             l = max(root.left.len, len(root.left.val)) if root.left else 0
             if k <= l:

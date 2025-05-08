@@ -2,10 +2,7 @@
 
 class Solution(object):
     def validPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+        
         def validPalindrome(s, left, right):
             while left < right:
                 if s[left] != s[right]:

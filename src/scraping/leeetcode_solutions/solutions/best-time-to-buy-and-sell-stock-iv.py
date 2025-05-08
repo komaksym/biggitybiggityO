@@ -5,11 +5,7 @@ import random
 
 class Solution(object):
     def maxProfit(self, k, prices):
-        """
-        :type k: int
-        :type prices: List[int]
-        :rtype: int
-        """
+        
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -33,14 +29,13 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         profits = []
-        v_p_stk = []  # mono stack, where v is increasing and p is strictly decreasing
+        v_p_stk = [] 
         v, p = -1, -1
-        while p+1 < len(prices): # at most O(n) peaks, so v_p_stk and profits are both at most O(n) space
-            for v in range(p+1, len(prices)-1):
+        while p+1 < len(prices):
                 if prices[v] < prices[v+1]:
                     break
             else:
@@ -50,34 +45,30 @@ class Solution(object):
                     break 
             else:
                 p = len(prices)-1
-            while v_p_stk and prices[v_p_stk[-1][0]] > prices[v]:  # not overlapped
+            while v_p_stk and prices[v_p_stk[-1][0]] > prices[v]: 
                 last_v, last_p = v_p_stk.pop()
-                profits.append(prices[last_p]-prices[last_v])  # count [prices[last_v], prices[last_p]] interval
-            while v_p_stk and prices[v_p_stk[-1][1]] <= prices[p]:  # overlapped
-                # prices[last_v] <= prices[v] <= prices[last_p] <= prices[p],
-                # treat overlapped as [prices[v], prices[last_p]], [prices[last_v], prices[p]] intervals due to invariant max profit
+                profits.append(prices[last_p]-prices[last_v]) 
+            while v_p_stk and prices[v_p_stk[-1][1]] <= prices[p]: 
+               
+               
                 last_v, last_p = v_p_stk.pop()
-                profits.append(prices[last_p]-prices[v])  # count [prices[v], prices[last_p]] interval
+                profits.append(prices[last_p]-prices[v]) 
                 v = last_v
-            v_p_stk.append((v, p))  # keep [prices[last_v], prices[p]] interval to check overlapped      
+            v_p_stk.append((v, p)) 
         while v_p_stk:
             last_v, last_p = v_p_stk.pop()
-            profits.append(prices[last_p]-prices[last_v])  # count [prices[last_v], prices[last_p]] interval
+            profits.append(prices[last_p]-prices[last_v]) 
         if k > len(profits):
             k = len(profits)
         else:
             nth_element(profits, k-1, compare=lambda a, b: a > b)
-        return sum(profits[i] for i in range(k))  # top k profits of nonoverlapped intervals
+        return sum(profits[i] for i in range(k)) 
 
 
 # Time:  O(k * n)
 class Solution2(object):
     def maxProfit(self, k, prices):
-        """
-        :type k: int
-        :type prices: List[int]
-        :rtype: int
-        """
+        
         def maxAtMostNPairsProfit(sprices):
             profit = 0
             for i in range(len(prices) - 1):

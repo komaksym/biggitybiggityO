@@ -1,9 +1,9 @@
 # Time:  O(k * C(n, k))
 
 class Solution(object):
-    # @param {integer} k
-    # @param {integer} n
-    # @return {integer[][]}
+   
+   
+   
     def combinationSum3(self, k, n):
         result = []
         self.combinationSumRecu(result, [], 1, k, n)

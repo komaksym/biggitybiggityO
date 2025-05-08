@@ -2,11 +2,7 @@
 
 class Solution(object):
     def findKthBit(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
+        
         flip, l = 0, 2**n-1
         while k > 1:
             if k == l//2+1:

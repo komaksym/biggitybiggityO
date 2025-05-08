@@ -4,11 +4,7 @@ from heapq import heappush, heappop
 
 class Solution(object):
     def kthSmallest(self, matrix, k):
-        """
-        :type matrix: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         kth_smallest = 0
         min_heap = []
 

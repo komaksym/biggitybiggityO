@@ -3,10 +3,7 @@
 # inplace solution
 class Solution(object):
     def buildArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         for i in range(len(nums)):
             prev, curr = i, nums[i]
             while curr >= 0 and curr != i:
@@ -21,8 +18,5 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def buildArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         return [nums[x] for x in nums]

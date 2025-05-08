@@ -6,12 +6,7 @@ import random
 # greedy, quick select
 class Solution(object):
     def miceAndCheese(self, reward1, reward2, k):
-        """
-        :type reward1: List[int]
-        :type reward2: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -35,7 +30,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
     
         for i in range(len(reward1)):

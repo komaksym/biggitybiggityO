@@ -6,14 +6,7 @@ import heapq
 # dijkstra's algorithm, memoization
 class Solution(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
+        
         INF = float("inf")
         def dijkstra(start):
             best = {start:0}
@@ -53,14 +46,7 @@ class Solution(object):
 # Floyd-Warshall algorithm 
 class Solution2(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
+        
         INF = float("inf")
         def floydWarshall(dist):
             for k in range(len(dist)):

@@ -6,24 +6,21 @@ from sortedcontainers import SortedList
 # sorted list, bit, fenwick tree
 class Solution(object):
     def getResults(self, queries):
-        """
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
-        class BIT(object):  # 0-indexed.
+        
+        class BIT(object): 
             def __init__(self, n, default=0, fn=lambda x, y: x+y):
-                self.__bit = [default]*(n+1)  # Extra one for dummy node.
+                self.__bit = [default]*(n+1) 
                 self.__default = default
                 self.__fn = fn
 
             def update(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] = self.__fn(self.__bit[i], val)
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = self.__default
                 while i > 0:
                     ret = self.__fn(ret, self.__bit[i])
@@ -55,12 +52,9 @@ from sortedcontainers import SortedList
 # sorted list, segment tree
 class Solution2(object):
     def getResults(self, queries):
-        """
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/booking-concert-tickets-in-groups.py
+        
+       
+       
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: None,

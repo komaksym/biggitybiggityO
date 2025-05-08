@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def subdomainVisits(self, cpdomains):
-        """
-        :type cpdomains: List[str]
-        :rtype: List[str]
-        """
+        
         result = collections.defaultdict(int)
         for domain in cpdomains:
             count, domain = domain.split()

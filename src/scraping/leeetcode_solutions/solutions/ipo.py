@@ -5,13 +5,7 @@ import heapq
 
 class Solution(object):
     def findMaximizedCapital(self, k, W, Profits, Capital):
-        """
-        :type k: int
-        :type W: int
-        :type Profits: List[int]
-        :type Capital: List[int]
-        :rtype: int
-        """
+        
         curr = []
         future = sorted(zip(Capital, Profits), reverse=True)
         for _ in range(k):

@@ -6,11 +6,7 @@ import collections
 # tree, bfs, topological sort
 class Solution(object):
     def longestPath(self, parent, s):
-        """
-        :type parent: List[int]
-        :type s: str
-        :rtype: int
-        """
+        
         def topological_sort(s, adj, in_degree):
             result = 1
             top2 = collections.defaultdict(lambda:[0]*2)
@@ -45,11 +41,7 @@ class Solution(object):
 # tree, dfs
 class Solution2(object):
     def longestPath(self, parent, s):
-        """
-        :type parent: List[int]
-        :type s: str
-        :rtype: int
-        """
+        
         def iter_dfs(s, adj):
             result = 0
             stk = [(1, (0, [0]))]
@@ -92,11 +84,7 @@ class Solution2(object):
 # tree, dfs
 class Solution3(object):
     def longestPath(self, parent, s):
-        """
-        :type parent: List[int]
-        :type s: str
-        :rtype: int
-        """
+        
         def dfs(s, adj, u, result):
             top2 = [0]*2
             for v in adj[u]:

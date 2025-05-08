@@ -8,13 +8,7 @@ class ListNode(object):
 
 class Solution(object):
     def mergeInBetween(self, list1, a, b, list2):
-        """
-        :type list1: ListNode
-        :type a: int
-        :type b: int
-        :type list2: ListNode
-        :rtype: ListNode
-        """
+        
         prev_first, last = None, list1
         for i in range(b):
             if i == a-1:

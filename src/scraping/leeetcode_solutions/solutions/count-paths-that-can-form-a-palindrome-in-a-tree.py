@@ -6,11 +6,7 @@ import collections
 # iterative dfs, freq table
 class Solution(object):
     def countPalindromePaths(self, parent, s):
-        """
-        :type parent: List[int]
-        :type s: str
-        :rtype: int
-        """
+        
         def iter_dfs():
             result = 0
             cnt = collections.defaultdict(int)
@@ -40,11 +36,7 @@ import collections
 # dfs, freq table
 class Solution2(object):
     def countPalindromePaths(self, parent, s):
-        """
-        :type parent: List[int]
-        :type s: str
-        :rtype: int
-        """
+        
         def dfs(u, mask):
             result = 0
             if u:

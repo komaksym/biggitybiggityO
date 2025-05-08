@@ -3,10 +3,7 @@
 # dp with rolling window
 class Solution(object):
     def maxProductPath(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         max_dp = [[0]*len(grid[0]) for _ in range(2)]
         min_dp = [[0]*len(grid[0]) for _ in range(2)]

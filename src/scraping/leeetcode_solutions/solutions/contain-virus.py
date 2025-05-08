@@ -2,10 +2,7 @@
 
 class Solution(object):
     def containVirus(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         directions = [(0, 1), (0, -1), (-1, 0), (1, 0)]
 
         def dfs(grid, r, c, lookup, regions, frontiers, perimeters):

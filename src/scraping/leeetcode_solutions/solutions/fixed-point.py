@@ -2,10 +2,7 @@
 
 class Solution(object):
     def fixedPoint(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
+        
         left, right = 0, len(A)-1
         while left <= right:
             mid = left + (right-left)//2

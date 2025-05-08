@@ -10,10 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def pseudoPalindromicPaths (self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         result = 0
         stk = [(root, 0)]
         while stk:
@@ -30,10 +27,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def pseudoPalindromicPaths (self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def dfs(node, count):
             if not root:
                 return 0

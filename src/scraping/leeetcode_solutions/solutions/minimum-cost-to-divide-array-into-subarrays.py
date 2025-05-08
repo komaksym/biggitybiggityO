@@ -11,8 +11,8 @@ class SkipNode(object):
         self.prevs = [None]*level
 
 class SkipList(object):
-    P_NUMERATOR, P_DENOMINATOR = 1, 2  # P = 1/4 in redis implementation
-    MAX_LEVEL = 32  # enough for 2^32 elements
+    P_NUMERATOR, P_DENOMINATOR = 1, 2 
+    MAX_LEVEL = 32 
 
     def __init__(self, end=[float("inf"), float("inf"), float("inf")], can_duplicated=True):
         seed(0)
@@ -100,7 +100,7 @@ class SkipList(object):
             it = it.nexts[0]
 
     def __len__(self):
-        return self.__len-1  # excluding end node
+        return self.__len-1 
 
     def __str__(self):
         result = []
@@ -166,12 +166,7 @@ class LineContainer(object):
 # prefix sum, dp, convex hull trick
 class Solution(object):
     def minimumCost(self, nums, cost, k):
-        """
-        :type nums: List[int]
-        :type cost: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         prefix1 = [0]*(len(nums)+1)
         for i in range(len(nums)):
             prefix1[i+1] = prefix1[i]+nums[i]
@@ -190,12 +185,7 @@ class Solution(object):
 # dp
 class Solution2(object):
     def minimumCost(self, nums, cost, k):
-        """
-        :type nums: List[int]
-        :type cost: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         prefix1 = [0]*(len(nums)+1)
         for i in range(len(nums)):
             prefix1[i+1] = prefix1[i]+nums[i]

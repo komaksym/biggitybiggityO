@@ -1,14 +1,10 @@
 # Time:  O(n)
 
-  # Generator version of zip.
+ 
 
 class Solution(object):
     def isIsomorphic(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
+        
         if len(s) != len(t):
             return False
 
@@ -18,7 +14,7 @@ class Solution(object):
                 s2t[w] = p
                 t2s[p] = w
             elif w not in s2t or s2t[w] != p:
-                # Contradict mapping.
+               
                 return False
         return True
 

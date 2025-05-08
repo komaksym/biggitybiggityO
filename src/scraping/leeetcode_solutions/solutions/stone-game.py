@@ -2,10 +2,7 @@
 
 class Solution(object):
     def stoneGame(self, piles):
-        """
-        :type piles: List[int]
-        :rtype: bool
-        """
+        
         if len(piles) % 2 == 0 or len(piles) == 1:
             return True
 

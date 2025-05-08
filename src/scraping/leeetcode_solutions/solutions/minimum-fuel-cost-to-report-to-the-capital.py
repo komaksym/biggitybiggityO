@@ -3,11 +3,7 @@
 # iterative dfs
 class Solution(object):
     def minimumFuelCost(self, roads, seats):
-        """
-        :type roads: List[List[int]]
-        :type seats: int
-        :rtype: int
-        """
+        
         def ceil_divide(a, b):
             return (a+b-1)//b
     
@@ -45,11 +41,7 @@ class Solution(object):
 # dfs
 class Solution(object):
     def minimumFuelCost(self, roads, seats):
-        """
-        :type roads: List[List[int]]
-        :type seats: int
-        :rtype: int
-        """
+        
         def ceil_divide(a, b):
             return (a+b-1)//b
     

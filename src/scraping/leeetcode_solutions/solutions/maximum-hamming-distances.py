@@ -3,11 +3,7 @@
 # bitmasks, knapsack dp
 class Solution(object):
     def maxHammingDistances(self, nums, m):
-        """
-        :type nums: List[int]
-        :type m: int
-        :rtype: List[int]
-        """
+        
         dp = [float("-inf")]*(1<<m)
         for x in nums:
             dp[x] = 0
@@ -23,11 +19,7 @@ class Solution(object):
 # bitmasks, bfs
 class Solution2(object):
     def maxHammingDistances(self, nums, m):
-        """
-        :type nums: List[int]
-        :type m: int
-        :rtype: List[int]
-        """
+        
         q = []
         dist = [-1]*(1<<m)
         for x in nums:

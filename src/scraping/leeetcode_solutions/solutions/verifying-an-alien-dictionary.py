@@ -2,11 +2,7 @@
 
 class Solution(object):
     def isAlienSorted(self, words, order):
-        """
-        :type words: List[str]
-        :type order: str
-        :rtype: bool
-        """
+        
         lookup = {c: i for i, c in enumerate(order)}
         for i in range(len(words)-1):
             word1 = words[i]

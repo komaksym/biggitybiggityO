@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def frequencySort(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         freq = collections.defaultdict(int)
         for c in s:
             freq[c] += 1

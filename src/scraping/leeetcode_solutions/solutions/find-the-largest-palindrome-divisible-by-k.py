@@ -4,11 +4,7 @@ from functools import reduce
 # constructive algorithms, math
 class Solution(object):
     def largestPalindrome(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
+        
         def inv(x, p):
             return pow(x, p-2, p)
 
@@ -17,8 +13,8 @@ class Solution(object):
             result = ['9']*l
             if l:                
                 curr = reduce(lambda accu, x: (accu*10+(ord(x)-ord('0')))%p, result, 0)
-                # l%2 == 0: (curr+(i-9)*11*pow(10, l//2-1, p))%p = 0
-                # l%2 == 1: (curr+(i-9)*pow(10, l//2, p))%p = 0
+               
+               
                 i = 9-(curr*inv(11 if l%2 == 0 else 1, p)*inv(pow(10, l//2-int(l%2 == 0), p), p))%p
                 if i <= 2:
                     i += p
@@ -46,4 +42,4 @@ class Solution(object):
             l = n//2-2
             return '8'+'9'*l+"77"+'9'*l+'8'
         l, r = divmod(n, 12)
-        return "999999"*l+f(r)+"999999"*l  # 999999%7 = 0
+        return "999999"*l+f(r)+"999999"*l 

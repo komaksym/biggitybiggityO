@@ -2,10 +2,7 @@
 
 class Solution(object):
     def removeComments(self, source):
-        """
-        :type source: List[str]
-        :rtype: List[str]
-        """
+        
         in_block = False
         result, newline = [], []
         for line in source:

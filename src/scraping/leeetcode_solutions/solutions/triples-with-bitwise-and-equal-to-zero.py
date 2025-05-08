@@ -7,10 +7,7 @@ import collections
 # FWT solution
 class Solution(object):
     def countTriplets(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
+        
         def FWT(A, v):
             B = A[:]
             d = 1
@@ -37,10 +34,7 @@ import collections
 
 class Solution2(object):
     def countTriplets(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
+        
         count = collections.defaultdict(int)
         for i in range(len(A)):
             for j in range(len(A)):

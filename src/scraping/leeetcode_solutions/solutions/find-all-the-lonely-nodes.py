@@ -10,10 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def getLonelyNodes(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+        
         result = []
         stk = [root]
         while stk:
@@ -32,10 +29,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def getLonelyNodes(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+        
         def dfs(node, result):
             if not node:
                 return

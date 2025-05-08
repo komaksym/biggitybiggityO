@@ -3,10 +3,7 @@
 # freq table, counting sort
 class Solution(object):
     def intersection(self, nums):
-        """
-        :type nums: List[List[int]]
-        :rtype: List[int]
-        """
+        
         MAX_NUM = 1000
         cnt = [0]*(MAX_NUM+1)
         for num in nums:
@@ -19,10 +16,7 @@ class Solution(object):
 # hash table, counting sort
 class Solution2(object):
     def intersection(self, nums):
-        """
-        :type nums: List[List[int]]
-        :rtype: List[int]
-        """
+        
         result = set(nums[0])
         for i in range(1, len(nums)):
             result = set(x for x in nums[i] if x in result)
@@ -33,10 +27,7 @@ class Solution2(object):
 # hash table, sort
 class Solution3(object):
     def intersection(self, nums):
-        """
-        :type nums: List[List[int]]
-        :rtype: List[int]
-        """
+        
         result = set(nums[0])
         for i in range(1, len(nums)):
             result = set(x for x in nums[i] if x in result)

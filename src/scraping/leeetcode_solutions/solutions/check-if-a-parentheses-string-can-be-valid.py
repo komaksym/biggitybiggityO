@@ -2,11 +2,7 @@
 
 class Solution(object):
     def canBeValid(self, s, locked):
-        """
-        :type s: str
-        :type locked: str
-        :rtype: bool
-        """
+        
         if len(s)%2:
             return False
         for direction, c in ((lambda x:x, '('), (reversed, ')')):

@@ -6,7 +6,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -19,10 +19,7 @@ class UnionFind(object):
 
 class Solution(object):
     def removeStones(self, stones):
-        """
-        :type stones: List[List[int]]
-        :rtype: int
-        """
+        
         MAX_ROW = 10000
         union_find = UnionFind(2*MAX_ROW)
         for r, c in stones:

@@ -3,11 +3,7 @@
 # prefix sum, two pointers, sliding window
 class Solution(object):
     def maxDifference(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
+        
         def diff(x, y):
             prefix1, prefix2, prefix = [0]*(len(s)+1), [0]*(len(s)+1), [0]*(len(s)+1)
             for i in range(len(s)):

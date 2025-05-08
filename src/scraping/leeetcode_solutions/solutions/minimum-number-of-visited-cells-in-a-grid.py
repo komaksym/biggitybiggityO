@@ -1,15 +1,14 @@
 # Time:  O(m * n * alpha(m + n)) = O(m + n)
 
 # bfs, union find
-class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
-    def __init__(self, n):
+class UnionFind(object): 
         self.set = list(range(n))
         self.rank = [0]*n
-        self.right = list(range(n))  # added
+        self.right = list(range(n)) 
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -20,24 +19,21 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]:  # union by rank
+        if self.rank[x] > self.rank[y]: 
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
             self.rank[y] += 1
-        self.right[y] = max(self.right[x], self.right[y])  # added
+        self.right[y] = max(self.right[x], self.right[y]) 
         return True
 
-    def right_set(self, x):  # added
+    def right_set(self, x): 
         return self.right[self.find_set(x)]
 
 
 class Solution(object):
     def minimumVisitedCells(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         m, n = len(grid), len(grid[0])
         uf1 = [UnionFind(n+1) for _ in range(m)]
         uf2 = [UnionFind(m+1) for _ in range(n)]
@@ -72,10 +68,7 @@ from sortedcontainers import SortedList
 # bfs, sorted list
 class Solution2_TLE(object):
     def minimumVisitedCells(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         m, n = len(grid), len(grid[0])
         sl1 = [SortedList(range(n)) for _ in range(m)]
         sl2 = [SortedList(range(m)) for _ in range(n)]

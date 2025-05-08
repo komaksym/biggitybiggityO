@@ -3,10 +3,7 @@
 # sort, prefix sum, greedy
 class Solution(object):
     def largestPerimeter(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         nums.sort()
         prefix = sum(nums)
         for i in reversed(range(2, len(nums))):

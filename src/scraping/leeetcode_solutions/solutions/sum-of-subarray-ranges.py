@@ -2,10 +2,7 @@
 
 class Solution(object):
     def subArrayRanges(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = 0
         stk = []
         for i in range(len(nums)+1):

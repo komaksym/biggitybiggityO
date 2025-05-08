@@ -3,11 +3,7 @@
 # prefix sum, greedy
 class Solution(object):
     def maxPartitionsAfterOperations(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
+        
         def popcount(n):
             n = (n & 0x55555555) + ((n >> 1) & 0x55555555)
             n = (n & 0x33333333) + ((n >> 2) & 0x33333333)
@@ -43,7 +39,7 @@ class Solution(object):
             mask = left_mask[i]|right_mask[i+1]
             if popcount(left_mask[i]) == popcount(right_mask[i+1]) == k and popcount(mask) != 26:
                 curr += 3
-            elif popcount(mask)+int(popcount(mask) != 26) > k:  # test case: s = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz", k = 26
+            elif popcount(mask)+int(popcount(mask) != 26) > k: 
                 curr += 2
             else:
                 curr += 1

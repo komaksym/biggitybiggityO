@@ -6,10 +6,7 @@ import heapq
 # prefix sum, greedy, heap
 class Solution(object):
     def makePrefSumNonNegative(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = prefix = 0
         min_heap = []
         for x in nums:

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def concatenatedBinary(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         result = l = 0
         for i in range(1, n+1):

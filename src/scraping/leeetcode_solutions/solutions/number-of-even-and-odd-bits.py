@@ -3,10 +3,7 @@
 # bit manipulation
 class Solution(object):
     def evenOddBit(self, n):
-        """
-        :type n: int
-        :rtype: List[int]
-        """
+        
         def popcount(x):
             return bin(x)[2:].count('1')
 

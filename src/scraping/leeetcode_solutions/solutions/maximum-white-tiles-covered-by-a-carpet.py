@@ -3,11 +3,7 @@
 # sliding window, optimized from solution3
 class Solution(object):
     def maximumWhiteTiles(self, tiles, carpetLen):
-        """
-        :type tiles: List[List[int]]
-        :type carpetLen: int
-        :rtype: int
-        """
+        
         tiles.sort()
         result = right = gap = 0
         for left, (l, _) in enumerate(tiles):
@@ -25,11 +21,7 @@ class Solution(object):
 # sliding window, optimized from solution4
 class Solution2(object):
     def maximumWhiteTiles(self, tiles, carpetLen):
-        """
-        :type tiles: List[List[int]]
-        :type carpetLen: int
-        :rtype: int
-        """
+        
         tiles.sort()
         result = left = gap = 0
         for right in range(len(tiles)):
@@ -50,11 +42,7 @@ import bisect
 # prefix sum, binary search
 class Solution3(object):
     def maximumWhiteTiles(self, tiles, carpetLen):
-        """
-        :type tiles: List[List[int]]
-        :type carpetLen: int
-        :rtype: int
-        """
+        
         tiles.sort()
         prefix = [0]*(len(tiles)+1)
         for i, (l, r) in enumerate(tiles):
@@ -75,11 +63,7 @@ import bisect
 # prefix sum, binary search
 class Solution4(object):
     def maximumWhiteTiles(self, tiles, carpetLen):
-        """
-        :type tiles: List[List[int]]
-        :type carpetLen: int
-        :rtype: int
-        """
+        
         tiles.sort()
         prefix = [0]*(len(tiles)+1)
         for i, (l, r) in enumerate(tiles):

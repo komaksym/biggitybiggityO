@@ -9,10 +9,7 @@ class Node(object):
 
 class Solution(object):
     def diameter(self, root):
-        """
-        :type root: 'Node'
-        :rtype: int
-        """
+        
         def iter_dfs(root):
             result = [0]*2
             stk = [(1, (root, result))]
@@ -36,10 +33,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def diameter(self, root):
-        """
-        :type root: 'Node'
-        :rtype: int
-        """
+        
         def dfs(node):
             max_dia, max_depth = 0, 0
             for child in node.children:

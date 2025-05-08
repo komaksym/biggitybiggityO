@@ -1,17 +1,17 @@
 # Time:  O(nlogm)
 
-class BIT(object):  # 0-indexed.
+class BIT(object): 
     def __init__(self, n):
-        self.__bit = [0]*(n+1)  # Extra one for dummy node.
+        self.__bit = [0]*(n+1) 
 
     def add(self, i, val):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         while i < len(self.__bit):
             self.__bit[i] += val
             i += (i & -i)
 
     def query(self, i):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         ret = 0
         while i > 0:
             ret += self.__bit[i]
@@ -20,10 +20,7 @@ class BIT(object):  # 0-indexed.
 
 class Solution(object):
     def createSortedArray(self, instructions):
-        """
-        :type instructions: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9 + 7
         bit = BIT(max(instructions))
         result = 0
@@ -38,13 +35,10 @@ class Solution(object):
 import itertools
 class Solution_TLE(object):
     def createSortedArray(self, instructions):
-        """
-        :type instructions: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9 + 7
         def smallerMergeSort(idxs, start, end, counts):
-            if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
+            if end - start <= 0: 
                 return 0
 
             mid = start + (end - start) // 2
@@ -53,7 +47,7 @@ class Solution_TLE(object):
             r = start
             tmp = []
             for i in range(mid+1, end + 1):
-                # Merge the two sorted arrays into tmp.
+               
                 while r <= mid and idxs[r][0] < idxs[i][0]:
                     tmp.append(idxs[r])
                     r += 1
@@ -62,11 +56,11 @@ class Solution_TLE(object):
             while r <= mid:
                 tmp.append(idxs[r])
                 r += 1
-            # Copy tmp back to idxs
+           
             idxs[start:start+len(tmp)] = tmp
         
         def largerMergeSort(idxs, start, end, counts):
-            if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
+            if end - start <= 0: 
                 return 0
 
             mid = start + (end - start) // 2
@@ -75,7 +69,7 @@ class Solution_TLE(object):
             r = start
             tmp = []
             for i in range(mid+1, end + 1):
-                # Merge the two sorted arrays into tmp.
+               
                 while r <= mid and idxs[r][0] <= idxs[i][0]:
                     tmp.append(idxs[r])
                     r += 1
@@ -85,7 +79,7 @@ class Solution_TLE(object):
             while r <= mid:
                 tmp.append(idxs[r])
                 r += 1
-            # Copy tmp back to idxs
+           
             idxs[start:start+len(tmp)] = tmp
 
         idxs = []

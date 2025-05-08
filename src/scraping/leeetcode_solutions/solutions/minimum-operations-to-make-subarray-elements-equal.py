@@ -6,11 +6,7 @@ from sortedcontainers import SortedList
 # math, two pointers, sliding window, sorted list
 class Solution(object):
     def minOperations(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def rebalance(total_left, total_right):
             if len(left)+1 < len(right):
                 x, i = right.pop(0)

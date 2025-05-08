@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def minReorder(self, n, connections):
-        """
-        :type n: int
-        :type connections: List[List[int]]
-        :rtype: int
-        """
+        
         lookup, graph = set(), collections.defaultdict(list)
         for u, v in connections:
             lookup.add(u*n+v)
@@ -33,11 +29,7 @@ import collections
 
 class Solution2(object):
     def minReorder(self, n, connections):
-        """
-        :type n: int
-        :type connections: List[List[int]]
-        :rtype: int
-        """
+        
         def dfs(n, lookup, graph, parent, u):
             result = (parent*n+u in lookup)
             for v in graph[u]:

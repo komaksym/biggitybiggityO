@@ -5,10 +5,7 @@ import bisect
 
 class Solution(object):
     def minimumMountainRemovals(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         left_lis_len = [0]*len(nums)
         lis = []
         for i in range(len(nums)-1):

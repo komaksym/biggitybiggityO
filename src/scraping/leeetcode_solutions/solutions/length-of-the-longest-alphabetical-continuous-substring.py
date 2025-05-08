@@ -3,10 +3,7 @@
 # string
 class Solution(object):
     def longestContinuousSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = l = 0
         for i in range(len(s)):
             l += 1

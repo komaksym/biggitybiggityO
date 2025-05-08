@@ -2,19 +2,16 @@
 
 class Solution(object):
     def findCelebrity(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         candidate = 0
-        # Find the candidate.
+       
         for i in range(1, n):
-            if knows(candidate, i):  # noqa
-                candidate = i        # All candidates < i are not celebrity candidates.
-        # Verify the candidate.
+            if knows(candidate, i): 
+                candidate = i       
+       
         for i in range(n):
-            candidate_knows_i = knows(candidate, i) # noqa
-            i_knows_candidate = knows(i, candidate) # noqa
+            candidate_knows_i = knows(candidate, i)
+            i_knows_candidate = knows(i, candidate)
             if i != candidate and (candidate_knows_i or
                                    not i_knows_candidate):
                 return -1

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findWords(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
+        
         rows = [set(['q', 'w', 'e', 'r', 't', 'y','u', 'i', 'o', 'p']),
                 set(['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']),
                 set(['z', 'x', 'c', 'v', 'b' ,'n', 'm'])]
@@ -27,10 +24,7 @@ class Solution(object):
 
 class Solution2(object):
     def findWords(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
+        
         keyboard_rows = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
         single_row_words = []
         for word in words:

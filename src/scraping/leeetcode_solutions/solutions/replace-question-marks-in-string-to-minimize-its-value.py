@@ -3,10 +3,7 @@
 # greedy, counting sort, prefix sum
 class Solution(object):
     def minimizeStringValue(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         def counting_sort(cnt):
             for i in range(len(cnt)):
                 for _ in range(cnt[i]):
@@ -56,10 +53,7 @@ import heapq
 # greedy, counting sort, heap
 class Solution2(object):
     def minimizeStringValue(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         def counting_sort(cnt):
             for i in range(len(cnt)):
                 for _ in range(cnt[i]):
@@ -90,10 +84,7 @@ class Solution2(object):
 # greedy, counting sort
 class Solution3(object):
     def minimizeStringValue(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         def counting_sort(cnt):
             for i in range(len(cnt)):
                 for _ in range(cnt[i]):

@@ -2,11 +2,7 @@
 
 class Solution(object):
     def shiftGrid(self, grid, k):
-        """
-        :type grid: List[List[int]]
-        :type k: int
-        :rtype: List[List[int]]
-        """
+        
         def rotate(grids, k):
             def reverse(grid, start, end):
                 while start < end:

@@ -3,11 +3,7 @@
 # optimized from Solution2
 class Solution(object):
     def minAbbreviation(self, target, dictionary):
-        """
-        :type target: str
-        :type dictionary: List[str]
-        :rtype: str
-        """
+        
         def bits_to_abbr_len(targets, bits):
             total = 0
             pre = 0
@@ -55,11 +51,7 @@ class Solution(object):
 # Time:  O((d + n) * 2^n)
 class Solution2(object):
     def minAbbreviation(self, target, dictionary):
-        """
-        :type target: str
-        :type dictionary: List[str]
-        :rtype: str
-        """
+        
         def bits_to_abbr(targets, bits):
             abbr = []
             pre = 0

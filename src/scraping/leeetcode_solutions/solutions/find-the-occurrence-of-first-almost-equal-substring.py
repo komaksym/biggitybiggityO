@@ -3,15 +3,10 @@
 # z-function
 class Solution(object):
     def minStartingIndex(self, s, pattern):
-        """
-        :type s: str
-        :type pattern: str
-        :rtype: int
-        """
+        
         K = 1
-        # Template: https://cp-algorithms.com/string/z-function.html
-        def z_function(s):  # Time: O(n), Space: O(n)
-            z = [0]*len(s)
+       
+        def z_function(s): 
             l, r = 0, 0
             for i in range(1, len(z)):
                 if i <= r:

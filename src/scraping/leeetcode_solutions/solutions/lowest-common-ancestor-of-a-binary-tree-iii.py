@@ -7,10 +7,7 @@ class Node:
 
 class Solution(object):
     def lowestCommonAncestor(self, p, q):
-        """
-        :type node: Node
-        :rtype: Node
-        """
+        
         a, b = p, q
         while a != b:
             a = a.parent if a else q
@@ -21,10 +18,7 @@ class Solution(object):
 # Time:  O(h)
 class Solution2(object):
     def lowestCommonAncestor(self, p, q):
-        """
-        :type node: Node
-        :rtype: Node
-        """
+        
         def depth(node):
             d = 0
             while node:

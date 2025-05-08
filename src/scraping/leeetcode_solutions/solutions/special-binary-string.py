@@ -3,10 +3,7 @@
 
 class Solution(object):
     def makeLargestSpecial(self, S):
-        """
-        :type S: str
-        :rtype: str
-        """
+        
         result = []
         anchor = count = 0
         for i, v in enumerate(S):

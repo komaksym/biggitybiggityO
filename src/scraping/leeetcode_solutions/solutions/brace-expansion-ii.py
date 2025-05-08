@@ -6,10 +6,7 @@ import itertools
 
 class Solution(object):
     def braceExpansionII(self, expression):
-        """
-        :type expression: str
-        :rtype: List[str]
-        """
+        
         def form_words(options):
             words = list(map("".join, itertools.product(*options)))
             words.sort()
@@ -18,10 +15,10 @@ class Solution(object):
         def generate_option(expr, i):
             option_set = set()
             while i[0] != len(expr) and expr[i[0]] != "}":
-                i[0] += 1  # { or ,
+                i[0] += 1 
                 for option in generate_words(expr, i):
                     option_set.add(option)
-            i[0] += 1  # }
+            i[0] += 1 
             option = list(option_set)
             option.sort()
             return option
@@ -32,7 +29,7 @@ class Solution(object):
                 tmp = []
                 if expr[i[0]] not in "{,}":
                     tmp.append(expr[i[0]])
-                    i[0] += 1  # a-z
+                    i[0] += 1 
                 elif expr[i[0]] == "{":
                     tmp = generate_option(expr, i)
                 options.append(tmp)
@@ -43,10 +40,7 @@ class Solution(object):
 
 class Solution2(object):
     def braceExpansionII(self, expression):
-        """
-        :type expression: str
-        :rtype: List[str]
-        """
+        
         def form_words(options):
             words = []
             total = 1
@@ -65,10 +59,10 @@ class Solution2(object):
         def generate_option(expr, i):
             option_set = set()
             while i[0] != len(expr) and expr[i[0]] != "}":
-                i[0] += 1  # { or ,
+                i[0] += 1 
                 for option in generate_words(expr, i):
                     option_set.add(option)
-            i[0] += 1  # }
+            i[0] += 1 
             option = list(option_set)
             option.sort()
             return option
@@ -79,7 +73,7 @@ class Solution2(object):
                 tmp = []
                 if expr[i[0]] not in "{,}":
                     tmp.append(expr[i[0]])
-                    i[0] += 1  # a-z
+                    i[0] += 1 
                 elif expr[i[0]] == "{":
                     tmp = generate_option(expr, i)
                 options.append(tmp)

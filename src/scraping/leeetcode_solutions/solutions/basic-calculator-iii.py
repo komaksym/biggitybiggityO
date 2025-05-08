@@ -5,10 +5,7 @@ import operator
 
 class Solution(object):
     def calculate(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         def compute(operands, operators):
             right, left = operands.pop(), operands.pop()
             operands.append(ops[operators.pop()](left, right))
@@ -41,10 +38,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def calculate(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         operands, operators = [], []
         operand = ""
         for i in reversed(range(len(s))):

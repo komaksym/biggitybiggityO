@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
+        
         counts = collections.Counter(nums)
         buckets = [[] for _ in range(len(nums)+1)]
         for i, count in counts.items():
@@ -29,11 +25,7 @@ class Solution(object):
 from random import randint
 class Solution2(object):
     def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
+        
         counts = collections.Counter(nums)
         p = []
         for key, val in counts.items():
@@ -66,17 +58,13 @@ class Solution2(object):
                 return
             elif new_pivot_idx > k:
                 right = new_pivot_idx - 1
-            else:  # new_pivot_idx < k.
+            else: 
                 left = new_pivot_idx + 1
 
 
 # Time:  O(nlogk)
 class Solution3(object):
     def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
+        
         return [key for key, _ in collections.Counter(nums).most_common(k)]
 

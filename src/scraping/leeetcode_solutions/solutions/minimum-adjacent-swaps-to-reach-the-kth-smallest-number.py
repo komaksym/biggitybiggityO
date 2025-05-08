@@ -2,11 +2,7 @@
 
 class Solution(object):
     def getMinSwaps(self, num, k):
-        """
-        :type num: str
-        :type k: int
-        :rtype: int
-        """
+        
         def next_permutation(nums, begin, end):
             def reverse(nums, begin, end):
                 left, right = begin, end-1
@@ -39,7 +35,7 @@ class Solution(object):
         for i in range(len(new_num)):
             if new_num[i] == num[i]:
                 continue
-            #   // greedily move the one with the least cost from new_num to num without missing optimal cost
+           
             for j in range(i+1, len(new_num)):
                 if new_num[j] == num[i]:
                     break

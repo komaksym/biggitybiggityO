@@ -3,14 +3,7 @@
 # Bellman-Ford Algorithm
 class Solution(object):
     def maxAmount(self, initialCurrency, pairs1, rates1, pairs2, rates2):
-        """
-        :type initialCurrency: str
-        :type pairs1: List[List[str]]
-        :type rates1: List[float]
-        :type pairs2: List[List[str]]
-        :type rates2: List[float]
-        :rtype: float
-        """
+        
         def BellmanFord(dist, pairs, rates):
             for _ in range(len(pairs)):
                 for i in range(len(pairs)):
@@ -31,14 +24,7 @@ import collections
 # bfs
 class Solution2(object):
     def maxAmount(self, initialCurrency, pairs1, rates1, pairs2, rates2):
-        """
-        :type initialCurrency: str
-        :type pairs1: List[List[str]]
-        :type rates1: List[float]
-        :type pairs2: List[List[str]]
-        :type rates2: List[float]
-        :rtype: float
-        """
+        
         def find_adj(pairs, rates):
             adj = collections.defaultdict(list)
             for i in range(len(pairs)):
@@ -62,7 +48,7 @@ class Solution2(object):
         dist = collections.defaultdict(int)
         dist[initialCurrency] = 1.0
         adj1 = find_adj(pairs1, rates1)
-        bfs(dist, adj1)  # Time: O(n)
+        bfs(dist, adj1) 
         adj2 = find_adj(pairs2, rates2)
-        bfs(dist, adj2)  # Time: O(n^2)
+        bfs(dist, adj2) 
         return dist[initialCurrency]

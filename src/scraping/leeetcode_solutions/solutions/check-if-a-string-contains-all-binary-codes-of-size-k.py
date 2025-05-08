@@ -2,22 +2,14 @@
 
 class Solution(object):
     def hasAllCodes(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: bool
-        """
+        
         return 2**k <= len(s) and len({s[i:i+k] for i in range(len(s)-k+1)}) == 2**k
     
 
 # Time:  O(n * k)
 class Solution2(object):
     def hasAllCodes(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: bool
-        """
+        
         lookup = set()
         base = 2**k
         if base > len(s):

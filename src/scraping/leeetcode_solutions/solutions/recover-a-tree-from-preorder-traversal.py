@@ -11,10 +11,7 @@ class TreeNode(object):
 # iterative stack solution
 class Solution(object):
     def recoverFromPreorder(self, S):
-        """
-        :type S: str
-        :rtype: TreeNode
-        """
+        
         i = 0
         stack = []
         while i < len(S):
@@ -42,10 +39,7 @@ class Solution(object):
 # recursive solution
 class Solution2(object):
     def recoverFromPreorder(self, S):
-        """
-        :type S: str
-        :rtype: TreeNode
-        """
+        
         def recoverFromPreorderHelper(S, level, i):
             j = i[0]
             while j < len(S) and S[j] == '-':

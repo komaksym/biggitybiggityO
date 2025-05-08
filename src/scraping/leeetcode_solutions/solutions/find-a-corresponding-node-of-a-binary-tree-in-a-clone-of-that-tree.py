@@ -13,12 +13,7 @@ class TreeNode(object):
 
 class Solution(object):
     def getTargetCopy(self, original, cloned, target):
-        """
-        :type original: TreeNode
-        :type cloned: TreeNode
-        :type target: TreeNode
-        :rtype: TreeNode
-        """
+        
         def preorder_gen(node):
             stk = [node]
             while stk:

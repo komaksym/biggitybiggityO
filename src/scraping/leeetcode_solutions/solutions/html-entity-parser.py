@@ -27,8 +27,7 @@ class AhoTrie(object):
         self.__root = self.__create_ac_trie(patterns)
         self.__node = self.__create_ac_suffix_and_output_links(self.__root)
     
-    def __create_ac_trie(self, patterns):  # Time:  O(n), Space: O(t)
-        root = AhoNode()
+    def __create_ac_trie(self, patterns): 
         for i, pattern in enumerate(patterns):
             node = root
             for c in pattern:
@@ -36,8 +35,7 @@ class AhoTrie(object):
             node.indices.append(i)
         return root
 
-    def __create_ac_suffix_and_output_links(self, root):  # Time:  O(n), Space: O(t)
-        queue = collections.deque()
+    def __create_ac_suffix_and_output_links(self, root): 
         for node in root.children.values():
             queue.append(node)
             node.suffix = root
@@ -54,7 +52,7 @@ class AhoTrie(object):
                 
         return root
 
-    def __get_ac_node_outputs(self, node):  # Time:  O(z)
+    def __get_ac_node_outputs(self, node): 
         result = []
         for i in node.indices:
             result.append(i)
@@ -68,10 +66,7 @@ class AhoTrie(object):
 
 class Solution(object):
     def entityParser(self, text):
-        """
-        :type text: str
-        :rtype: str
-        """
+        
         patterns = ["&quot;", "&apos;", "&amp;", "&gt;", "&lt;", "&frasl;"]
         chars = ["\"", "'", "&", ">", "<", "/"]
         trie = AhoTrie(patterns)
@@ -95,10 +90,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def entityParser(self, text):
-        """
-        :type text: str
-        :rtype: str
-        """
+        
         patterns = ["&quot;", "&apos;", "&amp;", "&gt;", "&lt;", "&frasl;"]
         chars = ["\"", "'", "&", ">", "<", "/"]
         result = []

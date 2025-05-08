@@ -2,10 +2,7 @@
 
 class Solution(object):
     def imageSmoother(self, M):
-        """
-        :type M: List[List[int]]
-        :rtype: List[List[int]]
-        """
+        
         def getGray(M, i, j):
             total, count = 0, 0.0
             for r in range(-1, 2):

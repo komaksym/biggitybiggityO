@@ -3,10 +3,7 @@
 # dp
 class Solution(object):
     def minimumOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         k = 3
 
         dp = [0]*k

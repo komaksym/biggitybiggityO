@@ -6,11 +6,7 @@ import itertools
 
 class Solution(object):
     def rearrangeString(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: str
-        """
+        
         if not k:
             return s
         cnts = collections.Counter(s)
@@ -36,11 +32,7 @@ import itertools
 # reference: https://codeforces.com/blog/entry/110184 1774B - Coloring
 class Solution2(object):
     def rearrangeString(self, s, k):
-        """
-        :type str: str
-        :type k: int
-        :rtype: str
-        """
+        
         if not k:
             return s
         cnts = collections.Counter(s)
@@ -67,11 +59,7 @@ import itertools
 
 class Solution3(object):
     def rearrangeString(self, s, k):
-        """
-        :type str: str
-        :type k: int
-        :rtype: str
-        """
+        
         cnts = collections.Counter(s)
         bucket_cnt = max(cnts.values())
         buckets = [[] for _ in range(bucket_cnt)]
@@ -92,11 +80,7 @@ from collections import Counter
 from heapq import heappush, heappop
 class Solution4(object):
     def rearrangeString(self, s, k):
-        """
-        :type str: str
-        :type k: int
-        :rtype: str
-        """
+        
         if k <= 1:
             return s
 

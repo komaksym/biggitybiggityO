@@ -2,10 +2,7 @@
 
 class Solution(object):
     def singleNonDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         left, right = 0, len(nums)-1
         while left <= right:
             mid = left + (right - left) / 2

@@ -2,12 +2,7 @@
 
 class Solution(object):
     def maxSatisfied(self, customers, grumpy, X):
-        """
-        :type customers: List[int]
-        :type grumpy: List[int]
-        :type X: int
-        :rtype: int
-        """
+        
         result, max_extra, extra = 0, 0, 0
         for i in range(len(customers)):
             result += 0 if grumpy[i] else customers[i]

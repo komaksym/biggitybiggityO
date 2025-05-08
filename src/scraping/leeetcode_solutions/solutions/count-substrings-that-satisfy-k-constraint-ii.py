@@ -3,12 +3,7 @@
 # two pointers, sliding window, prefix sum, hash table
 class Solution(object):
     def countKConstraintSubstrings(self, s, k, queries):
-        """
-        :type s: str
-        :type k: int
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def count(l):
             return (l+1)*l//2
 

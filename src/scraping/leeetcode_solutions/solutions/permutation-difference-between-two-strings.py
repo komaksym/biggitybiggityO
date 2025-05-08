@@ -3,11 +3,7 @@
 # hash table
 class Solution(object):
     def findPermutationDifference(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: int
-        """
+        
         lookup = [-1]*26
         for i, x in enumerate(s):
             lookup[ord(x)-ord('a')] = i

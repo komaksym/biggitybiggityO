@@ -3,11 +3,7 @@
 # prefix sum, freq table
 class Solution(object):
     def canMakePalindromeQueries(self, s, queries):
-        """
-        :type s: str
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
+        
         def check(left1, right1, left2, right2):
             def same(left, right):
                 return all(prefixs1[right+1][i]-prefixs1[left][i] == prefixs2[right+1][i]-prefixs2[left][i] for i in range(d))
@@ -16,16 +12,16 @@ class Solution(object):
             min_right, max_right = min(right1, right2), max(right1, right2)
             if not (prefix[min_left]-prefix[0] == prefix[-1]-prefix[max_right+1] == 0):
                 return False
-            if min_right < max_left:  # non-overlapped
+            if min_right < max_left: 
                 return prefix[max_left]-prefix[min_right+1] == 0 and same(min_left, min_right) and same(max_left, max_right)
-            # overlapped
-            if (left1 == min_left) == (right1 == max_right):  # inside another
+           
+            if (left1 == min_left) == (right1 == max_right): 
                 return same(min_left, max_right)
-            # not inside another
+           
             p1, p2 = (prefixs1, prefixs2) if min_left == left1 else (prefixs2, prefixs1)
             diff1 = [(p1[min_right+1][i]-p1[min_left][i])-(p2[max_left][i]-p2[min_left][i]) for i in range(d)]
             diff2 = [(p2[max_right+1][i]-p2[max_left][i])-(p1[max_right+1][i]-p1[min_right+1][i]) for i in range(d)]
-            return diff1 == diff2 and all(x >= 0 for x in diff1)  # test case: s = "aabbba", queries = [[0,1,3,4]]
+            return diff1 == diff2 and all(x >= 0 for x in diff1) 
 
         lookup = [-1]*26
         d = 0
@@ -50,11 +46,7 @@ class Solution(object):
 # prefix sum, freq table
 class Solution2(object):
     def canMakePalindromeQueries(self, s, queries):
-        """
-        :type s: str
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
+        
         def check(left1, right1, left2, right2):
             def same(left, right):
                 return all(prefixs1[right+1][i]-prefixs1[left][i] == prefixs2[right+1][i]-prefixs2[left][i] for i in range(26))
@@ -63,16 +55,16 @@ class Solution2(object):
             min_right, max_right = min(right1, right2), max(right1, right2)
             if not (prefix[min_left]-prefix[0] == prefix[-1]-prefix[max_right+1] == 0):
                 return False
-            if min_right < max_left:  # non-overlapped
+            if min_right < max_left: 
                 return prefix[max_left]-prefix[min_right+1] == 0 and same(min_left, min_right) and same(max_left, max_right)
-            # overlapped
-            if (left1 == min_left) == (right1 == max_right):  # inside another
+           
+            if (left1 == min_left) == (right1 == max_right): 
                 return same(min_left, max_right)
-            # not inside another
+           
             p1, p2 = (prefixs1, prefixs2) if min_left == left1 else (prefixs2, prefixs1)
             diff1 = [(p1[min_right+1][i]-p1[min_left][i])-(p2[max_left][i]-p2[min_left][i]) for i in range(26)]
             diff2 = [(p2[max_right+1][i]-p2[max_left][i])-(p1[max_right+1][i]-p1[min_right+1][i]) for i in range(26)]
-            return diff1 == diff2 and all(x >= 0 for x in diff1)  # test case: s = "aabbba", queries = [[0,1,3,4]]
+            return diff1 == diff2 and all(x >= 0 for x in diff1) 
 
         prefix = [0]*(len(s)//2+1)
         prefixs1 = [[0]*26 for _ in range(len(s)//2+1)]

@@ -3,11 +3,8 @@
 # constructive algorithms, counting sort, greedy
 class Solution(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
-        def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
+        
+        def inplace_counting_sort(nums, reverse=False): 
             if not nums:
                 return
             count = [0]*(max(nums)+1)
@@ -15,14 +12,14 @@ class Solution(object):
                 count[num] += 1
             for i in range(1, len(count)):
                 count[i] += count[i-1]
-            for i in reversed(range(len(nums))):  # inplace but unstable sort
+            for i in reversed(range(len(nums))): 
                 while nums[i] >= 0:
                     count[nums[i]] -= 1
                     j = count[nums[i]]
                     nums[i], nums[j] = nums[j], ~nums[i]
             for i in range(len(nums)):
-                nums[i] = ~nums[i]  # restore values
-            if reverse:  # unstable sort
+                nums[i] = ~nums[i] 
+            if reverse: 
                 nums.reverse()
 
         usageLimits = [min(x, len(usageLimits)) for x in usageLimits]
@@ -40,10 +37,7 @@ class Solution(object):
 # constructive algorithms, sort, greedy
 class Solution2(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
+        
         usageLimits.sort()
         result = curr = 0
         for x in usageLimits:
@@ -58,10 +52,7 @@ class Solution2(object):
 # constructive algorithms, sort, binary search, greedy
 class Solution3(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
+        
         def check(l):
             curr = 0
             for i in range(l):
@@ -86,10 +77,7 @@ class Solution3(object):
 # constructive algorithms, sort, binary search, greedy, prefix sum
 class Solution4(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
+        
         def check(l):
             return all((i+1)*i//2 <= prefix[len(usageLimits)-(l-i)] for i in range(1, l+1))
 

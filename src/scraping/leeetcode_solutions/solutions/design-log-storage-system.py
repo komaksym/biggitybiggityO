@@ -11,21 +11,12 @@ class LogSystem(object):
 
 
     def put(self, id, timestamp):
-        """
-        :type id: int
-        :type timestamp: str
-        :rtype: void
-        """
+        
         self.__logs.append((id, timestamp))
 
 
     def retrieve(self, s, e, gra):
-        """
-        :type s: str
-        :type e: str
-        :type gra: str
-        :rtype: List[int]
-        """
+        
         i = self.__granularity[gra]
         begin = s[:i]
         end = e[:i]

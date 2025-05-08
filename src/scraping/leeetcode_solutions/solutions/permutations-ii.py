@@ -2,10 +2,7 @@
 
 class Solution(object):
     def permuteUnique(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
+        
         nums.sort()
         result = []
         used = [False] * len(nums)
@@ -26,8 +23,8 @@ class Solution(object):
             used[i] = False
 
 class Solution2(object):
-    # @param num, a list of integer
-    # @return a list of lists of integers
+   
+   
     def permuteUnique(self, nums):
         solutions = [[]]
 

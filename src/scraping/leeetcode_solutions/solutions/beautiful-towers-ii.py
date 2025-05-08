@@ -3,10 +3,7 @@
 # mono stack
 class Solution(object):
     def maximumSumOfHeights(self, maxHeights):
-        """
-        :type maxHeights: List[int]
-        :rtype: int
-        """
+        
         left = [0]*len(maxHeights)
         stk = [-1]
         curr = 0

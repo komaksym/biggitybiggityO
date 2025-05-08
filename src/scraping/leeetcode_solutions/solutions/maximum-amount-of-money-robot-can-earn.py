@@ -3,10 +3,7 @@
 # dp
 class Solution(object):
     def maximumAmount(self, coins):
-        """
-        :type coins: List[List[int]]
-        :rtype: int
-        """
+        
         K = 2
         mn = min(len(coins), len(coins[0]))
         mx = max(len(coins), len(coins[0]))
@@ -35,10 +32,7 @@ class Solution(object):
 # dp
 class Solution2(object):
     def maximumAmount(self, coins):
-        """
-        :type coins: List[List[int]]
-        :rtype: int
-        """
+        
         K = 2
         dp = [[float("-inf")]*(K+1) for _ in range(len(coins[0]))] 
         for i in range(len(coins)):

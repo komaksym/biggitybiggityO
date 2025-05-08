@@ -31,8 +31,8 @@ class Queue(object):
 #         self.right = None
 
 class Solution(object):
-    # @param {TreeNode} root
-    # @return {TreeNode}
+   
+   
     def invertTree(self, root):
         if root is not None:
             nodes = Queue()
@@ -50,8 +50,8 @@ class Solution(object):
 # Time:  O(n)
 # Stack solution.
 class Solution2(object):
-    # @param {TreeNode} root
-    # @return {TreeNode}
+   
+   
     def invertTree(self, root):
         if root is not None:
             nodes = []
@@ -69,8 +69,8 @@ class Solution2(object):
 # Time:  O(n)
 # DFS, Recursive solution.
 class Solution3(object):
-    # @param {TreeNode} root
-    # @return {TreeNode}
+   
+   
     def invertTree(self, root):
         if root is not None:
             root.left, root.right = self.invertTree(root.right), \

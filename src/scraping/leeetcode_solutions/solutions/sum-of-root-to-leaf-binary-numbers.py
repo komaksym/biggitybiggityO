@@ -10,10 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def sumRootToLeaf(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         M = 10**9 + 7
         def sumRootToLeafHelper(root, val):
             if not root:

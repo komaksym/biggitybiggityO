@@ -6,11 +6,7 @@ import itertools
 # string, hash table
 class Solution(object):
     def decodeMessage(self, key, message):
-        """
-        :type key: str
-        :type message: str
-        :rtype: str
-        """
+        
         f = lambda x: ord(x)-ord('a')
         lookup = [-1]*26
         i = 0

@@ -7,8 +7,8 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-    # @param root, a tree node
-    # @return an integer
+   
+   
     def sumNumbers(self, root):
         return self.sumNumbersRecu(root, 0)
 

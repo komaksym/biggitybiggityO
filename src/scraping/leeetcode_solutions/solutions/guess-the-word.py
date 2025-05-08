@@ -6,11 +6,7 @@ import itertools
 
 class Solution(object):
     def findSecretWord(self, wordlist, master):
-        """
-        :type wordlist: List[Str]
-        :type master: Master
-        :rtype: None
-        """
+        
         possible = list(range(len(wordlist)))
         n = 0
         while n < 6:
@@ -23,11 +19,7 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution2(object):
     def findSecretWord(self, wordlist, master):
-        """
-        :type wordlist: List[Str]
-        :type master: Master
-        :rtype: None
-        """
+        
         def solve(H, possible):
             min_max_group, best_guess = possible, None
             for guess in possible:
@@ -54,11 +46,7 @@ class Solution2(object):
 # Time:  O(n^2)
 class Solution3(object):
     def findSecretWord(self, wordlist, master):
-        """
-        :type wordlist: List[Str]
-        :type master: Master
-        :rtype: None
-        """
+        
         def solve(H, possible):
             min_max_group, best_guess = possible, None
             for guess in possible:

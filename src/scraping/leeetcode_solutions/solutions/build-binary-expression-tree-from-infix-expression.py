@@ -10,10 +10,7 @@ class Node(object):
 
 class Solution(object):
     def expTree(self, s):
-        """
-        :type s: str
-        :rtype: Node
-        """
+        
         def compute(operands, operators):
             right, left = operands.pop(), operands.pop()
             operands.append(Node(val=operators.pop(), left=left, right=right))

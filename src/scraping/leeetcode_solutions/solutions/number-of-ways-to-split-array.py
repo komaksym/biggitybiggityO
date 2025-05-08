@@ -3,10 +3,7 @@
 # prefix sum
 class Solution(object):
     def waysToSplitArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         total = sum(nums)
         result = curr = 0
         for i in range(len(nums)-1):

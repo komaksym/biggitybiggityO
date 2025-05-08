@@ -13,9 +13,7 @@ class Solution(object):
         self.__cache = []
 
     def rand10(self):
-        """
-        :rtype: int
-        """
+        
         def generate(cache):
             n = 32
             curr = sum((rand7()-1) * (7**i) for i in range(n))
@@ -33,9 +31,7 @@ class Solution(object):
 # Time:  O(2 * (1 + (9/49) + (9/49)^2 + ...)) = O(2/(1-(9/49)) = O(2.45)
 class Solution2(object):
     def rand10(self):
-        """
-        :rtype: int
-        """
+        
         while True:
             x = (rand7()-1)*7 + (rand7()-1)
             if x < 40:

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def binaryGap(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
+        
         result = 0
         last = None
         for i in range(32):

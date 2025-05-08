@@ -1,13 +1,12 @@
 # Time:  O(nlogn + mlogm + n * α(n)) = O(nlogn + mlogm)
 
-class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
-    def __init__(self, n):
+class UnionFind(object): 
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -18,7 +17,7 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]:  # union by rank
+        if self.rank[x_root] < self.rank[y_root]: 
             self.set[x_root] = y_root
         elif self.rank[x_root] > self.rank[y_root]:
             self.set[y_root] = x_root
@@ -30,12 +29,7 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 
 class Solution(object):
     def distanceLimitedPathsExist(self, n, edgeList, queries):
-        """
-        :type n: int
-        :type edgeList: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
+        
         for i, q in enumerate(queries):
             q.append(i)
         edgeList.sort(key=lambda x: x[2])

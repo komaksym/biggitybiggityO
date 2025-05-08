@@ -3,10 +3,7 @@
 # two pointers
 class Solution(object):
     def countSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = l = 1
         for i in range(1, len(nums)):
             if nums[i-1] >= nums[i]:
@@ -20,10 +17,7 @@ class Solution(object):
 # two pointers
 class Solution2(object):
     def countSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = left = 0
         for right in range(len(nums)):
             if not (right-1 >= 0 and nums[right-1] < nums[right]):

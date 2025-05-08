@@ -10,12 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def rangeSumBST(self, root, L, R):
-        """
-        :type root: TreeNode
-        :type L: int
-        :type R: int
-        :rtype: int
-        """
+        
         result = 0
         s = [root]
         while s:

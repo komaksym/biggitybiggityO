@@ -7,23 +7,20 @@ from sortedcontainers import SortedList
 # bit, fenwick tree, sorted list, math
 class Solution(object):
     def sumCounts(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, n):
-                self.__bit = [0]*(n+1)  # Extra one for dummy node.
+                self.__bit = [0]*(n+1) 
 
             def add(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] = (self.__bit[i]+val) % MOD
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = 0
                 while i > 0:
                     ret = (ret+self.__bit[i]) % MOD
@@ -48,7 +45,7 @@ class Solution(object):
         for x in sl:
             bit.add(x, x)
         for x in nums:
-            result = (result+accu) % MOD  # accu = sum(count(i, k) for k in range(i, len(nums)))
+            result = (result+accu) % MOD 
             accu = update(accu, -1)
             del sl[0]
             idxs[x].pop()
@@ -64,13 +61,10 @@ class Solution(object):
 # dp, segment tree, math
 class Solution2(object):
     def sumCounts(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/longest-substring-of-one-repeating-character.py
+       
+       
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=None,
@@ -86,12 +80,12 @@ class Solution2(object):
                         self.tree[i] = build_fn(i-self.base)
                     for i in reversed(range(1, self.base)):
                         self.tree[i] = query_fn(self.tree[i<<1], self.tree[(i<<1)+1])
-                self.count = [1]*len(self.tree)  # added
-                for i in reversed(range(1, self.base)):  # added
+                self.count = [1]*len(self.tree) 
+                for i in reversed(range(1, self.base)): 
                     self.count[i] = self.count[i<<1] + self.count[(i<<1)+1]
 
             def __apply(self, x, val):
-                self.tree[x] = self.update_fn(self.tree[x], val*self.count[x])  # modified
+                self.tree[x] = self.update_fn(self.tree[x], val*self.count[x]) 
                 if x < self.base:
                     self.lazy[x] = self.update_fn(self.lazy[x], val)
 
@@ -103,24 +97,23 @@ class Solution2(object):
                         self.__apply((y<<1)+1, self.lazy[y])
                         self.lazy[y] = None
 
-            def update(self, L, R, h):  # Time: O(logN), Space: O(N)
-                def pull(x):
+            def update(self, L, R, h): 
                     while x > 1:
                         x >>= 1
                         self.tree[x] = self.query_fn(self.tree[x<<1], self.tree[(x<<1)+1])
                         if self.lazy[x] is not None:
-                            self.tree[x] = self.update_fn(self.tree[x], self.lazy[x]*self.count[x])  # modified
+                            self.tree[x] = self.update_fn(self.tree[x], self.lazy[x]*self.count[x]) 
 
                 L += self.base
                 R += self.base
-                # self.__push(L)  # enable if range assignment
-                # self.__push(R)  # enable if range assignment
+               
+               
                 L0, R0 = L, R
                 while L <= R:
-                    if L & 1:  # is right child
+                    if L & 1: 
                         self.__apply(L, h)
                         L += 1
-                    if R & 1 == 0:  # is left child
+                    if R & 1 == 0: 
                         self.__apply(R, h)
                         R -= 1
                     L >>= 1
@@ -152,11 +145,11 @@ class Solution2(object):
         st = SegmentTree(len(nums))
         for i in range(len(nums)):
             j = sl[nums[i]] if nums[i] in sl else -1
-            # sum(count(k, i)^2 for k in range(i+1)) - sum(count(k, i-1)^2 for k in range(i))
-            # = sum(2*count(k, i-1)+1 for k in range(j+1, i+1))
-            # = (i-j) + sum(2*count(k, i-1) for k in range(j+1, i+1))
+           
+           
+           
             accu = (accu+((i-j)+2*max(st.query(j+1, i), 0)))%MOD
             result = (result+accu)%MOD
-            st.update(j+1, i, 1)  # count(k, i) = count(k, i-1)+(1 if k >= j+1 else 0) for k in range(i+1)
+            st.update(j+1, i, 1) 
             sl[nums[i]] = i
         return result

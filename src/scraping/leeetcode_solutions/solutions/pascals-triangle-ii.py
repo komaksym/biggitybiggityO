@@ -1,7 +1,7 @@
 # Time:  O(n^2)
 
 class Solution(object):
-    # @return a list of integers
+   
     def getRow(self, rowIndex):
         result = [0] * (rowIndex + 1)
         for i in range(rowIndex + 1):
@@ -11,20 +11,14 @@ class Solution(object):
         return result
 
     def getRow2(self, rowIndex):
-        """
-        :type rowIndex: int
-        :rtype: List[int]
-        """
+        
         row = [1]
         for _ in range(rowIndex):
             row = [x + y for x, y in zip([0] + row, row + [0])]
         return row
 
     def getRow3(self, rowIndex):
-        """
-        :type rowIndex: int
-        :rtype: List[int]
-        """
+        
         if rowIndex == 0: return [1]
         res = [1, 1]
 
@@ -43,7 +37,7 @@ class Solution(object):
 
 # Time:  O(n^2)
 class Solution2(object):
-    # @return a list of integers
+   
     def getRow(self, rowIndex):
         result = [1]
         for i in range(1, rowIndex + 1):

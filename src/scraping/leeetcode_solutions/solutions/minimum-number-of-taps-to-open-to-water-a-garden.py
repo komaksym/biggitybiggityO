@@ -2,11 +2,7 @@
 
 class Solution(object):
     def minTaps(self, n, ranges):
-        """
-        :type n: int
-        :type ranges: List[int]
-        :rtype: int
-        """
+        
         def jump_game(A):
             jump_count, reachable, curr_reachable = 0, 0, 0
             for i, length in enumerate(A):

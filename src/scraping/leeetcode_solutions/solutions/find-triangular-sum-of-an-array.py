@@ -3,10 +3,7 @@
 # combinatorics, number theory
 class Solution(object):
     def triangularSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def exp_mod(p, mod):
             result = [p]
             while result[-1]*p%10 != result[0]:
@@ -27,8 +24,8 @@ class Solution(object):
                 cnt += diff
             return x, cnt
     
-        EXP = {p:exp_mod(p, 10) for p in (2, 5)}  # {2:[6, 2, 4, 8], 5:[5]}           
-        INV = {i:inv_mod(i, 10) for i in range(1, 10) if i%2 and i%5}  # {1:1, 3:7, 7:3, 9:9}
+        EXP = {p:exp_mod(p, 10) for p in (2, 5)} 
+        INV = {i:inv_mod(i, 10) for i in range(1, 10) if i%2 and i%5} 
         result = 0
         nCr = 1
         cnt = {2:0, 5:0}
@@ -52,10 +49,7 @@ class Solution(object):
 # combinatorics
 class Solution2(object):
     def triangularSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = 0
         nCr = 1
         for i in range(len(nums)):
@@ -69,10 +63,7 @@ class Solution2(object):
 # simulation
 class Solution3(object):
     def triangularSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         for i in reversed(range(len(nums))):
             for j in range(i):
                 nums[j] = (nums[j]+nums[j+1])%10

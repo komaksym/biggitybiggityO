@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def subarraysWithKDistinct(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
+        
         def atMostK(A, K):
             count = collections.defaultdict(int)
             result, left = 0, 0
@@ -45,11 +41,7 @@ class Window(object):
 
 class Solution2(object):
     def subarraysWithKDistinct(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
+        
         window1, window2 = Window(), Window()
         result, left1, left2 = 0, 0, 0
         for i in A:

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def splitLoopedString(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
+        
         tmp = []
         for s in strs:
             tmp += max(s, s[::-1])

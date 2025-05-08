@@ -3,11 +3,7 @@
 # segment tree, binary search
 class Solution(object):
     def numOfUnplacedFruits(self, fruits, baskets):
-        """
-        :type fruits: List[int]
-        :type baskets: List[int]
-        :rtype: int
-        """
+        
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: 0,
@@ -58,11 +54,7 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def numOfUnplacedFruits(self, fruits, baskets):
-        """
-        :type fruits: List[int]
-        :type baskets: List[int]
-        :rtype: int
-        """
+        
         result = 0
         for x in fruits:
             i = next((i for i in range(len(baskets)) if baskets[i] >= x), -1)

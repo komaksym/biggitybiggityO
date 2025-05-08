@@ -2,20 +2,14 @@
 
 class Solution(object):
     def maxDepthAfterSplit(self, seq):
-        """
-        :type seq: str
-        :rtype: List[int]
-        """
+        
         return [(i & 1) ^ (seq[i] == '(') for i, c in enumerate(seq)]
 
 
 # Time:  O(n)
 class Solution2(object):
     def maxDepthAfterSplit(self, seq):
-        """
-        :type seq: str
-        :rtype: List[int]
-        """
+        
         A, B = 0, 0
         result = [0]*len(seq)
         for i, c in enumerate(seq):

@@ -3,11 +3,7 @@
 # dp
 class Solution(object):
     def minCost(self, n, cost):
-        """
-        :type n: int
-        :type cost: List[List[int]]
-        :rtype: int
-        """
+        
         l = len(cost[0])
         dp = [[0]*l for i in range(l)]
         for k in range(n//2):

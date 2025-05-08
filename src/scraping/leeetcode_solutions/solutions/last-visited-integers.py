@@ -3,10 +3,7 @@
 # stack
 class Solution(object):
     def lastVisitedIntegers(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[int]
-        """
+        
         PREV = "prev"
         result, stk = [], []
         i = -1

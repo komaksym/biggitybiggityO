@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def predictPartyVictory(self, senate):
-        """
-        :type senate: str
-        :rtype: str
-        """
+        
         n = len(senate)
         radiant, dire = collections.deque(), collections.deque()
         for i, c in enumerate(senate):

@@ -3,11 +3,7 @@
 # greedy
 class Solution(object):
     def minimalKSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         result = k*(k+1)//2
         curr = k+1
         for x in sorted(set(nums)):
@@ -21,11 +17,7 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def minimalKSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         result = prev = 0
         nums.append(float("inf"))
         for x in sorted(set(nums)):

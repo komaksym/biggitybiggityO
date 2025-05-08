@@ -2,10 +2,7 @@
 
 class Solution(object):
     def largestRectangleArea(self, heights):
-        """
-        :type heights: List[int]
-        :rtype: int
-        """
+        
         stk, result = [-1], 0
         for i in range(len(heights)+1):
             while stk[-1] != -1 and (i == len(heights) or heights[stk[-1]] >= heights[i]):

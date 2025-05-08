@@ -4,10 +4,7 @@ from collections import defaultdict
 
 class Solution(object):
     def firstUniqChar(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         lookup = defaultdict(int)
         candidtates = set()
         for i, c in enumerate(s):

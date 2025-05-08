@@ -5,10 +5,7 @@ import math
 
 class Solution(object):
     def smallestGoodBase(self, n):
-        """
-        :type n: str
-        :rtype: str
-        """
+        
         num = int(n)
         max_len = int(math.log(num,2))
         for l in range(max_len, 1, -1):

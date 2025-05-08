@@ -6,11 +6,7 @@ import random
 # iterative dfs, quick select
 class Solution(object):
     def maximizeSumOfWeights(self, edges, k):
-        """
-        :type edges: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target):
                 i = left
@@ -34,7 +30,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         def iter_dfs():
@@ -76,11 +72,7 @@ import random
 # dfs, quick select
 class Solution2(object):
     def maximizeSumOfWeights(self, edges, k):
-        """
-        :type edges: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target):
                 i = left
@@ -104,7 +96,7 @@ class Solution2(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         def dfs(u, p):

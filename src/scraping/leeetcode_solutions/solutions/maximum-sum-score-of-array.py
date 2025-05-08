@@ -3,10 +3,7 @@
 # prefix sum, math
 class Solution(object):
     def maximumSumScore(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         prefix = suffix = 0
         result = float("-inf")
         right = len(nums)-1
@@ -22,10 +19,7 @@ class Solution(object):
 # prefix sum
 class Solution2(object):
     def maximumSumScore(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         total = sum(nums)
         prefix = 0
         result = float("-inf")

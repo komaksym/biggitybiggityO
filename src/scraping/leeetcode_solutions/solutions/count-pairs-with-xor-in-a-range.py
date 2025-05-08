@@ -6,18 +6,13 @@ import collections
 # dp solution
 class Solution(object):
     def countPairs(self, nums, low, high):
-        """
-        :type nums: List[int]
-        :type low: int
-        :type high: int
-        :rtype: int
-        """
+        
         def count(nums, x):
             result = 0
             dp = collections.Counter(nums)
             while x:
                 if x&1:
-                    result += sum(dp[(x^1)^k]*dp[k] for k in dp.keys())//2  # current limit is xxxxx1*****, count xor pair with xxxxx0***** pattern
+                    result += sum(dp[(x^1)^k]*dp[k] for k in dp.keys())//2 
                 dp = collections.Counter({k>>1: dp[k]+dp[k^1] for k in dp.keys()})
                 x >>= 1
             return result
@@ -47,7 +42,7 @@ class Trie(object):
             bit = (limit>>i) & 1
             if bit:
                 if curr in node:
-                    result += node[0^curr]["_count"]  # current limit is xxxxx1*****, count xor pair with xxxxx0***** pattern
+                    result += node[0^curr]["_count"] 
             if bit^curr not in node:
                 break
             node = node[bit^curr]
@@ -56,12 +51,7 @@ class Trie(object):
 
 class Solution2(object):
     def countPairs(self, nums, low, high):
-        """
-        :type nums: List[int]
-        :type low: int
-        :type high: int
-        :rtype: int
-        """
+        
         result = 0
         trie = Trie()
         for x in nums:

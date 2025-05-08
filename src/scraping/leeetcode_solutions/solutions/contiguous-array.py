@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findMaxLength(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result, count = 0, 0
         lookup = {0: -1}
         for i, num in enumerate(nums):

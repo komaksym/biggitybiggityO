@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def findLength(self, A, B):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :rtype: int
-        """
+        
         if len(A) < len(B): return self.findLength(B, A)
         result = 0
         dp = [[0] * (len(B)+1) for _ in range(2)]
@@ -27,11 +23,7 @@ class Solution(object):
 # Binary search + rolling hash solution (226 ms)
 class Solution2(object):
     def findLength(self, A, B):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :rtype: int
-        """
+        
         if len(A) > len(B): return self.findLength(B, A)
         M, p = 10**9+7, 113
         p_inv = pow(p, M-2, M)
@@ -61,7 +53,7 @@ class Solution2(object):
         left, right = 0, min(len(A), len(B)) + 1
         while left < right:
             mid = left + (right-left)/2
-            if not check(mid):  # find the min idx such that check(idx) == false
+            if not check(mid): 
                 right = mid
             else:
                 left = mid+1
@@ -72,11 +64,7 @@ class Solution2(object):
 # Binary search (122 ms)
 class Solution3(object):
     def findLength(self, A, B):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :rtype: int
-        """
+        
         if len(A) > len(B): return self.findLength(B, A)
 
         def check(length):
@@ -90,7 +78,7 @@ class Solution3(object):
         left, right = 0, min(len(A), len(B)) + 1
         while left < right:
             mid = left + (right-left)/2
-            if not check(mid):  # find the min idx such that check(idx) == false
+            if not check(mid): 
                 right = mid
             else:
                 left = mid+1

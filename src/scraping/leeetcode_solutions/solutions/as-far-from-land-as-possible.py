@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def maxDistance(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         q = collections.deque([(i, j) for i in range(len(grid))
                                       for j in range(len(grid[0])) if grid[i][j] == 1])    

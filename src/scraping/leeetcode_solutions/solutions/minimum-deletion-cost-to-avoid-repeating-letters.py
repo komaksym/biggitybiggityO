@@ -2,11 +2,7 @@
 
 class Solution(object):
     def minCost(self, s, cost):
-        """
-        :type s: str
-        :type cost: List[int]
-        :rtype: int
-        """
+        
         result = accu = max_cost = 0
         for i in range(len(s)):
             if i and s[i] != s[i-1]:

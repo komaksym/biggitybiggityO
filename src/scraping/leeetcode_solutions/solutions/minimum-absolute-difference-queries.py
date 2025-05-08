@@ -2,11 +2,7 @@
 
 class Solution(object):
     def minDifference(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         INF = float("inf")
         prefix = [[0]*(max(nums)+1)]
         for num in nums:
@@ -31,11 +27,7 @@ import bisect
 
 class Solution2(object):
     def minDifference(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         INF = float("inf")
         idxs = [[] for _ in range(max(nums)+1)]
         for i, num in enumerate(nums):

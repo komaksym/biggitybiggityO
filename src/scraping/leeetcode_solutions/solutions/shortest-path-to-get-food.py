@@ -2,10 +2,7 @@
 
 class Solution(object):
     def getFood(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
+        
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
         q = []
@@ -26,7 +23,7 @@ class Solution(object):
                             0 <= nc < len(grid[0]) and
                             grid[nr][nc] != 'X'):
                         continue
-                    if grid[nr][nc] == '#':
+                    if grid[nr][nc] == 
                         return result
                     grid[nr][nc] = 'X'
                     new_q.append((nr, nc))

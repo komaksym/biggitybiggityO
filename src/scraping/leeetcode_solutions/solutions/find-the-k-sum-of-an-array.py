@@ -6,11 +6,7 @@ import heapq
 # bfs, heap
 class Solution(object):
     def kSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         total = sum(x for x in nums if x > 0)
         sorted_vals = sorted(abs(x) for x in nums)
         max_heap = [(-total, 0)]

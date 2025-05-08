@@ -6,10 +6,7 @@ import heapq
 
 class Solution(object):
     def scheduleCourse(self, courses):
-        """
-        :type courses: List[List[int]]
-        :rtype: int
-        """
+        
         courses.sort(key=lambda t_end: t_end[1])
         max_heap = []
         now = 0

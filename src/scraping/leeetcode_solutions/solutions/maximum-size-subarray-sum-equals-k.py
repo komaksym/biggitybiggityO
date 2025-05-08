@@ -2,11 +2,7 @@
 
 class Solution(object):
     def maxSubArrayLen(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         sums = {}
         cur_sum, max_len = 0, 0
         for i in range(len(nums)):
@@ -16,6 +12,6 @@ class Solution(object):
             elif cur_sum - k in sums:
                 max_len = max(max_len, i - sums[cur_sum - k])
             if cur_sum not in sums:
-                sums[cur_sum] = i  # Only keep the smallest index.
+                sums[cur_sum] = i 
         return max_len
 

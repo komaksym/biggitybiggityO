@@ -3,11 +3,8 @@
 # FWHT, fst
 class Solution(object):
     def uniqueXorTriplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        # Template: https://github.com/kth-competitive-programming/kactl/blob/main/content/numerical/FastSubsetTransform.h
+        
+       
         def fst(a, inverse):
             n = len(a)
             step = 1
@@ -35,10 +32,7 @@ class Solution(object):
 # hash table
 class Solution2(object):
     def uniqueXorTriplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         cnt2, cnt3 = set([0]), set(),  
         max_cnt = 1<<max(nums).bit_length()
         for x in nums:

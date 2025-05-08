@@ -2,12 +2,7 @@
 
 class Solution(object):
     def closestCost(self, baseCosts, toppingCosts, target):
-        """
-        :type baseCosts: List[int]
-        :type toppingCosts: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         max_count = 2
         max_base, max_topping = max(baseCosts), max(toppingCosts)
         dp = [False]*(max(max_base, target+max_topping//2)+1)
@@ -32,12 +27,7 @@ class Solution(object):
 # Time:  O(n * 3^m)
 class Solution2(object):
     def closestCost(self, baseCosts, toppingCosts, target):
-        """
-        :type baseCosts: List[int]
-        :type toppingCosts: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         max_count = 2
         def backtracking(toppingCosts, i, cost, target, lookup, result):
             if (i, cost) in lookup:
@@ -63,12 +53,7 @@ import bisect
 
 class Solution3(object):
     def closestCost(self, baseCosts, toppingCosts, target):
-        """
-        :type baseCosts: List[int]
-        :type toppingCosts: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         max_count = 2
         combs = set([0])
         for t in toppingCosts:
@@ -86,12 +71,7 @@ class Solution3(object):
 # Time:  O(n * 3^m)
 class Solution4(object):
     def closestCost(self, baseCosts, toppingCosts, target):
-        """
-        :type baseCosts: List[int]
-        :type toppingCosts: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         max_count = 2
         combs = set([0])
         for t in toppingCosts:

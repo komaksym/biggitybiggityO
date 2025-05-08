@@ -2,11 +2,7 @@
 
 class Solution(object):
     def createTargetArray(self, nums, index):
-        """
-        :type nums: List[int]
-        :type index: List[int]
-        :rtype: List[int]
-        """
+        
         for i in range(len(nums)):
             for j in range(i):
                 if index[j] >= index[i]:
@@ -23,11 +19,7 @@ import itertools
 
 class Solution2(object):
     def createTargetArray(self, nums, index):
-        """
-        :type nums: List[int]
-        :type index: List[int]
-        :rtype: List[int]
-        """
+        
         result = []
         for i, x in zip(index, nums):
             result.insert(i, x)

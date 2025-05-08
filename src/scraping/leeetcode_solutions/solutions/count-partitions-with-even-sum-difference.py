@@ -3,10 +3,7 @@
 # prefix sum
 class Solution(object):
     def countPartitions(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = left = 0
         right = sum(nums)
         for i in range(len(nums)-1):

@@ -9,10 +9,7 @@ class Node(object):
 
 class Solution(object):
     def treeToDoublyList(self, root):
-        """
-        :type root: Node
-        :rtype: Node
-        """
+        
         if not root:
             return None
         left_head, left_tail, right_head, right_tail = root, root, root, root

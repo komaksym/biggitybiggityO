@@ -2,10 +2,7 @@
 
 class Solution(object):
     def nextClosestTime(self, time):
-        """
-        :type time: str
-        :rtype: str
-        """
+        
         h, m = time.split(":")
         curr = int(h) * 60 + int(m)
         result = None

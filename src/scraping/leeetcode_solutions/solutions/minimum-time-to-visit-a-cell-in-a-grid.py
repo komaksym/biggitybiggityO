@@ -6,10 +6,7 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def minimumTime(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def dijkstra(start, target):
             best = [[float("inf")]*len(grid[0]) for _ in range(len(grid))]

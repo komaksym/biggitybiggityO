@@ -3,10 +3,7 @@
 # backtracking, memoization
 class Solution(object):
     def specialPerm(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         def backtracking(i, mask):
             if mask == (1<<len(nums))-1:

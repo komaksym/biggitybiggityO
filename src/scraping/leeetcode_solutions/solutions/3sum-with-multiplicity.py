@@ -6,11 +6,7 @@ import itertools
 
 class Solution(object):
     def threeSumMulti(self, A, target):
-        """
-        :type A: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         count = collections.Counter(A)
         result = 0
         for i, j in itertools.combinations_with_replacement(count, 2):

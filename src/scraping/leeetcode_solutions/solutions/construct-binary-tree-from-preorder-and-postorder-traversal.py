@@ -9,11 +9,7 @@ class TreeNode(object):
 
 class Solution(object):
     def constructFromPrePost(self, pre, post):
-        """
-        :type pre: List[int]
-        :type post: List[int]
-        :rtype: TreeNode
-        """
+        
         stack = [TreeNode(pre[0])]
         j = 0
         for i in range(1, len(pre)):
@@ -32,11 +28,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def constructFromPrePost(self, pre, post):
-        """
-        :type pre: List[int]
-        :type post: List[int]
-        :rtype: TreeNode
-        """
+        
         def constructFromPrePostHelper(pre, pre_s, pre_e, post, post_s, post_e, post_entry_idx_map):
             if pre_s >= pre_e or post_s >= post_e:
                 return None

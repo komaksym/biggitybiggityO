@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def numSubmatrixSumTarget(self, matrix, target):
-        """
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: int
-        """
+        
         if len(matrix) > len(matrix[0]):
             return self.numSubmatrixSumTarget(list(map(list, list(zip(*matrix)))), target)
         

@@ -9,10 +9,7 @@ class TreeNode(object):
 # dfs
 class Solution(object):
     def averageOfSubtree(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: int
-        """
+        
         def iter_dfs(root):
             result = 0
             stk = [(1, (root, [0]*2))]
@@ -40,10 +37,7 @@ class Solution(object):
 # dfs
 class Solution2(object):
     def averageOfSubtree(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: int
-        """
+        
         def dfs(node):
             if not node:
                 return [0]*3

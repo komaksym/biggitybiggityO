@@ -8,18 +8,14 @@ import bisect
 class Solution(object):
 
     def __init__(self, rects):
-        """
-        :type rects: List[List[int]]
-        """
+        
         self.__rects = list(rects)
         self.__prefix_sum = [(x[2]-x[0]+1)*(x[3]-x[1]+1) for x in rects]
         for i in range(1, len(self.__prefix_sum)):
             self.__prefix_sum[i] += self.__prefix_sum[i-1]
 
     def pick(self):
-        """
-        :rtype: List[int]
-        """
+        
         target = random.randint(0, self.__prefix_sum[-1]-1)
         left = bisect.bisect_right(self.__prefix_sum, target)
         rect = self.__rects[left]

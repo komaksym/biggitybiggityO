@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maxEnvelopes(self, envelopes):
-        """
-        :type envelopes: List[List[int]]
-        :rtype: int
-        """
+        
         def insert(target):
             left, right = 0, len(result) - 1
             while left <= right:

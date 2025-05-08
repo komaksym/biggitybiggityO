@@ -2,12 +2,7 @@
 
 class Solution(object):
     def pourWater(self, heights, V, K):
-        """
-        :type heights: List[int]
-        :type V: int
-        :type K: int
-        :rtype: List[int]
-        """
+        
         for _ in range(V):
             best = K
             for d in (-1, 1):

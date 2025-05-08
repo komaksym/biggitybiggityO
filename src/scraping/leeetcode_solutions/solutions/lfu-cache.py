@@ -7,9 +7,7 @@ import collections
 class LFUCache(object):
 
     def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
+        
         self.__capa = capacity
         self.__size = 0
         self.__min_freq = float("inf")
@@ -17,10 +15,7 @@ class LFUCache(object):
         self.__key_to_freq = {}
 
     def get(self, key):
-        """
-        :type key: int
-        :rtype: int
-        """
+        
         if key not in self.__key_to_freq:
             return -1
         value = self.__freq_to_nodes[self.__key_to_freq[key]][key]
@@ -28,11 +23,7 @@ class LFUCache(object):
         return value
 
     def put(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: void
-        """
+        
         if self.__capa <= 0:
             return
 
@@ -80,7 +71,7 @@ class LinkedList(object):
         self.tail = None
 
     def append(self, node):
-        node.next, node.prev = None, None  # avoid dirty node
+        node.next, node.prev = None, None 
         if self.head is None:
             self.head = node
         else:
@@ -97,15 +88,13 @@ class LinkedList(object):
             node.next.prev = node.prev
         else:
             self.tail = node.prev
-        node.next, node.prev = None, None  # make node clean
+        node.next, node.prev = None, None 
 
 
 class LFUCache2(object):
 
     def __init__(self, capacity):
-        """
-        :type capacity: int
-        """
+        
         self.__capa = capacity
         self.__size = 0
         self.__min_freq = float("inf")
@@ -113,10 +102,7 @@ class LFUCache2(object):
         self.__key_to_node = {}
 
     def get(self, key):
-        """
-        :type key: int
-        :rtype: int
-        """
+        
         if key not in self.__key_to_node:
             return -1
         value = self.__key_to_node[key].val
@@ -124,11 +110,7 @@ class LFUCache2(object):
         return value
 
     def put(self, key, value):
-        """
-        :type key: int
-        :type value: int
-        :rtype: void
-        """
+        
         if self.__capa <= 0:
             return
 

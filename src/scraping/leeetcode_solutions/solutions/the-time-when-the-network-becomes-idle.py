@@ -2,11 +2,7 @@
 
 class Solution(object):
     def networkBecomesIdle(self, edges, patience):
-        """
-        :type edges: List[List[int]]
-        :type patience: List[int]
-        :rtype: int
-        """
+        
         adj = [[] for _ in range(len(patience))]
         for u, v in edges:
             adj[u].append(v)

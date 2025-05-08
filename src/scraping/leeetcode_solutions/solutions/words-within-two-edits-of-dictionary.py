@@ -7,12 +7,8 @@ from functools import reduce
 # hash
 class Solution(object):
     def twoEditWords(self, queries, dictionary):
-        """
-        :type queries: List[str]
-        :type dictionary: List[str]
-        :rtype: List[str]
-        """
-        MOD = (1<<64)-59  # largest 64-bit prime
+        
+        MOD = (1<<64)-59 
         BASE = 113
         POW = [1]
         def add(a, b):
@@ -57,9 +53,5 @@ import itertools
 # brute force
 class Solution2(object):
     def twoEditWords(self, queries, dictionary):
-        """
-        :type queries: List[str]
-        :type dictionary: List[str]
-        :rtype: List[str]
-        """
+        
         return [q for q in queries if any(sum(c1 != c2 for c1, c2 in zip(q, d)) <= 2 for d in dictionary)]

@@ -8,10 +8,7 @@ class TreeNode(object):
 
 class Solution(object):
     def str2tree(self, s):
-        """
-        :type s: str
-        :rtype: TreeNode
-        """
+        
         def str2treeHelper(s, i):
             start = i
             if s[i] == '-': i += 1

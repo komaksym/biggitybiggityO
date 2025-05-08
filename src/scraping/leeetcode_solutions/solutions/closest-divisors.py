@@ -2,10 +2,7 @@
 
 class Solution(object):
     def closestDivisors(self, num):
-        """
-        :type num: int
-        :rtype: List[int]
-        """
+        
         def divisors(n):
             for d in reversed(range(1, int(n**0.5)+1)):
                 if n % d == 0:
@@ -19,10 +16,7 @@ class Solution(object):
 # Time:  O(sqrt(n))
 class Solution2(object):
     def closestDivisors(self, num):
-        """
-        :type num: int
-        :rtype: List[int]
-        """
+        
         result, d = [1, num+1], 1
         while d*d <= num+2:
             if (num+2) % d == 0:

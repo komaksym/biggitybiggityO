@@ -3,12 +3,7 @@
 # sort, binary search, greedy, two pointers, sliding window
 class Solution(object):
     def maxDistance(self, side, points, k):
-        """
-        :type side: int
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -53,12 +48,7 @@ class Solution(object):
 # sort, binary search, greedy, two pointers, sliding window
 class Solution2(object):
     def maxDistance(self, side, points, k):
-        """
-        :type side: int
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -110,12 +100,7 @@ import bisect
 # sort, binary search, greedy
 class Solution3(object):
     def maxDistance(self, side, points, k):
-        """
-        :type side: int
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -146,7 +131,7 @@ class Solution3(object):
         p.sort()
         result = 1
         for i in range(len(p)-k+1):
-            if p[-1]-p[i] <= result*(k-1):  # to speed up
+            if p[-1]-p[i] <= result*(k-1): 
                 break
             result = binary_search_right(result+1, 4*side//k, lambda x: check(i, x))
         return result
@@ -159,12 +144,7 @@ import bisect
 # sort, binary search, greedy
 class Solution4(object):
     def maxDistance(self, side, points, k):
-        """
-        :type side: int
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

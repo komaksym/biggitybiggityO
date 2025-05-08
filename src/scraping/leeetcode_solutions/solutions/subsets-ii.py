@@ -2,17 +2,14 @@
 
 class Solution(object):
     def subsetsWithDup(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
+        
         nums.sort()
         result = [[]]
         previous_size = 0
         for i in range(len(nums)):
             size = len(result)
             for j in range(size):
-                # Only union non-duplicate element or new union set.
+               
                 if i == 0 or nums[i] != nums[i - 1] or j >= previous_size:
                     result.append(list(result[j]))
                     result[-1].append(nums[i])
@@ -23,10 +20,7 @@ class Solution(object):
 # Time:  O(n * 2^n) ~ O((n * 2^n)^2)
 class Solution2(object):
     def subsetsWithDup(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
+        
         result = []
         i, count = 0, 1 << len(nums)
         nums.sort()
@@ -46,10 +40,7 @@ class Solution2(object):
 # Time:  O(n * 2^n) ~ O((n * 2^n)^2)
 class Solution3(object):
     def subsetsWithDup(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
+        
         result = []
         self.subsetsWithDupRecu(result, [], sorted(nums))
         return result

@@ -6,16 +6,13 @@ import collections
 # combinatorics
 class Solution(object):
     def countAnagrams(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def lazy_init(n):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
 
         def factorial(n):

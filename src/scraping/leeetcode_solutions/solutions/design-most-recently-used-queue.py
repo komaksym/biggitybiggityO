@@ -7,16 +7,11 @@ from sortedcontainers import SortedList
 class MRUQueue(object):
 
     def __init__(self, n):
-        """
-        :type n: int
-        """
+        
         self.__sl = SortedList((i-1, i) for i in range(1, n+1))  
 
     def fetch(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
+        
         last, _ = self.__sl[-1]
         _, val = self.__sl.pop(k-1)
         self.__sl.add((last+1, val))
@@ -24,10 +19,10 @@ class MRUQueue(object):
 
 
 # Time:  ctor:  O(n + m), m is the max number of calls
-class BIT(object):  # 0-indexed.
+class BIT(object): 
     def __init__(self, n):
         MAX_CALLS = 2000
-        self.__bit = [0]*(n+MAX_CALLS+1)  # Extra one for dummy node.
+        self.__bit = [0]*(n+MAX_CALLS+1) 
         for i in range(1, len(self.__bit)):
             self.__bit[i] = (1 if i-1 < n else 0) + self.__bit[i-1]
         for i in reversed(range(1, len(self.__bit))):
@@ -35,13 +30,13 @@ class BIT(object):  # 0-indexed.
             self.__bit[i] -= self.__bit[last_i]
 
     def add(self, i, val):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         while i < len(self.__bit):
             self.__bit[i] += val
             i += (i & -i)
 
     def query(self, i):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         ret = 0
         while i > 0:
             ret += self.__bit[i]
@@ -51,31 +46,26 @@ class BIT(object):  # 0-indexed.
     def binary_lift(self, k):
         floor_log2_n = (len(self.__bit)-1).bit_length()-1
         pow_i = 2**floor_log2_n
-        total = pos = 0  # 1-indexed
-        for i in reversed(range(floor_log2_n+1)):  # O(logN)
+        total = pos = 0 
+        for i in reversed(range(floor_log2_n+1)): 
             if pos+pow_i < len(self.__bit) and not (total+self.__bit[pos+pow_i] >= k):
                 total += self.__bit[pos+pow_i]
                 pos += pow_i
             pow_i >>= 1
-        return (pos+1)-1  # 0-indexed
+        return (pos+1)-1 
 
 
 # fenwick / bit solution
 class MRUQueue2(object):
 
     def __init__(self, n):
-        """
-        :type n: int
-        """
+        
         self.__bit = BIT(n)
         self.__lookup = {i:i+1 for i in range(n)}
         self.__curr = n
         
     def fetch(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
+        
         pos = self.__bit.binary_lift(k)  
         val = self.__lookup.pop(pos)
         self.__bit.add(pos, -1)
@@ -94,18 +84,13 @@ import math
 class MRUQueue3(object):
 
     def __init__(self, n):
-        """
-        :type n: int
-        """
+        
         self.__buckets = [collections.deque() for _ in range(int(math.ceil(n**0.5)))]
         for i in range(n):
             self.__buckets[i//len(self.__buckets)].append(i+1)
 
     def fetch(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
+        
         k -= 1
         left, idx = divmod(k, len(self.__buckets))
         val = self.__buckets[left][idx]

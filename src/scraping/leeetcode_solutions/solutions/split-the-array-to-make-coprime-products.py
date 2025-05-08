@@ -6,10 +6,7 @@ import collections
 # number theory
 class Solution(object):
     def findValidSplit(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def factorize(x):
             result = []
             d = 2

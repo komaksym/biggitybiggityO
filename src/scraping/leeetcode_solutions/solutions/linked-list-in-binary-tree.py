@@ -18,11 +18,7 @@ class TreeNode(object):
 # kmp solution
 class Solution(object):
     def isSubPath(self, head, root):
-        """
-        :type head: ListNode
-        :type root: TreeNode
-        :rtype: bool
-        """
+        
         def getPrefix(head):
             pattern, prefix = [head.val], [-1]
             j = -1
@@ -59,11 +55,7 @@ class Solution(object):
 # dfs solution
 class Solution2(object):
     def isSubPath(self, head, root):
-        """
-        :type head: ListNode
-        :type root: TreeNode
-        :rtype: bool
-        """
+        
         def dfs(head, root):
             if not head:
                 return True

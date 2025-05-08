@@ -2,11 +2,7 @@
 
 class Solution(object):
     def gcdOfStrings(self, str1, str2):
-        """
-        :type str1: str
-        :type str2: str
-        :rtype: str
-        """
+        
         def check(s, common):
             i = 0
             for c in s:
@@ -15,7 +11,7 @@ class Solution(object):
                 i = (i+1)%len(common)
             return True
     
-        def gcd(a, b):  # Time: O(log(min(a, b)))
+        def gcd(a, b): 
             while b:
                 a, b = b, a % b
             return a

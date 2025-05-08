@@ -3,11 +3,7 @@
 # dp, greedy, kadane's algorithm
 class Solution(object):
     def maximumStrength(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         dp = [0]*(len(nums)+1)
         for i in range(k):
             new_dp = [float("-inf")]*(len(nums)+1)
@@ -21,11 +17,7 @@ class Solution(object):
 # dp, greedy, kadane's algorithm
 class Solution2(object):
     def maximumStrength(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         dp = [[float("-inf")]*(len(nums)+1) for _ in range(k+1)]
         dp[0] = [0]*(len(nums)+1)
         for i in range(k):

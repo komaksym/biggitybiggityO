@@ -6,12 +6,7 @@ import math
 # sort, two pointers, sliding window, fast exponentiation
 class Solution(object):
     def getFinalState(self, nums, k, multiplier):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type multiplier: int
-        :rtype: List[int]
-        """
+        
         EPS = 1e-15
         def count(x, target):
             return int(target-x+EPS)
@@ -47,12 +42,7 @@ import math
 # binary search, sort, fast exponentiation
 class Solution2(object):
     def getFinalState(self, nums, k, multiplier):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type multiplier: int
-        :rtype: List[int]
-        """
+        
         EPS = 1e-15
         def binary_search_right(left, right, check):
             while left <= right:
@@ -100,12 +90,7 @@ import heapq
 # heap, sort, fast exponentiation
 class Solution3(object):
     def getFinalState(self, nums, k, multiplier):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type multiplier: int
-        :rtype: List[int]
-        """
+        
         if multiplier == 1:
             return nums
         min_heap = [(x, i) for i, x in enumerate(nums)]
@@ -134,12 +119,7 @@ import heapq
 # simulation, heap
 class Solution4(object):
     def getFinalState(self, nums, k, multiplier):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type multiplier: int
-        :rtype: List[int]
-        """
+        
         if multiplier == 1:
             return nums
         min_heap = [(x, i) for i, x in enumerate(nums)]
@@ -155,12 +135,7 @@ class Solution4(object):
 # simulation
 class Solution5(object):
     def getFinalState(self, nums, k, multiplier):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type multiplier: int
-        :rtype: List[int]
-        """
+        
         if multiplier == 1:
             return nums
         for _ in range(k):

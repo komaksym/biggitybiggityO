@@ -2,10 +2,7 @@
 
 class Solution(object):
     def validTicTacToe(self, board):
-        """
-        :type board: List[str]
-        :rtype: bool
-        """
+        
         def win(board, player):
             for i in range(3):
                 if all(board[i][j] == player for j in range(3)):

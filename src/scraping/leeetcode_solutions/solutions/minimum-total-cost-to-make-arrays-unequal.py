@@ -7,11 +7,7 @@ import itertools
 # greedy
 class Solution(object):
     def minimumTotalCost(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
+        
         cnt = collections.Counter()
         result = 0
         for i, (x, y) in enumerate(zip(nums1, nums2)):

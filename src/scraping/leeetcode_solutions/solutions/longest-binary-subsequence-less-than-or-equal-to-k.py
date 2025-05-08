@@ -3,11 +3,7 @@
 # greedy
 class Solution(object):
     def longestSubsequence(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
+        
         result, base = 0, 1
         for i in reversed(range(len(s))):
             if s[i] == '0':

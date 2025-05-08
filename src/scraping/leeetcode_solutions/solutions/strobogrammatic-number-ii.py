@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findStrobogrammatic(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
+        
         lookup = {'0':'0', '1':'1', '6':'9', '8':'8', '9':'6'}
         result = ['0', '1', '8'] if n%2 else ['']
         for i in range(n%2, n, 2):
@@ -16,10 +13,7 @@ class Solution(object):
 # Time:  O(n * 5^(n/2))
 class Solution2(object):
     def findStrobogrammatic(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
+        
         lookup = {'0':'0', '1':'1', '6':'9', '8':'8', '9':'6'}
         def findStrobogrammaticRecu(n, k):
             if k == 0:

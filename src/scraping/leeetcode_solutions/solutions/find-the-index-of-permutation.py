@@ -3,23 +3,20 @@
 # bit, fenwick tree, combinatorics
 class Solution(object):
     def getPermutationIndex(self, perm):
-        """
-        :type perm: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, n):
-                self.__bit = [0]*(n+1)  # Extra one for dummy node.
+                self.__bit = [0]*(n+1) 
 
             def add(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] = (self.__bit[i]+val) % MOD
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = 0
                 while i > 0:
                     ret = (ret+self.__bit[i]) % MOD
@@ -42,29 +39,26 @@ class Solution(object):
 # bit, fenwick tree, combinatorics
 class Solution2(object):
     def getPermutationIndex(self, perm):
-        """
-        :type perm: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         fact = [1]*2            
         def factorial(n):
-            while len(fact) <= n:  # lazy initialization
+            while len(fact) <= n: 
                 fact.append(fact[-1]*len(fact) % MOD)
             return fact[n]
 
-        class BIT(object):  # 0-indexed.
+        class BIT(object): 
             def __init__(self, n):
-                self.__bit = [0]*(n+1)  # Extra one for dummy node.
+                self.__bit = [0]*(n+1) 
 
             def add(self, i, val):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 while i < len(self.__bit):
                     self.__bit[i] = (self.__bit[i]+val) % MOD
                     i += (i & -i)
 
             def query(self, i):
-                i += 1  # Extra one for dummy node.
+                i += 1 
                 ret = 0
                 while i > 0:
                     ret = (ret+self.__bit[i]) % MOD

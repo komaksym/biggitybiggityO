@@ -3,10 +3,7 @@
 
 class Solution(object):
     def primePalindrome(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
+        
         def is_prime(n):
             if n < 2 or n % 2 == 0:
                 return n == 2

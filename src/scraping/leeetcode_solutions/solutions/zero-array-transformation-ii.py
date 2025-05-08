@@ -3,11 +3,7 @@
 # binary search, line sweep
 class Solution(object):
     def minZeroArray(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: int
-        """
+        
         def binary_search(left, right, check):
             while left <= right:
                 mid = left+(right-left)//2

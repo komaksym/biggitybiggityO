@@ -6,11 +6,7 @@ import collections
 # freq table, prefix sum
 class Solution(object):
     def countSubarrays(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         idx = nums.index(k)
         lookup = collections.Counter()
         curr = 0

@@ -5,19 +5,18 @@ from functools import partial
 
 # Template:
 # https://github.com/kamyu104/GoogleKickStart-2020/blob/main/Round%20D/locked_doors.py
-class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of nodes
-    def __init__(self, children):
+class TreeInfos(object): 
         def preprocess(curr, parent, weight):
             if parent != -1:
                 W[curr].append(weight)
-                P[curr].append(parent)  # ancestors of the node i
+                P[curr].append(parent) 
             i = 0
             while i < len(P[curr]) and i < len(P[P[curr][i]]):
                 W[curr].append(max(W[curr][i], W[P[curr][i]][i]))
                 P[curr].append(P[P[curr][i]][i])
                 i += 1
             C[0] += 1
-            L[curr] = C[0]  # the subtree of the node i is represented by traversal index L[i]..R[i]
+            L[curr] = C[0] 
 
         def divide(curr, parent, weight):
             stk.append(partial(postprocess, curr))
@@ -28,7 +27,7 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
             stk.append(partial(preprocess, curr, parent, weight))
 
         def postprocess(curr):
-            R[curr] = C[0]  # the subtree of the node i is represented by traversal index L[i]..R[i]
+            R[curr] = C[0] 
 
         N = len(children)
         L, R, P, W, C = [0]*N, [0]*N, [[] for _ in range(N)], [[] for _ in range(N)], [-1]
@@ -41,13 +40,13 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
                 stk.pop()()
         self.L, self.R, self.P, self.W = L, R, P, W
     
-    def is_ancestor(self, a, b):  # includes itself
+    def is_ancestor(self, a, b): 
         return self.L[a] <= self.L[b] <= self.R[b] <= self.R[a]
     
     def max_weights(self, a, b):
         def binary_lift(a, b):
             w = 0
-            for i in reversed(range(len(self.P[a]))):  # O(logN)
+            for i in reversed(range(len(self.P[a]))): 
                 if i < len(self.P[a]) and not self.is_ancestor(self.P[a][i], b):
                     w = max(w, self.W[a][i])
                     a = self.P[a][i]
@@ -61,14 +60,13 @@ class TreeInfos(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of 
         return w
 
     
-class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
-    def __init__(self, n):
+class UnionFind(object): 
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -79,7 +77,7 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]:  # union by rank
+        if self.rank[x_root] < self.rank[y_root]: 
             self.set[x_root] = y_root
         elif self.rank[x_root] > self.rank[y_root]:
             self.set[y_root] = x_root
@@ -92,10 +90,7 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 class DistanceLimitedPathsExist(object):
 
     def __init__(self, n, edgeList):
-        """
-        :type n: int
-        :type edgeList: List[List[int]]
-        """
+        
         edgeList.sort(key = lambda x:x[2])
         self.__uf = UnionFind(n)
         self.__adj = [[] for _ in range(n)]
@@ -107,12 +102,7 @@ class DistanceLimitedPathsExist(object):
         self.__tree_infos = TreeInfos(self.__adj)
 
     def query(self, p, q, limit):
-        """
-        :type p: int
-        :type q: int
-        :type limit: int
-        :rtype: bool
-        """
+        
         if self.__uf.find_set(p) != self.__uf.find_set(q):
             return False
         return self.__tree_infos.max_weights(p, q) < limit
@@ -128,34 +118,23 @@ import bisect
 class SnapshotArray(object):
 
     def __init__(self, length):
-        """
-        :type length: int
-        """
+        
         self.__snaps = collections.defaultdict(lambda:sortedcontainers.SortedList([(0, 0)]))
 
     def set(self, index, val, snap_id):
-        """
-        :type index: int
-        :type val: int
-        :rtype: None
-        """
+        
         i = self.__snaps[index].bisect_left((snap_id, float("-inf")))
         if i != len(self.__snaps[index]) and self.__snaps[index][i][0] == snap_id:
             self.__snaps[index].remove(self.__snaps[index][i])
         self.__snaps[index].add((snap_id, val))
 
     def get(self, index, snap_id):
-        """
-        :type index: int
-        :type snap_id: int
-        :rtype: int
-        """
+        
         i = self.__snaps[index].bisect_left((snap_id+1, float("-inf"))) - 1
         return self.__snaps[index][i][1]   
  
 
-class VersionedUnionFind(object):  # Time: O(n * α(n)), Space: O(n)
-
+class VersionedUnionFind(object): 
     def __init__(self, n):
         self.snap_id = 0
         self.set = SnapshotArray(n)
@@ -165,7 +144,7 @@ class VersionedUnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 
     def find_set(self, x, snap_id):
         stk = []
-        while self.set.get(x, snap_id) != x:  # path compression
+        while self.set.get(x, snap_id) != x: 
             stk.append(x)
             x = self.set.get(x, snap_id)
         while stk:
@@ -177,7 +156,7 @@ class VersionedUnionFind(object):  # Time: O(n * α(n)), Space: O(n)
         y_root = self.find_set(y, self.snap_id)
         if x_root == y_root:
             return False
-        if self.rank.get(x_root, self.snap_id) < self.rank.get(y_root, self.snap_id):  # union by rank
+        if self.rank.get(x_root, self.snap_id) < self.rank.get(y_root, self.snap_id): 
             self.set.set(x_root, y_root, self.snap_id)
         elif self.rank.get(x_root, self.snap_id) > self.rank.get(y_root, self.snap_id):
             self.set.set(y_root, x_root, self.snap_id)
@@ -193,10 +172,7 @@ class VersionedUnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 class DistanceLimitedPathsExist2(object):
 
     def __init__(self, n, edgeList):
-        """
-        :type n: int
-        :type edgeList: List[List[int]]
-        """
+        
         edgeList.sort(key = lambda x:x[2])
         self.__uf = VersionedUnionFind(n)
         self.__weights = []
@@ -207,12 +183,7 @@ class DistanceLimitedPathsExist2(object):
             self.__weights.append(weight)  
 
     def query(self, p, q, limit):
-        """
-        :type p: int
-        :type q: int
-        :type limit: int
-        :rtype: bool
-        """
+        
         snap_id = bisect.bisect_left(self.__weights, limit)-1
         if snap_id == -1:
             return False

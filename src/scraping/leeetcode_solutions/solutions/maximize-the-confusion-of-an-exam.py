@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def maxConsecutiveAnswers(self, answerKey, k):
-        """
-        :type answerKey: str
-        :type k: int
-        :rtype: int
-        """
+        
         result = max_count = 0
         count = collections.Counter()
         for i in range(len(answerKey)):

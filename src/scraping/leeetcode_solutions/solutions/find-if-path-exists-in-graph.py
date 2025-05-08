@@ -6,13 +6,7 @@ import collections
 # bi-bfs solution
 class Solution(object):
     def validPath(self, n, edges, start, end):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type start: int
-        :type end: int
-        :rtype: bool
-        """
+        
         def bi_bfs(adj, start, target):
             left, right = {start}, {target}
             lookup = set()
@@ -45,13 +39,7 @@ class Solution(object):
 # bfs solution
 class Solution2(object):
     def validPath(self, n, edges, start, end):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type start: int
-        :type end: int
-        :rtype: bool
-        """
+        
         def bfs(adj, start, target):
             q = [start]
             lookup = set(q)
@@ -81,13 +69,7 @@ class Solution2(object):
 # dfs solution
 class Solution3(object):
     def validPath(self, n, edges, start, end):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type start: int
-        :type end: int
-        :rtype: bool
-        """
+        
         def dfs(adj, start, target):
             stk = [start]
             lookup = set(stk)

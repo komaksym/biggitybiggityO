@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maxDistance(self, arrays):
-        """
-        :type arrays: List[List[int]]
-        :rtype: int
-        """
+        
         result, min_val, max_val = 0,  arrays[0][0], arrays[0][-1]
         for i in range(1, len(arrays)):
             result = max(result, \

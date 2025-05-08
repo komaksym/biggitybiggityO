@@ -9,23 +9,16 @@ import bisect
 class MajorityChecker(object):
 
     def __init__(self, arr):
-        """
-        :type arr: List[int]
-        """
+        
         Q, ERROR_RATE = 10000, 0.001
-        self.__K = int(Q/ERROR_RATE).bit_length()  # floor(log2(Q/ERROR_RATE))+1 = 24
+        self.__K = int(Q/ERROR_RATE).bit_length() 
         self.__arr = arr
         self.__inv_idx = collections.defaultdict(list)
         for i, x in enumerate(self.__arr):
             self.__inv_idx[x].append(i)
 
     def query(self, left, right, threshold):
-        """
-        :type left: int
-        :type right: int
-        :type threshold: int
-        :rtype: int
-        """
+        
         def count(inv_idx, m, left, right):
             return bisect.bisect_right(inv_idx[m], right) - \
                    bisect.bisect_left(inv_idx[m], left)
@@ -46,9 +39,7 @@ import bisect
 class MajorityChecker2(object):
 
     def __init__(self, arr):
-        """
-        :type arr: List[int]
-        """
+        
         self.__arr = arr
         self.__inv_idx = collections.defaultdict(list)
         for i, x in enumerate(self.__arr):
@@ -57,12 +48,7 @@ class MajorityChecker2(object):
         self.__majorities = [i for i, group in self.__inv_idx.items() if len(group) >= self.__bound]
 
     def query(self, left, right, threshold):
-        """
-        :type left: int
-        :type right: int
-        :type threshold: int
-        :rtype: int
-        """
+        
         def count(inv_idx, m, left, right):
             return bisect.bisect_right(inv_idx[m], right) - \
                    bisect.bisect_left(inv_idx[m], left)
@@ -95,12 +81,9 @@ class MajorityChecker2(object):
 import functools
 
 
-class SegmentTreeRecu(object):  # 0-based index
+class SegmentTreeRecu(object): 
     def __init__(self, nums, count):
-        """
-        initialize your data structure here.
-        :type nums: List[int]
-        """
+        
         N = len(nums)
         self.__original_length = N
         self.__tree_length = 2**(N.bit_length() + (N&(N-1) != 0))-1
@@ -151,9 +134,7 @@ class SegmentTreeRecu(object):  # 0-based index
 class MajorityChecker3(object):
 
     def __init__(self, arr):
-        """
-        :type arr: List[int]
-        """
+        
         def count(inv_idx, m, left, right):
             return bisect.bisect_right(inv_idx[m], right) - \
                    bisect.bisect_left(inv_idx[m], left)
@@ -165,12 +146,7 @@ class MajorityChecker3(object):
         self.__segment_tree = SegmentTreeRecu(arr, functools.partial(count, self.__inv_idx))
 
     def query(self, left, right, threshold):
-        """
-        :type left: int
-        :type right: int
-        :type threshold: int
-        :rtype: int
-        """
+        
         result = self.__segment_tree.query(left, right)
         if result[1] >= threshold:
             return result[0]
@@ -186,9 +162,7 @@ import bisect
 class MajorityChecker4(object):
 
     def __init__(self, arr):
-        """
-        :type arr: List[int]
-        """
+        
         self.__arr = arr
         self.__inv_idx = collections.defaultdict(list)
         for i, x in enumerate(self.__arr):
@@ -200,12 +174,7 @@ class MajorityChecker4(object):
             self.__bucket_majorities.append(self.__boyer_moore_majority_vote(self.__arr, left, right))
 
     def query(self, left, right, threshold):
-        """
-        :type left: int
-        :type right: int
-        :type threshold: int
-        :rtype: int
-        """
+        
         def count(inv_idx, m, left, right):
             return bisect.bisect_right(inv_idx[m], right) - \
                    bisect.bisect_left(inv_idx[m], left)

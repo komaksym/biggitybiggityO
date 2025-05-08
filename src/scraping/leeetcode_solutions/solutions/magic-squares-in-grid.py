@@ -3,10 +3,7 @@
 
 class Solution(object):
     def numMagicSquaresInside(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         def magic(grid, r, c):
             expect = k * (k**2+1) // 2
             nums = set()

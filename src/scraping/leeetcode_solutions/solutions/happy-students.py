@@ -4,10 +4,7 @@
 # freq table
 class Solution(object):
     def countWays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         cnt = [0]*(len(nums)+1)
         for x in nums:
             cnt[x] += 1
@@ -24,9 +21,6 @@ class Solution(object):
 # sort, greedy
 class Solution2(object):
     def countWays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         nums.sort()
         return sum((i == 0 or nums[i-1] < i) and (i == len(nums) or nums[i] > i) for i in range(len(nums)+1))

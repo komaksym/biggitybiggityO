@@ -6,11 +6,7 @@ import itertools
 # knapsack dp
 class Solution(object):
     def paintWalls(self, cost, time):
-        """
-        :type cost: List[int]
-        :type time: List[int]
-        :rtype: int
-        """
+        
         dp = [float("inf")]*(len(cost)+1)
         dp[0] = 0
         for c, t in zip(cost, time):

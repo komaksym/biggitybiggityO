@@ -3,10 +3,7 @@
 # tree
 class Solution(object):
     def createBinaryTree(self, descriptions):
-        """
-        :type descriptions: List[List[int]]
-        :rtype: Optional[TreeNode]
-        """
+        
         nodes = {}
         children = set()
         for p, c, l in descriptions:

@@ -9,10 +9,7 @@ class Node(object):
 
 class Solution(object):
     def cloneTree(self, root):
-        """
-        :type root: Node
-        :rtype: Node
-        """
+        
         result = [None]
         stk = [(1, (root, result))]
         while stk:
@@ -35,10 +32,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def cloneTree(self, root):
-        """
-        :type root: Node
-        :rtype: Node
-        """
+        
         def dfs(node):
             if not node:
                 return None

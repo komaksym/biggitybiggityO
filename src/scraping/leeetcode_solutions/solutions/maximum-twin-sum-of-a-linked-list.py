@@ -9,10 +9,7 @@ class ListNode(object):
 
 class Solution(object):
     def pairSum(self, head):
-        """
-        :type head: Optional[ListNode]
-        :rtype: int
-        """
+        
         def reverseList(head):
             dummy = ListNode()
             while head:

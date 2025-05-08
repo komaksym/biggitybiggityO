@@ -3,8 +3,5 @@
 # number theory, basel problem
 class Solution(object):
     def maximumSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         return max(sum(nums[i*x**2-1] for x in range(1, int((len(nums)//i)**0.5)+1)) for i in range(1, len(nums)+1))

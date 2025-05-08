@@ -1,9 +1,9 @@
 # Time:  O(k * n^k)
 
 class Solution(object):
-    # @param candidates, a list of integers
-    # @param target, integer
-    # @return a list of lists of integers
+   
+   
+   
     def combinationSum(self, candidates, target):
         result = []
         self.combinationSumRecu(sorted(candidates), result, 0, [], target)

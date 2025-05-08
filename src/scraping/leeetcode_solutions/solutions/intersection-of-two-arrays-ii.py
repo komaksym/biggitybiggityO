@@ -1,27 +1,20 @@
 # If the given array is not sorted and the memory is unlimited:
 #   - Time:  O(m + n)
-#   - Space: O(min(m, n))
-# elif the given array is already sorted:
+#   -
 #   if m << n or m >> n:
 #     - Time:  O(min(m, n) * log(max(m, n)))
-#     - Space: O(1)
-#   else:
+#     -
 #     - Time:  O(m + n)
 #     - Soace: O(1)
 # else: (the given array is not sorted and the memory is limited)
 #     - Time:  O(max(m, n) * log(max(m, n)))
-#     - Space: O(1)
-
+#     - 
 import collections
 
 
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
+        
         if len(nums1) > len(nums2):
             return self.intersect(nums2, nums1)
 
@@ -38,11 +31,7 @@ class Solution(object):
         return res
 
     def intersect2(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
+        
         c = collections.Counter(nums1) & collections.Counter(nums2)
         intersect = []
         for i in c:
@@ -55,11 +44,7 @@ class Solution(object):
 # Binary search solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
+        
         if len(nums1) > len(nums2):
             return self.intersect(nums2, nums1)
 
@@ -72,7 +57,7 @@ class Solution(object):
                     left = mid + 1
             return left
 
-        nums1.sort(), nums2.sort()  # Make sure it is sorted, doesn't count in time.
+        nums1.sort(), nums2.sort() 
 
         res = []
         left = 0
@@ -90,12 +75,8 @@ class Solution(object):
 # Two pointers solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
-        nums1.sort(), nums2.sort()  # Make sure it is sorted, doesn't count in time.
+        
+        nums1.sort(), nums2.sort() 
 
         res = []
 
@@ -118,12 +99,8 @@ class Solution(object):
 # Two pointers solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
-        nums1.sort(), nums2.sort()  # O(max(m, n) * log(max(m, n)))
+        
+        nums1.sort(), nums2.sort() 
 
         res = []
 

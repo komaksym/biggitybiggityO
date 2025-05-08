@@ -3,11 +3,7 @@
 # kmp solution
 class Solution(object):
     def removeOccurrences(self, s, part):
-        """
-        :type s: str
-        :type part: str
-        :rtype: str
-        """
+        
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

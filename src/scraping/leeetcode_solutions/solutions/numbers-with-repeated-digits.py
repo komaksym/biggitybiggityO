@@ -2,10 +2,7 @@
 
 class Solution(object):
     def numDupDigitsAtMostN(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
+        
         def P(m, n):
             result = 1
             for _ in range(n):
@@ -16,18 +13,18 @@ class Solution(object):
         digits = list(map(int, str(N+1)))
         result = 0
 
-        # Given 321
-        #
-        # 1. count numbers without repeated digits:
-        # - X
-        # - XX
+       
+       
+       
+       
+       
         for i in range(1, len(digits)):
             result += P(9, 1)*P(9, i-1)
         
-        # 2. count numbers without repeated digits:
-        # - 1XX ~ 3XX
-        # - 30X ~ 32X
-        # - 320 ~ 321
+       
+       
+       
+       
         prefix_set = set()
         for i, x in enumerate(digits):
             for y in range(1 if i == 0 else 0, x):

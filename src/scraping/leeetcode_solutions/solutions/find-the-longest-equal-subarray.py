@@ -6,11 +6,7 @@ import collections
 # freq table, two pointers, sliding window
 class Solution(object):
     def longestEqualSubarray(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         cnt = collections.Counter()
         result = left = 0
         for right in range(len(nums)):

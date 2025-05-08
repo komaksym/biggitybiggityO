@@ -2,16 +2,7 @@
 
 class Solution(object):
     def checkOverlap(self, radius, x_center, y_center, x1, y1, x2, y2):
-        """
-        :type radius: int
-        :type x_center: int
-        :type y_center: int
-        :type x1: int
-        :type y1: int
-        :type x2: int
-        :type y2: int
-        :rtype: bool
-        """
+        
         x1 -= x_center
         y1 -= y_center
         x2 -= x_center
@@ -24,16 +15,7 @@ class Solution(object):
 # Time:  O(1)
 class Solution2(object):
     def checkOverlap(self, radius, x_center, y_center, x1, y1, x2, y2):
-        """
-        :type radius: int
-        :type x_center: int
-        :type y_center: int
-        :type x1: int
-        :type y1: int
-        :type x2: int
-        :type y2: int
-        :rtype: bool
-        """
+        
         x1 -= x_center
         y1 -= y_center
         x2 -= x_center

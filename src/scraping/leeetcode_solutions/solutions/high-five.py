@@ -6,10 +6,7 @@ import heapq
 
 class Solution(object):
     def highFive(self, items):
-        """
-        :type items: List[List[int]]
-        :rtype: List[List[int]]
-        """
+        
         min_heaps = collections.defaultdict(list)
         for i, val in items:
             heapq.heappush(min_heaps[i], val)

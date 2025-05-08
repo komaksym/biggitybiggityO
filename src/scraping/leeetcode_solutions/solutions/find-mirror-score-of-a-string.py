@@ -3,10 +3,7 @@
 # simulation, hash table, stack
 class Solution(object):
     def calculateScore(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result = 0
         lookup = [[] for _ in range(26)]
         for i, x in enumerate(s):

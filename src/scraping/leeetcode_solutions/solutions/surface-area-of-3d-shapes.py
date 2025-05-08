@@ -2,10 +2,7 @@
 
 class Solution(object):
     def surfaceArea(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         result = 0
         for i in range(len(grid)):
             for j in range(len(grid)):

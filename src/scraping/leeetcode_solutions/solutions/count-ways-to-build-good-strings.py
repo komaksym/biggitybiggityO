@@ -3,13 +3,7 @@
 # dp
 class Solution(object):
     def countGoodStrings(self, low, high, zero, one):
-        """
-        :type low: int
-        :type high: int
-        :type zero: int
-        :type one: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         result = 0
         dp = [0]*(high+1)

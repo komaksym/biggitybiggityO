@@ -8,8 +8,8 @@ class TreeNode(object):
 
 
 class Solution(object):
-    # @param root, a tree node
-    # @return a boolean
+   
+   
     def isBalanced(self, root):
         def getHeight(root):
             if root is None:

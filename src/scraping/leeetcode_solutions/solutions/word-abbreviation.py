@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def wordsAbbreviation(self, dict):
-        """
-        :type dict: List[str]
-        :rtype: List[str]
-        """
+        
         def isUnique(prefix, words):
             return sum(word.startswith(prefix) for word in words) == 1
 

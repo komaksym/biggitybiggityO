@@ -1,6 +1,6 @@
 # Time:  O(nlogn)
 
-class BIT(object):  # 0-indexed
+class BIT(object): 
     def __init__(self, n):
         self.__bit = [0]*(n+1)
 
@@ -22,10 +22,7 @@ class BIT(object):  # 0-indexed
 # greedy, bit, fenwick tree
 class Solution(object):
     def minMovesToMakePalindrome(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         idxs = [[] for _ in range(26)]
         for i, c in enumerate(s):
             idxs[ord(c)-ord('a')].append(i)
@@ -41,7 +38,7 @@ class Solution(object):
         bit = BIT(len(s))
         result = 0
         for i in targets:
-            result += i-bit.query(i-1)  # move from bit.query(i-1) to i
+            result += i-bit.query(i-1) 
             bit.add(i, 1)
         return result
 
@@ -50,10 +47,7 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def minMovesToMakePalindrome(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         s = list(s)
         result = 0
         while s:

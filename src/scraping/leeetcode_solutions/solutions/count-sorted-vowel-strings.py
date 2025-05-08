@@ -2,12 +2,8 @@
 
 class Solution(object):
     def countVowelStrings(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        def nCr(n, r):  # Time: O(n), Space: O(1)
-            if n-r < r:
+        
+        def nCr(n, r): 
                 return nCr(n, n-r)
             c = 1
             for k in range(1, r+1):
@@ -15,4 +11,4 @@ class Solution(object):
                 c //= k
             return c
     
-        return nCr(n+4, 4)  # H(5, n) = C(n+5-1, n) = C(n+4, 4)
+        return nCr(n+4, 4) 

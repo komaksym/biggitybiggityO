@@ -3,11 +3,7 @@
 # dp
 class Solution(object):
     def maximumProcessableQueries(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[int]
-        :rtype: int
-        """
+        
         dp = [[float("-inf")]*len(nums) for _ in range(len(nums))]
         dp[0][-1] = 0
         for l in reversed(range(1, len(nums))):

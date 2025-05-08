@@ -6,11 +6,8 @@ from functools import reduce
 
 class Solution(object):
     def hasGroupsSizeX(self, deck):
-        """
-        :type deck: List[int]
-        :rtype: bool
-        """
-        def gcd(a, b):  # Time: O((logn)^2)
+        
+        def gcd(a, b): 
             while b:
                 a, b = b, a % b
             return a

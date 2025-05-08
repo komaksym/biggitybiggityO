@@ -6,11 +6,7 @@ from random import randint
 
 class Solution(object):
     def kClosest(self, points, K):
-        """
-        :type points: List[List[int]]
-        :type K: int
-        :rtype: List[List[int]]
-        """
+        
         def dist(point):
             return point[0]**2 + point[1]**2
         
@@ -34,7 +30,7 @@ class Solution(object):
                     return
                 elif new_pivot_idx > k:
                     right = new_pivot_idx - 1
-                else:  # new_pivot_idx < k.
+                else: 
                     left = new_pivot_idx + 1
                     
         kthElement(points, K-1, lambda a, b: dist(a) < dist(b))
@@ -47,11 +43,7 @@ import heapq
 
 class Solution2(object):
     def kClosest(self, points, K):
-        """
-        :type points: List[List[int]]
-        :type K: int
-        :rtype: List[List[int]]
-        """
+        
         def dist(point):
             return point[0]**2 + point[1]**2
         

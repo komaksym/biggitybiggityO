@@ -10,18 +10,12 @@ class ATM(object):
         self.__cnt = [0]*len(self.__vals)
 
     def deposit(self, banknotesCount):
-        """
-        :type banknotesCount: List[int]
-        :rtype: None
-        """
+        
         for i, x in enumerate(banknotesCount):
             self.__cnt[i] += x
 
     def withdraw(self, amount):
-        """
-        :type amount: int
-        :rtype: List[int]
-        """
+        
         result = [0]*len(self.__cnt)
         for i in reversed(range(len(self.__vals))):
             result[i] = min(amount//self.__vals[i], self.__cnt[i])

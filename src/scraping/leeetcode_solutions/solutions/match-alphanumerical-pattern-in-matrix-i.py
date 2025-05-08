@@ -3,11 +3,7 @@
 # brute force, hash table
 class Solution(object):
     def findPattern(self, board, pattern):
-        """
-        :type board: List[List[int]]
-        :type pattern: List[str]
-        :rtype: List[int]
-        """
+        
         def check(i, j):
             lookup = [-1]*26
             lookup2 = [False]*10

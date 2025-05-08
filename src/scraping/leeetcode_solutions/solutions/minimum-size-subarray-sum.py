@@ -1,9 +1,9 @@
 # Time:  O(n)
 
 class Solution(object):
-    # @param {integer} s
-    # @param {integer[]} nums
-    # @return {integer}
+   
+   
+   
     def minSubArrayLen(self, s, nums):
         start = 0
         sum = 0
@@ -20,9 +20,9 @@ class Solution(object):
 # Time:  O(nlogn)
 # Binary search solution.
 class Solution2(object):
-    # @param {integer} s
-    # @param {integer[]} nums
-    # @return {integer}
+   
+   
+   
     def minSubArrayLen(self, s, nums):
         min_size = float("inf")
         sum_from_start = [n for n in nums]

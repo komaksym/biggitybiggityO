@@ -6,25 +6,18 @@
 class CustomStack(object):
 
     def __init__(self, maxSize):
-        """
-        :type maxSize: int
-        """
+        
         self.__max_size = maxSize
         self.__stk = []
 
     def push(self, x):
-        """
-        :type x: int
-        :rtype: None
-        """
+        
         if len(self.__stk) == self.__max_size:
             return
         self.__stk.append([x, 0])
 
     def pop(self):
-        """
-        :rtype: int
-        """
+        
         if not self.__stk:
             return -1
         x, inc = self.__stk.pop()
@@ -33,11 +26,7 @@ class CustomStack(object):
         return x + inc
 
     def increment(self, k, val):
-        """
-        :type k: int
-        :type val: int
-        :rtype: None
-        """
+        
         i = min(len(self.__stk), k)-1
         if i >= 0:
             self.__stk[i][1] += val

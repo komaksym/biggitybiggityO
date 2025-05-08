@@ -7,7 +7,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -21,11 +21,7 @@ class UnionFind(object):
 
 class Solution(object):
     def makeConnected(self, n, connections):
-        """
-        :type n: int
-        :type connections: List[List[int]]
-        :rtype: int
-        """
+        
         if len(connections) < n-1:
             return -1
         union_find = UnionFind(n)
@@ -40,11 +36,7 @@ import collections
 
 class Solution2(object):
     def makeConnected(self, n, connections):
-        """
-        :type n: int
-        :type connections: List[List[int]]
-        :rtype: int
-        """
+        
         def dfs(i, lookup):
             if i in lookup:
                 return 0

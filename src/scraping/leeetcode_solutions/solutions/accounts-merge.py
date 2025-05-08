@@ -14,7 +14,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -25,10 +25,7 @@ class UnionFind(object):
 
 class Solution(object):
     def accountsMerge(self, accounts):
-        """
-        :type accounts: List[List[str]]
-        :rtype: List[List[str]]
-        """
+        
         union_find = UnionFind()
         email_to_name = {}
         email_to_id = {}

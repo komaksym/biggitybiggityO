@@ -6,11 +6,7 @@ import heapq
 # binary search, greedy, heap
 class Solution(object):
     def earliestSecondToMarkIndices(self, nums, changeIndices):
-        """
-        :type nums: List[int]
-        :type changeIndices: List[int]
-        :rtype: int
-        """
+        
         def check(t):
             min_heap = []
             cnt = 0

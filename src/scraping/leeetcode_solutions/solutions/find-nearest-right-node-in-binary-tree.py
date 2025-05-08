@@ -8,11 +8,7 @@ class TreeNode(object):
 
 class Solution(object):
     def findNeartestRightNode(self, root, u):
-        """
-        :type root: TreeNode
-        :type u: TreeNode
-        :rtype: TreeNode
-        """
+        
         q = [root]
         while q:
             new_q = []

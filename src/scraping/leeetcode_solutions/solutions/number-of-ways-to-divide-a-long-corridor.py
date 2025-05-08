@@ -3,10 +3,7 @@
 # greedy, combinatorics
 class Solution(object):
     def numberOfWays(self, corridor):
-        """
-        :type corridor: str
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         result, cnt, j = 1, 0, -1
         for i, x in enumerate(corridor):

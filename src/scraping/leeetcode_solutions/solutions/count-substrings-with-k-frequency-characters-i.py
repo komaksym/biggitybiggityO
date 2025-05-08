@@ -3,11 +3,7 @@
 # freq table, two pointers, sliding window
 class Solution(object):
     def numberOfSubstrings(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
+        
         def count():
             cnt = [0]*26
             result= left = 0

@@ -2,16 +2,11 @@
 
 class Solution(object):
     def numOfArrays(self, n, m, k):
-        """
-        :type n: int
-        :type m: int
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9 + 7
-        # dp[l][i][j] = number of ways of constructing array length l with max element i at search cost j
+       
         dp = [[[0]*(k+1) for _ in range(m+1)] for _ in range(2)]
-        # prefix_dp[l][i][j] = sum(dp[l][i][j] for i in [1..i])
+       
         prefix_dp = [[[0]*(k+1) for _ in range(m+1)] for _ in range(2)]
         for i in range(1, m+1):
             dp[1][i][1] = 1

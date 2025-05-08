@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findTheLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         VOWELS = "aeiou"
         result, mask, lookup = 0, 0, [-2]*(2**len(VOWELS))
         lookup[0] = -1

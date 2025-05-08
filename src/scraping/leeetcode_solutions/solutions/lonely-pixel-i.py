@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findLonelyPixel(self, picture):
-        """
-        :type picture: List[List[str]]
-        :rtype: int
-        """
+        
         rows, cols = [0] * len(picture),  [0] * len(picture[0])
         for i in range(len(picture)):
             for j in range(len(picture[0])):
@@ -23,11 +20,7 @@ class Solution(object):
 
 class Solution2(object):
     def findLonelyPixel(self, picture):
-        """
-        :type picture: List[List[str]]
-        :type N: int
-        :rtype: int
-        """
+        
         return sum(col.count('B') == 1 == picture[col.index('B')].count('B') \
                for col in zip(*picture))
 

@@ -2,12 +2,8 @@
 
 class Solution(object):
     def coinChange(self, coins, amount):
-        """
-        :type coins: List[int]
-        :type amount: int
-        :rtype: int
-        """
-        INF = 0x7fffffff  # Using float("inf") would be slower.
+        
+        INF = 0x7fffffff 
         dp = [INF] * (amount + 1)
         dp[0] = 0
         for i in range(amount + 1):

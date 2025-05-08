@@ -6,8 +6,8 @@ class UndirectedGraphNode(object):
         self.neighbors = []
 
 class Solution(object):
-    # @param node, a undirected graph node
-    # @return a undirected graph node
+   
+   
     def cloneGraph(self, node):
         if node is None:
             return None

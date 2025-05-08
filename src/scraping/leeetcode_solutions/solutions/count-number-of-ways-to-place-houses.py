@@ -6,10 +6,7 @@ import itertools
 # matrix exponentiation
 class Solution(object):
     def countHousePlacements(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -26,17 +23,14 @@ class Solution(object):
 
         T = [[1, 1],
              [1, 0]]
-        return pow(matrix_mult([[2, 1]], matrix_expo(T, n-1))[0][0], 2, MOD)  # [a1, a0] * T^(n-1) = [an, a(n-1)]
+        return pow(matrix_mult([[2, 1]], matrix_expo(T, n-1))[0][0], 2, MOD) 
 
     
 # Time:  O(n)
 # dp
 class Solution2(object):
     def countHousePlacements(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         prev, curr = 1, 2
         for _ in range(n-1):

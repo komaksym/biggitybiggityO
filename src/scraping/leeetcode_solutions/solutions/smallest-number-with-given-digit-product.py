@@ -3,10 +3,7 @@
 # greedy
 class Solution(object):
     def smallestNumber(self, n):
-        """
-        :type n: int
-        :rtype: str
-        """
+        
         result = []
         for d in reversed(range(2, 9+1)):
             while n%d == 0:

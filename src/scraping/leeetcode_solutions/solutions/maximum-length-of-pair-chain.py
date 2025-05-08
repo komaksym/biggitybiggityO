@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findLongestChain(self, pairs):
-        """
-        :type pairs: List[List[int]]
-        :rtype: int
-        """
+        
         pairs.sort(key=lambda x: x[1])
         cnt, i = 0, 0
         for j in range(len(pairs)):

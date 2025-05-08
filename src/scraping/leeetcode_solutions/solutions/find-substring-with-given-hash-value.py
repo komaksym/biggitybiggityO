@@ -3,14 +3,7 @@
 # rolling hash
 class Solution(object):
     def subStrHash(self, s, power, modulo, k, hashValue):
-        """
-        :type s: str
-        :type power: int
-        :type modulo: int
-        :type k: int
-        :type hashValue: int
-        :rtype: str
-        """
+        
         h, idx = 0, -1
         pw = pow(power, k-1, modulo)
         for i in reversed(range(len(s))):

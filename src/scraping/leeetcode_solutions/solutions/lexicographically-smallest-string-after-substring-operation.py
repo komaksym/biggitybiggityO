@@ -3,10 +3,7 @@
 # greedy
 class Solution(object):
     def smallestString(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         result = list(s)
         i = next((i for i in range(len(s)) if s[i] != 'a'), len(s))
         if i == len(s):

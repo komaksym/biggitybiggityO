@@ -8,10 +8,7 @@ class Node(object):
 
 class Solution(object):
     def postorder(self, root):
-        """
-        :type root: Node
-        :rtype: List[int]
-        """
+        
         if not root:
             return []
         result, stack = [], [root]
@@ -26,10 +23,7 @@ class Solution(object):
 
 class Solution2(object):
     def postorder(self, root):
-        """
-        :type root: Node
-        :rtype: List[int]
-        """
+        
         def dfs(root, result):
             for child in root.children:
                 if child:

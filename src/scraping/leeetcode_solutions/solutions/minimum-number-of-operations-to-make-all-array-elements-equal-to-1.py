@@ -3,10 +3,7 @@
 # math, number theory, constructive algorithms
 class Solution(object):
     def minOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def gcd(a, b):
             while b:
                 a, b = b, a%b

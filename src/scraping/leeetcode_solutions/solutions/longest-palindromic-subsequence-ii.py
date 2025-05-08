@@ -2,10 +2,7 @@
 
 class Solution(object):
     def longestPalindromeSubseq(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         dp = [[[0]*26 for _ in range(len(s))] for _ in range(2)]
         for i in reversed(range(len(s))):
             for j in range(i+1, len(s)):

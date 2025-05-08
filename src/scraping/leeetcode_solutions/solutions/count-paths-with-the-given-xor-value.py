@@ -3,11 +3,7 @@
 # dp
 class Solution(object):
     def countPathsWithXorValue(self, grid, k):
-        """
-        :type grid: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         MAX_R = 16
         dp = [[0]*MAX_R for _ in range(len(grid[0]))]

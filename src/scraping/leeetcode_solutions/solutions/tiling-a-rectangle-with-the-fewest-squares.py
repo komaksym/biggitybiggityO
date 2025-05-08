@@ -2,11 +2,7 @@
 
 class Solution(object):
     def tilingRectangle(self, n, m):
-        """
-        :type n: int
-        :type m: int
-        :rtype: int
-        """
+        
         def find_next(board):
             for i in range(len(board)):
                 for j in range(len(board[0])):
@@ -33,10 +29,10 @@ class Solution(object):
                     board[r][c] = val
 
         def backtracking(board, count, result):
-            if count >= result[0]:  # pruning
+            if count >= result[0]: 
                 return
             i, j = find_next(board)
-            if (i, j) == (-1, -1):  # finished
+            if (i, j) == (-1, -1): 
                 result[0] = min(result[0], count)
                 return
             max_length = find_max_length(board, i, j)

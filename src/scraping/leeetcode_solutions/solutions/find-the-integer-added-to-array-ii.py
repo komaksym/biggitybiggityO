@@ -7,14 +7,10 @@ import collections
 # partial sort, freq table
 class Solution(object):
     def minimumAddedInteger(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
+        
         def check(cnt2, cnt1):
-            # return cnt2 <= cnt1  # for python3
-            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items())  # for python2
+           
+            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items()) 
             
         mx = max(nums2)
         cnt2 = collections.Counter(nums2)
@@ -28,16 +24,12 @@ import collections
 # partial sort, freq table
 class Solution2(object):
     def minimumAddedInteger(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
-        def check(cnt2, cnt1):
-            # return cnt2 <= cnt1  # for python3
-            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items())  # for python2
         
-        def topk(a, k):  # Time: O(k * n)
+        def check(cnt2, cnt1):
+           
+            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items()) 
+        
+        def topk(a, k): 
             result = [float("-inf")]*k
             for x in a:
                 for i in range(len(result)):
@@ -54,11 +46,7 @@ class Solution2(object):
 # sort
 class Solution3(object):
     def minimumAddedInteger(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
+        
         nums1.sort()
         nums2.sort()
         for i in range(3):

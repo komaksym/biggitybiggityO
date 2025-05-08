@@ -4,13 +4,7 @@
 # Reference: https://leetcode.com/problems/minimum-array-sum/solutions/6078002/o-n-log-n-greedy/
 class Solution(object):
     def minArraySum(self, nums, k, op1, op2):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type op1: int
-        :type op2: int
-        :rtype: int
-        """
+        
         nums.sort()
 
         left = next((i for i in range(len(nums)) if nums[i] >= k), len(nums))
@@ -62,13 +56,7 @@ class Solution(object):
 # dp
 class Solution2(object):
     def minArraySum(self, nums, k, op1, op2):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type op1: int
-        :type op2: int
-        :rtype: int
-        """
+        
         dp = [[sum(nums)]*(op2+1) for _ in range(op1+1)]
         for x in nums:
             for i in reversed(range(op1+1)):

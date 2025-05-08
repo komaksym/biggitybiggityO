@@ -3,11 +3,7 @@
 # memoization
 class Solution(object):
     def minimumOperationsToMakeEqual(self, x, y):
-        """
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
+        
         def memoization(x):
             if y >= x:
                 return y-x
@@ -23,11 +19,7 @@ class Solution(object):
 # bfs
 class Solution2(object):
     def minimumOperationsToMakeEqual(self, x, y):
-        """
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
+        
 
         if y >= x:
             return y-x

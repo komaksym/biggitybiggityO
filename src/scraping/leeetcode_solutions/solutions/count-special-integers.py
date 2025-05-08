@@ -3,10 +3,7 @@
 # combinatorics
 class Solution(object):
     def countSpecialNumbers(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         def P(m, n):
             result = 1
             for _ in range(n):

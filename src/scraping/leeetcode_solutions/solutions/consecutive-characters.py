@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maxPower(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         result, count = 1, 1
         for i in range(1, len(s)):
             if s[i] == s[i-1]:

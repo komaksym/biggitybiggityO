@@ -3,10 +3,7 @@
 # counting, simulation
 class Solution(object):
     def countCollisions(self, directions):
-        """
-        :type directions: str
-        :rtype: int
-        """
+        
         result = cnt = 0
         smooth = 1
         for x in directions:

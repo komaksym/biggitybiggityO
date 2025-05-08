@@ -3,11 +3,7 @@
 # binary search, greedy
 class Solution(object):
     def minCapability(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def check(x):
             cnt = i = 0
             while i < len(nums):
@@ -33,11 +29,7 @@ class Solution(object):
 # binary search, greedy
 class Solution2(object):
     def minCapability(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def check(x):
             cnt = i = 0
             while i < len(nums):

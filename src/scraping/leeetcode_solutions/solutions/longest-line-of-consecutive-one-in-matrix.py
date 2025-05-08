@@ -2,10 +2,7 @@
 
 class Solution(object):
     def longestLine(self, M):
-        """
-        :type M: List[List[int]]
-        :rtype: int
-        """
+        
         if not M: return 0
         result = 0
         dp = [[[0] * 4 for _ in range(len(M[0]))] for _ in range(2)]

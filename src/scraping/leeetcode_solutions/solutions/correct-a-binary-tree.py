@@ -8,10 +8,7 @@ class TreeNode(object):
 
 class Solution(object):
     def correctBinaryTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
+        
         q = {root:None}
         while q:
             new_q = {}

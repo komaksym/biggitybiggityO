@@ -2,10 +2,7 @@
 
 class Solution(object):
     def pathsWithMaxScore(self, board):
-        """
-        :type board: List[str]
-        :rtype: List[int]
-        """
+        
         MOD = 10**9+7
         directions = [[1, 0], [0, 1], [1, 1]]
         dp = [[[0, 0] for r in range(len(board[0])+1)]

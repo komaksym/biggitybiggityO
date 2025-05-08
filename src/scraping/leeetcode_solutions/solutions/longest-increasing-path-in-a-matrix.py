@@ -3,10 +3,7 @@
 # topological sort solution
 class Solution(object):
     def longestIncreasingPath(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: int
-        """
+        
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
         if not matrix:
@@ -49,10 +46,7 @@ class Solution(object):
 # dfs + memoization solution
 class Solution2(object):
     def longestIncreasingPath(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: int
-        """
+        
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
         def longestpath(matrix, i, j, max_lengths):

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def integerReplacement(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         result = 0
         while n != 1:
             b = n & 3
@@ -26,10 +23,7 @@ class Solution(object):
 # Recursive solution.
 class Solution2(object):
     def integerReplacement(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
+        
         if n < 4:
             return [0, 0, 1, 2][n]
         if n % 4 in (0, 2):

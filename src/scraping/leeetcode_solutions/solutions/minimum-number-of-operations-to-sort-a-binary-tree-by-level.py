@@ -8,10 +8,7 @@ class TreeNode(object):
 # bfs, sort
 class Solution(object):
     def minimumOperations(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: int
-        """
+        
         result = 0
         q = [root]
         while q:

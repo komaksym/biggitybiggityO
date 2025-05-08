@@ -4,12 +4,7 @@ from functools import reduce
 # dp, math, kmp
 class Solution(object):
     def numberOfWays(self, s, t, k):
-        """
-        :type s: str
-        :type t: str
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
@@ -45,12 +40,7 @@ class Solution(object):
 # dp, matrix exponentiation, kmp
 class Solution2(object):
     def numberOfWays(self, s, t, k):
-        """
-        :type s: str
-        :type t: str
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -92,7 +82,7 @@ class Solution2(object):
         T = [[0, 1],
              [n-1, (n-1)-1]]
         dp = [1, 0]
-        dp = matrix_mult([dp], matrix_expo(T, k))[0]  # [dp[0], dp[1]] * T^k
+        dp = matrix_mult([dp], matrix_expo(T, k))[0] 
         return reduce(lambda a, b: (a+b)%MOD, (dp[int(i != 0)] for i in KMP(s+s[:-1], t)), 0)
 
 
@@ -100,12 +90,7 @@ class Solution2(object):
 # dp, matrix exponentiation, z-function
 class Solution3(object):
     def numberOfWays(self, s, t, k):
-        """
-        :type s: str
-        :type t: str
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -120,9 +105,8 @@ class Solution3(object):
                 K /= 2
             return result
 
-        # Template: https://cp-algorithms.com/string/z-function.html
-        def z_function(s):  # Time: O(n), Space: O(n)
-            z = [0]*len(s)
+       
+        def z_function(s): 
             l, r = 0, 0
             for i in range(1, len(z)):
                 if i <= r:
@@ -137,6 +121,6 @@ class Solution3(object):
         T = [[0, 1],
              [n-1, (n-1)-1]]
         dp = [1, 0]
-        dp = matrix_mult([dp], matrix_expo(T, k))[0]  # [dp[0], dp[1]] * T^k
+        dp = matrix_mult([dp], matrix_expo(T, k))[0] 
         z = z_function(t+s+s[:-1])
         return reduce(lambda a, b: (a+b)%MOD, (dp[int(i != 0)] for i in range(n) if z[i+len(t)] >= len(t)), 0)

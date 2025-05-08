@@ -6,10 +6,7 @@ import heapq
 
 class Solution(object):
     def reorganizeString(self, S):
-        """
-        :type S: str
-        :rtype: str
-        """
+        
         counts = collections.Counter(S)
         if any(v > (len(S)+1)/2 for k, v in counts.items()):
             return ""

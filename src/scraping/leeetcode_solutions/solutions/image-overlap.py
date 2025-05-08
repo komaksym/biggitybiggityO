@@ -2,11 +2,7 @@
 
 class Solution(object):
     def largestOverlap(self, A, B):
-        """
-        :type A: List[List[int]]
-        :type B: List[List[int]]
-        :rtype: int
-        """
+        
         count = [0] * (2*len(A)-1)**2
         for i, row in enumerate(A):
             for j, v in enumerate(row):

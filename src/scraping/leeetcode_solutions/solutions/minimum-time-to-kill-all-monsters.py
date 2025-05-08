@@ -3,10 +3,7 @@
 # bitmasks, dp
 class Solution(object):
     def minimumTime(self, power):
-        """
-        :type power: List[int]
-        :rtype: int
-        """
+        
         def ceil_divide(a, b):
             return (a+b-1)//b
 

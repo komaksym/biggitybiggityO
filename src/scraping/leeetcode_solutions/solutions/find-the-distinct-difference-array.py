@@ -3,10 +3,7 @@
 # hash table, prefix sum
 class Solution(object):
     def distinctDifferenceArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         result = [0]*len(nums)
         lookup = set()
         for i in range(len(nums)):

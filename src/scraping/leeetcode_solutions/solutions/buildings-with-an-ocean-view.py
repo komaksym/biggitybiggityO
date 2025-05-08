@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findBuildings(self, heights):
-        """
-        :type heights: List[int]
-        :rtype: List[int]
-        """
+        
         result = []
         for i, h in enumerate(heights):
             while result and heights[result[-1]] <= h:
@@ -17,10 +14,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def findBuildings(self, heights):
-        """
-        :type heights: List[int]
-        :rtype: List[int]
-        """
+        
         result = []
         for i in reversed(range(len(heights))):
             if not result or heights[result[-1]] < heights[i]:

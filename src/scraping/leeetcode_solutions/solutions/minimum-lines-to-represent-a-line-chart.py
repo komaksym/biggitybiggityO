@@ -3,10 +3,7 @@
 # sort, math, gcd
 class Solution(object):
     def minimumLines(self, stockPrices):
-        """
-        :type stockPrices: List[List[int]]
-        :rtype: int
-        """
+        
         def gcd(a, b):
             while b:
                 a, b = b, a%b

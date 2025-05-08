@@ -6,10 +6,7 @@ import collections
 
 class Solution(object):
     def beforeAndAfterPuzzles(self, phrases):
-        """
-        :type phrases: List[str]
-        :rtype: List[str]
-        """
+        
         lookup = collections.defaultdict(list)
         for i, phrase in enumerate(phrases):
             right = phrase.rfind(' ')

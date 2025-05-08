@@ -2,10 +2,7 @@
 
 class Solution(object):
     def minOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def unique(nums):
             left = 0
             for right in range(1, len(nums)):
@@ -31,10 +28,7 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def minOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         n = len(nums)
         nums = sorted(set(nums))
         result = right = 0

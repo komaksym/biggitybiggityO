@@ -3,10 +3,7 @@
 # array
 class Solution(object):
     def resultArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         a, b = [nums[0]], [nums[1]]
         for i in range(2, len(nums)):
             if a[-1] > b[-1]:

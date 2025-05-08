@@ -7,12 +7,7 @@ import itertools
 # hash table
 class Solution(object):
     def mostPopularCreator(self, creators, ids, views):
-        """
-        :type creators: List[str]
-        :type ids: List[str]
-        :type views: List[int]
-        :rtype: List[List[str]]
-        """
+        
         cnt = collections.Counter()
         lookup = collections.defaultdict(lambda: (float("inf"), float("inf")))
         for c, i, v in zip(creators, ids, views):

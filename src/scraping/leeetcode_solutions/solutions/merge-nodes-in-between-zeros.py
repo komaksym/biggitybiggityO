@@ -8,10 +8,7 @@ class ListNode(object):
 # linked list
 class Solution(object):
     def mergeNodes(self, head):
-        """
-        :type head: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
+        
         curr, zero = head.__next__, head
         while curr:
             if curr.val:

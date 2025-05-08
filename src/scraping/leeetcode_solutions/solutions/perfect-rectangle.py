@@ -4,10 +4,7 @@ from collections import defaultdict
 
 class Solution(object):
     def isRectangleCover(self, rectangles):
-        """
-        :type rectangles: List[List[int]]
-        :rtype: bool
-        """
+        
         left = min(rec[0] for rec in rectangles)
         bottom = min(rec[1] for rec in rectangles)
         right = max(rec[2] for rec in rectangles)

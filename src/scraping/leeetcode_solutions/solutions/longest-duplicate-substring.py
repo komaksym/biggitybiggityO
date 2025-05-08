@@ -3,18 +3,14 @@
 # 1. other solution is to apply kasai's algorithm, refer to the link below:
 # - https://leetcode.com/problems/longest-duplicate-substring/discuss/290852/Suffix-array-clear-solution
 # 2. the best solution is to apply ukkonen's algorithm, refer to the link below:
-# - https://leetcode.com/problems/longest-duplicate-substring/discuss/312999/best-java-on-complexity-and-on-space-solution-suffix-tree-67ms
-
+# - https://leetcode.com/problems/longest-duplicate-substring/discuss/312999/best-java-on-complexity-and-on-
 import collections
 from functools import reduce
 
 
 class Solution(object):
     def longestDupSubstring(self, S):
-        """
-        :type S: str
-        :rtype: str
-        """
+        
         M = 10**9+7
         D = 26
 
@@ -27,7 +23,7 @@ class Solution(object):
                 curr = ((D*curr) % M + ord(S[i])-ord('a') -
                         ((ord(S[i-L])-ord('a'))*p) % M) % M
                 if curr in lookup:
-                    for j in lookup[curr]:  # check if string is the same when hash is the same
+                    for j in lookup[curr]: 
                         if S[j-L+1:j+1] == S[i-L+1:i+1]:
                             return i-L+1
                 lookup[curr].append(i)

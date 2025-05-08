@@ -4,10 +4,7 @@ from functools import reduce
 # combinatorics
 class Solution(object):
     def getSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         def count(d):
             result = total = l = 0

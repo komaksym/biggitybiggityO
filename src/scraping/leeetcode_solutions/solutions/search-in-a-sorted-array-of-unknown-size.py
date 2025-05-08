@@ -2,11 +2,7 @@
 
 class Solution(object):
     def search(self, reader, target):
-        """
-        :type reader: ArrayReader
-        :type target: int
-        :rtype: int
-        """
+        
         left, right = 0, 19999
         while left <= right:
             mid = left + (right-left)//2

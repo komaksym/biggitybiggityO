@@ -2,11 +2,7 @@
 
 class Solution(object):
     def cheapestJump(self, A, B):
-        """
-        :type A: List[int]
-        :type B: int
-        :rtype: List[int]
-        """
+        
         result = []
         if not A or A[-1] == -1:
             return result

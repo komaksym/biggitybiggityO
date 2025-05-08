@@ -3,11 +3,7 @@
 # greedy
 class Solution(object):
     def distMoney(self, money, children):
-        """
-        :type money: int
-        :type children: int
-        :rtype: int
-        """
+        
         if money < children*1:
             return -1
         money -= children*1
@@ -19,11 +15,7 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def distMoney(self, money, children):
-        """
-        :type money: int
-        :type children: int
-        :rtype: int
-        """
+        
         if money < children*1:
             return -1
         money -= children*1

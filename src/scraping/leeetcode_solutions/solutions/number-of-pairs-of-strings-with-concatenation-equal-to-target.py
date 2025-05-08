@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def numOfPairs(self, nums, target):
-        """
-        :type nums: List[str]
-        :type target: str
-        :rtype: int
-        """
+        
         lookup = collections.Counter()
         result = 0
         for num in nums:
@@ -29,11 +25,7 @@ import collections
 
 class Solution2(object):
     def numOfPairs(self, nums, target):
-        """
-        :type nums: List[str]
-        :type target: str
-        :rtype: int
-        """
+        
         prefix, suffix = collections.Counter(), collections.Counter()
         result = 0
         for num in nums:

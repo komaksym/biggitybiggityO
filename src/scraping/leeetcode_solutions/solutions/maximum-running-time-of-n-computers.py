@@ -6,14 +6,10 @@ import heapq
 # greedy
 class Solution(object):
     def maxRunTime(self, n, batteries):
-        """
-        :type n: int
-        :type batteries: List[int]
-        :rtype: int
-        """
+        
         total = sum(batteries)
         for i in range(len(batteries)):
-            batteries[i] = -batteries[i]  # max_heap
+            batteries[i] = -batteries[i] 
         heapq.heapify(batteries)
         while -batteries[0] > total//n:
             n -= 1
@@ -25,11 +21,7 @@ class Solution(object):
 # binary search
 class Solution2(object):
     def maxRunTime(self, n, batteries):
-        """
-        :type n: int
-        :type batteries: List[int]
-        :rtype: int
-        """
+        
         def check(n, batteries, x):
             return sum(min(b, x) for b in batteries) >= n*x
 

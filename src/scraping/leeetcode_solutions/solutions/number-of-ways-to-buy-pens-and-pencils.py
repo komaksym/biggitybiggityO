@@ -5,12 +5,7 @@
 # math
 class Solution(object):
     def waysToBuyPensPencils(self, total, cost1, cost2):
-        """
-        :type total: int
-        :type cost1: int
-        :type cost2: int
-        :rtype: int
-        """
+        
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -28,15 +23,15 @@ class Solution(object):
         result = 0
         d = lcm//cost2
         for i in range(min(total//cost1+1, lcm//cost1)):
-            # total, cost1, cost2 = 120, 7, 5
-            # => cnt decreases by a fixed value every lcm(cost1, cost2) 
-            # => arithmetic progressions of cnts are as follows
-            #      ----- l -----  x
-            #  |   24, 17, 10, 3 120
-            #  |   22, 15,  8, 1 113
-            # cnt  21, 14,  7,   106
-            #  |   19, 12,  5,    99
-            #  |   18, 11,  4,    92
+           
+           
+           
+           
+           
+           
+           
+           
+           
             cnt = (total-i*cost1)//cost2+1
             l = ceil_divide(cnt, d)
             result += arithmetic_progression_sum(cnt, -d, l)
@@ -48,12 +43,7 @@ class Solution(object):
 # math
 class Solution2(object):
     def waysToBuyPensPencils(self, total, cost1, cost2):
-        """
-        :type total: int
-        :type cost1: int
-        :type cost2: int
-        :rtype: int
-        """
+        
         if cost1 < cost2:
             cost1, cost2 = cost2, cost1
         return sum((total-i*cost1)//cost2+1 for i in range(total//cost1+1))

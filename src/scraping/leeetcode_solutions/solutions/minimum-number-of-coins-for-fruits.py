@@ -6,10 +6,7 @@ import collections
 # dp, mono deque
 class Solution(object):
     def minimumCoins(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+        
         dp = [float("inf")]*(len(prices)+1)
         dp[0] = 0
         dq = collections.deque()
@@ -34,10 +31,7 @@ from sortedcontainers import SortedList
 
 class Solution2(object):
     def minimumCoins(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+        
         dp = [float("inf")]*(len(prices)+1)
         dp[0] = 0
         sl = SortedList()
@@ -55,10 +49,7 @@ class Solution2(object):
 # dp
 class Solution3(object):
     def minimumCoins(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+        
         dp = [float("inf")]*(len(prices)+1)
         dp[0] = 0
         for i in range(len(prices)):

@@ -3,10 +3,7 @@
 # bit manipulation, greedy, trie, sort, two pointers
 class Solution(object):
     def maximumStrongPairXor(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         class Trie(object):
             def __init__(self, bit_length):
                 self.__nodes = []
@@ -56,10 +53,7 @@ class Solution(object):
 # bit manipulation, greedy, trie, dp
 class Solution2(object):
     def maximumStrongPairXor(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         class Trie(object):
             def __init__(self, bit_length):
                 self.__nodes = []
@@ -112,10 +106,7 @@ class Solution2(object):
 # bit manipulation, greedy, dp
 class Solution3(object):
     def maximumStrongPairXor(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = 0
         for i in reversed(range(max(nums).bit_length())):
             prefix_min, prefix_max = {}, {}

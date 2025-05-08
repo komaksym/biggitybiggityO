@@ -3,13 +3,7 @@
 # binary search + sliding window solution
 class Solution(object):
     def rangeSum(self, nums, n, left, right):
-        """
-        :type nums: List[int]
-        :type n: int
-        :type left: int
-        :type right: int
-        :rtype: int
-        """
+        
         def countUntil(nums, target):
             result, curr, left = 0, 0, 0
             for right in range(len(nums)):
@@ -58,13 +52,7 @@ import heapq
 # heap solution
 class Solution2(object):
     def rangeSum(self, nums, n, left, right):
-        """
-        :type nums: List[int]
-        :type n: int
-        :type left: int
-        :type right: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         min_heap = []
         for i, num in enumerate(nums, 1):

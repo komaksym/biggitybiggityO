@@ -5,11 +5,7 @@ import itertools
 
 class Solution(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         inf = (len(nums)-1)*(len(nums)//k)+1
         def backtracking(nums, d, lookup):
             if not nums:
@@ -37,11 +33,7 @@ class Solution(object):
 # Time:  O(max(n * 2^n, 3^n))
 class Solution_TLE(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         inf = (len(nums)-1)*(len(nums)//k)+1
         POW = [1]
         for i in range(len(nums)):
@@ -83,9 +75,9 @@ class Solution_TLE(object):
         for mask in range(total+1):
             if popcount(mask) % m != 0:
                 continue
-            # submask enumeration:
-            # => sum(nCr(n, k) * 2^k for k in xrange(n+1)) = (1 + 2)^n = 3^n
-            # => Time: O(3^n), see https://cp-algorithms.com/algebra/all-submasks.html
+           
+           
+           
             submask = mask
             while submask:
                 dp[mask] = min(dp[mask], dp[mask-submask] + candidates[submask])
@@ -104,11 +96,7 @@ import sortedcontainers
 # optimized from Solution_Greedy, using SortedList (which is not supported in GoogleCodeJam / GoogleKickStart)
 class Solution_Wrong_Greedy_SortedList(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def greedy(nums, k, is_reversed):
             count = collections.Counter(nums)
             if max(count.values()) > k:
@@ -119,16 +107,16 @@ class Solution_Wrong_Greedy_SortedList(object):
                 freq_to_nodes[count[x]][x] = count[x]
             stks = [[] for _ in range(k)] 
             curr = 0
-            while ordered_set:  # the while loop runs O(k) times
-                if len(stks)-curr in freq_to_nodes:  # fill the deterministic elements into the remaining subsets
-                    for x in freq_to_nodes[len(stks)-curr].keys():  # total time = O(n)
+            while ordered_set: 
+                if len(stks)-curr in freq_to_nodes: 
+                    for x in freq_to_nodes[len(stks)-curr].keys(): 
                         for i in range(curr, len(stks)):
                             stks[i].append(x)
                         count.pop(x)
                         ordered_set.remove(x)
                     freq_to_nodes.pop(len(stks)-curr)
-                # greedily fill the contiguous ordered elements into the first vacant subset until it is full,
-                # otherwise, the result sum would get larger => in fact, this is wrong
+               
+               
                 to_remove = []
                 direction = (lambda x:x) if not is_reversed else reversed
                 for x in direction(ordered_set):
@@ -136,7 +124,7 @@ class Solution_Wrong_Greedy_SortedList(object):
                     freq_to_nodes[count[x]].pop(x)
                     if not freq_to_nodes[count[x]]:
                         freq_to_nodes.pop(count[x])
-                    count[x] -= 1  # total time = O(n)
+                    count[x] -= 1 
                     if not count[x]:
                         count.pop(x)
                         to_remove.append(x)
@@ -146,10 +134,10 @@ class Solution_Wrong_Greedy_SortedList(object):
                         curr += 1
                         break
                 for x in to_remove:
-                    ordered_set.remove(x)  # total time = O(nlogn)
+                    ordered_set.remove(x) 
             return sum([max(stk)-min(stk) for stk in stks])
 
-        return min(greedy(nums, k, False), greedy(nums, k, True))  # two possible minimas
+        return min(greedy(nums, k, False), greedy(nums, k, True)) 
 
 
 # Time:  O(nlogn)
@@ -166,8 +154,8 @@ class SkipNode(object):
         self.prevs = [None]*level
 
 class SkipList(object):
-    P_NUMERATOR, P_DENOMINATOR = 1, 2  # P = 1/4 in redis implementation
-    MAX_LEVEL = 32  # enough for 2^32 elements
+    P_NUMERATOR, P_DENOMINATOR = 1, 2 
+    MAX_LEVEL = 32 
 
     def __init__(self, end=float("inf"), can_duplicated=False, cmp=lambda x, y: x < y):
         seed(0)
@@ -256,7 +244,7 @@ class SkipList(object):
             it = it.nexts[0]
 
     def __len__(self):
-        return self.__len-1  # excluding end node
+        return self.__len-1 
 
     def __str__(self):
         result = []
@@ -276,11 +264,7 @@ class SkipList(object):
 # optimized from Solution_Wrong_Greedy, using SkipList
 class Solution_Wrong_Greedy_SkipList(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def greedy(nums, k, is_reversed):
             count = collections.Counter(nums)
             if max(count.values()) > k:
@@ -292,16 +276,16 @@ class Solution_Wrong_Greedy_SkipList(object):
                 freq_to_nodes[count[x]][x] = count[x]
             stks = [[] for _ in range(k)] 
             curr = 0
-            while ordered_set:  # the while loop runs O(k) times
-                if len(stks)-curr in freq_to_nodes:  # fill the deterministic elements into the remaining subsets
-                    for x in freq_to_nodes[len(stks)-curr].keys():  # total time = O(n)
+            while ordered_set: 
+                if len(stks)-curr in freq_to_nodes: 
+                    for x in freq_to_nodes[len(stks)-curr].keys(): 
                         for i in range(curr, len(stks)):
                             stks[i].append(x)
                         count.pop(x)
                         ordered_set.remove(ordered_set.find(x))
                     freq_to_nodes.pop(len(stks)-curr)
-                # greedily fill the contiguous ordered elements into the first vacant subset until it is full,
-                # otherwise, the result sum would get larger => in fact, this is wrong
+               
+               
                 it = ordered_set.begin()
                 while it != ordered_set.end():
                     x = it.val
@@ -309,10 +293,10 @@ class Solution_Wrong_Greedy_SkipList(object):
                     freq_to_nodes[count[x]].pop(x)
                     if not freq_to_nodes[count[x]]:
                         freq_to_nodes.pop(count[x])
-                    count[x] -= 1  # total time = O(n)
+                    count[x] -= 1 
                     if not count[x]:
                         count.pop(x)
-                        it = ordered_set.remove(it)  # total time = O(nlogn)
+                        it = ordered_set.remove(it) 
                     else:
                         freq_to_nodes[count[x]][x] = count[x]
                         it = it.nexts[0]
@@ -321,7 +305,7 @@ class Solution_Wrong_Greedy_SkipList(object):
                         break
             return sum([max(stk)-min(stk) for stk in stks])
 
-        return min(greedy(nums, k, False), greedy(nums, k, True))  # two possible minimas
+        return min(greedy(nums, k, False), greedy(nums, k, True)) 
 
 
 # Time:  O(nlogn + k * n), could be improved to O(nlogn) by skiplist or orderedlist
@@ -333,11 +317,7 @@ import collections
 # correct => [[2, 4, 7], [2, 8, 10], [9, 10, 11], [10, 12, 15], [13, 14, 15]] => 22
 class Solution_Wrong_Greedy(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def greedy(nums, k, is_reversed):
             count = collections.Counter(nums)
             if max(count.values()) > k:
@@ -345,16 +325,16 @@ class Solution_Wrong_Greedy(object):
             sorted_keys = sorted(list(count.keys()), reverse=is_reversed)
             stks = [[] for _ in range(k)] 
             curr, remain = 0, len(nums)
-            while remain:  # the while loop runs O(k) times, and the inner loops runs O(n) times
-                for x in sorted_keys:  # fill the deterministic elements into the remaining subsets
+            while remain: 
+                for x in sorted_keys: 
                     if count[x] != len(stks)-curr:
                         continue
                     for i in range(curr, len(stks)):
                         stks[i].append(x)
                     remain -= count[x]
                     count[x] = 0
-                # greedily fill the contiguous ordered elements into the first vacant subset until it is full,
-                # otherwise, the result sum would get larger => in fact, this is wrong
+               
+               
                 for x in sorted_keys:
                     if not count[x]:
                         continue
@@ -366,5 +346,5 @@ class Solution_Wrong_Greedy(object):
                         break
             return sum([max(stk)-min(stk) for stk in stks])
 
-        return min(greedy(nums, k, False), greedy(nums, k, True))  # two possible minimas
+        return min(greedy(nums, k, False), greedy(nums, k, True)) 
 

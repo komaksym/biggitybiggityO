@@ -10,11 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def removeLeafNodes(self, root, target):
-        """
-        :type root: TreeNode
-        :type target: int
-        :rtype: TreeNode
-        """
+        
         if not root:
             return None
         root.left = self.removeLeafNodes(root.left, target)

@@ -11,10 +11,7 @@ class Point(object):
 
 class Solution(object):
     def maxPoints(self, points):
-        """
-        :type points: List[Point]
-        :rtype: int
-        """
+        
         max_points = 0
         for i, start in enumerate(points):
             slope_count, same = collections.defaultdict(int), 1

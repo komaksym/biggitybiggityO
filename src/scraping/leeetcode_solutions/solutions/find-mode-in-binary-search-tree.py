@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findMode(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+        
         def inorder(root, prev, cnt, max_cnt, result):
             if not root:
                 return prev, cnt, max_cnt

@@ -3,13 +3,7 @@
 # prefix sum
 class Solution(object):
     def countDaysTogether(self, arriveAlice, leaveAlice, arriveBob, leaveBob):
-        """
-        :type arriveAlice: str
-        :type leaveAlice: str
-        :type arriveBob: str
-        :type leaveBob: str
-        :rtype: int
-        """
+        
         NUMS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         prefix = [0]*(len(NUMS)+1)
         for i in range(len(NUMS)):

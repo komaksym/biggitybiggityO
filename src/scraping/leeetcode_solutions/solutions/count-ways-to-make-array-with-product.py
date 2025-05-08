@@ -5,22 +5,18 @@ import collections
 
 class Solution(object):
     def waysToFillArray(self, queries):
-        """
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
-            while len(inv) <= n:  # lazy initialization
+            while len(inv) <= n: 
                 fact.append(fact[-1]*len(inv) % MOD)
-                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
                 inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
             return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
 
-        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
-            primes = []
-            spf = [-1]*(n+1)  # the smallest prime factor
+        def linear_sieve_of_eratosthenes(n): 
+            spf = [-1]*(n+1) 
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i
@@ -48,6 +44,6 @@ class Solution(object):
         for n, k in queries:
             total = 1
             for c in prime_factors(k).values():
-                total *= nCr(n+c-1, c)  # H(n, c) = nCr(n+c-1, n)
+                total *= nCr(n+c-1, c) 
             result.append(total % MOD)
         return result

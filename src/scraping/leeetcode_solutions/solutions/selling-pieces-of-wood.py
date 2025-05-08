@@ -3,12 +3,7 @@
 # dp
 class Solution(object):
     def sellingWood(self, m, n, prices):
-        """
-        :type m: int
-        :type n: int
-        :type prices: List[List[int]]
-        :rtype: int
-        """
+        
         dp = [[0]*(n+1) for i in range(m+1)]
         for h, w, p in prices:
             dp[h][w] = p

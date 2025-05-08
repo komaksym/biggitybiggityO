@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def shortestCompletingWord(self, licensePlate, words):
-        """
-        :type licensePlate: str
-        :type words: List[str]
-        :rtype: str
-        """
+        
         def contains(counter1, w2):
             c2 = collections.Counter(w2.lower())
             c2.subtract(counter1)

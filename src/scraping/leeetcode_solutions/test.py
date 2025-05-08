@@ -1,54 +1,77 @@
 import re
-from pathlib import Path
 
 
-files_path = 'solutions/'
-parsed_data = {'label': [], 'code': []}
+data = """
+# Time:  O(n)
 
-def set_regex_pattern(pattern, flags=None):
-    return re.compile(rf"{pattern}", flags)
+class Solution(object):
+    def isValid(self, code):
+        
+        def validText(s, i):
+            j = i
+            i = s.find("<", i)
+            return i != j, i
 
+        def validCData(s, i):
+            if s.find("<![CDATA[", i) != i:
+                return False, i
+            j = s.find("]]>", i)
+            if j == -1:
+                return False, i
+            return True, j+3
 
-def search_files(folder_path):
-    raw_data = []
-    for file_path in (Path('.').glob(f'{files_path}/*.py')):
-         raw_data.append(file_path.read_text())
+        def parseTagName(s, i):
+            if s[i] != '<':
+                return "", i
+            j = s.find('>', i)
+            if j == -1 or not (1 <= (j-1-i) <= 9):
+                return "", i
+            tag = s[i+1:j]
+            for c in tag:
+                if not (ord('A') <= ord(c) <= ord('Z')):
+                    return "", i
+            return tag, j+1
 
-    return raw_data
+        def parseContent(s, i):
+            while i < len(s):
+                result, i = validText(s, i)
+                if result:
+                    continue
+                result, i = validCData(s, i)
+                if result:
+                    continue
+                result, i = validTag(s, i)
+                if result:
+                    continue
+                break
+            return i
 
+        def validTag(s, i):
+            tag, j = parseTagName(s, i)
+            if not tag:
+                return False, i
+            j = parseContent(s, j)
+            k = j + len(tag) + 2
+            if k >= len(s) or s[j:k+1] != "</" + tag + ">":
+                return False, i
+            return True, k+1
 
-def parse_data(problem_name):
-     
-    fp = open(f"solutions/{problem_name}")
-    file = fp.read()
+        result, i = validTag(code, 0)
+        return result and i == len(code)
 
-    code_matches = re.findall(CODES_PATTERN, file)
-    label_matches = re.findall(LABELS_PATTERN, file)
+"""
 
-    print(f"Num of code matches: {len(code_matches)}")
-    print(f"Num of label matches: {len(label_matches)}")
+#pattern = r'(?m)^(\s*# Time:.*\n(?:\s*#.*\n)*)'
+#blocks = re.split(pattern, data)
 
-    assert len(code_matches) == len(label_matches)
+#print(f"BLOCK SIZE: {len(blocks)}")
+#for i, b in enumerate(blocks):
+    #print(f"Pair: {i}\n", b) 
 
-    for i, (code, label) in enumerate(zip(code_matches, label_matches)):
-    
-        code = re.sub(FILTER_PATTERN, "", code[0]).strip() 
-
-        print(f"\nSAMPLE #{i+1}:\n")
-        print("CODE:\n", code, "\n")
-        print("LABEL:\n", label, "\n")
-
-        parsed_data['label'].append(label)
-        parsed_data['code'].append(code)
-
-
-
-CODES_PATTERN = set_regex_pattern(r"(?:^#\s?Space.*?\n+?)(class.*?)((?:\n^#\s?Time)(?:)|(?:\Z))", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-LABELS_PATTERN = set_regex_pattern(r"O\((?:[^()]+|\([^()]*\))*\)", flags=re.IGNORECASE)
-FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-
-problem = "find-a-peak-element-ii.py"
-parse_data(problem)
-
-#print(parsed_data)
-#print(len(parsed_data))
+print(data.strip())
+#matches = re.findall(
+    #"",
+    #data,
+    #flags=re.IGNORECASE | re.DOTALL | re.MULTILINE,
+#)
+#print(matches)

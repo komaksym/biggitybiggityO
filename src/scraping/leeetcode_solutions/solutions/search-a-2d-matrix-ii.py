@@ -1,9 +1,9 @@
 # Time:  O(m + n)
 
 class Solution(object):
-    # @param {integer[][]} matrix
-    # @param {integer} target
-    # @return {boolean}
+   
+   
+   
     def searchMatrix(self, matrix, target):
         m = len(matrix)
         if m == 0:

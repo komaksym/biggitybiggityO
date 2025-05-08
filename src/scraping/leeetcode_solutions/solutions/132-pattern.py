@@ -2,10 +2,7 @@
 
 class Solution(object):
     def find132pattern(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
+        
         ak = float("-inf")
         stk = []
         for i in reversed(range(len(nums))):
@@ -20,10 +17,7 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution_TLE(object):
     def find132pattern(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
+        
         for k in range(len(nums)):
             valid = False
             for j in range(k):

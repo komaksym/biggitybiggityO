@@ -3,11 +3,7 @@
 # greedy, sort
 class Solution(object):
     def maxPrice(self, items, capacity):
-        """
-        :type items: List[List[int]]
-        :type capacity: int
-        :rtype: float
-        """
+        
         result = 0
         items.sort(key=lambda x: float(x[0])/x[1], reverse=True)
         for p, c in items:

@@ -3,10 +3,7 @@
 # greedy
 class Solution(object):
     def minOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = 0
         for i in range(len(nums)-2):
             if nums[i]:

@@ -3,11 +3,7 @@
 # flood fill, bfs, math
 class Solution(object):
     def countPairs(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         def bfs(adj, u, lookup):
             q = [u]
             lookup[u] = 1

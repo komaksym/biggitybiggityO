@@ -7,14 +7,12 @@ import collections
 class WordFilter(object):
 
     def __init__(self, words):
-        """
-        :type words: List[str]
-        """
+        
         _trie = lambda: collections.defaultdict(_trie)
         self.__trie = _trie()
 
         for weight, word in enumerate(words):
-            word += '#'
+            word += 
             for i in range(len(word)):
                 cur = self.__trie
                 cur["_weight"] = weight
@@ -23,13 +21,9 @@ class WordFilter(object):
                     cur["_weight"] = weight
 
     def f(self, prefix, suffix):
-        """
-        :type prefix: str
-        :type suffix: str
-        :rtype: int
-        """
+        
         cur = self.__trie
-        for letter in suffix + '#' + prefix:
+        for letter in suffix + 
             if letter not in cur:
                 return -1
             cur = cur[letter]
@@ -69,9 +63,7 @@ class Trie(object):
 class WordFilter2(object):
 
     def __init__(self, words):
-        """
-        :type words: List[str]
-        """
+        
         self.__prefix_trie = Trie()
         self.__suffix_trie = Trie()
         for i in reversed(range(len(words))):
@@ -79,11 +71,7 @@ class WordFilter2(object):
             self.__suffix_trie.insert(words[i][::-1], i)
 
     def f(self, prefix, suffix):
-        """
-        :type prefix: str
-        :type suffix: str
-        :rtype: int
-        """
+        
         prefix_match = self.__prefix_trie.find(prefix)
         suffix_match = self.__suffix_trie.find(suffix[::-1])
         i, j = 0, 0

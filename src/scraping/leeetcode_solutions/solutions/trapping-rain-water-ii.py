@@ -4,10 +4,7 @@ from heapq import heappush, heappop
 
 class Solution(object):
     def trapRainWater(self, heightMap):
-        """
-        :type heightMap: List[List[int]]
-        :rtype: int
-        """
+        
         m = len(heightMap)
         if not m:
             return 0

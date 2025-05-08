@@ -6,12 +6,7 @@ import collections
 # line sweep
 class Solution(object):
     def meetRequirement(self, n, lights, requirement):
-        """
-        :type n: int
-        :type lights: List[List[int]]
-        :type requirement: List[int]
-        :rtype: int
-        """
+        
         cnt = collections.defaultdict(int)
         for p, r in lights:
             cnt[max(p-r, 0)] += 1

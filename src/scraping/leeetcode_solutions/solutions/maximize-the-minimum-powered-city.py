@@ -3,12 +3,7 @@
 # binary search, sliding window, greedy
 class Solution(object):
     def maxPower(self, stations, r, k):
-        """
-        :type stations: List[int]
-        :type r: int
-        :type k: int
-        :rtype: int
-        """
+        
         def min_power():
             mn = float("inf")
             curr = sum(stations[i] for i in range(r))

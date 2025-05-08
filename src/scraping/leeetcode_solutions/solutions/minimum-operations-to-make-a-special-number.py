@@ -3,10 +3,7 @@
 # math, greedy
 class Solution(object):
     def minimumOperations(self, num):
-        """
-        :type num: str
-        :rtype: int
-        """
+        
         lookup = [0]*10
         for i in reversed(range(len(num))):
             if ((num[i] in "05" and lookup[0]) or

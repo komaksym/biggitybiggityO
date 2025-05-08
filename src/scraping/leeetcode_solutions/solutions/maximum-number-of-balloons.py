@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def maxNumberOfBalloons(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
+        
         TARGET = "balloon"
         source_count = collections.Counter(text)
         target_count = collections.Counter(TARGET)

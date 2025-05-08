@@ -2,10 +2,7 @@
 
 class Solution(object):
     def firstDayBeenInAllRooms(self, nextVisit):
-        """
-        :type nextVisit: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
 
         dp = [0]*len(nextVisit)

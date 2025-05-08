@@ -23,10 +23,9 @@ class AhoTrie(object):
     def __init__(self, patterns):
         self.__root = self.__create_ac_trie(patterns)
         self.__node = self.__create_ac_suffix_and_output_links(self.__root)
-        self.__lookup = set()  # modified
+        self.__lookup = set() 
     
-    def __create_ac_trie(self, patterns):  # Time: O(n * l), Space: O(t)
-        root = AhoNode()
+    def __create_ac_trie(self, patterns): 
         for i, pattern in enumerate(patterns):
             node = root
             for c in pattern:
@@ -34,8 +33,7 @@ class AhoTrie(object):
             node.indices.append(i)
         return root
 
-    def __create_ac_suffix_and_output_links(self, root):  # Time: O(n * l), Space: O(t)
-        queue = collections.deque()
+    def __create_ac_suffix_and_output_links(self, root): 
         for node in root.children.values():
             queue.append(node)
             node.suffix = root
@@ -52,15 +50,15 @@ class AhoTrie(object):
                 
         return root
 
-    def __get_ac_node_outputs(self, node):  # Total Time: O(n), modified
+    def __get_ac_node_outputs(self, node): 
         result = []
-        if node not in self.__lookup:  # modified
-            self.__lookup.add(node)  # modified
+        if node not in self.__lookup: 
+            self.__lookup.add(node) 
             for i in node.indices:
                 result.append(i)
             output = node.output
-            while output and output not in self.__lookup:  # modified
-                self.__lookup.add(output)  # modified
+            while output and output not in self.__lookup: 
+                self.__lookup.add(output) 
                 for i in output.indices:
                     result.append(i)
                 output = output.output
@@ -70,11 +68,7 @@ class AhoTrie(object):
 # ac automata solution
 class Solution(object):
     def numOfStrings(self, patterns, word):
-        """
-        :type patterns: List[str]
-        :type word: str
-        :rtype: int
-        """
+        
         trie = AhoTrie(patterns)
         return sum(len(trie.step(c)) for c in word)
 
@@ -85,11 +79,7 @@ class Solution(object):
 # kmp solution
 class Solution2(object):
     def numOfStrings(self, patterns, word):
-        """
-        :type patterns: List[str]
-        :type word: str
-        :rtype: int
-        """
+        
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

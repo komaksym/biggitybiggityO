@@ -1,8 +1,8 @@
 # Time:  O(n)
 
 class Solution(object):
-    # @param s, a string
-    # @return a boolean
+   
+   
     def isPalindrome(self, s):
         i, j = 0, len(s) - 1
         while i < j:

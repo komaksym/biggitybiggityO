@@ -7,10 +7,7 @@ from functools import reduce
 # combinatorics, prefix sum, freq table, dp
 class Solution(object):
     def getSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def count(d):
             result = 0
             cnt = collections.defaultdict(int)

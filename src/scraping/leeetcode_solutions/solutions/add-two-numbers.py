@@ -8,11 +8,7 @@ class ListNode(object):
 
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+        
         dummy = ListNode(0)
         current, carry = dummy, 0
 

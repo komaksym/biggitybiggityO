@@ -10,10 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def goodNodes(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         result = 0
         stk = [(root, root.val)]
         while stk:
@@ -30,10 +27,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def goodNodes(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def dfs(node, curr_max):
             if not node:
                 return 0

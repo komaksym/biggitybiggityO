@@ -3,11 +3,7 @@
 # hash table
 class Solution(object):
     def arithmeticTriplets(self, nums, diff):
-        """
-        :type nums: List[int]
-        :type diff: int
-        :rtype: int
-        """
+        
         lookup = set(nums)
         return sum((x-diff in lookup) and (x-2*diff in lookup) for x in nums)
 
@@ -19,11 +15,7 @@ import collections
 # dp
 class Solution2(object):
     def arithmeticTriplets(self, nums, diff):
-        """
-        :type nums: List[int]
-        :type diff: int
-        :rtype: int
-        """
+        
         result = 0
         cnt1 = collections.Counter()
         cnt2 = collections.Counter()

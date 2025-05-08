@@ -11,11 +11,7 @@ class TreeNode(object):
 # iterative dfs, binary search
 class Solution(object):
     def closestNodes(self, root, queries):
-        """
-        :type root: Optional[TreeNode]
-        :type queries: List[int]
-        :rtype: List[List[int]]
-        """
+        
         def iter_dfs():
             inorder = []
             stk = [(1, root)]
@@ -53,11 +49,7 @@ import bisect
 # dfs, binary search
 class Solution2(object):
     def closestNodes(self, root, queries):
-        """
-        :type root: Optional[TreeNode]
-        :type queries: List[int]
-        :rtype: List[List[int]]
-        """
+        
         def dfs(node):
             if not node:
                 return

@@ -2,11 +2,7 @@
 
 class Solution(object):
     def minWindow(self, S, T):
-        """
-        :type S: str
-        :type T: str
-        :rtype: str
-        """
+        
         lookup = [[None for _ in range(26)] for _ in range(len(S)+1)]
         find_char_next_pos = [None]*26
         for i in reversed(range(len(S))):
@@ -31,11 +27,7 @@ class Solution(object):
 # Time:  O(s * t)
 class Solution2(object):
     def minWindow(self, S, T):
-        """
-        :type S: str
-        :type T: str
-        :rtype: str
-        """
+        
         dp = [[None for _ in range(len(S))] for _ in range(2)]
         for j, c in enumerate(S):
             if c == T[0]:

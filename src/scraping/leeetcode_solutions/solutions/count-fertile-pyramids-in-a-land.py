@@ -2,10 +2,7 @@
 
 class Solution(object):
     def countPyramids(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         def count(grid, reverse):
             def get_grid(i, j):
                 return grid[~i][j] if reverse else grid[i][j]
@@ -27,10 +24,7 @@ class Solution(object):
 # Time:  O(m * n)
 class Solution2(object):
     def countPyramids(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         def count(grid):
             dp = [[0 for _ in range(len(grid[0]))] for _ in range(len(grid))]
             for i in range(1, len(grid)):

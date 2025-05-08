@@ -2,10 +2,7 @@
 
 class Solution(object):
     def canCross(self, stones):
-        """
-        :type stones: List[int]
-        :rtype: bool
-        """
+        
         if stones[1] != 1:
             return False
 

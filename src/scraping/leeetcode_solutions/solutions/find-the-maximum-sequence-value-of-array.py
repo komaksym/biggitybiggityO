@@ -3,11 +3,7 @@
 # bitmasks, prefix sum, dp
 class Solution(object):
     def maxValue(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         INF = float("inf")
         MAX_MASK = 127
         def is_submask(a, b):
@@ -37,11 +33,7 @@ class Solution(object):
 # prefix sum, dp
 class Solution(object):
     def maxValue(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         left = [[set() if j else {0} for j in range(k+1)] for i in range(len(nums)+1)]
         for i in range(len(nums)):
             for j in range(1, len(left[i+1])):

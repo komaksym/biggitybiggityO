@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maximumBeauty(self, flowers):
-        """
-        :type flowers: List[int]
-        :rtype: int
-        """
+        
         lookup = {}
         prefix = [0]
         result = float("-inf")

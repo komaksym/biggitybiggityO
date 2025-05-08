@@ -9,18 +9,12 @@ import collections
 class Allocator(object):
 
     def __init__(self, n):
-        """
-        :type n: int
-        """
+        
         self.__avails = SortedList([[0, n]])
         self.__lookup = collections.defaultdict(list)
 
     def allocate(self, size, mID):
-        """
-        :type size: int
-        :type mID: int
-        :rtype: int
-        """
+        
         for l, s in self.__avails:
             if s < size:
                 continue
@@ -32,10 +26,7 @@ class Allocator(object):
         return -1
 
     def free(self, mID):
-        """
-        :type mID: int
-        :rtype: int
-        """
+        
         if mID not in self.__lookup:
             return 0
         result = 0

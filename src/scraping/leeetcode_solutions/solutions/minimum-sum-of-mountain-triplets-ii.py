@@ -3,10 +3,7 @@
 # prefix sum
 class Solution(object):
     def minimumSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         INF = float("inf")
 
         right = [INF]*len(nums)
@@ -26,10 +23,7 @@ class Solution(object):
 # prefix sum
 class Solution2(object):
     def minimumSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         INF = float("inf")
 
         left = [INF]*len(nums)

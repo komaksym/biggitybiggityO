@@ -2,11 +2,7 @@
 
 class Solution(object):
     def earliestFullBloom(self, plantTime, growTime):
-        """
-        :type plantTime: List[int]
-        :type growTime: List[int]
-        :rtype: int
-        """
+        
         order = list(range(len(growTime)))
         order.sort(key=lambda x: growTime[x], reverse=True)
         result = curr = 0

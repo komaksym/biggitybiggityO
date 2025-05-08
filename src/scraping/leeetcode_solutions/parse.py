@@ -33,14 +33,14 @@ def parse_data(files_path, files):
 
         for i, (code, label) in enumerate(zip(code_matches, label_matches)):
         
-            code = re.sub(FILTER_PATTERN, "", code[0]) 
+            code = re.sub(FILTER_PATTERN, "", code) 
 
             parsed_data['label'].append(label)
             parsed_data['code'].append(code)
 
 
-CODES_PATTERN = set_regex_pattern(r"(?:^#\s?Space.*?\n+?)(class.*?)((?:\n^#\s?Time)(?:)|(?:\Z))", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-LABELS_PATTERN = set_regex_pattern(r"^#\s*Time.*?\bO\(([^()]+(?:\([^()]*\)[^()]*)*)\)", flags=re.IGNORECASE | re.MULTILINE)
+CODES_PATTERN = set_regex_pattern(r"^(?:class|def).*?((?:\n#\s*?Time)|(?:\Z))", flags=re.DOTALL | re.MULTILINE)
+LABELS_PATTERN = set_regex_pattern(r"O\s*\(([^()]+(?:\([^()]+[^()]*\)[^()]*)*[^()]*)\)", flags=re.IGNORECASE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
 raw_data = search_files(files_path)

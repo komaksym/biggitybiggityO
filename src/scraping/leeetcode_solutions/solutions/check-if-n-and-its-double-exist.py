@@ -2,10 +2,7 @@
 
 class Solution(object):
     def checkIfExist(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: bool
-        """
+        
         lookup = set()
         for x in arr:
             if 2*x in lookup or \

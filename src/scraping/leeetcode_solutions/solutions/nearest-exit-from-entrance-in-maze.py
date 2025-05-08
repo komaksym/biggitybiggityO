@@ -3,11 +3,7 @@
 # bi-bfs solution
 class Solution(object):
     def nearestExit(self, maze, entrance):
-        """
-        :type maze: List[List[str]]
-        :type entrance: List[int]
-        :rtype: int
-        """
+        
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         visited = ' '
         entrance = tuple(entrance)
@@ -42,11 +38,7 @@ class Solution(object):
 # bfs solution
 class Solution2(object):
     def nearestExit(self, maze, entrance):
-        """
-        :type maze: List[List[str]]
-        :type entrance: List[int]
-        :rtype: int
-        """
+        
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         visited = ' '
         entrance = tuple(entrance)

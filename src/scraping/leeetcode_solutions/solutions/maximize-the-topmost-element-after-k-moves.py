@@ -3,11 +3,7 @@
 # constructive algorithms
 class Solution(object):
     def maximumTop(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         if len(nums) == 1 == k%2:
             return -1
         if k <= 1:

@@ -3,10 +3,7 @@
 # iterative solution
 class Solution(object):
     def letterCombinations(self, digits):
-        """
-        :type digits: str
-        :rtype: List[str]
-        """
+        
         if not digits:
             return []
 
@@ -29,10 +26,7 @@ class Solution(object):
 # iterative solution
 class Solution2(object):
     def letterCombinations(self, digits):
-        """
-        :type digits: str
-        :rtype: List[str]
-        """
+        
         if not digits:
             return []
 
@@ -51,10 +45,7 @@ class Solution2(object):
 # recursive solution
 class Solution3(object):
     def letterCombinations(self, digits):
-        """
-        :type digits: str
-        :rtype: List[str]
-        """
+        
         lookup = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
 
         def letterCombinationsRecu(result, digits, curr, n):

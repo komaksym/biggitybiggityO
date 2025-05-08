@@ -3,12 +3,7 @@
 # bit manipulation, parity
 class Solution(object):
     def tripletCount(self, a, b, c):
-        """
-        :type a: List[int]
-        :type b: List[int]
-        :type c: List[int]
-        :rtype: int
-        """
+        
         def popcount(x):
             return bin(x).count('1')
 
@@ -24,12 +19,7 @@ class Solution(object):
 # bit manipulation, parity
 class Solution2(object):
     def tripletCount(self, a, b, c):
-        """
-        :type a: List[int]
-        :type b: List[int]
-        :type c: List[int]
-        :rtype: int
-        """
+        
         def popcount(x):
             return bin(x).count('1')
 
@@ -47,12 +37,7 @@ class Solution2(object):
 # brute force, bit manipulation
 class Solution3(object):
     def tripletCount(self, a, b, c):
-        """
-        :type a: List[int]
-        :type b: List[int]
-        :type c: List[int]
-        :rtype: int
-        """
+        
         def popcount(x):
             return bin(x).count('1')
 

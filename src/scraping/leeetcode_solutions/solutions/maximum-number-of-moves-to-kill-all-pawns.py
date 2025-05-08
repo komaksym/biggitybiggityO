@@ -3,12 +3,7 @@
 # bfs, bitmasks, dp
 class Solution(object):
     def maxMoves(self, kx, ky, positions):
-        """
-        :type kx: int
-        :type ky: int
-        :type positions: List[List[int]]
-        :rtype: int
-        """
+        
         N = 50
         DIRECTIONS = ((1, 2), (-1, 2), (1, -2), (-1, -2), (2, 1), (-2, 1), (2, -1), (-2, -1))
         POS_INF = float("inf")

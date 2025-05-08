@@ -3,12 +3,8 @@
 # counting sort, greedy
 class Solution(object):
     def maxPotholes(self, road, budget):
-        """
-        :type road: str
-        :type budget: int
-        :rtype: int
-        """
-        def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
+        
+        def inplace_counting_sort(nums, reverse=False): 
             if not nums:
                 return
             count = [0]*(max(nums)+1)
@@ -16,14 +12,14 @@ class Solution(object):
                 count[num] += 1
             for i in range(1, len(count)):
                 count[i] += count[i-1]
-            for i in reversed(range(len(nums))):  # inplace but unstable sort
+            for i in reversed(range(len(nums))): 
                 while nums[i] >= 0:
                     count[nums[i]] -= 1
                     j = count[nums[i]]
                     nums[i], nums[j] = nums[j], ~nums[i]
             for i in range(len(nums)):
-                nums[i] = ~nums[i]  # restore values
-            if reverse:  # unstable sort
+                nums[i] = ~nums[i] 
+            if reverse: 
                 nums.reverse()
     
         ls = []
@@ -49,11 +45,7 @@ class Solution(object):
 # sort, greedy
 class Solution2(object):
     def maxPotholes(self, road, budget):
-        """
-        :type road: str
-        :type budget: int
-        :rtype: int
-        """
+        
         ls = []
         l = 0
         for i in range(len(road)):

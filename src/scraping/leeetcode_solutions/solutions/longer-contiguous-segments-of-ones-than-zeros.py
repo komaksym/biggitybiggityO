@@ -2,10 +2,7 @@
 
 class Solution(object):
     def checkZeroOnes(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+        
         max_cnt = [0]*2
         cnt = 0
         for i in range(len(s)+1):

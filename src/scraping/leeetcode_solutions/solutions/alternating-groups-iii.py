@@ -6,12 +6,8 @@ from sortedcontainers import SortedList
 # sorted list, freq table, bit, fenwick tree
 class Solution(object):
     def numberOfAlternatingGroups(self, colors, queries):
-        """
-        :type colors: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
-        class BIT(object):  # 0-indexed.
+        
+        class BIT(object): 
             def __init__(self, n):
                 self.__bit = [0]*(n+1)
 

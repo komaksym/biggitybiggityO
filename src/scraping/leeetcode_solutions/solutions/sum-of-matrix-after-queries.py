@@ -3,11 +3,7 @@
 # hash table
 class Solution(object):
     def matrixSumQueries(self, n, queries):
-        """
-        :type n: int
-        :type queries: List[List[int]]
-        :rtype: int
-        """
+        
         lookup = [[False]*n for _ in range(2)]
         cnt = [0]*2
         result = 0

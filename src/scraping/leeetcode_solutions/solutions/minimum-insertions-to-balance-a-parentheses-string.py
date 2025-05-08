@@ -2,10 +2,7 @@
 
 class Solution(object):
     def minInsertions(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         add, bal = 0, 0
         for c in s:
             if c == '(':

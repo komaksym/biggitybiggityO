@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maximalRectangle(self, matrix):
-        """
-        :type matrix: List[List[str]]
-        :rtype: int
-        """
+        
         def largestRectangleArea(heights):
             stk, result, i = [-1], 0, 0
             for i in range(len(heights)+1):
@@ -29,10 +26,7 @@ class Solution(object):
 # DP solution.
 class Solution2(object):
     def maximalRectangle(self, matrix):
-        """
-        :type matrix: List[List[str]]
-        :rtype: int
-        """
+        
         if not matrix:
             return 0
 

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def lastSubstring(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         left, right, l = 0, 1, 0
         while right+l < len(s):
             if s[left+l] == s[right+l]:
@@ -26,10 +23,7 @@ import collections
 
 class Solution2(object):
     def lastSubstring(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         count = collections.defaultdict(list)
         for i in range(len(s)):
             count[s[i]].append(i)
@@ -42,11 +36,11 @@ class Solution2(object):
             lookup = set()
             next_count = collections.defaultdict(list)
             for start, end in starts.items():
-                if end == len(s):  # finished
+                if end == len(s): 
                     lookup.add(start)
                     continue
                 next_count[s[end]].append(start)				
-                if end in starts:  # overlapped
+                if end in starts: 
                     lookup.add(end)			
             next_starts = {}
             max_c = max(next_count.keys())

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def toHex(self, num):
-        """
-        :type num: int
-        :rtype: str
-        """
+        
         if not num:
             return "0"
 

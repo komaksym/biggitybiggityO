@@ -19,11 +19,7 @@ result.append(float("inf"))
 
 class Solution(object):
     def countSteppingNumbers(self, low, high):
-        """
-        :type low: int
-        :type high: int
-        :rtype: List[int]
-        """
+        
         lit = bisect.bisect_left(result, low)
         rit = bisect.bisect_right(result, high)
         return result[lit:rit]
@@ -32,11 +28,7 @@ class Solution(object):
 # Time:  O(k + r), r is the size of result
 class Solution2(object):
     def countSteppingNumbers(self, low, high):
-        """
-        :type low: int
-        :type high: int
-        :rtype: List[int]
-        """
+        
         result = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         for i in range(1, high):
             if result[-1] >= high:

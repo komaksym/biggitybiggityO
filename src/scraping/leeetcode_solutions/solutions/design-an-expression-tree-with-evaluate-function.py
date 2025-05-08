@@ -43,10 +43,7 @@ class NodeIter(Node):
 
 class TreeBuilder(object):
     def buildTree(self, postfix):
-        """
-        :type s: List[str]
-        :rtype: int
-        """
+        
         stk = []
         for c in postfix:
             if c.isdigit():
@@ -76,10 +73,7 @@ class NodeRecu(Node):
 
 class TreeBuilder2(object):
     def buildTree(self, postfix):
-        """
-        :type s: List[str]
-        :rtype: int
-        """
+        
         stk = []
         for c in postfix:
             if c.isdigit():

@@ -8,11 +8,7 @@ class ListNode(object):
 
 class Solution(object):
     def numComponents(self, head, G):
-        """
-        :type head: ListNode
-        :type G: List[int]
-        :rtype: int
-        """
+        
         lookup = set(G)
         dummy = ListNode(-1)
         dummy.next = head

@@ -3,10 +3,7 @@
 # hash table, combinatorics
 class Solution(object):
     def numberOfGoodPartitions(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         lookup = {x:i for i, x in enumerate(nums)}
         result = 1

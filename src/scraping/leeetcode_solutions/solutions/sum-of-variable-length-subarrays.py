@@ -3,10 +3,7 @@
 # difference array
 class Solution(object):
     def subarraySum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         diff = [0]*(len(nums)+1)
         for i, x in enumerate(nums):
             diff[max(i-x, 0)] += 1

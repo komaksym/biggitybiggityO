@@ -3,13 +3,9 @@
 # z-function
 class Solution(object):
     def beautifulSplits(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        # Template: https://cp-algorithms.com/string/z-function.html
-        def z_function(s):  # Time: O(n), Space: O(n)
-            z = [0]*len(s)
+        
+       
+        def z_function(s): 
             l, r = 0, 0
             for i in range(1, len(z)):
                 if i <= r:
@@ -34,10 +30,7 @@ class Solution(object):
 # dp
 class Solution2(object):
     def beautifulSplits(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         dp = [[0]*len(nums) for _ in range(len(nums))]
         for i in reversed(range(len(nums))):
             for j in range(i+1, len(dp)):
@@ -54,13 +47,9 @@ class Solution2(object):
 # z-function
 class Solution_TLE(object):
     def beautifulSplits(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        # Template: https://cp-algorithms.com/string/z-function.html
-        def z_function(s, left, right):  # Time: O(n), Space: O(n)
-            z = [0]*(right-left+1)
+        
+       
+        def z_function(s, left, right): 
             l, r = 0, 0
             for i in range(1, len(z)):
                 if i <= r:

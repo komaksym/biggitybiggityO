@@ -2,10 +2,7 @@
 
 class Solution(object):
     def asteroidCollision(self, asteroids):
-        """
-        :type asteroids: List[int]
-        :rtype: List[int]
-        """
+        
         result = []
         for x in asteroids:
             if x > 0:
@@ -24,10 +21,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def asteroidCollision(self, asteroids):
-        """
-        :type asteroids: List[int]
-        :rtype: List[int]
-        """
+        
         result = []
         for x in asteroids:
             while result and x < 0 < result[-1]:

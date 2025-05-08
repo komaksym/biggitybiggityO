@@ -1,8 +1,8 @@
 # Time:  O(m * n)
 
 class Solution(object):
-    # @param dungeon, a list of lists of integers
-    # @return a integer
+   
+   
     def calculateMinimumHP(self, dungeon):
         DP = [float("inf") for _ in dungeon[0]]
         DP[-1] = 1
@@ -17,8 +17,8 @@ class Solution(object):
 
 # Time:  O(m * n logk), where k is the possible maximum sum of loses
 class Solution2(object):
-    # @param dungeon, a list of lists of integers
-    # @return a integer
+   
+   
     def calculateMinimumHP(self, dungeon):
         maximum_loses = 0
         for rooms in dungeon:

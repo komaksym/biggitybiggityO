@@ -5,10 +5,7 @@ import itertools
 
 class Solution(object):
     def knightDialer(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
+        
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))] \
                       for i in range(len(A))]
@@ -41,10 +38,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def knightDialer(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
+        
         M = 10**9 + 7
         moves = [[4, 6], [6, 8], [7, 9], [4, 8], [3, 9, 0], [],
                  [1, 7, 0], [2, 6], [1, 3], [2, 4]]

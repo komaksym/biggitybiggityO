@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maxSubarraySumCircular(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
+        
         total, max_sum, cur_max, min_sum, cur_min = 0, -float("inf"), 0, float("inf"), 0
         for a in A:
             cur_max = max(cur_max+a, a)

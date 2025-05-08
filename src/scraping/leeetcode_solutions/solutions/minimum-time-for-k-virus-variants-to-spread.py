@@ -1,7 +1,7 @@
 # Time:  O(nlogn * logr), r is the sum of range x size and range y size
 
 # Range Maximum Query
-class SegmentTree(object):  # 0-based index
+class SegmentTree(object): 
     def __init__(self, N,
                  build_fn=lambda x, y: [y]*(2*x),
                  query_fn=lambda x, y: y if x is None else max(x, y),
@@ -20,8 +20,7 @@ class SegmentTree(object):  # 0-based index
         if x < self.N:
             self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-    def update(self, L, R, h):  # Time: O(logN), Space: O(N)
-        def pull(x):
+    def update(self, L, R, h): 
             while x > 1:
                 x //= 2
                 self.tree[x] = self.query_fn(self.tree[x*2], self.tree[x*2+1])
@@ -32,10 +31,10 @@ class SegmentTree(object):  # 0-based index
         R += self.N
         L0, R0 = L, R
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 self.__apply(L, h)
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 self.__apply(R, h)
                 R -= 1
             L //= 2
@@ -43,8 +42,7 @@ class SegmentTree(object):  # 0-based index
         pull(L0)
         pull(R0)
 
-    def query(self, L, R):  # Time: O(logN), Space: O(N)
-        def push(x):
+    def query(self, L, R): 
             n = 2**self.H
             while n != 1:
                 y = x // n
@@ -63,10 +61,10 @@ class SegmentTree(object):  # 0-based index
         push(L)
         push(R)
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 result = self.query_fn(result, self.tree[L])
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 result = self.query_fn(result, self.tree[R])
                 R -= 1
             L //= 2
@@ -83,34 +81,29 @@ class SegmentTree(object):  # 0-based index
 # competitive programming solution
 class Solution(object):
     def minDayskVariants(self, points, k):
-        """
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def add_rec(rec, intervals):
             x0, y0, x1, y1 = rec
-            # add [y0, y1] by 1 in [x0, x1+1)
+           
             intervals.append([[x0,   +1], [y0, y1]])
             intervals.append([[x1+1, -1], [y0, y1]])
 
-        def check(points, k, l):  # Time: O(nlogn), Space: O(n)
-            intervals = []
+        def check(points, k, l): 
             y_set = set()
             for x, y in points:
                 add_rec([x-l, y-l, x+l, y+l], intervals)
                 y_set.add(y-l)
                 y_set.add(y+l)
             intervals.sort()
-            y_to_idx = {y:i for i, y in enumerate(sorted(y_set))}  # coordinate compression
+            y_to_idx = {y:i for i, y in enumerate(sorted(y_set))} 
             st = SegmentTree(len(y_to_idx))
-            for [_, v], [y0, y1] in intervals:  # line sweep
+            for [_, v], [y0, y1] in intervals: 
                 st.update(y_to_idx[y0], y_to_idx[y1], v)
                 if st.query(0, len(y_to_idx)-1) >= k:
                     return True
             return False
                 
-        points = [[x+y, x-y] for x, y in points]  # rotate
+        points = [[x+y, x-y] for x, y in points] 
         min_x = min(points)[0]
         max_x = max(points)[0]
         min_y = min(points, key=lambda x: x[1])[1]
@@ -132,21 +125,16 @@ import collections
 # interview solution
 class Solution2(object):
     def minDayskVariants(self, points, k):
-        """
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
+        
         def add_rec(rec, intervals):
             x0, y0, x1, y1 = rec
-            # add [y0, y1+1) by 1 in [x0, x1+1)
+           
             intervals[x0][y0] += 1
             intervals[x0][y1+1] -= 1
             intervals[x1+1][y0] -= 1
             intervals[x1+1][y1+1] += 1
 
-        def check(points, k, l):  # Time: O(n^2), Space: O(n)
-            intervals = collections.defaultdict(lambda:collections.defaultdict(int))
+        def check(points, k, l): 
             y_set = set()
             for x, y in points:
                 add_rec([x-l, y-l, x+l, y+l], intervals)
@@ -155,7 +143,7 @@ class Solution2(object):
             sorted_y = sorted(y_set)
             sorted_x = sorted(intervals.keys())
             count = collections.Counter()
-            for x in sorted_x:  # line sweep
+            for x in sorted_x: 
                 for y, c in intervals[x].items():
                     count[y] += c
                 cnt = 0
@@ -165,7 +153,7 @@ class Solution2(object):
                         return True
             return False
                 
-        points = [[x+y, x-y] for x, y in points]  # rotate
+        points = [[x+y, x-y] for x, y in points] 
         min_x = min(points)[0]
         max_x = max(points)[0]
         min_y = min(points, key=lambda x: x[1])[1]

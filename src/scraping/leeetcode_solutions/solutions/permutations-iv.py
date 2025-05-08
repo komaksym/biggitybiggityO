@@ -3,11 +3,7 @@
 # combinatorics
 class Solution(object):
     def permute(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: List[int]
-        """
+        
         result = []
         cnt = [1]*n
         for i in range(len(cnt)-1):
@@ -31,11 +27,7 @@ class Solution(object):
 # combinatorics
 class Solution2(object):
     def permute(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: List[int]
-        """
+        
         result = []
         fact = [1]*(((n-1)+1)//2+1)
         for i in range(len(fact)-1):

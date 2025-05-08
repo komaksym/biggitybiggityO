@@ -2,11 +2,7 @@
 
 class Solution(object):
     def shortestCommonSupersequence(self, str1, str2):
-        """
-        :type str1: str
-        :type str2: str
-        :rtype: str
-        """
+        
         dp = [[0 for _ in range(len(str2)+1)] for _ in range(2)]
         bt = [[None for _ in range(len(str2)+1)] for _ in range(len(str1)+1)]
         for i, c in enumerate(str1):

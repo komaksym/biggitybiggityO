@@ -6,10 +6,7 @@ import itertools
 
 class Solution(object):
     def rearrangeBarcodes(self, barcodes):
-        """
-        :type barcodes: List[int]
-        :rtype: List[int]
-        """
+        
         k = 2
         cnts = collections.Counter(barcodes)
         bucket_cnt = max(cnts.values())
@@ -30,10 +27,7 @@ import collections
 
 class Solution2(object):
     def rearrangeBarcodes(self, barcodes):
-        """
-        :type barcodes: List[int]
-        :rtype: List[int]
-        """
+        
         cnts = collections.Counter(barcodes)
         sorted_cnts = [[v, k] for k, v in cnts.items()]
         sorted_cnts.sort(reverse=True)

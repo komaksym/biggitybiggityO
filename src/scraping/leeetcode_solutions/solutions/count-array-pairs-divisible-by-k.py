@@ -6,11 +6,7 @@ import collections
 # math, number theory
 class Solution(object):
     def countPairs(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def gcd(x, y):
             while y:
                 x, y = y, x%y
@@ -35,11 +31,7 @@ import collections
 # math, number theory
 class Solution2(object):
     def countPairs(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def gcd(x, y):
             while y:
                 x, y = y, x%y

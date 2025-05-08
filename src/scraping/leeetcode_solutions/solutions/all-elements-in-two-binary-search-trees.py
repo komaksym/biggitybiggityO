@@ -10,11 +10,7 @@ class TreeNode(object):
 
 class Solution(object):
     def getAllElements(self, root1, root2):
-        """
-        :type root1: TreeNode
-        :type root2: TreeNode
-        :rtype: List[int]
-        """
+        
         def inorder_gen(root):
             result, stack = [], [(root, False)]
             while stack:

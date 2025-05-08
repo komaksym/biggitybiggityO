@@ -7,11 +7,7 @@ from functools import reduce
 # binary search, principle of inclusion and exclusion, number theory
 class Solution(object):
     def findKthSmallest(self, coins, k):
-        """
-        :type coins: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -47,11 +43,7 @@ class Solution(object):
 # binary search, principle of inclusion and exclusion, number theory
 class Solution2(object):
     def findKthSmallest(self, coins, k):
-        """
-        :type coins: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def popcount(x):
             return bin(x).count('1')
 

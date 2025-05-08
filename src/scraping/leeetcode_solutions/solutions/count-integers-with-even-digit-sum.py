@@ -3,10 +3,7 @@
 # math
 class Solution(object):
     def countEven(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
+        
         def parity(x):
             result = 0
             while x:
@@ -21,10 +18,7 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def countEven(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
+        
         def parity(x):
             result = 0
             while x:
@@ -39,8 +33,5 @@ class Solution2(object):
 # brute force
 class Solution3(object):
     def countEven(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
+        
         return sum(sum(map(int, str(x)))%2 == 0 for x in range(1, num+1))

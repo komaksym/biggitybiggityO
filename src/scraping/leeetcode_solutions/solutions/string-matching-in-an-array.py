@@ -29,8 +29,7 @@ class AhoTrie(object):
         self.__root = self.__create_ac_trie(patterns)
         self.__node = self.__create_ac_suffix_and_output_links(self.__root)
     
-    def __create_ac_trie(self, patterns):  # Time:  O(n), Space: O(t)
-        root = AhoNode()
+    def __create_ac_trie(self, patterns): 
         for i, pattern in enumerate(patterns):
             node = root
             for c in pattern:
@@ -38,8 +37,7 @@ class AhoTrie(object):
             node.indices.append(i)
         return root
 
-    def __create_ac_suffix_and_output_links(self, root):  # Time:  O(n), Space: O(t)
-        queue = collections.deque()
+    def __create_ac_suffix_and_output_links(self, root): 
         for node in root.children.values():
             queue.append(node)
             node.suffix = root
@@ -56,7 +54,7 @@ class AhoTrie(object):
                 
         return root
 
-    def __get_ac_node_outputs(self, node):  # Time:  O(z)
+    def __get_ac_node_outputs(self, node): 
         result = []
         for i in node.indices:
             result.append(i)
@@ -70,10 +68,7 @@ class AhoTrie(object):
     
 class Solution(object):
     def stringMatching(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
+        
         trie = AhoTrie(words)
         lookup = set()
         for i in range(len(words)):
@@ -88,10 +83,7 @@ class Solution(object):
 # Time:  O(n^2 * l), n is the number of strings
 class Solution2(object):
     def stringMatching(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
+        
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -131,10 +123,7 @@ class Solution2(object):
 # Time:  O(n^2 * l^2), n is the number of strings
 class Solution3(object):
     def stringMatching(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
+        
         result = []
         for i, pattern in enumerate(words):
             for j, text in enumerate(words):

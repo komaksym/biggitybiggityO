@@ -3,11 +3,7 @@
 # freq table, two pointers, sliding window
 class Solution(object):
     def countCompleteSubstrings(self, word, k):
-        """
-        :type word: str
-        :type k: int
-        :rtype: int
-        """
+        
         result = valid = 0
         cnt = [0]*26
         for c in range(1, len(set(word))+1):

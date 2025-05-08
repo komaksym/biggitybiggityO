@@ -3,10 +3,7 @@
 # constructive algorithms
 class Solution(object):
     def colorRed(self, n):
-        """
-        :type n: int
-        :rtype: List[List[int]]
-        """
+        
         result = [[1, 1]]
         for i in range(2, n+1):
             if i%2 == n%2:

@@ -6,10 +6,7 @@ import itertools
 
 class Solution(object):
     def generatePalindromes(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
+        
         cnt = collections.Counter(s)
         mid = ''.join(k for k, v in cnt.items() if v % 2)
         chars = ''.join(k * (v / 2) for k, v in cnt.items())
@@ -36,10 +33,7 @@ class Solution(object):
 
 class Solution2(object):
     def generatePalindromes(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
+        
         cnt = collections.Counter(s)
         mid = tuple(k for k, v in cnt.items() if v % 2)
         chars = ''.join(k * (v / 2) for k, v in cnt.items())

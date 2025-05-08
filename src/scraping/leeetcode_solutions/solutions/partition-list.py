@@ -10,9 +10,9 @@ class ListNode(object):
             return "{} -> {}".format(self.val, repr(self.__next__))
 
 class Solution(object):
-    # @param head, a ListNode
-    # @param x, an integer
-    # @return a ListNode
+   
+   
+   
     def partition(self, head, x):
         dummySmaller, dummyGreater = ListNode(-1), ListNode(-1)
         smaller, greater = dummySmaller, dummyGreater

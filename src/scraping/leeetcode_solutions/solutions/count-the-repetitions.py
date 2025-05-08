@@ -2,13 +2,7 @@
 
 class Solution(object):
     def getMaxRepetitions(self, s1, n1, s2, n2):
-        """
-        :type s1: str
-        :type n1: int
-        :type s2: str
-        :type n2: int
-        :rtype: int
-        """
+        
         repeat_count = [0] * (len(s2)+1)
         lookup = {}
         j, count = 0, 0
@@ -18,7 +12,7 @@ class Solution(object):
                     j = (j + 1) % len(s2)
                     count += (j == 0)
 
-            if j in lookup:   # cyclic
+            if j in lookup:  
                 i = lookup[j]
                 prefix_count = repeat_count[i]
                 pattern_count = (count - repeat_count[i]) * ((n1 - i) // (k - i))
@@ -27,5 +21,5 @@ class Solution(object):
             lookup[j] = k
             repeat_count[k] = count
 
-        return repeat_count[n1] / n2  # not cyclic iff n1 <= s2
+        return repeat_count[n1] / n2 
 

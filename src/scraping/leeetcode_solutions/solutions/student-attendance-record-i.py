@@ -2,10 +2,7 @@
 
 class Solution(object):
     def checkRecord(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
+        
         count_A = 0
         for i in range(len(s)):
             if s[i] == 'A':

@@ -3,20 +3,17 @@
 # counting sort, inplace solution
 class Solution(object):
     def sortEvenOdd(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         def partition(index, nums):
             for i in range(len(nums)):
                 j = i
                 while nums[i] >= 0:
                     j = index(j)
-                    nums[i], nums[j] = nums[j], ~nums[i]  # processed
+                    nums[i], nums[j] = nums[j], ~nums[i] 
             for i in range(len(nums)):
-                nums[i] = ~nums[i]  # restore values
+                nums[i] = ~nums[i] 
 
-        def inplace_counting_sort(nums, left, right, reverse=False):  # Time: O(n)
+        def inplace_counting_sort(nums, left, right, reverse=False): 
             if right-left+1 == 0:
                 return
             count = [0]*(max(nums[i] for i in range(left, right+1))+1)
@@ -24,14 +21,14 @@ class Solution(object):
                 count[nums[i]] += 1
             for i in range(1, len(count)):
                 count[i] += count[i-1]
-            for i in reversed(range(left, right+1)):  # inplace but unstable sort
+            for i in reversed(range(left, right+1)): 
                 while nums[i] >= 0:
                     count[nums[i]] -= 1
                     j = left+count[nums[i]]
                     nums[i], nums[j] = nums[j], ~nums[i]
             for i in range(left, right+1):
-                nums[i] = ~nums[i]  # restore values
-            if reverse:  # unstable
+                nums[i] = ~nums[i] 
+            if reverse: 
                 while left < right:
                     nums[left], nums[right] = nums[right], nums[left]
                     left += 1
@@ -48,18 +45,15 @@ class Solution(object):
 # sort, inplace solution
 class Solution2(object):
     def sortEvenOdd(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         def partition(index, nums):
             for i in range(len(nums)):
                 j = i
                 while nums[i] >= 0:
                     j = index(j)
-                    nums[i], nums[j] = nums[j], ~nums[i]  # processed
+                    nums[i], nums[j] = nums[j], ~nums[i] 
             for i in range(len(nums)):
-                nums[i] = ~nums[i]  # restore values
+                nums[i] = ~nums[i] 
         
         partition(lambda i: i//2 if i%2 == 0 else (len(nums)+1)//2+i//2, nums)
         nums[:(len(nums)+1)//2], nums[(len(nums)+1)//2:] = sorted(nums[:(len(nums)+1)//2]), sorted(nums[(len(nums)+1)//2:], reverse=True)
@@ -71,9 +65,6 @@ class Solution2(object):
 # sort
 class Solution3(object):
     def sortEvenOdd(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
+        
         nums[::2], nums[1::2] = sorted(nums[::2]), sorted(nums[1::2], reverse=True)
         return nums

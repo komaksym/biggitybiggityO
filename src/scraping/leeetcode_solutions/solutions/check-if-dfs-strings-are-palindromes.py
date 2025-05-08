@@ -3,13 +3,9 @@
 # iterative dfs, manacher's algorithm
 class Solution(object):
     def findAnswer(self, parent, s):
-        """
-        :type parent: List[int]
-        :type s: str
-        :rtype: List[bool]
-        """
+        
         def manacher(s):
-            s = '^#' + '#'.join(s) + '#$'
+            s = '
             P = [0]*len(s)
             C, R = 0, 0
             for i in range(1, len(s)-1):
@@ -53,13 +49,9 @@ class Solution(object):
 # dfs, manacher's algorithm
 class Solution2(object):
     def findAnswer(self, parent, s):
-        """
-        :type parent: List[int]
-        :type s: str
-        :rtype: List[bool]
-        """
+        
         def manacher(s):
-            s = '^#' + '#'.join(s) + '#$'
+            s = '
             P = [0]*len(s)
             C, R = 0, 0
             for i in range(1, len(s)-1):

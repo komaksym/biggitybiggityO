@@ -1,17 +1,17 @@
 # Time:  O(nlogn)
 
-class BIT(object):  # 0-indexed.
+class BIT(object): 
     def __init__(self, n):
-        self.__bit = [0]*(n+1)  # Extra one for dummy node.
+        self.__bit = [0]*(n+1) 
 
     def add(self, i, val):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         while i < len(self.__bit):
             self.__bit[i] += val
             i += (i & -i)
 
     def query(self, i):
-        i += 1  # Extra one for dummy node.
+        i += 1 
         ret = 0
         while i > 0:
             ret += self.__bit[i]
@@ -22,12 +22,7 @@ class BIT(object):  # 0-indexed.
 # iterative dfs, fenwick tree
 class Solution(object):
     def treeQueries(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def iter_dfs():
             L, R, dist, lookup = [0]*n, [0]*n, [0]*n, [0]*n
             cnt = 0
@@ -81,12 +76,7 @@ class Solution(object):
 # dfs, fenwick tree
 class Solution2(object):
     def treeQueries(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def dfs(u, p, d):
             L[u] = cnt[0]
             cnt[0] += 1

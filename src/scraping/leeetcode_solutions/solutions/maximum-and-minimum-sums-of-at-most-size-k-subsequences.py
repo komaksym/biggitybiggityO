@@ -7,20 +7,16 @@ FACT, INV, INV_FACT = [[1]*2 for _ in range(3)]
 def nCr(n, k):
     if n < k:
         return 0
-    while len(INV) <= n:  # lazy initialization
+    while len(INV) <= n: 
         FACT.append(FACT[-1]*len(INV) % MOD)
-        INV.append(INV[MOD%len(INV)]*(MOD-MOD//len(INV)) % MOD)  # https://cp-algorithms.com/algebra/module-inverse.html
+        INV.append(INV[MOD%len(INV)]*(MOD-MOD//len(INV)) % MOD) 
         INV_FACT.append(INV_FACT[-1]*INV[-1] % MOD)
     return (FACT[n]*INV_FACT[n-k] % MOD) * INV_FACT[k] % MOD
 
 
 class Solution(object):
     def minMaxSums(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         nums.sort()
         result = 0
@@ -35,11 +31,7 @@ class Solution(object):
 # sort, combinatorics
 class Solution2(object):
     def minMaxSums(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         nums.sort()
         result = 0

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def canSeePersonsCount(self, heights):
-        """
-        :type heights: List[int]
-        :rtype: List[int]
-        """
+        
         result = [0]*len(heights)
         stk = []
         for i, h in enumerate(heights):
@@ -22,10 +19,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def canSeePersonsCount(self, heights):
-        """
-        :type heights: List[int]
-        :rtype: List[int]
-        """
+        
         result = [0]*len(heights)
         stk = []
         for i in reversed(range(len(heights))):

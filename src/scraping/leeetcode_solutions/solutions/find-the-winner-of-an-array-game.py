@@ -2,11 +2,7 @@
 
 class Solution(object):
     def getWinner(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         result = arr[0]
         count = 0
         for i in range(1, len(arr)):

@@ -3,14 +3,9 @@
 # z-function
 class Solution(object):
     def countCells(self, grid, pattern):
-        """
-        :type grid: List[List[str]]
-        :type pattern: str
-        :rtype: int
-        """
-        # Template: https://cp-algorithms.com/string/z-function.html
-        def z_function(s):  # Time: O(n), Space: O(n)
-            z = [0]*len(s)
+        
+       
+        def z_function(s): 
             l, r = 0, 0
             for i in range(1, len(z)):
                 if i <= r:

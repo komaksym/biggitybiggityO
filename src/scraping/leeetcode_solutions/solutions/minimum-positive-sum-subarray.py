@@ -6,12 +6,7 @@ from sortedcontainers import SortedList
 # prefix sum, two pointers, sliding window, sorted list, binary search
 class Solution(object):
     def minimumSumSubarray(self, nums, l, r):
-        """
-        :type nums: List[int]
-        :type l: int
-        :type r: int
-        :rtype: int
-        """
+        
         INF = float("inf")
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):

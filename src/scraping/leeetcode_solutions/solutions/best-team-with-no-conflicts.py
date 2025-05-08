@@ -1,10 +1,10 @@
 # Time:  O(nloga)
 
 # Range Maximum Query
-class SegmentTree(object):  # 0-based index
+class SegmentTree(object): 
     def __init__(self, N,
                  build_fn=lambda x, y: [y]*(2*x),
-                 query_fn=lambda x, y: y if x is None else max(x, y),  # (lambda x, y: y if x is None else min(x, y))
+                 query_fn=lambda x, y: y if x is None else max(x, y), 
                  update_fn=lambda x, y: y,
                  default_val=0):
         self.N = N
@@ -20,8 +20,7 @@ class SegmentTree(object):  # 0-based index
         if x < self.N:
             self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-    def update(self, L, R, h):  # Time: O(logN), Space: O(N)
-        def pull(x):
+    def update(self, L, R, h): 
             while x > 1:
                 x //= 2
                 self.tree[x] = self.query_fn(self.tree[x*2], self.tree[x*2+1])
@@ -32,10 +31,10 @@ class SegmentTree(object):  # 0-based index
         R += self.N
         L0, R0 = L, R
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 self.__apply(L, h) 
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 self.__apply(R, h)
                 R -= 1
             L //= 2
@@ -43,8 +42,7 @@ class SegmentTree(object):  # 0-based index
         pull(L0)
         pull(R0)
 
-    def query(self, L, R):  # Time: O(logN), Space: O(N)
-        def push(x):
+    def query(self, L, R): 
             n = 2**self.H
             while n != 1:
                 y = x // n
@@ -63,10 +61,10 @@ class SegmentTree(object):  # 0-based index
         push(L)
         push(R)
         while L <= R:
-            if L & 1:  # is right child
+            if L & 1: 
                 result = self.query_fn(result, self.tree[L])
                 L += 1
-            if R & 1 == 0:  # is left child
+            if R & 1 == 0: 
                 result = self.query_fn(result, self.tree[R])
                 R -= 1
             L //= 2
@@ -83,14 +81,10 @@ class SegmentTree(object):  # 0-based index
 # optimized from Solution3
 class Solution(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
+        
         players = sorted(zip(scores, ages))
         sorted_ages = sorted(set(ages))
-        lookup = {age:i for i, age in enumerate(sorted_ages)}  # coordinate compression
+        lookup = {age:i for i, age in enumerate(sorted_ages)} 
         segment_tree = SegmentTree(len(lookup))
         result = 0
         for score, age in players:
@@ -102,14 +96,10 @@ class Solution(object):
 # optimized from Solution4
 class Solution2(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
+        
         players = sorted(zip(ages, scores))
         sorted_scores = sorted(set(scores))
-        lookup = {score:i for i, score in enumerate(sorted_scores)}  # coordinate compression
+        lookup = {score:i for i, score in enumerate(sorted_scores)} 
         segment_tree = SegmentTree(len(lookup))
         result = 0
         for age, score in players:
@@ -124,11 +114,7 @@ import collections
 # optimized from Solution5
 class Solution3(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
+        
         players = sorted(zip(scores, ages))
         sorted_ages = sorted(set(ages))
         dp = collections.defaultdict(int)
@@ -145,11 +131,7 @@ import collections
 # optimized from Solution6
 class Solution4(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
+        
         players = sorted(zip(ages, scores))
         sorted_scores = sorted(set(scores))
         dp = collections.defaultdict(int)
@@ -163,11 +145,7 @@ class Solution4(object):
 # longest_increasing_subsequence like dp solution
 class Solution5(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
+        
         players = sorted(zip(scores, ages))
         dp = [0]*len(players)
         result = 0
@@ -184,11 +162,7 @@ class Solution5(object):
 # longest_increasing_subsequence like dp solution
 class Solution6(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
+        
         players = sorted(zip(ages, scores))
         dp = [0]*len(players)
         result = 0

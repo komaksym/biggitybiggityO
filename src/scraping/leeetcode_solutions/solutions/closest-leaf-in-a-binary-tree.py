@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def findClosestLeaf(self, root, k):
-        """
-        :type root: TreeNode
-        :type k: int
-        :rtype: int
-        """
+        
         def traverse(node, neighbors, leaves):
             if not node:
                 return

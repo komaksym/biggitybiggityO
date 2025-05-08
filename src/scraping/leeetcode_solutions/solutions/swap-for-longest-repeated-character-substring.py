@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def maxRepOpt1(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
+        
         K = 1
         result = 0
         total_count, count = collections.Counter(), collections.Counter()
@@ -31,10 +28,7 @@ import itertools
 
 class Solution2(object):
     def maxRepOpt1(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
+        
         A = [[c, len(list(group))] for c, group in itertools.groupby(text)]
         total_count = collections.Counter(text)
         result = max(min(l+1, total_count[c]) for c, l in A)

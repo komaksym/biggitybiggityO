@@ -3,10 +3,7 @@
 # Boyer–Moore majority vote algorithm, linear search
 class Solution(object):
     def minimumIndex(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def boyer_moore_majority_vote():
             result, cnt = None, 0
             for x in nums:

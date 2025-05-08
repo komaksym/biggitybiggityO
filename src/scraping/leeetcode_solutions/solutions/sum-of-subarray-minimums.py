@@ -6,10 +6,7 @@ import itertools
 # Ascending stack solution
 class Solution(object):
     def sumSubarrayMins(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
+        
         M = 10**9 + 7
 
         left, s1 = [0]*len(A), []

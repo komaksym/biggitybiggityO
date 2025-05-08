@@ -6,10 +6,7 @@ import collections
 # freq table
 class Solution(object):
     def dividePlayers(self, skill):
-        """
-        :type skill: List[int]
-        :rtype: int
-        """
+        
 
         target = sum(skill)//(len(skill)//2)
         cnt = collections.Counter(skill)

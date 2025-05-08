@@ -11,10 +11,7 @@ class TreeNode(object):
 # dfs solution with stack
 class Solution(object):
     def maxSumBST(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         result = 0
         stk = [[root, None, []]]
         while stk:
@@ -43,10 +40,7 @@ class Solution(object):
 # dfs solution with recursion
 class Solution2(object):
     def maxSumBST(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
+        
         def dfs(node, result):
             if not node:
                 return True, 0, float("inf"), float("-inf")

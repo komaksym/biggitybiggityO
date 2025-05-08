@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def leastBricks(self, wall):
-        """
-        :type wall: List[List[int]]
-        :rtype: int
-        """
+        
         widths = collections.defaultdict(int)
         result = len(wall)
         for row in wall:

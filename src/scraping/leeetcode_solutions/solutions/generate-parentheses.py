@@ -3,10 +3,7 @@
 # iterative solution
 class Solution(object):
     def generateParenthesis(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
+        
         result, curr = [], []
         stk = [(1, (n, n))]
         while stk:
@@ -34,10 +31,7 @@ class Solution(object):
 # recursive solution
 class Solution2(object):
     def generateParenthesis(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
+        
         def generateParenthesisRecu(left, right, curr, result):
             if left == 0 and right == 0:
                 result.append("".join(curr))

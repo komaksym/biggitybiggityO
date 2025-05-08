@@ -2,11 +2,7 @@
 
 class Solution(object):
     def numWays(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         if n == 0:
             return 0
         elif n == 1:
@@ -22,11 +18,7 @@ class Solution(object):
 # DP solution.
 class Solution2(object):
     def numWays(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
+        
         if n == 0:
             return 0
         elif n == 1:

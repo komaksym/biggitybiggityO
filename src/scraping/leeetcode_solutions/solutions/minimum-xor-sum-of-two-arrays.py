@@ -3,19 +3,18 @@
 # weighted bipartite matching solution
 class Solution(object):
     def minimumXORSum(self, nums1, nums2):
-        # Template translated from:
-        # https://github.com/kth-competitive-programming/kactl/blob/main/content/graph/WeightedMatching.h
-        def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
-            if not a:
+       
+       
+        def hungarian(a): 
                 return 0, []
             n, m = len(a)+1, len(a[0])+1
             u, v, p, ans = [0]*n, [0]*m, [0]*m, [0]*(n-1)
             for i in range(1, n):
                 p[0] = i
-                j0 = 0  # add "dummy" worker 0
+                j0 = 0 
                 dist, pre = [float("inf")]*m, [-1]*m
                 done = [False]*(m+1)
-                while True:  # dijkstra
+                while True: 
                     done[j0] = True
                     i0, j1, delta = p[j0], None, float("inf")
                     for j in range(1, m):
@@ -35,13 +34,13 @@ class Solution(object):
                     j0 = j1
                     if not p[j0]:
                         break
-                while j0:  # update alternating path
+                while j0: 
                     j1 = pre[j0]
                     p[j0], j0 = p[j1], j1
             for j in range(1, m):
                 if p[j]:
                     ans[p[j]-1] = j-1
-            return -v[0], ans  # min cost
+            return -v[0], ans 
         
         adj = [[0]*len(nums2) for _ in range(len(nums1))]
         for i in range(len(nums1)):
@@ -54,11 +53,7 @@ class Solution(object):
 # dp solution
 class Solution2(object):
     def minimumXORSum(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
+        
         dp = [(float("inf"), float("inf"))]*(2**len(nums2))
         dp[0] = (0, 0)
         for mask in range(len(dp)):

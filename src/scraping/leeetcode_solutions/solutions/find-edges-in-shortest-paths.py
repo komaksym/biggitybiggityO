@@ -7,11 +7,7 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def findAnswer(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: List[bool]
-        """
+        
         INF = float("inf")
         def dijkstra(start):
             best = [INF]*len(adj)

@@ -5,13 +5,7 @@ import collections
 
 class Solution(object):
     def watchedVideosByFriends(self, watchedVideos, friends, id, level):
-        """
-        :type watchedVideos: List[List[str]]
-        :type friends: List[List[int]]
-        :type id: int
-        :type level: int
-        :rtype: List[str]
-        """
+        
         curr_level, lookup = set([id]), set([id])
         for _ in range(level):
             curr_level = set(j for i in curr_level for j in friends[i] if j not in lookup)

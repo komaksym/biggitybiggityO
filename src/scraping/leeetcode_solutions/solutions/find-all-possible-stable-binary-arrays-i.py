@@ -3,12 +3,7 @@
 # dp
 class Solution(object):
     def numberOfStableArrays(self, zero, one, limit):
-        """
-        :type zero: int
-        :type one: int
-        :type limit: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [[[0]*2 for _ in range(one+1)] for _ in range(zero+1)]
         for i in range(zero+1):
@@ -30,12 +25,7 @@ class Solution(object):
 # dp
 class Solution2(object):
     def numberOfStableArrays(self, zero, one, limit):
-        """
-        :type zero: int
-        :type one: int
-        :type limit: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [[[0]*2 for _ in range(one+1)] for _ in range(zero+1)]
         dp[0][0][0] = dp[0][0][1] = 1

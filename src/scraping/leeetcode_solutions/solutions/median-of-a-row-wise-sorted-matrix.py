@@ -6,10 +6,7 @@ import bisect
 # binary search
 class Solution(object):
     def matrixMedian(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         def check(x):
             return sum(bisect_right(row, x) for row in grid) > (len(grid)*len(grid[0]))//2
 

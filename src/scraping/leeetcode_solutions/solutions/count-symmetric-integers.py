@@ -5,11 +5,7 @@ MAX_R = 10**4
 LOOKUP = [-1]*MAX_R
 class Solution(object):
     def countSymmetricIntegers(self, low, high):
-        """
-        :type low: int
-        :type high: int
-        :rtype: int
-        """
+        
         def check(x):
             if LOOKUP[x-1] == -1:
                 digits = list(map(int, str(x)))

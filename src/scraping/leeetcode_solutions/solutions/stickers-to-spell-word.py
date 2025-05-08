@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def minStickers(self, stickers, target):
-        """
-        :type stickers: List[str]
-        :type target: str
-        :rtype: int
-        """
+        
         def minStickersHelper(sticker_counts, target, dp):
             if "".join(target) in dp:
                 return dp["".join(target)]

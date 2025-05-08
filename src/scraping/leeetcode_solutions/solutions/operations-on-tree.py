@@ -6,9 +6,7 @@
 class LockingTree(object):
 
     def __init__(self, parent):
-        """
-        :type parent: List[int]
-        """
+        
         self.__parent = parent
         self.__children = [[] for _ in range(len(parent))]
         for i, x in enumerate(parent):
@@ -17,33 +15,21 @@ class LockingTree(object):
         self.__locked = {}
 
     def lock(self, num, user):
-        """
-        :type num: int
-        :type user: int
-        :rtype: bool
-        """
+        
         if num in self.__locked:
             return False
         self.__locked[num] = user
         return True
 
     def unlock(self, num, user):
-        """
-        :type num: int
-        :type user: int
-        :rtype: bool
-        """
+        
         if self.__locked.get(num) != user:
             return False
         del self.__locked[num]
         return True
 
     def upgrade(self, num, user):
-        """
-        :type num: int
-        :type user: int
-        :rtype: bool
-        """
+        
         node = num
         while node != -1:
             if node in self.__locked:

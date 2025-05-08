@@ -2,10 +2,7 @@
 
 class Solution(object):
     def sortString(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         result, count = [], [0]*26
         for c in s:
             count[ord(c)-ord('a')] += 1
@@ -29,10 +26,7 @@ import collections
 
 class Solution2(object):
     def sortString(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
+        
         result, count, desc = [], collections.Counter(s), False
         while count:
             for c in sorted(list(count.keys()), reverse=desc):

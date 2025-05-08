@@ -2,10 +2,7 @@
 
 class Solution(object):
     def findLeaves(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
+        
         def findLeavesHelper(node, result):
             if not node:
                 return -1

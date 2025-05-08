@@ -6,10 +6,7 @@ import collections
 # hash, sort
 class Solution(object):
     def findWinners(self, matches):
-        """
-        :type matches: List[List[int]]
-        :rtype: List[List[int]]
-        """
+        
         lose = collections.defaultdict(int)
         players_set = set()
         for x, y in matches:

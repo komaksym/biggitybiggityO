@@ -6,14 +6,9 @@ import heapq
 # number theory, dijkstra's algorithm
 class Solution(object):
     def minOperations(self, n, m):
-        """
-        :type n: int
-        :type m: int
-        :rtype: int
-        """
-        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
-            primes = []
-            spf = [-1]*(n+1)  # the smallest prime factor
+        
+        def linear_sieve_of_eratosthenes(n): 
+            spf = [-1]*(n+1) 
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i

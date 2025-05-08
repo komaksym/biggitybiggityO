@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def minJumps(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
+        
         groups = collections.defaultdict(list)
         for i, x in enumerate(arr):
             groups[x].append(i)

@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def countQuadruplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = 0
         lookup = collections.defaultdict(int)
         lookup[nums[-1]] = 1
@@ -27,10 +24,7 @@ import collections
 
 class Solution2(object):
     def countQuadruplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         lookup = collections.defaultdict(list)
         for d in range(3, len(nums)):
             for c in range(2, d):

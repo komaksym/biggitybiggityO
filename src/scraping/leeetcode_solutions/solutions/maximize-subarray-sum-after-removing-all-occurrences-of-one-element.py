@@ -6,10 +6,7 @@ import collections
 # hash table, greedy, kadane's algorithm
 class Solution(object):
     def maxSubarraySum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = float("-inf")
         curr = mn = mn0 = 0
         mn1 = collections.defaultdict(int)
@@ -29,10 +26,7 @@ import collections
 # hash table, greedy, kadane's algorithm
 class Solution2(object):
     def maxSubarraySum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result = float("-inf")
         curr = mn = mn0 = 0
         mn1 = collections.defaultdict(int)
@@ -54,13 +48,10 @@ import collections
 # segment tree
 class Solution_TLE(object):
     def maxSubarraySum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MAX, TOTAL, PREFIX, SUFFIX = list(range(4))
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/block-placement-queries.py
+       
+       
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: None,
@@ -120,11 +111,11 @@ class Solution_TLE(object):
         for i, x in enumerate(nums):
             groups[x].append(i)
         st = SegmentTree(len(nums), build_fn=build, query_fn=query)
-        result = st.tree[1][0]  # st.query(0, len(nums)-1)[0]
+        result = st.tree[1][0] 
         for k, v in groups.items():
             for i in v:
                 st.update(i, None)
-            result = max(result, st.tree[1][0])  # st.query(0, len(nums)-1)[0]
+            result = max(result, st.tree[1][0]) 
             for i in v:
                 st.update(i, [k]*4)
         return result

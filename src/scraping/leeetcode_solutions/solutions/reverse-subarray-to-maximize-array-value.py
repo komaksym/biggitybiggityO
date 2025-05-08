@@ -2,10 +2,7 @@
 
 class Solution(object):
     def maxValueAfterReverse(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         result, add, max_pair, min_pair = 0, 0, float("-inf"), float("inf")
         for i in range(1, len(nums)):
             result += abs(nums[i-1]-nums[i])

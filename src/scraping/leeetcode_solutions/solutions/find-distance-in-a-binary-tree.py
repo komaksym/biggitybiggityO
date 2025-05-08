@@ -8,12 +8,7 @@ class TreeNode(object):
 
 class Solution(object):
     def findDistance(self, root, p, q):
-        """
-        :type root: TreeNode
-        :type p: int
-        :type q: int
-        :rtype: int
-        """
+        
         def iter_dfs(root, p, q):
             result = 0
             dist = [-1]
@@ -49,12 +44,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def findDistance(self, root, p, q):
-        """
-        :type root: TreeNode
-        :type p: int
-        :type q: int
-        :rtype: int
-        """
+        
         def dfs(node, p, q, result):
             if not node:
                 return -1

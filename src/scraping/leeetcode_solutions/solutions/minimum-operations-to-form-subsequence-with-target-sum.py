@@ -4,11 +4,7 @@
 # counting sort, greedy
 class Solution(object):
     def minOperations(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         def floor_log2_x(x):
             return x.bit_length()-1
 
@@ -39,11 +35,7 @@ class Solution(object):
 # sort, greedy
 class Solution2(object):
     def minOperations(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         total = sum(nums)
         if total < target:
             return -1
@@ -72,11 +64,7 @@ import heapq
 # heap, greedy
 class Solution3(object):
     def minOperations(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         total = sum(nums)
         if total < target:
             return -1
@@ -103,11 +91,7 @@ class Solution3(object):
 # bitmasks, greedy
 class Solution4(object):
     def minOperations(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
+        
         def floor_log2_x(x):
             return x.bit_length()-1
 

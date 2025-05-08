@@ -1,8 +1,8 @@
 # Time:  O(n)
 
 class Solution(object):
-    # @param A, a list of integers
-    # @return an integer
+   
+   
     def jump(self, A):
         jump_count = 0
         reachable = 0

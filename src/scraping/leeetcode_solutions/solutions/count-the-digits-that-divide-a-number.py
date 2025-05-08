@@ -3,10 +3,7 @@
 # math
 class Solution(object):
     def countDigits(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
+        
         result = 0
         curr = num
         while curr:

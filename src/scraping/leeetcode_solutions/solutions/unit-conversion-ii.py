@@ -3,11 +3,7 @@
 # bfs, fast exponentiation
 class Solution(object):
     def queryConversions(self, conversions, queries):
-        """
-        :type conversions: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         MOD = 10**9+7
         def divmod(a, b):
             return (a*pow(b, MOD-2, MOD))%MOD

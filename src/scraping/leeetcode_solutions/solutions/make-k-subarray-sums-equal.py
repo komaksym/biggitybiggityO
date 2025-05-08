@@ -6,11 +6,7 @@ import random
 # math, greedy, quick select
 class Solution(object):
     def makeSubKSumEqual(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -39,7 +35,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else:  # pivot_right < n.
+                else: 
                     left = pivot_right+1
 
         l = gcd(k, len(arr))

@@ -3,10 +3,7 @@
 # array
 class Solution(object):
     def minimumOperationsToWriteY(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
+        
         cnt = [[0]*3 for _ in range(2)]
         for i in range(len(grid)):
             for j in range(len(grid[0])):

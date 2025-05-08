@@ -5,11 +5,7 @@ import math
 
 class Solution(object):
     def minmaxGasDist(self, stations, K):
-        """
-        :type stations: List[int]
-        :type K: int
-        :rtype: float
-        """
+        
         def check(x):
             return sum(int(math.ceil((stations[i+1]-stations[i])/x))-1 for i in range(len(stations)-1)) <= K
 

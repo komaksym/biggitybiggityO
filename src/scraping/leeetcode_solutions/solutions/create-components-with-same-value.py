@@ -3,11 +3,7 @@
 # bfs, greedy
 class Solution(object):
     def componentValue(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         def bfs(target):
             total = nums[:]
             lookup = [len(adj[u]) for u in range(len(adj))]
@@ -43,11 +39,7 @@ class Solution(object):
 # iterative dfs, greedy
 class Solution2(object):
     def componentValue(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         def iter_dfs(target):
             total = nums[:]
             stk = [(1, (0, -1))]
@@ -84,11 +76,7 @@ class Solution2(object):
 # dfs, greedy
 class Solution3(object):
     def componentValue(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         def dfs(u, p, target):
             total = nums[u]
             for v in adj[u]:

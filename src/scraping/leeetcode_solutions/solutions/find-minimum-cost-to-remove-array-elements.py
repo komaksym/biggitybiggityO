@@ -6,10 +6,7 @@ import collections
 # dp, greedy
 class Solution(object):
     def minCost(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         dp = collections.defaultdict(lambda: float("inf"))
         dp[nums[0]] = 0
         for i in range(1, len(nums)-1, 2):

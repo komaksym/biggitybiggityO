@@ -3,10 +3,7 @@
 # array
 class Solution(object):
     def sumOfEncryptedInt(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def f(x):
             mx = base = 0
             while x:

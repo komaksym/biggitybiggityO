@@ -3,10 +3,7 @@
 # bit manipulation, freq table
 class Solution(object):
     def largestCombination(self, candidates):
-        """
-        :type candidates: List[int]
-        :rtype: int
-        """
+        
         cnt = []
         base, mx = 1, max(candidates)
         while base <= mx:

@@ -2,9 +2,8 @@
 #        runtime:    O(n * (logr + pi(sqrt(r))) = O(n * (logr + sqrt(r)/log(sqrt(r)))), pi(n) = number of primes in a range [1, n] = O(n/logn) by prime number theorem, see https://en.wikipedia.org/wiki/Prime_number_theorem
 
 # linear sieve of eratosthenes, number theory, bfs
-def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
-    primes = []
-    spf = [-1]*(n+1)  # the smallest prime factor
+def linear_sieve_of_eratosthenes(n): 
+    spf = [-1]*(n+1) 
     for i in range(2, n+1):
         if spf[i] == -1:
             spf[i] = i
@@ -20,10 +19,7 @@ MAX_NUM = 10**5
 PRIMES = linear_sieve_of_eratosthenes(int(MAX_NUM**0.5))
 class Solution(object):
     def canTraverseAllPairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
+        
         def prime_factors(x):
             factors = collections.Counter()
             for p in PRIMES:

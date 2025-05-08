@@ -2,12 +2,7 @@
 
 class Solution(object):
     def minimumOperations(self, nums, start, goal):
-        """
-        :type nums: List[int]
-        :type start: int
-        :type goal: int
-        :rtype: int
-        """
+        
         MAX_X = 1000
         nums = [y for y in nums if y and any(0 <= nx <= MAX_X for nx in (y, goal-y, goal+y, goal^y))]
         q = [(start, 0)]

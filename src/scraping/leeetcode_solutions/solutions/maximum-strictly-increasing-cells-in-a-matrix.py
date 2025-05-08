@@ -6,10 +6,7 @@ import collections
 # sort, dp
 class Solution(object):
     def maxIncreasingCells(self, mat):
-        """
-        :type mat: List[List[int]]
-        :rtype: int
-        """
+        
         lookup = collections.defaultdict(list)
         for i in range(len(mat)):
             for j in range(len(mat[0])):

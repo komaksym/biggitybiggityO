@@ -5,10 +5,7 @@ import collections
 
 class Solution(object):
     def tallestBillboard(self, rods):
-        """
-        :type rods: List[int]
-        :rtype: int
-        """
+        
         def dp(A):
             lookup = collections.defaultdict(int)
             lookup[0] = 0

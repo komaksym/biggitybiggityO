@@ -6,10 +6,7 @@ import functools
 
 class Solution(object):
     def minimumLengthEncoding(self, words):
-        """
-        :type words: List[str]
-        :rtype: int
-        """
+        
         words = list(set(words))
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()

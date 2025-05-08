@@ -9,10 +9,7 @@ class RecentCounter(object):
         self.__q = collections.deque()
 
     def ping(self, t):
-        """
-        :type t: int
-        :rtype: int
-        """
+        
         self.__q.append(t)
         while self.__q[0] < t-3000:
             self.__q.popleft()

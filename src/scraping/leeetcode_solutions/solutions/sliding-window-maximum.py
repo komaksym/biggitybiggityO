@@ -5,11 +5,7 @@ from collections import deque
 
 class Solution(object):
     def maxSlidingWindow(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
+        
         result, dq = [], deque()
         for i in range(len(nums)):
             if dq and i-dq[0] == k:

@@ -5,11 +5,7 @@ from sortedcontainers import SortedList
 
 class Solution(object):
     def medianSlidingWindow(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[float]
-        """
+        
         sl = SortedList(float(nums[i])for i in range(k))
         result = [(sl[k//2]+sl[k//2-(1-k%2)])/2]
         for i in range(k, len(nums)):
@@ -26,11 +22,7 @@ import heapq
 
 class Solution2(object):
     def medianSlidingWindow(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[float]
-        """
+        
         def lazy_delete(heap, to_remove, sign):
             while heap and sign*heap[0] in to_remove:
                 to_remove[sign*heap[0]] -= 1
@@ -38,8 +30,7 @@ class Solution2(object):
                     del to_remove[sign*heap[0]]
                 heapq.heappop(heap)
 
-        def full_delete(heap, to_remove, sign):  # Time: O(k), Space: O(k)
-            result = []
+        def full_delete(heap, to_remove, sign): 
             for x in heap:
                 if sign*x not in to_remove:
                     result.append(x)
@@ -79,11 +70,7 @@ import heapq
 
 class Solution3(object):
     def medianSlidingWindow(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[float]
-        """
+        
         def lazy_delete(heap, to_remove, sign):
             while heap and sign*heap[0] in to_remove:
                 to_remove[sign*heap[0]] -= 1

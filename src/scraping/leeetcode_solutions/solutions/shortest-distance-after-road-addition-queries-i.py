@@ -3,11 +3,7 @@
 # bfs
 class Solution(object):
     def shortestDistanceAfterQueries(self, n, queries):
-        """
-        :type n: int
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def bfs(u, v):
             adj[u].append(v)
             q = [u]
@@ -36,11 +32,7 @@ import heapq
 # dijkstra's algorithm
 class Solution2(object):
     def shortestDistanceAfterQueries(self, n, queries):
-        """
-        :type n: int
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
+        
         def dijkstra(u, v):
             adj[u].append((v, 1))
             min_heap = [(dist[u], u)]

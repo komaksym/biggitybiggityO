@@ -3,12 +3,7 @@
 # iterative dfs
 class Solution(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
+        
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -43,12 +38,7 @@ class Solution(object):
 # bfs
 class Solution2(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
+        
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -85,12 +75,7 @@ class Solution2(object):
 # iterative dfs
 class Solution3(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
+        
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -131,12 +116,7 @@ class Solution3(object):
 # bfs
 class Solution4(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
+        
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -175,14 +155,13 @@ class Solution4(object):
 
 # Time:  O(n^2)
 # union find
-class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
-    def __init__(self, n):
+class UnionFind(object): 
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x:  # path compression
+        while self.set[x] != x: 
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -193,7 +172,7 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]:  # union by rank
+        if self.rank[x] > self.rank[y]: 
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -203,12 +182,7 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 
 class Solution5(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
+        
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 

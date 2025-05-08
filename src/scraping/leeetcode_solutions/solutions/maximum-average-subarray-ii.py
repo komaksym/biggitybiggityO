@@ -2,11 +2,7 @@
 
 class Solution(object):
     def findMaxAverage(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: float
-        """
+        
         def getDelta(avg, nums, k):
             accu = [0.0] * (len(nums) + 1)
             minval_pos = None

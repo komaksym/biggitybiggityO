@@ -2,11 +2,7 @@
 
 class Solution(object):
     def largestPathValue(self, colors, edges):
-        """
-        :type colors: str
-        :type edges: List[List[int]]
-        :rtype: int
-        """
+        
         adj = [[] for _ in range(len(colors))]
         in_degree = [0]*len(colors)
         for u, v in edges:

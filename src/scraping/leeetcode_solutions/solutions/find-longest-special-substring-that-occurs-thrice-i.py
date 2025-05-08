@@ -3,10 +3,7 @@
 # string, hash table
 class Solution(object):
     def maximumLength(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         lookup = [[0]*3 for _ in range(26)]
         result = cnt = 0
         for i, c in enumerate(s):
@@ -26,10 +23,7 @@ class Solution(object):
 # string, brute force, freq table
 class Solution2(object):
     def maximumLength(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         lookup = [[0] for _ in range(26)]
         result = 0
         for i, c in enumerate(s):

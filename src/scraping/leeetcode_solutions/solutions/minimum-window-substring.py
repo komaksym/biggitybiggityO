@@ -5,11 +5,7 @@ import collections
 
 class Solution(object):
     def minWindow(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
+        
         count, remain = collections.Counter(t), len(t)
         i, left, right = 0, -1, -1
         for j, c in enumerate(s):
@@ -17,7 +13,7 @@ class Solution(object):
             count[c] -= 1
             if remain:
                 continue
-            while count[s[i]] < 0:  # greedily discard uneeds
+            while count[s[i]] < 0: 
                 count[s[i]] += 1
                 i += 1
             if right == -1 or j-i+1 < right-left+1:
@@ -28,11 +24,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def minWindow(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
+        
         current_count = [0 for i in range(52)]
         expected_count = [0 for i in range(52)]
 

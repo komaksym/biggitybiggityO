@@ -9,7 +9,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x])  # path compression.
+            self.set[x] = self.find_set(self.set[x]) 
         return self.set[x]
 
     def union_set(self, x, y):
@@ -22,12 +22,7 @@ class UnionFind(object):
 
 class Solution(object):
     def areSentencesSimilarTwo(self, words1, words2, pairs):
-        """
-        :type words1: List[str]
-        :type words2: List[str]
-        :type pairs: List[List[str]]
-        :rtype: bool
-        """
+        
         if len(words1) != len(words2): return False
 
         lookup = {}

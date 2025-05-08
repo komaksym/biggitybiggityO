@@ -13,11 +13,7 @@ class Node(object):
 # morris traversal
 class Solution(object):
     def checkEquivalence(self, root1, root2):
-        """
-        :type root1: Node
-        :type root2: Node
-        :rtype: bool
-        """
+        
         def add_counter(counter, prev, d, val):
             if val.isalpha():
                 counter[ord(val)-ord('a')] += d if prev[0] == '+' else -d
@@ -54,11 +50,7 @@ import functools
 
 class Solution2(object):
     def checkEquivalence(self, root1, root2):
-        """
-        :type root1: Node
-        :type root2: Node
-        :rtype: bool
-        """
+        
         def add_counter(counter, prev, d, val):
             if val.isalpha():
                 counter[ord(val)-ord('a')] += d if prev[0] == '+' else -d

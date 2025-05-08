@@ -3,10 +3,7 @@
 # linked list
 class Solution:
     def toArray(self, node):
-        """
-        :type head: Node
-        :rtype: List[int]
-        """
+        
         while node.prev:
             node = node.prev
         result = []

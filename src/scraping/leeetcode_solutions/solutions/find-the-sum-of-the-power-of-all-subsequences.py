@@ -3,11 +3,7 @@
 # dp, combinatorics
 class Solution(object):
     def sumOfPower(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [0]*(k+1)
         dp[0] = 1

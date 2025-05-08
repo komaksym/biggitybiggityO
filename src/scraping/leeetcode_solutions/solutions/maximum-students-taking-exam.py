@@ -13,15 +13,9 @@ from functools import partial
 # Hopcroft-Karp bipartite max-cardinality matching and max independent set
 # David Eppstein, UC Irvine, 27 Apr 2002
 def bipartiteMatch(graph):
-    '''Find maximum cardinality matching of a bipartite graph (U,V,E).
-    The input format is a dictionary mapping members of U to a list
-    of their neighbors in V.  The output is a triple (M,A,B) where M is a
-    dictionary mapping members of V to their matches in U, A is the part
-    of the maximum independent set in U, and B is the part of the MIS in V.
-    The same object may occur in both U and V, and is treated as two
-    distinct vertices if this happens.'''
     
-    # initialize greedy matching (redundant, but faster than full search)
+    
+   
     matching = {}
     for u in graph:
         for v in graph[u]:
@@ -30,11 +24,11 @@ def bipartiteMatch(graph):
                 break
     
     while 1:
-        # structure residual graph into layers
-        # pred[u] gives the neighbor in the previous layer for u in U
-        # preds[v] gives a list of neighbors in the previous layer for v in V
-        # unmatched gives a list of unmatched vertices in final layer of V,
-        # and is also used as a flag value for pred[u] when u is in the first layer
+       
+       
+       
+       
+       
         preds = {}
         unmatched = []
         pred = dict([(u,unmatched) for u in graph])
@@ -42,7 +36,7 @@ def bipartiteMatch(graph):
             del pred[matching[v]]
         layer = list(pred)
         
-        # repeatedly extend layering structure by another pair of layers
+       
         while layer and not unmatched:
             newLayer = {}
             for u in layer:
@@ -58,7 +52,7 @@ def bipartiteMatch(graph):
                 else:
                     unmatched.append(v)
         
-        # did we finish layering without finding any alternating paths?
+       
         if not unmatched:
             unlayered = {}
             for u in graph:
@@ -67,8 +61,8 @@ def bipartiteMatch(graph):
                         unlayered[v] = None
             return (matching,list(pred),list(unlayered))
 
-        # recursively search backward through layers to find alternating paths
-        # recursion returns true if found path, false otherwise
+       
+       
         def recurse(v):
             if v in preds:
                 L = preds[v]
@@ -89,7 +83,7 @@ def bipartiteMatch(graph):
                 L = preds[v]
                 del preds[v]
                 for u in L :
-                    if u in pred and pred[u] is unmatched:  # early return
+                    if u in pred and pred[u] is unmatched: 
                         del pred[u]
                         matching[v] = u
                         ret[0] = True
@@ -124,10 +118,7 @@ def bipartiteMatch(graph):
 # Hopcroft-Karp bipartite matching
 class Solution(object):
     def maxStudents(self, seats):
-        """
-        :type seats: List[List[str]]
-        :rtype: int
-        """
+        
         directions = [(-1, -1), (0, -1), (1, -1), (-1, 1), (0, 1), (1, 1)]
         E, count = collections.defaultdict(list), 0
         for i in range(len(seats)):
@@ -150,10 +141,7 @@ class Solution(object):
 # Hungarian bipartite matching
 class Solution2(object):
     def maxStudents(self, seats):
-        """
-        :type seats: List[List[str]]
-        :rtype: int
-        """
+        
         directions = [(-1, -1), (0, -1), (1, -1), (-1, 1), (0, 1), (1, 1)]
         def dfs(seats, e, lookup, matching):
             i, j = e
@@ -191,10 +179,7 @@ class Solution2(object):
 # dp solution
 class Solution3(object):
     def maxStudents(self, seats):
-        """
-        :type seats: List[List[str]]
-        :rtype: int
-        """
+        
         def popcount(n):
             result = 0
             while n:
@@ -204,7 +189,7 @@ class Solution3(object):
         
         dp = {0: 0}
         for row in seats:
-            invalid_mask = sum(1 << c for c, v in enumerate(row) if v == '#')
+            invalid_mask = sum(1 << c for c, v in enumerate(row) if v == 
             new_dp = {}
             for mask1, v1 in dp.items():
                 for mask2 in range(1 << len(seats[0])):

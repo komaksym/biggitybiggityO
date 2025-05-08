@@ -3,11 +3,7 @@
 # kmp 
 class Solution(object):
     def hasMatch(self, s, p):
-        """
-        :type s: str
-        :type p: str
-        :rtype: bool
-        """
+        
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

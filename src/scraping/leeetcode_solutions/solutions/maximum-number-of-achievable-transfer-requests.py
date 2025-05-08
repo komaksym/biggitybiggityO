@@ -6,11 +6,7 @@ import itertools
 # early return solution
 class Solution(object):
     def maximumRequests(self, n, requests):
-        """
-        :type n: int
-        :type requests: List[List[int]]
-        :rtype: int
-        """
+        
         for k in reversed(range(1, len(requests)+1)):
             for c in itertools.combinations(range(len(requests)), k):
                 change = [0]*n
@@ -18,7 +14,7 @@ class Solution(object):
                     change[requests[i][0]] -= 1
                     change[requests[i][1]] += 1
                 if all(c == 0 for c in change):
-                    return k  # early return
+                    return k 
         return 0
     
 
@@ -26,11 +22,7 @@ class Solution(object):
 # full search solution (much slower)
 class Solution2(object):
     def maximumRequests(self, n, requests):
-        """
-        :type n: int
-        :type requests: List[List[int]]
-        :rtype: int
-        """
+        
         def evaluate(n, requests, mask):
             change = [0]*n
             base, count = 1, 0

@@ -11,11 +11,7 @@ import collections
 # tree dp with stack
 class Solution(object):
     def minimumFlips(self, root, result):
-        """
-        :type root: Optional[TreeNode]
-        :type result: bool
-        :rtype: int
-        """
+        
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,
@@ -32,7 +28,7 @@ class Solution(object):
                 if step == 1:
                     node, ret = args
                     if not node:
-                        ret[None] = 0 # null object pattern
+                        ret[None] = 0
                         continue
                     if node.left == node.right:
                         ret[True] = node.val^1
@@ -59,11 +55,7 @@ import collections
 # tree dp with recursion
 class Solution2(object):
     def minimumFlips(self, root, result):
-        """
-        :type root: Optional[TreeNode]
-        :type result: bool
-        :rtype: int
-        """
+        
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,
@@ -74,7 +66,7 @@ class Solution2(object):
         
         def dfs(node):
             if not node:
-                return {None: 0}  # null object pattern
+                return {None: 0} 
             if node.left == node.right:
                 return {True: node.val^1, False: node.val^0}
             left = dfs(node.left)

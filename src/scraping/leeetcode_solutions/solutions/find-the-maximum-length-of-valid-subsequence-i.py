@@ -3,11 +3,7 @@
 # dp
 class Solution(object):
     def maximumLength(self, nums):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         k = 2
         result = 0
         for i in range(k):
@@ -22,11 +18,7 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def maximumLength(self, nums):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
+        
         return max(sum(x%2 == 0 for x in nums),
                    sum(x%2 == 1 for x in nums),
                    sum(nums[i]%2 != nums[i+1]%2 for i in range(len(nums)-1))+1)

@@ -4,11 +4,7 @@ from functools import reduce
 # string
 class Solution(object):
     def discountPrices(self, sentence, discount):
-        """
-        :type sentence: str
-        :type discount: int
-        :rtype: str
-        """
+        
         result = []
         i = 0
         while i < len(sentence):
@@ -30,11 +26,7 @@ class Solution(object):
 # string
 class Solution2(object):
     def discountPrices(self, sentence, discount):
-        """
-        :type sentence: str
-        :type discount: int
-        :rtype: str
-        """
+        
         def format(discount, x):
             return "${:d}.{:02d}".format(*divmod(int(x[1:])*(100-discount), 100)) if x[0] == '$' and x[1:].isdigit() else x
 

@@ -8,10 +8,7 @@ class TreeNode(object):
 
 class Solution(object):
     def lowestCommonAncestor(self, root, nodes):
-        """
-        :type root: TreeNode
-        :type nodes: List[TreeNode]
-        """
+        
         def iter_dfs(root, lookup):
             result = [0]
             stk = [(1, (root, result))]
@@ -40,10 +37,7 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def lowestCommonAncestor(self, root, nodes):
-        """
-        :type root: TreeNode
-        :type nodes: List[TreeNode]
-        """
+        
         def dfs(node, lookup):
             if not node or node in lookup:
                 return node

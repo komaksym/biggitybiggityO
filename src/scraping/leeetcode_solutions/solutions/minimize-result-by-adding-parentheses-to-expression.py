@@ -6,10 +6,7 @@ import itertools
 # brute force
 class Solution(object):
     def minimizeResult(self, expression):
-        """
-        :type expression: str
-        :rtype: str
-        """
+        
         def stoi(s, i, j):
             result = 0
             for k in range(i, j):
@@ -41,10 +38,7 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def minimizeResult(self, expression):
-        """
-        :type expression: str
-        :rtype: str
-        """
+        
         best = None
         min_val = float("inf")
         pos = expression.index('+')
@@ -66,10 +60,7 @@ class Solution2(object):
 # brute force
 class Solution3(object):
     def minimizeResult(self, expression):
-        """
-        :type expression: str
-        :rtype: str
-        """
+        
         best = None
         min_val = float("inf")
         pos = expression.index('+')

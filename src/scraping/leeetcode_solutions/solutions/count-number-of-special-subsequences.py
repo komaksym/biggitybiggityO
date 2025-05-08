@@ -2,10 +2,7 @@
 
 class Solution(object):
     def countSpecialSubsequences(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         MOD = 10**9+7
         dp = [0]*3
         for x in nums:

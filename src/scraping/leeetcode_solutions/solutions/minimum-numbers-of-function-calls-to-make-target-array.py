@@ -2,10 +2,7 @@
 
 class Solution(object):
     def minOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+        
         def popcount(n):
             result = 0
             while n:

@@ -2,10 +2,7 @@
 
 class Solution(object):
     def minSwapsCouples(self, row):
-        """
-        :type row: List[int]
-        :rtype: int
-        """
+        
         N = len(row)//2
         couples = [[] for _ in range(N)]
         for seat, num in enumerate(row):
@@ -23,5 +20,5 @@ class Solution(object):
                 result += 1
                 adj[couch2].remove(couch1)
                 couch1, couch2 = couch2, adj[couch2].pop()
-        return result  # also equals to N - (# of cycles)
+        return result 
 

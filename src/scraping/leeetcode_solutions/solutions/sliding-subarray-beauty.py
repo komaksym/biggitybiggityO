@@ -6,12 +6,7 @@ from sortedcontainers import SortedList
 # sorted list, two pointers
 class Solution(object):
     def getSubarrayBeauty(self, nums, k, x):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type x: int
-        :rtype: List[int]
-        """
+        
         result = []
         sl = SortedList()
         for i, v in enumerate(nums): 

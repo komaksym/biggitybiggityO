@@ -3,11 +3,7 @@
 class Codec(object):
 
     def encode(self, strs):
-        """Encodes a list of strings to a single string.
-
-        :type strs: List[str]
-        :rtype: str
-        """
+        
         encoded_str = ""
         for s in strs:
             encoded_str += "%0*x" % (8, len(s)) + s
@@ -15,11 +11,7 @@ class Codec(object):
 
 
     def decode(self, s):
-        """Decodes a single string to a list of strings.
-
-        :type s: str
-        :rtype: List[str]
-        """
+        
         i = 0
         strs = []
         while i < len(s):

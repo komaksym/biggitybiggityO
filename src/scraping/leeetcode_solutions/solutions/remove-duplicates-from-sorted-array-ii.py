@@ -1,8 +1,8 @@
 # Time:  O(n)
 
 class Solution(object):
-    # @param a list of integers
-    # @return an integer
+   
+   
     def removeDuplicates(self, A):
         if not A:
             return 0

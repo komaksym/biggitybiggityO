@@ -3,17 +3,14 @@
 # freq table, dp
 class Solution(object):
     def makeStringGood(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+        
         cnt = [0]*26
         for x in s:
             cnt[ord(x)-ord('a')] += 1
         result = len(s)
         for f in range(min(x for x in cnt if x), max(cnt)+1):
-            # dp1: min number of the last one of the operations is insert
-            # dp2: min number of the last one of the operations is delete
+           
+           
             dp1 = dp2 = 0
             for i in range(26):
                 if not cnt[i]:

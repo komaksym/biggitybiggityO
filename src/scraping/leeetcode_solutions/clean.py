@@ -8,7 +8,7 @@ corrupted_data = []
 
 
 # Defie a cleaning pattern
-def set_regex_pattern(pattern, flags=None):
+def set_regex_pattern(pattern, flags=0):
     return re.compile(rf"{pattern}", flags)
 
 
@@ -30,11 +30,24 @@ def clean_files(files, save_paths, filter_pttrn):
         save_path.write_text(match)
 
 
-# Regex pattern
-filter_pttrn = set_regex_pattern(r"#\s*?Space.*?\n", flags=re.DOTALL)
+def main():
+    # Read raw data
+    raw_data = search_files(files_path)
 
-# Read raw data
-raw_data = search_files(files_path)
+    # Regex patterns
+    ## Remove space complexity comments
+    space_comp_pttrn = set_regex_pattern(r"Space.*?\n", flags=re.DOTALL | re.IGNORECASE)
+    ## Remove inline comments
+    inline_commnts_ptrn = set_regex_pattern(r"[^\n]#.*")
+    ## Remove docstrings 
+    docstrings_pttrn = set_regex_pattern(r"(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
-# Clean the data up
-clean_files(raw_data['files'], raw_data['file_paths'], filter_pttrn)
+    FILTER_PATTERNS = [space_comp_pttrn, inline_commnts_ptrn, docstrings_pttrn]
+
+    # Clean the data up
+    for pttrn in FILTER_PATTERNS:
+        clean_files(raw_data['files'], raw_data['file_paths'], pttrn)
+
+
+if __name__ == '__main__':
+    main()

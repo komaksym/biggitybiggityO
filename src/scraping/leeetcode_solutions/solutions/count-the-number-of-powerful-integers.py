@@ -3,13 +3,7 @@
 # math, combinatorics
 class Solution(object):
     def numberOfPowerfulInt(self, start, finish, limit, s):
-        """
-        :type start: int
-        :type finish: int
-        :type limit: int
-        :type s: str
-        :rtype: int
-        """
+        
         def count(x):
             def length(x):
                 result = 0
@@ -42,13 +36,7 @@ class Solution(object):
 # math, combinatorics
 class Solution2(object):
     def numberOfPowerfulInt(self, start, finish, limit, s):
-        """
-        :type start: int
-        :type finish: int
-        :type limit: int
-        :type s: str
-        :rtype: int
-        """
+        
         def count(x):
             result = 0
             str_x = str(x)

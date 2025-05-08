@@ -36,11 +36,11 @@ def main():
 
     # Regex patterns
     ## Remove space complexity comments
-    space_comp_pttrn = set_regex_pattern(r"Space.*?\n", flags=re.DOTALL | re.IGNORECASE)
+    space_comp_pttrn = set_regex_pattern(r"^#\s*Space.*?\n", flags=re.MULTILINE | re.DOTALL | re.IGNORECASE)
     ## Remove inline comments
     inline_commnts_ptrn = set_regex_pattern(r"[^\n]#.*")
     ## Remove docstrings 
-    docstrings_pttrn = set_regex_pattern(r"(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
+    docstrings_pttrn = set_regex_pattern(r"(\"{3}.*?\"{3}\s*)|('{3}.*?'{3}\s*)", flags=re.DOTALL | re.IGNORECASE)
 
     FILTER_PATTERNS = [space_comp_pttrn, inline_commnts_ptrn, docstrings_pttrn]
 

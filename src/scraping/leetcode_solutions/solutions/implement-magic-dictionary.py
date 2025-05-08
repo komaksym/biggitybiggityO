@@ -1,5 +1,4 @@
 # Time:  O(n), n is the length of the word
-# Space: O(d)
 
 import collections
 

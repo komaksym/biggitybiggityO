@@ -1,5 +1,4 @@
 # Time:  O(s * m * n), s is the size of the array.
-# Space: O(m * n)
 
 class Solution(object):
     def findMaxForm(self, strs, m, n):

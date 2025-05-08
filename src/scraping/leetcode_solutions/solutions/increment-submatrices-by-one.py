@@ -1,5 +1,4 @@
 # Time:  O(q + n^2)
-# Space: O(1)
 
 # line sweep, difference matrix (2d difference array)
 class Solution(object):

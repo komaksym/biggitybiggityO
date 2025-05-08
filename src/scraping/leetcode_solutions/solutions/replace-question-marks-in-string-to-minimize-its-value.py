@@ -1,5 +1,4 @@
 # Time:  O(n + 26 * log(26))
-# Space: O(26)
 
 # greedy, counting sort, prefix sum
 class Solution(object):
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(n + n * log(26))
-# Space: O(26)
 import heapq
 
 
@@ -89,7 +87,6 @@ class Solution2(object):
 
 
 # Time:  O(n + n * 26)
-# Space: O(26)
 # greedy, counting sort
 class Solution3(object):
     def minimizeStringValue(self, s):

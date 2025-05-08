@@ -1,5 +1,4 @@
 # Time:  O(nlogx), x is the max denominator
-# Space: O(n)
 
 import re
 

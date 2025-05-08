@@ -1,5 +1,4 @@
 # Time:  O(loga)
-# Space: O(1)
 
 class Solution(object):
     def smallestFactorization(self, a):

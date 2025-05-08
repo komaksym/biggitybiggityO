@@ -1,5 +1,4 @@
 # Time:  O(rlogr + n + m)
-# Space: O(r)
 
 import collections
 

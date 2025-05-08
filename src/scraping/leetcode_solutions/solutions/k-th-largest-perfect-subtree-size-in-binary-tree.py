@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import random
 
@@ -64,7 +63,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import random
 
 

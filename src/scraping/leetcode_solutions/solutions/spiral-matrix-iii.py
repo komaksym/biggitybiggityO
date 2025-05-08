@@ -1,5 +1,4 @@
 # Time:  O(max(m, n)^2)
-# Space: O(1)
 
 class Solution(object):
     def spiralMatrixIII(self, R, C, r0, c0):

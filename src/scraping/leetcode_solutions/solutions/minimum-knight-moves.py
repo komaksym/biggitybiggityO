@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def minKnightMoves(self, x, y):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 class Solution2(object):
     def __init__(self):
         self.__lookup = {(0, 0):0, (1, 1):2, (1, 0):3}  # special cases

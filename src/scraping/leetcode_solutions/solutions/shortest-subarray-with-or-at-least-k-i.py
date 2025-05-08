@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(nlogr) = O(n * 30)
-# Space: O(logr) = O(30)
 
 # freq table, two pointers
 class Solution(object):
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def minimumSubarrayLength(self, nums, k):

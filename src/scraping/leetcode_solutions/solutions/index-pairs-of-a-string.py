@@ -1,7 +1,6 @@
 # Time:  O(n + m + z), n is the total size of patterns
 #                    , m is the total size of query string
 #                    , z is the number of all matched strings
-# Space: O(t), t is the total size of ac automata trie
 
 import collections
 

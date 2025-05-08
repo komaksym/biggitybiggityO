@@ -1,7 +1,6 @@
 # Time:  ctor:   O(1)
 #        update: O(1)
 #        get:    O(u), u is the number of updates
-# Space: O(u)
 
 class SubrectangleQueries(object):
 
@@ -39,7 +38,6 @@ class SubrectangleQueries(object):
 # Time:  ctor:   O(1)
 #        update: O(m * n)
 #        get:    O(1)
-# Space: O(1)
 class SubrectangleQueries2(object):
 
     def __init__(self, rectangle):

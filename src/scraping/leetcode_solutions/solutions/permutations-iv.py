@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # combinatorics
 class Solution(object):
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # combinatorics
 class Solution2(object):
     def permute(self, n, k):

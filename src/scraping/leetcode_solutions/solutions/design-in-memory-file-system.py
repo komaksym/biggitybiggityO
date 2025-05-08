@@ -2,7 +2,6 @@
 #        mkdir: O(l)
 #        addContentToFile: O(l + c), c is the content size
 #        readContentFromFile: O(l + c)
-# Space: O(n + s), n is the number of dir/file nodes, s is the total content size.
 
 class TrieNode(object):
 

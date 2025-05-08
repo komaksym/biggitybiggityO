@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def asteroidCollision(self, asteroids):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def asteroidCollision(self, asteroids):
         """

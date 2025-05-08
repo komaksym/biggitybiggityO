@@ -1,5 +1,4 @@
 # Time:  O(1), per operation
-# Space: O(k)
 
 class Node(object):
     """

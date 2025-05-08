@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(min(n, r)), r is the range size of nums
 
 import collections
 
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(min(n, r)), r is the range size of nums
 import collections
 
 

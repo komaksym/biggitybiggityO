@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # time: O(n)
-# space: O(n)
 class Solution2(object):
     def buildTree(self, preorder, inorder):
         """

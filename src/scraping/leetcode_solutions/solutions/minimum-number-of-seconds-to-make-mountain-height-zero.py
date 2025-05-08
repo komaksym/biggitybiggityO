@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = min(workerTimes) * (mountainHeight + 1) * mountainHeight / 2
-# Space: O(1)
 
 # binary search, quadratic equation
 class Solution(object):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(hlogn)
-# Space: O(n)
 import heapq
 
 

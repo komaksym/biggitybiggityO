@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # combinatorics, number theory
 class Solution(object):
@@ -48,7 +47,6 @@ class Solution(object):
             nCr = nCr*INV[div%10]%10
         return result
 
-# Space: O(n)
 # combinatorics
 class Solution2(object):
     def triangularSum(self, nums):
@@ -66,7 +64,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # simulation
 class Solution3(object):
     def triangularSum(self, nums):

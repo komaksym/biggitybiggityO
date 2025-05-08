@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):

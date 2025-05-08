@@ -1,5 +1,4 @@
 # Time:  O(m + n + k^2), k is the number of values greater or equal to top2
-# Space: O(m + n)
 
 # optimized from Solution2 with counting sort
 class Solution(object):
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(m + nlogn + k^2), k is the number of values greater or equal to top2
-# Space: O(m + n)
 import collections
 
 
@@ -86,7 +84,6 @@ class Solution2(object):
 
 
 # Time:  O(m + n^2)
-# Space: O(m + n)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 
@@ -25,7 +24,6 @@ class Solution(object):
         return result
 
 
-# Space: O(n)
 import itertools
 
 

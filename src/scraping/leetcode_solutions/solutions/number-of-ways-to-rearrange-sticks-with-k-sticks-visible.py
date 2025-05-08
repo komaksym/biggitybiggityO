@@ -1,5 +1,4 @@
 # Time:  O(n * k)
-# Space: O(k)
 
 class Solution(object):
     def rearrangeSticks(self, n, k):

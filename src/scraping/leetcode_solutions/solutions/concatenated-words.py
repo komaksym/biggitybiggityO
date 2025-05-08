@@ -1,5 +1,4 @@
 # Time:  O(n * l^2)
-# Space: O(n * l)
 
 class Solution(object):
     def findAllConcatenatedWordsInADict(self, words):

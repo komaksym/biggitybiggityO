@@ -1,5 +1,4 @@
 # Time:  O(q + n)
-# Space: O(n)
 
 import collections
 
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(q + n)
-# Space: O(q + logn)
 import collections
 
 
@@ -58,7 +56,6 @@ class Solution2(object):
 
 
 # Time:  O(q + n)
-# Space: O(q + logn)
 import collections
 
 

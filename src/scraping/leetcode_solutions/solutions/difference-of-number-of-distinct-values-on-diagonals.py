@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(min(m, n))
 
 # prefix sum
 class Solution(object):

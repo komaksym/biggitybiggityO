@@ -1,5 +1,4 @@
 # Time:  O(n) on average, using Median of Medians could achieve O(n) (Intro Select)
-# Space: O(1)
 
 from random import randint
 
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(n) on average, using Median of Medians could achieve O(n) (Intro Select)
-# Space: O(1)
 class Solution2(object):
     def findKthLargest(self, nums, k):
         left, right = 0, len(nums) - 1

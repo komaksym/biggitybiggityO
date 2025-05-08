@@ -1,5 +1,4 @@
 # Time:  O(nlog(logm)), n the length of nums, m is the max value of nums
-# Space: O(logm)
 
 import bisect
 
@@ -23,7 +22,6 @@ class Solution(object):
             return bisect.bisect_right(self.__lookup, n)
 
         return sum(digit_count(n) % 2 == 0 for n in nums)
-# Space: O(logm)
 class Solution2(object):
     def findNumbers(self, nums):
         """
@@ -41,7 +39,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogm), n the length of nums, m is the max value of nums
-# Space: O(logm)
 class Solution3(object):
     def findNumbers(self, nums):
         """

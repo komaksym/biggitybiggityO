@@ -1,5 +1,4 @@
 # Time:  O(n + m), m is the max number of nums
-# Space: O(m)
 
 import collections
 
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import bisect
 
 

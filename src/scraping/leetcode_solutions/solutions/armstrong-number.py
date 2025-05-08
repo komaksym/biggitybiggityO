@@ -1,5 +1,4 @@
 # Time:  O(klogk)
-# Space: O(k)
 
 class Solution(object):
     def isArmstrong(self, N):

@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 class Solution(object):
     def missingNumber(self, arr):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def missingNumber(self, arr):
         """

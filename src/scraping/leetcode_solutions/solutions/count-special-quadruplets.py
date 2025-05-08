@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n)
 
 import collections
 
@@ -21,7 +20,6 @@ class Solution(object):
             lookup[nums[c]] += 1
         return result
 
-# Space: O(n^2)
 import collections
 
 

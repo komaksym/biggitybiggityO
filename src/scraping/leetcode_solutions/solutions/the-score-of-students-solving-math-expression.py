@@ -1,5 +1,4 @@
 # Time:  O(n^3 * a^2)
-# Space: O(n^2)
 
 class Solution(object):
     def scoreOfStudents(self, s, answers):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(n^3 * a^2)
-# Space: O(n^2)
 class Solution2(object):
     def scoreOfStudents(self, s, answers):
         """

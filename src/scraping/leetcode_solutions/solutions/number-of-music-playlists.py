@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(l)
 
 class Solution(object):
     def numMusicPlaylists(self, N, L, K):

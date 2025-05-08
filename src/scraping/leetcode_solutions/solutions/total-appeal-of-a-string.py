@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(26)
 
 # combinatorics
 class Solution(object):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(26)
 # counting
 class Solution2(object):
     def appealSum(self, s):

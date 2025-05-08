@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 class Solution(object):
     def numDistinct(self, S, T):

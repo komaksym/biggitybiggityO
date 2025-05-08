@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # counting sort, greedy
 class Solution(object):
@@ -47,7 +46,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort, greedy
 class Solution2(object):
     def maxPotholes(self, road, budget):

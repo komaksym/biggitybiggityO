@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 class Solution(object):
     def subtractProductAndSum(self, n):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(logn)
 import operator
 from functools import reduce
 

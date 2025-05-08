@@ -2,7 +2,6 @@
 #        push:      O(1)
 #        pop:       O(1)
 #        increment: O(1)
-# Space: O(n)
 
 class CustomStack(object):
 

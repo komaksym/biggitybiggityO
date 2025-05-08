@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def isRectangleOverlap(self, rec1, rec2):

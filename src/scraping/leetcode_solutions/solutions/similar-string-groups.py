@@ -1,5 +1,4 @@
 # Time:  O(n^2 * l) ~ O(n * l^4)
-# Space: O(n) ~ O(n * l^3)
 
 import collections
 import itertools

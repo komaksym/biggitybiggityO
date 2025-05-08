@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 
 
@@ -39,7 +37,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import collections
 
 

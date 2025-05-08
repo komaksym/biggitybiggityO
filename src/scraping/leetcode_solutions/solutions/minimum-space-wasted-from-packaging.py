@@ -1,5 +1,4 @@
 # Time:  O(mlogm + nlogn + mlogn)
-# Space: O(1)
 
 import bisect
 

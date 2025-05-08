@@ -1,5 +1,4 @@
 # Time:  O(nlogn + klogk + klogn)
-# space: O(n + k)
 
 import heapq
 

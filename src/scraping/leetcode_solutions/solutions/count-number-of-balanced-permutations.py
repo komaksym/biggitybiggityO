@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(9 * (9 * n / 2) * (n / 2)) = O(n^2)
-# Space: O((9 * n / 2) * (n / 2)) = O(n^2)
 
 # dp, combinatorics
 class Solution(object):

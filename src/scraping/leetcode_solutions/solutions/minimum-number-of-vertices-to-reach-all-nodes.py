@@ -1,5 +1,4 @@
 # Time:  O(e)
-# Space: O(n)
 
 class Solution(object):
     def findSmallestSetOfVertices(self, n, edges):

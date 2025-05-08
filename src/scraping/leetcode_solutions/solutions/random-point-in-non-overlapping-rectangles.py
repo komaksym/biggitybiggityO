@@ -1,6 +1,5 @@
 # Time:  ctor: O(n)
 #        pick: O(logn)
-# Space: O(n)
 
 import random
 import bisect

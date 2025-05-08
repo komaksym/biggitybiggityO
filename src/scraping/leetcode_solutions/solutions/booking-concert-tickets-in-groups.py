@@ -1,7 +1,6 @@
 # Time:  ctor:    O(n)
 #        gather:  O(logn)
 #        scatter: O(logn), amortized
-# Space: O(n)
 
 # Template:
 # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/longest-substring-of-one-repeating-character.py

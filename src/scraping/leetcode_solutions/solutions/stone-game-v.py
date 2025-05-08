@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2)
 
 class Solution(object):
     def stoneGameV(self, stoneValue):
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 class Solution2(object):
     def stoneGameV(self, stoneValue):
         """

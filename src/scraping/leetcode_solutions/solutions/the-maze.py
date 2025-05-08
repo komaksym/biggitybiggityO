@@ -1,5 +1,4 @@
 # Time:  O(max(r, c) * w)
-# Space: O(w)
 
 import collections
 

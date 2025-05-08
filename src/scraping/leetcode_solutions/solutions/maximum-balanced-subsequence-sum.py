@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # bit, fenwick tree
 class Solution2(object):
     def maxBalancedSubsequenceSum(self, nums):
@@ -74,7 +72,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # segment tree
 class Solution3(object):
     def maxBalancedSubsequenceSum(self, nums):

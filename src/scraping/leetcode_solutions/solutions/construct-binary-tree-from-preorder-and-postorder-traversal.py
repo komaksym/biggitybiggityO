@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def constructFromPrePost(self, pre, post):
         """

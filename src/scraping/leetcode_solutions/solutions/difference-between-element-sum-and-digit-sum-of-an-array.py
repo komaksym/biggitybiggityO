@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(nums)
-# Space: O(1)
 
 # array
 class Solution(object):

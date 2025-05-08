@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(d), d is the max depth of the paths
 
 class Solution(object):
     def lengthLongestPath(self, input):

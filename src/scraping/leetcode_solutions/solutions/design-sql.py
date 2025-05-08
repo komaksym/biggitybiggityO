@@ -2,7 +2,6 @@
 #        insertRow:  O(m), m is the number of columns
 #        deleteRow:  O(1)
 #        selectCell: O(m)
-# Space: O(d), d is the total size of data
 
 import itertools
 

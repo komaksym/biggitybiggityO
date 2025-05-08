@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(c), c is unique count of pattern
 
 
 class Solution(object):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def wordPattern(self, pattern, str):
         """

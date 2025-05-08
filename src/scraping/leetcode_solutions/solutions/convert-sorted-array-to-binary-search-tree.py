@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(logn)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -38,7 +37,6 @@ class Solution(object):
             return n - x // 2  # case 2 == n - (x//2 - 1) - 1 : the left subtree of the root
 
 # Time:  O(n)
-# Space: O(logn)
 class Solution2(object):
     def sortedArrayToBST(self, nums):
         """

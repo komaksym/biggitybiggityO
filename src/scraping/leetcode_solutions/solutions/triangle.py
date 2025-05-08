@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(m * n)
-# Space: O(n)
 
 class Solution(object):
     def minimumTotal(self, triangle):

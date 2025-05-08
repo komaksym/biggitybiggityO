@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # iterative dfs
 class Solution(object):
@@ -50,7 +49,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # dfs
 class Solution2(object):
     def maximumSubtreeSize(self, edges, colors):

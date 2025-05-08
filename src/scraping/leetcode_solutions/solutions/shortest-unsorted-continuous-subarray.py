@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def findUnsortedSubarray(self, nums):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     def findUnsortedSubarray(self, nums):
         """

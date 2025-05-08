@@ -1,5 +1,4 @@
 # Time:  O(100 * n^2) = O(n^2)
-# Space: O(1)
 
 class Solution(object):
     def findLexSmallestString(self, s, a, b):
@@ -41,7 +40,6 @@ class Solution(object):
 
 
 # Time:  O(100 * n^2), at most O(100n) strings and each compare costs O(n)
-# Space: O(n^2)
 import collections
 
 

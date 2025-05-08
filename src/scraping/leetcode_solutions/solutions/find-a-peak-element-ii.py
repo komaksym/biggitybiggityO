@@ -1,5 +1,4 @@
 # Time:  O(min(n, m) * log(max(n, m)))
-# Space: O(1)
 
 class Solution(object):
     def findPeakGrid(self, mat):

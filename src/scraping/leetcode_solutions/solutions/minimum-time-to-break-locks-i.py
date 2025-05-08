@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n^2)
 
 # hungarian algorithm, weighted bipartite matching
 class Solution(object):
@@ -55,7 +54,6 @@ class Solution(object):
 
 
 # Time:  O(n ^ 2^n)
-# Space: O(2^n)
 # bitmasks, dp
 class Solution2(object):
     def findMinimumTime(self, strength, K):

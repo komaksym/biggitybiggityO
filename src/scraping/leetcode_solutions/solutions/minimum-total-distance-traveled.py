@@ -1,5 +1,4 @@
 # Time:  O(mlogm + nlogn + m * n)
-# Space: O(n)
 
 import collections
 
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(mlogm + nlogn + m * n * l), l is the max limit
-# Space: O(n)
 import collections
 
 

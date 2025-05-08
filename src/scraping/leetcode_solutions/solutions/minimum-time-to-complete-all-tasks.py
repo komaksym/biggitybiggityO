@@ -1,5 +1,4 @@
 # Time:  O(nlogn + n * r), r = max(e for _, e in tasks)
-# Space: O(r)
 
 # sort, greedy
 class Solution(object):

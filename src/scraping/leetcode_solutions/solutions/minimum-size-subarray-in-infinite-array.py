@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # two pointers, sliding window
 class Solution(object):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # prefix sum, hash table
 class Solution2(object):
     def minSizeSubarray(self, nums, target):

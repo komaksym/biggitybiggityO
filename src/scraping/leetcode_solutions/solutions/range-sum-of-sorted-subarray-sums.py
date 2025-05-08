@@ -1,5 +1,4 @@
 # Time:  O(nlog(sum(nums)))
-# Space: O(n)
 
 # binary search + sliding window solution
 class Solution(object):
@@ -49,7 +48,6 @@ class Solution(object):
         m, M = min(nums), sum(nums)
         return (sumLessOrEqualTo(prefix, nums, m, M, right) -
                 sumLessOrEqualTo(prefix, nums, m, M, left-1))%MOD
-# Space: O(n)
 import heapq
 
 

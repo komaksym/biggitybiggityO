@@ -1,5 +1,4 @@
 # Time:  O(n + r)
-# Space: O(r)
 
 # if r is small, this is better
 class Solution(object):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # if r is big, this is better
 class Solution2(object):
     def isCovered(self, ranges, left, right):
@@ -43,7 +41,6 @@ class Solution2(object):
 
 
 # Time:  O(n * r)
-# Space: O(1)
 class Solution3(object):
     def isCovered(self, ranges, left, right):
         """

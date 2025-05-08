@@ -1,5 +1,4 @@
 # Time:  O(nlogk + n * sqrt(k))
-# Space: O(n + sqrt(k)), number of factors of k is at most sqrt(k)
 
 import collections
 
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(nlogk + n * sqrt(k)^2) = O(n * k)
-# Space: O(n * sqrt(k)), number of factors of k is at most sqrt(k)
 import collections
 
 
@@ -62,7 +60,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 import collections
 
 

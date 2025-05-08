@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # mono stack, prefix sum, optimized from solution2
 class Solution(object):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # mono stack, prefix sum
 class Solution2(object):
     def totalStrength(self, strength):

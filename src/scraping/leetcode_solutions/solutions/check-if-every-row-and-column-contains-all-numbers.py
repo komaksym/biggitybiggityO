@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n^2)
-# Space: O(n)
 
 class Solution(object):
     def checkValid(self, matrix):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # [[1,3,3,4,4],[4,1,3,3,4],[4,4,1,3,3],[3,4,4,1,3],[3,3,4,4,1]]
 class Solution_Wrong(object):
     def checkValid(self, matrix):

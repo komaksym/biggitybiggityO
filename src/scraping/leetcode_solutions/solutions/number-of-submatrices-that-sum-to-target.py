@@ -1,5 +1,4 @@
 # Time:  O(m^2*n), m is min(r, c), n is max(r, c)
-# Space: O(n), which doesn't include transposed space
 
 import collections
 

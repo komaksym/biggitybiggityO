@@ -1,5 +1,4 @@
 # Time:  O(1) per move
-# Space: O(s), s is the current length of the snake.
 
 from collections import deque
 

@@ -1,5 +1,4 @@
 # Time:  O(n), n queries
-# Space: O(1)
 
 class ArrayReader(object):
     def query(self, a, b, c, d):

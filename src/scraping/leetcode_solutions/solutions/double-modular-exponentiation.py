@@ -1,5 +1,4 @@
 # Time:  O(n * (logb + logc))
-# Space: O(1)
 
 # fast exponentiation
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(n * k)
-# Space: O(n * k)
 
 import collections
 
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n * k)
-# Space: O(n * k)
 import collections
 
 
@@ -46,7 +44,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * k)
-# Space: O(n * k)
 # dp
 class Solution(object):
     def maximumLength(self, nums, k):

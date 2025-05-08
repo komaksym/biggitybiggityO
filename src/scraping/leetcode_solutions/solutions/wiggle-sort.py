@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def wiggleSort(self, nums):
@@ -14,7 +13,6 @@ class Solution(object):
 
 
 # time: O(nlogn)
-# space: O(n)
 class Solution2(object):
     def wiggleSort(self, nums):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(logn)
 
 # codeforces, https://codeforces.com/problemset/problem/1303/D
 # counting sort, greedy
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # codeforces, https://codeforces.com/problemset/problem/1303/D
 # sort, greedy
 class Solution2(object):
@@ -67,7 +65,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import heapq
 
 
@@ -102,7 +99,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogr)
-# Space: O(logr)
 # codeforces, https://codeforces.com/problemset/problem/1303/D
 # bitmasks, greedy
 class Solution4(object):

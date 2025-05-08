@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(26)
 
 # freq table, two pointers, sliding window
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(n + k)
-# Space: O(1)
 
 class Solution(object):
     def splitListToParts(self, root, k):

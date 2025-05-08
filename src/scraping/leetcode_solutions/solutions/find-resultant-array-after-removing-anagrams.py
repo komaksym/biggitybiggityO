@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(1)
 
 import collections
 
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n * llogl)
-# Space: O(l)
 import collections
 
 
@@ -46,7 +44,6 @@ class Solution2(object):
 
 
 # Time:  O(n * llogl)
-# Space: O(l)
 import collections
 
 

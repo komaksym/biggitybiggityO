@@ -1,5 +1,4 @@
 # Time:  O(q * n)
-# Space: O(1)
 
 class Solution(object):
     def countPoints(self, points, queries):

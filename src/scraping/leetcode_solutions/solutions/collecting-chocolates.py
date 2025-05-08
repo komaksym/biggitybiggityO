@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # mono stack, difference array, prefix sum
 class Solution(object):
@@ -37,7 +36,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import collections
 
 
@@ -77,7 +75,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # brute force
 class Solution3(object):
     def minCost(self, nums, x):

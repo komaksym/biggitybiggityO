@@ -1,5 +1,4 @@
 # Time:  O(m^2 * n^2)
-# Space: O(m * n)
 
 class Solution(object):
     def getMaximumGold(self, grid):

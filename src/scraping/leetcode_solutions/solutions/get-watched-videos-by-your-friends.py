@@ -1,5 +1,4 @@
 # Time:  O(n + vlogv), v is the number of the level videos
-# Space: O(w)
 
 import collections
 

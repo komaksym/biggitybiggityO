@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(g)
 
 from collections import deque
 

@@ -1,5 +1,4 @@
 # Time:  O(min(a, b))
-# Space: O(1)
 
 class Solution(object):
     def findLUSlength(self, a, b):

@@ -1,5 +1,4 @@
 # Time:  O(n^2 * 2^n)
-# Space: O(n * 2^n)
 
 import itertools
 from functools import reduce
@@ -46,7 +45,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * 2^n)
-# Space: O(n * 2^n)
 # bfs based dp
 class Solution2(object):
     def maximumCost(self, n, highways, k):

@@ -1,5 +1,4 @@
 # Time:  O(nlogn + nlogs), s = side
-# Space: O(n)
 
 # sort, binary search, greedy, two pointers, sliding window
 class Solution(object):
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + nlogs), s = side
-# Space: O(n)
 # sort, binary search, greedy, two pointers, sliding window
 class Solution2(object):
     def maxDistance(self, side, points, k):
@@ -106,7 +104,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn + n * (k * logn) * logs), s = side
-# Space: O(n)
 import bisect
 
 
@@ -156,7 +153,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogn + (n * k * logn) * logs), s = side
-# Space: O(n)
 import bisect
 
 

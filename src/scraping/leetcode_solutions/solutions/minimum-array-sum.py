@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # greedy, case works
 # Reference: https://leetcode.com/problems/minimum-array-sum/solutions/6078002/o-n-log-n-greedy/
@@ -60,7 +59,6 @@ class Solution(object):
 
 
 # Time:  O(n * op1 * op2)
-# Space: O(op1 * op2)
 # dp
 class Solution2(object):
     def minArraySum(self, nums, k, op1, op2):

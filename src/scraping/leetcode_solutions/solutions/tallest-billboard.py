@@ -1,5 +1,4 @@
 # Time:  O(n * 3^(n/2))
-# Space: O(3^(n/2))
 
 import collections
 

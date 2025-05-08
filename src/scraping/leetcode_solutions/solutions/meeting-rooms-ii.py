@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class Solution(object):
     def minMeetingRooms(self, intervals):
@@ -13,7 +12,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     def minMeetingRooms(self, intervals):
         starts, ends = [], []
@@ -39,7 +37,6 @@ class Solution2(object):
 
 
 # Time: O(nlogn)
-# Space: O(n)
 from heapq import heappush, heappop
 
 

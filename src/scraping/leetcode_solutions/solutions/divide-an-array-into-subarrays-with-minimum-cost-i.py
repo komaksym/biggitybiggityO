@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import random
 
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # array
 class Solution2(object):
     def minimumCost(self, nums):

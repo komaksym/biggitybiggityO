@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def smallestMissingValueSubtree(self, parents, nums):

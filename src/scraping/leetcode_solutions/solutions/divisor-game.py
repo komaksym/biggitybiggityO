@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # math
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(nlogn)
 # dp, number theory
 class Solution2(object):
     def divisorGame(self, n):
@@ -35,7 +33,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(nlogn)
 # memoization, number theory
 class Solution3(object):
     def divisorGame(self, n):
@@ -61,7 +58,6 @@ class Solution3(object):
 
 
 # Time:  O(n^(3/2))
-# Space: O(n)
 # memoization
 class Solution4(object):
     def divisorGame(self, n):
@@ -89,7 +85,6 @@ class Solution4(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # memoization
 class Solution5(object):
     def divisorGame(self, n):

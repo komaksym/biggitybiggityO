@@ -1,5 +1,4 @@
 # Time:  O(n^6)
-# Space: O(n^3)
 
 import collections
 
@@ -48,7 +47,6 @@ class Solution(object):
                 for max_d in range(d, min(2*d+1, n)):  # for each max distance
                     result[max_d-1] += dp[i][d][max_d]
         return result
-# Space: O(n)
 import collections
 import math
 

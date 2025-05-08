@@ -1,5 +1,4 @@
 # Time:  O(q + nlogn)
-# Space: O(n)
 
 # hash table, heap
 class Solution(object):

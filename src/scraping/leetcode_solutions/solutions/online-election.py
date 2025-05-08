@@ -1,6 +1,5 @@
 # Time:  ctor: O(n)
 #        q:    O(logn)
-# Space: O(n)
 
 import collections
 import itertools

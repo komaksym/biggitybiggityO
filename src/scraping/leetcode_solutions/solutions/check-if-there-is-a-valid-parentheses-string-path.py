@@ -1,5 +1,4 @@
 # Time:  O((m * n) * (m + n) / 32)
-# Space: O(n * (m + n) / 32)
 
 # dp with bitsets
 class Solution(object):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(n)
 # dp, optimized from solution1 (wrong answer)
 class Solution_WA(object):
     def hasValidPath(self, grid):

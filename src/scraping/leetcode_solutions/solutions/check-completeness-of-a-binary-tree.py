@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(w)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(w)
 class Solution2(object):
     def isCompleteTree(self, root):
         """

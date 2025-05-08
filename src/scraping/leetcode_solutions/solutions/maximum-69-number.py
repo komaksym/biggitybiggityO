@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 class Solution(object):
     def maximum69Number (self, num):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(logn)
 class Solution2(object):
     def maximum69Number (self, num):
         """

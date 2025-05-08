@@ -1,5 +1,4 @@
 # Time:  O(m + r * logn), m = len(groups), n = len(elements), r = max(groups)
-# Space: O(r)
 
 # hash table, number theory
 class Solution(object):

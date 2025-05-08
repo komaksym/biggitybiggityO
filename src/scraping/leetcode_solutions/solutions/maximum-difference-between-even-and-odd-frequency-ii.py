@@ -1,5 +1,4 @@
 # Time:  O(d^2 * n)
-# Space: O(n)
 
 # prefix sum, two pointers, sliding window
 class Solution(object):

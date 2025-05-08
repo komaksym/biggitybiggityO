@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # sliding window, optimized from solution3
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sliding window, optimized from solution4
 class Solution2(object):
     def maximumWhiteTiles(self, tiles, carpetLen):
@@ -46,7 +44,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import bisect
 
 
@@ -72,7 +69,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import bisect
 
 

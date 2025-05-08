@@ -1,5 +1,4 @@
 # Time:  O(n * (m + 10))
-# Space: O(10)
 
 # dp
 class Solution(object):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(n * (m + 100))
-# Space: O(10)
 # dp
 class Solution2(object):
     def minimumOperations(self, grid):

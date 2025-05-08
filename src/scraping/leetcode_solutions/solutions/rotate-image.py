@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 class Solution(object):
     def rotate(self, matrix):
@@ -16,7 +15,6 @@ class Solution(object):
         return matrix
 
 # Time:  O(n^2)
-# Space: O(n^2)
 class Solution2(object):
     def rotate(self, matrix):
         return [list(reversed(x)) for x in zip(*matrix)]

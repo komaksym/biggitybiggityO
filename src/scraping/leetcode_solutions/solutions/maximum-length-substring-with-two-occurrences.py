@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(26)
 
 # freq table, sliding window, two pointers
 class Solution(object):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(n + 26)
-# Space: O(26)
 # freq table, sliding window, two pointers
 class Solution2(object):
     def maximumLengthSubstring(self, s):

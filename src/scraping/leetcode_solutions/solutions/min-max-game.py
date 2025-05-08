@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # simulation, optimized from solution2
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # simulation
 class Solution2(object):
     def minMaxGame(self, nums):

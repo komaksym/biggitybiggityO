@@ -1,5 +1,4 @@
 # Time:  O(n * s), n is the size of org, s is the size of seqs
-# Space: O(n)
 
 import collections
 
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 class Solution2(object):
     def sequenceReconstruction(self, org, seqs):
         """

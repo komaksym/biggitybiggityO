@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # dp, math
 class Solution(object):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # dp, math
 class Solution2(object):
     def evenProduct(self, nums):

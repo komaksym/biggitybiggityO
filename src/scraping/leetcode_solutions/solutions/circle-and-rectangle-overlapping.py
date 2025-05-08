@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def checkOverlap(self, radius, x_center, y_center, x1, y1, x2, y2):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 class Solution2(object):
     def checkOverlap(self, radius, x_center, y_center, x1, y1, x2, y2):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # mono stack solution
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     def maxChunksToSorted(self, arr):
         """

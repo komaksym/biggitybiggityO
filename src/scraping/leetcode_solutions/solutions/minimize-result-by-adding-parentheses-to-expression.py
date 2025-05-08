@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 import itertools
 
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # brute force
 class Solution2(object):
     def minimizeResult(self, expression):
@@ -65,7 +63,6 @@ class Solution2(object):
             base1 //= 10
         return "".join([expression[:best[0]], '(', expression[best[0]:best[1]+1], ')', expression[best[1]+1:]])  # Space: O(n)
 
-# Space: O(n)
 # brute force
 class Solution3(object):
     def minimizeResult(self, expression):

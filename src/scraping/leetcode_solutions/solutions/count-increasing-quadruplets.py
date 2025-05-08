@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # dp
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
                     dp[j] += cnt
         return result
 
-# Space: O(n^2)
 # prefix sum
 class Solution2(object):
     def countQuadruplets(self, nums):
@@ -43,7 +41,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # prefix sum
 class Solution3(object):
     def countQuadruplets(self, nums):

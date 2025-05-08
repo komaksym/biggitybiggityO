@@ -1,5 +1,4 @@
 # Time:  O(r^2 + n * r), r = max(nums)
-# Space: O(r^2)
 
 # dp
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(r^2 + n * r), r = max(nums)
-# Space: O(r^2)
 # dp
 class Solution2(object):
     def longestSubsequence(self, nums):

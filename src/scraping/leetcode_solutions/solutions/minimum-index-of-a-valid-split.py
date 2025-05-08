@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # Boyer–Moore majority vote algorithm, linear search
 class Solution(object):

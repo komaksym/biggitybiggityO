@@ -1,5 +1,4 @@
 # Time:  O(1), excluding precomputation time
-# Space: O(n)
 
 # precompute
 MOD = 10**9+7
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(min(k, min(n - k)))
-# Space: O(1)
 class Solution2(object):
     def numberOfSets(self, n, k):
         """

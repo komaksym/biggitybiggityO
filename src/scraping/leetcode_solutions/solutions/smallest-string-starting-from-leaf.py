@@ -1,5 +1,4 @@
 # Time:  O(n + l * h), l is the number of leaves
-# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):

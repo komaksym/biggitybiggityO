@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # iterative dfs, tree dp
 class Solution(object):
@@ -37,7 +36,6 @@ class Solution(object):
             adj[u][v] = 0
             adj[v][u] = 1
         return iter_dfs2(iter_dfs1())
-# Space: O(n)
 # dfs, tree dp
 class Solution2(object):
     def minEdgeReversals(self, n, edges):

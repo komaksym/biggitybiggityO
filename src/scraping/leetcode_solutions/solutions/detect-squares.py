@@ -1,7 +1,6 @@
 # Time:  ctor:  O(1)
 #        add:   O(1)
 #        count: O(n)
-# Space: O(n)
 
 import collections
 
@@ -39,7 +38,6 @@ class DetectSquares(object):
 # Time:  ctor:  O(1)
 #        add:   O(1)
 #        count: O(n)
-# Space: O(n)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 import collections
 
@@ -47,7 +46,6 @@ class Solution(object):
         return root
 
 # Time:  O(n)
-# Space: O(h)
 # Stack solution.
 class Solution2(object):
     def invertTree(self, root):
@@ -65,7 +63,6 @@ class Solution2(object):
         return root
 
 # Time:  O(n)
-# Space: O(h)
 # DFS, Recursive solution.
 class Solution3(object):
     def invertTree(self, root):

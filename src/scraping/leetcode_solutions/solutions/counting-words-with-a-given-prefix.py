@@ -1,5 +1,4 @@
 # Time:  O(n * p)
-# Space: O(1)
 
 # string
 class Solution(object):

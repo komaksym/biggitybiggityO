@@ -1,5 +1,4 @@
 # Time:  O(m * n * k)
-# Space: O(m * n)
 
 # A* Search Algorithm without heap
 class Solution(object):

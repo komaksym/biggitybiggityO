@@ -6,7 +6,6 @@
 #        view:                O(l)
 #        getLikesAndDislikes: O(1)
 #        getViews:            O(1)
-# Space: O(n * l), n = len(videos), l = max(len(v) for v in videos) 
 
 import heapq
 

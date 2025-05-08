@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import collections
 from sortedcontainers import SortedList
@@ -62,7 +61,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # dp, segment tree, math
 class Solution2(object):
     def sumCounts(self, nums):
@@ -158,7 +156,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # hash table
 class Solution3(object):
     def sumCounts(self, nums):

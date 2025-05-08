@@ -1,5 +1,4 @@
 # Time:  O(n) 
-# Space: O(h)
 
 import collections
 
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(n) 
-# Space: O(h)
 import collections
 
 
@@ -94,7 +92,6 @@ class Solution2(object):
 
 
 # Time:  O(n) ~ O(n^2), worst case in star tree 
-# Space: O(n)
 import collections
 
 

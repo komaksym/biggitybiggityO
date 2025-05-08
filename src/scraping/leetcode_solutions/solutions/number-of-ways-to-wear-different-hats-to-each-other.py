@@ -1,5 +1,4 @@
 # Time:  O(h * 2^n)
-# Space: O(2^n)
 
 class Solution(object):
     def numberWays(self, hats):

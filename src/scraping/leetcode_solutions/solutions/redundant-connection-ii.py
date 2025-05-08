@@ -1,5 +1,4 @@
 # Time:  O(nlog*n) ~= O(n), n is the length of the positions
-# Space: O(n)
 
 class UnionFind(object):
     def __init__(self, n):

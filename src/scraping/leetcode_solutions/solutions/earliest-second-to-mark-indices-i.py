@@ -1,5 +1,4 @@
 # Time:  O(mlogm)
-# Space: O(n)
 
 # binary search, greedy
 class Solution(object):

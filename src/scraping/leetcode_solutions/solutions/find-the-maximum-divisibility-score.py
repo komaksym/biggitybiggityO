@@ -1,5 +1,4 @@
 # Time:  O(n * d)
-# Space: O(1)
 
 # brute force
 class Solution(object):

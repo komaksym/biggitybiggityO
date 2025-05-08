@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n + r), r = max(nums)
-# Space: O(n + r)
 
 # combinatorics, stars and bars
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
         MOD = 10**9+7
         cnt = nums[-1]-sum(max(nums[i]-nums[i-1], 0) for i in range(1, len(nums)))
         return nHr(len(nums)+1, cnt) if cnt >= 0 else 0
-# Space: O(r)
 # dp, prefix sum
 class Solution2(object):
     def countOfPairs(self, nums):

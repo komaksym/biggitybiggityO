@@ -1,5 +1,4 @@
 # Time: push: O(n), pop: O(1), top: O(1)
-# Space: O(n)
 
 import collections
 
@@ -44,7 +43,6 @@ class Stack(object):
 
 
 # Time: push: O(1), pop: O(n), top: O(1)
-# Space: O(n)
 class Stack2(object):
     def __init__(self):
         self.q_ = Queue()

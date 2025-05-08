@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # math, bitmasks
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(1)
 # math, bitmasks
 class Solution2(object):
     def kthLuckyNumber(self, k):

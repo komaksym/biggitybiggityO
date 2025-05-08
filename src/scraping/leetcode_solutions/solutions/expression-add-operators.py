@@ -1,5 +1,4 @@
 # Time:  O(4^n)
-# Space: O(n)
 
 class Solution(object):
     def addOperators(self, num, target):

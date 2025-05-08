@@ -1,5 +1,4 @@
 # Time:  O((n * C(c, min(c, k))) * 2^n)
-# Space: O(2^n)
 
 import itertools
 
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + e), e is the number of edges in graph
-# Space: O(n + e)
 import collections
 import heapq
 

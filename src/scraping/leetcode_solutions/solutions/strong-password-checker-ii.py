@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # string
 class Solution(object):

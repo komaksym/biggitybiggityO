@@ -1,5 +1,4 @@
 # Time:  O(k + n)
-# Space: O(1)
 
 class Solution(object):
     def getModifiedArray(self, length, updates):

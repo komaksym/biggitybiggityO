@@ -1,5 +1,4 @@
 # Time:  O(h + k)
-# Space: O(h)
 
 class Solution(object):
     def closestKValues(self, root, target, k):

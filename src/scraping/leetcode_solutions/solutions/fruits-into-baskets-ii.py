@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # segment tree, binary search
 class Solution(object):
@@ -56,7 +55,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def numOfUnplacedFruits(self, fruits, baskets):

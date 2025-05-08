@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def countHighestScoreNodes(self, parents):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def countHighestScoreNodes(self, parents):
         """

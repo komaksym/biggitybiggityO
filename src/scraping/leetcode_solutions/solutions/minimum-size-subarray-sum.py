@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def minSubArrayLen(self, s, nums):
@@ -16,7 +15,6 @@ class Solution(object):
         return min_size if min_size != float("inf") else 0
 
 # Time:  O(nlogn)
-# Space: O(n)
 # Binary search solution.
 class Solution2(object):
     def minSubArrayLen(self, s, nums):

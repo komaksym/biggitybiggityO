@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # prefix sum, greedy
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dp
 class Solution2(object):
     def maxScore(self, nums):

@@ -1,5 +1,4 @@
 # Time:  O(log(min(m, n)))
-# Space: O(1)
 
 class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(log(max(m, n)) * log(max_val - min_val))
-# Space: O(1)
 # Generic solution.
 class Solution_Generic(object):
     def findMedianSortedArrays(self, nums1, nums2):

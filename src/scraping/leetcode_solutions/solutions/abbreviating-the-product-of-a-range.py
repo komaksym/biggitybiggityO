@@ -1,5 +1,4 @@
 # Time:  O(r - l)
-# Space: O(1)
 
 import math
 from functools import reduce

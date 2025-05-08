@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 
 # iterative dfs
 class Solution(object):
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 # dfs
 class Solution2(object):
     def treeDiameter(self, edges):
@@ -63,7 +61,6 @@ class Solution2(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 # bfs, tree dp
 class Solution3(object):
     def treeDiameter(self, edges):
@@ -101,7 +98,6 @@ class Solution3(object):
 
 
 # Time:  O(|V| + |E|)
-# Space: O(|E|)
 # bfs
 class Solution4(object):
     def treeDiameter(self, edges):

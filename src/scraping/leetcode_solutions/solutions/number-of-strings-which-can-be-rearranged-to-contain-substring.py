@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # combinatorics, principle of inclusion-exclusion
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(2^4 * n) = O(n)
-# Space: O(2^4) = O(1)
 # bitmasks, dp
 class Solution2(object):
     def stringCount(self, n):

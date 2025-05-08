@@ -1,5 +1,4 @@
 # Time:  O(nlogn + nlogr), r is the range of positions
-# Space: O(1)
 
 class Solution(object):
     def maxDistance(self, position, m):

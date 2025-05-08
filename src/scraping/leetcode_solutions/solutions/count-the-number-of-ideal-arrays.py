@@ -1,5 +1,4 @@
 # Time:  O(sqrt(m) + n + m * (logm + pi(sqrt(m)))) = O(sqrt(m) + n + m * (logm + sqrt(m)/log(sqrt(m)))), pi(n) = number of primes in a range [1, n] = O(n/logn) by prime number theorem, see https://en.wikipedia.org/wiki/Prime_number_theorem
-# Space: O(sqrt(m) + n + logm)
 
 import collections
 
@@ -57,7 +56,6 @@ class Solution(object):
 
 
 # Time:  O(n * mlogm)
-# Space: O(n + m)
 import collections
 
 

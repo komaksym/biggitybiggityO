@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 import functools
@@ -49,7 +48,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 import collections
 import functools
 

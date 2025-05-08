@@ -1,5 +1,4 @@
 # Time:  O(m * n * min(m, n))
-# Space: O(m * n)
 
 import heapq
 

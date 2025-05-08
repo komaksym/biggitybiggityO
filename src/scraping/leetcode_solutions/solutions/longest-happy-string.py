@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import heapq
 
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def longestDiverseString(self, a, b, c):
         """

@@ -2,7 +2,6 @@
 #                    n is the length of S,
 #                    w is the number of word,
 #                    l is the average length of word
-# Space: O(n)
 
 class Solution(object):
     def toGoatLatin(self, S):

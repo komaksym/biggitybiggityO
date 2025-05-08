@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 import math
 
@@ -12,7 +11,6 @@ class Solution(object):
         :rtype: int
         """
         return int(math.ceil((-1+(1+8*n)**0.5)/2))
-# Space: O(n)
 class Solution2(object):
     def twoEggDrop(self, n):
         """

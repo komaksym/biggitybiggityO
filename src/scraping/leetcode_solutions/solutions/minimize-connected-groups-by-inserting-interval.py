@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort, prefix sum, two pointers, sliding window
 class Solution(object):

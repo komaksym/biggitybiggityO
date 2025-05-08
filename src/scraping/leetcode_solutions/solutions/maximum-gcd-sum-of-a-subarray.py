@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(nums)
-# Space: O(logr)
 
 # number theory, dp, prefix sum
 class Solution(object):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
-# Space: O(n)
 # number theory, dp, prefix sum
 class Solution2(object):
     def maxGcdSum(self, nums, k):
@@ -68,7 +66,6 @@ class Solution2(object):
 
 
 # Time:  O(n * logr * (logn * logr)) = O(n * (logr)^2 * logn), r = max(nums)
-# Space: O(nlogn)
 # number theory, binary search, rmq, sparse table, prefix sum
 class Solution3_TLE(object):
     def maxGcdSum(self, nums, k):

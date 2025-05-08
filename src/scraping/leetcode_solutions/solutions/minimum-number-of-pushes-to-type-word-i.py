@@ -1,5 +1,4 @@
 # Time:  O(4)
-# Space: O(1)
 
 # greedy
 class Solution(object):
@@ -15,7 +14,6 @@ class Solution(object):
 
 
 # Time:  O(26)
-# Space: O(26)
 import collections
 
 

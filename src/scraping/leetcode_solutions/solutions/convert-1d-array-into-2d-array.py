@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(1)
 
 class Solution(object):
     def construct2DArray(self, original, m, n):

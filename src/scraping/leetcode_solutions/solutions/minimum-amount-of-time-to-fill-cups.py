@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # math
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 # constructive algorithms
 class Solution2(object):
     def fillCups(self, amount):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # mono stack, combinatorics
 class Solution(object):

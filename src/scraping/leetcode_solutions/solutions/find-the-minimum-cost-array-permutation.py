@@ -1,5 +1,4 @@
 # Time:  O((n-1)^2 * 2^(n-1))
-# Space: O((n-1) * 2^(n-1))
 
 # dp, backtracing
 class Solution(object):

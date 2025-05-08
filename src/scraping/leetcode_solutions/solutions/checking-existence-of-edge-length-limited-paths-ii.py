@@ -1,6 +1,5 @@
 # Time:  ctor:  O(mlogm + m * α(n) + nlogn) ~= O(mlogm + nlogn)
 #        query: O(α(n) + logn) ~= O(logn)
-# Space: O(nlogn + m)
 
 from functools import partial
 
@@ -121,7 +120,6 @@ class DistanceLimitedPathsExist(object):
 
 # Time:  ctor:  O(mlogm + m * α(n) * logm) ~= O(mlogm)
 #        query: O(logm + α(n) * logm) ~= O(logm)
-# Space: O(n + m * α(n) + m) ~= O(n + m)
 import collections
 import sortedcontainers
 import bisect

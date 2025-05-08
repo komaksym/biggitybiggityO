@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 from random import randint, seed
 
@@ -188,7 +187,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dp
 class Solution2(object):
     def minimumCost(self, nums, cost, k):

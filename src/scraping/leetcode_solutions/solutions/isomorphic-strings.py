@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def isIsomorphic(self, s, t):
         if len(s) != len(t):

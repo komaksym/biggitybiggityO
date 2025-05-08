@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class ListNode(object):
     def __init__(self, val=0, next=None):

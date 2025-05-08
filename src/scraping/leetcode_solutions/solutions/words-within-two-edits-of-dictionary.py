@@ -1,5 +1,4 @@
 # Time:  O(25 * l * (n + q))
-# Space: O(25 * l * n)
 
 import string
 from functools import reduce
@@ -52,7 +51,6 @@ class Solution(object):
 
 
 # Time:  O(q * n * l)
-# Space: O(1)
 import itertools
 
 

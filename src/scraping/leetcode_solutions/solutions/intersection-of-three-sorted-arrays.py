@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def arraysIntersection(self, arr1, arr2, arr3):
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def arraysIntersection(self, arr1, arr2, arr3):
         """

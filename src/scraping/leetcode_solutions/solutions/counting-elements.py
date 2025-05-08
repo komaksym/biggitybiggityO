@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def countElements(self, arr):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 class Solution(object):
     def countElements(self, arr):
         """

@@ -2,7 +2,6 @@
 #        add:          O(1)
 #        deleteOne:    O(1)
 #        hasFrequency: O(1)
-# Space: O(min(n, r))
 
 # freq table
 class FrequencyTracker(object):

@@ -1,6 +1,5 @@
 # Time:  ctor: O(n)
 #        pick: O(1)
-# Space: O(n)
 
 from random import randint
 import collections
@@ -26,7 +25,6 @@ class Solution(object):
 
 # Time:  ctor: O(1)
 #        pick: O(n)
-# Space: O(1)
 from random import randint
 
 

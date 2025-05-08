@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(t), t is the size of trie
 
 import collections
 
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(n^2) on average, worst is O(n^3)
-# Space: O(n)
 import collections
 
 
@@ -64,7 +62,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # rolling hash
 class Solution3(object):
     def countDistinct(self, nums, k, p):

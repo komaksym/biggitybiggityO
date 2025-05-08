@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # bit manipulation
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(1)
 # bit manipulation
 class Solution2(object):
     def minChanges(self, n, k):

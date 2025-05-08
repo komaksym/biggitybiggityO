@@ -1,5 +1,4 @@
 # Time:  O(10^(l/2) * n), l = 5
-# Space: O(10^(l/2) * n)
 
 # freq table, prefix sum
 class Solution(object):
@@ -27,7 +26,6 @@ class Solution(object):
                 right[int(s[k])][i] += cnt[i]
             cnt[int(s[k])] += 1
         return result
-# Space: O(l)
 # dp
 class Solution2(object):
     def countPalindromes(self, s):

@@ -1,6 +1,5 @@
 # Time:  set: O(1)
 #        get: O(logn)
-# Space: O(n)
 
 import collections
 import bisect

@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 class Solution(object):
     def threeSum(self, nums):
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 class Solution2(object):
     def threeSum(self, nums):
         """

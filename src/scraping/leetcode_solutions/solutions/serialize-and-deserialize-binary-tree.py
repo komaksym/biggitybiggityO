@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -57,7 +56,6 @@ class Codec(object):
 
 
 # time: O(n)
-# space: O(n)
 
 class Codec2(object):
 

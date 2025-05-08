@@ -1,5 +1,4 @@
 # Time:  O((n + q) * logn)
-# Space: O(nlogn)
 
 # prefix sum, greedy, binary lifting
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(n + mlogm), m is the number of rides
-# Space: O(n)
 
 class Solution(object):
     def maxTaxiEarnings(self, n, rides):

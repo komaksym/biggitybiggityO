@@ -1,5 +1,4 @@
 # Time:  O(n)
-# space: O(1)
 
 class Solution(object):
     def mincostTickets(self, days, costs):

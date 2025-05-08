@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h), h is height of binary tree
 
 class TreeNode(object):
     def __init__(self, x):
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h), h is height of binary tree
 class Solution2(object):
     def maxPathSum(self, root):
         def dfs(node):

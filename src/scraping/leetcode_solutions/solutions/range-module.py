@@ -1,7 +1,6 @@
 # Time:  addRange:    O(n)
 #        removeRange: O(n)
 #        queryRange:  O(logn)
-# Space: O(n)
 
 import bisect
 

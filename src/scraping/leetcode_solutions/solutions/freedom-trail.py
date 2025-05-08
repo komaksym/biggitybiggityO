@@ -1,5 +1,4 @@
 # Time:  O(k) ~ O(k * r^2)
-# Space: O(r)
 
 import collections
 

@@ -1,5 +1,4 @@
 # Time:  O(n * s), s is the sum of nums
-# Space: O(s)
 
 class Solution(object):
     def canPartition(self, nums):

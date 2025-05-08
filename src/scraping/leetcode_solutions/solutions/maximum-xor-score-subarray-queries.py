@@ -1,5 +1,4 @@
 # Time:  O(n^2 + q)
-# Space: O(n^2)
 
 # dp
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 + q)
-# Space: O(n^2)
 # dp
 class Solution2(object):
     def maximumSubarrayXor(self, nums, queries):

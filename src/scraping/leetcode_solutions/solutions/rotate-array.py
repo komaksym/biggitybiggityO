@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     """
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 from fractions import gcd
 
 
@@ -47,7 +45,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution3(object):
     """
     :type nums: List[int]
@@ -72,7 +69,6 @@ class Solution3(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution4(object):
     """
     :type nums: List[int]
@@ -86,7 +82,6 @@ class Solution4(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         nums[:] = nums[len(nums) - k:] + nums[:len(nums) - k]
-# Space: O(1)
 class Solution5(object):
     """
     :type nums: List[int]

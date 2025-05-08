@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # greedy, partition
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # greedy
 class Solution2(object):
     def maximumOddBinaryNumber(self, s):

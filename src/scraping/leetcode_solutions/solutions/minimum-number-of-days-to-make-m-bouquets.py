@@ -1,5 +1,4 @@
 # Time:  O(nlogd), d is the max day of bloomDay
-# Space: O(1)
 
 class Solution(object):
     def minDays(self, bloomDay, m, k):

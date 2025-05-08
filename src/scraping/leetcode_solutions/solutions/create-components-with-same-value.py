@@ -1,5 +1,4 @@
 # Time:  O(n * sqrt(n))
-# Space: O(n)
 
 # bfs, greedy
 class Solution(object):
@@ -41,7 +40,6 @@ class Solution(object):
 
 
 # Time:  O(n * sqrt(n))
-# Space: O(n)
 # iterative dfs, greedy
 class Solution2(object):
     def componentValue(self, nums, edges):
@@ -83,7 +81,6 @@ class Solution2(object):
 
 
 # Time:  O(n * sqrt(n))
-# Space: O(n)
 # dfs, greedy
 class Solution3(object):
     def componentValue(self, nums, edges):

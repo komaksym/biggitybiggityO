@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -81,7 +80,6 @@ class Solution(object):
 
 
 # Time:  O(nlogk)
-# Space: O(nlogk)
 # binary lifting
 class Solution2(object):
     def getMaxFunctionValue(self, receiver, k):

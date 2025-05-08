@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # freq table, contructive algorithms
 class Solution(object):
@@ -9,7 +8,6 @@ class Solution(object):
         :rtype: int
         """
         return len(nums)-max(collections.Counter(nums).values())
-# Space: O(1)
 # sort, greedy, two pointers
 class Solution2(object):
     def maximizeGreatness(self, nums):

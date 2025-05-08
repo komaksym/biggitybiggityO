@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # counting sort
 class Solution(object):
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sort
 class Solution2(object):
     def sortVowels(self, s):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -45,7 +44,6 @@ class Solution(object):
             return result
         
         return iter_dfs(root, p, q)
-# Space: O(h)
 class Solution2(object):
     def findDistance(self, root, p, q):
         """

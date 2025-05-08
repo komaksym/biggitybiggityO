@@ -1,5 +1,4 @@
 # Time:  O(m)
-# Space: O(m)
 
 import collections
 

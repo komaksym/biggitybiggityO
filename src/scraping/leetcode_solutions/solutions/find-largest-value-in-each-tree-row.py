@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class Solution(object):
     def largestValues(self, root):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def largestValues(self, root):
         """

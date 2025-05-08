@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(m * nlogn)
-# Space: O(n)
 
 class Solution(object):
     def longestCommonSubpath(self, n, paths):
@@ -38,7 +37,6 @@ class Solution(object):
 
 
 # Time:  O(m * nlogn)
-# Space: O(n)
 class Solution2(object):
     def longestCommonSubpath(self, n, paths):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 import itertools
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution2(object):
     def findSecretWord(self, wordlist, master):
         """
@@ -54,7 +52,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution3(object):
     def findSecretWord(self, wordlist, master):
         """

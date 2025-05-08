@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O((b/2) * (n/(b/2)+1)^(b/2))
-# Space: O((n/(b/2)+1)^(b/2))
 
 # greedy + memoization solution
 class Solution(object):
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O((b/2) * (n/(b/2)+1)^(b/2))
-# Space: O((n/(b/2)+1)^(b/2))
 # dp solution
 class Solution2(object):
     def maxHappyGroups(self, batchSize, groups):

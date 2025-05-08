@@ -1,5 +1,4 @@
 # Time:  O(n), is the length of cpdomains (assuming the length of cpdomains[i] is fixed)
-# Space: O(n)
 
 import collections
 

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # math, sort
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort, mono stack
 class Solution2(object):
     def visibleMountains(self, peaks):

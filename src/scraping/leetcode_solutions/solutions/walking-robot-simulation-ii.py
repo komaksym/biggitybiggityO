@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Robot(object):
 
@@ -53,7 +52,6 @@ class Robot(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 class Robot2(object):
 
     def __init__(self, width, height):

@@ -1,5 +1,4 @@
 # Time:  O(k^2 + r + c), r = len(rowConditions), c = len(colConditions)
-# Space: O(k + r + c)
 
 # topological sort
 class Solution(object):

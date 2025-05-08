@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k), k = value
 
 import collections
 
@@ -15,7 +14,6 @@ class Solution(object):
         cnt = collections.Counter(x%value for x in nums)
         mn = min((cnt[i], i) for i in range(value))[1]
         return value*cnt[mn]+mn
-# Space: O(k), k = value
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # flood fill, bfs, math
 class Solution(object):

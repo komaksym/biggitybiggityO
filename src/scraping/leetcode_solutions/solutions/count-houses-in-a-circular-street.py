@@ -1,5 +1,4 @@
 # Time:  O(k)
-# Space: O(1)
 
 # Definition for a street.
 class Street:

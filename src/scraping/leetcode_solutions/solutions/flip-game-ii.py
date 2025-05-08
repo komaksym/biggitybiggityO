@@ -1,5 +1,4 @@
 # Time:  O(n + c^2)
-# Space: O(c)
 
 import itertools
 import re
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n + c^3 * 2^c * logc), n is length of string, c is count of "++"
-# Space: O(c * 2^c)
 # hash solution.
 # We have total O(2^c) game strings,
 # and each hash key in hash table would cost O(c),
@@ -46,7 +44,6 @@ class Solution2(object):
 
 
 # Time:  O(c * n * c!), n is length of string, c is count of "++"
-# Space: O(c * n), recursion would be called at most c in depth.
 #                  Besides, it costs n space for modifying string at each depth.
 class Solution3(object):
     def canWin(self, s):

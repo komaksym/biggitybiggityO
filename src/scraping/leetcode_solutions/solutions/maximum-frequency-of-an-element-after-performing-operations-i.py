@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import collections
 
@@ -31,7 +30,6 @@ class Solution(object):
                 left += 1
             result = max(result, min(right-left+1, numOperations))
         return result
-# Space: O(n)
 import collections
 
 

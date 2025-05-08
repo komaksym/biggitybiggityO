@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # reference: https://en.wikipedia.org/wiki/Gray_code
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(1)
 class Solution2(object):
     def minimumOneBitOperations(self, n):
         """

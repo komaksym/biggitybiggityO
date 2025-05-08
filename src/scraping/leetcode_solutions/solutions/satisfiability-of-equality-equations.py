@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 class Solution2(object):
     def equationsPossible(self, equations):
         """

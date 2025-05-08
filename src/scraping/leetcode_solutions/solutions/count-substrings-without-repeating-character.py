@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # two pointers, sliding window
 class Solution(object):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # two pointers, sliding window
 class Solution2(object):
     def numberOfSpecialSubstrings(self, s):

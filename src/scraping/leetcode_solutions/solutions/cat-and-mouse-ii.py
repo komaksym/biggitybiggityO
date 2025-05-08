@@ -1,5 +1,4 @@
 # Time:  O((m * n)^2 * (m + n))
-# Space: O((m * n)^2)
 
 import collections
 
@@ -86,7 +85,6 @@ class Solution(object):
 
 
 # Time:  O((m * n)^2 * (m + n))
-# Space: O((m * n)^2)
 import collections
 
 

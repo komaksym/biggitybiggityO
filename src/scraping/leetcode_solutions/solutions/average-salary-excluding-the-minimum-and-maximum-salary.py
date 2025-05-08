@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # one pass solution
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # one-liner solution
 class Solution2(object):
     def average(self, salary):

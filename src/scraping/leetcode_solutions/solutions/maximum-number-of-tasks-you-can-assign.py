@@ -1,5 +1,4 @@
 # Time:  O(n * (logn)^2)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(n * (logn)^2)
-# Space: O(n)
 from sortedcontainers import SortedList
 
 
@@ -84,7 +82,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * logn)
-# Space: O(n)
 import bisect
 
 
@@ -126,7 +123,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2 * logn)
-# Space: O(n)
 import bisect
 
 

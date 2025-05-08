@@ -1,5 +1,4 @@
 # Time:  O(l * (w + n)), l is the length of a word, w is the number of words, n is the length of target
-# Space: O(n)
 
 import collections
 
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(l * (w + n)), l is the length of a word, w is the number of words, n is the length of target
-# Space: O(n)
 import collections
 
 

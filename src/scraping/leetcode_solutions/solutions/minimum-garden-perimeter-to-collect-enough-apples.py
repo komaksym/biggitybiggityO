@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 import math
 
@@ -18,7 +17,6 @@ class Solution(object):
         x = (-q/2 + ((q/2)**2+(p/3)**3)**0.5)**(1.0/3) + \
             (-q/2 - ((q/2)**2+(p/3)**3)**0.5)**(1.0/3)
         return 8*int(math.ceil(x - b/(3*a)))
-# Space: O(1)
 class Solution2(object):
     def minimumPerimeter(self, neededApples):
         """
@@ -36,7 +34,6 @@ class Solution2(object):
 
 
 # Time:  O(logn)
-# Space: O(1)
 class Solution3(object):
     def minimumPerimeter(self, neededApples):
         """

@@ -1,5 +1,4 @@
 # Time:  O((m + n)^2)
-# Space: O((m + n)^2)
 
 class Solution(object):
     def longestPalindrome(self, word1, word2):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O((m + n)^2)
-# Space: O((m + n)^2)
 class Solution2(object):
     def longestPalindrome(self, word1, word2):
         """

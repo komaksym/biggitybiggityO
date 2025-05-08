@@ -1,5 +1,4 @@
 # Time:  O(n * B)
-# Space: O(n)
 
 class Solution(object):
     def cheapestJump(self, A, B):

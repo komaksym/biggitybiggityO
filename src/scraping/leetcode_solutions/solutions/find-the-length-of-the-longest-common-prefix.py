@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O((n + m) * l)
-# Space: O(t)
 
 # trie
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O((n + m) * l)
-# Space: O(n)
 # hash table
 class Solution2(object):
     def longestCommonPrefix(self, arr1, arr2):

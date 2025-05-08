@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # sliding window, two pointers
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # sliding window
 class Solution2(object):
     def numberOfAlternatingGroups(self, colors):

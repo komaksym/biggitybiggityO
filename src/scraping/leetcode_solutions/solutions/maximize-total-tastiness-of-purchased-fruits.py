@@ -1,5 +1,4 @@
 # Time:  O(n * a * c), n = len(price), a = maxAmount, c = maxCoupons
-# Space: O(a * c)
 
 import itertools
 

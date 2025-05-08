@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # hash table, combinatorics
 class Solution(object):

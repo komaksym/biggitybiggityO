@@ -1,7 +1,6 @@
 # Time:  ctor:   O(n),
 #        update: O(logn),
 #        query:  O(logn)
-# Space: O(n)
 
 class NumArray(object):
     def __init__(self, nums):
@@ -57,7 +56,6 @@ class NumArray(object):
 # Time:  ctor:   O(n),
 #        update: O(logn),
 #        query:  O(logn)
-# Space: O(n)
 # Segment Tree solution.
 class NumArray2(object):
     def __init__(self, nums,

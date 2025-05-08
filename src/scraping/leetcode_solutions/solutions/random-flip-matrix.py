@@ -1,7 +1,6 @@
 # Time:  ctor:  O(1)
 #        flip:  O(1)
 #        reset: O(min(f, r * c))
-# Space: O(min(f, r * c))
 
 import random
 

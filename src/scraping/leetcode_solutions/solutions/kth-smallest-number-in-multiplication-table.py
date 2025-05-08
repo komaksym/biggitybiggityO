@@ -1,5 +1,4 @@
 # Time:  O(m * log(m * n))
-# Space: O(1)
 
 class Solution(object):
     def findKthNumber(self, m, n, k):

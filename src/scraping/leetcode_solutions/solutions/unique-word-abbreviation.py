@@ -1,6 +1,5 @@
 # Time:  ctor:   O(n), n is number of words in the dictionary.
 #        lookup: O(1)
-# Space: O(k), k is number of unique words.
 
 import collections
 

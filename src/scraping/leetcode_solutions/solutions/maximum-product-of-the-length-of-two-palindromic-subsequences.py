@@ -1,5 +1,4 @@
 # Time:  O(3^n)
-# Space: O(2^n)
 
 class Solution(object):
     def maxProduct(self, s):

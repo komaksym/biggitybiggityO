@@ -1,5 +1,4 @@
 # Time:  O(n^4)
-# Space: O(n^2)
 
 class Solution(object):
     def largestOverlap(self, A, B):

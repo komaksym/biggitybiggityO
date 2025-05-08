@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|V|)
 
 # """
 # This is HtmlParser's API interface.

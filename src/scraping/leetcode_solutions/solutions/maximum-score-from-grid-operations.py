@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n)
 
 # prefix sum, dp
 class Solution(object):
@@ -27,7 +26,6 @@ class Solution(object):
                 new_dp[1][i] = max(new_dp[1][i], new_dp[0][i])
             dp, prefix = new_dp, new_prefix
         return max(dp[1])
-# Space: O(n)
 # prefix sum, dp
 class Solution2(object):
     def maximumScore(self, grid):

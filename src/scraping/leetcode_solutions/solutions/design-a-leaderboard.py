@@ -2,7 +2,6 @@
 #        add:   O(1)
 #        top:   O(n)
 #        reset: O(1)
-# Space: O(n)
 
 import collections
 import random

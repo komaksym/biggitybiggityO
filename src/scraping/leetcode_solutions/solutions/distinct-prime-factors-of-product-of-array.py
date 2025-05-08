@@ -1,6 +1,5 @@
 # Time:  precompute: O(sqrt(MAX_N))
 #        runtime:    O(m + nlog(logn)), m = len(nums), n = max(nums)
-# Space: O(sqrt(MAX_N))
 
 # number theory
 def linear_sieve_of_eratosthenes(n):

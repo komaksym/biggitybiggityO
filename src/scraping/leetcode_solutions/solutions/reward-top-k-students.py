@@ -1,5 +1,4 @@
 # Time:  O(pf * l + nf * l + n * l + klogk)
-# Space: O(pf * l + nf * l + n)
 
 import random
 import itertools

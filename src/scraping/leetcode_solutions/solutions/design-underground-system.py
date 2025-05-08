@@ -2,7 +2,6 @@
 #        checkin:    O(1)
 #        checkout:   O(1)
 #        getaverage: O(1)
-# Space: O(n)
 
 import collections
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 import abc 
 from abc import ABCMeta, abstractmethod 
@@ -61,7 +60,6 @@ class TreeBuilder(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 class NodeRecu(Node):
     ops = {'+':operator.add, '-':operator.sub, '*':operator.mul, '/':operator.div}
     

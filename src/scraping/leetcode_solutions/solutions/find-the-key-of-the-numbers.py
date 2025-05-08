@@ -1,5 +1,4 @@
 # Time:  O(d), d = 4
-# Space: O(1)
 
 # math
 class Solution(object):

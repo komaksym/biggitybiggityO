@@ -1,5 +1,4 @@
 # Time:  O(k * log(min(n, m, k))), with n x m matrix
-# Space: O(min(n, m, k))
 
 from heapq import heappush, heappop
 

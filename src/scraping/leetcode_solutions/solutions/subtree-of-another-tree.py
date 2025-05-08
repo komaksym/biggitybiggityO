@@ -1,5 +1,4 @@
 # Time:  O(m * n), m is the number of nodes of s, n is the number of nodes of t
-# Space: O(h), h is the height of s
 
 class Solution(object):
     def isSubtree(self, s, t):

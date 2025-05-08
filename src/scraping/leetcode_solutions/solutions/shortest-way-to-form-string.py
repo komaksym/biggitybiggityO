@@ -1,6 +1,5 @@
 # Time:  O(m + n), m is the length of source
 #                , n is the length of target
-# Space: O(m)
 
 # greedy solution
 class Solution(object):

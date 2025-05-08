@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(m)
 
 # kmp
 class Solution(object):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(n * m)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def countMatchingSubarrays(self, nums, pattern):

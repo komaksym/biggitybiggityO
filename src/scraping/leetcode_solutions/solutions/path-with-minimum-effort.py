@@ -1,5 +1,4 @@
 # Time:  O(m * n * log(m * n))
-# Space: O(m * n)
 
 import heapq
 
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(m * n * log(m * n) + m * n * α(m * n)) = O(m * n * log(m * n))
-# Space: O(m * n)
 import collections
 
 
@@ -96,7 +94,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n * logh)
-# Space: O(m * n)
 # bi-bfs solution
 class Solution3(object):
     def minimumEffortPath(self, heights):
@@ -140,7 +137,6 @@ class Solution3(object):
 
 
 # Time:  O(m * n * logh)
-# Space: O(m * n)
 import collections
 
 
@@ -181,7 +177,6 @@ class Solution4(object):
 
 
 # Time:  O(m * n * logh)
-# Space: O(m * n)
 # dfs solution
 class Solution5(object):
     def minimumEffortPath(self, heights):

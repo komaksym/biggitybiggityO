@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 class ArrayReader(object):
    def compareSub(self, l, r, x, y):

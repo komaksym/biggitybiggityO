@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n^3)
 
 import collections
 import itertools

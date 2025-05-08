@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a Node.
 class Node(object):
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 class Solution2(object):
     def diameter(self, root):
         """

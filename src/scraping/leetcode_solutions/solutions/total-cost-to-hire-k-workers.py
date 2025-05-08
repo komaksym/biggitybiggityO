@@ -1,5 +1,4 @@
 # Time:  O(c + klogc)
-# Space: O(c)
 
 import heapq
 

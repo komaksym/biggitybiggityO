@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r is the max of candidates
-# Space: O(logr)
 
 # bit manipulation, freq table
 class Solution(object):

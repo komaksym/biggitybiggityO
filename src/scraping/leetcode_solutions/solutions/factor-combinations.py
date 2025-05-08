@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(logn)
 
 class Solution(object):
     def getFactors(self, n):

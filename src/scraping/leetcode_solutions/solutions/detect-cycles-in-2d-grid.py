@@ -1,5 +1,4 @@
 # Time:  O(m * n * α(n)) ~= O(m * n)
-# Space: O(m * n)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 class Solution2(object):
     def containsCycle(self, grid):
         """

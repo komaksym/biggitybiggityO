@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def firstPalindrome(self, words):
@@ -21,7 +20,6 @@ class Solution(object):
                 return w
         return ""
 
-# Space: O(l), l is the max length of words
 class Solution2(object):
     def firstPalindrome(self, words):
         """

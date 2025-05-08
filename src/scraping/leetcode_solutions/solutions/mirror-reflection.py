@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def mirrorReflection(self, p, q):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(log(max(p, q))) = O(1) due to 32-bit integer
-# Space: O(1)
 class Solution2(object):
     def mirrorReflection(self, p, q):
         """

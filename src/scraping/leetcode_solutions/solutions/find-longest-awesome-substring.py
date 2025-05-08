@@ -1,5 +1,4 @@
 # Time:  O(10 * n)
-# Space: O(1024)
 
 class Solution(object):
     def longestAwesome(self, s):

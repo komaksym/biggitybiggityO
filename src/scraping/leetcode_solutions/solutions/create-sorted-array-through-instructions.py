@@ -1,5 +1,4 @@
 # Time:  O(nlogm)
-# Space: O(m)
 
 class BIT(object):  # 0-indexed.
     def __init__(self, n):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 class Solution_TLE(object):
     def createSortedArray(self, instructions):

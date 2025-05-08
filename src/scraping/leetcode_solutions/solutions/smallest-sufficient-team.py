@@ -1,6 +1,5 @@
 # Time:  O(m * 2^n), n is the number of skills
 #                    m is the number of people
-# Space: O(2^n)
 
 class Solution(object):
     def smallestSufficientTeam(self, req_skills, people):

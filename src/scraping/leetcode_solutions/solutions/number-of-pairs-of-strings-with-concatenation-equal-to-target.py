@@ -1,5 +1,4 @@
 # Time:  O(n * l), n is the size of nums, l is the average length of the digit string in nums
-# Space: O(n)
 
 import collections
 
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(n * l), n is the size of nums, l is the average length of the digit string in nums
-# Space: O(n)
 import collections
 
 

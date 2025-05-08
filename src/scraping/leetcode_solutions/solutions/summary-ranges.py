@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import itertools
 import re
@@ -26,7 +25,6 @@ class Solution(object):
         return ranges
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def summaryRanges(self, nums):
         return [re.sub('->.*>', '->', '->'.join(repr(n) for _, n in g))

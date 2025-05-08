@@ -1,5 +1,4 @@
 # Time:  O(rlogr + qlogr), r = max(nums)
-# Space: O(r)
 
 import collections
 import bisect

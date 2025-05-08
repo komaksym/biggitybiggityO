@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # """
 # This is MountainArray's API interface.

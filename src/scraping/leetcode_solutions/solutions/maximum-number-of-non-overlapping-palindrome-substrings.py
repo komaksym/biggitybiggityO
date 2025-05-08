@@ -1,5 +1,4 @@
 # Time:  O(n * k)
-# Space: O(1)
 
 # two pointers, greedy
 class Solution(object):

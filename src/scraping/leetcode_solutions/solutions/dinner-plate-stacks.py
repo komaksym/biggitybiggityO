@@ -1,7 +1,6 @@
 # Time:  push: O(logn)
 #        pop:  O(1), amortized
 #        popAtStack: O(logn)
-# Space: O(n * c)
 
 import heapq
 

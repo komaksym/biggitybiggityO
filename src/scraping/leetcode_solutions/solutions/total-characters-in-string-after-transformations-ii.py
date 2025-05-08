@@ -1,5 +1,4 @@
 # Time:  O(n + 26^3 * logt)
-# Space: O(26^2)
 
 import itertools
 from functools import reduce

@@ -1,5 +1,4 @@
 # Time:  O(d * f * t)
-# Space: O(t)
 
 class Solution(object):
     def numRollsToTarget(self, d, f, target):

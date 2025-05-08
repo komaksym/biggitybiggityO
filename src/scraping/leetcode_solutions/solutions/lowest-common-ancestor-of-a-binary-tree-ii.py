@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 class Solution2(object):
     def lowestCommonAncestor(self, root, p, q):
         """

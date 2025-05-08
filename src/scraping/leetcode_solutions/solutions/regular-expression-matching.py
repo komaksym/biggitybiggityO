@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(n)
 
 class Solution(object):
     def isMatch(self, s, p):
@@ -24,7 +23,6 @@ class Solution(object):
 
 # dp
 # Time:  O(m * n)
-# Space: O(m * n)
 class Solution2(object):
     def isMatch(self, s, p):
         result = [[False for j in range(len(p) + 1)] for i in range(len(s) + 1)]

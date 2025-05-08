@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(n)
 
 # mono stack
 class Solution(object):
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(n)
 # mono stack, dp
 class Solution2(object):
     def numSubmat(self, mat):

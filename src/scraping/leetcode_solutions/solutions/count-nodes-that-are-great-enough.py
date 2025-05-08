@@ -1,5 +1,4 @@
 # Time:  O(k * h)
-# Space: O(k + h)
 
 import bisect
 

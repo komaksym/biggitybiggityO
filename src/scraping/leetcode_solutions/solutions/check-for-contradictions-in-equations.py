@@ -1,5 +1,4 @@
 # Time:  O(e + q)
-# Space: O(n)
 
 import collections
 import itertools
@@ -38,7 +37,6 @@ class UnionFind(object):
 
 
 # Time:  O(e + q)
-# Space: O(n)
 import itertools
 
 
@@ -56,7 +54,6 @@ class Solution(object):
 
 
 # Time:  O(e + q)
-# Space: O(n)
 import collections
 import itertools
 

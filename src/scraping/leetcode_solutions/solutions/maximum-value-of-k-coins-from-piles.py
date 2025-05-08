@@ -1,5 +1,4 @@
 # Time:  O(min(n * k^2, m * k)), m = sum(len(pile) for pile in piles)
-# Space: O(k)
 
 # dp
 class Solution(object):

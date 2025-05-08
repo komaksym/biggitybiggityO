@@ -3,7 +3,6 @@
 #        current: O(1)
 #        max:     O(1)
 #        min:     O(1)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -52,7 +51,6 @@ class StockPrice(object):
 #        current: O(1)
 #        max:     O(logn) on average
 #        min:     O(logn) on average
-# Space: O(n)
 import heapq
 
 

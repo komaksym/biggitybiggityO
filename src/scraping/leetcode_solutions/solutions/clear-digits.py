@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # two pointers
 class Solution(object):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # stack
 class Solution2(object):
     def clearDigits(self, s):

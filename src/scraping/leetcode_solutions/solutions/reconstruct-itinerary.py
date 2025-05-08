@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|log|V|)
-# Space: O(|V| + |E|)
 
 # Hierholzer Algorithm
 import collections
@@ -30,7 +29,6 @@ class Solution(object):
 # Time:  O(t! / (n1! * n2! * ... nk!)), t is the total number of tickets,
 #                                       ni is the number of the ticket which from is city i,
 #                                       k is the total number of cities.
-# Space: O(t)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 # mono stack, optimized from solution2
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m + n)
 # mono stack
 class Solution2(object):
     def seePeople(self, heights):
@@ -65,7 +63,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n)
-# Space: O(m + n)
 # mono stack
 class Solution3(object):
     def seePeople(self, heights):

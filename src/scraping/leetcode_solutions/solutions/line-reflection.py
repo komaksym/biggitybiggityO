@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # Two pointers solution.
 class Solution2(object):
     def isReflected(self, points):

@@ -1,5 +1,4 @@
 # Time:  O(n * alpha(n)) = O(n)
-# Space: O(n)
 
 class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
     def __init__(self, n):
@@ -69,7 +68,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 from sortedcontainers import SortedList
 
 

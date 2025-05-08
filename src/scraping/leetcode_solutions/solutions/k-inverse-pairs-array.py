@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n * k)
-# Space: O(k)
 
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution(object):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(n * k)
-# Space: O(k)
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution2(object):
     def kInversePairs(self, n, k):
@@ -50,7 +48,6 @@ class Solution2(object):
 
 
 # Time:  O(n * k)
-# Space: O(k)
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution3(object):
     def kInversePairs(self, n, k):
@@ -75,7 +72,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2 * k)
-# Space: O(k)
 # knapsack dp, combinatorics
 class Solution_TLE(object):
     def kInversePairs(self, n, k):

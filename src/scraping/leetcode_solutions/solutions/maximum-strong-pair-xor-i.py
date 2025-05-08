@@ -1,5 +1,4 @@
 # Time:  O(nlogn + nlogr) = O(nlogr), r = max(nums)
-# Space: O(t)
 
 # bit manipulation, greedy, trie, sort, two pointers
 class Solution(object):
@@ -54,7 +53,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
-# Space: O(t)
 # bit manipulation, greedy, trie, dp
 class Solution2(object):
     def maximumStrongPairXor(self, nums):
@@ -111,7 +109,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogr), r = max(nums)
-# Space: O(n)
 # bit manipulation, greedy, dp
 class Solution3(object):
     def maximumStrongPairXor(self, nums):
@@ -139,7 +136,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # bit manipulation, brute force
 class Solution4(object):
     def maximumStrongPairXor(self, nums):

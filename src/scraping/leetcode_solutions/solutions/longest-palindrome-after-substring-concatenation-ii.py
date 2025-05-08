@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(n + m)
 
 # manacher's algorithm, dp
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(n + qlogn)
-# Space: O(n)
 
 import bisect
 
@@ -48,7 +47,6 @@ class Solution(object):
 
 
 # Time:  O(n + qlogn)
-# Space: O(n)
 import bisect
 
 

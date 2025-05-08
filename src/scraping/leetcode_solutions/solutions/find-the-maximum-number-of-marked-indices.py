@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # sort, greedy, two pointers
 class Solution(object):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sort, greedy, two pointers
 class Solution2(object):
     def maxNumOfMarkedIndices(self, nums):

@@ -1,5 +1,4 @@
 # Time:  O(nlogn + m * max_y * logn), n = len(rectangles), m = len(points)
-# Space: O(n)
 
 import bisect
 

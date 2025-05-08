@@ -1,5 +1,4 @@
 # Time:  O(n * w * l)
-# Space: O(l)
 
 import itertools
 from functools import reduce
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 + w * l)
-# Space: O(t)
 import itertools
 
 
@@ -70,7 +68,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 + w * l)
-# Space: O(t)
 import itertools
 
 

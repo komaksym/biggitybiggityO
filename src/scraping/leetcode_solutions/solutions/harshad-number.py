@@ -1,5 +1,4 @@
 # Time:  O(logx)
-# Space: O(1)
 
 # math
 class Solution(object):

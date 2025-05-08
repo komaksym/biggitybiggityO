@@ -1,5 +1,4 @@
 # Time:  O(k * C(n, k))
-# Space: O(k)
 
 class Solution(object):
     def combine(self, n, k):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(k * C(n, k))
-# Space: O(k)
 class Solution2(object):
     def combine(self, n, k):
         """
@@ -51,7 +49,6 @@ class Solution2(object):
 
 
 # Time:  O(k * C(n, k))
-# Space: O(k)
 class Solution3(object):
     def combine(self, n, k):
         """

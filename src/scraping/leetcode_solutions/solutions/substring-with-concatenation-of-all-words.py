@@ -1,5 +1,4 @@
 # Time:  O((m + n) * k), where m is string length, n is dictionary size, k is word length
-# Space: O(n * k)
 
 import collections
 
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(m * n * k), where m is string length, n is dictionary size, k is word length
-# Space: O(n * k)
 class Solution2(object):
     def findSubstring(self, s, words):
         """

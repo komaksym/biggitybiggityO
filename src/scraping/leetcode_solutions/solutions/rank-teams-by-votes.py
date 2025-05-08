@@ -1,6 +1,5 @@
 # Time:  O(m * (n + mlogm)), n is the number of votes
 #                          , m is the length of vote
-# Space: O(m^2)
 
 class Solution(object):
     def rankTeams(self, votes):

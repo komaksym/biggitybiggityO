@@ -1,6 +1,5 @@
 # Time:  ctor:   O(n),
 #        lookup: O(1)
-# Space: O(n)
 
 class NumArray(object):
     def __init__(self, nums):

@@ -1,5 +1,4 @@
 # Time:  O(n), n is the length of the source
-# Space: O(k), k is the max length of a line
 
 class Solution(object):
     def removeComments(self, source):

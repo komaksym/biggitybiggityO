@@ -1,5 +1,4 @@
 # Time:  O(26 * n)
-# Space: O(n)
 
 import collections
 from functools import reduce

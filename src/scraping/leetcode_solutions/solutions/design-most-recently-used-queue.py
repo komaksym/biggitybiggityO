@@ -1,5 +1,4 @@
 # Time:  ctor:  O(nlogn)
-# Space: fetch: O(logn)
 
 from sortedcontainers import SortedList
 
@@ -25,7 +24,6 @@ class MRUQueue(object):
 
 
 # Time:  ctor:  O(n + m), m is the max number of calls
-# Space: fetch: O(log(n + m))
 class BIT(object):  # 0-indexed.
     def __init__(self, n):
         MAX_CALLS = 2000
@@ -88,7 +86,6 @@ class MRUQueue2(object):
 
 
 # Time:  ctor:  O(n)
-# Space: fetch: O(sqrt(n))
 import collections
 import math
 

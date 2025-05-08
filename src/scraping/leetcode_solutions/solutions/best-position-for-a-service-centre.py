@@ -1,5 +1,4 @@
 # Time:  O(n * iter), iter is the number of iterations
-# Space: O(1)
 
 # see reference:
 # - https://en.wikipedia.org/wiki/Geometric_median
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(n * iter), iter is the number of iterations
-# Space: O(1)
 class Solution2(object):
     def getMinDistSum(self, positions):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -32,7 +31,6 @@ class Solution(object):
                 dp[stk.pop()] = l
             result = max(result, l)
         return result 
-# Space: O(n)
 import collections
 
 

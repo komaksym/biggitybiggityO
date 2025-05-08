@@ -1,5 +1,4 @@
 # Time:  O(nlogn) ~ O(n^2)
-# Space: O(n)
 
 import bisect
 
@@ -33,7 +32,6 @@ class MyCalendarThree(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class MyCalendarThree2(object):
 
     def __init__(self):

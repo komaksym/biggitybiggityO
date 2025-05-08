@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 # fast exponentiation
 class Solution(object):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 LOOKUP = [[-1]*(5+1) for _ in range(5+1)]
 
 

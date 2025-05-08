@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k), k is size of the alphabet
 
 from collections import Counter
 

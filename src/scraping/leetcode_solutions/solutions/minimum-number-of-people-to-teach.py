@@ -1,5 +1,4 @@
 # Time:  O(n * m^2)
-# Space: O(n * m)
 
 import collections
 

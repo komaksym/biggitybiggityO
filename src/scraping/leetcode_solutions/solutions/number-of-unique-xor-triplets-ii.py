@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # FWHT, fst
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # hash table
 class Solution2(object):
     def uniqueXorTriplets(self, nums):

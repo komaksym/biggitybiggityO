@@ -1,6 +1,5 @@
 # Time:  seat:  O(logn), amortized
 #        leave: O(logn)
-# Space: O(n)
 
 import heapq
 

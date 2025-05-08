@@ -1,5 +1,4 @@
 # Time:  O(n + (logn)^2) = O(n)
-# Space: O(n + logn) = O(n)
 
 import collections
 
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # bit manipulation, sort, two pointers
 class Solution2(object):
     def countExcellentPairs(self, nums, k):

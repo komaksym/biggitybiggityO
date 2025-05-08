@@ -1,5 +1,4 @@
 # Time:  O(n) on average
-# Space: O(1)
 
 # quick select solution
 from random import randint
@@ -41,7 +40,6 @@ class Solution(object):
         kthElement(points, K-1, lambda a, b: dist(a) < dist(b))
         return points[:K]
 
-# Space: O(k)
 import heapq
 
 

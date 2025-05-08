@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def verifyPreorder(self, preorder):
@@ -15,7 +14,6 @@ class Solution(object):
         return True
 
 # Time:  O(n)
-# Space: O(h)
 class Solution2(object):
     def verifyPreorder(self, preorder):
         low = float("-inf")

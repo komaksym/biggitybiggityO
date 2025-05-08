@@ -2,7 +2,6 @@
 #                                    , n is the number of paths
 #                                    , l is the max length of folder name
 #                                    , t is the size of trie
-# Space: O(l * t)
 
 import collections
 from functools import reduce
@@ -63,7 +62,6 @@ class Solution(object):
 #                                          , n is the number of paths
 #                                          , l is the max length of folder name
 #                                          , t is the size of trie
-# Space: O(l * t^2)
 import collections
 
 

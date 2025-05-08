@@ -1,7 +1,6 @@
 from functools import reduce
 # Time:  precompute: O(max_n^2 + max_y * min(max_n, max_x))
 #        runtime:    O(min(n, x))
-# Space: O(max_n^2 + max_y * min(max_n, max_x))
 
 MOD = 10**9+7
 MAX_N = MAX_X = MAX_Y = 1000

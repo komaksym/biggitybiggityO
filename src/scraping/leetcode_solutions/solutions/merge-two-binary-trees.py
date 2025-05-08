@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class Solution(object):
     def mergeTrees(self, t1, t2):

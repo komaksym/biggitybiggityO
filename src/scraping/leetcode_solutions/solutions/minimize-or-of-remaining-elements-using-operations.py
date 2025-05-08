@@ -1,5 +1,4 @@
 # Time:  O(nlogr)
-# Space: O(1)
 
 # bitmasks, greedy
 class Solution(object):

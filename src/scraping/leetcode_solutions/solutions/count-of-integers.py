@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n * m), m = max_sum
-# Space: O(n + m)
 
 # combinatorics, dp
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(m * n * alpha(m + n)) = O(m + n)
-# Space: O(m * n)
 
 # bfs, union find
 class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
@@ -67,7 +66,6 @@ class Solution(object):
 
 
 # Time:  O(m * n * log(m + n))
-# Space: O(m * n)
 from sortedcontainers import SortedList
 
 

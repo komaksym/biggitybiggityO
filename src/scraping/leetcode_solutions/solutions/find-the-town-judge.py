@@ -1,5 +1,4 @@
 # Time:  O(t + n)
-# Space: O(n)
 
 class Solution(object):
     def findJudge(self, N, trust):

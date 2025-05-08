@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(logb)
-# Space: O(1)
 
 # hash table, bitmasks, combinatorics
 class Solution(object):
@@ -45,7 +44,6 @@ class Solution(object):
 
 
 # Time:  O(logb)
-# Space: O(logb)
 # hash table, bitmasks, combinatorics
 class Solution2(object):
     def numberCount(self, a, b):
@@ -79,7 +77,6 @@ class Solution2(object):
 
 
 # Time:  O(blogb)
-# Space: O(1)
 # brute force, hash table, bitmasks
 class Solution3(object):
     def numberCount(self, a, b):
@@ -101,7 +98,6 @@ class Solution3(object):
 
 
 # Time:  O(blogb)
-# Space: O(logb)
 # brute force, hash table
 class Solution4(object):
     def numberCount(self, a, b):

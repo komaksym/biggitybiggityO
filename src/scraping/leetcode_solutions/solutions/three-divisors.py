@@ -1,5 +1,4 @@
 # Time:  O(sqrt(n))
-# Space: O(1)
 
 class Solution(object):
     def isThree(self, n):

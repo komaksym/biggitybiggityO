@@ -1,5 +1,4 @@
 # Time:  O(h + v), h = len(hBars), v = len(vBars)
-# Space: O(h + v)
 
 # array, hash table
 class Solution(object):
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(hlogh + vlogv), h = len(hBars), v = len(vBars)
-# Space: O(1)
 # array, sort
 class Solution2(object):
     def maximizeSquareHoleArea(self, n, m, hBars, vBars):

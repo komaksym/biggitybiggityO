@@ -1,5 +1,4 @@
 # Time:  O(n * logr)
-# Space: O(1)
 
 # array
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n * logr)
-# Space: O(logr), r = max(nums)
 # array
 class Solution2(object):
     def separateDigits(self, nums):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # mono stack
 class Solution(object):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # sort
 class Solution2(object):
     def maxSubarrayLength(self, nums):

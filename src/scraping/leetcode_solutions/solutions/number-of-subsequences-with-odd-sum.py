@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # combinatorics, fast exponentiation
 class Solution(object):
@@ -13,7 +12,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # dp
 class Solution2(object):
     def subsequenceCount(self, nums):

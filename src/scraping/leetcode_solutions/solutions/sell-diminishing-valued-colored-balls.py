@@ -1,5 +1,4 @@
 # Time:  O(nlogm), m is the max of inventory, n is the size of inventory
-# Space: O(1)
 
 class Solution(object):
     def maxProfit(self, inventory, orders):

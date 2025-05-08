@@ -2,7 +2,6 @@
 #        lock:    O(1)
 #        unlock:  O(1)
 #        upgrade: O(n)
-# Space: O(n)
 
 class LockingTree(object):
 

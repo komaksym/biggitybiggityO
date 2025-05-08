@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # iterative dfs, hash table
 class Solution(object):
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dfs, hash table
 class Solution2(object):
     def findSubtreeSizes(self, parent, s):

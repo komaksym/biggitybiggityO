@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # greedy
 class Solution(object):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # greedy
 class Solution2(object):
     def minimalKSum(self, nums, k):

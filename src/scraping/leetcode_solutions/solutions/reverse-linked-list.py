@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -19,7 +18,6 @@ class Solution(object):
         return dummy.__next__
 
 # Time:  O(n)
-# Space: O(n)
 # Recursive solution.
 class Solution2(object):
     def reverseList(self, head):

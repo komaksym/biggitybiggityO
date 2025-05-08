@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 from collections import Counter
 from heapq import heapify, heappop

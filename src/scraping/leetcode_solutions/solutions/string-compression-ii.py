@@ -1,5 +1,4 @@
 # Time:  O(n^2 * k)
-# Space: O(n * k)
 
 class Solution(object):
     def getLengthOfOptimalCompression(self, s, k):

@@ -1,5 +1,4 @@
 # Time:  O(nlogm + nlogn), m is the max of nums
-# Space: O(n)
 
 # sort
 class Solution(object):

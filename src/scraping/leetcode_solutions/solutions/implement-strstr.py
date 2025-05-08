@@ -1,5 +1,4 @@
 # Time:  O(n + k)
-# Space: O(k)
 
 class Solution(object):
     def strStr(self, haystack, needle):
@@ -38,7 +37,6 @@ class Solution(object):
 
 
 # Time:  O(n * k)
-# Space: O(k)
 class Solution2(object):
     def strStr(self, haystack, needle):
         """

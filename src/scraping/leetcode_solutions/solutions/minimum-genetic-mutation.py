@@ -1,5 +1,4 @@
 # Time:  O(n * b), n is the length of gene string, b is size of bank
-# Space: O(b)
 
 from collections import deque
 

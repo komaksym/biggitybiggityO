@@ -1,5 +1,4 @@
 # Time:  O(n * sqrt(n)) = O(n^(3/2))
-# Space: O(n)
 
 # two pointers, sliding window
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n * sqrt(n)) = O(n^(3/2))
-# Space: O(n)
 # two pointers, sliding window
 class Solution2(object):
     def numberOfSubstrings(self, s):
@@ -45,7 +43,6 @@ class Solution2(object):
 
 
 # Time:  O(n * sqrt(n)) = O(n^(3/2))
-# Space: O(1)
 # two pointers, sliding window
 class Solution_TLE(object):
     def numberOfSubstrings(self, s):

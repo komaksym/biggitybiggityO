@@ -1,5 +1,4 @@
 # Time:  O(n + e), e is the number of red and blue edges
-# Space: O(n + e)
 
 import collections
 

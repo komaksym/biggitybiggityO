@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # greedy with two pointers solution
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # greedy with sliding window solution
 class Solution2(object):
     def catchMaximumAmountofPeople(self, team, dist):

@@ -1,6 +1,5 @@
 # Time:  ctor:  O(n)
 #        query: O(klogn), k = log2(Q/ERROR_RATE)
-# Space: O(n)
 
 import collections
 import random
@@ -40,7 +39,6 @@ class MajorityChecker(object):
 
 # Time:  ctor:  O(n)
 #        query: O(sqrt(n)*logn)
-# Space: O(n)
 import collections
 import bisect
 
@@ -94,7 +92,6 @@ class MajorityChecker2(object):
 
 # Time:  ctor:  O(nlogn)
 #        query: O((logn)^2)
-# Space: O(n)
 import functools
 
 
@@ -182,7 +179,6 @@ class MajorityChecker3(object):
 
 # Time:  ctor:  O(n)
 #        query: O(sqrt(n)*logn)
-# Space: O(n)
 import collections
 import bisect
 

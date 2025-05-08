@@ -1,5 +1,4 @@
 # Time:  O(m * n * k * (m + n))
-# Space: O(m * n * k)
 
 class Solution(object):
     def ways(self, pizza, k):

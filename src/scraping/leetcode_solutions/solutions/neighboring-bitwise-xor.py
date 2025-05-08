@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n)
-# Space: O(1)
 
 # array
 class Solution(object):

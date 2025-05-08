@@ -1,5 +1,4 @@
 # Time:  O(nlogd)
-# Space: O(d)
 
 import heapq
 
@@ -53,7 +52,6 @@ class Solution(object):
 
 
 # Time:  O(nlogd)
-# Space: O(d)
 import heapq
 import collections
 
@@ -119,7 +117,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogd)
-# Space: O(d)
 from sortedcontainers import SortedList
 
 
@@ -153,7 +150,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogd)
-# Space: O(d)
 from sortedcontainers import SortedList
 
 

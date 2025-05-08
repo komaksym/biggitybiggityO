@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -38,7 +37,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution_Recu(object):
     def minTime(self, n, edges, hasApple):
         """
@@ -65,7 +63,6 @@ class Solution_Recu(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def minTime(self, n, edges, hasApple):
         """
@@ -104,7 +101,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2_Recu(object):
     def minTime(self, n, edges, hasApple):
         """

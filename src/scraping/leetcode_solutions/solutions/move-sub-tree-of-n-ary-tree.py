@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a Node.
 class Node(object):
@@ -55,7 +54,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # one pass solution with recursion (bad in deep tree)
 class Solution_Recu(object):
     def moveSubTree(self, root, p, q):
@@ -93,7 +91,6 @@ class Solution_Recu(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # two pass solution without recursion
 class Solution2(object):
     def moveSubTree(self, root, p, q):
@@ -157,7 +154,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # two pass solution with recursion (bad in deep tree)
 class Solution2_Recu(object):
     def moveSubTree(self, root, p, q):

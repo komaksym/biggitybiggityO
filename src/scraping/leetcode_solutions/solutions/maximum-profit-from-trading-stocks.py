@@ -1,5 +1,4 @@
 # Time:  O(n * b)
-# Space: O(b)
 
 import itertools
 
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n * b)
-# Space: O(b)
 import itertools
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(n * k)
-# Space: O(k)
 # dp
 class Solution2(object):
     def countOfArrays(self, n, m, k):

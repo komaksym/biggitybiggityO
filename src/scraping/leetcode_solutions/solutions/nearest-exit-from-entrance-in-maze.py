@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 # bi-bfs solution
 class Solution(object):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m + n)
 # bfs solution
 class Solution2(object):
     def nearestExit(self, maze, entrance):

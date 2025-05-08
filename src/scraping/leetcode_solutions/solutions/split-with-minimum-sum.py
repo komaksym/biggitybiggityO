@@ -1,5 +1,4 @@
 # Time:  O(mlogm), m = O(logn)
-# Space: O(m)
 
 # sort, greedy
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(n) ~ O(n^2), O(n) on average
-# Space: O(1)
 
 # Tri Partition (aka Dutch National Flag Problem) with virtual index solution
 class Solution(object):
@@ -58,7 +57,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # Sorting and reorder solution
 class Solution2(object):
     def rearrangeArray(self, nums):

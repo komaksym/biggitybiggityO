@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 # dfs
 class Solution(object):
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m + n)
 # dfs
 class Solution2(object):
     def updateBoard(self, board, click):

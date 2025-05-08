@@ -1,5 +1,4 @@
 # Time:  O((n + m) * logm)
-# Space: O(1)
 
 import bisect
 
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + mlogm)
-# Space: O(1)
 class Solution2(object):
     def findTheDistanceValue(self, arr1, arr2, d):
         """

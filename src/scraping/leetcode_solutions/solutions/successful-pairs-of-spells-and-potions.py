@@ -1,5 +1,4 @@
 # Time:  O(mlogm + nlogm)
-# Space: O(1)
 
 # binary search
 class Solution(object):

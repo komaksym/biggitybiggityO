@@ -1,6 +1,5 @@
 # Time:  O((a^(b+1)-a)/(a-1)) = O(a^b) , a is the size of allowed,
 #                                        b is the length of bottom
-# Space: O((a^(b+1)-a)/(a-1)) = O(a^b)
 
 class Solution(object):
     def pyramidTransition(self, bottom, allowed):

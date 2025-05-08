@@ -1,5 +1,4 @@
 # Time:  O(hlogh + wlogw)
-# Space: O(1)
 
 class Solution(object):
     def maxArea(self, h, w, horizontalCuts, verticalCuts):

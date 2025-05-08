@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k)
 
 import collections
 
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(k)
 class Window(object):
     def __init__(self):
         self.__count = collections.defaultdict(int)

@@ -1,5 +1,4 @@
 # Time:  O(n * glogg), g is the max size of groups.
-# Space: O(n)
 
 import collections
 

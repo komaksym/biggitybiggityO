@@ -1,5 +1,4 @@
 # Time:  O(h * h) = O((logn)^2)
-# Space: O(1)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -31,7 +30,6 @@ class Solution(object):
             h -= 1
         return result
 
-# Space: O(1)
 class Solution2(object):
     def countNodes(self, root):
         """

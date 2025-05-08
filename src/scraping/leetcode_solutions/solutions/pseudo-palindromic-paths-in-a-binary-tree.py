@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -26,7 +25,6 @@ class Solution(object):
             stk.append((node.right, count))
             stk.append((node.left, count))
         return result
-# Space: O(h)
 class Solution2(object):
     def pseudoPalindromicPaths (self, root):
         """

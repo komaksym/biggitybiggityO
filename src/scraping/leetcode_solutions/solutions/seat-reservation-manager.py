@@ -1,7 +1,6 @@
 # Time:  ctor:      O(n)
 #        reserve:   O(logn)
 #        unreserve: O(logn)
-# Space: O(n)
 
 import heapq
 

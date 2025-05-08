@@ -1,5 +1,4 @@
 # Time:  O(m * 2^m + 3^m + 2^(3 * m) * logn) = O(2^(3 * m) * logn)
-# Space: O(2^(2 * m))
 
 import collections
 import itertools
@@ -74,7 +73,6 @@ class Solution(object):
 
 
 # Time:  O(n * 3^m)
-# Space: O(3^m)
 import collections
 
 
@@ -154,7 +152,6 @@ class Solution2(object):
 
 
 # Time:  (m * n grids) * (O(3*3*2^(m-2)) possible states per grid) = O(n * m * 2^m)
-# Space: O(3*3*2^(m-2)) = O(2^m)
 import collections
 
 

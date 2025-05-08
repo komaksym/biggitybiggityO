@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n)
-# Space: O(1)
 
 # bottom-up solution
 class Solution(object):
@@ -14,7 +13,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # top-down solution
 class Solution2(object):
     def findTheWinner(self, n, k):

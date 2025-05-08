@@ -1,5 +1,4 @@
 # Time:  O(n^2 * v), v is max(max(nums1), max(nums2))
-# Space: O(n * v)
 
 import collections
 import itertools

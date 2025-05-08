@@ -1,6 +1,5 @@
 # Time:  precompute: O(r)
 #        runtime:    O(n)
-# Space: O(r) 
 
 # greedy, number theory
 def linear_sieve_of_eratosthenes(n):

@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(nlogr), r is sum(ribbons)/k
-# Space: O(1)
 
 class Solution(object):
     def maxLength(self, ribbons, k):

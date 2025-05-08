@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(n + 26)
 
 # simulation, hash table, stack
 class Solution(object):

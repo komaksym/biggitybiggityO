@@ -1,5 +1,4 @@
 # Time:  O(n * k + (e * k) * log(n * k))
-# Space: O(n * k + e)
 
 import heapq
 

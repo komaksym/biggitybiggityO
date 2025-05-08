@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class NestedInteger(object):
    def __init__(self, value=None):

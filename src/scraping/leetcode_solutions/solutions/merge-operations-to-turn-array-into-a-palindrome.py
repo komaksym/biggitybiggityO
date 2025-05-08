@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # constructive algorithms, greedy, two pointers
 class Solution(object):

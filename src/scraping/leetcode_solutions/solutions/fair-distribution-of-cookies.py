@@ -1,5 +1,4 @@
 # Time:  O(k * 3^n)
-# Space: O(2^n)
 
 # dp, submask enumeration
 class Solution(object):

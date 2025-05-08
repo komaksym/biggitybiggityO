@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # bfs, greedy
 class Solution(object):

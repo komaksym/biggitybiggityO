@@ -1,5 +1,4 @@
 # Time:  O(nlogn + mlogm)
-# Space: O(1)
 
 # sort, two pointers
 class Solution(object):

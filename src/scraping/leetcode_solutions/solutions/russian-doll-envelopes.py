@@ -1,5 +1,4 @@
 # Time:  O(nlogn + nlogk) = O(nlogn), k is the length of the result.
-# Space: O(1)
 
 class Solution(object):
     def maxEnvelopes(self, envelopes):

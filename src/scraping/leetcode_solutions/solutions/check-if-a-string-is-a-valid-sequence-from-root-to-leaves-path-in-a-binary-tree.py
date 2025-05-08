@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(w)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # dfs solution with stack
 class Solution2(object):
     def isValidSequence(self, root, arr):
@@ -54,7 +52,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # dfs solution with recursion
 class Solution3(object):
     def isValidSequence(self, root, arr):

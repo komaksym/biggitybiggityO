@@ -1,6 +1,5 @@
 # Time:  O(p + r * n), p is the count of all the possible paths in graph,
 #                      r is the count of the result.
-# Space: O(n)
 
 class Solution(object):
     def allPathsSourceTarget(self, graph):

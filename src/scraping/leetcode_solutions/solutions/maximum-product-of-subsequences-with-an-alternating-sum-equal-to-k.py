@@ -1,5 +1,4 @@
 # Time:  O(n * k * l), l = limits
-# Space: O(n * k * l)
 
 import collections
 

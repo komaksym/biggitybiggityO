@@ -1,5 +1,4 @@
 # Time:  O(a + b)
-# Space: O(1)
 
 class Solution(object):
     def strWithout3a3b(self, A, B):

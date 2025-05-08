@@ -1,5 +1,4 @@
 # Time:  O(t * m * n), t is target
-# Space: O(t)
 
 class Solution(object):
     def minimizeTheDifference(self, mat, target):

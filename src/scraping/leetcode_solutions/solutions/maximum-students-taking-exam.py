@@ -1,5 +1,4 @@
 # Time:  O(m * n * sqrt(m * n))
-# Space: O(m * n)
 
 # the problem is the same as google codejam 2008 round 3 problem C
 # https://github.com/kamyu104/GoogleCodeJam-2008/blob/master/Round%203/no_cheating.py
@@ -10,7 +9,6 @@ import collections
 from functools import partial
 
 # Time:  O(E * sqrt(V))
-# Space: O(V)
 # Source code from http://code.activestate.com/recipes/123641-hopcroft-karp-bipartite-matching/
 # Hopcroft-Karp bipartite max-cardinality matching and max independent set
 # David Eppstein, UC Irvine, 27 Apr 2002
@@ -136,7 +134,6 @@ class Solution(object):
 
 
 # Time:  O(|V| * |E|) = O(m^2 * n^2)
-# Space: O(|V| + |E|) = O(m * n)
 # Hungarian bipartite matching
 class Solution2(object):
     def maxStudents(self, seats):
@@ -178,7 +175,6 @@ class Solution2(object):
 
 
 # Time:  O(m * 2^n * 2^n) = O(m * 4^n)
-# Space: O(2^n)
 # dp solution
 class Solution3(object):
     def maxStudents(self, seats):

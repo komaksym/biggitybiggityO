@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # graph, hash table
 class Solution(object):

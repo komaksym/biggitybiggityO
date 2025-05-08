@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 import collections
 
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(r), r is the value of result
-# Space: O(n)
 class Solution2(object):
     def numTilePossibilities(self, tiles):
         """

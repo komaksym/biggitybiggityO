@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(26)
 
 # freq table, counting sort, greedy
 class Solution(object):

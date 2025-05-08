@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n + logk)
-# Space: O(n)
 
 # dp, math, kmp
 class Solution(object):
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(n + logk)
-# Space: O(n)
 # dp, matrix exponentiation, kmp
 class Solution2(object):
     def numberOfWays(self, s, t, k):
@@ -99,7 +97,6 @@ class Solution2(object):
 
 
 # Time:  O(n + logk)
-# Space: O(n)
 # dp, matrix exponentiation, z-function
 class Solution3(object):
     def numberOfWays(self, s, t, k):

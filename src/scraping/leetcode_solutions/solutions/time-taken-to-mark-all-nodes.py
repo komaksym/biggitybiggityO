@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # tree dp, bfs
 class Solution(object):
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # tree dp, dfs
 class Solution2(object):
     def timeTaken(self, edges):

@@ -1,5 +1,4 @@
 # Time:  O(m * max(max_base, target + max_topping / 2)) ~= O(m * t)
-# Space: O(max(max_base, target + max_topping / 2)) ~= O(t)
 
 class Solution(object):
     def closestCost(self, baseCosts, toppingCosts, target):
@@ -28,7 +27,6 @@ class Solution(object):
             if i >= target:
                 break
         return result
-# Space: O(m * t)
 class Solution2(object):
     def closestCost(self, baseCosts, toppingCosts, target):
         """
@@ -57,7 +55,6 @@ class Solution2(object):
 
 
 # Time:  O(3^m*log(3^m)) + O(n*log(3^m)) = O(m*(3^m + n))
-# Space: O(3^m)
 import bisect
 
 
@@ -84,7 +81,6 @@ class Solution3(object):
 
 
 # Time:  O(n * 3^m)
-# Space: O(3^m)
 class Solution4(object):
     def closestCost(self, baseCosts, toppingCosts, target):
         """

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(logn) for stack call
 
 class ListNode(object):
     def __init__(self, x):

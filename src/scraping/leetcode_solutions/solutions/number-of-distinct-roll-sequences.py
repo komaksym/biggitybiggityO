@@ -1,5 +1,4 @@
 # Time:  O(6^3 * n)
-# Space: O(6^2)
 
 import collections
 

@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # greedy, sort, dp, linear search
 class Solution(object):

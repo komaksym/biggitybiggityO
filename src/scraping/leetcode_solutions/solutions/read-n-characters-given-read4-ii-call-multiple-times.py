@@ -25,11 +25,6 @@ class Solution(object):
         self.__n4 = 0
 
     def read(self, buf, n):
-        """
-        :type buf: Destination buffer (List[str])
-        :type n: Maximum number of characters to read (int)
-        :rtype: The number of characters read (int)
-        """
         i = 0
         while i < n:
             if self.__i4 < self.__n4: 

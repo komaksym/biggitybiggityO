@@ -2,10 +2,6 @@
 
 class Solution(object):
     def capitalizeTitle(self, title):
-        """
-        :type title: str
-        :rtype: str
-        """
         title = list(title)
         j = 0
         for i in range(len(title)+1):

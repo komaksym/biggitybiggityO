@@ -6,12 +6,6 @@ from sortedcontainers import SortedList
 # two sorted lists, dp
 class Solution(object):
     def minOperations(self, nums, x, k):
-        """
-        :type nums: List[int]
-        :type x: int
-        :type k: int
-        :rtype: int
-        """
         class SlidingWindow(object):
             def __init__(self):
                 self.left = SortedList()
@@ -78,12 +72,6 @@ import collections
 # two heaps, dp
 class Solution2(object):
     def minOperations(self, nums, x, k):
-        """
-        :type nums: List[int]
-        :type x: int
-        :type k: int
-        :rtype: int
-        """
         class LazyHeap(object):
             def __init__(self, sign):
                 self.heap = []

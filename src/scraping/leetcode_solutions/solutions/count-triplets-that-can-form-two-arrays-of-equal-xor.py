@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def countTriplets(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
         count_sum = collections.defaultdict(lambda: [0, 0])
         count_sum[0] = [1, 0]
         result, prefix = 0, 0

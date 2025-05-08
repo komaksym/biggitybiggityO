@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maxChunksToSorted(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
         result, max_i = 0, 0
         for i, v in enumerate(arr):
             max_i = max(max_i, v)
@@ -16,10 +12,6 @@ class Solution(object):
 # mono stack solution
 class Solution2(object):
     def maxChunksToSorted(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
         result, increasing_stk = 0, []
         for num in arr:
             max_num = num if not increasing_stk else max(increasing_stk[-1], num)

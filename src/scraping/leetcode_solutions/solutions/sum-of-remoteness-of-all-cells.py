@@ -3,10 +3,6 @@
 # flood fill, bfs, math
 class Solution(object):
     def sumRemoteness(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs(i, j):
             total, cnt = grid[i][j], 1

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def isSelfCrossing(self, x):
-        """
-        :type x: List[int]
-        :rtype: bool
-        """
         if len(x) >= 5 and x[3] == x[1] and x[4] + x[0] >= x[2]:
             return True
 

@@ -3,10 +3,6 @@
 # dp, freq table
 class Solution(object):
     def minimumSubstringsInPartition(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         INF = float("inf")
         dp = [INF]*(len(s)+1)
         dp[0] = 0

@@ -4,10 +4,6 @@
 
 class Solution(object):
     def peopleIndexes(self, favoriteCompanies):
-        """
-        :type favoriteCompanies: List[List[str]]
-        :rtype: List[int]
-        """
         lookup, comps = {}, []
         for cs in favoriteCompanies:
             comps.append(set())
@@ -44,10 +40,6 @@ class UnionFind(object):
 
 class Solution2(object):
     def peopleIndexes(self, favoriteCompanies):
-        """
-        :type favoriteCompanies: List[List[str]]
-        :rtype: List[int]
-        """
         lookup, comps = {}, []
         for cs in favoriteCompanies:
             comps.append(set())

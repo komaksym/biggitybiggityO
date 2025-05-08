@@ -21,11 +21,6 @@ class UnionFind(object):
 
 class Solution(object):
     def findCriticalAndPseudoCriticalEdges(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: List[List[int]]
-        """
         def MST(n, edges, unused=None, used=None):
             union_find = UnionFind(n)
             weight = 0

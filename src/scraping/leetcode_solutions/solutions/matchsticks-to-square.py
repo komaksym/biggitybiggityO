@@ -2,10 +2,6 @@
 
 class Solution(object):
     def makesquare(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         total_len = sum(nums)
         if total_len % 4:
             return False

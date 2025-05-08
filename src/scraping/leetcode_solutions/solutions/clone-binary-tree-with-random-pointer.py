@@ -17,10 +17,6 @@ class NodeCopy(object):
 
 class Solution(object):
     def copyRandomBinaryTree(self, root):
-        """
-        :type root: Node
-        :rtype: NodeCopy
-        """
         def iter_dfs(node, callback):
             result = None
             stk = [node]
@@ -59,10 +55,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution_Recu(object):
     def copyRandomBinaryTree(self, root):
-        """
-        :type root: Node
-        :rtype: NodeCopy
-        """
         def dfs(node, callback):
             if not node:
                 return None
@@ -98,10 +90,6 @@ import collections
 
 class Solution2(object):
     def copyRandomBinaryTree(self, root):
-        """
-        :type root: Node
-        :rtype: NodeCopy
-        """ 
         lookup = collections.defaultdict(lambda: NodeCopy())
         lookup[None] = None
         stk = [root]
@@ -124,10 +112,6 @@ import collections
 
 class Solution2_Recu(object):
     def copyRandomBinaryTree(self, root):
-        """
-        :type root: Node
-        :rtype: NodeCopy
-        """ 
         def dfs(node, lookup):
             if not node:
                 return

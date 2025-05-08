@@ -2,11 +2,6 @@
 
 class Solution(object):
     def numberOfRounds(self, startTime, finishTime):
-        """
-        :type startTime: str
-        :type finishTime: str
-        :rtype: int
-        """
         h1, m1 = list(map(int, startTime.split(":")))
         h2, m2 = list(map(int, finishTime.split(":")))
         start = h1*60+m1
@@ -19,11 +14,6 @@ class Solution(object):
 # Time:  O(1)
 class Solution2(object):
     def numberOfRounds(self, startTime, finishTime):
-        """
-        :type startTime: str
-        :type finishTime: str
-        :rtype: int
-        """
         h1, m1 = list(map(int, startTime.split(":")))
         h2, m2 = list(map(int, finishTime.split(":")))
         if m1 > m2:

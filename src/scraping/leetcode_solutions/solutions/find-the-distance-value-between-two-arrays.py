@@ -5,12 +5,6 @@ import bisect
 
 class Solution(object):
     def findTheDistanceValue(self, arr1, arr2, d):
-        """
-        :type arr1: List[int]
-        :type arr2: List[int]
-        :type d: int
-        :rtype: int
-        """
         arr2.sort()
         result, i, j = 0, 0, 0
         for x in arr1:
@@ -24,12 +18,6 @@ class Solution(object):
 # Time:  O(nlogn + mlogm)
 class Solution2(object):
     def findTheDistanceValue(self, arr1, arr2, d):
-        """
-        :type arr1: List[int]
-        :type arr2: List[int]
-        :type d: int
-        :rtype: int
-        """
         arr1.sort(), arr2.sort()
         result, i, j = 0, 0, 0
         while i < len(arr1) and j < len(arr2):

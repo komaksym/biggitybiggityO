@@ -7,11 +7,6 @@ from sortedcontainers import SortedList
 # prefix sum, sorted list, binary search, mono stack
 class Solution(object):
     def maxProfit(self, prices, profits):
-        """
-        :type prices: List[int]
-        :type profits: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         def query(sl, k):
             j = sl.bisect_left((k,))
@@ -45,11 +40,6 @@ from sortedcontainers import SortedList
 # prefix sum, sorted list, binary search, mono stack
 class Solution2(object):
     def maxProfit(self, prices, profits):
-        """
-        :type prices: List[int]
-        :type profits: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
 
         right = [NEG_INF]*len(prices)
@@ -86,11 +76,6 @@ import itertools
 # prefix sum, bit, fenwick tree
 class Solution3(object):
     def maxProfit(self, prices, profits):
-        """
-        :type prices: List[int]
-        :type profits: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         class BIT(object): 
             def __init__(self, n, default=0, fn=lambda x, y: x+y):
@@ -129,11 +114,6 @@ import itertools
 # prefix sum, segment tree
 class Solution4(object):
     def maxProfit(self, prices, profits):
-        """
-        :type prices: List[int]
-        :type profits: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         class SegmentTree(object):
             def __init__(self, N,
@@ -191,11 +171,6 @@ class Solution4(object):
 # prefix sum, segment tree
 class Solution5(object):
     def maxProfit(self, prices, profits):
-        """
-        :type prices: List[int]
-        :type profits: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         class SegmentTree(object):
             def __init__(self, N,

@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def longestSubsequence(self, arr, difference):
-        """
-        :type arr: List[int]
-        :type difference: int
-        :rtype: int
-        """
         result = 1
         lookup = collections.defaultdict(int)
         for i in range(len(arr)):

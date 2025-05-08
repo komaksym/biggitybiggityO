@@ -3,10 +3,6 @@
 # greedy solution
 class Solution(object):
     def minSideJumps(self, obstacles):
-        """
-        :type obstacles: List[int]
-        :rtype: int
-        """
         result, lanes = 0, set([2])
         for i in range(len(obstacles)-1):
             lanes.discard(obstacles[i+1])
@@ -19,10 +15,6 @@ class Solution(object):
 # dp solution
 class Solution2(object):
     def minSideJumps(self, obstacles):
-        """
-        :type obstacles: List[int]
-        :rtype: int
-        """
         dp = [1, 0, 1]        
         for i in obstacles:
             if i:

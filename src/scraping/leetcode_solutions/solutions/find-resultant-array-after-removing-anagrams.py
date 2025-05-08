@@ -6,10 +6,6 @@ import collections
 # freq table
 class Solution(object):
     def removeAnagrams(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
         result = []
         prev = None
         for x in words:
@@ -28,10 +24,6 @@ import collections
 # sort
 class Solution2(object):
     def removeAnagrams(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
         result = []
         prev = None
         for x in words:
@@ -50,8 +42,4 @@ import collections
 # sort
 class Solution3(object):
     def removeAnagrams(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
         return [words[i] for i in range(len(words)) if i == 0 or sorted(words[i-1]) != sorted(words[i])]

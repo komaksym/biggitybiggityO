@@ -2,11 +2,6 @@
 
 class Solution(object):
     def fullJustify(self, words, maxWidth):
-        """
-        :type words: List[str]
-        :type maxWidth: int
-        :rtype: List[str]
-        """
         def addSpaces(i, spaceCnt, maxWidth, is_last):
             if i < spaceCnt:
                 return 1 if is_last else (maxWidth // spaceCnt) + int(i < maxWidth % spaceCnt)

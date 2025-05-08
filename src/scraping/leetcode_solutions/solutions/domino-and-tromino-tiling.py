@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def numTilings(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         M = int(1e9+7)
 
         def matrix_expo(A, K):
@@ -37,10 +33,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def numTilings(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         M = int(1e9+7)
         dp = [1, 1, 2]
         for i in range(3, N+1):

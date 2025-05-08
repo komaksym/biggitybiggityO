@@ -19,12 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def smallestEquivalentString(self, A, B, S):
-        """
-        :type A: str
-        :type B: str
-        :type S: str
-        :rtype: str
-        """
         union_find = UnionFind(26)
         for i in range(len(A)):
             union_find.union_set(ord(A[i])-ord('a'), ord(B[i])-ord('a'))

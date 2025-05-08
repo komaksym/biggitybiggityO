@@ -2,10 +2,6 @@
 
 class Solution(object):
     def reinitializePermutation(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def discrete_log(a, b, m):
             a %= m
             b %= m
@@ -29,10 +25,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def reinitializePermutation(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         if n == 2:
             return 1
         result, i = 0, 1
@@ -45,10 +37,6 @@ class Solution2(object):
 # Time:  O(n)
 class Solution3(object):
     def reinitializePermutation(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         result, i = 0, 1
         while not result or i != 1: 
             i = (i//2 if not i%2 else n//2+(i-1)//2)

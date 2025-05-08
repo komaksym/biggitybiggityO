@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minOperationsToFlip(self, expression):
-        """
-        :type expression: str
-        :rtype: int
-        """
         def compute(operands, operators):
             right, left = operands.pop(), operands.pop()
             operands.append(ops[operators.pop()](left, right))
@@ -36,10 +32,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def minOperationsToFlip(self, expression):
-        """
-        :type expression: str
-        :rtype: int
-        """
         stk = [[None]*3]
         for c in expression:                                
             if c == '(':                                            

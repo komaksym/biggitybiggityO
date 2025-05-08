@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findEvenNumbers(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
         k = 3
         def backtracking(curr, cnt, result):
             if len(curr) == k:
@@ -35,10 +31,6 @@ from functools import reduce
 
 class Solution2(object):
     def findEvenNumbers(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
         result, cnt = [], collections.Counter(digits)
         for i in range(1, 10):
             for j in range(10):
@@ -61,10 +53,6 @@ class Node(object):
 
 class Solution3(object):
     def findEvenNumbers(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
         k = 3
         def backtracking(curr, dummy, result):
             if len(curr) == k:
@@ -107,10 +95,6 @@ import collections
 
 class Solution4(object):
     def findEvenNumbers(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
         k = 3
         def backtracking(curr, digit_cnt, result):
             if len(curr) == k:

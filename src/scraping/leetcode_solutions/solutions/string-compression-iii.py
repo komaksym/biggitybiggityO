@@ -3,10 +3,6 @@
 # string
 class Solution(object):
     def compressedString(self, word):
-        """
-        :type word: str
-        :rtype: str
-        """
         result = []
         cnt = 0
         for i in range(len(word)):

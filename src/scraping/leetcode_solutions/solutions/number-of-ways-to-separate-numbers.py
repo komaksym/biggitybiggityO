@@ -3,10 +3,6 @@ from functools import reduce
 
 class Solution(object):
     def numberOfCombinations(self, num):
-        """
-        :type num: str
-        :rtype: int
-        """
         MOD = 10**9+7
         def find_longest_common_prefix(num):
             lcp = [[0]*(len(num)+1) for _ in range(len(num)+1)] 

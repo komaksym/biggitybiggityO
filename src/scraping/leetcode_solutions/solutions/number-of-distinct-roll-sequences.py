@@ -6,10 +6,6 @@ import collections
 # dp
 class Solution(object):
     def distinctSequences(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

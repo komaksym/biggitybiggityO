@@ -3,12 +3,6 @@
 # binary search, greedy
 class Solution(object):
     def minOperations(self, nums, x, y):
-        """
-        :type nums: List[int]
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
         def ceil_divide(a, b):
             return (a+b-1)//b
 

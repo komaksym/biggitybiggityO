@@ -6,10 +6,6 @@ import itertools
 # combinatorics
 class Solution(object):
     def singleDivisorTriplet(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def check(a, b, c):
             return sum((a+b+c)%x == 0 for x in (a, b, c)) == 1
 

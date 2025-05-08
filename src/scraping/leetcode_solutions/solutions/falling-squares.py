@@ -103,10 +103,6 @@ class SegmentTree2(object):
                  query_fn=min,
                  update_fn=lambda x, y: y,
                  default_val=float("inf")):
-        """
-        initialize your data structure here.
-        :type nums: List[int]
-        """
         N = len(nums)
         self.__original_length = N
         self.__tree_length = 2**(N.bit_length() + (N&(N-1) != 0))-1
@@ -247,10 +243,6 @@ class Solution3(object):
 # Time:  O(n^2)
 class Solution4(object):
     def fallingSquares(self, positions):
-        """
-        :type positions: List[List[int]]
-        :rtype: List[int]
-        """
         heights = [0] * len(positions)
         for i in range(len(positions)):
             left_i, size_i = positions[i]

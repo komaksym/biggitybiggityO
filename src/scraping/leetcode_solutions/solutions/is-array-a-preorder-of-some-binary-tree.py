@@ -3,10 +3,6 @@
 # stack
 class Solution(object):
     def isPreorder(self, nodes):
-        """
-        :type nodes: List[List[int]]
-        :rtype: bool
-        """
         stk = [nodes[0][0]]
         for i in range(1, len(nodes)):
             while stk and stk[-1] != nodes[i][1]:

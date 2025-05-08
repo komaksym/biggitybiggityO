@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numRookCaptures(self, board):
-        """
-        :type board: List[List[str]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
         r, c = None, None

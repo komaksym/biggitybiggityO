@@ -6,10 +6,6 @@ import collections
 # rolling hash
 class Solution(object):
     def equalDigitFrequency(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         MOD = 10**9+7
         D = 27
         lookup = set()

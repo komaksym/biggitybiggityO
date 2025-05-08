@@ -3,10 +3,6 @@
 # counting sort
 class Solution(object):
     def sortVowels(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def inplace_counting_sort(nums, reverse=False): 
             if not nums:
                 return
@@ -36,10 +32,6 @@ class Solution(object):
 # sort
 class Solution2(object):
     def sortVowels(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         VOWELS = "AEIOUaeiou"
         LOOKUP = set(VOWELS)
         vowels = [x for x in s if x in LOOKUP]

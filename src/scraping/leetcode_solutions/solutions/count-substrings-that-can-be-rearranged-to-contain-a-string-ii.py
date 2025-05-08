@@ -3,11 +3,6 @@
 # two pointers, sliding window, freq table
 class Solution(object):
     def validSubstringCount(self, word1, word2):
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: int
-        """
         cnt = [0]*26
         curr = 0
         for x in word2:

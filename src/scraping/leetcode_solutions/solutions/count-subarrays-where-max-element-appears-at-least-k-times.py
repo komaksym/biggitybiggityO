@@ -3,11 +3,6 @@
 # two pointers, sliding window
 class Solution(object):
     def countSubarrays(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         mx = max(nums)
         result = left = cnt = 0
         for right in range(len(nums)):
@@ -23,11 +18,6 @@ class Solution(object):
 # two pointers, sliding window
 class Solution2(object):
     def countSubarrays(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         mx = max(nums)
         result = (len(nums)+1)*len(nums)//2
         left = cnt = 0

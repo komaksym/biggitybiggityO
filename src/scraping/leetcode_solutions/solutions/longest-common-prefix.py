@@ -2,10 +2,6 @@
 
 class Solution(object):
     def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
         if not strs:
             return ""
 
@@ -19,10 +15,6 @@ class Solution(object):
 # Time:  O(n * k), k is the length of the common prefix
 class Solution2(object):
     def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
         prefix = ""
         
         for chars in zip(*strs):

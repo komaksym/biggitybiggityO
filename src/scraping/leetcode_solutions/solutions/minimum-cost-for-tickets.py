@@ -2,11 +2,6 @@
 
 class Solution(object):
     def mincostTickets(self, days, costs):
-        """
-        :type days: List[int]
-        :type costs: List[int]
-        :rtype: int
-        """
         durations = [1, 7, 30]
         W = durations[-1]
         dp = [float("inf") for i in range(W)]

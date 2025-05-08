@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numSteps(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result, carry = 0, 0
         for i in reversed(range(1, len(s))):
             if int(s[i]) + carry == 1:

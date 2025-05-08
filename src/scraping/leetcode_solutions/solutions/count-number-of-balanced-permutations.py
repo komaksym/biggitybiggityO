@@ -4,10 +4,6 @@ from functools import reduce
 # dp, combinatorics
 class Solution(object):
     def countBalancedPermutations(self, num):
-        """
-        :type num: str
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def lazy_init(n):

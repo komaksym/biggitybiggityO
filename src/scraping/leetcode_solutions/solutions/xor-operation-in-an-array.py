@@ -2,11 +2,6 @@
 
 class Solution(object):
     def xorOperation(self, n, start):
-        """
-        :type n: int
-        :type start: int
-        :rtype: int
-        """
         def xorNums(n, start):
             def xorNumsBeginEven(n, start):
                 assert(start%2 == 0)
@@ -24,9 +19,4 @@ from functools import reduce
 
 class Solution2(object):
     def xorOperation(self, n, start):
-        """
-        :type n: int
-        :type start: int
-        :rtype: int
-        """
         return reduce(operator.xor, (i for i in range(start, start+2*n, 2)))

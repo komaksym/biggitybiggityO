@@ -3,10 +3,6 @@
 
 class Solution(object):
     def splitIntoFibonacci(self, S):
-        """
-        :type S: str
-        :rtype: List[int]
-        """
         def startswith(S, k, x):
             y = 0
             for i in range(k, len(S)):

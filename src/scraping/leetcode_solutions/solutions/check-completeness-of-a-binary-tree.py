@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def isCompleteTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
         end = False
         current = [root]
         while current:
@@ -33,10 +29,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def isCompleteTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
         prev_level, current = [], [(root, 1)]
         count = 0
         while current:

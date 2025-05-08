@@ -2,10 +2,6 @@
 
 class Solution(object):
     def baseNeg2(self, N):
-        """
-        :type N: int
-        :rtype: str
-        """
         result = []
         while N:
             result.append(str(-N & 1)) 
@@ -17,10 +13,6 @@ class Solution(object):
 # Time:  O(logn)
 class Solution2(object):
     def baseNeg2(self, N):
-        """
-        :type N: int
-        :rtype: str
-        """
         BASE = -2
         result = []
         while N:

@@ -35,11 +35,6 @@ class UnionFind(object):
 # tree, sort, union find
 class Solution(object):
     def numberOfGoodPaths(self, vals, edges):
-        """
-        :type vals: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         edges.sort(key=lambda x: max(vals[x[0]], vals[x[1]]))
         uf = UnionFind(vals)
         return len(vals)+sum(uf.union_set(i, j, max(vals[i], vals[j])) for i, j in edges)

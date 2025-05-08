@@ -6,10 +6,6 @@ import bisect
 # binary search solution
 class Solution(object):
     def longestObstacleCourseAtEachPosition(self, obstacles):
-        """
-        :type obstacles: List[int]
-        :rtype: List[int]
-        """
         result, stk = [], []
         for x in obstacles:
             i = bisect.bisect_right(stk, x)
@@ -101,10 +97,6 @@ class SegmentTree(object):
 # segment tree solution
 class Solution2_TLE(object):
     def longestObstacleCourseAtEachPosition(self, obstacles):
-        """
-        :type obstacles: List[int]
-        :rtype: List[int]
-        """
         sorted_obstacles = sorted(set(obstacles))
         lookup = {x:i for i, x in enumerate(sorted_obstacles)}
         segment_tree = SegmentTree(len(lookup))

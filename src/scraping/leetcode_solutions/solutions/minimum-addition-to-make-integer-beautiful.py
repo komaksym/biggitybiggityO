@@ -3,11 +3,6 @@
 # greedy
 class Solution(object):
     def makeIntegerBeautiful(self, n, target):
-        """
-        :type n: int
-        :type target: int
-        :rtype: int
-        """
         total, m = 0, n
         while m:
             total += m%10

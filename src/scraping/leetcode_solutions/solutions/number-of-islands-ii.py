@@ -2,12 +2,6 @@
 
 class Solution(object):
     def numIslands2(self, m, n, positions):
-        """
-        :type m: int
-        :type n: int
-        :type positions: List[List[int]]
-        :rtype: List[int]
-        """
         def node_id(node, n):
             return node[0] * n + node[1]
 

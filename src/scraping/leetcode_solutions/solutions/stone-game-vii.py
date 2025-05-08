@@ -2,10 +2,6 @@
 
 class Solution(object):
     def stoneGameVII(self, stones):
-        """
-        :type stones: List[int]
-        :rtype: int
-        """
         def score(i, j):
             return prefix[j+1]-prefix[i]
 

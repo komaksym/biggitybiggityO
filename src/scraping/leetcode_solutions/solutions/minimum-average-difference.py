@@ -3,10 +3,6 @@
 # prefix sum
 class Solution(object):
     def minimumAverageDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         total = sum(nums)
         mn, idx = float("inf"), -1
         prefix = 0

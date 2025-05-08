@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def longestSubsequence(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 2
         mx = max(nums)
         dp = [[0]*mx for _ in range(mx)]
@@ -25,10 +21,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def longestSubsequence(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 2
         mx = max(nums)
         dp = [[0]*mx for _ in range(mx)]

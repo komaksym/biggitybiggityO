@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def lenOfVDiagonal(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         n, m = len(grid), len(grid[0])
         result = 0
         down_right = [[1]*m for _ in range(n)]
@@ -64,10 +60,6 @@ class Solution(object):
 # memoization
 class Solution2(object):
     def lenOfVDiagonal(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def memoization(i, j, x, d, k):
             if not (0 <= i < n and 0 <= j < m):
                 return 0

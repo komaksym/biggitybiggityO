@@ -9,10 +9,6 @@ class Solution(object):
         self.__max_pow3 = 3 ** self.__max_log3
 
     def isPowerOfThree(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
         return n > 0 and self.__max_pow3 % n == 0
 
 

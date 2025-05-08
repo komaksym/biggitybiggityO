@@ -4,11 +4,6 @@
 
 class Solution(object):
     def openLock(self, deadends, target):
-        """
-        :type deadends: List[str]
-        :type target: str
-        :rtype: int
-        """
         dead = set(deadends)
         q = ["0000"]
         lookup = {"0000"}

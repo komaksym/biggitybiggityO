@@ -3,11 +3,6 @@
 # hash table
 class Solution(object):
     def minOperations(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         lookup = [False]*k
         for i in reversed(range(len(nums))):
             if nums[i] > len(lookup) or lookup[nums[i]-1]:

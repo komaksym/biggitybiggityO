@@ -3,11 +3,6 @@
 # sliding window
 class Solution(object):
     def divisorSubstrings(self, num, k):
-        """
-        :type num: int
-        :type k: int
-        :rtype: int
-        """
         result = curr = 0
         s = list(map(int, str(num)))
         base = 10**(k-1)

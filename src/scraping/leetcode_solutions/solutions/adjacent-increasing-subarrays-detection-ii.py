@@ -3,10 +3,6 @@
 # array
 class Solution(object):
     def maxIncreasingSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         curr, prev = 1, 0
         for i in range(len(nums)-1):

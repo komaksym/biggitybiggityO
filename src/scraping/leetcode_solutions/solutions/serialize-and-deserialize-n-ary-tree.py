@@ -9,11 +9,6 @@ class Node(object):
 class Codec(object):
 
     def serialize(self, root):
-        """Encodes a tree to a single string.
-        
-        :type root: Node
-        :rtype: str
-        """
         def dfs(node, vals):
             if not node:
                 return
@@ -28,11 +23,6 @@ class Codec(object):
 
 
     def deserialize(self, data):
-        """Decodes your encoded data to tree.
-        
-        :type data: str
-        :rtype: Node
-        """
         def isplit(source, sep):
             sepsize = len(sep)
             start = 0

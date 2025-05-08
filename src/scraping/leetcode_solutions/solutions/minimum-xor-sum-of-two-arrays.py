@@ -52,11 +52,6 @@ class Solution(object):
 # dp solution
 class Solution2(object):
     def minimumXORSum(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         dp = [(float("inf"), float("inf"))]*(2**len(nums2))
         dp[0] = (0, 0)
         for mask in range(len(dp)):

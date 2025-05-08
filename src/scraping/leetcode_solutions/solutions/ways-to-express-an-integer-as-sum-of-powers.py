@@ -3,11 +3,6 @@
 # knapsack dp
 class Solution(object):
     def numberOfWays(self, n, x):
-        """
-        :type n: int
-        :type x: int
-        :rtype: int
-        """
         MOD = 10**9+7
 
         dp = [0]*(n+1)

@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def countQuadruplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         dp = [0]*len(nums) 
         result = 0
         for l in range(len(nums)):
@@ -22,10 +18,6 @@ class Solution(object):
 # prefix sum
 class Solution2(object):
     def countQuadruplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         right = [[0]*(len(nums)+1) for _ in range(len(nums))]
         for j in range(len(nums)):
             for i in reversed(range(j+1, len(nums))):
@@ -44,10 +36,6 @@ class Solution2(object):
 # prefix sum
 class Solution3(object):
     def countQuadruplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         left = [[0]*(len(nums)+1) for _ in range(len(nums))]
         for j in range(len(nums)):
             for i in range(j):

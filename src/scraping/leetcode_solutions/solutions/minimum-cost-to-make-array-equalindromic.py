@@ -7,10 +7,6 @@ import random
 # quick select, math, string
 class Solution(object):
     def minimumCost(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -59,10 +55,6 @@ class Solution(object):
 # sort, math, string
 class Solution2(object):
     def minimumCost(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def nearest_palindromic(x):
             n = str(x)
             l = len(n)

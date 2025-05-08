@@ -2,11 +2,6 @@
 
 class Solution(object):
     def isSubtree(self, s, t):
-        """
-        :type s: TreeNode
-        :type t: TreeNode
-        :rtype: bool
-        """
         def isSame(x, y):
             if not x and not y:
                 return True

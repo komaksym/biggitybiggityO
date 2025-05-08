@@ -3,11 +3,6 @@
 # two pointers, sliding window
 class Solution(object):
     def shortestBeautifulSubstring(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: str
-        """
         def check(r1, r2):
             if r1[1]-r1[0]+1 > r2[1]-r2[0]+1:
                 return False

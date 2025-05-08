@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numberOfBeams(self, bank):
-        """
-        :type bank: List[str]
-        :rtype: int
-        """
         result = prev = 0
         for x in bank:
             cnt = x.count('1')

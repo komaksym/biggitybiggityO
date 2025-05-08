@@ -6,10 +6,6 @@ from sortedcontainers import SortedList
 # simulation, doubly linked list, sorted list
 class Solution(object):
     def minimumPairRemoval(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def add(i):
             if 0 <= i < right[i] < len(nums):
                 sl.add([nums[i]+nums[right[i]], i])

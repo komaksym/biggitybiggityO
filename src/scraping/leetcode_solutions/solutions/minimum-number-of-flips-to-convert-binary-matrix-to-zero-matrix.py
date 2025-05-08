@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def minFlips(self, mat):
-        """
-        :type mat: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 0), (0, 1), (1, 0), (0, -1), (-1, 0)]
         start = sum(val << r*len(mat[0])+c for r, row in enumerate(mat) for c, val in enumerate(row))
         q = collections.deque([(start, 0)])

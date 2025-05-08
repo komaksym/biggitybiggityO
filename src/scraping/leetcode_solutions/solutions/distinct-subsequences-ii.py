@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def distinctSubseqII(self, S):
-        """
-        :type S: str
-        :rtype: int
-        """
         MOD = 10**9+7
         result, dp = 0, [0]*26
         for c in S:

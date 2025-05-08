@@ -3,10 +3,6 @@
 
 class Solution(object):
     def largestIsland(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
         def dfs(r, c, index, grid):

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def checkPossibility(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         modified, prev = False, nums[0]
         for i in range(1, len(nums)):
             if prev > nums[i]:

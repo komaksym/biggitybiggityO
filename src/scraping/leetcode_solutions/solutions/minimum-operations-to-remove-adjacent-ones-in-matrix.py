@@ -7,13 +7,6 @@ from functools import partial
 # Hopcroft-Karp bipartite max-cardinality matching and max independent set
 # David Eppstein, UC Irvine, 27 Apr 2002
 def bipartiteMatch(graph):
-    '''Find maximum cardinality matching of a bipartite graph (U,V,E).
-    The input format is a dictionary mapping members of U to a list
-    of their neighbors in V.  The output is a triple (M,A,B) where M is a
-    dictionary mapping members of V to their matches in U, A is the part
-    of the maximum independent set in U, and B is the part of the MIS in V.
-    The same object may occur in both U and V, and is treated as two
-    distinct vertices if this happens.'''
     matching = {}
     for u in graph:
         for v in graph[u]:
@@ -107,10 +100,6 @@ import collections
 
 class Solution(object):
     def minimumOperations(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def iter_dfs(grid, i, j, lookup, adj):
             if lookup[i][j]:

@@ -6,10 +6,6 @@ import collections
 # two pointers
 class Solution(object):
     def continuousSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = left = 0
         mn, mx = float("inf"), float("-inf")
         for right in range(len(nums)):
@@ -32,10 +28,6 @@ import collections
 # mono deque, two pointers
 class Solution2(object):
     def continuousSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         mn, mx = collections.deque(), collections.deque()
         result = left = 0
         for right in range(len(nums)):
@@ -60,10 +52,6 @@ from sortedcontainers import SortedDict
 # ordered dict, two pointers
 class Solution3(object):
     def continuousSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = left = 0
         lookup = SortedDict()
         for right in range(len(nums)):

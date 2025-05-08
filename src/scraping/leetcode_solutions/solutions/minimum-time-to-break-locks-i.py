@@ -3,11 +3,6 @@
 # hungarian algorithm, weighted bipartite matching
 class Solution(object):
     def findMinimumTime(self, strength, K):
-        """
-        :type strength: List[int]
-        :type K: int
-        :rtype: int
-        """
         def hungarian(a): 
             if not a:
                 return 0, []
@@ -57,11 +52,6 @@ class Solution(object):
 # bitmasks, dp
 class Solution2(object):
     def findMinimumTime(self, strength, K):
-        """
-        :type strength: List[int]
-        :type K: int
-        :rtype: int
-        """
         def ceil_divide(a, b):
             return (a+b-1)//b
     

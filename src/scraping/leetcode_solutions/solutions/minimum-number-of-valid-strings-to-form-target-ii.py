@@ -3,11 +3,6 @@
 # rolling hash, hash table, two pointers, sliding window, dp
 class Solution(object):
     def minValidStrings(self, words, target):
-        """
-        :type words: List[str]
-        :type target: str
-        :rtype: int
-        """
         MOD, P = 10**9+7, 131
         power = [1]
         for _ in range(len(target)):
@@ -87,11 +82,6 @@ class AhoTrie(object):
 # ac automata trie
 class Solution2(object):
     def minValidStrings(self, words, target):
-        """
-        :type words: List[str]
-        :type target: str
-        :rtype: int
-        """
         trie = AhoTrie(words)
         dp = [0]*(len(target)+1)
         for i in range(len(target)):
@@ -106,11 +96,6 @@ class Solution2(object):
 # kmp, dp
 class Solution3(object):
     def minValidStrings(self, words, target):
-        """
-        :type words: List[str]
-        :type target: str
-        :rtype: int
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

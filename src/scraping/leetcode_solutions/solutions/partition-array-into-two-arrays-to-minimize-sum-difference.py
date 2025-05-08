@@ -6,10 +6,6 @@ import bisect
 
 class Solution(object):
     def minimumDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         left, right = nums[:len(nums)//2], nums[len(nums)//2:]
         total1, total2 = sum(left), sum(right)
         result = float("inf")

@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def numSplits(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         left_count, right_count = collections.Counter(), collections.Counter(s)
         result = 0
         for c in s:

@@ -3,10 +3,6 @@
 # fast exponentiation
 class Solution(object):
     def hasSameDigits(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         def check(mod):
             def decompose(x, mod): 
                 cnt = 0
@@ -38,10 +34,6 @@ LOOKUP = [[-1]*(5+1) for _ in range(5+1)]
 # lucas's theorem
 class Solution2(object):
     def hasSameDigits(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         def nCr(n, r):
             if n-r < r:
                 r = n-r

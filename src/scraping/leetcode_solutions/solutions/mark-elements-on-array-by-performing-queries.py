@@ -3,11 +3,6 @@
 # hash table, heap
 class Solution(object):
     def unmarkedSumArray(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         total = sum(nums)
         lookup = [False]*len(nums)
         min_heap = [(x, i) for i, x in enumerate(nums)]

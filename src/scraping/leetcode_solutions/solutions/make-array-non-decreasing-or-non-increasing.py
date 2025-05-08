@@ -6,10 +6,6 @@ import heapq
 # greedy, heap
 class Solution(object):
     def convertArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def f(nums):
             result = 0
             max_heap = []
@@ -30,10 +26,6 @@ import collections
 # dp
 class Solution2(object):
     def convertArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         vals = sorted(set(nums))
         def f(nums):
             dp = collections.defaultdict(int) 

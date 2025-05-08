@@ -7,11 +7,6 @@ import collections
 # freq table, greedy, quick select
 class Solution(object):
     def minCost(self, basket1, basket2):
-        """
-        :type basket1: List[int]
-        :type basket2: List[int]
-        :rtype: int
-        """
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left

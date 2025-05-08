@@ -2,14 +2,6 @@
 
 class Solution(object):
     def minCost(self, houses, cost, m, n, target):
-        """
-        :type houses: List[int]
-        :type cost: List[List[int]]
-        :type m: int
-        :type n: int
-        :type target: int
-        :rtype: int
-        """
         dp = [[[float("inf") for _ in range(n)] for _ in range(target)] for _ in range(2)]
         for i in range(m):
             dp[i%2] = [[float("inf") for _ in range(n)] for _ in range(target)]
@@ -28,14 +20,6 @@ class Solution(object):
 # Time:  O(m * t * n^2)
 class Solution2(object):
     def minCost(self, houses, cost, m, n, target):
-        """
-        :type houses: List[int]
-        :type cost: List[List[int]]
-        :type m: int
-        :type n: int
-        :type target: int
-        :rtype: int
-        """
         dp = {(0, 0): 0}
         for i, p in enumerate(houses):
             new_dp = {}

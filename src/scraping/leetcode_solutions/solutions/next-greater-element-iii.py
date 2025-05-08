@@ -3,10 +3,6 @@
 
 class Solution(object):
     def nextGreaterElement(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         digits = list(map(int, list(str(n))))
         k, l = -1, 0
         for i in range(len(digits) - 1):

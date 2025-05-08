@@ -3,11 +3,6 @@
 # dp
 class Solution(object):
     def minIncrementOperations(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         W = 3
         dp = [0]*W
         for i, x in enumerate(nums):

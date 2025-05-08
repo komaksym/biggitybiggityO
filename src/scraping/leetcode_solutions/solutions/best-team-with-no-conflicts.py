@@ -83,11 +83,6 @@ class SegmentTree(object):
 # optimized from Solution3
 class Solution(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
         players = sorted(zip(scores, ages))
         sorted_ages = sorted(set(ages))
         lookup = {age:i for i, age in enumerate(sorted_ages)} 
@@ -102,11 +97,6 @@ class Solution(object):
 # optimized from Solution4
 class Solution2(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
         players = sorted(zip(ages, scores))
         sorted_scores = sorted(set(scores))
         lookup = {score:i for i, score in enumerate(sorted_scores)} 
@@ -121,11 +111,6 @@ import collections
 # optimized from Solution5
 class Solution3(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
         players = sorted(zip(scores, ages))
         sorted_ages = sorted(set(ages))
         dp = collections.defaultdict(int)
@@ -142,11 +127,6 @@ import collections
 # optimized from Solution6
 class Solution4(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
         players = sorted(zip(ages, scores))
         sorted_scores = sorted(set(scores))
         dp = collections.defaultdict(int)
@@ -160,11 +140,6 @@ class Solution4(object):
 # longest_increasing_subsequence like dp solution
 class Solution5(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
         players = sorted(zip(scores, ages))
         dp = [0]*len(players)
         result = 0
@@ -181,11 +156,6 @@ class Solution5(object):
 # longest_increasing_subsequence like dp solution
 class Solution6(object):
     def bestTeamScore(self, scores, ages):
-        """
-        :type scores: List[int]
-        :type ages: List[int]
-        :rtype: int
-        """
         players = sorted(zip(ages, scores))
         dp = [0]*len(players)
         result = 0

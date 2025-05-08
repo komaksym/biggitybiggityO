@@ -78,12 +78,6 @@ class TreeInfos(object):
 # Tarjan's Offline LCA Algorithm
 class Solution(object):
     def closestNode(self, n, edges, query):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type query: List[List[int]]
-        :rtype: List[int]
-        """
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v), adj[v].append(u)
@@ -153,12 +147,6 @@ class TreeInfos2(object):
 # binary lifting (online lca algorithm)
 class Solution2(object):
     def closestNode(self, n, edges, query):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type query: List[List[int]]
-        :rtype: List[int]
-        """
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v), adj[v].append(u)
@@ -207,12 +195,6 @@ class TreeInfos3(object):
 # lca
 class Solution3(object):
     def closestNode(self, n, edges, query):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type query: List[List[int]]
-        :rtype: List[int]
-        """
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v), adj[v].append(u)
@@ -224,12 +206,6 @@ class Solution3(object):
 # bfs
 class Solution4(object):
     def closestNode(self, n, edges, query):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type query: List[List[int]]
-        :rtype: List[int]
-        """
         def bfs(adj, root):
             dist = [len(adj)]*len(adj)
             q = [root]
@@ -266,12 +242,6 @@ class Solution4(object):
 # bfs
 class Solution5(object):
     def closestNode(self, n, edges, query):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type query: List[List[int]]
-        :rtype: List[int]
-        """
         def bfs(adj, root):
             dist = [len(adj)]*len(adj)
             q = [root]

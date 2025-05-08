@@ -22,10 +22,6 @@ from collections import Counter
 
 class Solution2(object):
     def lengthOfLongestSubstringTwoDistinct(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         counter = Counter()
         left, max_length = 0, 0
         for right, char in enumerate(s):

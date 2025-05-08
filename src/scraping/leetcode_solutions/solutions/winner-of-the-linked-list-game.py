@@ -3,10 +3,6 @@
 # linked list
 class Solution(object):
     def gameResult(self, head):
-        """
-        :type head: Optional[ListNode]
-        :rtype: str
-        """
         cnt = 0
         while head:
             cnt += cmp(head.val, head.next.val)

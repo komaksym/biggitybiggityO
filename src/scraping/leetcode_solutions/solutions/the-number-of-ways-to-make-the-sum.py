@@ -4,10 +4,6 @@ from functools import reduce
 # math
 class Solution(object):
     def numberOfWays(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
 
 
@@ -28,10 +24,6 @@ class Solution(object):
 # math
 class Solution2(object):
     def numberOfWays(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def count_1_2_6(n):
             return (n//2+1)*((n//6)-0+1)-3*((n//6)+0)*((n//6)-0+1)//2
@@ -43,10 +35,6 @@ class Solution2(object):
 # math
 class Solution3(object):
     def numberOfWays(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def count_1_2(n):
             return n//2+1
@@ -61,10 +49,6 @@ class Solution3(object):
 # dp
 class Solution4(object):
     def numberOfWays(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [0]*(n+1)
         dp[0] = 1

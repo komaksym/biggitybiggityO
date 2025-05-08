@@ -30,12 +30,6 @@ class Trie(object):
 
 class Solution(object):
     def maxXor(self, n, edges, values):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type values: List[int]
-        :rtype: int
-        """
         def iter_dfs():
             lookup = [0]*len(values)
             stk = [(1, 0, -1)]
@@ -114,12 +108,6 @@ class Trie(object):
 
 class Solution2(object):
     def maxXor(self, n, edges, values):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type values: List[int]
-        :rtype: int
-        """
         def dfs(u, p):
             lookup[u] = values[u]+sum(dfs(v, u) for v in adj[u] if v != p)
             return lookup[u]

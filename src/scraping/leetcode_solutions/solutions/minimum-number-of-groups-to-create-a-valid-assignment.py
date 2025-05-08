@@ -6,10 +6,6 @@ import collections
 # linear search, greedy, math
 class Solution(object):
     def minGroupsForValidAssignment(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         INF = float("inf")
 
         def ceil_divide(a, b):

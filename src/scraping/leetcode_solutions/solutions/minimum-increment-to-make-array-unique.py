@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minIncrementForUnique(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
         A.sort()
         A.append(float("inf"))
         result, duplicate = 0, 0

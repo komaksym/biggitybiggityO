@@ -21,10 +21,6 @@ PRIMES = linear_sieve_of_eratosthenes(MAX_N)
 PRIMES_SET = set(PRIMES)
 class Solution(object):
     def diagonalPrime(self, nums):
-        """
-        :type nums: List[List[int]]
-        :rtype: int
-        """
         result = 0
         for i in range(len(nums)):
             if nums[i][i] in PRIMES_SET:

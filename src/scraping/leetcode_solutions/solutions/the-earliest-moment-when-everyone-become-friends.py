@@ -21,11 +21,6 @@ class UnionFind(object):
 
 class Solution(object):
     def earliestAcq(self, logs, N):
-        """
-        :type logs: List[List[int]]
-        :type N: int
-        :rtype: int
-        """
         logs.sort()
         union_find = UnionFind(N)
         for t, a, b in logs:

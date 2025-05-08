@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def shortestPathBinaryMatrix(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(-1, -1), (-1, 0), (-1, 1), \
                       ( 0, -1), ( 0, 1), \
                       ( 1, -1), ( 1, 0), ( 1, 1)]

@@ -3,10 +3,6 @@
 # combinatorics, fast exponentiation
 class Solution(object):
     def subsequenceCount(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         return pow(2, len(nums)-1, MOD) if any(x%2 for x in nums) else 0
 
@@ -15,10 +11,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def subsequenceCount(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [0]*2
         for x in nums:

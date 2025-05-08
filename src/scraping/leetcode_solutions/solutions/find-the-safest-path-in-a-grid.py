@@ -29,10 +29,6 @@ class UnionFind(object):
 # bfs, bucket sort, union find
 class Solution(object):
     def maximumSafenessFactor(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs():
             dist = [[0 if grid[r][c] == 1 else -1 for c in range(len(grid[0]))] for r in range(len(grid))]
@@ -78,10 +74,6 @@ import heapq
 # bfs, dijkstra's algorithm
 class Solution2(object):
     def maximumSafenessFactor(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs():
             dist = [[0 if grid[r][c] == 1 else -1 for c in range(len(grid[0]))] for r in range(len(grid))]
@@ -127,10 +119,6 @@ import heapq
 # bfs, binary search
 class Solution3(object):
     def maximumSafenessFactor(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs():
             dist = [[0 if grid[r][c] == 1 else -1 for c in range(len(grid[0]))] for r in range(len(grid))]

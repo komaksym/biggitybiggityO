@@ -6,11 +6,6 @@ import heapq
 # heap
 class Solution(object):
     def resultsArray(self, queries, k):
-        """
-        :type queries: List[List[int]]
-        :type k: int
-        :rtype: List[int]
-        """
         result = []
         max_heap = []
         for x, y in queries:

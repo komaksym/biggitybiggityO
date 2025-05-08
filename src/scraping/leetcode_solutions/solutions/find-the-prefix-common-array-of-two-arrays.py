@@ -3,11 +3,6 @@
 # freq table
 class Solution(object):
     def findThePrefixCommonArray(self, A, B):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :rtype: List[int]
-        """
         result = [0]*len(A)
         cnt = collections.Counter()
         curr = 0

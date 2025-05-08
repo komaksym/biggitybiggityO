@@ -6,10 +6,6 @@ import collections
 # freq table, prefix sum, combinatorics
 class Solution(object):
     def subsequencesWithMiddleMode(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def nC2(x):
             return x*(x-1)//2
 

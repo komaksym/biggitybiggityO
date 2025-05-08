@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minOperations(self, boxes):
-        """
-        :type boxes: str
-        :rtype: List[int]
-        """
         result = [0]*len(boxes)
         for direction in (lambda x:x, reversed):
             cnt = accu = 0

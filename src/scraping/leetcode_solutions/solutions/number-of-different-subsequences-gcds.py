@@ -5,10 +5,6 @@ import fractions
 
 class Solution(object):
     def countDifferentSubsequenceGCDs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         max_num, nums_set = max(nums), set(nums)
         result = 0
         for i in range(1, max_num+1):

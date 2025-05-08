@@ -6,10 +6,6 @@ import collections
 # bfs
 class Solution(object):
     def maximumMinutes(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         GRASS, FIRE, WALL, PERSON = list(range(4))
         INF = 10**9
@@ -51,10 +47,6 @@ class Solution(object):
 # bfs
 class Solution2(object):
     def maximumMinutes(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         FIRE, WALL, PERSON = list(range(1, 4))
         INF = 10**9

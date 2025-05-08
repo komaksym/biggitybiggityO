@@ -4,11 +4,6 @@ from functools import reduce
 # constructive algorithms, math
 class Solution(object):
     def largestPalindrome(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
         def inv(x, p):
             return pow(x, p-2, p)
 

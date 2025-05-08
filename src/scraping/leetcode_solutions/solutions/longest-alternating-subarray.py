@@ -3,10 +3,6 @@
 # array
 class Solution(object):
     def alternatingSubarray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = l = -1
         for i in range(len(nums)-1):
             if l != -1 and nums[i-1] == nums[i+1]:

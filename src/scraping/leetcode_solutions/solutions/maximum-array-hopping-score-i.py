@@ -3,10 +3,6 @@
 # prefix sum, greedy
 class Solution(object):
     def maxScore(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = mx = 0
         for i in reversed(range(1, len(nums))):
             mx = max(mx, nums[i])
@@ -18,10 +14,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def maxScore(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         dp = [0]*len(nums)
         for i in range(1, len(nums)):
             for j in range(i):

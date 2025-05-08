@@ -3,10 +3,6 @@
 # counting sort, inplace solution
 class Solution(object):
     def sortEvenOdd(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         def partition(index, nums):
             for i in range(len(nums)):
                 j = i
@@ -48,10 +44,6 @@ class Solution(object):
 # sort, inplace solution
 class Solution2(object):
     def sortEvenOdd(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         def partition(index, nums):
             for i in range(len(nums)):
                 j = i
@@ -71,9 +63,5 @@ class Solution2(object):
 # sort
 class Solution3(object):
     def sortEvenOdd(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         nums[::2], nums[1::2] = sorted(nums[::2]), sorted(nums[1::2], reverse=True)
         return nums

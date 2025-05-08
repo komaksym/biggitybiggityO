@@ -3,11 +3,6 @@
 # optimized from Solution2 with counting sort
 class Solution(object):
     def maximalNetworkRank(self, n, roads):
-        """
-        :type n: int
-        :type roads: List[List[int]]
-        :rtype: int
-        """
         MAX_N = 100
         MAX_NUM = MAX_N-1
         def counting_sort(arr, key=lambda x:x, reverse=False): 
@@ -56,11 +51,6 @@ import collections
 # optimized from Solution3
 class Solution2(object):
     def maximalNetworkRank(self, n, roads):
-        """
-        :type n: int
-        :type roads: List[List[int]]
-        :rtype: int
-        """
         degree = [0]*n
         adj = collections.defaultdict(set)
         for a, b in roads:
@@ -89,11 +79,6 @@ import collections
 
 class Solution3(object):
     def maximalNetworkRank(self, n, roads):
-        """
-        :type n: int
-        :type roads: List[List[int]]
-        :rtype: int
-        """
         degree = [0]*n
         adj = collections.defaultdict(set)
         for a, b in roads:

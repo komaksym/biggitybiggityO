@@ -3,10 +3,6 @@
 # bit, fenwick tree, combinatorics
 class Solution(object):
     def getPermutationIndex(self, perm):
-        """
-        :type perm: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         class BIT(object): 
             def __init__(self, n):
@@ -42,10 +38,6 @@ class Solution(object):
 # bit, fenwick tree, combinatorics
 class Solution2(object):
     def getPermutationIndex(self, perm):
-        """
-        :type perm: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         fact = [1]*2            
         def factorial(n):

@@ -10,11 +10,6 @@ import math
 random.seed(0)
 class Solution(object):
     def beautifulPair(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         INF = float("inf")
         def dist(a, b):
             if a[2] > b[2]:
@@ -64,11 +59,6 @@ import itertools
 # reference: https://www.baeldung.com/cs/minimal-manhattan-distance
 class Solution2(object):
     def beautifulPair(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         INF = float("inf")
         MAX_NEIGHBOR_COUNT = (8+2)//2
         def dist(a, b):
@@ -132,11 +122,6 @@ import itertools
 # reference: https://www.baeldung.com/cs/minimal-manhattan-distance
 class Solution3(object):
     def beautifulPair(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         INF = float("inf")
         MAX_NEIGHBOR_COUNT = 8
         def dist(a, b):
@@ -193,11 +178,6 @@ import itertools
 # segment tree
 class Solution4(object):
     def beautifulPair(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         INF = float("inf")
         class SegmentTree(object):
             def __init__(self, N,

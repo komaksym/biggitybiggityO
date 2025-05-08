@@ -7,11 +7,6 @@ from random import randint
 
 class Solution(object):
     def topKFrequent(self, words, k):
-        """
-        :type words: List[str]
-        :type k: int
-        :rtype: List[str]
-        """
         counts = collections.Counter(words)
         p = []
         for key, val in counts.items():
@@ -53,11 +48,6 @@ class Solution(object):
 # Heap Solution
 class Solution2(object):
     def topKFrequent(self, words, k):
-        """
-        :type words: List[str]
-        :type k: int
-        :rtype: List[str]
-        """
         class MinHeapObj(object):
             def __init__(self,val):
                 self.val = val
@@ -85,11 +75,6 @@ class Solution2(object):
 # Bucket Sort Solution
 class Solution3(object):
     def topKFrequent(self, words, k):
-        """
-        :type words: List[str]
-        :type k: int
-        :rtype: List[str]
-        """
         counts = collections.Counter(words)
         buckets = [[] for _ in range(len(words)+1)]
         for word, count in counts.items():
@@ -111,11 +96,6 @@ from collections import Counter
 
 class Solution4(object):
     def topKFrequent(self, words, k):
-        """
-        :type words: List[str]
-        :type k: int
-        :rtype: List[str]
-        """
         counter = Counter(words)
         candidates = list(counter.keys())
         candidates.sort(key=lambda w: (-counter[w], w))

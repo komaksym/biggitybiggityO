@@ -2,10 +2,6 @@
 
 class Solution(object):
     def encode(self, num):
-        """
-        :type num: int
-        :rtype: str
-        """
         result = []
         while num:
             result.append('0' if num%2 else '1')

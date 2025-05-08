@@ -6,12 +6,6 @@ import collections
 # sort, freq table, two pointers, sliding window
 class Solution(object):
     def maxFrequency(self, nums, k, numOperations):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type numOperations: int
-        :rtype: int
-        """
         nums.sort()
         result = 0
         left, right = 0, -1
@@ -36,12 +30,6 @@ import collections
 # sort, freq table, difference array, line sweep
 class Solution2(object):
     def maxFrequency(self, nums, k, numOperations):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type numOperations: int
-        :rtype: int
-        """
         cnt = collections.defaultdict(int) 
         for x in nums:
             cnt[x] += 1

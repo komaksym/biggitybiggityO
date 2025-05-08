@@ -2,12 +2,6 @@
 
 class Solution(object):
     def earliestAndLatest(self, n, firstPlayer, secondPlayer):
-        """
-        :type n: int
-        :type firstPlayer: int
-        :type secondPlayer: int
-        :rtype: List[int]
-        """
         def memoization(t, l, r, lookup):
             if (t, l, r) not in lookup:
                 if l == r:

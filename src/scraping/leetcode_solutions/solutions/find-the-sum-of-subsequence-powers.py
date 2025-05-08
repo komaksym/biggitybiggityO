@@ -30,11 +30,6 @@ from functools import reduce
 # sort, dp
 class Solution2(object):
     def sumOfPowers(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         nums.sort()
         dp = [[collections.defaultdict(int) for _ in range(len(nums)+1)] for _ in range(len(nums))]        

@@ -5,10 +5,6 @@ from collections import Counter
 
 class Solution(object):
     def removeDuplicateLetters(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         remaining = Counter(s)
 
         in_stack, stk = set(), []

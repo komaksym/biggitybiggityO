@@ -5,11 +5,6 @@ import random
 
 class Solution(object):
     def maxProfit(self, k, prices):
-        """
-        :type k: int
-        :type prices: List[int]
-        :rtype: int
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -71,11 +66,6 @@ class Solution(object):
 # Time:  O(k * n)
 class Solution2(object):
     def maxProfit(self, k, prices):
-        """
-        :type k: int
-        :type prices: List[int]
-        :rtype: int
-        """
         def maxAtMostNPairsProfit(sprices):
             profit = 0
             for i in range(len(prices) - 1):

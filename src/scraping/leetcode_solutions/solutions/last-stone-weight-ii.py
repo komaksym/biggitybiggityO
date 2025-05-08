@@ -2,10 +2,6 @@
 
 class Solution(object):
     def lastStoneWeightII(self, stones):
-        """
-        :type stones: List[int]
-        :rtype: int
-        """
         dp = {0}
         for stone in stones:
             dp |= {stone+i for i in dp}

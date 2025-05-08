@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         slow = nums[0]
         fast = nums[nums[0]]
         while slow != fast:
@@ -23,10 +19,6 @@ class Solution(object):
 # Binary search method.
 class Solution2(object):
     def findDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         left, right = 1, len(nums) - 1
 
         while left <= right:
@@ -44,10 +36,6 @@ class Solution2(object):
 # Time:  O(n)
 class Solution3(object):
     def findDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         duplicate = 0
         for num in nums:
             if nums[abs(num) - 1] > 0:

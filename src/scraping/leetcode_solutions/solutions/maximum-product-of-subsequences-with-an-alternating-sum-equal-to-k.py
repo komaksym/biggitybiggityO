@@ -6,12 +6,6 @@ import collections
 # dp
 class Solution(object):
     def maxProduct(self, nums, k, limit):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type limit: int
-        :rtype: int
-        """
         total = sum(nums)
         if k > total or k < -total: 
             return -1

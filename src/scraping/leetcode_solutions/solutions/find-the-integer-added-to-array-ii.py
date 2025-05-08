@@ -7,11 +7,6 @@ import collections
 # partial sort, freq table
 class Solution(object):
     def minimumAddedInteger(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         def check(cnt2, cnt1):
             return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items()) 
             
@@ -27,11 +22,6 @@ import collections
 # partial sort, freq table
 class Solution2(object):
     def minimumAddedInteger(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         def check(cnt2, cnt1):
             return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items()) 
         
@@ -52,11 +42,6 @@ class Solution2(object):
 # sort
 class Solution3(object):
     def minimumAddedInteger(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         nums1.sort()
         nums2.sort()
         for i in range(3):

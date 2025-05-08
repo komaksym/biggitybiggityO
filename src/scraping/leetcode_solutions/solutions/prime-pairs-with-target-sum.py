@@ -3,10 +3,6 @@
 # number theory
 class Solution(object):
     def findPrimePairs(self, n):
-        """
-        :type n: int
-        :rtype: List[List[int]]
-        """
         def linear_sieve_of_eratosthenes(n):
             primes = []
             spf = [-1]*(n+1) 

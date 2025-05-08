@@ -6,11 +6,6 @@ import collections
 # bit manipulation, freq table, combinatorics
 class Solution(object):
     def countExcellentPairs(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def popcount(x):
             return bin(x)[2:].count('1')
 
@@ -22,11 +17,6 @@ class Solution(object):
 # bit manipulation, sort, two pointers
 class Solution2(object):
     def countExcellentPairs(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def popcount(x):
             return bin(x)[2:].count('1')
 

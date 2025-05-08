@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def isPossibleDivide(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: bool
-        """
         count = collections.Counter(nums)
         for num in sorted(count.keys()):
             c = count[num]

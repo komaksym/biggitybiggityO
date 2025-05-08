@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def getProbability(self, balls):
-        """
-        :type balls: List[int]
-        :rtype: float
-        """
         def nCrs(n): 
             c = 1
             for k in range(n+1):

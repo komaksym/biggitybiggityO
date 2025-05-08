@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def minChanges(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def one_are_not_from_nums(nums, cnts):
             mxs = [cnts[i].most_common(1)[0][1] for i in range(k)]
             return len(nums) - (sum(mxs)-min(mxs))

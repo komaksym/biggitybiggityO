@@ -3,12 +3,6 @@
 # prefix sum, greedy
 class Solution(object):
     def minimumMoves(self, nums, k, maxChanges):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type maxChanges: int
-        :rtype: int
-        """
         idxs = [i for i, x in enumerate(nums) if x]
         prefix = [0]*(len(idxs)+1)
         for i in range(len(idxs)):

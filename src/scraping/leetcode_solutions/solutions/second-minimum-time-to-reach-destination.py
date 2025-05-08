@@ -2,13 +2,6 @@
 
 class Solution(object):
     def secondMinimum(self, n, edges, time, change):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type time: int
-        :type change: int
-        :rtype: int
-        """
         def bi_bfs(adj, start, target):
             left, right = {start}, {target}
             lookup = set()
@@ -51,13 +44,6 @@ class Solution(object):
 # Time:  O(|V| + |E|) = O(|E|) since graph is connected, O(|E|) >= O(|V|) 
 class Solution2(object):
     def secondMinimum(self, n, edges, time, change):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type time: int
-        :type change: int
-        :rtype: int
-        """
         INF = float("inf")
         def bfs(adj, start):
             q = [start]

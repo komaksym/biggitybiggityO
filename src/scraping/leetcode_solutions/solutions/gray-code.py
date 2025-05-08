@@ -2,10 +2,6 @@
 
 class Solution(object):
     def grayCode(self, n):
-        """
-        :type n: int
-        :rtype: List[int]
-        """
         result = [0]
         for i in range(n):
             for n in reversed(result):
@@ -17,10 +13,6 @@ class Solution(object):
 # http://math.stackexchange.com/questions/425894/proof-of-closed-form-formula-to-convert-a-binary-number-to-its-gray-code
 class Solution2(object):
     def grayCode(self, n):
-        """
-        :type n: int
-        :rtype: List[int]
-        """
         return [i >> 1 ^ i for i in range(1 << n)]
 
 

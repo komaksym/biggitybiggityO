@@ -17,11 +17,6 @@ class TreeNode(object):
 class Codec(object):
 
     def encode(self, root):
-        """Encodes an n-ary tree to a binary tree.
-        
-        :type root: Node
-        :rtype: TreeNode
-        """
         def encodeHelper(root, parent, index):
             if not root:
                 return None
@@ -40,11 +35,6 @@ class Codec(object):
         return node
 
     def decode(self, data):
-        """Decodes your binary tree to an n-ary tree.
-        
-        :type data: TreeNode
-        :rtype: Node
-        """
         def decodeHelper(root, parent):
             if not root:
                 return

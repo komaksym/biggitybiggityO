@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numberOfUniqueGoodSubsequences(self, binary):
-        """
-        :type binary: str
-        :rtype: int
-        """
         MOD = 10**9+7
         ends0, ends1 = 0, 0
         has_zero = False

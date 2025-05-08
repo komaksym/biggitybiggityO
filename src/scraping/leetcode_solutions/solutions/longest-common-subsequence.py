@@ -2,11 +2,6 @@
 
 class Solution(object):
     def longestCommonSubsequence(self, text1, text2):
-        """
-        :type text1: str
-        :type text2: str
-        :rtype: int
-        """
         if len(text1) < len(text2):
             return self.longestCommonSubsequence(text2, text1)
 

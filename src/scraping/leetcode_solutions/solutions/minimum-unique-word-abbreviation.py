@@ -3,11 +3,6 @@
 # optimized from Solution2
 class Solution(object):
     def minAbbreviation(self, target, dictionary):
-        """
-        :type target: str
-        :type dictionary: List[str]
-        :rtype: str
-        """
         def bits_to_abbr_len(targets, bits):
             total = 0
             pre = 0
@@ -52,11 +47,6 @@ class Solution(object):
         return bits_to_abbr(target, result)
 class Solution2(object):
     def minAbbreviation(self, target, dictionary):
-        """
-        :type target: str
-        :type dictionary: List[str]
-        :rtype: str
-        """
         def bits_to_abbr(targets, bits):
             abbr = []
             pre = 0

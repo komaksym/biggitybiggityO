@@ -7,10 +7,6 @@ from sortedcontainers import SortedList
 # bit, fenwick tree, sorted list, math
 class Solution(object):
     def sumCounts(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         class BIT(object): 
             def __init__(self, n):
@@ -64,10 +60,6 @@ class Solution(object):
 # dp, segment tree, math
 class Solution2(object):
     def sumCounts(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         class SegmentTree(object):
             def __init__(self, N,

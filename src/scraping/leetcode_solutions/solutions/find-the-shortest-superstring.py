@@ -2,10 +2,6 @@
 
 class Solution(object):
     def shortestSuperstring(self, A):
-        """
-        :type A: List[str]
-        :rtype: str
-        """
         n = len(A)
         overlaps = [[0]*n for _ in range(n)]
         for i, x in enumerate(A):

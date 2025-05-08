@@ -3,10 +3,6 @@
 # math, hash table
 class Solution(object):
     def countLatticePoints(self, circles):
-        """
-        :type circles: List[List[int]]
-        :rtype: int
-        """
         lookup = set()
         for x, y, r in circles:
             for i in range(-r, r+1):
@@ -20,10 +16,6 @@ class Solution(object):
 # math
 class Solution2(object):
     def countLatticePoints(self, circles):
-        """
-        :type circles: List[List[int]]
-        :rtype: int
-        """
         max_x = max(x+r for x, _, r in circles)
         max_y = max(y+r for _, y, r in circles)
         result = 0

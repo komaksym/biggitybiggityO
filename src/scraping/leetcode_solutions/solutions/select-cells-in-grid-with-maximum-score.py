@@ -3,10 +3,6 @@
 # hungarian algorithm, weighted bipartite matching
 class Solution(object):
     def maxScore(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def hungarian(a): 
             if not a:
                 return 0, []
@@ -57,10 +53,6 @@ class Solution(object):
 # dp, bitmasks
 class Solution2(object):
     def maxScore(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         mx = max(x for row in grid for x in row)
         lookup = [set() for _ in range(mx)]
         for i, row in enumerate(grid):

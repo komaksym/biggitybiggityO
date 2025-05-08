@@ -9,11 +9,6 @@ from functools import reduce
 # matrix exponentiation solution
 class Solution(object):
     def colorTheGrid(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def backtracking(mask1, mask2, basis, result): 
             if not basis:
@@ -79,11 +74,6 @@ import collections
 # better complexity for small m, large n
 class Solution2(object):
     def colorTheGrid(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def find_masks(m, basis): 
             masks = [0]
@@ -158,11 +148,6 @@ import collections
 # better complexity for large m, large n
 class Solution3(object):
     def colorTheGrid(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def normalize(basis, mask, lookup): 
             if mask not in lookup[basis]:

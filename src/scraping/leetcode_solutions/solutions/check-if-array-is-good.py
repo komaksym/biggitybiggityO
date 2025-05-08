@@ -3,10 +3,6 @@
 # freq table
 class Solution(object):
     def isGood(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         cnt = [0]*len(nums)
         for x in nums:
             if x < len(cnt):

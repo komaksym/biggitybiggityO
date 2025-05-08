@@ -3,10 +3,6 @@
 # array
 class Solution(object):
     def differenceOfSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def total(x):
             result = 0
             while x:

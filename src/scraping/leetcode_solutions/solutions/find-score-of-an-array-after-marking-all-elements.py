@@ -3,10 +3,6 @@
 # simulation, sort, hash table
 class Solution(object):
     def findScore(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         idxs = list(range(len(nums)))
         idxs.sort(key=lambda x: (nums[x], x))
         lookup = [False]*len(nums)

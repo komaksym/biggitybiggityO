@@ -2,11 +2,6 @@
 
 class Solution(object):
     def kWeakestRows(self, mat, k):
-        """
-        :type mat: List[List[int]]
-        :type k: int
-        :rtype: List[int]
-        """
         result, lookup = [], set()
         for j in range(len(mat[0])):
             for i in range(len(mat)):
@@ -32,11 +27,6 @@ import collections
 
 class Solution2(object):
     def kWeakestRows(self, mat, k):
-        """
-        :type mat: List[List[int]]
-        :type k: int
-        :rtype: List[int]
-        """
         lookup = collections.OrderedDict()
         for j in range(len(mat[0])):
             for i in range(len(mat)):
@@ -60,11 +50,6 @@ import random
 
 class Solution3(object):
     def kWeakestRows(self, mat, k):
-        """
-        :type mat: List[List[int]]
-        :type k: int
-        :rtype: List[int]
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def partition_around_pivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left

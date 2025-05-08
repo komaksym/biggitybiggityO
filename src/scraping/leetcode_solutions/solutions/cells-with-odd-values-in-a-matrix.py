@@ -2,12 +2,6 @@
 
 class Solution(object):
     def oddCells(self, n, m, indices):
-        """
-        :type n: int
-        :type m: int
-        :type indices: List[List[int]]
-        :rtype: int
-        """
         row, col = [0]*n, [0]*m
         for r, c in indices:
             row[r] ^= 1
@@ -23,12 +17,6 @@ import itertools
 
 class Solution2(object):
     def oddCells(self, n, m, indices):
-        """
-        :type n: int
-        :type m: int
-        :type indices: List[List[int]]
-        :rtype: int
-        """
         fn = lambda x: sum(count&1 for count in collections.Counter(x).values())
         row_sum, col_sum = list(map(fn, zip(*indices)))
         return row_sum*m+col_sum*n-2*row_sum*col_sum

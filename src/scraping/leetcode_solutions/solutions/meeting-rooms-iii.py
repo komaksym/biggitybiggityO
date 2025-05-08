@@ -6,11 +6,6 @@ import heapq
 # one heap solution
 class Solution(object):
     def mostBooked(self, n, meetings):
-        """
-        :type n: int
-        :type meetings: List[List[int]]
-        :rtype: int
-        """
         meetings.sort()
         min_heap = [(meetings[0][0], i) for i in range(n)]
         result = [0]*n
@@ -31,11 +26,6 @@ import heapq
 # two heaps solution
 class Solution2(object):
     def mostBooked(self, n, meetings):
-        """
-        :type n: int
-        :type meetings: List[List[int]]
-        :rtype: 
-        """
         meetings.sort()
         unused, used = list(range(n)), []
         result = [0]*n

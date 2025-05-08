@@ -3,11 +3,6 @@
 # kmp
 class Solution(object):
     def countMatchingSubarrays(self, nums, pattern):
-        """
-        :type nums: List[int]
-        :type pattern: List[int]
-        :rtype: int
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

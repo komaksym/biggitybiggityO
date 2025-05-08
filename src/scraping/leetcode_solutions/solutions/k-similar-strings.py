@@ -7,11 +7,6 @@ import collections
 
 class Solution(object):
     def kSimilarity(self, A, B):
-        """
-        :type A: str
-        :type B: str
-        :rtype: int
-        """
         def neighbors(s, B):
             for i, c in enumerate(s):
                 if c != B[i]:

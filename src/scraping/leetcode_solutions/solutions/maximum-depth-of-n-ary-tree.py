@@ -8,10 +8,6 @@ class Node(object):
 
 class Solution(object):
     def maxDepth(self, root):
-        """
-        :type root: Node
-        :rtype: int
-        """
         if not root:
             return 0
         depth = 0

@@ -3,11 +3,6 @@
 # sort, two pointers, sliding window
 class Solution(object):
     def maximumCoins(self, coins, k):
-        """
-        :type coins: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def max_amount():
             coins.sort()
             result = curr = left = 0

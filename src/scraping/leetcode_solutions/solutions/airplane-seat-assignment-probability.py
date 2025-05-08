@@ -2,19 +2,11 @@
 
 class Solution(object):
     def nthPersonGetsNthSeat(self, n):
-        """
-        :type n: int
-        :rtype: float
-        """
         return 0.5 if n != 1 else 1.0
 
 # Time:  O(n)
 class Solution2(object):
     def nthPersonGetsNthSeat(self, n):
-        """
-        :type n: int
-        :rtype: float
-        """
         dp = [0.0]*2
         dp[0] = 1.0 
         for i in range(2, n+1):

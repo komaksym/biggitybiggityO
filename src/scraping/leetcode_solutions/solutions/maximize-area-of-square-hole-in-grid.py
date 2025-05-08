@@ -3,13 +3,6 @@
 # array, hash table
 class Solution(object):
     def maximizeSquareHoleArea(self, n, m, hBars, vBars):
-        """
-        :type n: int
-        :type m: int
-        :type hBars: List[int]
-        :type vBars: List[int]
-        :rtype: int
-        """
         def max_gap(arr):
             result = l = 1
             lookup = set(arr)
@@ -33,13 +26,6 @@ class Solution(object):
 # array, sort
 class Solution2(object):
     def maximizeSquareHoleArea(self, n, m, hBars, vBars):
-        """
-        :type n: int
-        :type m: int
-        :type hBars: List[int]
-        :type vBars: List[int]
-        :rtype: int
-        """
         def max_gap(arr):
             arr.sort()
             result = l = 1

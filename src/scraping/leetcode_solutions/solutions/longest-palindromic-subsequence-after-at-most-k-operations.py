@@ -3,11 +3,6 @@
 # dp
 class Solution(object):
     def longestPalindromicSubsequence(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         dp = [[[1 if i == j else 0 for _ in range(k+1)] for j in range(len(s))] for i in range(len(s))]
         for i in reversed(range(len(s)-1)):
             for j in range(i+1, len(s)):

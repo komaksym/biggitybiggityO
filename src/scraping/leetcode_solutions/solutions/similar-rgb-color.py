@@ -2,10 +2,6 @@
 
 class Solution(object):
     def similarRGB(self, color):
-        """
-        :type color: str
-        :rtype: str
-        """
         def rounding(color):
             q, r = divmod(int(color, 16), 17)
             if r > 8: q += 1

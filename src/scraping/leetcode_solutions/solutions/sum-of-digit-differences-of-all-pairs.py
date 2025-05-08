@@ -3,10 +3,6 @@
 # prefix sum
 class Solution(object):
     def sumDigitDifferences(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         base, l = 1, 0
         while base <= nums[0]:
             base *= 10

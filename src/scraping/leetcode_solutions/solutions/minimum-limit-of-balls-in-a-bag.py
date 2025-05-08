@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minimumSize(self, nums, maxOperations):
-        """
-        :type nums: List[int]
-        :type maxOperations: int
-        :rtype: int
-        """
         def check(nums, maxOperations, x):
             return sum((num+x-1)//x-1 for num in nums) <= maxOperations
     

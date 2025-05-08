@@ -2,20 +2,12 @@
 
 class Solution(object):
     def findGameWinner(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """ 
         return n%6 != 1
 
 
 # Time:  O(n)
 class Solution2(object):
     def findGameWinner(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """ 
         grundy = [0, 1] 
         for i in range(2, n):
             grundy[i%2] = (grundy[(i-1)%2]+1)^(grundy[(i-2)%2]+1) 

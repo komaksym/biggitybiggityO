@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numEnclaves(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
         def dfs(A, i, j):
             if not (0 <= i < len(A) and 0 <= j < len(A[0]) and A[i][j]):

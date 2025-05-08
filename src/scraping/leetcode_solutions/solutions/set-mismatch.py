@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findErrorNums(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         x_xor_y = 0
         for i in range(len(nums)):
             x_xor_y ^= nums[i] ^ (i+1)
@@ -22,10 +18,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def findErrorNums(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         result = [0] * 2
         for i in nums:
             if nums[abs(i)-1] < 0:
@@ -43,10 +35,6 @@ class Solution2(object):
 # Time:  O(n)
 class Solution3(object):
     def findErrorNums(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         N = len(nums)
         x_minus_y = sum(nums) - N*(N+1)//2
         x_plus_y = (sum(x*x for x in nums) - N*(N+1)*(2*N+1)/6) // x_minus_y

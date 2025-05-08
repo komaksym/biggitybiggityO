@@ -3,10 +3,6 @@
 # mono stack
 class Solution(object):
     def maxSubarrayLength(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         stk = []
         for i in reversed(range(len(nums))):
             if not stk or nums[stk[-1]] > nums[i]:
@@ -22,10 +18,6 @@ class Solution(object):
 # sort
 class Solution2(object):
     def maxSubarrayLength(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         idxs = list(range(len(nums)))
         idxs.sort(key=lambda x: nums[x], reverse=True)
         result = 0

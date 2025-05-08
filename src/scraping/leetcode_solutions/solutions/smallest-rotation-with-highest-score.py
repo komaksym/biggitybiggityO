@@ -2,10 +2,6 @@
 
 class Solution(object):
     def bestRotation(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
         N = len(A)
         change = [1] * N
         for i in range(N):

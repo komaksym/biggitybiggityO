@@ -17,11 +17,6 @@ import collections
 
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         if len(nums1) > len(nums2):
             return self.intersect(nums2, nums1)
 
@@ -38,11 +33,6 @@ class Solution(object):
         return res
 
     def intersect2(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         c = collections.Counter(nums1) & collections.Counter(nums2)
         intersect = []
         for i in c:
@@ -55,11 +45,6 @@ class Solution(object):
 # Binary search solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         if len(nums1) > len(nums2):
             return self.intersect(nums2, nums1)
 
@@ -90,11 +75,6 @@ class Solution(object):
 # Two pointers solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         nums1.sort(), nums2.sort() 
 
         res = []
@@ -118,11 +98,6 @@ class Solution(object):
 # Two pointers solution.
 class Solution(object):
     def intersect(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: List[int]
-        """
         nums1.sort(), nums2.sort() 
 
         res = []

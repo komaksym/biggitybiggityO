@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def getFolderNames(self, names):
-        """
-        :type names: List[str]
-        :rtype: List[str]
-        """
         count = collections.Counter()
         result, lookup = [], set()
         for name in names:

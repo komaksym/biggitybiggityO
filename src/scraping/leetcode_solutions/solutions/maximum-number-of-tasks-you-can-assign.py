@@ -5,13 +5,6 @@ from sortedcontainers import SortedList
 
 class Solution(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             t = SortedList(tasks[:x])
             for worker in workers[-x:]: 
@@ -46,13 +39,6 @@ from sortedcontainers import SortedList
 
 class Solution2(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             w = SortedList(workers[-x:])
             for task in tasks[-x:]: 
@@ -87,13 +73,6 @@ import bisect
 
 class Solution3(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             t = tasks[:x]
             for worker in workers[-x:]: 
@@ -128,13 +107,6 @@ import bisect
 
 class Solution4(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             w = workers[-x:]
             for task in tasks[-x:]: 

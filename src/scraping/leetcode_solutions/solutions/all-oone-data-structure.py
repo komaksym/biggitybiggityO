@@ -1,9 +1,6 @@
 # Time:  O(1), per operation
 
 class Node(object):
-    """
-    double linked list node
-    """
     def __init__(self, value, keys):
         self.value = value
         self.keys = keys
@@ -44,18 +41,10 @@ class LinkedList(object):
 class AllOne(object):
 
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
         self.bucket_of_key = {}
         self.buckets = LinkedList()
 
     def inc(self, key):
-        """
-        Inserts a new key <Key> with value 1. Or increments an existing key by 1.
-        :type key: str
-        :rtype: void
-        """
         if key not in self.bucket_of_key:
             self.bucket_of_key[key] = self.buckets.insert(self.buckets.begin(), Node(0, set([key])))
 
@@ -70,11 +59,6 @@ class AllOne(object):
             self.buckets.erase(bucket)
 
     def dec(self, key):
-        """
-        Decrements an existing key by 1. If Key's value is 1, remove it from the data structure.
-        :type key: str
-        :rtype: void
-        """
         if key not in self.bucket_of_key:
             return
 
@@ -91,19 +75,11 @@ class AllOne(object):
             self.buckets.erase(bucket)
 
     def getMaxKey(self):
-        """
-        Returns one of the keys with maximal value.
-        :rtype: str
-        """
         if self.buckets.empty():
             return ""
         return next(iter(self.buckets.back().keys))
 
     def getMinKey(self):
-        """
-        Returns one of the keys with Minimal value.
-        :rtype: str
-        """
         if self.buckets.empty():
             return ""
         return next(iter(self.buckets.front().keys))

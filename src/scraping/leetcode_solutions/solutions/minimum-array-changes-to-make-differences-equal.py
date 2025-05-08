@@ -3,11 +3,6 @@
 # prefix sum, difference array
 class Solution(object):
     def minChanges(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         diff = [0]*((k+1)+1)
         def update(left, right, d):
             diff[left] += d

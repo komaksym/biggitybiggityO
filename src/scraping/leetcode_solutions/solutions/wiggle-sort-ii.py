@@ -2,10 +2,6 @@
 
 class Solution(object):
     def wiggleSort(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: void Do not return anything, modify nums in-place instead.
-        """
         nums.sort()
         mid = (len(nums) - 1) / 2
         nums[::2], nums[1::2] = nums[mid::-1], nums[:mid:-1]
@@ -18,10 +14,6 @@ from random import randint
 
 class Solution2(object):
     def wiggleSort(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: None Do not return anything, modify nums in-place instead.
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left

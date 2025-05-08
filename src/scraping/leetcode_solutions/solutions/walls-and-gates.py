@@ -4,10 +4,6 @@ from collections import deque
 
 class Solution(object):
     def wallsAndGates(self, rooms):
-        """
-        :type rooms: List[List[int]]
-        :rtype: void Do not return anything, modify rooms in-place instead.
-        """
         INF = 2147483647
         q = deque([(i, j) for i, row in enumerate(rooms) for j, r in enumerate(row) if not r])
         while q:

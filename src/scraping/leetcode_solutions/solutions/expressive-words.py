@@ -5,11 +5,6 @@ import itertools
 
 class Solution(object):
     def expressiveWords(self, S, words):
-        """
-        :type S: str
-        :type words: List[str]
-        :rtype: int
-        """
         def RLE(S):
             return zip(*[(k, len(list(grp)))
                                   for k, grp in itertools.groupby(S)])

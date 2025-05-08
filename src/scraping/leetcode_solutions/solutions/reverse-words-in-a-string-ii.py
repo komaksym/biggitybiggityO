@@ -2,10 +2,6 @@
 
 class Solution(object):
     def reverseWords(self, s):
-        """
-        :type s: a list of 1 length strings (List[str])
-        :rtype: nothing
-        """
         def reverse(s, begin, end):
             for i in range((end - begin) / 2):
                 s[begin + i], s[end - 1 - i] = s[end - 1 - i], s[begin + i]

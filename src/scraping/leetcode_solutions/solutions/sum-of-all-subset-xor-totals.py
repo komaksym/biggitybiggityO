@@ -2,10 +2,6 @@
 
 class Solution(object):
     def subsetXORSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         for x in nums:
             result |= x

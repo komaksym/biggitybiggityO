@@ -6,13 +6,6 @@ import collections
 # rolling hash (Rabin-Karp Algorithm)
 class Solution(object):
     def maxFreq(self, s, maxLetters, minSize, maxSize):
-        """
-        :type s: str
-        :type maxLetters: int
-        :type minSize: int
-        :type maxSize: int
-        :rtype: int
-        """
         M, p = 10**9+7, 113
         power, rolling_hash = pow(p, minSize-1, M), 0
 
@@ -35,13 +28,6 @@ class Solution(object):
 # Time:  O(m * n), m = 26
 class Solution2(object):
     def maxFreq(self, s, maxLetters, minSize, maxSize):
-        """
-        :type s: str
-        :type maxLetters: int
-        :type minSize: int
-        :type maxSize: int
-        :rtype: int
-        """
         lookup = {}
         for right in range(minSize-1, len(s)):
             word = s[right-minSize+1:right+1]

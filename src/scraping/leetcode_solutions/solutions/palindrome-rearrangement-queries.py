@@ -3,11 +3,6 @@
 # prefix sum, freq table
 class Solution(object):
     def canMakePalindromeQueries(self, s, queries):
-        """
-        :type s: str
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
         def check(left1, right1, left2, right2):
             def same(left, right):
                 return all(prefixs1[right+1][i]-prefixs1[left][i] == prefixs2[right+1][i]-prefixs2[left][i] for i in range(d))
@@ -48,11 +43,6 @@ class Solution(object):
 # prefix sum, freq table
 class Solution2(object):
     def canMakePalindromeQueries(self, s, queries):
-        """
-        :type s: str
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
         def check(left1, right1, left2, right2):
             def same(left, right):
                 return all(prefixs1[right+1][i]-prefixs1[left][i] == prefixs2[right+1][i]-prefixs2[left][i] for i in range(26))

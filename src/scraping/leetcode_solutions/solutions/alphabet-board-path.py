@@ -2,10 +2,6 @@
 
 class Solution(object):
     def alphabetBoardPath(self, target):
-        """
-        :type target: str
-        :rtype: str
-        """
         x, y = 0, 0
         result = []
         for c in target:

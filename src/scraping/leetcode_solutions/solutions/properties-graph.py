@@ -3,11 +3,6 @@
 # graph, flood fill, bfs
 class Solution(object):
     def numberOfComponents(self, properties, k):
-        """
-        :type properties: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def bfs(u):
             q = [u]
             while q:
@@ -41,11 +36,6 @@ class Solution(object):
 # graph, union find
 class Solution2(object):
     def numberOfComponents(self, properties, k):
-        """
-        :type properties: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         class UnionFind(object): 
             def __init__(self, n):
                 self.set = list(range(n))

@@ -7,11 +7,6 @@ import itertools
 # dp
 class Solution(object):
     def countSubranges(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
 
         result = 0

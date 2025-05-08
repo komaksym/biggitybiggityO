@@ -2,10 +2,6 @@
 
 class Solution(object):
     def consecutiveNumbersSum(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         result = 1
         while N % 2 == 0:
             N /= 2

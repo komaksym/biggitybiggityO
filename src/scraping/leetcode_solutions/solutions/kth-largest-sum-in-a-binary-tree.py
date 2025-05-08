@@ -11,11 +11,6 @@ class TreeNode(object):
 # bfs, quick select
 class Solution(object):
     def kthLargestLevelSum(self, root, k):
-        """
-        :type root: Optional[TreeNode]
-        :type k: int
-        :rtype: int
-        """
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left

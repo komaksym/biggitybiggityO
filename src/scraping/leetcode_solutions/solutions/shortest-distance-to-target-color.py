@@ -2,11 +2,6 @@
 
 class Solution(object):
     def shortestDistanceColor(self, colors, queries):
-        """
-        :type colors: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         dp = [[-1 for _ in range(len(colors))] for _ in range(3)]
         dp[colors[0]-1][0] = 0
         for i in range(1, len(colors)):

@@ -6,10 +6,6 @@ import collections
 # number theory, combinatorics, bitmasks, dp
 class Solution(object):
     def squareFreeSubsets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n): 
             primes = []
             spf = [-1]*(n+1) 
@@ -57,10 +53,6 @@ import collections
 # number theory, combinatorics, bitmasks, memoization
 class Solution2(object):
     def squareFreeSubsets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n): 
             primes = []
             spf = [-1]*(n+1) 

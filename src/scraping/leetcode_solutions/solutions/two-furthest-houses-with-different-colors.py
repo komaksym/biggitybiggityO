@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maxDistance(self, colors):
-        """
-        :type colors: List[int]
-        :rtype: int
-        """
         result = 0
         for i, x in enumerate(colors):
             if x != colors[0]:

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minimumCost(self, sentence, k):
-        """
-        :type sentence: str
-        :type k: int
-        :rtype: int
-        """
         def lens(sentence):
             j = len(sentence)-1
             for i in reversed(range(-1, len(sentence))):
@@ -37,11 +32,6 @@ class Solution(object):
 # Time:  O(s + n * k), n is the number of the word_lens
 class Solution2(object):
     def minimumCost(self, sentence, k):
-        """
-        :type sentence: str
-        :type k: int
-        :rtype: int
-        """
         word_lens = []
         j = 0
         for i in range(len(sentence)+1):
@@ -68,11 +58,6 @@ class Solution2(object):
 # Time:  O(s + n * k), n is the number of the word_lens
 class Solution3(object):
     def minimumCost(self, sentence, k):
-        """
-        :type sentence: str
-        :type k: int
-        :rtype: int
-        """
         word_lens = []
         j = 0
         for i in range(len(sentence)+1):

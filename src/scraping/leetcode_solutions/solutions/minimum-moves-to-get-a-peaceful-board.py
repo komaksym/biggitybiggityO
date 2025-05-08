@@ -3,10 +3,6 @@
 # counting sort, greedy
 class Solution(object):
     def minMoves(self, rooks):
-        """
-        :type rooks: List[List[int]]
-        :rtype: int
-        """
         def count(arr):
             cnt = [0]*len(arr)
             for x in arr:
@@ -20,10 +16,6 @@ class Solution(object):
 # prefix sum, greedy
 class Solution2(object):
     def minMoves(self, rooks):
-        """
-        :type rooks: List[List[int]]
-        :rtype: int
-        """
         def count(arr):
             cnt = [0]*len(arr)
             for x in arr:

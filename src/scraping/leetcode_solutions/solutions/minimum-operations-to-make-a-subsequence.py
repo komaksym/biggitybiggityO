@@ -5,11 +5,6 @@ import bisect
 
 class Solution(object):
     def minOperations(self, target, arr):
-        """
-        :type target: List[int]
-        :type arr: List[int]
-        :rtype: int
-        """
         lookup = {x:i for i, x in enumerate(target)}
         lis = []
         for x in arr:
@@ -104,11 +99,6 @@ class SegmentTree(object):
 # segment tree solution
 class Solution2(object):
     def minOperations(self, target, arr):
-        """
-        :type target: List[int]
-        :type arr: List[int]
-        :rtype: int
-        """
         lookup = {x:i for i, x in enumerate(target)}
         st = SegmentTree(len(lookup))
         for x in arr:

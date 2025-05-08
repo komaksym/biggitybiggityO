@@ -10,10 +10,6 @@ import heapq
 
 class Solution(object):
     def shortestPathAllKeys(self, grid):
-        """
-        :type grid: List[str]
-        :rtype: int
-        """
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
         def bfs(grid, source, locations):

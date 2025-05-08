@@ -2,10 +2,6 @@
 
 class Solution(object):
     def sumFourDivisors(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         for num in nums:
             facs, i = [], 1
@@ -30,10 +26,6 @@ import itertools
 
 class Solution2(object):
     def sumFourDivisors(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def factorize(x):
             result = []
             d = 2

@@ -3,13 +3,6 @@
 # hash table
 class Solution(object):
     def maximizeSquareArea(self, m, n, hFences, vFences):
-        """
-        :type m: int
-        :type n: int
-        :type hFences: List[int]
-        :type vFences: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def diff(arr, x):
             arr.append(1)
@@ -28,13 +21,6 @@ class Solution(object):
 # hash table
 class Solution2(object):
     def maximizeSquareArea(self, m, n, hFences, vFences):
-        """
-        :type m: int
-        :type n: int
-        :type hFences: List[int]
-        :type vFences: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def diff(arr, x, check):
             arr.append(1)

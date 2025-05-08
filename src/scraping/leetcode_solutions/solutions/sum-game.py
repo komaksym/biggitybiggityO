@@ -2,10 +2,6 @@
 
 class Solution(object):
     def sumGame(self, num):
-        """
-        :type num: str
-        :rtype: bool
-        """
         cnt = total = 0
         for i in range(len(num)):
             if num[i] == '?':

@@ -3,11 +3,6 @@
 # prefix sum, greedy
 class Solution(object):
     def minTime(self, skill, mana):
-        """
-        :type skill: List[int]
-        :type mana: List[int]
-        :rtype: int
-        """
         result = 0
         for i in range(1, len(mana)):
             prefix = mx = 0

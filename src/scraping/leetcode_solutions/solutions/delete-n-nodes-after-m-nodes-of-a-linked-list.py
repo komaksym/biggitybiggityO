@@ -9,12 +9,6 @@ class ListNode(object):
 
 class Solution(object):
     def deleteNodes(self, head, m, n):
-        """
-        :type head: ListNode
-        :type m: int
-        :type n: int
-        :rtype: ListNode
-        """
         head = dummy = ListNode(next=head)
         while head:
             for _ in range(m):

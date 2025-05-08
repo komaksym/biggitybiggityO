@@ -2,11 +2,6 @@
 
 class Solution(object):
     def addRungs(self, rungs, dist):
-        """
-        :type rungs: List[int]
-        :type dist: int
-        :rtype: int
-        """
         def ceil_divide(a, b):
             return (a+(b-1))//b
 

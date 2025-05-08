@@ -2,11 +2,6 @@
 
 class Solution(object):
     def getStrongest(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         arr.sort()
         m = arr[(len(arr)-1)//2]
         result = []
@@ -24,11 +19,6 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def getStrongest(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         arr.sort()
         m = arr[(len(arr)-1)//2]
         arr.sort(key=lambda x: (-abs(x-m), -x))
@@ -41,11 +31,6 @@ import random
 
 class Solution_TLE(object):
     def getStrongest(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def partition_around_pivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left

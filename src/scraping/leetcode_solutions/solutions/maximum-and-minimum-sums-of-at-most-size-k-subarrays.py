@@ -6,11 +6,6 @@ import collections
 # two pointers, sliding window, mono deque
 class Solution(object):
     def minMaxSubarraySum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def count(check):
             result = total = 0
             dq = collections.deque()
@@ -39,11 +34,6 @@ import collections
 # two pointers, sliding window, mono deque
 class Solution2(object):
     def minMaxSubarraySum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def count(check):
             result = total = 0
             dq = collections.deque()

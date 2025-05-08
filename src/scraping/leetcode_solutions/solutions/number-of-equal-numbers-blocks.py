@@ -11,10 +11,6 @@ class BigArray:
 # binary search
 class Solution(object):
     def countBlocks(self, nums):
-        """
-        :type nums: BigArray
-        :rtype: int
-        """
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

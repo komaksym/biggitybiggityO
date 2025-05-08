@@ -3,10 +3,6 @@
 # math
 class Solution(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
         return n % 2 == 0
 
 
@@ -14,10 +10,6 @@ class Solution(object):
 # dp, number theory
 class Solution2(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
         def factors(n):
             result = [[] for _ in range(n+1)]
             for i in range(1, n+1):
@@ -36,10 +28,6 @@ class Solution2(object):
 # memoization, number theory
 class Solution3(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
         def factors(n):
             result = [[] for _ in range(n+1)]
             for i in range(1, n+1):
@@ -61,10 +49,6 @@ class Solution3(object):
 # memoization
 class Solution4(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
         def factors(n):
             for i in range(1, n+1):
                 if i*i > n:
@@ -88,10 +72,6 @@ class Solution4(object):
 # memoization
 class Solution5(object):
     def divisorGame(self, n):
-        """
-        :type n: int
-        :rtype: bool
-        """
         def factors(n):
             for i in range(1, n+1):
                 if n%i:

@@ -6,11 +6,6 @@ import collections
 # dp, factorization, combinatorics
 class Solution(object):
     def idealArrays(self, n, maxValue):
-        """
-        :type n: int
-        :type maxValue: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
@@ -62,11 +57,6 @@ import collections
 # dp, combinatorics
 class Solution2(object):
     def idealArrays(self, n, maxValue):
-        """
-        :type n: int
-        :type maxValue: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):

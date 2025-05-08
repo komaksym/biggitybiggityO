@@ -54,11 +54,6 @@ ST = SegmentTree(len(PRIMES)-1,
                  query_fn=lambda x, y: y if x is None else x if y is None else min(x, y))
 class Solution(object):
     def closestPrimes(self, left, right):
-        """
-        :type left: int
-        :type right: int
-        :rtype: List[int]
-        """
         i = bisect.bisect_left(PRIMES, left)
         j = bisect.bisect_right(PRIMES, right)-1
         return ST.query(i, j-1)[1] if i <= j-1 else [-1]*2

@@ -3,10 +3,6 @@
 # greedy
 class Solution(object):
     def minimumSum(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
         def inplace_counting_sort(nums, reverse=False): 
             count = [0]*(max(nums)+1)
             for num in nums:
@@ -36,10 +32,6 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def minimumSum(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
         nums = sorted(map(int, list(str(num))))
         a = b = 0
         for x in nums:

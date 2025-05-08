@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minSpaceWastedKResizing(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         INF = float("inf")
         k += 1
         dp = [[INF]*(k+1) for _ in range(len(nums)+1)]

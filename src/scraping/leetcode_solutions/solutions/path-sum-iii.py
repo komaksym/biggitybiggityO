@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def pathSum(self, root, sum):
-        """
-        :type root: TreeNode
-        :type sum: int
-        :rtype: int
-        """
         def pathSumHelper(root, curr, sum, lookup):
             if root is None:
                 return 0
@@ -31,11 +26,6 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution2(object):
     def pathSum(self, root, sum):
-        """
-        :type root: TreeNode
-        :type sum: int
-        :rtype: int
-        """
         def pathSumHelper(root, prev, sum):
             if root is None:
                 return 0

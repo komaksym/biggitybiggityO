@@ -110,21 +110,9 @@ class TweetCounts(object):
         self.__lookup = {"minute":60, "hour":3600, "day":86400}
 
     def recordTweet(self, tweetName, time):
-        """
-        :type tweetName: str
-        :type time: int
-        :rtype: None
-        """
         self.__records[tweetName].add(time)
 
     def getTweetCountsPerFrequency(self, freq, tweetName, startTime, endTime):
-        """
-        :type freq: str
-        :type tweetName: str
-        :type startTime: int
-        :type endTime: int
-        :rtype: List[int]
-        """
         delta = self.__lookup[freq]
         result = [0]*((endTime-startTime)//delta+1)
         it = self.__records[tweetName].lower_bound(startTime)
@@ -144,21 +132,9 @@ class TweetCounts2(object):
         self.__lookup = {"minute":60, "hour":3600, "day":86400}
 
     def recordTweet(self, tweetName, time):
-        """
-        :type tweetName: str
-        :type time: int
-        :rtype: None
-        """
         bisect.insort(self.__records[tweetName], time)
 
     def getTweetCountsPerFrequency(self, freq, tweetName, startTime, endTime):
-        """
-        :type freq: str
-        :type tweetName: str
-        :type startTime: int
-        :type endTime: int
-        :rtype: List[int]
-        """
         delta = self.__lookup[freq]
         i = startTime
         result = []
@@ -177,21 +153,9 @@ class TweetCounts3(object):
         self.__lookup = {"minute":60, "hour":3600, "day":86400}
 
     def recordTweet(self, tweetName, time):
-        """
-        :type tweetName: str
-        :type time: int
-        :rtype: None
-        """
         self.__records[tweetName].append(time)
 
     def getTweetCountsPerFrequency(self, freq, tweetName, startTime, endTime):
-        """
-        :type freq: str
-        :type tweetName: str
-        :type startTime: int
-        :type endTime: int
-        :rtype: List[int]
-        """
         delta = self.__lookup[freq]
         result = [0]*((endTime- startTime)//delta+1)
         for t in self.__records[tweetName]:

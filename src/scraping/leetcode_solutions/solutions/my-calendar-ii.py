@@ -8,11 +8,6 @@ class MyCalendarTwo(object):
 
 
     def book(self, start, end):
-        """
-        :type start: int
-        :type end: int
-        :rtype: bool
-        """
         for i, j in self.__overlaps:
             if start < j and end > i:
                 return False

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def getFood(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
         q = []

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findLengthOfShortestSubarray(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
         j = -1
         for j in reversed(range(1, len(arr))):
             if arr[j-1] > arr[j]:
@@ -25,10 +21,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def findLengthOfShortestSubarray(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
         result = 0
         for i in range(1, len(arr)):
             if arr[i-1] <= arr[i]:

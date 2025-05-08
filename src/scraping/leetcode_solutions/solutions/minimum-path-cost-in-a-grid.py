@@ -3,11 +3,6 @@
 # dp
 class Solution(object):
     def minPathCost(self, grid, moveCost):
-        """
-        :type grid: List[List[int]]
-        :type moveCost: List[List[int]]
-        :rtype: int
-        """
         dp = [[0]*len(grid[0]) for _ in range(2)]
         dp[0] = [grid[0][j] for j in range(len(grid[0]))]
         for i in range(len(grid)-1):

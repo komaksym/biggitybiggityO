@@ -2,11 +2,6 @@
 
 class Solution(object):
     def queensAttacktheKing(self, queens, king):
-        """
-        :type queens: List[List[int]]
-        :type king: List[int]
-        :rtype: List[List[int]]
-        """
         dirctions = [(-1, 0), (0, 1), (1, 0), (0, -1),
                      (-1, 1), (1, 1), (1, -1), (-1, -1)]
         result = []

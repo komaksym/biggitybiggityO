@@ -3,11 +3,6 @@
 
 class Solution(object):
     def largestSumOfAverages(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: float
-        """
         accum_sum = [A[0]]
         for i in range(1, len(A)):
             accum_sum.append(A[i]+accum_sum[-1])

@@ -18,10 +18,6 @@
 
 class Solution(object):
     def clumsy(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         if N <= 2:
             return N
         if N <= 4:

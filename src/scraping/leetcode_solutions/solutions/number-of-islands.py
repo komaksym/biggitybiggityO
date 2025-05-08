@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def numIslands(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
         def index(n, i, j):
             return i*n + j
     
@@ -49,10 +45,6 @@ class Solution(object):
 # dfs solution
 class Solution2(object):
     def numIslands(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def dfs(grid, i, j):
             if grid[i][j] == '0':
@@ -84,10 +76,6 @@ import collections
 # bfs solution
 class Solution3(object):
     def numIslands(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def bfs(grid, i, j):
             if grid[i][j] == '0':

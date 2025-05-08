@@ -5,10 +5,6 @@ import operator
 
 class Solution(object):
     def calculate(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         def compute(operands, operators):
             right, left = operands.pop(), operands.pop()
             operands.append(ops[operators.pop()](left, right))

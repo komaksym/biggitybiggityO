@@ -6,10 +6,6 @@ import heapq
 # Dijkstra algorithm solution
 class Solution(object):
     def minimumEffortPath(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         dst = (len(heights)-1, len(heights[0])-1)
         dist = [[float("inf")]*len(heights[0]) for _ in range(len(heights))]
@@ -69,10 +65,6 @@ class UnionFind(object):
 # union find solution
 class Solution2(object):
     def minimumEffortPath(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: int
-        """
         def index(n, i, j):
             return i*n + j
     
@@ -97,10 +89,6 @@ class Solution2(object):
 # bi-bfs solution
 class Solution3(object):
     def minimumEffortPath(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def check(heights, x): 
             lookup = [[False]*len(heights[0]) for _ in range(len(heights))]
@@ -143,10 +131,6 @@ import collections
 # bfs solution
 class Solution4(object):
     def minimumEffortPath(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def check(heights, x):
             lookup = [[False]*len(heights[0]) for _ in range(len(heights))]
@@ -180,10 +164,6 @@ class Solution4(object):
 # dfs solution
 class Solution5(object):
     def minimumEffortPath(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def check(heights, x):
             lookup = [[False]*len(heights[0]) for _ in range(len(heights))]

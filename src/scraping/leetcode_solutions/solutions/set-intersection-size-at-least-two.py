@@ -2,10 +2,6 @@
 
 class Solution(object):
     def intersectionSizeTwo(self, intervals):
-        """
-        :type intervals: List[List[int]]
-        :rtype: int
-        """
         intervals.sort(key = lambda s_e: (s_e[0], -s_e[1]))
         cnts = [2] * len(intervals)
         result = 0

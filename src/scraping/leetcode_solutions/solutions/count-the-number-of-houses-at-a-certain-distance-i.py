@@ -3,12 +3,6 @@
 # math, prefix sum, difference array
 class Solution(object):
     def countOfPairs(self, n, x, y):
-        """
-        :type n: int
-        :type x: int
-        :type y: int
-        :rtype: List[int]
-        """
         x, y = x-1, y-1
         if x > y:
             x, y = y, x
@@ -30,12 +24,6 @@ class Solution(object):
 # math
 class Solution2(object):
     def countOfPairs(self, n, x, y):
-        """
-        :type n: int
-        :type x: int
-        :type y: int
-        :rtype: List[int]
-        """
         x, y = x-1, y-1
         result = [0]*n
         for i in range(n):

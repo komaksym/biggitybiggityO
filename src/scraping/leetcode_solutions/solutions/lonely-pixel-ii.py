@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def findBlackPixel(self, picture, N):
-        """
-        :type picture: List[List[str]]
-        :type N: int
-        :rtype: int
-        """
         rows, cols = [0] * len(picture),  [0] * len(picture[0])
         lookup = collections.defaultdict(int)
         for i in range(len(picture)):
@@ -29,11 +24,6 @@ class Solution(object):
 
 class Solution2(object):
     def findBlackPixel(self, picture, N):
-        """
-        :type picture: List[List[str]]
-        :type N: int
-        :rtype: int
-        """
         lookup = collections.Counter(list(map(tuple, picture)))
         cols = [col.count('B') for col in zip(*picture)]
         return sum(N * list(zip(row, cols)).count(('B', N)) \

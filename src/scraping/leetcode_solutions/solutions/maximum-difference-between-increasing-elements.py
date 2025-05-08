@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maximumDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result, prefix = 0, float("inf")
         for x in nums: 
             result = max(result, x-prefix)

@@ -21,11 +21,6 @@ class UnionFind(object):
 
 class Solution(object):
     def minimumCost(self, N, connections):
-        """
-        :type N: int
-        :type connections: List[List[int]]
-        :rtype: int
-        """
         connections.sort(key = lambda x: x[2])
         union_find = UnionFind(N)
         result = 0

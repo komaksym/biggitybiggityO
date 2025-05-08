@@ -5,12 +5,6 @@ import collections
 
 class Solution(object):
     def findAllPeople(self, n, meetings, firstPerson):
-        """
-        :type n: int
-        :type meetings: List[List[int]]
-        :type firstPerson: int
-        :rtype: List[int]
-        """
         meetings.sort(key=lambda x: x[2])
         result = {0, firstPerson}
         adj = collections.defaultdict(list)
@@ -39,12 +33,6 @@ import collections
 
 class Solution2(object):
     def findAllPeople(self, n, meetings, firstPerson):
-        """
-        :type n: int
-        :type meetings: List[List[int]]
-        :type firstPerson: int
-        :rtype: List[int]
-        """
         meetings.sort(key=lambda x: x[2])
         result = {0, firstPerson}
         adj = collections.defaultdict(list)
@@ -98,12 +86,6 @@ class UnionFind(object):
 
 class Solution3(object):
     def findAllPeople(self, n, meetings, firstPerson):
-        """
-        :type n: int
-        :type meetings: List[List[int]]
-        :type firstPerson: int
-        :rtype: List[int]
-        """
         meetings.sort(key=lambda x: x[2])
         uf = UnionFind(n)
         uf.union_set(0, firstPerson)

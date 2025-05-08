@@ -2,10 +2,6 @@
 
 class Solution(object):
     def lastSubstring(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         left, right, l = 0, 1, 0
         while right+l < len(s):
             if s[left+l] == s[right+l]:
@@ -26,10 +22,6 @@ import collections
 
 class Solution2(object):
     def lastSubstring(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         count = collections.defaultdict(list)
         for i in range(len(s)):
             count[s[i]].append(i)

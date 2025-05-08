@@ -3,11 +3,6 @@
 # z-function
 class Solution(object):
     def minStartingIndex(self, s, pattern):
-        """
-        :type s: str
-        :type pattern: str
-        :rtype: int
-        """
         K = 1
         def z_function(s): 
             z = [0]*len(s)

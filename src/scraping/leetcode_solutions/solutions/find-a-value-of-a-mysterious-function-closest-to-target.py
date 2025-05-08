@@ -35,11 +35,6 @@ class BitCount(object):
 
 class Solution(object):
     def closestToTarget(self, arr, target):
-        """
-        :type arr: List[int]
-        :type target: int
-        :rtype: int
-        """
         count = BitCount(max(arr).bit_length())
         result, left = float("inf"), 0
         for right in range(len(arr)):
@@ -54,11 +49,6 @@ class Solution(object):
         return result
 class Solution2(object):
     def closestToTarget(self, arr, target):
-        """
-        :type arr: List[int]
-        :type target: int
-        :rtype: int
-        """
         result, dp = float("inf"), set() 
         for x in arr:
             dp = {x}|{f&x for f in dp}

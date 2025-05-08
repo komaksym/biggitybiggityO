@@ -2,10 +2,6 @@
 
 class Solution(object):
     def modifyString(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         s = list(s)
         for i in range(len(s)):
             if s[i] != '?':

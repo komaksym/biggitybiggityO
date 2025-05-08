@@ -5,10 +5,6 @@ import heapq
 
 class Solution(object):
     def isPossible(self, target):
-        """
-        :type target: List[int]
-        :rtype: bool
-        """
         total = sum(target)
         max_heap = [-x for x in target]
         heapq.heapify(max_heap)

@@ -13,11 +13,6 @@ class TreeNode(object):
 
 class Solution(object):
     def countPairs(self, root, distance):
-        """
-        :type root: TreeNode
-        :type distance: int
-        :rtype: int
-        """
         def iter_dfs(distance, root):
             result = 0
             stk = [(1, (root, [collections.Counter()]))]
@@ -52,11 +47,6 @@ import collections
 
 class Solution2(object):
     def countPairs(self, root, distance):
-        """
-        :type root: TreeNode
-        :type distance: int
-        :rtype: int
-        """
         def dfs(distance, node):
             if not node:
                 return 0, collections.Counter()

@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def deleteString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         if all(x == s[0] for x in s):
             return len(s)
         dp2 = [[0]*(len(s)+1) for i in range(2)] 
@@ -23,10 +19,6 @@ class Solution(object):
 # dp, kmp algorithm
 class Solution2(object):
     def deleteString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         def getPrefix(pattern, start):
             prefix = [-1]*(len(pattern)-start)
             j = -1
@@ -53,10 +45,6 @@ class Solution2(object):
 # dp, rolling hash
 class Solution3(object):
     def deleteString(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         MOD, P = 10**9+7, (113, 109)
         def hash(i, j):
             return [(prefix[idx][j+1]-prefix[idx][i]*power[idx][j-i+1])%MOD for idx in range(len(P))]

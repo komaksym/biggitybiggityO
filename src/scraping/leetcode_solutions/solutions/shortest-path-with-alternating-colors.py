@@ -5,12 +5,6 @@ import collections
 
 class Solution(object):
     def shortestAlternatingPaths(self, n, red_edges, blue_edges):
-        """
-        :type n: int
-        :type red_edges: List[List[int]]
-        :type blue_edges: List[List[int]]
-        :rtype: List[int]
-        """
         neighbors = [[set() for _ in range(2)] for _ in range(n)]
         for i, j in red_edges:
             neighbors[i][0].add(j)

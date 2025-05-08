@@ -3,11 +3,6 @@
 # greedy
 class Solution(object):
     def smallestBeautifulString(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: str
-        """
         def check(i):
             return (i-1 < 0 or arr[i-1] != arr[i]) and (i-2 < 0 or arr[i-2] != arr[i])
 

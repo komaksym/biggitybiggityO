@@ -3,12 +3,6 @@
 
 class Solution(object):
     def maximalPathQuality(self, values, edges, maxTime):
-        """
-        :type values: List[int]
-        :type edges: List[List[int]]
-        :type maxTime: int
-        :rtype: int
-        """
         def iter_dfs(values, adj, maxTime):
             lookup, lookup2 = [0]*len(adj), set()
             result = 0
@@ -51,12 +45,6 @@ class Solution(object):
 # Time: O(|V| + |E|)
 class Solution2(object):
     def maximalPathQuality(self, values, edges, maxTime):
-        """
-        :type values: List[int]
-        :type edges: List[List[int]]
-        :type maxTime: int
-        :rtype: int
-        """
         def dfs(values, adj, u, time, total, lookup, lookup2, result):
             lookup[u] += 1
             if lookup[u] == 1:
@@ -84,12 +72,6 @@ class Solution2(object):
 # Time: O(|V| + |E|)
 class Solution3(object):
     def maximalPathQuality(self, values, edges, maxTime):
-        """
-        :type values: List[int]
-        :type edges: List[List[int]]
-        :type maxTime: int
-        :rtype: int
-        """
         def dfs(values, adj, u, time, total, lookup, lookup2):
             lookup[u] += 1
             if lookup[u] == 1:

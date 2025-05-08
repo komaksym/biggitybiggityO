@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def isEvenOddTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
         q = [root]
         is_odd = False
         while q:

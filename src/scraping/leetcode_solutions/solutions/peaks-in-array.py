@@ -3,11 +3,6 @@
 # bit, fenwick tree
 class Solution(object):
     def countOfPeaks(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         class BIT(object): 
             def __init__(self, nums):
                 self.__bit = [0]*(len(nums)+1) 
@@ -55,11 +50,6 @@ class Solution(object):
 # bit, fenwick tree
 class Solution2(object):
     def countOfPeaks(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         class BIT(object): 
             def __init__(self, n):
                 self.__bit = [0]*(n+1) 

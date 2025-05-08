@@ -2,13 +2,6 @@
 
 class Solution(object):
     def getMaxGridHappiness(self, m, n, introvertsCount, extrovertsCount):
-        """
-        :type m: int
-        :type n: int
-        :type introvertsCount: int
-        :type extrovertsCount: int
-        :rtype: int
-        """
         def left(curr):
             return curr[-1] if len(curr)%n else 0
 
@@ -60,13 +53,6 @@ class Solution(object):
 # Time:  O(C(m * n, i) * C(m * n - i, e))
 class Solution2(object):
     def getMaxGridHappiness(self, m, n, introvertsCount, extrovertsCount):
-        """
-        :type m: int
-        :type n: int
-        :type introvertsCount: int
-        :type extrovertsCount: int
-        :rtype: int
-        """
         def left(curr):
             return curr[-1] if len(curr)%n else 0
 

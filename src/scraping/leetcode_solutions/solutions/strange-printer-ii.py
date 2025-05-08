@@ -6,10 +6,6 @@ import collections
 
 class Solution(object):
     def isPrintable(self, targetGrid):
-        """
-        :type targetGrid: List[List[int]]
-        :rtype: bool
-        """
         VISITING, VISITED = list(range(2))
         def has_cycle(adj, color, lookup):
             stk = [(1, color)]
@@ -47,10 +43,6 @@ class Solution(object):
 #                        , e is the number of edges in adj, at most O(c^2)
 class Solution2(object):
     def isPrintable(self, targetGrid):
-        """
-        :type targetGrid: List[List[int]]
-        :rtype: bool
-        """
         VISITING, VISITED = list(range(2))
         def has_cycle(adj, color, lookup):
             lookup[color] = VISITING

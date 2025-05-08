@@ -2,11 +2,6 @@
 
 class Solution(object):
     def smallestRangeII(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
         A.sort()
         result = A[-1]-A[0]
         for i in range(len(A)-1):

@@ -2,12 +2,6 @@
 
 class Solution(object):
     def minimumTime(self, n, relations, time):
-        """
-        :type n: int
-        :type relations: List[List[int]]
-        :type time: List[int]
-        :rtype: int
-        """
         adj = [[] for _ in range(n)]
         in_degree = [0]*n
         for prev, nxt in relations:

@@ -3,11 +3,6 @@
 # sort
 class Solution(object):
     def minUnlockedIndices(self, nums, locked):
-        """
-        :type nums: List[int]
-        :type locked: List[int]
-        :rtype: int
-        """
         result = mx = cnt = 0
         for i in range(len(nums)):
             if mx < nums[i]:

@@ -5,10 +5,6 @@ import heapq
 
 class Solution(object):
     def minFallingPathSum(self, arr):
-        """
-        :type arr: List[List[int]]
-        :rtype: int
-        """
         for i in range(1, len(arr)):
             smallest_two = heapq.nsmallest(2, arr[i-1])
             for j in range(len(arr[0])):

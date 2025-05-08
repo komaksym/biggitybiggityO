@@ -3,12 +3,6 @@
 # segment tree
 class Solution(object):
     def handleQuery(self, nums1, nums2, queries):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         class SegmentTree(object): 
             def __init__(self, N,
                         build_fn=lambda _: 0,

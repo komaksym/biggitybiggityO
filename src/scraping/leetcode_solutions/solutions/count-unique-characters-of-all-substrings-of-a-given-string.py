@@ -5,10 +5,6 @@ import string
 
 class Solution(object):
     def uniqueLetterString(self, S):
-        """
-        :type S: str
-        :rtype: int
-        """
         M = 10**9 + 7
         index = {c: [-1, -1] for c in string.ascii_uppercase}
         result = 0

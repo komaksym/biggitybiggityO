@@ -3,11 +3,6 @@
 
 class Solution(object):
     def findNumOfValidWords(self, words, puzzles):
-        """
-        :type words: List[str]
-        :type puzzles: List[str]
-        :rtype: List[int]
-        """
         L = 7
         def search(node, puzzle, start, first, met_first):
             result = 0
@@ -44,11 +39,6 @@ from functools import reduce
 
 class Solution2(object):
     def findNumOfValidWords(self, words, puzzles):
-        """
-        :type words: List[str]
-        :type puzzles: List[str]
-        :rtype: List[int]
-        """
         L = 7
         lookup = collections.defaultdict(list)
         for i in range(len(puzzles)):

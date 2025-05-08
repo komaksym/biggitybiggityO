@@ -7,12 +7,6 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def minMaxWeight(self, n, edges, threshold):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type threshold: int
-        :rtype: int
-        """
         def dijkstra():
             best = [float("inf")]*len(adj)
             best[0] = 0
@@ -43,12 +37,6 @@ import heapq
 # prim's algorithm
 class Solution2(object):
     def minMaxWeight(self, n, edges, threshold):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type threshold: int
-        :rtype: int
-        """
         def prim():
             best = [float("inf")]*len(adj)
             min_heap = [(0, 0)]
@@ -77,12 +65,6 @@ import collections
 # binary search, bfs
 class Solution3(object):
     def minMaxWeight(self, n, edges, threshold):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type threshold: int
-        :rtype: int
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

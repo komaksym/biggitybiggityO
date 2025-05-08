@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def bstToGst(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
         def bstToGstHelper(root, prev):
             if not root:
                 return root

@@ -3,12 +3,6 @@
 # if r is small, this is better
 class Solution(object):
     def isCovered(self, ranges, left, right):
-        """
-        :type ranges: List[List[int]]
-        :type left: int
-        :type right: int
-        :rtype: bool
-        """
         RANGE_SIZE = 50
 
         interval = [0]*(RANGE_SIZE+1)
@@ -27,12 +21,6 @@ class Solution(object):
 # if r is big, this is better
 class Solution2(object):
     def isCovered(self, ranges, left, right):
-        """
-        :type ranges: List[List[int]]
-        :type left: int
-        :type right: int
-        :rtype: bool
-        """
         ranges.sort()
         for l, r in ranges:
             if l <= left <= r:
@@ -43,10 +31,4 @@ class Solution2(object):
 # Time:  O(n * r)
 class Solution3(object):
     def isCovered(self, ranges, left, right):
-        """
-        :type ranges: List[List[int]]
-        :type left: int
-        :type right: int
-        :rtype: bool
-        """
         return all(any(l <= i <= r for l, r in ranges) for i in range(left, right+1))

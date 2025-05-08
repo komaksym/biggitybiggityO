@@ -2,11 +2,6 @@
 
 class Solution(object):
     def countSubstrings(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: int
-        """
         def count(i, j): 
             result = left_cnt = right_cnt = 0 
             for k in range(min(len(s)-i, len(t)-j)):

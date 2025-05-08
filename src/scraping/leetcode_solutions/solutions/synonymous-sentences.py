@@ -25,11 +25,6 @@ class UnionFind(object):
 
 class Solution(object):
     def generateSentences(self, synonyms, text):
-        """
-        :type synonyms: List[List[str]]
-        :type text: str
-        :rtype: List[str]
-        """
         def assign_id(x, lookup, inv_lookup):
             if x in lookup:
                 return

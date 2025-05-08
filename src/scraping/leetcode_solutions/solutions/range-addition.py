@@ -2,11 +2,6 @@
 
 class Solution(object):
     def getModifiedArray(self, length, updates):
-        """
-        :type length: int
-        :type updates: List[List[int]]
-        :rtype: List[int]
-        """
         result = [0] * length
         for update in updates:
             result[update[0]] += update[2]

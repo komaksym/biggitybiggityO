@@ -3,10 +3,6 @@
 # inplace solution
 class Solution(object):
     def reformatNumber(self, number):
-        """
-        :type number: str
-        :rtype: str
-        """
         number = list(number)
         src_len = 0
         for c in number: 

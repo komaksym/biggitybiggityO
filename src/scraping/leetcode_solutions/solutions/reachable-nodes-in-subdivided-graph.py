@@ -6,12 +6,6 @@ import heapq
 
 class Solution(object):
     def reachableNodes(self, edges, M, N):
-        """
-        :type edges: List[List[int]]
-        :type M: int
-        :type N: int
-        :rtype: int
-        """
         adj = [[] for _ in range(N)]
         for u, v, w in edges:
             adj[u].append((v, w))

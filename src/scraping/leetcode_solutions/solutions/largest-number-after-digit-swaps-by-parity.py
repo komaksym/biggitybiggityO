@@ -3,10 +3,6 @@
 # counting sort
 class Solution(object):
     def largestInteger(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
         def count(num):
             cnt = [0]*10
             while num:

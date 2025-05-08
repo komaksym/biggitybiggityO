@@ -4,10 +4,6 @@ import fractions
 
 class Solution(object):
     def simplifiedFractions(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
         lookup = set()
         for b in range(1, n+1):
             for a in range(1, b):

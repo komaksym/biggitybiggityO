@@ -3,10 +3,6 @@
 # linked list
 class Solution(object):
     def doubleIt(self, head):
-        """
-        :type head: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
         if head.val >= 5:
             head = ListNode(0, head)
         curr = head

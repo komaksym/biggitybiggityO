@@ -9,10 +9,6 @@ class TreeNode(object):
 
 class Solution(object):
     def constructMaximumBinaryTree(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: TreeNode
-        """
         nodeStack = []
         for num in nums:
             node = TreeNode(num)

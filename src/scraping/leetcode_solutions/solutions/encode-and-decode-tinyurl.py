@@ -11,11 +11,6 @@ class Codec(object):
         self.__lookup = {}
 
     def encode(self, longUrl):
-        """Encodes a URL to a shortened URL.
-
-        :type longUrl: str
-        :rtype: str
-        """
         def getRand():
             rand = []
             for _ in range(self.__random_length):
@@ -29,11 +24,6 @@ class Codec(object):
         return self.__tiny_url + key
 
     def decode(self, shortUrl):
-        """Decodes a shortened URL to its original URL.
-
-        :type shortUrl: str
-        :rtype: str
-        """
         return self.__lookup[shortUrl[len(self.__tiny_url):]]
 
 
@@ -47,21 +37,11 @@ class Codec2(object):
         self.url = 'http://tinyurl.com/'
 
     def encode(self, long_url):
-        """Encodes a URL to a shortened URL.
-
-        :type long_url: str
-        :rtype: str
-        """
         key = sha256(long_url.encode()).hexdigest()[:6]
         self._cache[key] = long_url
         return self.url + key
 
     def decode(self, short_url):
-        """Decodes a shortened URL to its original URL.
-
-        :type short_url: str
-        :rtype: str
-        """
         key = short_url.replace(self.url, '')
         return self._cache[key]
 

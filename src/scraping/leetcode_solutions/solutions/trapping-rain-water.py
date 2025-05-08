@@ -2,10 +2,6 @@
 
 class Solution(object):
     def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
         result, left, right, level = 0, 0, len(height)-1, 0
         while left < right:
             if height[left] < height[right]:
@@ -46,10 +42,6 @@ class Solution2(object):
 # Time:  O(n)
 class Solution3(object):
     def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
         right = [0]*len(height)
         mx = 0
         for i in reversed(range(len(height))):
@@ -65,10 +57,6 @@ class Solution3(object):
 # Time:  O(n)
 class Solution4(object):
     def trap(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
         result = 0
         stk = []
         for i in range(len(height)):

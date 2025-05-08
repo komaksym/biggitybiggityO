@@ -6,10 +6,6 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def minTimeToReach(self, moveTime):
-        """
-        :type moveTime: List[List[int]]
-        :rtype: int
-        """
         def dijkstra(start, target):
             DIRECTIONS = [(1, 0), (0, 1), (-1, 0), (0, -1)]
             dist = [[float("inf")]*len(moveTime[0]) for _ in range(len(moveTime))]

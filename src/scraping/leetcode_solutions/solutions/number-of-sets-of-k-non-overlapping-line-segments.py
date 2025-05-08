@@ -14,11 +14,6 @@ for i in range(2, len(fact)):
 
 class Solution(object):
     def numberOfSets(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         def nCr(n, k, mod):
             return (fact[n]*inv_fact[n-k] % mod) * inv_fact[k] % mod
         return nCr(n+k-1, 2*k, MOD)
@@ -27,11 +22,6 @@ class Solution(object):
 # Time:  O(min(k, min(n - k)))
 class Solution2(object):
     def numberOfSets(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def nCr(n, r): 
             if n-r < r:

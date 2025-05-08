@@ -5,10 +5,6 @@ import bisect
 
 class Solution(object):
     def lengthOfLIS(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         LIS = []
         def insert(target):
             left = bisect.bisect_left(LIS, target)
@@ -25,10 +21,6 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def lengthOfLIS(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         LIS = []
         def insert(target):
             left, right = 0, len(LIS) - 1
@@ -53,10 +45,6 @@ class Solution2(object):
 # bit, fenwick tree
 class Solution3(object):
     def lengthOfLIS(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         class BIT(object): 
             def __init__(self, n, default=0, fn=lambda x, y: x+y):
                 self.__bit = [default]*(n+1) 
@@ -168,10 +156,6 @@ class SegmentTree(object):
 # optimized from Solution5
 class Solution4(object):
     def lengthOfLIS(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         val_to_idx = {num:i for i, num in enumerate(sorted(set(nums)))}
         st = SegmentTree(len(val_to_idx))
         for x in nums:
@@ -183,10 +167,6 @@ class Solution4(object):
 # Traditional DP solution.
 class Solution5(object):
     def lengthOfLIS(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         dp = [] 
         for i in range(len(nums)):
             dp.append(1)

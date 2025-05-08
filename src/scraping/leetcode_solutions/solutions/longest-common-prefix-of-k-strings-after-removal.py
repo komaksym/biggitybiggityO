@@ -3,11 +3,6 @@
 # sort, sliding window, prefix sum
 class Solution(object):
     def longestCommonPrefix(self, words, k):
-        """
-        :type words: List[str]
-        :type k: int
-        :rtype: List[int]
-        """
         idxs = list(range(len(words)))
         idxs.sort(key=lambda x: words[x])
         def longest_common_prefix(k):
@@ -39,11 +34,6 @@ class Solution(object):
 # trie
 class Solution2(object):
     def longestCommonPrefix(self, words, k):
-        """
-        :type words: List[str]
-        :type k: int
-        :rtype: List[int]
-        """
         class Trie(object):
             def __init__(self):
                 self.__root = self.__new_node()
@@ -85,11 +75,6 @@ class Solution2(object):
 # trie
 class Solution_TLE(object):
     def longestCommonPrefix(self, words, k):
-        """
-        :type words: List[str]
-        :type k: int
-        :rtype: List[int]
-        """
         class Trie(object):
             def __init__(self):
                 self.__nodes = []

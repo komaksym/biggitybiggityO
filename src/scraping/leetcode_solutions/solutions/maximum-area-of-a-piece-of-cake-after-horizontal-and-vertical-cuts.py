@@ -2,13 +2,6 @@
 
 class Solution(object):
     def maxArea(self, h, w, horizontalCuts, verticalCuts):
-        """
-        :type h: int
-        :type w: int
-        :type horizontalCuts: List[int]
-        :type verticalCuts: List[int]
-        :rtype: int
-        """
         def max_len(l, cuts):
             cuts.sort()
             l = max(cuts[0]-0, l-cuts[-1])

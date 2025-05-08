@@ -3,11 +3,6 @@
 # mono stack
 class Solution(object):
     def countSubmatrices(self, grid, k):
-        """
-        :type grid: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def count(heights):
             result = curr = 0
             stk = []
@@ -33,11 +28,6 @@ class Solution(object):
 # mono stack, dp
 class Solution2(object):
     def countSubmatrices(self, grid, k):
-        """
-        :type grid: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def count(heights):
             dp, stk = [0]*len(heights), []
             for i in range(len(heights)):

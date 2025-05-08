@@ -3,11 +3,6 @@
 # two pointers, dp
 class Solution(object):
     def minimumScore(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: int
-        """
         right = [-1]*len(s) 
         j = len(t)-1
         for i in reversed(range(len(s))):

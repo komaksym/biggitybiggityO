@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def fib(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))] \
                       for i in range(len(A))]
@@ -32,10 +28,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def fib(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         prev, current = 0, 1
         for i in range(N):
             prev, current = current, prev + current,

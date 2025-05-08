@@ -3,10 +3,6 @@
 # combinatorics
 class Solution(object):
     def countTime(self, time):
-        """
-        :type time: str
-        :rtype: int
-        """
         result = 1
         if time[4] == '?':
             result *= 10

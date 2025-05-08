@@ -7,14 +7,6 @@ import itertools
 # hash table, dijkstra's algorithm, dp, memoization
 class Solution(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         lookups = collections.defaultdict(dict)
         for x in itertools.chain(original, changed):
@@ -78,14 +70,6 @@ import itertools
 # hash table, Floyd-Warshall algorithm, dp
 class Solution2(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         def floydWarshall(dist):
             for k in range(len(dist)):
@@ -138,14 +122,6 @@ import itertools
 # hash table, dijkstra's algorithm, dp, memoization
 class Solution3(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
         INF = float("inf")
 
         lookup = {}
@@ -209,14 +185,6 @@ import itertools
 # hash table, Floyd-Warshall algorithm, dp
 class Solution4(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         def floydWarshall(dist):
             for k in dist.keys():
@@ -271,14 +239,6 @@ import heapq
 # trie, dijkstra's algorithm, dp, memoization
 class Solution5(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         class Trie(object):
             def __init__(self):
@@ -376,14 +336,6 @@ import itertools
 # trie, Floyd-Warshall algorithm, dp
 class Solution6(object):
     def minimumCost(self, source, target, original, changed, cost):
-        """
-        :type source: str
-        :type target: str
-        :type original: List[str]
-        :type changed: List[str]
-        :type cost: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         class Trie(object):
             def __init__(self):

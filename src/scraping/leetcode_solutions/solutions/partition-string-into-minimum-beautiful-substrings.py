@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def minimumBeautifulSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         max_pow_5 = 1
         while max_pow_5*5 <= (1<<len(s))-1:
             max_pow_5 *= 5
@@ -27,10 +23,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def minimumBeautifulSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         max_pow_5 = 1
         while max_pow_5*5 <= (1<<len(s))-1:
             max_pow_5 *= 5

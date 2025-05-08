@@ -6,13 +6,6 @@ import itertools
 # greedy
 class Solution(object):
     def minNumberOfHours(self, initialEnergy, initialExperience, energy, experience):
-        """
-        :type initialEnergy: int
-        :type initialExperience: int
-        :type energy: List[int]
-        :type experience: List[int]
-        :rtype: int
-        """
         result = 0
         for hp, ex in zip(energy, experience):
             inc1 = max((hp+1)-initialEnergy, 0)

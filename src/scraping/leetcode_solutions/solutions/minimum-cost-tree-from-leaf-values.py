@@ -2,10 +2,6 @@
 
 class Solution(object):
     def mctFromLeafValues(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
         result = 0
         stk = [float("inf")]
         for x in arr:

@@ -3,10 +3,6 @@
 
 class Solution(object):
     def maxA(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         if N < 7:
             return N
         if N == 10:
@@ -21,10 +17,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def maxA(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         if N < 7:
             return N
         dp = list(range(N+1))

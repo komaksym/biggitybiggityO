@@ -30,12 +30,6 @@ class UnionFind(object):
 
 class Solution(object):
     def distanceLimitedPathsExist(self, n, edgeList, queries):
-        """
-        :type n: int
-        :type edgeList: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
         for i, q in enumerate(queries):
             q.append(i)
         edgeList.sort(key=lambda x: x[2])

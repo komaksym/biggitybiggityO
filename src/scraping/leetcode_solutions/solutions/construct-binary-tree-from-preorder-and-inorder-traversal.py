@@ -26,11 +26,6 @@ class Solution(object):
 # time: O(n)
 class Solution2(object):
     def buildTree(self, preorder, inorder):
-        """
-        :type preorder: List[int]
-        :type inorder: List[int]
-        :rtype: TreeNode
-        """
         preorder_iterator = iter(preorder)
         inorder_lookup = {n: i for i, n in enumerate(inorder)}
         

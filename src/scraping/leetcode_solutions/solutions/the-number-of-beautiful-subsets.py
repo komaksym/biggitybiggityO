@@ -8,11 +8,6 @@ from functools import reduce
 # combinatorics, dp
 class Solution(object):
     def beautifulSubsets(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def count(x):
             y = x
             while y-k in cnt:

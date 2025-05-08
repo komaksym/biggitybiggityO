@@ -2,10 +2,6 @@
 
 class Solution(object):
     def boundaryOfBinaryTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
         def leftBoundary(root, nodes):
             if not root or (not root.left and not root.right):
                 return

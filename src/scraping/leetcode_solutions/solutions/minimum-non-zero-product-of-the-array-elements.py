@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minNonZeroProduct(self, p):
-        """
-        :type p: int
-        :rtype: int
-        """
         MOD = 10**9+7
 
         max_num_mod = (pow(2, p, MOD)-1)%MOD 

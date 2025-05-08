@@ -2,10 +2,6 @@
 
 class Solution(object):
     def stoneGameV(self, stoneValue):
-        """
-        :type stoneValue: List[int]
-        :rtype: int
-        """
         n = len(stoneValue)
         prefix = [0]
         for v in stoneValue:
@@ -40,10 +36,6 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution2(object):
     def stoneGameV(self, stoneValue):
-        """
-        :type stoneValue: List[int]
-        :rtype: int
-        """
         n = len(stoneValue)
         prefix = [0]
         for v in stoneValue:

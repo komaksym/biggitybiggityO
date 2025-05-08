@@ -3,11 +3,6 @@
 # variant of Tarjan's algorithm (https://www.geeksforgeeks.org/bridge-in-a-graph/)
 class Solution(object):
     def criticalConnections(self, n, connections):
-        """
-        :type n: int
-        :type connections: List[List[int]]
-        :rtype: List[List[int]]
-        """
         def dfs(edges, parent, u, idx, lowlinks, lookup, result):
             if lookup[u]:
                 return  

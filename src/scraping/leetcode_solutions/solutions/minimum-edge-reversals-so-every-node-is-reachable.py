@@ -3,11 +3,6 @@
 # iterative dfs, tree dp
 class Solution(object):
     def minEdgeReversals(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
         def iter_dfs1():
             result = 0
             stk = [(0, -1)]
@@ -39,11 +34,6 @@ class Solution(object):
 # dfs, tree dp
 class Solution2(object):
     def minEdgeReversals(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
         def dfs1(u, p):
             return sum(adj[u][v]+dfs1(v, u) for v in adj[u] if v != p)
 

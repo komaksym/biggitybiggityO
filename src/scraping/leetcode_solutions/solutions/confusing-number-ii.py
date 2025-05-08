@@ -2,10 +2,6 @@
 
 class Solution(object):
     def confusingNumberII(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         lookup = {"0":"0", "1":"1", "6":"9", "8":"8", "9":"6"}
         centers = {"0":"0", "1":"1", "8":"8"}
         def totalCount(n): 
@@ -66,10 +62,6 @@ class Solution(object):
 # Time:  O(logn)
 class Solution2(object):
     def confusingNumberII(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         lookup = {"0":"0", "1":"1", "6":"9", "8":"8", "9":"6"}
         centers = {"0":"0", "1":"1", "8":"8"}
         def totalCount(n): 

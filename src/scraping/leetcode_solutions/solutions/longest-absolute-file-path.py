@@ -2,10 +2,6 @@
 
 class Solution(object):
     def lengthLongestPath(self, input):
-        """
-        :type input: str
-        :rtype: int
-        """
         def split_iter(s, tok):
             start = 0
             for i in range(len(s)):

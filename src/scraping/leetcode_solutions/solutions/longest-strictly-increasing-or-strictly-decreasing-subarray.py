@@ -3,10 +3,6 @@
 # array
 class Solution(object):
     def longestMonotonicSubarray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = cnt = 1 if len(nums) == 1 or cmp(nums[0], nums[1]) == 0 else 2
         for i in range(2, len(nums)):
             cnt = 1 if cmp(nums[i-1], nums[i]) == 0 else cnt+1 if cmp(nums[i-2], nums[i-1]) == cmp(nums[i-1], nums[i]) else 2
@@ -18,10 +14,6 @@ class Solution(object):
 # array
 class Solution2(object):
     def longestMonotonicSubarray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = cnt1 = cnt2 = 1
         for i in range(1, len(nums)):
             cnt1 = cnt1+1 if nums[i-1] < nums[i] else 1
@@ -34,10 +26,6 @@ class Solution2(object):
 # array
 class Solution3(object):
     def longestMonotonicSubarray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def f(compare):
             result = l = 0
             for i in range(len(nums)):

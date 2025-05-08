@@ -3,10 +3,6 @@
 # variant of "343. integer break"
 class Solution(object):
     def maxNiceDivisors(self, primeFactors):
-        """
-        :type primeFactors: int
-        :rtype: int
-        """
         MOD = 10**9 + 7
         if primeFactors <= 3:
             return primeFactors

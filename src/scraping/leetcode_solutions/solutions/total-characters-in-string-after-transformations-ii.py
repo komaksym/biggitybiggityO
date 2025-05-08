@@ -7,12 +7,6 @@ from functools import reduce
 # matrix fast exponentiation
 class Solution(object):
     def lengthAfterTransformations(self, s, t, nums):
-        """
-        :type s: str
-        :type t: int
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))

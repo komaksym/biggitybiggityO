@@ -2,10 +2,6 @@
 
 class Solution(object):
     def newInteger(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         result, base = 0, 1
         while n > 0:
             result += (n%9) * base

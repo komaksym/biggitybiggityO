@@ -8,10 +8,6 @@ class Node(object):
 
 class Solution(object):
     def levelOrder(self, root):
-        """
-        :type root: Node
-        :rtype: List[List[int]]
-        """
         if not root:
             return []
         result, q = [], [root]

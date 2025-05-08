@@ -6,12 +6,6 @@ import heapq
 
 class Solution(object):
     def busiestServers(self, k, arrival, load):
-        """
-        :type k: int
-        :type arrival: List[int]
-        :type load: List[int]
-        :rtype: List[int]
-        """
         count = [0]*k
         min_heap_of_endtimes = []
         min_heap_of_nodes_after_curr = []
@@ -44,12 +38,6 @@ import heapq
 # reference: http://www.grantjenks.com/docs/sortedcontainers/sortedlist.html
 class Solution2(object):
     def busiestServers(self, k, arrival, load):
-        """
-        :type k: int
-        :type arrival: List[int]
-        :type load: List[int]
-        :rtype: List[int]
-        """
         count = [0]*k 
         min_heap_of_endtimes = []
         availables = sortedcontainers.SortedList(range(k)) 

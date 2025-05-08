@@ -3,11 +3,6 @@
 # kmp
 class Solution(object):
     def countMatchingSubarrays(self, nums, pattern):
-        """
-        :type nums: List[int]
-        :type pattern: List[int]
-        :rtype: int
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -38,11 +33,6 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def countMatchingSubarrays(self, nums, pattern):
-        """
-        :type nums: List[int]
-        :type pattern: List[int]
-        :rtype: int
-        """
         def check(i):
             return all(nums[i+j] == pattern[j] for j in range(len(pattern)))
     

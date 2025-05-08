@@ -3,10 +3,6 @@
 # greedy
 class Solution(object):
     def bestClosingTime(self, customers):
-        """
-        :type customers: str
-        :rtype: int
-        """
         result = mx = curr = 0
         for i, x in enumerate(customers):
             curr += 1 if x == 'Y' else -1

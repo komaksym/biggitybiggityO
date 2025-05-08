@@ -2,10 +2,6 @@
 
 class Solution(object):
     def rob(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
         def robHelper(root):
             if not root:
                 return (0, 0)

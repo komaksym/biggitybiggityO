@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def numberOfWays(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         K = 3
         dp = [[0]*2 for _ in range(K)] 
         for c in s:

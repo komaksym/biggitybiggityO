@@ -3,11 +3,6 @@
 # sort, fenwick tree, hash table
 class Solution(object):
     def maxRectangleArea(self, xCoord, yCoord):
-        """
-        :type xCoord: List[int]
-        :type yCoord: List[int]
-        :rtype: int
-        """
         class BIT(object): 
             def __init__(self, n):
                 self.__bit = [0]*(n+1) 

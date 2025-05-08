@@ -5,10 +5,6 @@ import heapq
 
 class Solution(object):
     def lastStoneWeight(self, stones):
-        """
-        :type stones: List[int]
-        :rtype: int
-        """
         max_heap = [-x for x in stones]
         heapq.heapify(max_heap)
         for i in range(len(stones)-1):

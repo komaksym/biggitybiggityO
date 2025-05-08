@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def countKDifference(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         lookup = collections.defaultdict(int)
         result = 0
         for x in nums:

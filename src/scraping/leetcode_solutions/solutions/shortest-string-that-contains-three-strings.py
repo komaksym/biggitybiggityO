@@ -3,12 +3,6 @@
 # brute force, longest prefix suffix, kmp algorithm
 class Solution(object):
     def minimumString(self, a, b, c):
-        """
-        :type a: str
-        :type b: str
-        :type c: str
-        :rtype: str
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -49,12 +43,6 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def minimumString(self, a, b, c):
-        """
-        :type a: str
-        :type b: str
-        :type c: str
-        :rtype: str
-        """
         def merge(a, b):
             if a in b:
                 return b

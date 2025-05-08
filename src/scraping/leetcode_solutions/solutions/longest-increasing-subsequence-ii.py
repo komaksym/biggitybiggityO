@@ -46,11 +46,6 @@ class SegmentTree(object):
 # segment tree with coordinate compression
 class Solution(object):
     def lengthOfLIS(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         sorted_nums = sorted({x-1 for x in nums})
         num_to_idx = {x:i for i, x in enumerate(sorted_nums)}
         st = SegmentTree(len(num_to_idx))

@@ -22,11 +22,6 @@ class UnionFind(object):
 
 class Solution(object):
     def smallestStringWithSwaps(self, s, pairs):
-        """
-        :type s: str
-        :type pairs: List[List[int]]
-        :rtype: str
-        """
         union_find = UnionFind(len(s))
         for x,y in pairs: 
             union_find.union_set(x, y)
@@ -45,11 +40,6 @@ class Solution(object):
 import itertools
 class Solution2(object):
     def smallestStringWithSwaps(self, s, pairs):
-        """
-        :type s: str
-        :type pairs: List[List[int]]
-        :rtype: str
-        """
         def dfs(i, adj, lookup, component):
             lookup.add(i)
             component.append(i)

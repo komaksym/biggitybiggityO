@@ -3,10 +3,6 @@
 # combinatorics, principle of inclusion-exclusion
 class Solution(object):
     def stringCount(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         return (pow(26, n, MOD)-
                 (25+25+25+n)*pow(25, n-1, MOD)+     
@@ -18,10 +14,6 @@ class Solution(object):
 # bitmasks, dp
 class Solution2(object):
     def stringCount(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         L, E, EE, T = [1<<i for i in range(4)]
         dp = [0]*(1<<4)

@@ -5,11 +5,6 @@ import bisect
 
 class Solution(object):
     def findRadius(self, houses, heaters):
-        """
-        :type houses: List[int]
-        :type heaters: List[int]
-        :rtype: int
-        """
         heaters.sort()
         min_radius = 0
         for house in houses:

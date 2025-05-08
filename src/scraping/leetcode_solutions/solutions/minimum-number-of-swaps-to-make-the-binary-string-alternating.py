@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minSwaps(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         def cost(s, x): 
             diff = 0 
             for c in s:

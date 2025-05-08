@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         k, n, cnts = 3, len(nums), collections.defaultdict(int)
 
         for i in nums:
@@ -34,9 +30,5 @@ class Solution(object):
         return result
 
     def majorityElement2(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         return [i[0] for i in list(collections.Counter(nums).items()) if i[1] > len(nums) / 3]
 

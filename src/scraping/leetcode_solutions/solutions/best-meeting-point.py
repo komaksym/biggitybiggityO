@@ -5,10 +5,6 @@ from random import randint
 
 class Solution(object):
     def minTotalDistance(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         x = [i for i, row in enumerate(grid) for v in row if v == 1]
         y = [j for row in grid for j, v in enumerate(row) if v == 1]
         mid_x = self.findKthLargest(x, len(x) / 2 + 1)

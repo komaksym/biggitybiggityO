@@ -2,12 +2,6 @@
 
 class Solution(object):
     def minKnightMoves(self, x, y):
-        """
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
-
         x, y = abs(x), abs(y)
         if x < y:
             x, y = y, x
@@ -26,11 +20,6 @@ class Solution2(object):
         self.__lookup = {(0, 0):0, (1, 1):2, (1, 0):3} 
 
     def minKnightMoves(self, x, y):
-        """
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
         def dp(x, y):
             x, y = abs(x), abs(y)
             if x < y:

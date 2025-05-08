@@ -3,13 +3,6 @@
 # kmp, two pointers
 class Solution(object):
     def beautifulIndices(self, s, a, b, k):
-        """
-        :type s: str
-        :type a: str
-        :type b: str
-        :type k: int
-        :rtype: List[int]
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -53,13 +46,6 @@ import bisect
 # kmp, binary search
 class Solution2(object):
     def beautifulIndices(self, s, a, b, k):
-        """
-        :type s: str
-        :type a: str
-        :type b: str
-        :type k: int
-        :rtype: List[int]
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

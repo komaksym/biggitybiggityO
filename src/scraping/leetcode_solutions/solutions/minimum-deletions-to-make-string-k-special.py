@@ -3,11 +3,6 @@
 # freq table, counting sort, two pointers
 class Solution(object):
     def minimumDeletions(self, word, k):
-        """
-        :type word: str
-        :type k: int
-        :rtype: int
-        """
         def counting_sort(arr, key=lambda x:x, reverse=False): 
             count = [0]*(max(arr, key=key)+1)
             for x in arr:
@@ -50,11 +45,6 @@ class Solution(object):
 # freq table, sort, two pointers
 class Solution2(object):
     def minimumDeletions(self, word, k):
-        """
-        :type word: str
-        :type k: int
-        :rtype: int
-        """
         cnt = [0]*26
         for x in word:
             cnt[ord(x)-ord('a')] += 1
@@ -79,11 +69,6 @@ class Solution2(object):
 # freq table
 class Solution3(object):
     def minimumDeletions(self, word, k):
-        """
-        :type word: str
-        :type k: int
-        :rtype: int
-        """
         cnt = [0]*26
         for x in word:
             cnt[ord(x)-ord('a')] += 1

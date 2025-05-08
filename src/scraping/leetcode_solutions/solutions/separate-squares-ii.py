@@ -3,10 +3,6 @@
 # sort, line sweep, segment tree
 class Solution(object):
     def separateSquares(self, squares):
-        """
-        :type squares: List[List[int]]
-        :rtype: float
-        """
         class SegmentTreeRecu(object):
             def __init__(self, sorted_x):
                 self.sorted_x = sorted_x

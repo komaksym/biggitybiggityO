@@ -3,10 +3,6 @@
 # bitmasks, dp
 class Solution(object):
     def selfDivisiblePermutationCount(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def popcount(x):
             return bin(x).count('1')
 

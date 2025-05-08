@@ -2,11 +2,6 @@
 
 class Solution(object):
     def scoreOfStudents(self, s, answers):
-        """
-        :type s: str
-        :type answers: List[int]
-        :rtype: int
-        """
         MAX_ANS = 1000
         n = (len(s)+1)//2
         dp = [[set() for _ in range(n)] for _ in range(n)]
@@ -27,11 +22,6 @@ class Solution(object):
 # Time:  O(n^3 * a^2)
 class Solution2(object):
     def scoreOfStudents(self, s, answers):
-        """
-        :type s: str
-        :type answers: List[int]
-        :rtype: int
-        """
         MAX_ANS = 1000
         def evaluate(s):
             def compute(operands, operators):

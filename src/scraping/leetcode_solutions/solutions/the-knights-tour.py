@@ -3,13 +3,6 @@
 # backtracking, greedy, warnsdorff's rule
 class Solution(object):
     def tourOfKnight(self, m, n, r, c):
-        """
-        :type m: int
-        :type n: int
-        :type r: int
-        :type c: int
-        :rtype: List[List[int]]
-        """
         DIRECTIONS = ((1, 2), (-1, 2), (1, -2), (-1, -2),
                       (2, 1), (-2, 1), (2, -1), (-2, -1))
         def backtracking(r, c, i):
@@ -46,13 +39,6 @@ class Solution(object):
 # backtracking
 class Solution2(object):
     def tourOfKnight(self, m, n, r, c):
-        """
-        :type m: int
-        :type n: int
-        :type r: int
-        :type c: int
-        :rtype: List[List[int]]
-        """
         DIRECTIONS = ((1, 2), (-1, 2), (1, -2), (-1, -2),
                       (2, 1), (-2, 1), (2, -1), (-2, -1))
         def backtracking(r, c, i):

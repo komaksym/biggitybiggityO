@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def removeStones(self, stones):
-        """
-        :type stones: List[List[int]]
-        :rtype: int
-        """
         MAX_ROW = 10000
         union_find = UnionFind(2*MAX_ROW)
         for r, c in stones:

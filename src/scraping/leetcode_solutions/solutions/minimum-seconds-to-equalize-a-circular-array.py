@@ -6,10 +6,6 @@ import collections
 # hash table
 class Solution(object):
     def minimumSeconds(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         lookup = collections.defaultdict(int)
         dist = collections.defaultdict(int)
         for i in range(2*len(nums)):

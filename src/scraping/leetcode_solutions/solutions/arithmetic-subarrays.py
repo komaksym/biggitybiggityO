@@ -5,12 +5,6 @@ import itertools
 
 class Solution(object):
     def checkArithmeticSubarrays(self, nums, l, r):
-        """
-        :type nums: List[int]
-        :type l: List[int]
-        :type r: List[int]
-        :rtype: List[bool]
-        """
         def is_arith(n):
             mx, mn, lookup = max(n), min(n), set(n)
             if mx == mn:

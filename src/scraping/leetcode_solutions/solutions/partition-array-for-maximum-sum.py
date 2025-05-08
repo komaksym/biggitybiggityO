@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxSumAfterPartitioning(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
         W = K+1
         dp = [0]*W
         for i in range(len(A)):

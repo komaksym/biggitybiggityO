@@ -13,10 +13,6 @@ class InputType(object):
 # automata: http://images.cnitblog.com/i/627993/201405/012016243309923.png
 class Solution(object):
     def isNumber(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         transition_table = [[-1,  0,  3,  1,  2, -1],    
                             [-1,  8, -1,  1,  4,  5],    
                             [-1, -1, -1,  4, -1, -1],    
@@ -51,10 +47,6 @@ class Solution(object):
 
 class Solution2(object):
     def isNumber(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         import re
         return bool(re.match("^\s*[\+-]?((\d+(\.\d*)?)|\.\d+)([eE][\+-]?\d+)?\s*$", s))
 

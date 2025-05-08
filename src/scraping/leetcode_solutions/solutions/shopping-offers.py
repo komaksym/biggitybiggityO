@@ -2,12 +2,6 @@
 
 class Solution(object):
     def shoppingOffers(self, price, special, needs):
-        """
-        :type price: List[int]
-        :type special: List[List[int]]
-        :type needs: List[int]
-        :rtype: int
-        """
         def shoppingOffersHelper(price, special, needs, i):
             if i == len(special):
                 return sum(map(lambda x, y: x*y, price, needs))

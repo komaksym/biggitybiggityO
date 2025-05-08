@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numTeams(self, rating):
-        """
-        :type rating: List[int]
-        :rtype: int
-        """
         result = 0
         for i in range(1, len(rating)-1):
             less, greater = [0]*2, [0]*2

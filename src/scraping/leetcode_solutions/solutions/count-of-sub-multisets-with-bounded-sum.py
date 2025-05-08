@@ -7,12 +7,6 @@ from functools import reduce
 # freq table, knapsack dp, sliding window, combinatorics
 class Solution(object):
     def countSubMultisets(self, nums, l, r):
-        """
-        :type nums: List[int]
-        :type l: int
-        :type r: int
-        :rtype: int
-        """
         MOD = 10**9+7
         cnt = collections.Counter(nums)
         dp = [0]*(r+1)

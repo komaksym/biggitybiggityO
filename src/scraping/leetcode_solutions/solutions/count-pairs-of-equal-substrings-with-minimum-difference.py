@@ -2,11 +2,6 @@
 
 class Solution(object):
     def countQuadruples(self, firstString, secondString):
-        """
-        :type firstString: str
-        :type secondString: str
-        :rtype: int
-        """
         lookup1 = [-1]*26
         for i in reversed(range(len(firstString))):
             lookup1[ord(firstString[i])-ord('a')] = i

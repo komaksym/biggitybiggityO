@@ -2,13 +2,6 @@
 
 class Solution(object):
     def findReplaceString(self, S, indexes, sources, targets):
-        """
-        :type S: str
-        :type indexes: List[int]
-        :type sources: List[str]
-        :type targets: List[str]
-        :rtype: str
-        """
         bucket = [None] * len(S)
         for i in range(len(indexes)):
             if all(indexes[i]+k < len(S) and S[indexes[i]+k] == sources[i][k]
@@ -29,13 +22,6 @@ class Solution(object):
 # Time:  O(mlogm + m * n)
 class Solution2(object):
     def findReplaceString(self, S, indexes, sources, targets):
-        """
-        :type S: str
-        :type indexes: List[int]
-        :type sources: List[str]
-        :type targets: List[str]
-        :rtype: str
-        """
         for i, s, t in sorted(zip(indexes, sources, targets), reverse=True):
             if S[i:i+len(s)] == s:
                 S = S[:i] + t + S[i+len(s):]

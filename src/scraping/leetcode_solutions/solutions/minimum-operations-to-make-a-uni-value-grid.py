@@ -4,11 +4,6 @@ import random
 
 class Solution(object):
     def minOperations(self, grid, x):
-        """
-        :type grid: List[List[int]]
-        :type x: int
-        :rtype: int
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left

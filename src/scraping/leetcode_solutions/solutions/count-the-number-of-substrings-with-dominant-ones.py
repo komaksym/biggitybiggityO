@@ -3,10 +3,6 @@
 # two pointers, sliding window
 class Solution(object):
     def numberOfSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = 0
         idxs = [-1]+[i for i, x in enumerate(s) if x == '0']+[len(s)]
         curr = 1
@@ -23,10 +19,6 @@ class Solution(object):
 # two pointers, sliding window
 class Solution2(object):
     def numberOfSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = 0
         idxs = [-1]+[i for i, x in enumerate(s) if x == '0']+[len(s)]
         for c in range(int((-1+(1+4*len(s))**0.5)/2)+1): 
@@ -46,10 +38,6 @@ class Solution2(object):
 # two pointers, sliding window
 class Solution_TLE(object):
     def numberOfSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = 0
         for c in range(int((-1+(1+4*len(s))**0.5)/2)+1): 
             cnt = [0]*2

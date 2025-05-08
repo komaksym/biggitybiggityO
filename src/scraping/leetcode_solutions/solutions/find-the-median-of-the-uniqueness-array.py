@@ -6,10 +6,6 @@ import collections
 # binary search, two pointers, sliding window
 class Solution(object):
     def medianOfUniquenessArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

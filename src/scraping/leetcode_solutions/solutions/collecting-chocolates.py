@@ -3,11 +3,6 @@
 # mono stack, difference array, prefix sum
 class Solution(object):
     def minCost(self, nums, x):
-        """
-        :type nums: List[int]
-        :type x: int
-        :rtype: int
-        """
         def accumulate(a):
             for i in range(len(a)-1):
                 a[i+1] += a[i]
@@ -42,11 +37,6 @@ import collections
 # binary search, mono deque
 class Solution2(object):
     def minCost(self, nums, x):
-        """
-        :type nums: List[int]
-        :type x: int
-        :rtype: int
-        """
         def cost(k):
             w = k+1
             result = x*k
@@ -78,11 +68,6 @@ class Solution2(object):
 # brute force
 class Solution3(object):
     def minCost(self, nums, x):
-        """
-        :type nums: List[int]
-        :type x: int
-        :rtype: int
-        """
         result = [x*k for k in range(len(nums)+1)]
         for i in range(len(nums)):
             curr = nums[i]

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def highestPeak(self, isWater):
-        """
-        :type isWater: List[List[int]]
-        :rtype: List[List[int]]
-        """
         directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
         q = []
@@ -33,10 +29,6 @@ class Solution(object):
 # Time:  O(m * n)
 class Solution2(object):
     def highestPeak(self, isWater):
-        """
-        :type isWater: List[List[int]]
-        :rtype: List[List[int]]
-        """
         directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
         q, heights = [], [[-1]*len(isWater[0]) for _ in range(len(isWater))]

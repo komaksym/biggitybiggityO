@@ -2,10 +2,6 @@
 
 class Solution(object):
     def countVowelStrings(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def nCr(n, r): 
             if n-r < r:
                 return nCr(n, n-r)

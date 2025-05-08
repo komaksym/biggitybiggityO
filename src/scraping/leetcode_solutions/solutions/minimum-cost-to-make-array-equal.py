@@ -6,11 +6,6 @@ import itertools
 # math, binary search
 class Solution(object):
     def minCost(self, nums, cost):
-        """
-        :type nums: List[int]
-        :type cost: List[int]
-        :rtype: int
-        """
         def f(x):
             return sum(abs(y-x)*c for y, c in zip(nums, cost))
 
@@ -38,11 +33,6 @@ import itertools
 # binary search
 class Solution2(object):
     def minCost(self, nums, cost):
-        """
-        :type nums: List[int]
-        :type cost: List[int]
-        :rtype: int
-        """
         def f(x):
             return sum(abs(y-x)*c for y, c in zip(nums, cost))
     
@@ -65,11 +55,6 @@ class Solution2(object):
 # prefix sum
 class Solution3(object):
     def minCost(self, nums, cost):
-        """
-        :type nums: List[int]
-        :type cost: List[int]
-        :rtype: int
-        """
         idxs = list(range(len(nums)))
         idxs.sort(key=lambda x: nums[x])
         prefix = [0]*(len(cost)+1)

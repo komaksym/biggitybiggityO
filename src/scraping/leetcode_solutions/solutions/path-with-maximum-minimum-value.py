@@ -3,10 +3,6 @@
 # binary search + dfs solution
 class Solution(object):
     def maximumMinimumPath(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         
         def check(A, val, r, c, lookup):
@@ -47,10 +43,6 @@ import heapq
 # Dijkstra algorithm solution
 class Solution2(object):
     def maximumMinimumPath(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         max_heap = [(-A[0][0], 0, 0)]
         lookup = set([(0, 0)])

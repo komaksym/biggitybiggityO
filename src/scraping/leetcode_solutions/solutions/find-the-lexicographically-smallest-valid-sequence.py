@@ -3,11 +3,6 @@
 # hash table, greedy
 class Solution(object):
     def validSequence(self, word1, word2):
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: List[int]
-        """
         j = len(word2)-1
         lookup = [-1]*len(word2)
         for i in reversed(range(len(word1))):

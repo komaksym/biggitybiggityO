@@ -5,11 +5,6 @@ import heapq
 
 class Solution(object):
     def assignBikes(self, workers, bikes):
-        """
-        :type workers: List[List[int]]
-        :type bikes: List[List[int]]
-        :rtype: List[int]
-        """
         def manhattan(p1, p2):
             return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])
         

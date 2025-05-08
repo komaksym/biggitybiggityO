@@ -3,12 +3,6 @@
 # iterative dfs, tree dp
 class Solution(object):
     def maxOutput(self, n, edges, price):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type price: List[int]
-        :rtype: int
-        """
         def iter_dfs():
             result = 0
             stk = [(1, (0, -1, [price[0], 0]))]
@@ -46,12 +40,6 @@ class Solution(object):
 # dfs, tree dp
 class Solution2(object):
     def maxOutput(self, n, edges, price):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type price: List[int]
-        :rtype: int
-        """
         def dfs(u, p):
             dp = [price[u], 0] 
             for v in adj[u]:
@@ -76,12 +64,6 @@ class Solution2(object):
 # iterative dfs, tree dp
 class Solution3(object):
     def maxOutput(self, n, edges, price):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type price: List[int]
-        :rtype: int
-        """
         def iter_dfs():
             dp = [0]*n 
             stk = [(1, 0, -1)]
@@ -133,12 +115,6 @@ class Solution3(object):
 # dfs, tree dp
 class Solution4(object):
     def maxOutput(self, n, edges, price):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type price: List[int]
-        :rtype: int
-        """
         def dfs(u, p):
             dp[u] = price[u]
             for v in adj[u]:

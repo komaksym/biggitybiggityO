@@ -3,10 +3,6 @@
 # greedy
 class Solution(object):
     def maximumEvenSplit(self, finalSum):
-        """
-        :type finalSum: int
-        :rtype: List[int]
-        """
         if finalSum%2:
             return []
         result = []

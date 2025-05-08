@@ -2,10 +2,6 @@
 
 class Solution(object):
     def PredictTheWinner(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         if len(nums) % 2 == 0 or len(nums) == 1:
             return True
 

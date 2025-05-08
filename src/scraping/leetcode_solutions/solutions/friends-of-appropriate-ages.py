@@ -6,10 +6,6 @@ import collections
 
 class Solution(object):
     def numFriendRequests(self, ages):
-        """
-        :type ages: List[int]
-        :rtype: int
-        """
         def request(a, b):
             return 0.5*a+7 < b <= a
 

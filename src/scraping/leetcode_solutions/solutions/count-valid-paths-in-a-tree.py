@@ -3,11 +3,6 @@
 # number theory, tree dp, iterative dfs
 class Solution(object):
     def countPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n): 
             primes = []
             spf = [-1]*(n+1) 
@@ -67,11 +62,6 @@ class Solution(object):
 # number theory, tree dp, dfs
 class Solution2(object):
     def countPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n): 
             primes = []
             spf = [-1]*(n+1) 
@@ -148,11 +138,6 @@ class UnionFind(object):
 
 class Solution3(object):
     def countPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n): 
             primes = []
             spf = [-1]*(n+1) 

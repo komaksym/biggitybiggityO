@@ -24,10 +24,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution_TLE(object):
     def countPrimes(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n):
             primes = []
             spf = [-1]*(n+1) 

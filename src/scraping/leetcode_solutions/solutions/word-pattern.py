@@ -3,11 +3,6 @@
 
 class Solution(object):
     def wordPattern(self, pattern, str):
-        """
-        :type pattern: str
-        :type str: str
-        :rtype: bool
-        """
         if len(pattern) != self.wordCount(str):
             return False
 
@@ -41,11 +36,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def wordPattern(self, pattern, str):
-        """
-        :type pattern: str
-        :type str: str
-        :rtype: bool
-        """
         words = str.split() 
         if len(pattern) != len(words):
             return False

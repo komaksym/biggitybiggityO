@@ -4,11 +4,6 @@
 
 class Solution(object):
     def wordPatternMatch(self, pattern, str):
-        """
-        :type pattern: str
-        :type str: str
-        :rtype: bool
-        """
         w2p, p2w = {}, {}
         return self.match(pattern, str, 0, 0, w2p, p2w)
 

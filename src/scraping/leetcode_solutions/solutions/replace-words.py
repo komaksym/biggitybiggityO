@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def replaceWords(self, dictionary, sentence):
-        """
-        :type dictionary: List[str]
-        :type sentence: str
-        :rtype: str
-        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         for word in dictionary:

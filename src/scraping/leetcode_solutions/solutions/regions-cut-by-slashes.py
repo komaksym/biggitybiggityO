@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def regionsBySlashes(self, grid):
-        """
-        :type grid: List[str]
-        :rtype: int
-        """
         def index(n, i, j, k):
             return (i*n + j)*4 + k
     

@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def numTilePossibilities(self, tiles):
-        """
-        :type tiles: str
-        :rtype: int
-        """
         fact = [0.0]*(len(tiles)+1)
         fact[0] = 1.0
         for i in range(1, len(tiles)+1):
@@ -36,10 +32,6 @@ class Solution(object):
 # Time:  O(r), r is the value of result
 class Solution2(object):
     def numTilePossibilities(self, tiles):
-        """
-        :type tiles: str
-        :rtype: int
-        """
         def backtracking(counter):
             total = 0
             for k, v in counter.items():

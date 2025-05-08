@@ -6,11 +6,6 @@ import collections
 # freq table
 class Solution(object):
     def largestInteger(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         if k == len(nums):
             return max(nums)
         cnt = collections.defaultdict(int)

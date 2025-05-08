@@ -6,11 +6,6 @@ import heapq
 # number theory, mono stack, greedy, sort, heap
 class Solution(object):
     def maximumScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def linear_sieve_of_eratosthenes(n): 
             primes = []

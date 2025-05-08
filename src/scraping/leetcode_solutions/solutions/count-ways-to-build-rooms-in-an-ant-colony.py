@@ -2,10 +2,6 @@
 
 class Solution(object):
     def waysToBuildRooms(self, prevRoom):
-        """
-        :type prevRoom: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         fact = [1, 1]
         inv = [0, 1]

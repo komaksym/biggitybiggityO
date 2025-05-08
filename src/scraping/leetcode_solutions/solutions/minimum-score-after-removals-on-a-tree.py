@@ -4,11 +4,6 @@ from functools import reduce
 # dfs with stack
 class Solution(object):
     def minimumScore(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def is_ancestor(a, b):
             return left[a] <= left[b] and right[b] <= right[a]
 
@@ -59,11 +54,6 @@ class Solution(object):
 # dfs with recursion
 class Solution2(object):
     def minimumScore(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def is_ancestor(a, b):
             return left[a] <= left[b] and right[b] <= right[a]
 
@@ -99,11 +89,6 @@ class Solution2(object):
 # dfs with recursion
 class Solution3(object):
     def minimumScore(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def dfs(u, p, result):
             total = nums[u]
             for v in adj[u]:
@@ -133,11 +118,6 @@ class Solution3(object):
 # dfs with stk (slower, sometimes TLE)
 class Solution4(object):
     def minimumScore(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def iter_dfs(nums, adj, u, p):
             result = []
             stk = [(1, (u, p, [0]))]

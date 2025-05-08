@@ -2,12 +2,6 @@
 
 class Solution(object):
     def countRangeSum(self, nums, lower, upper):
-        """
-        :type nums: List[int]
-        :type lower: int
-        :type upper: int
-        :rtype: int
-        """
         def countAndMergeSort(sums, start, end, lower, upper):
             if end - start <= 1: 
                 return 0
@@ -39,12 +33,6 @@ class Solution(object):
 # Divide and Conquer solution.
 class Solution2(object):
     def countRangeSum(self, nums, lower, upper):
-        """
-        :type nums: List[int]
-        :type lower: int
-        :type upper: int
-        :rtype: int
-        """
         def countAndMergeSort(sums, start, end, lower, upper):
             if end - start <= 0: 
                 return 0

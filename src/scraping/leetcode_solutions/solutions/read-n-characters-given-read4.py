@@ -15,11 +15,6 @@ def read4(buf):
 
 class Solution(object):
     def read(self, buf, n):
-        """
-        :type buf: Destination buffer (List[str])
-        :type n: Maximum number of characters to read (int)
-        :rtype: The number of characters read (int)
-        """
         read_bytes = 0
         buffer = [''] * 4
         for i in range((n+4-1)//4):

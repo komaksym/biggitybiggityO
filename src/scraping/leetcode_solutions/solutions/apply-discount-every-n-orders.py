@@ -4,23 +4,12 @@
 class Cashier(object):
 
     def __init__(self, n, discount, products, prices):
-        """
-        :type n: int
-        :type discount: int
-        :type products: List[int]
-        :type prices: List[int]
-        """
         self.__n = n
         self.__discount = discount
         self.__curr = 0
         self.__lookup = {p : prices[i] for i, p in enumerate(products)}
 
     def getBill(self, product, amount):
-        """
-        :type product: List[int]
-        :type amount: List[int]
-        :rtype: float
-        """
         self.__curr = (self.__curr+1) % self.__n
         result = 0.0
         for i, p in enumerate(product):

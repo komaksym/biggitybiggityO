@@ -3,11 +3,6 @@
 # top-down dp (faster since accessing less states)
 class Solution(object):
     def possiblyEquals(self, s1, s2):
-        """
-        :type s1: str
-        :type s2: str
-        :rtype: bool
-        """
         def general_possible_numbers(s): 
             dp = [set() for _ in range(len(s))]
             for i in range(len(s)):
@@ -73,11 +68,6 @@ class Solution(object):
 # top-down dp (faster since accessing less states)
 class Solution2(object):
     def possiblyEquals(self, s1, s2):
-        """
-        :type s1: str
-        :type s2: str
-        :rtype: bool
-        """
         def memoization(s1, s2, i, j, k, lookup):
             if (i, j, k) not in lookup:
                 if i == len(s1) and j == len(s2):
@@ -113,11 +103,6 @@ class Solution2(object):
 # bottom-up dp
 class Solution3(object):
     def possiblyEquals(self, s1, s2):
-        """
-        :type s1: str
-        :type s2: str
-        :rtype: bool
-        """
         MAX_DIGIT_LEN = 3
         w = 1+MAX_DIGIT_LEN
         dp = [[set() for _ in range(len(s2)+1)] for _ in range(w)]

@@ -6,10 +6,6 @@ import collections
 # hash table, greedy, kadane's algorithm
 class Solution(object):
     def maxSubarraySum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = float("-inf")
         curr = mn = mn0 = 0
         mn1 = collections.defaultdict(int)
@@ -29,10 +25,6 @@ import collections
 # hash table, greedy, kadane's algorithm
 class Solution2(object):
     def maxSubarraySum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = float("-inf")
         curr = mn = mn0 = 0
         mn1 = collections.defaultdict(int)
@@ -54,10 +46,6 @@ import collections
 # segment tree
 class Solution_TLE(object):
     def maxSubarraySum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MAX, TOTAL, PREFIX, SUFFIX = list(range(4))
         class SegmentTree(object):
             def __init__(self, N,

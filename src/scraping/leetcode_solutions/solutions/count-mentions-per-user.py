@@ -3,11 +3,6 @@
 # simulation
 class Solution(object):
     def countMentions(self, numberOfUsers, events):
-        """
-        :type numberOfUsers: int
-        :type events: List[List[str]]
-        :rtype: List[int]
-        """
         result = [0]*numberOfUsers
         lookup = [1]*numberOfUsers
         events.sort(key=lambda x: (int(x[1]), x[0] == "MESSAGE"))

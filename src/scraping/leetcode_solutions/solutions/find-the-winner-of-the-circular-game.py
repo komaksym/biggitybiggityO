@@ -4,11 +4,6 @@ from functools import reduce
 # bottom-up solution
 class Solution(object):
     def findTheWinner(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         return reduce(lambda idx, n:(idx+k)%(n+1), range(1, n), 0)+1
 
 
@@ -16,11 +11,6 @@ class Solution(object):
 # top-down solution
 class Solution2(object):
     def findTheWinner(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         def f(idx, n, k):
             if n == 1:
                 return 0

@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def maxIncreaseKeepingSkyline(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         row_maxes = [max(row) for row in grid]
         col_maxes = [max(col) for col in zip(*grid)]
 

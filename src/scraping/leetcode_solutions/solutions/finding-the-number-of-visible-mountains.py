@@ -3,10 +3,6 @@
 # math, sort
 class Solution(object):
     def visibleMountains(self, peaks):
-        """
-        :type peaks: List[List[int]]
-        :rtype: int
-        """
         peaks.sort(key=lambda x: (x[0]-x[1], -(x[0]+x[1]))) 
         result = mx = 0
         for i in range(len(peaks)):
@@ -22,10 +18,6 @@ class Solution(object):
 # sort, mono stack
 class Solution2(object):
     def visibleMountains(self, peaks):
-        """
-        :type peaks: List[List[int]]
-        :rtype: int
-        """
         def is_covered(a, b):
             x1, y1 = a
             x2, y2 = b

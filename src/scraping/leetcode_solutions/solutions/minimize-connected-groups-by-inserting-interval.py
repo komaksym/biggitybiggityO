@@ -3,11 +3,6 @@
 # sort, prefix sum, two pointers, sliding window
 class Solution(object):
     def minConnectedGroups(self, intervals, k):
-        """
-        :type intervals: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         intervals.sort()
         result = 0
         prefix = [0]*(len(intervals)+1)

@@ -6,11 +6,6 @@ from random import randint
 
 class Solution(object):
     def kClosest(self, points, K):
-        """
-        :type points: List[List[int]]
-        :type K: int
-        :rtype: List[List[int]]
-        """
         def dist(point):
             return point[0]**2 + point[1]**2
         
@@ -45,11 +40,6 @@ import heapq
 
 class Solution2(object):
     def kClosest(self, points, K):
-        """
-        :type points: List[List[int]]
-        :type K: int
-        :rtype: List[List[int]]
-        """
         def dist(point):
             return point[0]**2 + point[1]**2
         

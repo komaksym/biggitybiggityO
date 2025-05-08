@@ -3,12 +3,6 @@
 # dfs, bitmasks, pruning
 class Solution(object):
     def maximumPoints(self, edges, coins, k):
-        """
-        :type edges: List[List[int]]
-        :type coins: List[int]
-        :type k: int
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         def dfs(u, p, base):
             if base >= max_base:
@@ -32,12 +26,6 @@ class Solution(object):
 # tree dp, memoization
 class Solution2(object):
     def maximumPoints(self, edges, coins, k):
-        """
-        :type edges: List[List[int]]
-        :type coins: List[int]
-        :type k: int
-        :rtype: int
-        """
         def memoization(u, p, d):
             if d >= max_d:
                 return 0

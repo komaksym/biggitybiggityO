@@ -10,18 +10,11 @@ import heapq
 class FileSharing(object):
 
     def __init__(self, m):
-        """
-        :type m: int
-        """
         self.__users = []
         self.__lookup = set()
         self.__min_heap = []
 
     def join(self, ownedChunks):
-        """
-        :type ownedChunks: List[int]
-        :rtype: int
-        """
         if self.__min_heap:
             userID = heapq.heappop(self.__min_heap)
         else:
@@ -32,10 +25,6 @@ class FileSharing(object):
         return userID
 
     def leave(self, userID):
-        """
-        :type userID: int
-        :rtype: None
-        """
         if userID not in self.__lookup:
             return
         self.__lookup.remove(userID)
@@ -43,11 +32,6 @@ class FileSharing(object):
         heapq.heappush(self.__min_heap, userID)
 
     def request(self, userID, chunkID):
-        """
-        :type userID: int
-        :type chunkID: int
-        :rtype: List[int]
-        """
         result = []
         for u, chunks in enumerate(self.__users, 1):
             if chunkID not in chunks:
@@ -71,19 +55,12 @@ import heapq
 class FileSharing2(object):
 
     def __init__(self, m):
-        """
-        :type m: int
-        """
         self.__users = []
         self.__lookup = set() 
         self.__chunks = collections.defaultdict(set)
         self.__min_heap = []
 
     def join(self, ownedChunks):
-        """
-        :type ownedChunks: List[int]
-        :rtype: int
-        """
         if self.__min_heap:
             userID = heapq.heappop(self.__min_heap)
         else:
@@ -96,10 +73,6 @@ class FileSharing2(object):
         return userID
 
     def leave(self, userID):
-        """
-        :type userID: int
-        :rtype: None
-        """
         if userID not in self.__lookup:
             return
         for c in self.__users[userID-1]:
@@ -109,11 +82,6 @@ class FileSharing2(object):
         heapq.heappush(self.__min_heap, userID)
 
     def request(self, userID, chunkID):
-        """
-        :type userID: int
-        :type chunkID: int
-        :rtype: List[int]
-        """
         result = sorted(self.__chunks[chunkID])
         if not result:
             return

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def sortByBits(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
         def popcount(n): 
             result = 0
             while n:

@@ -3,11 +3,6 @@
 # brute force, linear search (binary search doesn't work)
 class Solution(object):
     def splitMessage(self, message, limit):
-        """
-        :type message: str
-        :type limit: int
-        :rtype: List[str]
-        """
         cnt, l, total, base = 1, 1, len(message)+1, 1
         while 3+l*2 < limit:
             if total+(3+l)*cnt <= limit*cnt:

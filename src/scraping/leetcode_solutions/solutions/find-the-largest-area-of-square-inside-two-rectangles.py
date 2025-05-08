@@ -3,11 +3,6 @@
 # brute force, math
 class Solution(object):
     def largestSquareArea(self, bottomLeft, topRight):
-        """
-        :type bottomLeft: List[List[int]]
-        :type topRight: List[List[int]]
-        :rtype: int
-        """
         result = 0
         for i in range(len(bottomLeft)):
             for j in range(i+1, len(bottomLeft)):
@@ -23,9 +18,4 @@ class Solution(object):
 # brute force, math
 class Solution2(object):
     def largestSquareArea(self, bottomLeft, topRight):
-        """
-        :type bottomLeft: List[List[int]]
-        :type topRight: List[List[int]]
-        :rtype: int
-        """
         return max(max(min(min(topRight[i][0], topRight[j][0])-max(bottomLeft[i][0], bottomLeft[j][0]), min(topRight[i][1], topRight[j][1])-max(bottomLeft[i][1], bottomLeft[j][1])) for i in range(len(bottomLeft)) for j in range(i+1, len(bottomLeft))), 0)**2

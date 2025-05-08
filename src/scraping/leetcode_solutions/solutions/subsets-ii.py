@@ -2,10 +2,6 @@
 
 class Solution(object):
     def subsetsWithDup(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
         nums.sort()
         result = [[]]
         previous_size = 0
@@ -22,10 +18,6 @@ class Solution(object):
 # Time:  O(n * 2^n) ~ O((n * 2^n)^2)
 class Solution2(object):
     def subsetsWithDup(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
         result = []
         i, count = 0, 1 << len(nums)
         nums.sort()
@@ -45,10 +37,6 @@ class Solution2(object):
 # Time:  O(n * 2^n) ~ O((n * 2^n)^2)
 class Solution3(object):
     def subsetsWithDup(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
         result = []
         self.subsetsWithDupRecu(result, [], sorted(nums))
         return result

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def cherryPickup(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         n = len(grid)
         dp = [[-1 for _ in range(n)] for _ in range(n)]
         dp[0][0] = grid[0][0]

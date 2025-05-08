@@ -2,10 +2,6 @@
 
 class Solution(object):
     def encode(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def encode_substr(dp, s, i, j):
             temp = s[i:j+1]
             pos = (temp + temp).find(temp, 1) 

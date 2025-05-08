@@ -6,13 +6,6 @@ from functools import reduce
 
 class Solution(object):
     def countRoutes(self, locations, start, finish, fuel):
-        """
-        :type locations: List[int]
-        :type start: int
-        :type finish: int
-        :type fuel: int
-        :rtype: int
-        """
         MOD = 10**9+7
 
         s, f = locations[start], locations[finish]
@@ -43,13 +36,6 @@ class Solution(object):
 # Time:  O(n^2 * f)
 class Solution2(object):
     def countRoutes(self, locations, start, finish, fuel):
-        """
-        :type locations: List[int]
-        :type start: int
-        :type finish: int
-        :type fuel: int
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [[0]*(fuel+1) for _ in range(len(locations))]
         dp[start][0] = 1

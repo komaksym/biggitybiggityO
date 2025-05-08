@@ -3,10 +3,6 @@
 
 class Solution(object):
     def arrayPairSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         LEFT, RIGHT = -10000, 10000
         lookup = [0] * (RIGHT-LEFT+1)
         for num in nums:
@@ -21,10 +17,6 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def arrayPairSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort()
         result = 0
         for i in range(0, len(nums), 2):
@@ -35,10 +27,6 @@ class Solution2(object):
 # Time:  O(nlogn)
 class Solution3(object):
     def arrayPairSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums = sorted(nums)
         return sum([nums[i] for i in range(0, len(nums), 2)])
 

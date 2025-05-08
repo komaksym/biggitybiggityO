@@ -2,12 +2,6 @@
 
 class Solution(object):
     def trimBST(self, root, L, R):
-        """
-        :type root: TreeNode
-        :type L: int
-        :type R: int
-        :rtype: TreeNode
-        """
         if not root:
             return None
         if root.val < L:

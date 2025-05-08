@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def tribonacci(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))] \
                       for i in range(len(A))]
@@ -30,10 +26,6 @@ class Solution(object):
         return matrix_mult([[1, 0, 0]], matrix_expo(T, n))[0][1] 
 class Solution2(object):
     def tribonacci(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         a, b, c = 0, 1, 1
         for _ in range(n):
             a, b, c = b, c, a+b+c

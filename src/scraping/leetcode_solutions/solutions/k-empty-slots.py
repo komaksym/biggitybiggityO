@@ -2,11 +2,6 @@
 
 class Solution(object):
     def kEmptySlots(self, flowers, k):
-        """
-        :type flowers: List[int]
-        :type k: int
-        :rtype: int
-        """
         days = [0] * len(flowers)
         for i in range(len(flowers)):
             days[flowers[i]-1] = i

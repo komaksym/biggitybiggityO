@@ -9,11 +9,6 @@ class TreeNode(object):
 # iterative dfs, tree dp
 class Solution(object):
     def amountOfTime(self, root, start):
-        """
-        :type root: Optional[TreeNode]
-        :type start: int
-        :rtype: int
-        """
         def iter_dfs(root, start):
             result = -1
             stk = [(1, (root, [-1]*2))]
@@ -49,11 +44,6 @@ class Solution(object):
 # dfs, tree dp
 class Solution2(object):
     def amountOfTime(self, root, start):
-        """
-        :type root: Optional[TreeNode]
-        :type start: int
-        :rtype: int
-        """
         def dfs(curr, start, result):
             if curr is None:
                 return [-1, -1]
@@ -80,11 +70,6 @@ class Solution2(object):
 # bfs
 class Solution3(object):
     def amountOfTime(self, root, start):
-        """
-        :type root: Optional[TreeNode]
-        :type start: int
-        :rtype: int
-        """
         def bfs(root):
             adj = collections.defaultdict(list)
             q = [root]

@@ -3,13 +3,6 @@
 # sort, two pointers
 class Solution(object):
     def countServers(self, n, logs, x, queries):
-        """
-        :type n: int
-        :type logs: List[List[int]]
-        :type x: int
-        :type queries: List[int]
-        :rtype: List[int]
-        """
         logs.sort(key=lambda x:x[1])
         result = [0]*len(queries)
         cnt = [0]*n
@@ -33,13 +26,6 @@ class Solution(object):
 # sort, line sweep
 class Solution2(object):
     def countServers(self, n, logs, x, queries):
-        """
-        :type n: int
-        :type logs: List[List[int]]
-        :type x: int
-        :type queries: List[int]
-        :rtype: List[int]
-        """
         events = []
         for sid, t in logs:
             events.append((t, +1, sid-1))

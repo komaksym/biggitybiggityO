@@ -2,12 +2,6 @@
 
 class Solution(object):
     def minimumRefill(self, plants, capacityA, capacityB):
-        """
-        :type plants: List[int]
-        :type capacityA: int
-        :type capacityB: int
-        :rtype: int
-        """
         result = 0 
         left, right = 0, len(plants)-1
         canA, canB = capacityA, capacityB

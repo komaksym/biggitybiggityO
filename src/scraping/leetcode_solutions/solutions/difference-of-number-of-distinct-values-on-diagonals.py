@@ -3,10 +3,6 @@
 # prefix sum
 class Solution(object):
     def differenceOfDistinctValues(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: List[List[int]]
-        """
         def update(i, j):
             lookup = set()
             for k in range(min(len(grid)-i, len(grid[0])-j)):

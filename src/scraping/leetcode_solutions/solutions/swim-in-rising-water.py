@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def swimInWater(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         n = len(grid)
         positions = [None] * (n**2)
         for i in range(n):

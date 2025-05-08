@@ -5,11 +5,6 @@ from functools import reduce
 cnt = [0]*2
 class Solution(object):
     def countKReducibleNumbers(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def popcount(x):
             return bin(x).count('1')
@@ -33,11 +28,6 @@ class Solution(object):
 cnt = [0]*2
 class Solution2(object):
     def countKReducibleNumbers(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]  
         def nCr(n, k):

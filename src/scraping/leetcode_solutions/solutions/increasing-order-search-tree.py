@@ -9,10 +9,6 @@ class TreeNode(object):
 
 class Solution(object):
     def increasingBST(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
         def increasingBSTHelper(root, tail):
             if not root:
                 return tail

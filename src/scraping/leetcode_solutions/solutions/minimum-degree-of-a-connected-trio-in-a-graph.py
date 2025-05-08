@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minTrioDegree(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         adj = [set() for _ in range(n+1)]
         degree = [0]*(n+1)
         for u, v in edges:

@@ -3,10 +3,6 @@
 # counting sort, greedy
 class Solution(object):
     def makeAntiPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         cnt = [0]*26
         for x in s:
             cnt[ord(x)-ord('a')] += 1
@@ -24,10 +20,6 @@ class Solution(object):
 # counting sort, greedy, two pointers
 class Solution2(object):
     def makeAntiPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         cnt = [0]*26
         for x in s:
             cnt[ord(x)-ord('a')] += 1
@@ -46,10 +38,6 @@ class Solution2(object):
 # freq table, greedy
 class Solution3(object):
     def makeAntiPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         cnt = [0]*26
         for x in s:
             cnt[ord(x)-ord('a')] += 1

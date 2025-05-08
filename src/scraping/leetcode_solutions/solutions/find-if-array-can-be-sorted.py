@@ -3,10 +3,6 @@
 # sort
 class Solution(object):
     def canSortArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def popcount(x):
             return bin(x).count("1")
     
@@ -28,10 +24,6 @@ import itertools
 # sort
 class Solution2(object):
     def canSortArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def popcount(x):
             return bin(x).count("1")
         
@@ -47,10 +39,6 @@ class Solution2(object):
 # sort
 class Solution3(object):
     def canSortArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def popcount(x):
             return bin(x).count("1")
     

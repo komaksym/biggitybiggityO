@@ -2,11 +2,6 @@
 
 class Solution(object):
     def smallestDistancePair(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def possible(guess, nums, k):
             count, left = 0, 0
             for right, num in enumerate(nums):

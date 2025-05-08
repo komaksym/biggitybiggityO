@@ -6,10 +6,6 @@ import itertools
 # kadane's algorithm
 class Solution(object):
     def largestVariance(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         def modified_kadane(a, x, y):
             result = curr = 0
             lookup = [0]*2

@@ -6,11 +6,6 @@ from functools import reduce
 
 class Solution(object):
     def minDominoRotations(self, A, B):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :rtype: int
-        """
         intersect = reduce(set.__and__, [set(d) for d in zip(A, B)])
         if not intersect:
             return -1

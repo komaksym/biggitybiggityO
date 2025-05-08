@@ -3,10 +3,6 @@
 # reference: https://en.wikipedia.org/wiki/Gray_code
 class Solution(object):
     def minimumOneBitOperations(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def gray_to_binary(n):
             result = 0
             while n:
@@ -19,10 +15,6 @@ class Solution(object):
 # Time:  O(logn)
 class Solution2(object):
     def minimumOneBitOperations(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         result = 0
         while n:
             result = -result - (n^(n-1)) 

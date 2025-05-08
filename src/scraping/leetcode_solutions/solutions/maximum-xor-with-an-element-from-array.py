@@ -29,11 +29,6 @@ class Trie(object):
 
 class Solution(object):
     def maximizeXor(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         nums.sort()
         max_val = max(nums[-1], max(queries, key=lambda x: x[0])[0])
         queries = sorted(enumerate(queries), key=lambda x: x[1][1])        

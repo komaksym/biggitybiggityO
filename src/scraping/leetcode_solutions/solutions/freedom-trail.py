@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def findRotateSteps(self, ring, key):
-        """
-        :type ring: str
-        :type key: str
-        :rtype: int
-        """
         lookup = collections.defaultdict(list)
         for i in range(len(ring)):
             lookup[ring[i]].append(i)

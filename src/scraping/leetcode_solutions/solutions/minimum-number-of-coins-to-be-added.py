@@ -4,11 +4,6 @@
 # sort, greedy
 class Solution(object):
     def minimumAddedCoins(self, coins, target):
-        """
-        :type coins: List[int]
-        :type target: int
-        :rtype: int
-        """
         coins.sort()
         result = reachable = 0
         for x in coins:
@@ -27,11 +22,6 @@ class Solution(object):
 # sort, greedy
 class Solution2(object):
     def minimumAddedCoins(self, coins, target):
-        """
-        :type coins: List[int]
-        :type target: int
-        :rtype: int
-        """
         coins.sort()
         result = reachable = 0
         for x in coins:

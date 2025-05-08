@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def checkInclusion(self, s1, s2):
-        """
-        :type s1: str
-        :type s2: str
-        :rtype: bool
-        """
         counts = collections.Counter(s1)
         l = len(s1)
         for i in range(len(s2)):

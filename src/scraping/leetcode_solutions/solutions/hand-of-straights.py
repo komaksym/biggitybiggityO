@@ -6,11 +6,6 @@ from heapq import heapify, heappop
 
 class Solution(object):
     def isNStraightHand(self, hand, W):
-        """
-        :type hand: List[int]
-        :type W: int
-        :rtype: bool
-        """
         if len(hand) % W:
             return False
 

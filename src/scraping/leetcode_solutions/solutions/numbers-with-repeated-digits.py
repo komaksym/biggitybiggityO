@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numDupDigitsAtMostN(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         def P(m, n):
             result = 1
             for _ in range(n):

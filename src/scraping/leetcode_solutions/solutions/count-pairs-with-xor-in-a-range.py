@@ -6,12 +6,6 @@ import collections
 # dp solution
 class Solution(object):
     def countPairs(self, nums, low, high):
-        """
-        :type nums: List[int]
-        :type low: int
-        :type high: int
-        :rtype: int
-        """
         def count(nums, x):
             result = 0
             dp = collections.Counter(nums)
@@ -56,12 +50,6 @@ class Trie(object):
 
 class Solution2(object):
     def countPairs(self, nums, low, high):
-        """
-        :type nums: List[int]
-        :type low: int
-        :type high: int
-        :rtype: int
-        """
         result = 0
         trie = Trie()
         for x in nums:

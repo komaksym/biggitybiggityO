@@ -6,10 +6,6 @@ import fractions
 
 class Solution(object):
     def interchangeableRectangles(self, rectangles):
-        """
-        :type rectangles: List[List[int]]
-        :rtype: int
-        """
         count = collections.defaultdict(int)
         for w, h in rectangles:
             g = fractions.gcd(w, h) 

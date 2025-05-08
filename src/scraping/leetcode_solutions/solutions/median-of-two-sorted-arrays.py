@@ -2,11 +2,6 @@
 
 class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: float
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left+(right-left)//2
@@ -35,11 +30,6 @@ class Solution(object):
 # Generic solution.
 class Solution_Generic(object):
     def findMedianSortedArrays(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: float
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left+(right-left)//2

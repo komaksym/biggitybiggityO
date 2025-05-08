@@ -2,11 +2,6 @@
 
 class Solution(object):
     def isTransformable(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
         idxs = [[] for _ in range(10)]
         for i in reversed(range(len(s))):
             idxs[int(s[i])].append(i)

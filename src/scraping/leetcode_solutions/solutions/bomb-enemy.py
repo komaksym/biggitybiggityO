@@ -3,10 +3,6 @@
 
 class Solution(object):
     def maxKilledEnemies(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
         result = 0
         if not grid or not grid[0]:
             return result

@@ -3,10 +3,6 @@
 # bit manipulation
 class Solution(object):
     def longestSubarray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         mx = max(nums)
         result, l = 1, 0
         for x in nums:

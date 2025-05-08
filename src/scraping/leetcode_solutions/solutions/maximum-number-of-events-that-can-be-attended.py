@@ -5,10 +5,6 @@ import heapq
 
 class Solution(object):
     def maxEvents(self, events):
-        """
-        :type events: List[List[int]]
-        :rtype: int
-        """
         events.sort(reverse=True)
         min_heap = []
         result = 0

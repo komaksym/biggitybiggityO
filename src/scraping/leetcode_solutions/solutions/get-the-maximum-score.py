@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxSum(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         i, j = 0, 0
         result, sum1, sum2 = 0, 0, 0,

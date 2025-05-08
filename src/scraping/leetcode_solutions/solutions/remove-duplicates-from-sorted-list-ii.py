@@ -13,10 +13,6 @@ class ListNode(object):
 
 class Solution(object):
     def deleteDuplicates(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
         dummy = ListNode(0)
         pre, cur = dummy, head
         while cur:

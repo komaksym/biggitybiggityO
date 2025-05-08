@@ -6,10 +6,6 @@
 # Weiszfeld's algorithm
 class Solution(object):
     def getMinDistSum(self, positions):
-        """
-        :type positions: List[List[int]]
-        :rtype: float
-        """
         EPS = 1e-6
         def norm(p1, p2):
             return ((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)**0.5
@@ -41,10 +37,6 @@ class Solution(object):
 # Time:  O(n * iter), iter is the number of iterations
 class Solution2(object):
     def getMinDistSum(self, positions):
-        """
-        :type positions: List[List[int]]
-        :rtype: float
-        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         EPS = 1e-6
         def dist(positions, p):

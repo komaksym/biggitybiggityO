@@ -63,16 +63,9 @@ class AhoTrie(object):
 class StreamChecker(object):
 
     def __init__(self, words):
-        """
-        :type words: List[str]
-        """
         self.__trie = AhoTrie(words)
 
     def query(self, letter): 
-        """
-        :type letter: str
-        :rtype: bool
-        """
         return len(self.__trie.step(letter)) > 0
 # obj = StreamChecker(words)
 # param_1 = obj.query(letter)

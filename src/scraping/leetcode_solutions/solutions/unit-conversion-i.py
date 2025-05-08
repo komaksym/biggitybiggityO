@@ -3,10 +3,6 @@
 # bfs
 class Solution(object):
     def baseUnitConversions(self, conversions):
-        """
-        :type conversions: List[List[int]]
-        :rtype: List[int]
-        """
         MOD = 10**9+7
         adj = [[] for _ in range(len(conversions)+1)]
         for u, v, w in conversions:

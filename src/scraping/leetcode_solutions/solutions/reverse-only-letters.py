@@ -2,10 +2,6 @@
 
 class Solution(object):
     def reverseOnlyLetters(self, S):
-        """
-        :type S: str
-        :rtype: str
-        """
         def getNext(S):
             for i in reversed(range(len(S))):
                 if S[i].isalpha():

@@ -6,10 +6,6 @@ import random
 # quick select solution
 class Solution(object):
     def twoCitySchedCost(self, costs):
-        """
-        :type costs: List[List[int]]
-        :rtype: int
-        """
         def kthElement(nums, k, compare):
             def PartitionAroundPivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left

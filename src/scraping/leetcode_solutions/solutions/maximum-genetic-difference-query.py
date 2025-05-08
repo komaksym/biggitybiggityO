@@ -33,11 +33,6 @@ class Trie(object):
 
 class Solution(object):
     def maxGeneticDifference(self, parents, queries):
-        """
-        :type parents: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         def iter_dfs(adj, qs, trie, result):
             stk = [(1, adj[-1][0])]
             while stk:
@@ -99,11 +94,6 @@ class Trie(object):
 
 class Solution2(object):
     def maxGeneticDifference(self, parents, queries):
-        """
-        :type parents: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         def dfs(adj, qs, node, trie, result):
             trie.insert(node, 1)
             for i, val in qs[node]:

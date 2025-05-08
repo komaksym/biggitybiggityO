@@ -3,12 +3,6 @@
 # sort, two pointers
 class Solution(object):
     def maximumCoins(self, heroes, monsters, coins):
-        """
-        :type heroes: List[int]
-        :type monsters: List[int]
-        :type coins: List[int]
-        :rtype: List[int]
-        """
         idxs1 = list(range(len(heroes)))
         idxs1.sort(key=lambda x: heroes[x])
         idxs2 = list(range(len(monsters)))

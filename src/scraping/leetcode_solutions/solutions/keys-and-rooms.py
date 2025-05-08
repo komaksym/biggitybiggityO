@@ -2,10 +2,6 @@
 
 class Solution(object):
     def canVisitAllRooms(self, rooms):
-        """
-        :type rooms: List[List[int]]
-        :rtype: bool
-        """
         lookup = set([0])
         stack = [0]
         while stack:

@@ -3,10 +3,6 @@
 # simulation, bfs
 class Solution(object):
     def minimumSeconds(self, land):
-        """
-        :type land: List[List[str]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         lookup = [[-1 if land[i][j] == "*" else 0 for j in range(len(land[0]))] for i in range(len(land))]
         q = [(i, j, -1) for i in range(len(land)) for j in range(len(land[0])) if land[i][j] == "*"]
@@ -35,10 +31,6 @@ class Solution(object):
 # simulation, bfs
 class Solution2(object):
     def minimumSeconds(self, land):
-        """
-        :type land: List[List[str]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         lookup1 = [[0 if land[i][j] == "*" else -1 for j in range(len(land[0]))] for i in range(len(land))]
         lookup2 = [[-1]*len(land[0]) for _ in range(len(land))]

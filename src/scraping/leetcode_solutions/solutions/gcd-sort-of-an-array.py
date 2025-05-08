@@ -33,10 +33,6 @@ class UnionFind(object):
 
 class Solution(object):
     def gcdSort(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def modified_sieve_of_eratosthenes(n, lookup, uf): 
             if n < 2:
                 return

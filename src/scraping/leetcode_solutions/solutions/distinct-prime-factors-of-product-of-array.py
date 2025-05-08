@@ -20,10 +20,6 @@ MAX_N = 10**3
 PRIMES = linear_sieve_of_eratosthenes(int(MAX_N**0.5))  
 class Solution(object):
     def distinctPrimeFactors(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = set()
         for x in set(nums): 
             for p in PRIMES:

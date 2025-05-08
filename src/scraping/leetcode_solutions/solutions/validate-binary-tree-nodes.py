@@ -2,12 +2,6 @@
 
 class Solution(object):
     def validateBinaryTreeNodes(self, n, leftChild, rightChild):
-        """
-        :type n: int
-        :type leftChild: List[int]
-        :type rightChild: List[int]
-        :rtype: bool
-        """
         roots = set(range(n)) - set(leftChild) - set(rightChild)
         if len(roots) != 1:
             return False

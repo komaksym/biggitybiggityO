@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def sequentialDigits(self, low, high):
-        """
-        :type low: int
-        :type high: int
-        :rtype: List[int]
-        """
         result = []
         q = collections.deque(list(range(1, 9)))
         while q:

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def rearrangeSticks(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [[0 for _ in range(k+1)] for _ in range(2)]
         dp[1][1] = 1

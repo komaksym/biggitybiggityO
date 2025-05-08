@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def magicalString(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def gen(): 
             for c in 1, 2, 2:
                 yield c

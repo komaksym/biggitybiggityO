@@ -5,10 +5,6 @@ import re
 
 class Solution(object):
     def solveEquation(self, equation):
-        """
-        :type equation: str
-        :rtype: str
-        """
         a, b, side = 0, 0, 1
         for eq, sign, num, isx in re.findall('(=)|([-+]?)(\d*)(x?)', equation):
             if eq:

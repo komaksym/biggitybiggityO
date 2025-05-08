@@ -2,11 +2,6 @@
 
 class Solution(object):
     def splitArray(self, nums, m):
-        """
-        :type nums: List[int]
-        :type m: int
-        :rtype: int
-        """
         def check(nums, m, s):
             cnt, curr_sum = 1, 0
             for num in nums:

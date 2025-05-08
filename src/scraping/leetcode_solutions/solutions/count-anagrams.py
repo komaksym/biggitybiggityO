@@ -6,10 +6,6 @@ import collections
 # combinatorics
 class Solution(object):
     def countAnagrams(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def lazy_init(n):

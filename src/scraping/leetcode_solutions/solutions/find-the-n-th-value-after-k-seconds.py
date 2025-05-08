@@ -3,11 +3,6 @@
 # combinatorics
 class Solution(object):
     def valueAfterKSeconds(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
@@ -26,11 +21,6 @@ class Solution(object):
 # prefix sum
 class Solution2(object):
     def valueAfterKSeconds(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         prefix = [1]*n
         for _ in range(k):

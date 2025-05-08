@@ -6,12 +6,6 @@ import collections
 # dijkstra's algorithm in a complete graph (no heap required)
 class Solution(object):
     def minimumCost(self, start, target, specialRoads):
-        """
-        :type start: List[int]
-        :type target: List[int]
-        :type specialRoads: List[List[int]]
-        :rtype: int
-        """
         start, target = tuple(start), tuple(target)
         adj = collections.defaultdict(list, {target:[]})
         for x1, y1, x2, y2, c in specialRoads:
@@ -39,12 +33,6 @@ import heapq
 # dijkstra's algorithm
 class Solution2(object):
     def minimumCost(self, start, target, specialRoads):
-        """
-        :type start: List[int]
-        :type target: List[int]
-        :type specialRoads: List[List[int]]
-        :rtype: int
-        """
         start, target = tuple(start), tuple(target)
         adj = collections.defaultdict(list, {target:[]})
         for x1, y1, x2, y2, c in specialRoads:

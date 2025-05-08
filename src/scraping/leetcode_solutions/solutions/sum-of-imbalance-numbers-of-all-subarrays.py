@@ -3,10 +3,6 @@
 # hash table, combinatorics
 class Solution(object):
     def sumImbalanceNumbers(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         right = [len(nums)]*len(nums)
         lookup = [len(nums)]*((len(nums)+1)+1)
         for i in reversed(range(len(nums))):
@@ -25,10 +21,6 @@ class Solution(object):
 # hash table, two pointers
 class Solution2(object):
     def sumImbalanceNumbers(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         for right in range(len(nums)):
             lookup = {nums[right]}

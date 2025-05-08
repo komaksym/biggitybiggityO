@@ -3,10 +3,6 @@
 # sort, array
 class Solution(object):
     def countWays(self, ranges):
-        """
-        :type ranges: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
 
         ranges.sort()

@@ -6,10 +6,6 @@ import bisect
 # dp, binary search
 class Solution(object):
     def maximumWeight(self, intervals):
-        """
-        :type intervals: List[List[int]]
-        :rtype: List[int]
-        """
         K = 4
         lookup = {}
         for i, (l, r, w) in enumerate(intervals):
@@ -34,10 +30,6 @@ import bisect
 # dp, binary search
 class Solution2(object):
     def maximumWeight(self, intervals):
-        """
-        :type intervals: List[List[int]]
-        :rtype: List[int]
-        """
         K = 4
         lookup = {}
         for i, (l, r, w) in enumerate(intervals):

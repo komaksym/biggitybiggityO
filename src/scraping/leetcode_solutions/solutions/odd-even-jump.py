@@ -2,10 +2,6 @@
 
 class Solution(object):
     def oddEvenJumps(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
         def findNext(idx):
             result = [None]*len(idx)
             stack = []

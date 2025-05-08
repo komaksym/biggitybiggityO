@@ -3,11 +3,6 @@
 # z-function
 class Solution(object):
     def minimumTimeToInitialState(self, word, k):
-        """
-        :type word: str
-        :type k: int
-        :rtype: int
-        """
         def ceil_divide(a, b):
             return (a+b-1)//b
     
@@ -34,11 +29,6 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def minimumTimeToInitialState(self, word, k):
-        """
-        :type word: str
-        :type k: int
-        :rtype: int
-        """
         def ceil_divide(a, b):
             return (a+b-1)//b
 

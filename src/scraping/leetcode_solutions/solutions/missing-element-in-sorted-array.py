@@ -2,11 +2,6 @@
 
 class Solution(object):
     def missingElement(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def missing_count(nums, x):
             return (nums[x]-nums[0]+1)-(x-0+1)
 

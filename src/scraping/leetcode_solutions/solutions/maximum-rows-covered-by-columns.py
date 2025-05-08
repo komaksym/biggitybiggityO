@@ -4,11 +4,6 @@ from functools import reduce
 # bitmasks, hakmem-175
 class Solution(object):
     def maximumRows(self, matrix, numSelect):
-        """
-        :type matrix: List[List[int]]
-        :type numSelect: int
-        :rtype: int
-        """
         def next_popcount(n): 
             lowest_bit = n&-n
             left_bits = n+lowest_bit

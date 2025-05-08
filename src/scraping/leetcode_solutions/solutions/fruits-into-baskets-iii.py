@@ -3,11 +3,6 @@
 # segment tree, binary search
 class Solution(object):
     def numOfUnplacedFruits(self, fruits, baskets):
-        """
-        :type fruits: List[int]
-        :type baskets: List[int]
-        :rtype: int
-        """
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: 0,

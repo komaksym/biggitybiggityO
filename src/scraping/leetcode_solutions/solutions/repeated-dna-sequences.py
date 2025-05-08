@@ -4,10 +4,6 @@ import collections
 
 class Solution(object):
     def findRepeatedDnaSequences(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
         dict, rolling_hash, res = {}, 0, []
 
         for i in range(len(s)):
@@ -20,10 +16,6 @@ class Solution(object):
         return res
 
     def findRepeatedDnaSequences2(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
         l, r = [], []
         if len(s) < 10: return []
         for i in range(len(s) - 9):

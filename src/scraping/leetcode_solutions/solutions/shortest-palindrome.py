@@ -3,10 +3,6 @@
 # optimized from Solution2
 class Solution(object):
     def shortestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def getPrefix(pattern):
             prefix = [-1] * len(pattern)
             j = -1
@@ -28,10 +24,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def shortestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def getPrefix(pattern):
             prefix = [-1] * len(pattern)
             j = -1
@@ -58,10 +50,6 @@ class Solution2(object):
 # Manacher's Algorithm
 class Solution3(object):
     def shortestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def preProcess(s):
             if not s:
                 return ['^', '$']

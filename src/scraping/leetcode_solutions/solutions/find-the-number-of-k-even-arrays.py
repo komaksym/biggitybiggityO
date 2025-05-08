@@ -6,12 +6,6 @@ import collections
 # stars and bars, combinatorics
 class Solution(object):
     def countOfArrays(self, n, m, k):
-        """
-        :type n: int
-        :type m: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
@@ -44,12 +38,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def countOfArrays(self, n, m, k):
-        """
-        :type n: int
-        :type m: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         even, odd = m//2, (m+1)//2
         dp = [[0]*(k+1) for _ in range(2)]

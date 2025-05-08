@@ -5,12 +5,6 @@
 # math
 class Solution(object):
     def waysToBuyPensPencils(self, total, cost1, cost2):
-        """
-        :type total: int
-        :type cost1: int
-        :type cost2: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -39,12 +33,6 @@ class Solution(object):
 # math
 class Solution2(object):
     def waysToBuyPensPencils(self, total, cost1, cost2):
-        """
-        :type total: int
-        :type cost1: int
-        :type cost2: int
-        :rtype: int
-        """
         if cost1 < cost2:
             cost1, cost2 = cost2, cost1
         return sum((total-i*cost1)//cost2+1 for i in range(total//cost1+1))

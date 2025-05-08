@@ -2,10 +2,6 @@
 
 class Solution(object):
     def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
         for i in reversed(range(len(digits))):
             if digits[i] == 9:
                 digits[i] = 0
@@ -20,10 +16,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
         result = digits[::-1]
         carry = 1
         for i in range(len(result)):

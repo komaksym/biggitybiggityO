@@ -3,11 +3,6 @@
 # dp
 class Solution(object):
     def subarrayGCD(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -30,11 +25,6 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def subarrayGCD(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

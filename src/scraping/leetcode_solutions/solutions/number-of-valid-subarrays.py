@@ -2,10 +2,6 @@
 
 class Solution(object):
     def validSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         s = []
         for num in nums:

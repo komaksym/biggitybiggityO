@@ -3,10 +3,6 @@
 # Rabin-Karp Algorithm
 class Solution(object):
     def longestDecomposition(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
         def compare(text, l, s1, s2):
             for i in range(l):
                 if text[s1+i] != text[s2+i]:

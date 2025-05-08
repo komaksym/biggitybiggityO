@@ -2,12 +2,6 @@
 
 class Solution(object):
     def numMovesStones(self, a, b, c):
-        """
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: List[int]
-        """
         s = [a, b, c]
         s.sort()
         if s[0]+1 == s[1] and s[1]+1 == s[2]:
@@ -18,12 +12,6 @@ class Solution(object):
 # Time:  O(1)
 class Solution2(object):
     def numMovesStones(self, a, b, c):
-        """
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: List[int]
-        """
         stones = [a, b, c]
         stones.sort()
         left, min_moves = 0, float("inf")

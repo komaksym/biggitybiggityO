@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def smallestFromLeaf(self, root):
-        """
-        :type root: TreeNode
-        :rtype: str
-        """
         def dfs(node, candidate, result):
             if not node:
                 return

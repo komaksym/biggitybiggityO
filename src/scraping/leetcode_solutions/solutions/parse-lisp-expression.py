@@ -2,10 +2,6 @@
 
 class Solution(object):
     def evaluate(self, expression):
-        """
-        :type expression: str
-        :rtype: int
-        """
         def getval(lookup, x):
             return lookup.get(x, x)
 

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def longestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def preProcess(s):
             if not s:
                 return ['^', '$']
@@ -42,10 +38,6 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution2(object):
     def longestPalindrome(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def expand(s, left, right):
             while left >= 0 and right < len(s) and s[left] == s[right]:
                 left -= 1

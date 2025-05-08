@@ -5,12 +5,6 @@ import collections
 
 class Solution(object):
     def twoOutOfThree(self, nums1, nums2, nums3):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :type nums3: List[int]
-        :rtype: List[int]
-        """
         K = 2
         cnt = collections.Counter()
         for nums in nums1, nums2, nums3:
@@ -24,12 +18,6 @@ import collections
 
 class Solution2(object):
     def twoOutOfThree(self, nums1, nums2, nums3):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :type nums3: List[int]
-        :rtype: List[int]
-        """
         K = 2
         cnt = collections.Counter()
         result = []

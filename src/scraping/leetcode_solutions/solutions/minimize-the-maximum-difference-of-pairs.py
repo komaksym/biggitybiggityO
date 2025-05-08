@@ -3,11 +3,6 @@
 # sort, binary search, greedy
 class Solution(object):
     def minimizeMax(self, nums, p):
-        """
-        :type nums: List[int]
-        :type p: int
-        :rtype: int
-        """
         def check(x):
             i = cnt = 0
             while i+1 < len(nums) and cnt < p:

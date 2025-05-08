@@ -3,11 +3,6 @@
 # weighted bipartite matching solution
 class Solution(object):
     def maximumANDSum(self, nums, numSlots):
-        """
-        :type nums: List[int]
-        :type numSlots: int
-        :rtype: int
-        """
         def hungarian(a): 
             if not a:
                 return 0, []
@@ -57,11 +52,6 @@ import itertools
 # 3rd-party weighted bipartite matching solution
 class Solution2(object):
     def maximumANDSum(self, nums, numSlots):
-        """
-        :type nums: List[int]
-        :type numSlots: int
-        :rtype: int
-        """
         adj = [[-((nums[i] if i < len(nums) else 0) & (1+x//2)) for x in range(2*numSlots)] for i in range(2*numSlots)]
         return -sum(adj[i][j] for i, j in zip(*hungarian(adj)))    
 
@@ -70,11 +60,6 @@ class Solution2(object):
 # bottom-up dp (hard to implement but faster)
 class Solution3(object):
     def maximumANDSum(self, nums, numSlots):
-        """
-        :type nums: List[int]
-        :type numSlots: int
-        :rtype: int
-        """
         def count(x):
             result = 0
             while x:
@@ -98,11 +83,6 @@ class Solution3(object):
 # memoization, top-down dp (easy to implement but slower)
 class Solution4(object):
     def maximumANDSum(self, nums, numSlots):
-        """
-        :type nums: List[int]
-        :type numSlots: int
-        :rtype: int
-        """
         def memoiztion(i, mask): 
             if lookup[mask] != -1:
                 return lookup[mask]

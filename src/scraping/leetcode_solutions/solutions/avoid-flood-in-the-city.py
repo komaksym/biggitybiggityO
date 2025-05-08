@@ -6,10 +6,6 @@ import heapq
 
 class Solution(object):
     def avoidFlood(self, rains):
-        """
-        :type rains: List[int]
-        :rtype: List[int]
-        """
         lookup = collections.defaultdict(list)
         i = len(rains)-1
         for lake in reversed(rains):

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def waysToDistribute(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [1]*k
         for i in range(1, n):

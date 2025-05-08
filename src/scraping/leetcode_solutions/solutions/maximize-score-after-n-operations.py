@@ -6,10 +6,6 @@ from fractions import gcd
 
 class Solution(object):
     def maxScore(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def popcount(n):
             count = 0
             while n:

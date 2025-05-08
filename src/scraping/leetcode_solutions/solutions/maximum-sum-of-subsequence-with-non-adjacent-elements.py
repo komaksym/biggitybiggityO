@@ -3,11 +3,6 @@
 # segment tree
 class Solution(object):
     def maximumSumSubsequence(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         L0R0, L1R0, L0R1, L1R1 = list(range(4))
         class SegmentTree(object):

@@ -6,12 +6,6 @@ import itertools
 # dp
 class Solution(object):
     def minimumCosts(self, regular, express, expressCost):
-        """
-        :type regular: List[int]
-        :type express: List[int]
-        :type expressCost: int
-        :rtype: List[int]
-        """
         result = []
         dp = [0, expressCost] 
         for r, e in zip(regular, express):

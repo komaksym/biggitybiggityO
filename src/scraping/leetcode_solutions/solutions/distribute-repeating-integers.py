@@ -6,11 +6,6 @@ import random
 
 class Solution(object):
     def canDistribute(self, nums, quantity):
-        """
-        :type nums: List[int]
-        :type quantity: List[int]
-        :rtype: bool
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left

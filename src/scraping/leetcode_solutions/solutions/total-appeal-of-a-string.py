@@ -3,10 +3,6 @@
 # combinatorics
 class Solution(object):
     def appealSum(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = curr = 0
         lookup = [-1]*26
         for i, c in enumerate(s):
@@ -19,10 +15,6 @@ class Solution(object):
 # counting
 class Solution2(object):
     def appealSum(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = cnt = 0
         lookup = [-1]*26
         for i, c in enumerate(s):

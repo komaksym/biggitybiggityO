@@ -11,11 +11,6 @@ class TreeNode(object):
 # bfs solution
 class Solution(object):
     def isValidSequence(self, root, arr):
-        """
-        :type root: TreeNode
-        :type arr: List[int]
-        :rtype: bool
-        """
         q = [root]
         for depth in range(len(arr)):
             new_q = []
@@ -34,11 +29,6 @@ class Solution(object):
 # dfs solution with stack
 class Solution2(object):
     def isValidSequence(self, root, arr):
-        """
-        :type root: TreeNode
-        :type arr: List[int]
-        :rtype: bool
-        """
         s = [(root, 0)]
         while s:
             node, depth = s.pop()
@@ -55,11 +45,6 @@ class Solution2(object):
 # dfs solution with recursion
 class Solution3(object):
     def isValidSequence(self, root, arr):
-        """
-        :type root: TreeNode
-        :type arr: List[int]
-        :rtype: bool
-        """
         def dfs(node, arr, depth):
             if not node or depth == len(arr) or node.val != arr[depth]:
                 return False

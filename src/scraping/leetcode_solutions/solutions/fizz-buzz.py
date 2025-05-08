@@ -2,10 +2,6 @@
 
 class Solution(object):
     def fizzBuzz(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
         result = []
 
         for i in range(1, n+1):
@@ -21,10 +17,6 @@ class Solution(object):
         return result
 
     def fizzBuzz2(self, n):
-        """
-        :type n: int
-        :rtype: List[str]
-        """
         l = [str(x) for x in range(n + 1)]
         l3 = list(range(0, n + 1, 3))
         l5 = list(range(0, n + 1, 5))

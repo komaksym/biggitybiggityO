@@ -8,10 +8,6 @@ class Node(object):
 
 class Solution(object):
     def findRoot(self, tree):
-        """
-        :type tree: List['Node']
-        :rtype: 'Node'
-        """
         root = 0
         for node in tree:
             root ^= id(node)
@@ -25,10 +21,6 @@ class Solution(object):
 
 class Solution2(object):
     def findRoot(self, tree):
-        """
-        :type tree: List['Node']
-        :rtype: 'Node'
-        """
         root = 0
         for node in tree:
             root ^= node.val
@@ -42,10 +34,6 @@ class Solution2(object):
 
 class Solution3(object):
     def findRoot(self, tree):
-        """
-        :type tree: List['Node']
-        :rtype: 'Node'
-        """
         root = 0
         for node in tree:
             root += node.val-sum(child.val for child in node.children)

@@ -6,11 +6,6 @@ import random
 # quick select solution
 class Solution(object):
     def largestSumAfterKNegations(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
         def kthElement(nums, k, compare):
             def PartitionAroundPivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left
@@ -46,11 +41,6 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def largestSumAfterKNegations(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
         A.sort()
         remain = K
         for i in range(K):

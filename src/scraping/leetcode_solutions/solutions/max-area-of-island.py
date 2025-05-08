@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maxAreaOfIsland(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [[-1,  0], [ 1,  0], [ 0,  1], [ 0, -1]]
 
         def dfs(i, j, grid, area):

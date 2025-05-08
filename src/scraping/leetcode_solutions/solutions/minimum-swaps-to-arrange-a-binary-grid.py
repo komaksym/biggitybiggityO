@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def minSwaps(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         result = 0
         for target in reversed(range(1, len(grid))):
             row_idx = len(grid)-1-target

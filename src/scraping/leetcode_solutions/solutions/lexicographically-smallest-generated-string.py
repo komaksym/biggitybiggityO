@@ -6,11 +6,6 @@ import collections
 # kmp, two pointers, sliding window, deque, greedy
 class Solution(object):
     def generateString(self, str1, str2):
-        """
-        :type str1: str
-        :type str2: str
-        :rtype: str
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -70,11 +65,6 @@ import collections
 # z-function, two pointers, sliding window, deque, greedy
 class Solution2(object):
     def generateString(self, str1, str2):
-        """
-        :type str1: str
-        :type str2: str
-        :rtype: str
-        """
         def z_function(s): 
             z = [0]*len(s)
             l, r = 0, 0

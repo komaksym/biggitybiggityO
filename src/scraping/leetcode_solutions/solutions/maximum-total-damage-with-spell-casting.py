@@ -6,10 +6,6 @@ import collections
 # sort, dp, two pointers, sliding window, deque
 class Solution(object):
     def maximumTotalDamage(self, power):
-        """
-        :type power: List[int]
-        :rtype: int
-        """
         DIST = 2
         power.sort()
         dp = collections.deque()

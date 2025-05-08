@@ -2,14 +2,6 @@
 
 class Solution(object):
     def findPaths(self, m, n, N, x, y):
-        """
-        :type m: int
-        :type n: int
-        :type N: int
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
         M = 1000000000 + 7
         dp = [[[0 for _ in range(n)] for _ in range(m)] for _ in range(2)]
         for moves in range(N):

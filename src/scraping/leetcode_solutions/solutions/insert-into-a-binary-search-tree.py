@@ -9,11 +9,6 @@ class TreeNode(object):
 
 class Solution(object):
     def insertIntoBST(self, root, val):
-        """
-        :type root: TreeNode
-        :type val: int
-        :rtype: TreeNode
-        """
         curr, parent = root, None
         while curr:
             parent = curr
@@ -33,11 +28,6 @@ class Solution(object):
 # Time:  O(h)
 class Solution2(object):
     def insertIntoBST(self, root, val):
-        """
-        :type root: TreeNode
-        :type val: int
-        :rtype: TreeNode
-        """
         if not root:
             root = TreeNode(val)
         else:

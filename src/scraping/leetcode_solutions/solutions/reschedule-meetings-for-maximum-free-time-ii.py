@@ -3,12 +3,6 @@
 # array
 class Solution(object):
     def maxFreeTime(self, eventTime, startTime, endTime):
-        """
-        :type eventTime: int
-        :type startTime: List[int]
-        :type endTime: List[int]
-        :rtype: int
-        """
         def topk(a, k): 
             result = [[float("-inf")]*2 for _ in range(k)]
             for x in a:

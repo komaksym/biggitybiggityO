@@ -3,10 +3,6 @@
 # graph, hash table, stack
 class Solution(object):
     def countVisitedNodes(self, edges):
-        """
-        :type edges: List[int]
-        :rtype: List[int]
-        """
         def find_cycles(adj):
             result = [0]*len(adj)
             lookup = [0]*len(adj)

@@ -20,10 +20,6 @@ class Solution(object):
         return res[:numRows]
 
     def generate3(self, numRows):
-        """
-        :type numRows: int
-        :rtype: List[List[int]]
-        """
         if numRows == 0: return []
         if numRows == 1: return [[1]]
         res = [[1], [1, 1]]

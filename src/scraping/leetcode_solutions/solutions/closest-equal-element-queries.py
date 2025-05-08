@@ -3,11 +3,6 @@
 # hash table
 class Solution(object):
     def solveQueries(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[int]
-        :rtype: List[int]
-        """
         dist = [len(nums)]*len(nums)
         left = {}
         for i in range(2*len(nums)-1):

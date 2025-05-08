@@ -2,11 +2,6 @@
 
 class Solution(object):
     def findBestValue(self, arr, target):
-        """
-        :type arr: List[int]
-        :type target: int
-        :rtype: int
-        """
         arr.sort(reverse=True)
         max_arr = arr[0]
         while arr and arr[-1]*len(arr) <= target:
@@ -17,11 +12,6 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def findBestValue(self, arr, target):
-        """
-        :type arr: List[int]
-        :type target: int
-        :rtype: int
-        """
         arr.sort(reverse=True)
         max_arr = arr[0]
         while arr and arr[-1]*len(arr) <= target:
@@ -35,11 +25,6 @@ class Solution2(object):
 # Time:  O(nlogm), m is the max of arr, which may be larger than n
 class Solution3(object):
     def findBestValue(self, arr, target):
-        """
-        :type arr: List[int]
-        :type target: int
-        :rtype: int
-        """
         def total(arr, v):
             result = 0
             for x in arr:

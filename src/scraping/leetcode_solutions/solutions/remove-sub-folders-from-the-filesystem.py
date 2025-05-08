@@ -6,10 +6,6 @@ import itertools
 
 class Solution(object):
     def removeSubfolders(self, folder):
-        """
-        :type folder: List[str]
-        :rtype: List[str]
-        """
         def dfs(curr, path, result):
             if "_end" in curr:
                 result.append("/" + "/".join(path))

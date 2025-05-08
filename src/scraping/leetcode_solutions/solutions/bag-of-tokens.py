@@ -2,11 +2,6 @@
 
 class Solution(object):
     def bagOfTokensScore(self, tokens, P):
-        """
-        :type tokens: List[int]
-        :type P: int
-        :rtype: int
-        """
         tokens.sort()
         result, points = 0, 0
         left, right = 0, len(tokens)-1

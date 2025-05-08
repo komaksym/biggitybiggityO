@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def findRedundantDirectedConnection(self, edges):
-        """
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
         cand1, cand2 = [], []
         parent = {}
         for edge in edges:

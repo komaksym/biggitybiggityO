@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maxNumOfSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
         def find_right_from_left(s, first, last, left):
             right, i = last[ord(s[left])-ord('a')], left
             while i <= right:
@@ -37,10 +33,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def maxNumOfSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
         def find_right_from_left(s, first, last, left):
             right, i = last[ord(s[left])-ord('a')], left
             while i <= right:

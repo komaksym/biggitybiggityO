@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maximumGap(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         if len(nums) < 2:
             return 0
 
@@ -37,11 +33,6 @@ class Solution(object):
 # Time:  O(nlogn)
 class Solution2(object):
     def maximumGap(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-
         if len(nums) < 2:
             return 0
 

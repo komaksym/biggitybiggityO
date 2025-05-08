@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def lcaDeepestLeaves(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
         def lcaDeepestLeavesHelper(root):
             if not root:
                 return 0, None

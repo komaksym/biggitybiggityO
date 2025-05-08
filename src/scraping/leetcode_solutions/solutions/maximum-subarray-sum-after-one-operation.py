@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maxSumAfterOperation(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         prev_with_square = prev_without_square = 0
         result = 0
         for num in nums:

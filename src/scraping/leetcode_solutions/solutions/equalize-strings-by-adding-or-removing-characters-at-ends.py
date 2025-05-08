@@ -3,11 +3,6 @@
 # binary search, rolling hash
 class Solution(object):
     def minOperations(self, initial, target):
-        """
-        :type initial: str
-        :type target: str
-        :rtype: int
-        """
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left+(right-left)//2
@@ -46,11 +41,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def minOperations(self, initial, target):
-        """
-        :type initial: str
-        :type target: str
-        :rtype: int
-        """
         result = 0
         for k in range(2):
             for i in range(k, len(initial)):
@@ -66,11 +56,6 @@ class Solution2(object):
 # dp
 class Solution3(object):
     def minOperations(self, initial, target):
-        """
-        :type initial: str
-        :type target: str
-        :rtype: int
-        """
         if len(initial) < len(target):
             initial, target = target, initial
         result = 0

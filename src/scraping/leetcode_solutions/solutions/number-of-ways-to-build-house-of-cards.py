@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def houseOfCards(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         dp = [0]*(n+1) 
         dp[0] = 1
         for t in range(1, (n+1)//3+1):
@@ -19,10 +15,6 @@ class Solution(object):
 # dp
 class Solution_TLE(object):
     def houseOfCards(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         dp = [[0]*(n+1) for _ in range((n+1)//3+1)] 
         dp[0][0] = 1
         for t in range(1, (n+1)//3+1):

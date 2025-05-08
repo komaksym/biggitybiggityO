@@ -3,10 +3,6 @@
 # binary search
 class Solution(object):
     def minDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left+(right-left)//2

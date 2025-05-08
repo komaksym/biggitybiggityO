@@ -3,10 +3,6 @@
 # constructive algorithms, counting sort, greedy
 class Solution(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
         def inplace_counting_sort(nums, reverse=False): 
             if not nums:
                 return
@@ -40,10 +36,6 @@ class Solution(object):
 # constructive algorithms, sort, greedy
 class Solution2(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
         usageLimits.sort()
         result = curr = 0
         for x in usageLimits:
@@ -56,10 +48,6 @@ class Solution2(object):
 # constructive algorithms, sort, binary search, greedy
 class Solution3(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
         def check(l):
             curr = 0
             for i in range(l):
@@ -84,10 +72,6 @@ class Solution3(object):
 # constructive algorithms, sort, binary search, greedy, prefix sum
 class Solution4(object):
     def maxIncreasingGroups(self, usageLimits):
-        """
-        :type usageLimits: List[int]
-        :rtype: int
-        """
         def check(l):
             return all((i+1)*i//2 <= prefix[len(usageLimits)-(l-i)] for i in range(1, l+1))
 

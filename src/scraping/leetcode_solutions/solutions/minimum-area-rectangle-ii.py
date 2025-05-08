@@ -6,10 +6,6 @@ import itertools
 
 class Solution(object):
     def minAreaFreeRect(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: float
-        """
         points.sort()
         points = [complex(*z) for z in points]
         lookup = collections.defaultdict(list)

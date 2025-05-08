@@ -5,11 +5,6 @@ import bisect
 
 class Solution(object):
     def minAbsDifference(self, nums, goal):
-        """
-        :type nums: List[int]
-        :type goal: int
-        :rtype: int
-        """
         mx, mn = sum(x for x in nums if x > 0), sum(x for x in nums if x < 0)
         if goal > mx:
             return goal-mx

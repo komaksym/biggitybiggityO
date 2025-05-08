@@ -2,12 +2,6 @@
 
 class Solution(object):
     def numOfArrays(self, n, m, k):
-        """
-        :type n: int
-        :type m: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9 + 7
         dp = [[[0]*(k+1) for _ in range(m+1)] for _ in range(2)]
         prefix_dp = [[[0]*(k+1) for _ in range(m+1)] for _ in range(2)]

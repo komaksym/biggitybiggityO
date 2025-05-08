@@ -5,12 +5,6 @@ import math
 
 class Solution(object):
     def visiblePoints(self, points, angle, location):
-        """
-        :type points: List[List[int]]
-        :type angle: int
-        :type location: List[int]
-        :rtype: int
-        """
         arr, extra = [], 0
         for p in points:
             if p == location:

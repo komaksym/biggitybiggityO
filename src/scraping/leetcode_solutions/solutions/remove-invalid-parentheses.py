@@ -2,10 +2,6 @@
 
 class Solution(object):
     def removeInvalidParentheses(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
         def findMinRemove(s):
             left_removed, right_removed = 0, 0
             for c in s:

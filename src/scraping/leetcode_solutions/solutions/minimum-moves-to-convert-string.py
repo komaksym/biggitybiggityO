@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minimumMoves(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = i = 0
         while i < len(s):
             if s[i] == 'X':

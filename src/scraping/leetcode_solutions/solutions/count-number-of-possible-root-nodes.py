@@ -6,12 +6,6 @@ import collections
 # iterative dfs
 class Solution(object):
     def rootCount(self, edges, guesses, k):
-        """
-        :type edges: List[List[int]]
-        :type guesses: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def iter_dfs():
             result = 0
             stk = [(0, -1)]
@@ -56,12 +50,6 @@ import collections
 # dfs
 class Solution2(object):
     def rootCount(self, edges, guesses, k):
-        """
-        :type edges: List[List[int]]
-        :type guesses: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def dfs(u, p):
             cnt = int((p, u) in lookup)
             for v in adj[u]:
@@ -98,12 +86,6 @@ import collections
 # memoization
 class Solution3(object):
     def rootCount(self, edges, guesses, k):
-        """
-        :type edges: List[List[int]]
-        :type guesses: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         cnt = [0]
         def memoization(u, p):
             if (u, p) not in memo:

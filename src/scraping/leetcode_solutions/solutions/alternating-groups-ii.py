@@ -3,11 +3,6 @@
 # sliding window, two pointers
 class Solution(object):
     def numberOfAlternatingGroups(self, colors, k):
-        """
-        :type colors: List[int]
-        :type k: int
-        :rtype: int
-        """
         result = curr = left = 0
         for right in range(len(colors)+k-1):  
             if right-left+1 == k:

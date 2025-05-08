@@ -2,10 +2,6 @@
 
 class Solution(object):
     def uniquePathsIII(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         
         def index(grid, r, c):

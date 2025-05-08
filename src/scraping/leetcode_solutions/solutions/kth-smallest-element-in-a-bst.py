@@ -25,11 +25,6 @@ from itertools import islice
 
 class Solution2(object):
     def kthSmallest(self, root, k):
-        """
-        :type root: TreeNode
-        :type k: int
-        :rtype: int
-        """
         def gen_inorder(root):
             if root:
                 for n in gen_inorder(root.left):

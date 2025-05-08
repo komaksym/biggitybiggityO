@@ -1,31 +1,15 @@
 # Time:  O(logn)
 
-# """
-# This is MountainArray's API interface.
-# You should not implement it, or speculate about its implementation
-# """
-class MountainArray(object):
+# class MountainArray(object):
    def get(self, index):
-       """
-       :type index: int
-       :rtype int
-       """
        pass
 
    def length(self):
-       """
-       :rtype int
-       """
        pass
 
 
 class Solution(object):
     def findInMountainArray(self, target, mountain_arr):
-        """
-        :type target: integer
-        :type mountain_arr: MountainArray
-        :rtype: integer
-        """
         def binarySearch(A, left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def placeWordInCrossword(self, board, word):
-        """
-        :type board: List[List[str]]
-        :type word: str
-        :rtype: bool
-        """
         def get_val(mat, i, j, transposed):
             return mat[i][j] if not transposed else mat[j][i]
 
@@ -36,11 +31,6 @@ class Solution(object):
 # Time:  O(m * n)
 class Solution2(object):
     def placeWordInCrossword(self, board, word):
-        """
-        :type board: List[List[str]]
-        :type word: str
-        :rtype: bool
-        """
         words = [word, word[::-1]]
         for mat in (board, list(zip(*board))):
             for row in mat:

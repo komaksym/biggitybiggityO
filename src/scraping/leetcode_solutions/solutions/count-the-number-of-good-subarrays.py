@@ -6,11 +6,6 @@ import collections
 # two pointers, sliding window
 class Solution(object):
     def countGood(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         result = curr = left = 0
         cnt = collections.Counter()
         for right in range(len(nums)):

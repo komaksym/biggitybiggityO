@@ -2,11 +2,6 @@
 
 class Solution(object):
     def findCircleNum(self, M):
-        """
-        :type M: List[List[int]]
-        :rtype: int
-        """
-
         class UnionFind(object):
             def __init__(self, n):
                 self.set = list(range(n))

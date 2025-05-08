@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def checkWays(self, pairs):
-        """
-        :type pairs: List[List[int]]
-        :rtype: int
-        """
         adj = collections.defaultdict(set)
         for x, y in pairs:
             adj[x].add(y)

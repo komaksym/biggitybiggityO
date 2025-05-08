@@ -3,10 +3,6 @@
 # sort
 class Solution(object):
     def countOperationsToEmptyArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         idxs = list(range(len(nums)))
         idxs.sort(key=lambda x: nums[x])
         return len(idxs)+sum(len(idxs)-(i+1) for i in range(len(idxs)-1) if idxs[i] > idxs[i+1])
@@ -16,10 +12,6 @@ class Solution(object):
 # sort, bit, fenwick tree
 class Solution2(object):
     def countOperationsToEmptyArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         class BIT(object):  # 0-indexed.
             def __init__(self, n):
                 self.__bit = [0]*(n+1)  # Extra one for dummy node.

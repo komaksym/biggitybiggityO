@@ -5,12 +5,6 @@ import collections
 
 class Solution(object):
     def canMouseWin(self, grid, catJump, mouseJump):
-        """
-        :type grid: List[str]
-        :type catJump: int
-        :type mouseJump: int
-        :rtype: bool
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         DRAW, MOUSE, CAT = list(range(3))
         def parents(m, c, t):
@@ -90,12 +84,6 @@ import collections
 
 class Solution2(object):
     def canMouseWin(self, grid, catJump, mouseJump):
-        """
-        :type grid: List[str]
-        :type catJump: int
-        :type mouseJump: int
-        :rtype: bool
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         DRAW, MOUSE, CAT = list(range(3))
         def parents(m, c, t):

@@ -19,10 +19,6 @@ MAX_N = 100
 SPF = linear_sieve_of_eratosthenes(MAX_N)
 class Solution(object):
     def maximumPrimeDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         left = next(i for i in range(len(nums)) if SPF[nums[i]] == nums[i])
         right = next(i for i in reversed(range(len(nums))) if SPF[nums[i]] == nums[i])
         return right-left

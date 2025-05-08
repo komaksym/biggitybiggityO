@@ -2,10 +2,6 @@
 
 class Solution(object):
     def waysToSplit(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
 
         prefix = [0]

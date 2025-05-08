@@ -3,10 +3,6 @@
 # prefix sum, CodeChef Starters 146 - Bouncing Ball (https://www.codechef.com/problems/BOUNCE_BALL)
 class Solution(object):
     def countValidSelections(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         total = sum(nums)
         result = curr = 0
         for x in nums:
@@ -21,10 +17,6 @@ class Solution(object):
 # prefix sum, CodeChef Starters 146 - Bouncing Ball (https://www.codechef.com/problems/BOUNCE_BALL)
 class Solution2(object):
     def countValidSelections(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):
             prefix[i+1] = prefix[i]+nums[i]

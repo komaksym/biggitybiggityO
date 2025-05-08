@@ -2,10 +2,6 @@
 
 class Solution(object):
     def longestUnivaluePath(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
         result = [0]
         def dfs(node):
             if not node:

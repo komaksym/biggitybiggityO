@@ -2,10 +2,6 @@
 
 class Solution(object):
     def depthSumInverse(self, nestedList):
-        """
-        :type nestedList: List[NestedInteger]
-        :rtype: int
-        """
         def depthSumInverseHelper(list, depth, result):
             if len(result) < depth + 1:
                 result.append(0)

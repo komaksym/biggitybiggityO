@@ -2,10 +2,6 @@
 
 class Solution(object):
     def countSmaller(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         def countAndMergeSort(num_idxs, start, end, counts):
             if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
                 return
@@ -36,10 +32,6 @@ class Solution(object):
 # BIT solution.
 class Solution2(object):
     def countSmaller(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         class BIT(object):  # 0-indexed.
             def __init__(self, n):
                 self.__bit = [0]*(n+1)  # Extra one for dummy node.
@@ -72,10 +64,6 @@ class Solution2(object):
 # BST solution.
 class Solution3(object):
     def countSmaller(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         res = [0] * len(nums)
         bst = self.BST()
         for i in reversed(range(len(nums))):

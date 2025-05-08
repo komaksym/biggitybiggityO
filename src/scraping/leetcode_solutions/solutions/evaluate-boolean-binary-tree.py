@@ -8,10 +8,6 @@ class TreeNode(object):
 # dfs with stack
 class Solution(object):
     def evaluateTree(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: bool
-        """
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,
@@ -44,10 +40,6 @@ class Solution(object):
 # dfs with recursion
 class Solution2(object):
     def evaluateTree(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: bool
-        """
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,

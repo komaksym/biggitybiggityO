@@ -5,10 +5,6 @@ import collections
 # freq table
 class Solution(object):
     def minimumOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         even_top = collections.Counter(nums[i] for i in range(0, len(nums), 2)).most_common(2)  # Time: O(nlogk)
         odd_top = collections.Counter(nums[i] for i in range(1, len(nums), 2)).most_common(2)  # Time: O(nlogk)
         if not odd_top or even_top[0][0] != odd_top[0][0]:

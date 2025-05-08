@@ -6,10 +6,6 @@ import itertools
 # hash table
 class Solution(object):
     def numberOfSpecialChars(self, word):
-        """
-        :type word: str
-        :rtype: int
-        """
         lookup1 = [len(word)]*26
         lookup2 = [-1]*26
         for i, x in enumerate(word):

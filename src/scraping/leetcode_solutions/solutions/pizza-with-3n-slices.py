@@ -15,10 +15,6 @@
 # better optimized space
 class Solution(object):
     def maxSizeSlices(self, slices):
-        """
-        :type slices: List[int]
-        :rtype: int
-        """
         def maxSizeSlicesLinear(slices, start, end):
             dp = [[0]*(len(slices)//3+1) for _ in range(2)]
             for i in range(start, end):
@@ -33,10 +29,6 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution2(object):
     def maxSizeSlices(self, slices):
-        """
-        :type slices: List[int]
-        :rtype: int
-        """
         def maxSizeSlicesLinear(slices, start, end):
             dp = [[0]*(len(slices)//3+1) for _ in range(3)]
             for i in range(start, end):

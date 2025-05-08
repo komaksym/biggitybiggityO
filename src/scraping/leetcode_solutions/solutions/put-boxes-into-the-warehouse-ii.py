@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxBoxesInWarehouse(self, boxes, warehouse):
-        """
-        :type boxes: List[int]
-        :type warehouse: List[int]
-        :rtype: int
-        """
         boxes.sort(reverse=True)
         left, right = 0, len(warehouse)-1
         for h in boxes:

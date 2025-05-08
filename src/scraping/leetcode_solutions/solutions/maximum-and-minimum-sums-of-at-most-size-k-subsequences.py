@@ -16,11 +16,6 @@ def nCr(n, k):
 
 class Solution(object):
     def minMaxSums(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         nums.sort()
         result = 0
@@ -35,11 +30,6 @@ class Solution(object):
 # sort, combinatorics
 class Solution2(object):
     def minMaxSums(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         nums.sort()
         result = 0

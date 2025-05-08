@@ -19,11 +19,6 @@ class BIT(object):  # Fenwick Tree, 1-indexed
 
 class Solution(object):
     def processQueries(self, queries, m):
-        """
-        :type queries: List[int]
-        :type m: int
-        :rtype: List[int]
-        """
         bit = BIT(2*m+1)
         lookup = {}
         for i in range(1, m+1):

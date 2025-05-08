@@ -4,11 +4,6 @@ from bisect import bisect_left, insort
 
 class Solution(object):
     def maxSumSubmatrix(self, matrix, k):
-        """
-        :type matrix: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         if not matrix:
             return 0
 
@@ -36,11 +31,6 @@ class Solution(object):
 # Time:  O(min(m, n)^2 * max(m, n) * log(max(m, n))) ~ O(min(m, n)^2 * max(m, n)^2)
 class Solution_TLE(object):
     def maxSumSubmatrix(self, matrix, k):
-        """
-        :type matrix: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         class BST(object):  # not avl, rbtree
             def __init__(self, val):
                 self.val = val

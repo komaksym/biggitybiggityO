@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minSwapsCouples(self, row):
-        """
-        :type row: List[int]
-        :rtype: int
-        """
         N = len(row)//2
         couples = [[] for _ in range(N)]
         for seat, num in enumerate(row):

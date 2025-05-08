@@ -2,11 +2,6 @@
 
 class Solution(object):
     def crackSafe(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
         M = k**(n-1)
         P = [q*k+i for i in range(k) for q in range(M)]  # rotate: i*k^(n-1) + q => q*k + i
         result = [str(k-1)]*(n-1)
@@ -21,11 +16,6 @@ class Solution(object):
 # Time:  O(k^n)
 class Solution2(object):
     def crackSafe(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
         total = k**n
         M = total//k
         unique_rolling_hash = 0
@@ -45,11 +35,6 @@ class Solution2(object):
 # Time:  O(k^n)
 class Solution3(object):
     def crackSafe(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
         M = k**(n-1)
         def dfs(k, unique_rolling_hash, lookup, result):
             for i in reversed(range(k)):  # preorder like traversal relative to initial result to avoid getting stuck, i.e. don't use 0 until there is no other choice
@@ -70,11 +55,6 @@ class Solution3(object):
 # Time:  O(n * k^n)
 class Solution4(object):
     def crackSafe(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
         result = [str(k-1)]*(n-1)
         lookup = set()
         total = k**n
@@ -92,11 +72,6 @@ class Solution4(object):
 # Time:  O(n * k^n)
 class Solution5(object):
     def crackSafe(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
         def dfs(k, node, lookup, result):
             for i in range(k):  # preorder like traversal relative to initial result to avoid getting stuck, i.e. don't use k-1 until there is no other choice
                 neighbor = node + str(i)

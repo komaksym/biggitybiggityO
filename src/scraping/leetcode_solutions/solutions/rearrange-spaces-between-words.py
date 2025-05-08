@@ -3,10 +3,6 @@
 # inplace solution
 class Solution(object):
     def reorderSpaces(self, text):
-        """
-        :type text: str
-        :rtype: str
-        """
         text = list(text)
         space_count, word_count = 0, 0
         for i, c in enumerate(text):

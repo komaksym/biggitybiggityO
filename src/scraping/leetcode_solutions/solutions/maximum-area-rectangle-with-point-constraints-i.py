@@ -3,10 +3,6 @@
 # sort, fenwick tree, hash table
 class Solution(object):
     def maxRectangleArea(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         class BIT(object):  # 0-indexed.
             def __init__(self, n):
                 self.__bit = [0]*(n+1)  # Extra one for dummy node.
@@ -47,10 +43,6 @@ class Solution(object):
 # sort, brute force
 class Solution2(object):
     def maxRectangleArea(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         result = -1
         points.sort()
         for i in range(len(points)-3):

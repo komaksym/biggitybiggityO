@@ -3,11 +3,6 @@
 # greedy
 class Solution(object):
     def answerString(self, word, numFriends):
-        """
-        :type word: str
-        :type numFriends: int
-        :rtype: str
-        """
         if numFriends == 1:
             return word
         idx = l = 0
@@ -30,11 +25,6 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def answerString(self, word, numFriends):
-        """
-        :type word: str
-        :type numFriends: int
-        :rtype: str
-        """
         if numFriends == 1:
             return word
         m = len(word)-(numFriends-1)

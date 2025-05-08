@@ -2,12 +2,6 @@
 
 class Solution(object):
     def findLexSmallestString(self, s, a, b):
-        """
-        :type s: str
-        :type a: int
-        :type b: int
-        :rtype: str
-        """
         def less(s, i, j):
             for k in range(len(s)):
                 if s[(k+i)%len(s)] != s[(k+j)%len(s)]:
@@ -45,12 +39,6 @@ import collections
 
 class Solution2(object):
     def findLexSmallestString(self, s, a, b):
-        """
-        :type s: str
-        :type a: int
-        :type b: int
-        :rtype: str
-        """
         q, lookup, result = collections.deque([s]), {s}, s
         while q:
             curr = q.popleft()

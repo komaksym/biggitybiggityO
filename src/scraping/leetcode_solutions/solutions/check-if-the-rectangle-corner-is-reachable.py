@@ -3,12 +3,6 @@
 # iterative dfs
 class Solution(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -43,12 +37,6 @@ class Solution(object):
 # bfs
 class Solution2(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -85,12 +73,6 @@ class Solution2(object):
 # iterative dfs
 class Solution3(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -131,12 +113,6 @@ class Solution3(object):
 # bfs
 class Solution4(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 
@@ -203,12 +179,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 
 class Solution5(object):
     def canReachCorner(self, X, Y, circles):
-        """
-        :type X: int
-        :type Y: int
-        :type circles: List[List[int]]
-        :rtype: bool
-        """
         def check(x1, y1, r1, x2, y2, r2):
             return (x1-x2)**2+(y1-y2)**2 <= (r1+r2)**2
 

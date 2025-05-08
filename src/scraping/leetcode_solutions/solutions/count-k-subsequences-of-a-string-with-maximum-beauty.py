@@ -8,11 +8,6 @@ from functools import reduce
 # greedy, quick select, combinatorics
 class Solution(object):
     def countKSubsequencesWithMaxBeauty(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):

@@ -3,10 +3,6 @@
 # mono stack, prefix sum, optimized from solution2
 class Solution(object):
     def totalStrength(self, strength):
-        """
-        :type strength: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         curr = 0
         prefix = [0]*(len(strength)+1)
@@ -26,10 +22,6 @@ class Solution(object):
 # mono stack, prefix sum
 class Solution2(object):
     def totalStrength(self, strength):
-        """
-        :type strength: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         prefix, prefix2 = [0]*(len(strength)+1), [0]*(len(strength)+1)
         for i in range(len(strength)):

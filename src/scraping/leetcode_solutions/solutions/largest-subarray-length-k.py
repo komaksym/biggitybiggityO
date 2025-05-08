@@ -2,11 +2,6 @@
 
 class Solution(object):
     def largestSubarray(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         left, right, l = 0, 1, 0
         while right+k-1 < len(nums) and right+l < len(nums):
             if nums[left+l] == nums[right+l]:

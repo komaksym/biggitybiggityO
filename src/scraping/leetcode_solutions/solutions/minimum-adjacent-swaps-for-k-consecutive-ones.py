@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minMoves(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def moves(i, j):
             return prefix[j+1]-prefix[i]
 

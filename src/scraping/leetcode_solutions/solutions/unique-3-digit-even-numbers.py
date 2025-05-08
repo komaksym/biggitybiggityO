@@ -3,10 +3,6 @@
 # freq table, combinatorics
 class Solution(object):
     def totalNumbers(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: int
-        """
         cnt = [0]*10
         for x in digits:
             cnt[x] += 1

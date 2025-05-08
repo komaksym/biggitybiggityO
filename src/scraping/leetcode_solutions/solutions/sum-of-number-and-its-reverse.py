@@ -3,10 +3,6 @@
 # backtracking
 class Solution(object):
     def sumOfNumberAndReverse(self, num):
-        """
-        :type num: int
-        :rtype: bool
-        """
         def backtracking(num, chosen):
             if num == 0:
                 return True
@@ -36,10 +32,6 @@ class Solution(object):
 # brute force
 class Solution2(object):
     def sumOfNumberAndReverse(self, num):
-        """
-        :type num: int
-        :rtype: bool
-        """
         def reverse(n):
             result = 0
             while n:
@@ -54,8 +46,4 @@ class Solution2(object):
 # brute force
 class Solution3(object):
     def sumOfNumberAndReverse(self, num):
-        """
-        :type num: int
-        :rtype: bool
-        """
         return any(x+int(str(x)[::-1]) == num for x in range(num//2, num+1))

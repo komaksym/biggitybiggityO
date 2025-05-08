@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minPatches(self, nums, n):
-        """
-        :type nums: List[int]
-        :type n: int
-        :rtype: int
-        """
         result = reachable = 0
         for x in nums:
             if x > n:
@@ -24,11 +19,6 @@ class Solution(object):
 # Time:  O(s + logn), s is the number of elements in the array
 class Solution2(object):
     def minPatches(self, nums, n):
-        """
-        :type nums: List[int]
-        :type n: int
-        :rtype: int
-        """
         result = reachable = 0
         for x in nums:
             while not reachable >= x-1:
@@ -48,11 +38,6 @@ class Solution2(object):
 # Time:  O(s + logn), s is the number of elements in the array
 class Solution3(object):
     def minPatches(self, nums, n):
-        """
-        :type nums: List[int]
-        :type n: int
-        :rtype: int
-        """
         patch, miss, i = 0, 1, 0
         while miss <= n:
             if i < len(nums) and nums[i] <= miss:

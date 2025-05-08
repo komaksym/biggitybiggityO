@@ -2,10 +2,6 @@
 
 class Solution(object):
     def isDecomposable(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         if len(s)%3 != 2:
             return False
         for left in range(0, len(s), 3):
@@ -20,10 +16,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def isDecomposable(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         found, i = False, 0
         while i < len(s):
             l = 1
@@ -41,10 +33,6 @@ class Solution2(object):
         return found
 class Solution3(object):
     def isDecomposable(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         found, l = False, 0
         for i, c in enumerate(s):
             if not l or c != s[i-1]:

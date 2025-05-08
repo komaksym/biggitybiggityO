@@ -70,11 +70,6 @@ class AhoTrie(object):
 # ac automata solution
 class Solution(object):
     def numOfStrings(self, patterns, word):
-        """
-        :type patterns: List[str]
-        :type word: str
-        :rtype: int
-        """
         trie = AhoTrie(patterns)
         return sum(len(trie.step(c)) for c in word)
 
@@ -85,11 +80,6 @@ class Solution(object):
 # kmp solution
 class Solution2(object):
     def numOfStrings(self, patterns, word):
-        """
-        :type patterns: List[str]
-        :type word: str
-        :rtype: int
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

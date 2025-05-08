@@ -3,10 +3,6 @@
 # string
 class Solution(object):
     def largestGoodInteger(self, num):
-        """
-        :type num: str
-        :rtype: str
-        """
         result = ''
         cnt = 0
         for i, x in enumerate(num):
@@ -23,8 +19,4 @@ class Solution(object):
 # string
 class Solution2(object):
     def largestGoodInteger(self, num):
-        """
-        :type num: str
-        :rtype: str
-        """
         return max(num[i] if num[i] == num[i+1] == num[i+2] else '' for i in range(len(num)-2))*3

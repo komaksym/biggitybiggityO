@@ -3,11 +3,6 @@
 # line sweep
 class Solution(object):
     def isZeroArray(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: bool
-        """
         events = [0]*(len(nums)+1)
         for l, r in queries:
             events[l] += 1

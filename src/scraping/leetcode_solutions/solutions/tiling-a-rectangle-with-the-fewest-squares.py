@@ -2,11 +2,6 @@
 
 class Solution(object):
     def tilingRectangle(self, n, m):
-        """
-        :type n: int
-        :type m: int
-        :rtype: int
-        """
         def find_next(board):
             for i in range(len(board)):
                 for j in range(len(board[0])):

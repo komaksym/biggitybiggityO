@@ -3,11 +3,6 @@
 
 class Solution(object):
     def pyramidTransition(self, bottom, allowed):
-        """
-        :type bottom: str
-        :type allowed: List[str]
-        :rtype: bool
-        """
         def pyramidTransitionHelper(bottom, edges, lookup):
             def dfs(bottom, edges, new_bottom, idx, lookup):
                 if idx == len(bottom)-1:

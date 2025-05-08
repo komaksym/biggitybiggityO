@@ -5,10 +5,6 @@ import random
 
 class Solution(object):
     def minDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def nth_element(nums, left, n, right, compare=lambda a, b: a < b):
             def partition_around_pivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left

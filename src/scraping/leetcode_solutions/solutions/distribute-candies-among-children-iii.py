@@ -3,11 +3,6 @@
 # stars and bars, combinatorics, principle of inclusion and exclusion
 class Solution(object):
     def distributeCandies(self, n, limit):
-        """
-        :type n: int
-        :type limit: int
-        :rtype: int
-        """
         def nCr(n, r):  # Time: O(n), Space: O(1)
             if not 0 <= r <= n:
                 return 0

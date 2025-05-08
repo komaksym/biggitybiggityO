@@ -3,11 +3,6 @@
 # hash table, optimized from solution2
 class Solution(object):
     def arrayChange(self, nums, operations):
-        """
-        :type nums: List[int]
-        :type operations: List[List[int]]
-        :rtype: List[int]
-        """
         lookup = {x:i for i, x in enumerate(nums)}
         for x, y in operations:
             lookup[y] = lookup.pop(x)
@@ -20,11 +15,6 @@ class Solution(object):
 # hash table
 class Solution2(object):
     def arrayChange(self, nums, operations):
-        """
-        :type nums: List[int]
-        :type operations: List[List[int]]
-        :rtype: List[int]
-        """
         lookup = {x:i for i, x in enumerate(nums)}
         for x, y in operations:
             nums[lookup[x]] = y

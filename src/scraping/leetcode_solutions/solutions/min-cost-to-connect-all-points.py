@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minCostConnectPoints(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         result, u = 0, 0  # we can start from any node as u
         dist = [float("inf")]*len(points)
         lookup = set()
@@ -55,10 +51,6 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 
 class Solution2(object):
     def minCostConnectPoints(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         edges = []
         for u in range(len(points)):
             for v in range(u+1, len(points)):

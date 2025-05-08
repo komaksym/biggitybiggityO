@@ -3,10 +3,6 @@
 # forward solution
 class Solution(object):
     def freqAlphabets(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def alpha(num):
             return chr(ord('a') + int(num)-1)
 
@@ -26,10 +22,6 @@ class Solution(object):
 # backward solution
 class Solution2(object):
     def freqAlphabets(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def alpha(num):
             return chr(ord('a') + int(num)-1)
 
@@ -51,10 +43,6 @@ import re
 # regex solution
 class Solution3(object):
     def freqAlphabets(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def alpha(num):
             return chr(ord('a') + int(num)-1)
 

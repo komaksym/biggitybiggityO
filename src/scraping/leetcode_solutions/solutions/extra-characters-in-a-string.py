@@ -6,11 +6,6 @@ import collections
 # trie, dp
 class Solution(object):
     def minExtraChar(self, s, dictionary):
-        """
-        :type s: str
-        :type dictionary: List[str]
-        :rtype: int
-        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         for word in dictionary:

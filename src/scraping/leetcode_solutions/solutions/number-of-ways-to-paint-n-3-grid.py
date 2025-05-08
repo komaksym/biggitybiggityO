@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def numOfWays(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))]
                        for i in range(len(A))]
@@ -33,10 +29,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def numOfWays(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9 + 7
         aba, abc = 6, 6
         for _ in range(n-1):

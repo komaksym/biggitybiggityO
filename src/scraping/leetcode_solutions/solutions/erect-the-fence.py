@@ -4,10 +4,6 @@
 # Template: https://en.wikibooks.org/wiki/Algorithm_Implementation/Geometry/Convex_hull/Monotone_chain#Python
 class Solution(object):
     def outerTrees(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: List[List[int]]
-        """
         points = sorted(set(tuple(x) for x in points))
 
         if len(points) <= 1:

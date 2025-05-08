@@ -5,10 +5,6 @@ import heapq
 
 class Solution(object):
     def connectSticks(self, sticks):
-        """
-        :type sticks: List[int]
-        :rtype: int
-        """
         heapq.heapify(sticks)
         result = 0
         while len(sticks) > 1:

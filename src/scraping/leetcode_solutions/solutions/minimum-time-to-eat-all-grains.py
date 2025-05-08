@@ -3,11 +3,6 @@
 # binary search, greedy
 class Solution(object):
     def minimumTime(self, hens, grains):
-        """
-        :type hens: List[int]
-        :type grains: List[int]
-        :rtype: int
-        """
         def check(x):
             i = 0
             for h in hens:

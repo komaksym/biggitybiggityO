@@ -2,10 +2,6 @@
 
 class Solution(object):
     def interpret(self, command):
-        """
-        :type command: str
-        :rtype: str
-        """
         result, i = [], 0
         while i < len(command):
             if command[i] == 'G':

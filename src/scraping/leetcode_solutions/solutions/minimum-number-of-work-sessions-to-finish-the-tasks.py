@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minSessions(self, tasks, sessionTime):
-        """
-        :type tasks: List[int]
-        :type sessionTime: int
-        :rtype: int
-        """
         dp = [float("inf") for _ in range(1<<len(tasks))]
         dp[0] = 0
         for mask in range(len(dp)-1):
@@ -25,11 +20,6 @@ class Solution(object):
 # Time:  O(n * 2^n)
 class Solution2(object):
     def minSessions(self, tasks, sessionTime):
-        """
-        :type tasks: List[int]
-        :type sessionTime: int
-        :rtype: int
-        """
         dp = [[float("inf")]*2 for _ in range(1<<len(tasks))]
         dp[0] = [0, sessionTime]
         for mask in range(len(dp)-1):

@@ -3,10 +3,6 @@
 # mono stack, dp
 class Solution(object):
     def totalSteps(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         dp = [0]*len(nums)  # dp[i]: number of rounds for nums[i] to remove all the covered elements
         stk = []
         for i in reversed(range(len(nums))):
@@ -20,10 +16,6 @@ class Solution(object):
 # mono stack, dp
 class Solution2(object):
     def totalSteps(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         dp = [0]*len(nums)  # dp[i]: number of rounds for nums[i] to be removed
         stk = []
         for i in range(len(nums)):

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def kthSmallestSubarraySum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def check(nums, k, x):
             cnt = curr = left = 0
             for right in range(len(nums)):

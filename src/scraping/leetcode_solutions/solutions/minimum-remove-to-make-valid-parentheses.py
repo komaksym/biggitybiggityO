@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minRemoveToMakeValid(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         result = list(s)
         count = 0
         for i, v in enumerate(result):

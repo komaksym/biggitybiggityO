@@ -3,11 +3,6 @@
 # dp
 class Solution(object):
     def maxNonDecreasingLength(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         result = 1
         dp = [1]*2
         for i in range(len(nums1)-1):

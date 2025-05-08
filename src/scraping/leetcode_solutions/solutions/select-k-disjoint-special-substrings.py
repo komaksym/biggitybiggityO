@@ -3,11 +3,6 @@
 # hash table, sort, greedy
 class Solution(object):
     def maxSubstringLength(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: bool
-        """
         def erase_overlap_intervals(intervals):
             intervals.sort(key=lambda interval: interval[1])
             result, right = 0, float("-inf")
@@ -42,11 +37,6 @@ class Solution(object):
 # hash table, sort, greedy
 class Solution2(object):
     def maxSubstringLength(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: bool
-        """
         def erase_overlap_intervals(intervals):
             intervals.sort(key=lambda interval: interval[1])
             result, right = 0, float("-inf")

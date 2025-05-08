@@ -3,11 +3,6 @@
 # number theory, dp, prefix sum
 class Solution(object):
     def maxGcdSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -35,11 +30,6 @@ class Solution(object):
 # number theory, dp, prefix sum
 class Solution2(object):
     def maxGcdSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -69,11 +59,6 @@ class Solution2(object):
 # number theory, binary search, rmq, sparse table, prefix sum
 class Solution3_TLE(object):
     def maxGcdSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

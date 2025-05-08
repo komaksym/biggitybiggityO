@@ -3,11 +3,6 @@
 # sparse table
 class Solution(object):
     def maxActiveSectionsAfterTrade(self, s, queries):
-        """
-        :type s: str
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn

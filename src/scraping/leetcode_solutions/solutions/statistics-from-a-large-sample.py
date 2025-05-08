@@ -5,10 +5,6 @@ import bisect
 
 class Solution(object):
     def sampleStats(self, count):
-        """
-        :type count: List[int]
-        :rtype: List[float]
-        """
         n = sum(count)
         mi = next(i for i in range(len(count)) if count[i]) * 1.0
         ma = next(i for i in reversed(range(len(count))) if count[i]) * 1.0

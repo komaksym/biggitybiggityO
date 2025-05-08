@@ -8,10 +8,6 @@ class TreeNode(object):
 
 class Solution(object):
     def canMerge(self, trees):
-        """
-        :type trees: List[TreeNode]
-        :rtype: TreeNode
-        """
         def find_leaves_and_roots(trees, leaf_vals_set, val_to_root):
             for root in trees:
                 val_to_root[root.val] = root

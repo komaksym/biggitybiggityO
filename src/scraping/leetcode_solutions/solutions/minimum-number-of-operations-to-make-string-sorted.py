@@ -5,10 +5,6 @@ inv = [0, 1]
 
 class Solution(object):
     def makeStringSorted(self, s):  # count of prev_permutation
-        """
-        :type s: str
-        :rtype: int
-        """
         def inverse(n, m):
             i = len(inv)
             while len(inv) <= n:  # lazy initialization

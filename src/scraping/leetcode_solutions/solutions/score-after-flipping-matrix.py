@@ -3,10 +3,6 @@
 
 class Solution(object):
     def matrixScore(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: int
-        """
         R, C = len(A), len(A[0])
         result = 0
         for c in range(C):

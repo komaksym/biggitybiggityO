@@ -3,11 +3,6 @@
 # two pointers
 class Solution(object):
     def canChange(self, start, target):
-        """
-        :type start: str
-        :type target: str
-        :rtype: bool
-        """
         i = j = 0
         while True:
             while i < len(start) and start[i] == '_':

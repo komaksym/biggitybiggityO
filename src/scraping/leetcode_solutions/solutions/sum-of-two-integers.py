@@ -2,11 +2,6 @@
 
 class Solution(object):
     def getSum(self, a, b):
-        """
-        :type a: int
-        :type b: int
-        :rtype: int
-        """
         bit_length = 32
         neg_bit, mask = (1 << bit_length) >> 1, ~(~0 << bit_length)
 
@@ -23,11 +18,6 @@ class Solution(object):
         return a
 
     def getSum2(self, a, b):
-        """
-        :type a: int
-        :type b: int
-        :rtype: int
-        """
         MAX = 0x7FFFFFFF
         MIN = 0x80000000
         mask = 0xFFFFFFFF

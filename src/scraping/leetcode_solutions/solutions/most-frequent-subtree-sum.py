@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def findFrequentTreeSum(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
         def countSubtreeSumHelper(root, counts):
             if not root:
                 return 0

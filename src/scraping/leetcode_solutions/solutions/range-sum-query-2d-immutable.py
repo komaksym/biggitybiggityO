@@ -3,10 +3,6 @@
 
 class NumMatrix(object):
     def __init__(self, matrix):
-        """
-        initialize your data structure here.
-        :type matrix: List[List[int]]
-        """
         if not matrix:
             return
 
@@ -18,14 +14,6 @@ class NumMatrix(object):
                                     self.__sums[i-1][j-1] + matrix[i-1][j-1]
 
     def sumRegion(self, row1, col1, row2, col2):
-        """
-        sum of elements matrix[(row1,col1)..(row2,col2)], inclusive.
-        :type row1: int
-        :type col1: int
-        :type row2: int
-        :type col2: int
-        :rtype: int
-        """
         return self.__sums[row2+1][col2+1] - self.__sums[row2+1][col1] - \
                self.__sums[row1][col2+1] + self.__sums[row1][col1]
 

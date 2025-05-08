@@ -45,18 +45,9 @@ class LinkedList(object):
 class MyHashMap(object):
 
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
         self.__data = [LinkedList() for _ in range(10000)]
 
     def put(self, key, value):
-        """
-        value will always be positive.
-        :type key: int
-        :type value: int
-        :rtype: void
-        """
         l = self.__data[key % len(self.__data)]
         node = l.find(key)
         if node:
@@ -65,11 +56,6 @@ class MyHashMap(object):
             l.insert(ListNode(key, value))
 
     def get(self, key):
-        """
-        Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
-        :type key: int
-        :rtype: int
-        """
         l = self.__data[key % len(self.__data)]
         node = l.find(key)
         if node:
@@ -78,11 +64,6 @@ class MyHashMap(object):
             return -1
 
     def remove(self, key):
-        """
-        Removes the mapping of the specified value key if this map contains a mapping for the key
-        :type key: int
-        :rtype: void
-        """
         l = self.__data[key % len(self.__data)]
         node = l.find(key)
         if node:

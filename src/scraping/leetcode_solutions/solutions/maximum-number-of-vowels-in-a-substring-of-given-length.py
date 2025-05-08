@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxVowels(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         VOWELS = set("aeiou")
         result = curr = 0
         for i, c in enumerate(s):

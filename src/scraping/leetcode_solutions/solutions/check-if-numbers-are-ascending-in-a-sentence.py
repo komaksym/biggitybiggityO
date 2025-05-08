@@ -2,10 +2,6 @@
 
 class Solution(object):
     def areNumbersAscending(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         prev = curr = -1
         for i, c in enumerate(s):
             if c.isdigit():
@@ -22,9 +18,5 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def areNumbersAscending(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         nums = [int(x) for x in s.split() if x.isdigit()]
         return all(nums[i] < nums[i+1] for i in range(len(nums)-1))

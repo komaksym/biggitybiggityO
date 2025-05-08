@@ -6,11 +6,6 @@ import collections
 # freq table
 class Solution(object):
     def countPairs(self, coordinates, k):
-        """
-        :type coordinates: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         result = 0
         cnt = collections.Counter()
         for x, y in coordinates:

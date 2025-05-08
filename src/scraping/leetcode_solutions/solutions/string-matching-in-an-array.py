@@ -70,10 +70,6 @@ class AhoTrie(object):
     
 class Solution(object):
     def stringMatching(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
         trie = AhoTrie(words)
         lookup = set()
         for i in range(len(words)):
@@ -88,10 +84,6 @@ class Solution(object):
 # Time:  O(n^2 * l), n is the number of strings
 class Solution2(object):
     def stringMatching(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -131,10 +123,6 @@ class Solution2(object):
 # Time:  O(n^2 * l^2), n is the number of strings
 class Solution3(object):
     def stringMatching(self, words):
-        """
-        :type words: List[str]
-        :rtype: List[str]
-        """
         result = []
         for i, pattern in enumerate(words):
             for j, text in enumerate(words):

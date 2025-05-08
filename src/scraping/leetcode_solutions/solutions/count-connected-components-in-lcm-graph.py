@@ -29,11 +29,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 
 class Solution(object):
     def countComponents(self, nums, threshold):
-        """
-        :type nums: List[int]
-        :type threshold: int
-        :rtype: int
-        """
         uf = UnionFind(threshold)
         lookup = [-1]*threshold
         result = len(nums)
@@ -55,11 +50,6 @@ class Solution(object):
 # union find, number theory
 class Solution2(object):
     def countComponents(self, nums, threshold):
-        """
-        :type nums: List[int]
-        :type threshold: int
-        :rtype: int
-        """
         uf = UnionFind(threshold)
         lookup = [-1]*threshold
         for x in nums:

@@ -5,12 +5,6 @@ import collections
 
 class Solution(object):
     def maxScoreWords(self, words, letters, score):
-        """
-        :type words: List[str]
-        :type letters: List[str]
-        :type score: List[int]
-        :rtype: int
-        """
         def backtracking(words, word_scores, word_counts, curr, curr_score, letter_count, result):
             result[0] = max(result[0], curr_score) 
             for i in range(curr, len(words)):

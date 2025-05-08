@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minSwap(self, A, B):
-        """
-        :type A: List[int]
-        :type B: List[int]
-        :rtype: int
-        """
         dp_no_swap, dp_swap = [0]*2, [1]*2
         for i in range(1, len(A)):
             dp_no_swap[i%2], dp_swap[i%2] = float("inf"), float("inf")

@@ -4,11 +4,6 @@
 # DP solution.
 class Solution(object):
     def numberOfPatterns(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
         def merge(used, i):
             return used | (1 << i)
 
@@ -64,11 +59,6 @@ class Solution(object):
 # DP solution.
 class Solution2(object):
     def numberOfPatterns(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
         def merge(used, i):
             return used | (1 << i)
 
@@ -127,11 +117,6 @@ class Solution2(object):
 # Backtracking solution. (TLE)
 class Solution_TLE(object):
     def numberOfPatterns(self, m, n):
-        """
-        :type m: int
-        :type n: int
-        :rtype: int
-        """
         def merge(used, i):
             return used | (1 << i)
 

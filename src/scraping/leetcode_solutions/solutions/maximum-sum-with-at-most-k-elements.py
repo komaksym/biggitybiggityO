@@ -6,12 +6,6 @@ import random
 # greedy, quick select
 class Solution(object):
     def maxSum(self, grid, limits, k):
-        """
-        :type grid: List[List[int]]
-        :type limits: List[int]
-        :type k: int
-        :rtype: int
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left

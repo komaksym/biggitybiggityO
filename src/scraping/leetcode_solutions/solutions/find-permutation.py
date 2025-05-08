@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findPermutation(self, s):
-        """
-        :type s: str
-        :rtype: List[int]
-        """
         result = []
         for i in range(len(s)+1):
             if i == len(s) or s[i] == 'I':

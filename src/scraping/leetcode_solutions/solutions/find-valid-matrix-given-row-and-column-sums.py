@@ -3,11 +3,6 @@
 # optimized from Solution2 since we can find next i, j pair without nested loops
 class Solution(object):
     def restoreMatrix(self, rowSum, colSum):
-        """
-        :type rowSum: List[int]
-        :type colSum: List[int]
-        :rtype: List[List[int]]
-        """
         matrix = [[0]*len(colSum) for _ in range(len(rowSum))]
         i = j = 0
         while i < len(matrix) and j < len(matrix[0]):
@@ -24,11 +19,6 @@ class Solution(object):
 # Time:  O(m * n)
 class Solution2(object):
     def restoreMatrix(self, rowSum, colSum):
-        """
-        :type rowSum: List[int]
-        :type colSum: List[int]
-        :rtype: List[List[int]]
-        """
         matrix = [[0]*len(colSum) for _ in range(len(rowSum))]
         for i in range(len(matrix)):
             for j in range(len(matrix[i])):

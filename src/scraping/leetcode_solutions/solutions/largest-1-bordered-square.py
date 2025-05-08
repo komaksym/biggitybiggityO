@@ -2,10 +2,6 @@
 
 class Solution(object):
     def largest1BorderedSquare(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         top, left = [a[:] for a in grid], [a[:] for a in grid]
         for i in range(len(grid)):
             for j in range(len(grid[0])):

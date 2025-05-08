@@ -3,10 +3,6 @@
 # one pass solution
 class Solution(object):
     def average(self, salary):
-        """
-        :type salary: List[int]
-        :rtype: float
-        """
         total, mi, ma = 0, float("inf"), float("-inf")
         for s in salary:
             total += s
@@ -18,8 +14,4 @@ class Solution(object):
 # one-liner solution
 class Solution2(object):
     def average(self, salary):
-        """
-        :type salary: List[int]
-        :rtype: float
-        """
         return 1.0*(sum(salary)-min(salary)-max(salary))/(len(salary)-2)

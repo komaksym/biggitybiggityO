@@ -3,12 +3,6 @@
 # prefix sum, dp
 class Solution(object):
     def maxSum(self, nums, k, m):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type m: int
-        :rtype: int
-        """
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):
             prefix[i+1] = prefix[i]+nums[i]

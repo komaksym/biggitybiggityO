@@ -3,11 +3,6 @@
 # bit manipulation
 class Solution(object):
     def minChanges(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         def popcount(x):
             return bin(x).count('1')
 
@@ -18,11 +13,6 @@ class Solution(object):
 # bit manipulation
 class Solution2(object):
     def minChanges(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: int
-        """
         def popcount(x):
             return bin(x).count('1')
 

@@ -3,10 +3,6 @@
 # string, hash table
 class Solution(object):
     def greatestLetter(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         lookup = set(s)
         result = ""
         for c in s:
@@ -24,10 +20,6 @@ import string
 # string, hash table
 class Solution2(object):
     def greatestLetter(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         lookup = set(s)
         return next((C for c, C in zip(reversed(string.ascii_lowercase), reversed(string.ascii_uppercase)) if c in lookup and C in lookup), "")
    

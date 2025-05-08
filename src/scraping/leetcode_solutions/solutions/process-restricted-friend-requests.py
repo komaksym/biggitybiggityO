@@ -28,12 +28,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 
 class Solution(object):
     def friendRequests(self, n, restrictions, requests):
-        """
-        :type n: int
-        :type restrictions: List[List[int]]
-        :type requests: List[List[int]]
-        :rtype: List[bool]
-        """
         result = []
         uf = UnionFind(n)
         for u, v in requests:

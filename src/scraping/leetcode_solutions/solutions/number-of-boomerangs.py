@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def numberOfBoomerangs(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         result = 0
 
         for i in range(len(points)):
@@ -26,10 +22,6 @@ class Solution(object):
         return result
 
     def numberOfBoomerangs2(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         cnt = 0
         for a, i in enumerate(points):
             dis_list = []

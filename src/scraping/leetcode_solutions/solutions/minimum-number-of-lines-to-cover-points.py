@@ -6,10 +6,6 @@ import collections
 # math, hash table, bitmasks
 class Solution(object):
     def minimumLines(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         def gcd(a, b):  # Time: O(log(a + b))
             while b:
                 a, b = b, a % b

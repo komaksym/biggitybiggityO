@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def totalFruit(self, tree):
-        """
-        :type tree: List[int]
-        :rtype: int
-        """
         count = collections.defaultdict(int)
         result, i = 0, 0
         for j, v in enumerate(tree):

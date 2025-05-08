@@ -6,12 +6,6 @@ import itertools
 
 class Solution(object):
     def minArea(self, image, x, y):
-        """
-        :type image: List[List[str]]
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
         def binarySearch(left, right, find, image, has_one):
             while left <= right:  # O(logn) times
                 mid = left + (right - left) / 2

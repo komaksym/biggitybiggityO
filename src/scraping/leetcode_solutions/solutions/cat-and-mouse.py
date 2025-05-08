@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def catMouseGame(self, graph):
-        """
-        :type graph: List[List[int]]
-        :rtype: int
-        """
         HOLE, MOUSE_START, CAT_START = list(range(3))
         DRAW, MOUSE, CAT = list(range(3))
         def parents(m, c, t):
@@ -56,10 +52,6 @@ import collections
 
 class Solution2(object):
     def catMouseGame(self, graph):
-        """
-        :type graph: List[List[int]]
-        :rtype: int
-        """
         HOLE, MOUSE_START, CAT_START = list(range(3))
         DRAW, MOUSE, CAT = list(range(3))
         def parents(m, c, t):

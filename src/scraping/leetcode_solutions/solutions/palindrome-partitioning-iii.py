@@ -2,11 +2,6 @@
 
 class Solution(object):
     def palindromePartition(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         dp1 = [[0]*len(s) for _ in range(len(s))]
         for l in range(1, len(s)+1):
             for i in range(len(s)-l+1):

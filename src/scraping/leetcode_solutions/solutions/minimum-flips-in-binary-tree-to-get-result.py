@@ -11,11 +11,6 @@ import collections
 # tree dp with stack
 class Solution(object):
     def minimumFlips(self, root, result):
-        """
-        :type root: Optional[TreeNode]
-        :type result: bool
-        :rtype: int
-        """
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,
@@ -59,11 +54,6 @@ import collections
 # tree dp with recursion
 class Solution2(object):
     def minimumFlips(self, root, result):
-        """
-        :type root: Optional[TreeNode]
-        :type result: bool
-        :rtype: int
-        """
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,

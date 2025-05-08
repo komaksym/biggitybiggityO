@@ -2,11 +2,6 @@
 
 class Solution(object):
     def robotSim(self, commands, obstacles):
-        """
-        :type commands: List[int]
-        :type obstacles: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         x, y, i = 0, 0, 0
         lookup = set(map(tuple, obstacles))

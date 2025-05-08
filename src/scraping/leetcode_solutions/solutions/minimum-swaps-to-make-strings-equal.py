@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minimumSwap(self, s1, s2):
-        """
-        :type s1: str
-        :type s2: str
-        :rtype: int
-        """
         x1, y1 = 0, 0
         for i in range(len(s1)):
             if s1[i] == s2[i]:

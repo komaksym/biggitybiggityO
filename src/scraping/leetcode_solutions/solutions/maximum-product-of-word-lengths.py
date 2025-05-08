@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maxProduct(self, words):
-        """
-        :type words: List[str]
-        :rtype: int
-        """
         def counting_sort(words):
             k = 1000  # k is max length of words in the dictionary
             buckets = [[] for _ in range(k)]
@@ -38,10 +34,6 @@ class Solution(object):
 # Sorting + Pruning + Bit Manipulation
 class Solution2(object):
     def maxProduct(self, words):
-        """
-        :type words: List[str]
-        :rtype: int
-        """
         words.sort(key=lambda x: len(x), reverse=True)
         bits = [0] * len(words)
         for i, word in enumerate(words):

@@ -3,10 +3,6 @@
 # freq table
 class Solution(object):
     def countCompleteDayPairs(self, hours):
-        """
-        :type hours: List[int]
-        :rtype: int
-        """
         result = 0
         cnt = [0]*24
         for x in hours:

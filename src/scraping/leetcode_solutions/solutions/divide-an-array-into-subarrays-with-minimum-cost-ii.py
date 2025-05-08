@@ -6,12 +6,6 @@ import heapq
 # sliding window, heap
 class Solution(object):
     def minimumCost(self, nums, k, dist):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type dist: int
-        :rtype: int
-        """
         def get_top(heap, total):
             while abs(heap[0][1]) < i-(1+dist):
                 heapq.heappop(heap)
@@ -59,12 +53,6 @@ import collections
 # sliding window, heap, freq table
 class Solution2(object):
     def minimumCost(self, nums, k, dist):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type dist: int
-        :rtype: int
-        """
         def get_top(heap, cnt, total):
             while heap[0] in cnt:
                 x = heapq.heappop(heap)
@@ -123,12 +111,6 @@ from sortedcontainers import SortedList
 # sliding window, sorted list
 class Solution3(object):
     def minimumCost(self, nums, k, dist):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type dist: int
-        :rtype: int
-        """
         sl1, sl2 = SortedList(), SortedList()
         mn, curr = float("inf"), 0
         for i in range(1, len(nums)):
@@ -156,12 +138,6 @@ from sortedcontainers import SortedList
 # sliding window, sorted list
 class Solution4(object):
     def minimumCost(self, nums, k, dist):
-        """
-        :type nums: List[int]
-        :type k: int
-        :type dist: int
-        :rtype: int
-        """
         sl = SortedList(nums[1:1+(1+dist)])
         mn = curr = sum(sl[:k-1])
         for i in range(1+(1+dist), len(nums)):

@@ -3,10 +3,6 @@
 # array
 class Solution(object):
     def possibleStringCount(self, word):
-        """
-        :type word: str
-        :rtype: int
-        """
         return len(word)-sum(word[i] != word[i+1] for i in range(len(word)-1))
 
 
@@ -14,10 +10,6 @@ class Solution(object):
 # array
 class Solution2(object):
     def possibleStringCount(self, word):
-        """
-        :type word: str
-        :rtype: int
-        """
         result = 1
         curr = 0
         for i in range(len(word)):

@@ -3,11 +3,6 @@
 # greedy, counting sort
 class Solution(object):
     def maximumImportance(self, n, roads):
-        """
-        :type n: int
-        :type roads: List[List[int]]
-        :rtype: int
-        """
         def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
             count = [0]*(max(nums)+1)
             for num in nums:
@@ -36,11 +31,6 @@ class Solution(object):
 # greedy, sort
 class Solution2(object):
     def maximumImportance(self, n, roads):
-        """
-        :type n: int
-        :type roads: List[List[int]]
-        :rtype: int
-        """
         degree = [0]*n
         for a, b in roads:
             degree[a] += 1

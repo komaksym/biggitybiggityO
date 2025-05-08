@@ -7,11 +7,6 @@ from functools import reduce
 # dp, mono deque, two pointers
 class Solution(object):
     def minimumValueSum(self, nums, andValues):
-        """
-        :type nums: List[int]
-        :type andValues: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         L = max(nums).bit_length()
         def update(cnt, x, d):
@@ -61,11 +56,6 @@ class Solution(object):
 # dp, sparse table
 class Solution2(object):
     def minimumValueSum(self, nums, andValues):
-        """
-        :type nums: List[int]
-        :type andValues: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         class SparseTable(object):
             def __init__(self, arr, fn):
@@ -112,11 +102,6 @@ import collections
 # memoization
 class Solution3(object):
     def minimumValueSum(self, nums, andValues):
-        """
-        :type nums: List[int]
-        :type andValues: List[int]
-        :rtype: int
-        """
         INF = float("inf")
         FULL_MASK = (1<<max(nums).bit_length())-1
         def memoization(i, j, mask): 

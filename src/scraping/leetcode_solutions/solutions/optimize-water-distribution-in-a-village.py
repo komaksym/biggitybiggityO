@@ -21,12 +21,6 @@ class UnionFind(object):
 
 class Solution(object):
     def minCostToSupplyWater(self, n, wells, pipes):
-        """
-        :type n: int
-        :type wells: List[int]
-        :type pipes: List[List[int]]
-        :rtype: int
-        """
         w = [[c, 0, i] for i, c in enumerate(wells, 1)]
         p = [[c, i, j] for i, j, c in pipes]
         result = 0

@@ -2,13 +2,6 @@
 
 class Solution(object):
     def boxDelivering(self, boxes, portsCount, maxBoxes, maxWeight):
-        """
-        :type boxes: List[List[int]]
-        :type portsCount: int
-        :type maxBoxes: int
-        :type maxWeight: int
-        :rtype: int
-        """
         dp = [0]*(len(boxes)+1)
         left, cost, curr = 0, 1, 0
         for right in range(len(boxes)):

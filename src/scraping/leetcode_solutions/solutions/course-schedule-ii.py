@@ -6,11 +6,6 @@ import collections
 # Khan's algorithm (bfs solution)
 class Solution(object):
     def findOrder(self, numCourses, prerequisites):
-        """
-        :type numCourses: int
-        :type prerequisites: List[List[int]]
-        :rtype: List[int]
-        """
         adj = collections.defaultdict(list)
         in_degree = collections.Counter()
         for u, v in prerequisites:
@@ -37,11 +32,6 @@ import collections
 # dfs solution
 class Solution2(object):
     def findOrder(self, numCourses, prerequisites):
-        """
-        :type numCourses: int
-        :type prerequisites: List[List[int]]
-        :rtype: List[int]
-        """
         adj = collections.defaultdict(list)
         in_degree = collections.Counter()
         for u, v in prerequisites:
@@ -66,11 +56,6 @@ import collections
 # dfs solution
 class Solution3(object):
     def findOrder(self, numCourses, prerequisites):
-        """
-        :type numCourses: int
-        :type prerequisites: List[List[int]]
-        :rtype: List[int]
-        """
         WHITE, GRAY, BLACK = list(range(3))
         def dfs(u):
             if lookup[u] != WHITE:
@@ -98,11 +83,6 @@ import collections
 # dfs solution
 class Solution4(object):
     def findOrder(self, numCourses, prerequisites):
-        """
-        :type numCourses: int
-        :type prerequisites: List[List[int]]
-        :rtype: List[int]
-        """
         WHITE, GRAY, BLACK = list(range(3))
         def dfs(u):
             if lookup[u] != WHITE:

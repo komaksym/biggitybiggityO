@@ -34,13 +34,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 # bfs, union find
 class Solution(object):
     def minReverseOperations(self, n, p, banned, k):
-        """
-        :type n: int
-        :type p: int
-        :type banned: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         lookup = [False]*n
         for i in banned:
             lookup[i] = True
@@ -74,13 +67,6 @@ from sortedcontainers import SortedList
 # bfs, sorted list
 class Solution2(object):
     def minReverseOperations(self, n, p, banned, k):
-        """
-        :type n: int
-        :type p: int
-        :type banned: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         lookup = [False]*n
         for i in banned:
             lookup[i] = True

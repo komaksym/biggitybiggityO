@@ -34,11 +34,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 # union find
 class Solution(object):
     def maximumSegmentSum(self, nums, removeQueries):
-        """
-        :type nums: List[int]
-        :type removeQueries: List[int]
-        :rtype: List[int]
-        """
         result = [0]*len(removeQueries)
         lookup = [0]*len(nums)
         uf = UnionFind(nums)
@@ -60,11 +55,6 @@ from sortedcontainers import SortedList
 # prefix sum, sorted list
 class Solution2(object):
     def maximumSegmentSum(self, nums, removeQueries):
-        """
-        :type nums: List[int]
-        :type removeQueries: List[int]
-        :rtype: List[int]
-        """
         removed_idxs = SortedList([-1, len(nums)])
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):

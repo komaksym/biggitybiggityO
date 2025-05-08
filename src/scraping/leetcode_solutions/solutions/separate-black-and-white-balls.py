@@ -3,10 +3,6 @@
 # two pointers
 class Solution(object):
     def minimumSteps(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = left = 0
         for right in range(len(s)):
             if s[right] != '0':
@@ -20,10 +16,6 @@ class Solution(object):
 # two pointers
 class Solution2(object):
     def minimumSteps(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = 0
         left, right = 0, len(s)-1
         while left < right:

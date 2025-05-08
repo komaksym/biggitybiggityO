@@ -2,12 +2,6 @@
 
 class Solution(object):
     def checkIfPrerequisite(self, n, prerequisites, queries):
-        """
-        :type n: int
-        :type prerequisites: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
         def floydWarshall(n, graph): 
             reachable = set([x[0]*n+x[1] for x in graph]) 
             for k in range(n): 
@@ -27,12 +21,6 @@ import collections
 
 class Solution2(object):
     def checkIfPrerequisite(self, n, prerequisites, queries):
-        """
-        :type n: int
-        :type prerequisites: List[List[int]]
-        :type queries: List[List[int]]
-        :rtyp
-        """
         graph = collections.defaultdict(list)
         for u, v in prerequisites:
             graph[u].append(v)

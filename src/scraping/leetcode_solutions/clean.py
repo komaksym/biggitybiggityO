@@ -46,7 +46,7 @@ def main():
 
 
     # Clean the data up
-    clean_files(raw_data['files'], raw_data['file_paths'], space_comp_pttrn)
+    clean_files(raw_data['files'], raw_data['file_paths'], docstrings_pttrn)
 
 
 if __name__ == '__main__':

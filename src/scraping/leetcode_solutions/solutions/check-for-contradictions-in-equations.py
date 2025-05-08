@@ -43,11 +43,6 @@ import itertools
 # union find
 class Solution(object):
     def checkContradictions(self, equations, values):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :rtype: bool
-        """
         EPS = 1e-5
         uf = UnionFind()
         return any(not uf.union_set(a, b, k) and abs(uf.query_set(a, b)-k) >= EPS for (a, b), k in zip(equations, values))
@@ -61,11 +56,6 @@ import itertools
 # dfs
 class Solution2(object):
     def checkContradictions(self, equations, values):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :rtype: bool
-        """
         def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
             return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
 

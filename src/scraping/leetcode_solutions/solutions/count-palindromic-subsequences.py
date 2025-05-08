@@ -3,10 +3,6 @@
 # freq table, prefix sum
 class Solution(object):
     def countPalindromes(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         MOD = 10**9+7
         cnt = [0]*10
         left = [[[0]*10 for _ in range(10)] for _ in range(len(s)+1)]
@@ -29,10 +25,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def countPalindromes(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         MOD = 10**9+7
         result = 0
         for i in range(10):

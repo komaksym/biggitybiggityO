@@ -10,11 +10,6 @@ class TreeNode(object):
         
 class Solution(object):
     def delNodes(self, root, to_delete):
-        """
-        :type root: TreeNode
-        :type to_delete: List[int]
-        :rtype: List[TreeNode]
-        """
         def delNodesHelper(to_delete_set, root, is_root, result):
             if not root:
                 return None

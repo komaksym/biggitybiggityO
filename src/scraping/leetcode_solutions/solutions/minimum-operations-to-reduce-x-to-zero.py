@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minOperations(self, nums, x):
-        """
-        :type nums: List[int]
-        :type x: int
-        :rtype: int
-        """
         target = sum(nums)-x
         result = -1
         curr = left = 0

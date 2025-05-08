@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxProfit(self, inventory, orders):
-        """
-        :type inventory: List[int]
-        :type orders: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def check(inventory, orders, x):
             return count(inventory, x) > orders

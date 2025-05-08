@@ -5,11 +5,6 @@ import heapq
 
 class Solution(object):
     def minInterval(self, intervals, queries):
-        """
-        :type intervals: List[List[int]]
-        :type queries: List[int]
-        :rtype: List[int]
-        """
         intervals.sort()
         queries = [(q, i) for i, q in enumerate(queries)]
         queries.sort()

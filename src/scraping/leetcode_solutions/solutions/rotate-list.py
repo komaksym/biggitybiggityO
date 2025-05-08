@@ -11,11 +11,6 @@ class ListNode(object):
 
 class Solution(object):
     def rotateRight(self, head, k):
-        """
-        :type head: ListNode
-        :type k: int
-        :rtype: ListNode
-        """
         if not head or not head.__next__:
             return head
 

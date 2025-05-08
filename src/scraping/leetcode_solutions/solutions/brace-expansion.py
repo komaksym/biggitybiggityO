@@ -6,10 +6,6 @@ import itertools
 
 class Solution(object):
     def expand(self, S):  # nested is fine
-        """
-        :type S: str
-        :rtype: List[str]
-        """
         def form_words(options):
             words = list(map("".join, itertools.product(*options)))
             words.sort()
@@ -43,10 +39,6 @@ class Solution(object):
 
 class Solution2(object):
     def expand(self, S):  # nested is fine
-        """
-        :type S: str
-        :rtype: List[str]
-        """
         def form_words(options):
             words = []
             total = 1

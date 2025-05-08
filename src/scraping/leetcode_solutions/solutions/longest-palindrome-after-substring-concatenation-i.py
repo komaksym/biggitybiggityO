@@ -3,11 +3,6 @@
 # manacher's algorithm, dp
 class Solution(object):
     def longestPalindrome(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: int
-        """
         def manacher(s):
             s = '^#' + '#'.join(s) + '#$'
             P = [0]*len(s)

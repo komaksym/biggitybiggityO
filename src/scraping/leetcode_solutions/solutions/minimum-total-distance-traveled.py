@@ -6,11 +6,6 @@ import collections
 # sort, dp, prefix sum, mono deque
 class Solution(object):
     def minimumTotalDistance(self, robot, factory):
-        """
-        :type robot: List[int]
-        :type factory: List[List[int]]
-        :rtype: int
-        """
         robot.sort(), factory.sort()
         dp = [float("inf")]*(len(robot)+1)  # dp[j] at i: min of factory[:i+1] and robot[:j]
         dp[0] = 0
@@ -35,11 +30,6 @@ import collections
 # sort, dp
 class Solution2(object):
     def minimumTotalDistance(self, robot, factory):
-        """
-        :type robot: List[int]
-        :type factory: List[List[int]]
-        :rtype: int
-        """
         robot.sort(), factory.sort()
         dp = [float("inf")]*(len(robot)+1)  # dp[j] at i: min of factory[:i+1] and robot[:j]
         dp[0] = 0

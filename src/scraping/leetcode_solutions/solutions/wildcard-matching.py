@@ -3,11 +3,6 @@
 # iterative solution with greedy
 class Solution(object):
     def isMatch(self, s, p):
-        """
-        :type s: str
-        :type p: str
-        :rtype: bool
-        """
         count = 0  # used for complexity check
         p_ptr, s_ptr, last_s_ptr, last_p_ptr = 0, 0, -1, -1
         while s_ptr < len(s):

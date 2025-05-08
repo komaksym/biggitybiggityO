@@ -20,10 +20,6 @@ MAX_NUM = 10**5
 PRIMES = linear_sieve_of_eratosthenes(int(MAX_NUM**0.5))
 class Solution(object):
     def canTraverseAllPairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def prime_factors(x):
             factors = collections.Counter()
             for p in PRIMES:

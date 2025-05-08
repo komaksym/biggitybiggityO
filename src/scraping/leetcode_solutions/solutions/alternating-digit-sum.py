@@ -3,10 +3,6 @@
 # math
 class Solution(object):
     def alternateDigitSum(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         result = 0
         sign = 1
         while n:

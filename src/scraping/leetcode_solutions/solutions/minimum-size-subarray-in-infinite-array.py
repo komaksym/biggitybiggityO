@@ -3,11 +3,6 @@
 # two pointers, sliding window
 class Solution(object):
     def minSizeSubarray(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
         INF = float("inf")
         q, target = divmod(target, sum(nums))
         if not target:
@@ -28,11 +23,6 @@ class Solution(object):
 # prefix sum, hash table
 class Solution2(object):
     def minSizeSubarray(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
         INF = float("inf")
         q, target = divmod(target, sum(nums))
         if not target:

@@ -33,10 +33,6 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 
 class Solution(object):
     def gcdSort(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def modified_sieve_of_eratosthenes(n, lookup, uf):  # Time: O(n * log(logn)), Space: O(n)
             if n < 2:
                 return

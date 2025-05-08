@@ -3,10 +3,6 @@
 # memoization
 class Solution(object):
     def maxOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def memoization(left, right, target, lookup):
             if not right-left+1 >= 2:
                 return 0

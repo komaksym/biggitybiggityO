@@ -3,10 +3,6 @@
 # prefix sum
 class Solution(object):
     def leftRigthDifference(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         total = sum(nums)
         result = []
         curr = 0

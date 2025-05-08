@@ -3,14 +3,6 @@
 # dp, matrix exponentiation
 class Solution(object):
     def numberOfWays(self, n, m, k, source, dest):
-        """
-        :type n: int
-        :type m: int
-        :type k: int
-        :type source: List[int]
-        :type dest: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -46,14 +38,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def numberOfWays(self, n, m, k, source, dest):
-        """
-        :type n: int
-        :type m: int
-        :type k: int
-        :type source: List[int]
-        :type dest: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         both_same = row_same = col_same = no_same = 0
         if source == dest:

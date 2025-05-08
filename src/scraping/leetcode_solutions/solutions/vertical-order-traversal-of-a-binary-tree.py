@@ -13,10 +13,6 @@ class TreeNode(object):
 
 class Solution(object):
     def verticalTraversal(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
         def dfs(node, lookup, x, y):
             if not node:
                 return

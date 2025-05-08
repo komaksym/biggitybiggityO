@@ -2,11 +2,6 @@
 
 class Solution(object):
     def kthSmallestPrimeFraction(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: List[int]
-        """
         def check(mid, A, K, result):
             tmp = [0]*2
             count = 0

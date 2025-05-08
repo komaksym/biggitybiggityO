@@ -4,11 +4,6 @@ from functools import reduce
 # greedy + memoization solution
 class Solution(object):
     def maxHappyGroups(self, batchSize, groups):
-        """
-        :type batchSize: int
-        :type groups: List[int]
-        :rtype: int
-        """
         def memoization(batchSize, count, mask, remain, lookup):
             if lookup[mask] == 0:
                 a_remain = 0
@@ -53,11 +48,6 @@ class Solution(object):
 # dp solution
 class Solution2(object):
     def maxHappyGroups(self, batchSize, groups):
-        """
-        :type batchSize: int
-        :type groups: List[int]
-        :rtype: int
-        """
         count = [0]*batchSize
         for i in groups:
             count[i%len(count)] += 1

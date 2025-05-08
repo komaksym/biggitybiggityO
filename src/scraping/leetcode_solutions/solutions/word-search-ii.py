@@ -16,11 +16,6 @@ class TrieNode(object):
 
 class Solution(object):
     def findWords(self, board, words):
-        """
-        :type board: List[List[str]]
-        :type words: List[str]
-        :rtype: List[str]
-        """
         visited = [[False for j in range(len(board[0]))] for i in range(len(board))]
         result = {}
         trie = TrieNode()

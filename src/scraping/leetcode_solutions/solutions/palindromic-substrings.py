@@ -2,10 +2,6 @@
 
 class Solution(object):
     def countSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         def manacher(s):
             s = '^#' + '#'.join(s) + '#$'
             P = [0] * len(s)

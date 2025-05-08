@@ -3,10 +3,6 @@
 # sort, greedy, two pointers
 class Solution(object):
     def maxNumOfMarkedIndices(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort()
         left = 0
         for right in range((len(nums)+1)//2, len(nums)):
@@ -19,10 +15,6 @@ class Solution(object):
 # sort, greedy, two pointers
 class Solution2(object):
     def maxNumOfMarkedIndices(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort()
         left = 0
         for right in range(len(nums)):

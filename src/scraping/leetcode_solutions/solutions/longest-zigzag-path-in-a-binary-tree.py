@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def longestZigZag(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
         def dfs(node, result):
             if not node:
                 return [-1, -1]

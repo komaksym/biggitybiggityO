@@ -5,13 +5,6 @@ import itertools
 
 class Solution(object):
     def profitableSchemes(self, G, P, group, profit):
-        """
-        :type G: int
-        :type P: int
-        :type group: List[int]
-        :type profit: List[int]
-        :rtype: int
-        """
         dp = [[0 for _ in range(G+1)] for _ in range(P+1)]
         dp[0][0] = 1
         for p, g in zip(profit, group):

@@ -3,11 +3,6 @@
 # freq table, prefix sum
 class Solution(object):
     def sameEndSubstringCount(self, s, queries):
-        """
-        :type s: str
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         prefix = [[0]*26]
         for i in range(len(s)):
             prefix.append(prefix[-1][:])

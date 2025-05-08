@@ -6,10 +6,6 @@ from functools import reduce
 
 class Solution(object):
     def getNumberOfBacklogOrders(self, orders):
-        """
-        :type orders: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9 + 7
         buy, sell  = [], []  # max_heap, min_heap
         for p, a, t in orders:

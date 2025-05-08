@@ -6,10 +6,6 @@ import collections
 # freq table, combinatorics
 class Solution(object):
     def countPairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         L = 7
         POW10 = [0]*L
         POW10[0] = 1
@@ -48,10 +44,6 @@ import collections
 # freq table, combinatorics, bfs
 class Solution2(object):
     def countPairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         L = 7
         K = 2
         POW10 = [0]*L

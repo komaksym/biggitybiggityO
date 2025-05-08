@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def constrainedSubsetSum(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         result, dq = float("-inf"), collections.deque()
         for i in range(len(nums)):
             if dq and i-dq[0][0] == k+1:

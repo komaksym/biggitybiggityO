@@ -6,12 +6,6 @@ import random
 # quick select
 class Solution(object):
     def maxStarSum(self, vals, edges, k):
-        """
-        :type vals: List[int]
-        :type edges: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left

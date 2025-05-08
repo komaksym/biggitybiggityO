@@ -3,12 +3,6 @@
 # dfs, centroid decomposition, prefix sum
 class Solution(object):
     def maxTargetNodes(self, edges1, edges2, k):
-        """
-        :type edges1: List[List[int]]
-        :type edges2: List[List[int]]
-        :type k: int
-        :rtype: List[int]
-        """
         def centroid_decomposition(adj, k):
             def dfs(u):
                 def find_subtree_size(u, p):
@@ -103,12 +97,6 @@ class Solution(object):
 # dfs, tree dp
 class Solution2(object):
     def maxTargetNodes(self, edges1, edges2, k):
-        """
-        :type edges1: List[List[int]]
-        :type edges2: List[List[int]]
-        :type k: int
-        :rtype: List[int]
-        """
         def tree_dp(adj, k):
             def dfs1(u, p):
                 for v in adj[u]:
@@ -161,12 +149,6 @@ class Solution2(object):
 # brute force, bfs
 class Solution3(object):
     def maxTargetNodes(self, edges1, edges2, k):
-        """
-        :type edges1: List[List[int]]
-        :type edges2: List[List[int]]
-        :type k: int
-        :rtype: List[int]
-        """
         def bfs(u, adj, k):
             result = 0
             q = [(u, -1)]

@@ -2,12 +2,6 @@
 
 class Solution(object):
     def minimumHammingDistance(self, source, target, allowedSwaps):
-        """
-        :type source: List[int]
-        :type target: List[int]
-        :type allowedSwaps: List[List[int]]
-        :rtype: int
-        """
         def iter_flood_fill(adj, node, lookup, idxs):
             stk = [node]
             while stk:
@@ -71,12 +65,6 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 
 class Solution2(object):
     def minimumHammingDistance(self, source, target, allowedSwaps):
-        """
-        :type source: List[int]
-        :type target: List[int]
-        :type allowedSwaps: List[List[int]]
-        :rtype: int
-        """
         uf = UnionFind(len(source))
         for x, y in allowedSwaps: 
             uf.union_set(x, y)

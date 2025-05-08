@@ -22,10 +22,6 @@ class BIT(object):  # 0-indexed
 # greedy, bit, fenwick tree
 class Solution(object):
     def minMovesToMakePalindrome(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         idxs = [[] for _ in range(26)]
         for i, c in enumerate(s):
             idxs[ord(c)-ord('a')].append(i)
@@ -50,10 +46,6 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def minMovesToMakePalindrome(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         s = list(s)
         result = 0
         while s:

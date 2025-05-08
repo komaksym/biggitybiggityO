@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maximumBinaryString(self, binary):
-        """
-        :type binary: str
-        :rtype: str
-        """
         result = list(binary)
         zeros = ones = 0
         for i, c in enumerate(result):

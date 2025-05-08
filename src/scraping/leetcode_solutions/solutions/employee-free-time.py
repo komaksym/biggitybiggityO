@@ -11,10 +11,6 @@ class Interval(object):
 
 class Solution(object):
     def employeeFreeTime(self, schedule):
-        """
-        :type schedule: List[List[Interval]]
-        :rtype: List[Interval]
-        """
         result = []
         min_heap = [(emp[0].start, eid, 0) for eid, emp in enumerate(schedule)]
         heapq.heapify(min_heap)

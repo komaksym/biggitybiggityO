@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def differByOne(self, dict):
-        """
-        :type dict: List[str]
-        :rtype: bool
-        """
         MOD, P = 10**9+7, 113
 
         hashes = [0]*len(dict)

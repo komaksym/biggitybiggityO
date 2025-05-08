@@ -2,13 +2,6 @@
 
 class Solution(object):
     def checkMove(self, board, rMove, cMove, color):
-        """
-        :type board: List[List[str]]
-        :type rMove: int
-        :type cMove: int
-        :type color: str
-        :rtype: bool
-        """
         def check(board, color, r, c, dr, dc):
             l = 2
             while 0 <= r < len(board) and 0 <= c < len(board[0]) and board[r][c] != '.':

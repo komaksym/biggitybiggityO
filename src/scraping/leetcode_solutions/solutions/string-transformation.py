@@ -4,12 +4,6 @@ from functools import reduce
 # dp, math, kmp
 class Solution(object):
     def numberOfWays(self, s, t, k):
-        """
-        :type s: str
-        :type t: str
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
@@ -45,12 +39,6 @@ class Solution(object):
 # dp, matrix exponentiation, kmp
 class Solution2(object):
     def numberOfWays(self, s, t, k):
-        """
-        :type s: str
-        :type t: str
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -100,12 +88,6 @@ class Solution2(object):
 # dp, matrix exponentiation, z-function
 class Solution3(object):
     def numberOfWays(self, s, t, k):
-        """
-        :type s: str
-        :type t: str
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))

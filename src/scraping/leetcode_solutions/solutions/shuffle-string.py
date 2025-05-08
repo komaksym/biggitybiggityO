@@ -3,11 +3,6 @@
 # in-place solution
 class Solution(object):
     def restoreString(self, s, indices):
-        """
-        :type s: str
-        :type indices: List[int]
-        :rtype: str
-        """
         result = list(s)
         for i, c in enumerate(result):
             if indices[i] == i:
@@ -26,11 +21,6 @@ import itertools
 
 class Solution2(object):
     def restoreString(self, s, indices):
-        """
-        :type s: str
-        :type indices: List[int]
-        :rtype: str
-        """
         result = ['']*len(s)
         for i, c in zip(indices, s):
             result[i] = c

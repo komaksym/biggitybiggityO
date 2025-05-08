@@ -3,11 +3,6 @@
 # number theory, tree dp, iterative dfs
 class Solution(object):
     def countPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
             primes = []
             spf = [-1]*(n+1)  # the smallest prime factor
@@ -67,11 +62,6 @@ class Solution(object):
 # number theory, tree dp, dfs
 class Solution2(object):
     def countPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
             primes = []
             spf = [-1]*(n+1)  # the smallest prime factor
@@ -148,11 +138,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 
 class Solution3(object):
     def countPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
             primes = []
             spf = [-1]*(n+1)  # the smallest prime factor

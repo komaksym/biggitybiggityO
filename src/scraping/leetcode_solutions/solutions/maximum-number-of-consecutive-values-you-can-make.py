@@ -2,10 +2,6 @@
 
 class Solution(object):
     def getMaximumConsecutive(self, coins):
-        """
-        :type coins: List[int]
-        :rtype: int
-        """
         coins.sort()
         result = 1
         for c in coins:

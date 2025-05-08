@@ -27,11 +27,6 @@ class TrieNode(object):
 
 class Solution(object):
     def suggestedProducts(self, products, searchWord):
-        """
-        :type products: List[str]
-        :type searchWord: str
-        :rtype: List[List[str]]
-        """
         trie = TrieNode()
         for i in range(len(products)):
             trie.insert(products, i)
@@ -68,11 +63,6 @@ class TrieNode2(object):
 
 class Solution2(object):
     def suggestedProducts(self, products, searchWord):
-        """
-        :type products: List[str]
-        :type searchWord: str
-        :rtype: List[List[str]]
-        """
         products.sort()
         trie = TrieNode2()
         for i in range(len(products)):
@@ -94,11 +84,6 @@ import bisect
 
 class Solution3(object):
     def suggestedProducts(self, products, searchWord):
-        """
-        :type products: List[str]
-        :type searchWord: str
-        :rtype: List[List[str]]
-        """
         products.sort()  # Time: O(n * l * log(n * l))
         result = []
         prefix = ""

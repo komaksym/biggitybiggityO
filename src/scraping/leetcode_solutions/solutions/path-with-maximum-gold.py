@@ -2,10 +2,6 @@
 
 class Solution(object):
     def getMaximumGold(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def backtracking(grid, i, j):
             result = 0

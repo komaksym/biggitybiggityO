@@ -2,10 +2,6 @@
 
 class Solution(object):
     def makeGood(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         stk = []
         for ch in s:
             counter_ch = ch.upper() if ch.islower() else ch.lower()

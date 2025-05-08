@@ -5,10 +5,6 @@ import heapq
 
 class Solution(object):
     def findSecondMinimumValue(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
         def findSecondMinimumValueHelper(root, max_heap, lookup):
             if not root:
                 return

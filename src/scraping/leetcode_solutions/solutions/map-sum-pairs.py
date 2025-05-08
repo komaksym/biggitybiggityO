@@ -6,19 +6,11 @@ import collections
 class MapSum(object):
 
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
         _trie = lambda: collections.defaultdict(_trie)
         self.__root = _trie()
 
 
     def insert(self, key, val):
-        """
-        :type key: str
-        :type val: int
-        :rtype: void
-        """
         curr = self.__root
         for c in key:
             curr = curr[c]
@@ -37,10 +29,6 @@ class MapSum(object):
 
 
     def sum(self, prefix):
-        """
-        :type prefix: str
-        :rtype: int
-        """
         curr = self.__root
         for c in prefix:
             if c not in curr:

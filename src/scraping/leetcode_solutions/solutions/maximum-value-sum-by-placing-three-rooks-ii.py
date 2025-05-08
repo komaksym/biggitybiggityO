@@ -7,10 +7,6 @@ import itertools
 # heap, brute force
 class Solution(object):
     def maximumValueSum(self, board):
-        """
-        :type board: List[List[int]]
-        :rtype: int
-        """
         k = 3
         min_heaps = [[] for _ in range(len(board[0]))]
         for i in range(len(board)):
@@ -40,10 +36,6 @@ import itertools
 # heap, brute force
 class Solution2(object):
     def maximumValueSum(self, board):
-        """
-        :type board: List[List[int]]
-        :rtype: int
-        """
         k = 3
         rows = [heapq.nlargest(k, [(board[i][j], i, j) for j in range(len(board[0]))]) for i in range(len(board))]
         cols = [heapq.nlargest(k, [(board[i][j], i, j) for i in range(len(board))]) for j in range(len(board[0]))]

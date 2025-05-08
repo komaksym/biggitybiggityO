@@ -2,11 +2,6 @@
 
 class Solution(object):
     def getMinSwaps(self, num, k):
-        """
-        :type num: str
-        :type k: int
-        :rtype: int
-        """
         def next_permutation(nums, begin, end):
             def reverse(nums, begin, end):
                 left, right = begin, end-1

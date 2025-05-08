@@ -3,10 +3,6 @@
 # counting sort solution
 class Solution(object):
     def specialArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MAX_NUM = 1000
         count = [0]*(MAX_NUM+1)
         for num in nums:
@@ -23,10 +19,6 @@ class Solution(object):
 # counting sort + binary search solution
 class Solution2(object):
     def specialArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MAX_NUM = 1000
         def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
             count = [0]*(MAX_NUM+1)
@@ -59,10 +51,6 @@ class Solution2(object):
 # counting sort + binary search solution
 class Solution3(object):
     def specialArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MAX_NUM = 1000
         def counting_sort(nums, reverse=False):  # Time: O(n), Space: O(n)
             count = [0]*(MAX_NUM+1)
@@ -97,10 +85,6 @@ class Solution3(object):
 # sort solution
 class Solution4(object):
     def specialArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort(reverse=True)  # Time: O(nlogn)
         for i in range(len(nums)):  # Time: O(n)
             if nums[i] <= i:

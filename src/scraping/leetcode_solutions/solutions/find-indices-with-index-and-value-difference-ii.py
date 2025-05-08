@@ -3,12 +3,6 @@
 # prefix sum
 class Solution(object):
     def findIndices(self, nums, indexDifference, valueDifference):
-        """
-        :type nums: List[int]
-        :type indexDifference: int
-        :type valueDifference: int
-        :rtype: List[int]
-        """
         mx_i = mn_i = 0
         for i in range(len(nums)-indexDifference):
             if nums[i] > nums[mx_i]:

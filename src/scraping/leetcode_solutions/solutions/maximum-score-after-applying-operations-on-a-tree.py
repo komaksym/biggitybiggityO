@@ -3,11 +3,6 @@
 # iterative dfs, tree dp
 class Solution(object):
     def maximumScoreAfterOperations(self, edges, values):
-        """
-        :type edges: List[List[int]]
-        :type values: List[int]
-        :rtype: int
-        """
         def iter_dfs():
             dp = [0]*len(values)
             stk = [(1, 0, -1)]
@@ -36,11 +31,6 @@ class Solution(object):
 # dfs, tree dp
 class Solution2(object):
     def maximumScoreAfterOperations(self, edges, values):
-        """
-        :type edges: List[List[int]]
-        :type values: List[int]
-        :rtype: int
-        """
         def dfs(u, p):
             if len(adj[u]) == (1 if u else 0):
                 return values[u]

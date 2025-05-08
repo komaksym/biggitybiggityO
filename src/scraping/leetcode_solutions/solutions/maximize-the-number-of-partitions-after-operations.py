@@ -3,11 +3,6 @@
 # prefix sum, greedy
 class Solution(object):
     def maxPartitionsAfterOperations(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         def popcount(n):
             n = (n & 0x55555555) + ((n >> 1) & 0x55555555)
             n = (n & 0x33333333) + ((n >> 2) & 0x33333333)

@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def maxScore(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         POS_INF = float("inf")
         NEG_INF = float("-inf")
         result = NEG_INF

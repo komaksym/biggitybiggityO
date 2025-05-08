@@ -24,10 +24,6 @@ class UnionFind(object):
 
 class Solution(object):
     def largestComponentSize(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
         def prime_factors(i):  # prime factor decomposition
             result = []
             d = 2
@@ -81,10 +77,6 @@ class UnionFind(object):
 
 class Solution2(object):
     def largestComponentSize(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
         def prime_factors(x):  # prime factor decomposition
             result = []
             p = 2

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findBottomLeftValue(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
         def findBottomLeftValueHelper(root, curr_depth, max_depth, bottom_left_value):
             if not root:
                 return max_depth, bottom_left_value
@@ -25,10 +21,6 @@ import collections
 
 class Solution2(object):
     def findBottomLeftValue(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
         last_node, q = None, collections.deque([root])
         while q:
             last_node = q.popleft()

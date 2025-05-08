@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numWays(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         MOD = 10**9+7
 
         ones = s.count('1')

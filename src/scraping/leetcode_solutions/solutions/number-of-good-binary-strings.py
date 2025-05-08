@@ -3,13 +3,6 @@
 # dp
 class Solution(object):
     def goodBinaryStrings(self, minLength, maxLength, oneGroup, zeroGroup):
-        """
-        :type minLength: int
-        :type maxLength: int
-        :type oneGroup: int
-        :type zeroGroup: int
-        :rtype: int
-        """
         MOD = 10**9+7
         result = 0
         w = max(oneGroup, zeroGroup)+1
@@ -29,13 +22,6 @@ class Solution(object):
 # dp
 class Solution(object):
     def goodBinaryStrings(self, minLength, maxLength, oneGroup, zeroGroup):
-        """
-        :type minLength: int
-        :type maxLength: int
-        :type oneGroup: int
-        :type zeroGroup: int
-        :rtype: int
-        """
         MOD = 10**9+7
         result = 0
         w = max(oneGroup, zeroGroup)+1

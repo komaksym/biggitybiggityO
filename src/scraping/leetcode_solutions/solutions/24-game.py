@@ -6,10 +6,6 @@ from fractions import Fraction
 
 class Solution(object):
     def judgePoint24(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         if len(nums) == 1:
             return abs(nums[0]-24) < 1e-6
         ops = [add, sub, mul, truediv]
@@ -32,10 +28,6 @@ class Solution(object):
 # Time:  O(n^3 * 4^n) = O(1), n = 4
 class Solution2(object):
     def judgePoint24(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def dfs(nums):
             if len(nums) == 1:
                 return nums[0] == 24

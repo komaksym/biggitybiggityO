@@ -3,10 +3,6 @@
 # dp with bitsets
 class Solution(object):
     def hasValidPath(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: bool
-        """
         if (len(grid)+len(grid[0])-1)%2:
             return False
         dp = [0]*(len(grid[0])+1)
@@ -21,10 +17,6 @@ class Solution(object):
 # dp, optimized from solution1 (wrong answer)
 class Solution_WA(object):
     def hasValidPath(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: bool
-        """
         if (len(grid)+len(grid[0])-1)%2:
             return False
         dp = [[float("inf"), float("-inf")] for _ in range(len(grid[0])+1)]

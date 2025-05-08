@@ -2,10 +2,6 @@
 
 class Solution(object):
     def isGoodArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

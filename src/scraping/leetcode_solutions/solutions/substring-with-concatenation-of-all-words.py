@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def findSubstring(self, s, words):
-        """
-        :type s: str
-        :type words: List[str]
-        :rtype: List[int]
-        """
         if not words:
             return []
 
@@ -45,11 +40,6 @@ class Solution(object):
 # Time:  O(m * n * k), where m is string length, n is dictionary size, k is word length
 class Solution2(object):
     def findSubstring(self, s, words):
-        """
-        :type s: str
-        :type words: List[str]
-        :rtype: List[int]
-        """
         result, m, n, k = [], len(s), len(words), len(words[0])
         if m < n*k:
             return result

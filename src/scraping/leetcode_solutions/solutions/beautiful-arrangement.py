@@ -3,10 +3,6 @@
 
 class Solution(object):
     def countArrangement(self, N):
-        """
-        :type N: int
-        :rtype: int
-        """
         def countArrangementHelper(n, arr):
             if n <= 0:
                 return 1

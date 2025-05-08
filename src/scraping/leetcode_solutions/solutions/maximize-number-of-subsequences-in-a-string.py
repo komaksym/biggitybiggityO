@@ -3,11 +3,6 @@
 # counting, greedy
 class Solution(object):
     def maximumSubsequenceCount(self, text, pattern):
-        """
-        :type text: str
-        :type pattern: str
-        :rtype: int
-        """
         result = cnt1 = cnt2 = 0
         for c in text:
             if c == pattern[1]:

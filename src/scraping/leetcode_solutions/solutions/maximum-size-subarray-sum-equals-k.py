@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxSubArrayLen(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         sums = {}
         cur_sum, max_len = 0, 0
         for i in range(len(nums)):

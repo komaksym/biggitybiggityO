@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def containsCycle(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: bool
-        """
         def index(n, i, j):
             return i*n + j
     
@@ -45,10 +41,6 @@ class Solution(object):
 # Time:  O(m * n)
 class Solution2(object):
     def containsCycle(self, grid):
-        """
-        :type grid: List[List[str]]
-        :rtype: bool
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         for i in range(len(grid)):
             for j in range(len(grid[0])):

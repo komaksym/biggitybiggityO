@@ -3,11 +3,6 @@
 # game, greedy
 class Solution(object):
     def canAliceWin(self, a, b):
-        """
-        :type a: List[str]
-        :type b: List[str]
-        :rtype: bool
-        """
         def is_closely_greater(a, b):
             return ord(a[0])-ord(b[0]) <= 1 and a > b
 

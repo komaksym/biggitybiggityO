@@ -4,10 +4,6 @@ from functools import reduce
 # bitmasks, constructive algorithms, greedy
 class Solution(object):
     def goodSubsetofBinaryMatrix(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: List[int]
-        """
         lookup = {}
         for i in range(len(grid)):
             mask = reduce(lambda mask, j: mask|(grid[i][j]<<j), range(len(grid[0])), 0)

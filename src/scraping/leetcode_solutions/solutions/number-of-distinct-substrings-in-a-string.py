@@ -2,10 +2,6 @@
 
 class Solution(object):
     def countDistinct(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         count = 0
         trie = {}
         for i in range(len(s)):

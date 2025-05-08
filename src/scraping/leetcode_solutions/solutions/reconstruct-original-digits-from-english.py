@@ -4,10 +4,6 @@ from collections import Counter
 
 class Solution(object):
     def originalDigits(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         cnts = [Counter(_) for _ in ["zero", "one", "two", "three", \
                                      "four", "five", "six", "seven", \
                                      "eight", "nine"]]

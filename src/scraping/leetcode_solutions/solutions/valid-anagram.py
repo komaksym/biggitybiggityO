@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
         if len(s) != len(t):
             return False
         count = collections.defaultdict(int)
@@ -25,21 +20,11 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
         return collections.Counter(s) == collections.Counter(t)
 
 
 # Time:  O(nlogn)
 class Solution3(object):
     def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
         return sorted(s) == sorted(t)
 

@@ -3,18 +3,10 @@
 # freq table, contructive algorithms
 class Solution(object):
     def maximizeGreatness(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         return len(nums)-max(collections.Counter(nums).values())
 # sort, greedy, two pointers
 class Solution2(object):
     def maximizeGreatness(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort()
         left = 0
         for right in range(len(nums)):

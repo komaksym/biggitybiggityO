@@ -12,10 +12,6 @@ class Solution(object):
         self.__memo = {1: [TreeNode(0)]}
     
     def allPossibleFBT(self, N):
-        """
-        :type N: int
-        :rtype: List[TreeNode]
-        """
         if N % 2 == 0:
             return []
 

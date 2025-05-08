@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def minCharacters(self, a, b):
-        """
-        :type a: str
-        :type b: str
-        :rtype: int
-        """
         count1 = collections.Counter(ord(c)-ord('a') for c in a)
         count2 = collections.Counter(ord(c)-ord('a') for c in b)
         result = len(a) + len(b) - max((count1+count2).values())  # condition 3

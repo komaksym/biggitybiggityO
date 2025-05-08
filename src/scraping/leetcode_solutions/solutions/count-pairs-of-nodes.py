@@ -7,12 +7,6 @@ import itertools
 # pure counting solution
 class Solution(object):
     def countPairs(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[int]
-        :rtype: List[int]
-        """
         degree = [0]*(n+1)
         shared = collections.Counter((min(n1, n2), max(n1, n2)) for n1, n2 in edges)
         for u, v in edges:
@@ -40,12 +34,6 @@ import collections
 # two pointers solution
 class Solution2(object):
     def countPairs(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[int]
-        :rtype: List[int]
-        """
         degree = [0]*(n+1)
         shared = collections.Counter((min(n1, n2), max(n1, n2)) for n1, n2 in edges)
         for n1, n2 in edges:

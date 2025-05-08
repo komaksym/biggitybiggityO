@@ -3,10 +3,6 @@
 # greedy, sort
 class Solution(object):
     def sortArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def min_moves(d):
             def index(x):
                 return d*(len(nums)-1) if x == 0 else x-d
@@ -33,10 +29,6 @@ class Solution(object):
 # greedy, sort
 class Solution2(object):
     def sortArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def min_moves(d):
             def index(x):
                 return d*(len(nums)-1) if x == 0 else x-d

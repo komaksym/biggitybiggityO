@@ -3,10 +3,6 @@
 # weighted bipartite matching solution
 class Solution(object):
     def minimumMoves(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
             if not a:
                 return 0, []
@@ -67,10 +63,6 @@ import itertools
 # 3rd-party weighted bipartite matching solution
 class Solution2(object):
     def minimumMoves(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def dist(a, b):
             return abs(a[0]-b[0])+abs(a[1]-b[1])
 
@@ -89,10 +81,6 @@ class Solution2(object):
 # backtracking
 class Solution3(object):
     def minimumMoves(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def dist(a, b):
             return abs(a[0]-b[0])+abs(a[1]-b[1])
 

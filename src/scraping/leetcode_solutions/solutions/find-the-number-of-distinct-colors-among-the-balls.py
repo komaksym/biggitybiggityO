@@ -6,11 +6,6 @@ import collections
 # freq table
 class Solution(object):
     def queryResults(self, limit, queries):
-        """
-        :type limit: int
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         result = [0]*len(queries)
         lookup = {}
         cnt = collections.Counter()

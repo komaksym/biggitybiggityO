@@ -3,12 +3,6 @@
 # memoization (faster but more space)
 class Solution(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
         TIGHT, UNTIGHT, UNBOUND = list(range(3))
         def f(x):
             digits = list(map(int, str(x)))
@@ -37,12 +31,6 @@ class Solution(object):
 # dp (slower but less space)
 class Solution2(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
         TIGHT, UNTIGHT, UNBOUND = list(range(3))
         def f(x):
             digits = list(map(int, str(x)))
@@ -73,12 +61,6 @@ class Solution2(object):
 # memoization (faster but more space)
 class Solution3(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
         def f(x):
             digits = list(map(int, str(x)))
             lookup = [[[[[-1]*k for _ in range(2*len(digits)+1)] for _ in range(2)] for _ in range(2)] for _ in range(len(digits))]
@@ -105,12 +87,6 @@ class Solution3(object):
 # dp (slower but less space)
 class Solution4(object):
     def numberOfBeautifulIntegers(self, low, high, k):
-        """
-        :type low: int
-        :type high: int
-        :type k: int
-        :rtype: int
-        """
         def f(x):
             digits = list(map(int, str(x)))
             dp = [[[[0]*k for _ in range(2*len(digits)+1)] for _ in range(2)] for _ in range(2)]

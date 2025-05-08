@@ -3,10 +3,6 @@
 # hash table
 class Solution(object):
     def isConsecutive(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         return max(nums)-min(nums)+1 == len(nums) == len(set(nums))
 
 
@@ -14,9 +10,5 @@ class Solution(object):
 # sort
 class Solution2(object):
     def isConsecutive(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         nums.sort()
         return all(nums[i]+1 == nums[i+1] for i in range(len(nums)-1))

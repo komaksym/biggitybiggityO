@@ -9,10 +9,6 @@ class TreeNode(object):
 # bfs
 class Solution(object):
     def replaceValueInTree(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: Optional[TreeNode]
-        """
         q = [(root, root.val)]
         while q:
             new_q = []

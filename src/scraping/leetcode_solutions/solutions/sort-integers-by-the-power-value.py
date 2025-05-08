@@ -7,12 +7,6 @@ class Solution(object):
     dp = {}
 
     def getKth(self, lo, hi, k):
-        """
-        :type lo: int
-        :type hi: int
-        :type k: int
-        :rtype: int
-        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def partition_around_pivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left
@@ -57,12 +51,6 @@ class Solution2(object):
     dp = {}
 
     def getKth(self, lo, hi, k):
-        """
-        :type lo: int
-        :type hi: int
-        :type k: int
-        :rtype: int
-        """
         def power_value(x):
             y, result = x, 0
             while x > 1 and x not in Solution2.dp:

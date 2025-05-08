@@ -3,10 +3,6 @@
 
 class Solution(object):
     def largeGroupPositions(self, S):
-        """
-        :type S: str
-        :rtype: List[List[int]]
-        """
         result = []
         i = 0
         for j in range(len(S)):

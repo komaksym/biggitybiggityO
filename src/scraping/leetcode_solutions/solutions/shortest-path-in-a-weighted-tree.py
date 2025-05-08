@@ -22,12 +22,6 @@ class BIT(object):  # 0-indexed.
 # iterative dfs, fenwick tree
 class Solution(object):
     def treeQueries(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         def iter_dfs():
             L, R, dist, lookup = [0]*n, [0]*n, [0]*n, [0]*n
             cnt = 0
@@ -81,12 +75,6 @@ class Solution(object):
 # dfs, fenwick tree
 class Solution2(object):
     def treeQueries(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         def dfs(u, p, d):
             L[u] = cnt[0]
             cnt[0] += 1

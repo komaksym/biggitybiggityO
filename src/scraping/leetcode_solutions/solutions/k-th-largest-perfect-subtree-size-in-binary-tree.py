@@ -6,11 +6,6 @@ import random
 # iterative dfs, quick select
 class Solution(object):
     def kthLargestPerfectSubtree(self, root, k):
-        """
-        :type root: Optional[TreeNode]
-        :type k: int
-        :rtype: int
-        """
         def nth_element(nums, left, n, right, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target):
                 i = left
@@ -69,11 +64,6 @@ import random
 # dfs, quick select
 class Solution2(object):
     def kthLargestPerfectSubtree(self, root, k):
-        """
-        :type root: Optional[TreeNode]
-        :type k: int
-        :rtype: int
-        """
         def nth_element(nums, left, n, right, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target):
                 i = left

@@ -55,10 +55,6 @@ from collections import defaultdict
 
 class Solution3(object):
     def copyRandomList(self, head):
-        """
-        :type head: RandomListNode
-        :rtype: RandomListNode
-        """
         clone = defaultdict(lambda: Node(0))
         clone[None] = None
         cur = head

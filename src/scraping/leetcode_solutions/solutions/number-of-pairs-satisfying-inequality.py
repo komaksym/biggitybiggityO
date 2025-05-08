@@ -7,12 +7,6 @@ import itertools
 # sorted list, binary search
 class Solution(object):
     def numberOfPairs(self, nums1, nums2, diff):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :type diff: int
-        :rtype: int
-        """
         sl = SortedList()
         result = 0
         for x, y in zip(nums1, nums2):
@@ -46,12 +40,6 @@ class BIT(object):  # 0-indexed.
 # bit, fenwick tree, coordinate compression
 class Solution2(object):
     def numberOfPairs(self, nums1, nums2, diff):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :type diff: int
-        :rtype: int
-        """
         sorted_nums = sorted(set(x-y for x, y in zip(nums1, nums2)))
         num_to_idx = {x:i for i, x in enumerate(sorted_nums)}
         result = 0
@@ -69,12 +57,6 @@ import itertools
 # merge sort, two pointers
 class Solution3(object):
     def numberOfPairs(self, nums1, nums2, diff):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :type diff: int
-        :rtype: int
-        """
         def merge_sort(nums, left, right, result):
             if left == right:
                 return

@@ -3,11 +3,6 @@
 # greedy
 class Solution(object):
     def minimumPartition(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: int
-        """
         result = 1
         curr = 0
         for c in s:

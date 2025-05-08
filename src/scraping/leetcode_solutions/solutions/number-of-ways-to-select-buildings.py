@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def numberOfWays(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         K = 3
         dp = [[0]*2 for _ in range(K)]  # dp[i][j]: number of ways of selecting i+1 buildings ending with type j
         for c in s:

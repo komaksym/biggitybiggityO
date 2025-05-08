@@ -5,11 +5,6 @@ import heapq
 
 class Solution(object):
     def maxAverageRatio(self, classes, extraStudents):
-        """
-        :type classes: List[List[int]]
-        :type extraStudents: int
-        :rtype: float
-        """
         def profit(a, b):
             return float(a+1)/(b+1)-float(a)/b
 

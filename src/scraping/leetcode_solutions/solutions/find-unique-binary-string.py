@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findDifferentBinaryString(self, nums):
-        """
-        :type nums: List[str]
-        :rtype: str
-        """
         return "".join("01"[nums[i][i] == '0'] for i in range(len(nums)))
 
 
@@ -13,10 +9,6 @@ class Solution(object):
 #                         , n is len(nums[0])
 class Solution2(object):
     def findDifferentBinaryString(self, nums):
-        """
-        :type nums: List[str]
-        :rtype: str
-        """
         lookup = set([int(x, 2) for x in nums])  # Time: O(k * n) = O(n^2)
         return next(bin(i)[2:].zfill(len(nums[0])) for i in range(2**len(nums[0])) if i not in lookup)  # Time: O(k + n) = O(n)
 
@@ -25,9 +17,5 @@ class Solution2(object):
 #                                       , n is len(nums[0])
 class Solution_Extra(object):
     def findAllDifferentBinaryStrings(self, nums):
-        """
-        :type nums: List[str]
-        :rtype: List[str]
-        """
         lookup = set([int(x, 2) for x in nums])  # Time: O(k * n) = O(n * 2^n)
         return [bin(i)[2:].zfill(len(nums[0])) for i in range(2**len(nums[0])) if i not in lookup]  # Time: O(2^n + n * (2^n - k))

@@ -8,11 +8,6 @@ import math
 # https://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/discuss/636345/Python-O(n3)-and-O(n2logn)-solution-explained-in-detail-with-pictures
 class Solution(object):
     def numPoints(self, points, r):
-        """
-        :type points: List[List[int]]
-        :type r: int
-        :rtype: int
-        """
         def count_points(points, r, i):
             angles = []
             for j in range(len(points)):

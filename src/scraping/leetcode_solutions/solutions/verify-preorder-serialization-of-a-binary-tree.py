@@ -2,10 +2,6 @@
 
 class Solution(object):
     def isValidSerialization(self, preorder):
-        """
-        :type preorder: str
-        :rtype: bool
-        """
         def split_iter(s, tok):
             start = 0
             for i in range(len(s)):

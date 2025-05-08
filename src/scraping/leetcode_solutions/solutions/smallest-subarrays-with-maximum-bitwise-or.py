@@ -3,10 +3,6 @@
 # bitmasks, hash table
 class Solution(object):
     def smallestSubarrays(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         result = [0]*len(nums)
         lookup = [-1]*max(max(nums).bit_length(), 1)
         for i in reversed(range(len(nums))):

@@ -19,10 +19,6 @@ MAX_N = 10**6
 SPF = linear_sieve_of_eratosthenes(MAX_N)
 class Solution(object):
     def minOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         for i in reversed(range(len(nums)-1)):
             if nums[i] <= nums[i+1]:

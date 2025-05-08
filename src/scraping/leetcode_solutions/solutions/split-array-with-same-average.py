@@ -2,10 +2,6 @@
 
 class Solution(object):
     def splitArraySameAverage(self, A):
-        """
-        :type A: List[int]
-        :rtype: bool
-        """
         def possible(total, n):
             for i in range(1, n//2+1):
                 if total*i%n == 0:

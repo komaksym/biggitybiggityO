@@ -68,10 +68,6 @@ class AhoTrie(object):
 
 class Solution(object):
     def entityParser(self, text):
-        """
-        :type text: str
-        :rtype: str
-        """
         patterns = ["&quot;", "&apos;", "&amp;", "&gt;", "&lt;", "&frasl;"]
         chars = ["\"", "'", "&", ">", "<", "/"]
         trie = AhoTrie(patterns)
@@ -95,10 +91,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def entityParser(self, text):
-        """
-        :type text: str
-        :rtype: str
-        """
         patterns = ["&quot;", "&apos;", "&amp;", "&gt;", "&lt;", "&frasl;"]
         chars = ["\"", "'", "&", ">", "<", "/"]
         result = []

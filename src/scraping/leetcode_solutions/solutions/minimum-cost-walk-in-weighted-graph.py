@@ -3,12 +3,6 @@
 # union find
 class Solution(object):
     def minimumCost(self, n, edges, query):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type query: List[List[int]]
-        :rtype: List[int]
-        """
         class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
             def __init__(self, n):
                 self.set = list(range(n))

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def maxProduct(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         def palindromic_subsequence_length(s, mask):
             result = 0
             left, right = 0, len(s)-1

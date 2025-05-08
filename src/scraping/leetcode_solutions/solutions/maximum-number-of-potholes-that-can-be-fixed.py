@@ -3,11 +3,6 @@
 # counting sort, greedy
 class Solution(object):
     def maxPotholes(self, road, budget):
-        """
-        :type road: str
-        :type budget: int
-        :rtype: int
-        """
         def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
             if not nums:
                 return
@@ -49,11 +44,6 @@ class Solution(object):
 # sort, greedy
 class Solution2(object):
     def maxPotholes(self, road, budget):
-        """
-        :type road: str
-        :type budget: int
-        :rtype: int
-        """
         ls = []
         l = 0
         for i in range(len(road)):

@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def longestSubarray(self, nums, limit):
-        """
-        :type nums: List[int]
-        :type limit: int
-        :rtype: int
-        """
         max_dq, min_dq = collections.deque(), collections.deque()
         left = 0
         for right, num in enumerate(nums):
@@ -34,11 +29,6 @@ import collections
 
 class Solution2(object):
     def longestSubarray(self, nums, limit):
-        """
-        :type nums: List[int]
-        :type limit: int
-        :rtype: int
-        """
         max_dq, min_dq = collections.deque(), collections.deque()
         result, left = 0, 0
         for right, num in enumerate(nums):

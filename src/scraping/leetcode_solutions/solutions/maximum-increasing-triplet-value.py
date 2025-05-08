@@ -6,10 +6,6 @@ from sortedcontainers import SortedList
 # sorted list, prefix sum
 class Solution(object):
     def maximumTripletValue(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         left = SortedList()
         right = [0]*len(nums)
         for i in reversed(range(1, len(nums)-1)):
@@ -30,10 +26,6 @@ from sortedcontainers import SortedList
 # sorted list
 class Solution2(object):
     def maximumTripletValue(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         left = SortedList()
         right = SortedList(nums[i] for i in range(1, len(nums)))
         result = 0

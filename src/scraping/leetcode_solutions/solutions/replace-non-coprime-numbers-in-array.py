@@ -3,10 +3,6 @@
 # math, stack
 class Solution(object):
     def replaceNonCoprimes(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         def gcd(a, b):  # Time: O(log(min(a, b)))
             while b:
                 a, b = b, a%b

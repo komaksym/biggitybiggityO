@@ -21,11 +21,6 @@
 # optimized from solution4 (not using dict), runtime: 1040 ms
 class Solution(object):
     def recoverArray(self, n, sums):
-        """
-        :type n: int
-        :type sums: List[int]
-        :rtype: List[int]
-        """
         sums.sort()  # Time: O(2^n * log(2^n)) = O(n * 2^n)
         shift, l = 0, len(sums)
         result = []
@@ -59,11 +54,6 @@ from functools import reduce
 # optimized from solution4 (not using dict), runtime: 968 ms
 class Solution2(object):
     def recoverArray(self, n, sums):
-        """
-        :type n: int
-        :type sums: List[int]
-        :rtype: List[int]
-        """
         min_sum, max_sum = min(sums), max(sums)
         dp = [0]*(max_sum-min_sum+1)
         for x in sums:
@@ -100,11 +90,6 @@ import operator
 # optimized from solution4, runtime: 1044 ms
 class Solution3(object):
     def recoverArray(self, n, sums):
-        """
-        :type n: int
-        :type sums: List[int]
-        :rtype: List[int]
-        """
         dp = {k: v for k, v in collections.Counter(sums).items()}
         total = reduce(operator.ior, iter(dp.values()), 0)
         basis = total&-total  # find rightmost bit 1
@@ -142,11 +127,6 @@ import collections
 # optimized from solution4 (not using OrderedDict), runtime: 1024 ms
 class Solution4(object):
     def recoverArray(self, n, sums):
-        """
-        :type n: int
-        :type sums: List[int]
-        :rtype: List[int]
-        """
         dp = {k: v for k, v in collections.Counter(sums).items()}
         sorted_sums = sorted(dp.keys())  # Time: O(2^n * log(2^n)) = O(n * 2^n)
         shift = 0
@@ -179,11 +159,6 @@ import collections
 # runtime: 1720 ms
 class Solution5(object):
     def recoverArray(self, n, sums):
-        """
-        :type n: int
-        :type sums: List[int]
-        :rtype: List[int]
-        """
         dp = OrderedDict(sorted(collections.Counter(sums).items()))  # Time: O(2^n * log(2^n)) = O(n * 2^n)
         shift = 0
         result = []

@@ -8,12 +8,6 @@ import heapq
 # Dijkstra's algorithm
 class Solution(object):
     def minCost(self, maxTime, edges, passingFees):
-        """
-        :type maxTime: int
-        :type edges: List[List[int]]
-        :type passingFees: List[int]
-        :rtype: int
-        """        
         adj = [[] for i in range(len(passingFees))]
         for u, v, w in edges:
             adj[u].append((v, w))

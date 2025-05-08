@@ -6,25 +6,15 @@ import itertools
 class CombinationIterator(object):
 
     def __init__(self, characters, combinationLength):
-        """
-        :type characters: str
-        :type combinationLength: int
-        """
         self.__it = itertools.combinations(characters, combinationLength)
         self.__curr = None
         self.__last = characters[-combinationLength:]
 
     def __next__(self):
-        """
-        :rtype: str
-        """
         self.__curr = "".join(next(self.__it))
         return self.__curr
     
     def hasNext(self):
-        """
-        :rtype: bool
-        """
         return self.__curr != self.__last
 
 
@@ -35,10 +25,6 @@ import functools
 class CombinationIterator2(object):
 
     def __init__(self, characters, combinationLength):
-        """
-        :type characters: str
-        :type combinationLength: int
-        """
         self.__characters = characters
         self.__combinationLength = combinationLength
         self.__it = self.__iterative_backtracking()
@@ -72,16 +58,10 @@ class CombinationIterator2(object):
                 yield result
 
     def __next__(self):
-        """
-        :rtype: str
-        """
         self.__curr = "".join(next(self.__it))
         return self.__curr
         
     def hasNext(self):
-        """
-        :rtype: bool
-        """
         return self.__curr != self.__last
 
 

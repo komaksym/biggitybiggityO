@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minEatingSpeed(self, piles, H):
-        """
-        :type piles: List[int]
-        :type H: int
-        :rtype: int
-        """
         def possible(piles, H, K):
             return sum((pile-1)//K+1 for pile in piles) <= H
 

@@ -3,10 +3,6 @@
 # A* Search Algorithm without heap
 class Solution(object):
     def minimumObstacles(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         def a_star(grid, b, t):
             f, dh = 0, 1
@@ -39,10 +35,6 @@ import collections
 # 0-1 bfs solution
 class Solution2(object):
     def minimumObstacles(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         b, t = (0, 0), (len(grid)-1, len(grid[0])-1)
         dq = collections.deque([(b, 0)])

@@ -6,11 +6,6 @@ import random
 
 class Solution(object):
     def minimizeError(self, prices, target):
-        """
-        :type prices: List[str]
-        :type target: int
-        :rtype: str
-        """
         def kthElement(nums, k, compare=lambda a, b: a < b):
             def PartitionAroundPivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left

@@ -6,11 +6,6 @@ import random
 # math, greedy, quick select
 class Solution(object):
     def makeSubKSumEqual(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: int
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

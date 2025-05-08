@@ -3,11 +3,6 @@
 # freq table, greedy, prefix sum, number theory
 class Solution(object):
     def smallestNumber(self, num, t):
-        """
-        :type num: str
-        :type t: int
-        :rtype: str
-        """
         LOOKUP = [[(0, 0, 0, 0), (0, 1, 0, 0)],
                   [(1, 0, 0, 0), (0, 0, 0, 1)],
                   [(0, 0, 1, 0), (1, 0, 0, 1)]]
@@ -65,11 +60,6 @@ class Solution(object):
 # freq table, greedy, prefix sum, number theory
 class Solution2(object):
     def smallestNumber(self, num, t):
-        """
-        :type num: str
-        :type t: int
-        :rtype: str
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

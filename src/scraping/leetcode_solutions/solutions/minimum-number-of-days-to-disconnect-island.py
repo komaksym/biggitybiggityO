@@ -45,10 +45,6 @@ def iter_get_articulation_points(graph, v):  # modified
 # flood fill, tarjan's algorithm, articulation points
 class Solution(object):
     def minDays(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     
         def floodfill(grid, i, j, lookup):
@@ -143,10 +139,6 @@ class PersistentUnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 # flood fill, persistent union find
 class Solution2(object):
     def minDays(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     
         def floodfill(grid, i, j, lookup):
@@ -221,10 +213,6 @@ class Solution2(object):
 # flood fill
 class Solution3(object):
     def minDays(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     
         def floodfill(grid, i, j, lookup):

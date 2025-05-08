@@ -22,11 +22,6 @@ class BIT(object):  # 0-indexed.
 # bit, fenwick tree, combinatorics
 class Solution(object):
     def goodTriplets(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         lookup = [0]*len(nums1)
         for i, x in enumerate(nums1):
             lookup[x] = i

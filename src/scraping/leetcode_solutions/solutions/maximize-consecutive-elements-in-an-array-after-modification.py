@@ -3,10 +3,6 @@
 # sort, dp
 class Solution(object):
     def maxSelectedElements(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort()
         result = 1
         dp = [1]*2  # dp[i]: the maximum length of a consecutive sequence ending with x+i, where x is the last visited value
@@ -32,10 +28,6 @@ import collections
 # sort, dp
 class Solution2(object):
     def maxSelectedElements(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort()
         dp = collections.defaultdict(int)
         dp[nums[0]] = dp[nums[0]+1] = 1
@@ -60,10 +52,6 @@ import collections
 # sort, dp
 class Solution3(object):
     def maxSelectedElements(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         nums.sort()
         dp = collections.defaultdict(int)
         for x in nums:

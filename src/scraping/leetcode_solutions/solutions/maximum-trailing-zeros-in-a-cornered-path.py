@@ -6,10 +6,6 @@ import itertools
 # prefix sum
 class Solution(object):
     def maxTrailingZeros(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def factor(x):
             cnt = [0]*2
             for i, p in enumerate([2, 5]):

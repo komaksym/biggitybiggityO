@@ -2,11 +2,6 @@
 
 class Solution(object):
     def removeDuplicates(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: str
-        """
         stk = [['^', 0]]
         for c in s:
             if stk[-1][0] == c:

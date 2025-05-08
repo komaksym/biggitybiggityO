@@ -2,10 +2,6 @@
 
 class Solution(object):
     def countServers(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         rows, cols = [0]*len(grid), [0]*len(grid[0])
         for i in range(len(grid)):
             for j in range(len(grid[0])):

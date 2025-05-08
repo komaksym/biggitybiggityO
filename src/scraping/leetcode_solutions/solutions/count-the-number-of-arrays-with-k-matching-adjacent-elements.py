@@ -13,10 +13,4 @@ def nCr(n, k):
 
 class Solution(object):
     def countGoodArrays(self, n, m, k):
-        """
-        :type n: int
-        :type m: int
-        :type k: int
-        :rtype: int
-        """
         return (nCr(n-1, k)*(m*pow(m-1, (n-1)-k, MOD)))%MOD

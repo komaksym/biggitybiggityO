@@ -8,16 +8,10 @@ from random import randint
 class Solution(object):
 
     def __init__(self, head):
-        """
-        :type head: Optional[ListNode]
-        """
         self.__head = head
 
 
     def getRandom(self):
-        """
-        :rtype: int
-        """
         reservoir = -1
         curr, n = self.__head, 0
         while curr:
@@ -35,9 +29,6 @@ from random import randint
 class Solution2(object):
 
     def __init__(self, head):
-        """
-        :type head: Optional[ListNode]
-        """
         self.__lookup = []
         while head:
             self.__lookup.append(head.val)
@@ -45,7 +36,4 @@ class Solution2(object):
         
 
     def getRandom(self):
-        """
-        :rtype: int
-        """
         return self.__lookup[randint(0, len(self.__lookup)-1)]

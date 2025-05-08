@@ -2,10 +2,6 @@
 
 class Solution(object):
     def uniquePathsWithObstacles(self, obstacleGrid):
-        """
-        :type obstacleGrid: List[List[int]]
-        :rtype: int
-        """
         m, n = len(obstacleGrid), len(obstacleGrid[0])
 
         ways = [0]*n

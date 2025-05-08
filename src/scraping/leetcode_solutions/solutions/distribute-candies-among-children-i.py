@@ -3,11 +3,6 @@
 # stars and bars, combinatorics, principle of inclusion-exclusion 
 class Solution(object):
     def distributeCandies(self, n, limit):
-        """
-        :type n: int
-        :type limit: int
-        :rtype: int
-        """
         def nCr(n, r):  # Time: O(n), Space: O(1)
             if not 0 <= r <= n:
                 return 0
@@ -30,11 +25,6 @@ class Solution(object):
 # optimized brute force
 class Solution2(object):
     def distributeCandies(self, n, limit):
-        """
-        :type n: int
-        :type limit: int
-        :rtype: int
-        """
         return sum(min(limit, n-i)-max((n-i)-limit, 0)+1 for i in range(max(n-2*limit, 0), min(limit, n)+1))
 
 
@@ -42,9 +32,4 @@ class Solution2(object):
 # brute force
 class Solution3(object):
     def distributeCandies(self, n, limit):
-        """
-        :type n: int
-        :type limit: int
-        :rtype: int
-        """
         return sum(n-i-j <= limit for i in range(min(limit, n)+1) for j in range(min(limit, n-i)+1))

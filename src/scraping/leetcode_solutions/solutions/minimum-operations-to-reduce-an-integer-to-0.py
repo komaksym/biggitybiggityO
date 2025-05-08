@@ -4,10 +4,6 @@
 # reference: https://leetcode.com/problems/minimum-operations-to-reduce-an-integer-to-0/solutions/3203994/java-c-python-1-line-solution/
 class Solution(object):
     def minOperations(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def popcount(x):
             return bin(x)[2:].count('1')
 
@@ -18,10 +14,6 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def minOperations(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         result = 0
         while n:
             if n&1:

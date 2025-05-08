@@ -6,14 +6,6 @@ import bisect
 # sort, prefix sum, greedy, two pointers, improved from solution3
 class Solution(object):
     def maximumBeauty(self, flowers, newFlowers, target, full, partial):
-        """
-        :type flowers: List[int]
-        :type newFlowers: int
-        :type target: int
-        :type full: int
-        :type partial: int
-        :rtype: int
-        """
         flowers.sort()
         n = bisect.bisect_left(flowers, target)
         prefix, suffix = 0, sum(flowers[i] for i in range(n))
@@ -39,14 +31,6 @@ import bisect
 # sort, prefix sum, greedy, two pointers, improved from solution4
 class Solution2(object):
     def maximumBeauty(self, flowers, newFlowers, target, full, partial):
-        """
-        :type flowers: List[int]
-        :type newFlowers: int
-        :type target: int
-        :type full: int
-        :type partial: int
-        :rtype: int
-        """
         flowers.sort()
         n = bisect.bisect_left(flowers, target)
         prefix = [0]*(n+1)
@@ -75,14 +59,6 @@ import bisect
 # sort, prefix sum, greedy, binary search
 class Solution3(object):
     def maximumBeauty(self, flowers, newFlowers, target, full, partial):
-        """
-        :type flowers: List[int]
-        :type newFlowers: int
-        :type target: int
-        :type full: int
-        :type partial: int
-        :rtype: int
-        """
         def check(prefix, total, x):
             return x and (total+prefix[x])//x <= prefix[x+1]-prefix[x]
 
@@ -121,14 +97,6 @@ import bisect
 # sort, prefix sum, greedy, binary search
 class Solution4(object):
     def maximumBeauty(self, flowers, newFlowers, target, full, partial):
-        """
-        :type flowers: List[int]
-        :type newFlowers: int
-        :type target: int
-        :type full: int
-        :type partial: int
-        :rtype: int
-        """
         def check(prefix, total, x):
             return (prefix[x]-prefix[x-1])*x-prefix[x] <= total
 

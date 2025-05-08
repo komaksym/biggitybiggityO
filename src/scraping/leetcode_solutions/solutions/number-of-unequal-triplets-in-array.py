@@ -6,10 +6,6 @@ import collections
 # freq table, dp
 class Solution(object):
     def unequalTriplets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         K = 3
         cnt = collections.Counter()
         dp = [0]*K  # dp[i]: number of unequal (i+1)-plets

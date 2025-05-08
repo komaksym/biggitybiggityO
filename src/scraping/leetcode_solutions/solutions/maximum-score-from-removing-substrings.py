@@ -2,12 +2,6 @@
 
 class Solution(object):
     def maximumGain(self, s, x, y):
-        """
-        :type s: str
-        :type x: int
-        :type y: int
-        :rtype: int
-        """
         def score(s, a, x):
             i = result = 0
             for j in range(len(s)):

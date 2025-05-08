@@ -3,10 +3,6 @@
 # greedy, counting sort
 class Solution(object):
     def smallestNumber(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
         def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
             count = [0]*(max(nums)+1)
             for num in nums:
@@ -35,10 +31,6 @@ class Solution(object):
 # greedy
 class Solution2(object):
     def smallestNumber(self, num):
-        """
-        :type num: int
-        :rtype: int
-        """
         sign = 1 if num >= 0 else -1
         nums = sorted(str(abs(num)), reverse=(sign == -1))
         i = next((i for i in range(len(nums)) if nums[i] != '0'), 0)

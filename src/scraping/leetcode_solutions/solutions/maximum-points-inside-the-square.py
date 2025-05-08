@@ -6,11 +6,6 @@ import itertools
 # hash table
 class Solution(object):
     def maxPointsInsideSquare(self, points, s):
-        """
-        :type points: List[List[int]]
-        :type s: str
-        :rtype: int
-        """
         INF = float("inf")
         lookup = [INF for _ in range(26)]
         d = INF

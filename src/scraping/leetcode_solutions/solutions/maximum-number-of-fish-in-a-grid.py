@@ -3,10 +3,6 @@
 # bfs
 class Solution(object):
     def findMaxFish(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs(i, j):
             result = grid[i][j]
@@ -39,10 +35,6 @@ class Solution(object):
 # dfs
 class Solution2(object):
     def findMaxFish(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def dfs(i, j):
             result = grid[i][j]

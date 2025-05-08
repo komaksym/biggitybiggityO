@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def climbStairs(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))] \
                       for i in range(len(A))]
@@ -31,10 +27,6 @@ class Solution(object):
 
 # Time:  O(n)
 class Solution2(object):
-    """
-    :type n: int
-    :rtype: int
-    """
     def climbStairs(self, n):
         prev, current = 0, 1
         for i in range(n):

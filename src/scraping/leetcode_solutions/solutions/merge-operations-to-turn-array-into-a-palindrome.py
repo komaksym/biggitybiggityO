@@ -3,10 +3,6 @@
 # constructive algorithms, greedy, two pointers
 class Solution(object):
     def minimumOperations(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         left, right = 0, len(nums)-1
         l, r = nums[left], nums[right]

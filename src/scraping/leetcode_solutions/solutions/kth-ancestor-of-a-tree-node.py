@@ -7,10 +7,6 @@
 class TreeAncestor(object):
 
     def __init__(self, n, parent):
-        """
-        :type n: int
-        :type parent: List[int]
-        """
         par = [[p] if p != -1 else [] for p in parent]
         q = [par[i] for i, p in enumerate(parent) if p != -1]
         i = 0
@@ -26,11 +22,6 @@ class TreeAncestor(object):
         self.__parent = par
 
     def getKthAncestor(self, node, k):
-        """
-        :type node: int
-        :type k: int
-        :rtype: int
-        """
         par, i, pow_i_of_2 = self.__parent, 0, 1
         while pow_i_of_2 <= k:
             if k & pow_i_of_2:

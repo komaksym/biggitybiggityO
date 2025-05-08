@@ -20,10 +20,6 @@ class BIT(object):  # 0-indexed.
 
 class Solution(object):
     def createSortedArray(self, instructions):
-        """
-        :type instructions: List[int]
-        :rtype: int
-        """
         MOD = 10**9 + 7
         bit = BIT(max(instructions))
         result = 0
@@ -38,10 +34,6 @@ class Solution(object):
 import itertools
 class Solution_TLE(object):
     def createSortedArray(self, instructions):
-        """
-        :type instructions: List[int]
-        :rtype: int
-        """
         MOD = 10**9 + 7
         def smallerMergeSort(idxs, start, end, counts):
             if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.

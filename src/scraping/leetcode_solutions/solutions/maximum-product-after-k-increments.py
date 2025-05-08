@@ -3,11 +3,6 @@
 # math, sort
 class Solution(object):
     def maximumProduct(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         nums.sort()
         total = sum(nums)
@@ -28,11 +23,6 @@ from functools import reduce
 # freq table
 class Solution2(object):
     def maximumProduct(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         cnt = collections.Counter(nums)
         min_num = min(cnt.keys())
@@ -54,11 +44,6 @@ import heapq
 # heap
 class Solution3(object):
     def maximumProduct(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         min_heap = nums
         heapq.heapify(min_heap)

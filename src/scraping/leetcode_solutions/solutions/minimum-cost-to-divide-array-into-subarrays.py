@@ -166,12 +166,6 @@ class LineContainer(object):
 # prefix sum, dp, convex hull trick
 class Solution(object):
     def minimumCost(self, nums, cost, k):
-        """
-        :type nums: List[int]
-        :type cost: List[int]
-        :type k: int
-        :rtype: int
-        """
         prefix1 = [0]*(len(nums)+1)
         for i in range(len(nums)):
             prefix1[i+1] = prefix1[i]+nums[i]
@@ -190,12 +184,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def minimumCost(self, nums, cost, k):
-        """
-        :type nums: List[int]
-        :type cost: List[int]
-        :type k: int
-        :rtype: int
-        """
         prefix1 = [0]*(len(nums)+1)
         for i in range(len(nums)):
             prefix1[i+1] = prefix1[i]+nums[i]

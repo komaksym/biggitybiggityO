@@ -19,11 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def countComponents(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         union_find = UnionFind(n)
         for i, j in edges:
             union_find.union_set(i, j)

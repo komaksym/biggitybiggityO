@@ -6,10 +6,6 @@ import re
 
 class Solution(object):
     def countOfAtoms(self, formula):
-        """
-        :type formula: str
-        :rtype: str
-        """
         parse = re.findall(r"([A-Z][a-z]*)(\d*)|(\()|(\))(\d*)", formula)
         stk = [collections.Counter()]
         for name, m1, left_open, right_open, m2 in parse:

@@ -5,11 +5,6 @@ import math
 
 class Solution(object):
     def minimumPerimeter(self, neededApples):
-        """
-        :type neededApples: int
-        :rtype: int
-        """
-
         a, b, c, d = 4.0, 6.0, 2.0, float(-neededApples)
         p = (3*a*c-b**2)/(3*a**2)  # -1/4.0
         q = (2*b**3-9*a*b*c+27*a**2*d)/(27*a**3)  # -neededApples/4.0
@@ -19,11 +14,6 @@ class Solution(object):
         return 8*int(math.ceil(x - b/(3*a)))
 class Solution2(object):
     def minimumPerimeter(self, neededApples):
-        """
-        :type neededApples: int
-        :rtype: int
-        """
-
         x = int((2*neededApples)**(1.0/3))
         x -= x%2
         assert((x-2)*(x-1)*x < 2*neededApples < (x+2)**3)
@@ -36,11 +26,6 @@ class Solution2(object):
 # Time:  O(logn)
 class Solution3(object):
     def minimumPerimeter(self, neededApples):
-        """
-        :type neededApples: int
-        :rtype: int
-        """
-
         def check(neededApples, x):
             return r*(2*r+1)*(2*r+2) >= neededApples
 

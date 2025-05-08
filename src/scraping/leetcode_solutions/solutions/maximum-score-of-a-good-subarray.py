@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maximumScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         result = curr = nums[k]
         left = right = k
         while left-1 >= 0 or right+1 < len(nums):
@@ -25,11 +20,6 @@ import bisect
 
 class Solution2(object):
     def maximumScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def score(nums, k):
             prefix = [nums[k]]*(k+1)
             for i in reversed(range(k)):

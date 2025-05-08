@@ -3,10 +3,6 @@
 # brute force
 class Solution(object):
     def maxSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def total(i, j):
             return (grid[i][j]+grid[i][j+1]+grid[i][j+2]+
                                grid[i+1][j+1]+

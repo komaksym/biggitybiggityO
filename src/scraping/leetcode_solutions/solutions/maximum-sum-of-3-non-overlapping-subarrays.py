@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxSumOfThreeSubarrays(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         n = len(nums)
         accu = [0]
         for num in nums:

@@ -6,11 +6,6 @@ import collections
 # two pointers, sliding window freq table, hash table
 class Solution(object):
     def maxFrequencyScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         lookup = {}
         def powmod(n, p):
@@ -42,11 +37,6 @@ import collections
 # two pointers, sliding window, freq table
 class Solution2(object):
     def maxFrequencyScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         result = curr = 0
         cnt = collections.Counter()

@@ -22,10 +22,6 @@ MAX_N = 10**3
 PRIMES = linear_sieve_of_eratosthenes(MAX_N-1)  
 class Solution(object):
     def primeSubOperation(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         for i in range(len(nums)):
             j = bisect.bisect_left(PRIMES, nums[i]-nums[i-1] if i-1 >= 0 else nums[i])
             if j-1 >= 0:

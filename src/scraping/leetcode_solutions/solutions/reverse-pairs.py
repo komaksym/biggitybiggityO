@@ -2,10 +2,6 @@
 
 class Solution(object):
     def reversePairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def merge(nums, start, mid, end):
             r = mid + 1
             tmp = []

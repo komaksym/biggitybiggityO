@@ -10,11 +10,6 @@ class TreeNode(object):
 class Codec(object):
 
     def serialize(self, root):
-        """Encodes a tree to a single string.
-
-        :type root: TreeNode
-        :rtype: str
-        """
         def serializeHelper(node):
             if not node:
                 vals.append('#')
@@ -28,11 +23,6 @@ class Codec(object):
 
 
     def deserialize(self, data):
-        """Decodes your encoded data to tree.
-
-        :type data: str
-        :rtype: TreeNode
-        """
         def deserializeHelper():
             val = next(vals)
             if val == '#':
@@ -60,11 +50,6 @@ class Codec(object):
 class Codec2(object):
 
     def serialize(self, root):
-        """Encodes a tree to a single string.
-        
-        :type root: TreeNode
-        :rtype: str
-        """
         def gen_preorder(node):
             if not node:
                 yield '#'
@@ -78,11 +63,6 @@ class Codec2(object):
         return ' '.join(gen_preorder(root))
         
     def deserialize(self, data):
-        """Decodes your encoded data to tree.
-        
-        :type data: str
-        :rtype: TreeNode
-        """
         def builder(chunk_iter):
             val = next(chunk_iter)
             if val == '#':

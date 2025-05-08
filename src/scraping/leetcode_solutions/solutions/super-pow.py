@@ -2,11 +2,6 @@
 
 class Solution(object):
     def superPow(self, a, b):
-        """
-        :type a: int
-        :type b: List[int]
-        :rtype: int
-        """
         def myPow(a, n, b):
             result = 1
             x = a % b

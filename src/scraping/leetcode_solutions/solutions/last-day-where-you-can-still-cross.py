@@ -30,12 +30,6 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 
 class Solution(object):
     def latestDayToCross(self, row, col, cells):
-        """
-        :type row: int
-        :type col: int
-        :type cells: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def index(n, i, j):
             return i*n+j

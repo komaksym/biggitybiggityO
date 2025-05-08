@@ -4,10 +4,6 @@ from functools import reduce
 # combinatorics, stars and bars
 class Solution(object):
     def countOfPairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
             while len(inv) <= n:  # lazy initialization
@@ -25,10 +21,6 @@ class Solution(object):
 # dp, prefix sum
 class Solution2(object):
     def countOfPairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [int(i <= nums[0]) for i in range(max(nums)+1)]  # dp[j]: numbers of arr1, which is of length i+1 and arr1[i] is j
         for i in range(1, len(nums)):
@@ -41,10 +33,6 @@ class Solution2(object):
 # dp
 class Solution3(object):
     def countOfPairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [int(i <= nums[0]) for i in range(max(nums)+1)]  # dp[j]: numbers of arr1, which is of length i+1 and arr1[i] is j
         for i in range(1, len(nums)):

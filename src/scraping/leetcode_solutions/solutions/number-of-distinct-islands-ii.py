@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numDistinctIslands2(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
         def dfs(i, j, grid, island):

@@ -3,12 +3,6 @@
 # math, stars and bars, combinatorics
 class Solution(object):
     def countNumbers(self, l, r, b):
-        """
-        :type l: str
-        :type r: str
-        :type b: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):
@@ -46,12 +40,6 @@ class Solution(object):
 # math, stars and bars, combinatorics
 class Solution2(object):
     def countNumbers(self, l, r, b):
-        """
-        :type l: str
-        :type r: str
-        :type b: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):

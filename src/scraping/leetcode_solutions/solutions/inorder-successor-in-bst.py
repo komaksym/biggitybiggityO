@@ -2,11 +2,6 @@
 
 class Solution(object):
     def inorderSuccessor(self, root, p):
-        """
-        :type root: TreeNode
-        :type p: TreeNode
-        :rtype: TreeNode
-        """
         if p and p.right:
             p = p.right
             while p.left:

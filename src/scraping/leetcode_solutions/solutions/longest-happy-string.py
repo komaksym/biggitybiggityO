@@ -5,12 +5,6 @@ import heapq
 
 class Solution(object):
     def longestDiverseString(self, a, b, c):
-        """
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: str
-        """
         max_heap = []
         if a:
             heapq.heappush(max_heap, (-a, 'a'))
@@ -41,12 +35,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def longestDiverseString(self, a, b, c):
-        """
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: str
-        """
         choices = [[a, 'a'], [b, 'b'], [c, 'c']]
         result = []
         for _ in range(a+b+c):

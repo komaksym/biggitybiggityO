@@ -2,10 +2,6 @@
 
 class Solution(object):
     def isBipartite(self, graph):
-        """
-        :type graph: List[List[int]]
-        :rtype: bool
-        """
         color = {}
         for node in range(len(graph)):
             if node in color:

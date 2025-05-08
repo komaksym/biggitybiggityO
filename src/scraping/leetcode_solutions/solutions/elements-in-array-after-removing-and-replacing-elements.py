@@ -2,11 +2,6 @@
 
 class Solution(object):
     def elementInNums(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         result = []
         for t, i in queries:
             t %= 2*len(nums)

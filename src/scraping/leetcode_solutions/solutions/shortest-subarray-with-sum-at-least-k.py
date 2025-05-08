@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def shortestSubarray(self, A, K):
-        """
-        :type A: List[int]
-        :type K: int
-        :rtype: int
-        """
         accumulated_sum = [0]*(len(A)+1)
         for i in range(len(A)):
             accumulated_sum[i+1] = accumulated_sum[i]+A[i]

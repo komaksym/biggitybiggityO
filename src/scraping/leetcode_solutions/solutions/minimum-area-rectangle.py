@@ -6,10 +6,6 @@ import collections
 
 class Solution(object):
     def minAreaRect(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         nx = len(set(x for x, y in points))
         ny = len(set(y for x, y in points))
 
@@ -34,10 +30,6 @@ class Solution(object):
         return result if result != float("inf") else 0
 class Solution2(object):
     def minAreaRect(self, points):
-        """
-        :type points: List[List[int]]
-        :rtype: int
-        """
         lookup = set()
         result = float("inf")
         for x1, y1 in points:

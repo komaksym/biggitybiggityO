@@ -5,13 +5,6 @@ from sortedcontainers import SortedList
 
 class Solution(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             t = SortedList(tasks[:x])
             for worker in workers[-x:]:  # enumerate from the weakest worker to the strongest worker, greedily assign him to the hardest task which he can do
@@ -46,13 +39,6 @@ from sortedcontainers import SortedList
 
 class Solution2(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             w = SortedList(workers[-x:])
             for task in tasks[-x:]:  # enumerate from the hardest task to the easiest task, greedily assign it to the weakest worker whom it can be done by
@@ -87,13 +73,6 @@ import bisect
 
 class Solution3(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             t = tasks[:x]
             for worker in workers[-x:]:  # enumerate from the weakest worker to the strongest worker, greedily assign him to the hardest task which he can do
@@ -128,13 +107,6 @@ import bisect
 
 class Solution4(object):
     def maxTaskAssign(self, tasks, workers, pills, strength):
-        """
-        :type tasks: List[int]
-        :type workers: List[int]
-        :type pills: int
-        :type strength: int
-        :rtype: int
-        """
         def check(tasks, workers, pills, strength, x):
             w = workers[-x:]
             for task in tasks[-x:]:  # enumerate from the hardest task to the easiest task, greedily assign it to the weakest worker whom it can be done by

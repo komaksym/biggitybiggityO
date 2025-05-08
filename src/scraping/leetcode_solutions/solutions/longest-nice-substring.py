@@ -2,10 +2,6 @@
 
 class Solution(object):
     def longestNiceSubstring(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         lookup = set(list(s))
         prev = -1
         result = ""

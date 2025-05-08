@@ -3,12 +3,6 @@
 # combinatorics
 class Solution(object):
     def numberOfWays(self, startPos, endPos, k):
-        """
-        :type startPos: int
-        :type endPos: int
-        :type k: int
-        :rtype: int
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):

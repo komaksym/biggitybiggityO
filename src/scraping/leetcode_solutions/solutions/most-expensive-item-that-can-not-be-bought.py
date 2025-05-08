@@ -3,11 +3,6 @@
 # Chicken McNugget Theorem
 class Solution(object):
     def mostExpensiveItem(self, primeOne, primeTwo):
-        """
-        :type primeOne: int
-        :type primeTwo: int
-        :rtype: int
-        """
         return primeOne*primeTwo-primeOne-primeTwo
 
 
@@ -15,11 +10,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def mostExpensiveItem(self, primeOne, primeTwo):
-        """
-        :type primeOne: int
-        :type primeTwo: int
-        :rtype: int
-        """
         dp = [False]*max(primeOne, primeTwo)
         dp[0] = True
         result = 1

@@ -6,12 +6,6 @@ import collections
 # freq table, two pointers, sliding window
 class Solution(object):
     def maxSum(self, nums, m, k):
-        """
-        :type nums: List[int]
-        :type m: int
-        :type k: int
-        :rtype: int
-        """
         lookup = collections.Counter()
         result = curr = left = 0
         for right in range(len(nums)):

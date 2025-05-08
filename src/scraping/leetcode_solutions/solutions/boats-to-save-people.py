@@ -2,11 +2,6 @@
 
 class Solution(object):
     def numRescueBoats(self, people, limit):
-        """
-        :type people: List[int]
-        :type limit: int
-        :rtype: int
-        """
         people.sort()
         result = 0
         left, right = 0, len(people)-1

@@ -3,10 +3,6 @@
 # hungarian algorithm, weighted bipartite matching
 class Solution(object):
     def findMinimumTime(self, strength):
-        """
-        :type strength: List[int]
-        :rtype: int
-        """
         def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
             if not a:
                 return 0, []

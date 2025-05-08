@@ -3,11 +3,6 @@
 
 class Solution(object):
     def countCombinations(self, pieces, positions):
-        """
-        :type pieces: List[str]
-        :type positions: List[List[int]]
-        :rtype: int
-        """
         directions = {"rook": [(0, 1), (1, 0), (0, -1), (-1, 0)],
                       "bishop": [(1, 1), (1, -1), (-1, 1), (-1, -1)],
                       "queen" : [(0, 1), (1, 0), (0, -1), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]}

@@ -29,10 +29,6 @@ for i in range(1, MAX_NUM+1):  # Time: O(max_r * log(max_r))
         MU[j] -= MU[i] 
 class Solution(object):
     def subsequencePairCount(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def count(g):
             return reduce(lambda accu, x: (accu+x)%MOD, (MU[i]*MU[j]*f[i*g][j*g] for i in range(1, mx//g+1) for j in range(1, mx//g+1)), 0)
             
@@ -61,10 +57,6 @@ from functools import reduce
 # dp, number theory
 class Solution2(object):
     def subsequencePairCount(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def gcd(a, b):
             while b:
@@ -91,10 +83,6 @@ import collections
 # dp, number theory
 class SolutionTLE(object):
     def subsequencePairCount(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def gcd(a, b):
             while b:

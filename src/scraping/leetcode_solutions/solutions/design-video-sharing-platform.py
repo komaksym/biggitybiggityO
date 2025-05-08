@@ -21,10 +21,6 @@ class VideoSharingPlatform(object):
         self.__views = []
 
     def upload(self, video):
-        """
-        :type video: str
-        :rtype: int
-        """
         if self.__avails:
             i = heapq.heappop(self.__avails)
         else:
@@ -37,10 +33,6 @@ class VideoSharingPlatform(object):
         return i
         
     def remove(self, videoId):
-        """
-        :type videoId: int
-        :rtype: None
-        """
         if videoId >= len(self.__videos) or not self.__videos[videoId]:
             return
         heapq.heappush(self.__avails, videoId)
@@ -48,49 +40,27 @@ class VideoSharingPlatform(object):
         self.__likes[videoId] = self.__dislikes[videoId] = self.__views[videoId] = 0
         
     def watch(self, videoId, startMinute, endMinute):
-        """
-        :type videoId: int
-        :type startMinute: int
-        :type endMinute: int
-        :rtype: str
-        """
         if videoId >= len(self.__videos) or not self.__videos[videoId]:
             return "-1"
         self.__views[videoId] += 1
         return self.__videos[videoId][startMinute:endMinute+1]
 
     def like(self, videoId):
-        """
-        :type videoId: int
-        :rtype: None
-        """
         if videoId >= len(self.__videos) or not self.__videos[videoId]:
             return
         self.__likes[videoId] += 1
 
     def dislike(self, videoId):
-        """
-        :type videoId: int
-        :rtype: None
-        """
         if videoId >= len(self.__videos) or not self.__videos[videoId]:
             return
         self.__dislikes[videoId] += 1
 
     def getLikesAndDislikes(self, videoId):
-        """
-        :type videoId: int
-        :rtype: List[int]
-        """
         if videoId >= len(self.__videos) or not self.__videos[videoId]:
             return [-1]
         return [self.__likes[videoId], self.__dislikes[videoId]]
 
     def getViews(self, videoId):
-        """
-        :type videoId: int
-        :rtype: int
-        """
         if videoId >= len(self.__videos) or not self.__videos[videoId]:
             return -1
         return self.__views[videoId]

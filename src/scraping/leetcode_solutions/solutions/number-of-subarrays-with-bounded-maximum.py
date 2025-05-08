@@ -2,12 +2,6 @@
 
 class Solution(object):
     def numSubarrayBoundedMax(self, A, L, R):
-        """
-        :type A: List[int]
-        :type L: int
-        :type R: int
-        :rtype: int
-        """
         def count(A, bound):
             result, curr = 0, 0
             for i in A :

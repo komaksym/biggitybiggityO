@@ -2,10 +2,6 @@
 
 class Solution(object):
     def myAtoi(self, str):
-        """
-        :type str: str
-        :rtype: int
-        """
         INT_MAX =  2147483647
         INT_MIN = -2147483648
         result = 0

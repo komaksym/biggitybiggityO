@@ -2,10 +2,6 @@
 
 class Solution(object):
     def totalHammingDistance(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         for i in range(32):
             counts = [0] * 2

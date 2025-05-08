@@ -2,11 +2,6 @@
 
 class Solution(object):
     def findLongestWord(self, s, d):
-        """
-        :type s: str
-        :type d: List[str]
-        :rtype: str
-        """
         d.sort(key = lambda x: (-len(x), x))
         for word in d:
             i = 0

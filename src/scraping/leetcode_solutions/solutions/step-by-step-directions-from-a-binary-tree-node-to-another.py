@@ -10,12 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def getDirections(self, root, startValue, destValue):
-        """
-        :type root: Optional[TreeNode]
-        :type startValue: int
-        :type destValue: int
-        :rtype: str
-        """
         def iter_dfs(root, val):
             path = []
             stk = [(1, (root,))]
@@ -50,12 +44,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def getDirections(self, root, startValue, destValue):
-        """
-        :type root: Optional[TreeNode]
-        :type startValue: int
-        :type destValue: int
-        :rtype: str
-        """
         def dfs(node, val, path):
             if node.val == val:
                 return True

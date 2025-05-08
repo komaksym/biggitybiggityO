@@ -23,11 +23,6 @@ MAX_R = 10**9
 PRIMES = linear_sieve_of_eratosthenes(int(MAX_R**0.5))
 class Solution(object):
     def nonSpecialCount(self, l, r):
-        """
-        :type l: int
-        :type r: int
-        :rtype: int
-        """
         def count(x):
             return x-bisect.bisect_right(PRIMES, int(x**0.5))
 

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxSideLength(self, mat, threshold):
-        """
-        :type mat: List[List[int]]
-        :type threshold: int
-        :rtype: int
-        """
         def check(dp, mid, threshold):
             for i in range(mid, len(dp)):
                 for j in range(mid, len(dp[0])):

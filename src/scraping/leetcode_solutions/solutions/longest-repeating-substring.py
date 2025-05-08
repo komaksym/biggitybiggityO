@@ -6,10 +6,6 @@ from functools import reduce
 
 class Solution(object):
     def longestRepeatingSubstring(self, S):
-        """
-        :type S: str
-        :rtype: int
-        """
         M = 10**9+7
         D = 26
 

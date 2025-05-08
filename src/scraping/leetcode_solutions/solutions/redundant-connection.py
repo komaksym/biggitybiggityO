@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def findRedundantConnection(self, edges):
-        """
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
         union_find = UnionFind(len(edges)+1)
         for edge in edges:
             if not union_find.union_set(*edge):

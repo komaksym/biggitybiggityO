@@ -2,10 +2,6 @@
 
 class Solution(object):
     def countCornerRectangles(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         rows = [[c for c, val in enumerate(row) if val]
                 for row in grid]
         result = 0

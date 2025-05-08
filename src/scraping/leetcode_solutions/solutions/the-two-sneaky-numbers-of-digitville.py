@@ -7,10 +7,6 @@ from functools import reduce
 # bit manipulation
 class Solution(object):
     def getSneakyNumbers(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         def f(check):
             return reduce(lambda accu, x: accu^x, (x for x in itertools.chain(nums, range(n)) if check(x)), 0)
 

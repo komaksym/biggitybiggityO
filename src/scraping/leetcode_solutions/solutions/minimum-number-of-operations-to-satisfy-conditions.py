@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def minimumOperations(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         INF = float("inf")
         MAX_VALUE = 9
         dp = [0]*(MAX_VALUE+1)
@@ -27,10 +23,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def minimumOperations(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         INF = float("inf")
         MAX_VALUE = 9
         dp = [0]*(MAX_VALUE+1)

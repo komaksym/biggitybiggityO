@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def findShortestSubArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         counts = collections.Counter(nums)
         left, right = {}, {}
         for i, num in enumerate(nums):

@@ -37,10 +37,6 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 
 class Solution(object):
     def matrixRankTransform(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[List[int]]
-        """
         def cb(x, y, z):
             new_rank[x] = max(new_rank[y], new_rank[z])
 

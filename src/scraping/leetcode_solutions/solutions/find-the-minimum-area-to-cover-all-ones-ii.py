@@ -3,10 +3,6 @@
 # dp
 class Solution(object):
     def minimumSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def count(dir1, dir2):
             dp = [[0]*len(grid[0]) for _ in range(len(grid))]
             up = [len(grid)]*len(grid[0])
@@ -82,10 +78,6 @@ class Solution(object):
 # sparse table
 class Solution2(object):
     def minimumSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn
@@ -183,10 +175,6 @@ class Solution2(object):
 # sparse table
 class Solution3(object):
     def minimumSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn
@@ -262,10 +250,6 @@ class Solution3(object):
 # prefix sum, binary search
 class Solution4(object):
     def minimumSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -354,10 +338,6 @@ class Solution4(object):
 # prefix sum, binary search
 class Solution5(object):
     def minimumSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -425,10 +405,6 @@ class Solution5(object):
 # brute force
 class Solution6(object):
     def minimumSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def minimumArea(min_i, max_i, min_j, max_j):
             min_r, max_r, min_c, max_c = max_i+1, min_i-1, max_j+1, min_j-1
             for i in range(min_i, max_i+1):
@@ -482,10 +458,6 @@ class Solution6(object):
 # brute force
 class Solution7(object):
     def minimumSum(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def minimumArea(min_i, max_i, min_j, max_j):
             min_r, max_r, min_c, max_c = max_i+1, min_i-1, max_j+1, min_j-1
             for i in range(min_i, max_i+1):

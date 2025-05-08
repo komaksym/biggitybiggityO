@@ -3,11 +3,6 @@ from functools import reduce
 
 class Solution(object):
     def longestCommonSubpath(self, n, paths):
-        """
-        :type n: int
-        :type paths: List[List[int]]
-        :rtype: int
-        """
         def RabinKarp(arr, x):  # double hashing
             hashes = tuple([reduce(lambda h,x: (h*p+x)%MOD, (arr[i] for i in range(x)), 0) for p in P])
             powers = [pow(p, x, MOD) for p in P]
@@ -39,11 +34,6 @@ class Solution(object):
 # Time:  O(m * nlogn)
 class Solution2(object):
     def longestCommonSubpath(self, n, paths):
-        """
-        :type n: int
-        :type paths: List[List[int]]
-        :rtype: int
-        """
         def RabinKarp(arr, x):
             h = reduce(lambda h,x: (h*P+x)%MOD, (arr[i] for i in range(x)), 0)
             power = pow(P, x, MOD)

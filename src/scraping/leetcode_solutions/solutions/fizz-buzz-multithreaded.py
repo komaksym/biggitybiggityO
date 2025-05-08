@@ -10,10 +10,6 @@ class FizzBuzz(object):
         self.__cv = threading.Condition()
 
     def fizz(self, printFizz):
-        """
-        :type printFizz: method
-        :rtype: void
-        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 0:
@@ -24,10 +20,6 @@ class FizzBuzz(object):
                 self.__cv.notify_all()
 
     def buzz(self, printBuzz):
-        """
-        :type printBuzz: method
-        :rtype: void
-        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 1:
@@ -38,10 +30,6 @@ class FizzBuzz(object):
                 self.__cv.notify_all()
 
     def fizzbuzz(self, printFizzBuzz):
-        """
-        :type printFizzBuzz: method
-        :rtype: void
-        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 2:
@@ -52,10 +40,6 @@ class FizzBuzz(object):
                 self.__cv.notify_all()
 
     def number(self, printNumber):
-        """
-        :type printNumber: method
-        :rtype: void
-        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 3:

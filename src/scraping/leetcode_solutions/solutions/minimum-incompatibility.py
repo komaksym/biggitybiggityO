@@ -5,11 +5,6 @@ import itertools
 
 class Solution(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         inf = (len(nums)-1)*(len(nums)//k)+1
         def backtracking(nums, d, lookup):
             if not nums:
@@ -37,11 +32,6 @@ class Solution(object):
 # Time:  O(max(n * 2^n, 3^n))
 class Solution_TLE(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         inf = (len(nums)-1)*(len(nums)//k)+1
         POW = [1]
         for i in range(len(nums)):
@@ -101,11 +91,6 @@ import sortedcontainers
 # optimized from Solution_Greedy, using SortedList (which is not supported in GoogleCodeJam / GoogleKickStart)
 class Solution_Wrong_Greedy_SortedList(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def greedy(nums, k, is_reversed):
             count = collections.Counter(nums)
             if max(count.values()) > k:
@@ -271,11 +256,6 @@ class SkipList(object):
 # optimized from Solution_Wrong_Greedy, using SkipList
 class Solution_Wrong_Greedy_SkipList(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def greedy(nums, k, is_reversed):
             count = collections.Counter(nums)
             if max(count.values()) > k:
@@ -326,11 +306,6 @@ import collections
 # correct => [[2, 4, 7], [2, 8, 10], [9, 10, 11], [10, 12, 15], [13, 14, 15]] => 22
 class Solution_Wrong_Greedy(object):
     def minimumIncompatibility(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def greedy(nums, k, is_reversed):
             count = collections.Counter(nums)
             if max(count.values()) > k:

@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def shortestPathLength(self, graph):
-        """
-        :type graph: List[List[int]]
-        :rtype: int
-        """
         dp = [[float("inf")]*(len(graph))
               for _ in range(1 << len(graph))]
         q = collections.deque()

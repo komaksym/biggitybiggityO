@@ -6,10 +6,6 @@ import collections
 # freq table, dp
 class Solution(object):
     def maximumLength(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         cnt = collections.Counter(nums)
         dp = {}
         result = 0
@@ -37,10 +33,6 @@ import collections
 # freq table
 class Solution2(object):
     def maximumLength(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         cnt = collections.Counter(nums)
         result = 0
         for x in cnt.keys():

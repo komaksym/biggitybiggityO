@@ -6,10 +6,6 @@ import collections
 # Hierholzer Algorithm
 class Solution(object):
     def validArrangement(self, pairs):
-        """
-        :type pairs: List[List[int]]
-        :rtype: List[List[int]]
-        """
         adj = collections.defaultdict(list)
         degree = collections.defaultdict(int)
         for u, v in pairs: 

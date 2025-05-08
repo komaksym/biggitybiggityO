@@ -6,10 +6,6 @@ from sortedcontainers import SortedList
 # sorted list, bit, fenwick tree
 class Solution(object):
     def getResults(self, queries):
-        """
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
         class BIT(object):  # 0-indexed.
             def __init__(self, n, default=0, fn=lambda x, y: x+y):
                 self.__bit = [default]*(n+1)  # Extra one for dummy node.
@@ -55,10 +51,6 @@ from sortedcontainers import SortedList
 # sorted list, segment tree
 class Solution2(object):
     def getResults(self, queries):
-        """
-        :type queries: List[List[int]]
-        :rtype: List[bool]
-        """
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: None,

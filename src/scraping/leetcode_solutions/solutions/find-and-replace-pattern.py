@@ -5,11 +5,6 @@ import itertools
 
 class Solution(object):
     def findAndReplacePattern(self, words, pattern):
-        """
-        :type words: List[str]
-        :type pattern: str
-        :rtype: List[str]
-        """
         def match(word):
             lookup = {}
             for x, y in zip(pattern, word):

@@ -6,12 +6,6 @@ import itertools
 # hash table, sort
 class Solution(object):
     def relocateMarbles(self, nums, moveFrom, moveTo):
-        """
-        :type nums: List[int]
-        :type moveFrom: List[int]
-        :type moveTo: List[int]
-        :rtype: List[int]
-        """
         lookup = set(nums)
         for a, b in zip(moveFrom, moveTo):
             lookup.remove(a)

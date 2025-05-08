@@ -7,16 +7,9 @@ from sortedcontainers import SortedList
 class MRUQueue(object):
 
     def __init__(self, n):
-        """
-        :type n: int
-        """
         self.__sl = SortedList((i-1, i) for i in range(1, n+1))  
 
     def fetch(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
         last, _ = self.__sl[-1]
         _, val = self.__sl.pop(k-1)
         self.__sl.add((last+1, val))
@@ -64,18 +57,11 @@ class BIT(object):  # 0-indexed.
 class MRUQueue2(object):
 
     def __init__(self, n):
-        """
-        :type n: int
-        """
         self.__bit = BIT(n)
         self.__lookup = {i:i+1 for i in range(n)}
         self.__curr = n
         
     def fetch(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
         pos = self.__bit.binary_lift(k)  
         val = self.__lookup.pop(pos)
         self.__bit.add(pos, -1)
@@ -94,18 +80,11 @@ import math
 class MRUQueue3(object):
 
     def __init__(self, n):
-        """
-        :type n: int
-        """
         self.__buckets = [collections.deque() for _ in range(int(math.ceil(n**0.5)))]
         for i in range(n):
             self.__buckets[i//len(self.__buckets)].append(i+1)
 
     def fetch(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
         k -= 1
         left, idx = divmod(k, len(self.__buckets))
         val = self.__buckets[left][idx]

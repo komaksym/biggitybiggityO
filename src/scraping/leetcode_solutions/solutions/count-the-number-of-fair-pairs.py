@@ -3,12 +3,6 @@
 # sort, two pointers
 class Solution(object):
     def countFairPairs(self, nums, lower, upper):
-        """
-        :type nums: List[int]
-        :type lower: int
-        :type upper: int
-        :rtype: int
-        """
         def count(x):
             cnt = 0
             left, right = 0, len(nums)-1

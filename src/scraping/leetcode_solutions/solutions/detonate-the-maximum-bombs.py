@@ -3,10 +3,6 @@
 # bfs solution
 class Solution(object):
     def maximumDetonation(self, bombs):
-        """
-        :type bombs: List[List[int]]
-        :rtype: int
-        """        
         adj = [[] for _ in range(len(bombs))]
         for i, (xi, yi, ri) in enumerate(bombs):
             for j, (xj, yj, _) in enumerate(bombs):
@@ -37,10 +33,6 @@ class Solution(object):
 # dfs solution
 class Solution2(object):
     def maximumDetonation(self, bombs):
-        """
-        :type bombs: List[List[int]]
-        :rtype: int
-        """        
         adj = [[] for _ in range(len(bombs))]
         for i, (xi, yi, ri) in enumerate(bombs):
             for j, (xj, yj, _) in enumerate(bombs):

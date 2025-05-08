@@ -13,18 +13,9 @@ class Leaderboard(object):
         self.__lookup = collections.Counter()
         
     def addScore(self, playerId, score):
-        """
-        :type playerId: int
-        :type score: int
-        :rtype: None
-        """
         self.__lookup[playerId] += score
 
     def top(self, K):
-        """
-        :type K: int
-        :rtype: int
-        """
         def kthElement(nums, k, compare):
             def PartitionAroundPivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left
@@ -53,8 +44,4 @@ class Leaderboard(object):
         return sum(scores[:K])
 
     def reset(self, playerId):
-        """
-        :type playerId: int
-        :rtype: None
-        """
         self.__lookup[playerId] = 0

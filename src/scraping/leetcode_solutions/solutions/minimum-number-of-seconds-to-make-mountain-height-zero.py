@@ -3,11 +3,6 @@
 # binary search, quadratic equation
 class Solution(object):
     def minNumberOfSeconds(self, mountainHeight, workerTimes):
-        """
-        :type mountainHeight: int
-        :type workerTimes: List[int]
-        :rtype: int
-        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -32,11 +27,6 @@ import heapq
 # heap
 class Solution2(object):
     def minNumberOfSeconds(self, mountainHeight, workerTimes):
-        """
-        :type mountainHeight: int
-        :type workerTimes: List[int]
-        :rtype: int
-        """
         min_heap = [(0+1*t, i, 1) for i, t in enumerate(workerTimes)]
         heapq.heapify(min_heap)
         for _ in range(mountainHeight):

@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def subarraysWithMoreZerosThanOnes(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
 
         lookup = collections.defaultdict(int)
@@ -27,10 +23,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def subarraysWithMoreZerosThanOnes(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
 
         lookup = {0:-1}

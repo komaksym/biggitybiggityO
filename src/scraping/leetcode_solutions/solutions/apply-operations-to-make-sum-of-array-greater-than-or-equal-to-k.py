@@ -3,10 +3,6 @@
 # math
 class Solution(object):
     def minOperations(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
         def isqrt(n):
             a, b = n, (n+1)//2
             while b < a:

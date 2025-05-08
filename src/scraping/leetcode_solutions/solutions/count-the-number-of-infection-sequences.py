@@ -5,11 +5,6 @@
 FACT, INV, INV_FACT = [[1]*2 for _ in range(3)]
 class Solution(object):
     def numberOfSequence(self, n, sick):
-        """
-        :type n: int
-        :type sick: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def nCr(n, k):
             while len(INV) <= n:  # lazy initialization

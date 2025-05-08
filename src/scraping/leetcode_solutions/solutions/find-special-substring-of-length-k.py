@@ -3,11 +3,6 @@
 # string
 class Solution(object):
     def hasSpecialSubstring(self, s, k):
-        """
-        :type s: str
-        :type k: int
-        :rtype: bool
-        """
         l = 0
         for i in range(len(s)):
             l += 1

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def decrypt(self, code, k):
-        """
-        :type code: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         result = [0]*len(code)
         if k == 0:
             return result

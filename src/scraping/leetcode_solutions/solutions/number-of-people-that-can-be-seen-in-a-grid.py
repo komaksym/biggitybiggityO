@@ -3,10 +3,6 @@
 # mono stack, optimized from solution2
 class Solution(object):
     def seePeople(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: List[List[int]]
-        """
         def count(h, stk):
             cnt = 0
             while stk and stk[-1] < h:
@@ -34,10 +30,6 @@ class Solution(object):
 # mono stack
 class Solution2(object):
     def seePeople(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: List[List[int]]
-        """
         def count(heights, i, stk):
             cnt = 0
             while stk and heights(stk[-1]) < heights(i):
@@ -66,10 +58,6 @@ class Solution2(object):
 # mono stack
 class Solution3(object):
     def seePeople(self, heights):
-        """
-        :type heights: List[List[int]]
-        :rtype: List[List[int]]
-        """
         def count(heights, i, stk, add):
             while stk and heights(stk[-1]) < heights(i):
                 increase(stk.pop())

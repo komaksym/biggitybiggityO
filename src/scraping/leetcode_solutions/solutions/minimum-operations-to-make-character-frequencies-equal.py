@@ -3,10 +3,6 @@
 # freq table, dp
 class Solution(object):
     def makeStringGood(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         cnt = [0]*26
         for x in s:
             cnt[ord(x)-ord('a')] += 1

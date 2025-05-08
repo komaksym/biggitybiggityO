@@ -7,12 +7,6 @@ import heapq
 
 class Solution(object):
     def minimumCost(self, n, highways, discounts):
-        """
-        :type n: int
-        :type highways: List[List[int]]
-        :type discounts: int
-        :rtype: int
-        """
         adj = [[] for _ in range(n)]
         for u, v, w in highways:
             adj[u].append((v, w))

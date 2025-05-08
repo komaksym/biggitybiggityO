@@ -2,11 +2,6 @@
 
 class Solution(object):
     def minMoves(self, nums, limit):
-        """
-        :type nums: List[int]
-        :type limit: int
-        :rtype: int
-        """
         diff = [0]*(2*(limit+1))
         for i in range(len(nums)//2):
             left, right = nums[i], nums[-1-i]

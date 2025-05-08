@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def countCharacters(self, words, chars):
-        """
-        :type words: List[str]
-        :type chars: str
-        :rtype: int
-        """
         def check(word, chars, count):
             if len(word) > len(chars):
                 return False

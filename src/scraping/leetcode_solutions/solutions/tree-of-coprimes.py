@@ -6,11 +6,6 @@ import fractions
 
 class Solution(object):
     def getCoprimes(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """        
         def iter_dfs(nums, adj):
             result = [-1]*len(nums)
             path = collections.defaultdict(list)
@@ -59,11 +54,6 @@ import fractions
 
 class Solution2(object):
     def getCoprimes(self, nums, edges):
-        """
-        :type nums: List[int]
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """        
         def dfs(nums, adj, prev, node, depth, path, result):
             max_d = -1
             for x in path.keys():

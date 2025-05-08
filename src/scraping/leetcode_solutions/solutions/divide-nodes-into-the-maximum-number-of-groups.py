@@ -3,11 +3,6 @@
 # iterative dfs, bfs
 class Solution(object):
     def magnificentSets(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def iter_dfs(u):
             group = []
             stk = [u]
@@ -61,11 +56,6 @@ class Solution(object):
 # bfs
 class Solution2(object):
     def magnificentSets(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         def bfs(u):
             group = []
             q = {u}

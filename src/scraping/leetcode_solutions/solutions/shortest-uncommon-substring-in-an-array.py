@@ -3,10 +3,6 @@
 # trie
 class Solution(object):
     def shortestSubstrings(self, arr):
-        """
-        :type arr: List[str]
-        :rtype: List[str]
-        """
         class Trie(object):
             def __init__(self):
                 self.__nodes = []

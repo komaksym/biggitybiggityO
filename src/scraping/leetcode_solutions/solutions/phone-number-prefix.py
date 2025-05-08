@@ -3,10 +3,6 @@
 # sort
 class Solution(object):
     def phonePrefix(self, numbers):
-        """
-        :type numbers: List[str]
-        :rtype: bool
-        """
         numbers.sort()
         return all(not numbers[i+1].startswith(numbers[i]) for i in range(len(numbers)-1))
 
@@ -15,10 +11,6 @@ class Solution(object):
 # trie
 class Solution2(object):
     def phonePrefix(self, numbers):
-        """
-        :type numbers: List[str]
-        :rtype: bool
-        """
         class Trie(object):
             def __init__(self):
                 self.__nodes = []

@@ -3,10 +3,6 @@
 # combinatorics, number theory
 class Solution(object):
     def triangularSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def exp_mod(p, mod):
             result = [p]
             while result[-1]*p%10 != result[0]:
@@ -50,10 +46,6 @@ class Solution(object):
 # combinatorics
 class Solution2(object):
     def triangularSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         nCr = 1
         for i in range(len(nums)):
@@ -67,10 +59,6 @@ class Solution2(object):
 # simulation
 class Solution3(object):
     def triangularSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         for i in reversed(range(len(nums))):
             for j in range(i):
                 nums[j] = (nums[j]+nums[j+1])%10

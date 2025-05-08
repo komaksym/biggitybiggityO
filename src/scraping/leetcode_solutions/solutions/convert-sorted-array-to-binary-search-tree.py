@@ -9,10 +9,6 @@ class TreeNode(object):
 
 class Solution(object):
     def sortedArrayToBST(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: TreeNode
-        """
         return self.sortedArrayToBSTRecu(nums, 0, len(nums))
 
     def sortedArrayToBSTRecu(self, nums, start, end):
@@ -25,9 +21,6 @@ class Solution(object):
         return node
 
     def perfect_tree_pivot(self, n):
-        """
-        Find the point to partition n keys for a perfect binary search tree
-        """
         x = 1
         x = 1 << (n.bit_length() - 1)  # use the left bit shift, same as multiplying x by 2**n-1
 
@@ -39,10 +32,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def sortedArrayToBST(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: TreeNode
-        """
         self.iterator = iter(nums)
         return self.helper(0, len(nums))
     

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def smallestMissingValueSubtree(self, parents, nums):
-        """
-        :type parents: List[int]
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         def iter_dfs(adj, nums, i, lookup):
             stk = [i]
             while stk:

@@ -2,10 +2,6 @@
 
 class Solution(object):
     def gameOfLife(self, board):
-        """
-        :type board: List[List[int]]
-        :rtype: void Do not return anything, modify board in-place instead.
-        """
         m = len(board)
         n = len(board[0]) if m else 0
         for i in range(m):

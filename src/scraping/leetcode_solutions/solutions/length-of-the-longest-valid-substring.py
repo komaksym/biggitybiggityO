@@ -6,11 +6,6 @@ import collections
 # two pointers, sliding window, trie
 class Solution(object):
     def longestValidSubstring(self, word, forbidden):
-        """
-        :type word: str
-        :type forbidden: List[str]
-        :rtype: int
-        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         for w in forbidden:

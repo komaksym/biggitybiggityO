@@ -6,11 +6,6 @@ import collections
 # brute force solution with worse complexity but pass
 class Solution(object):
     def findMinStep(self, board, hand):
-        """
-        :type board: str
-        :type hand: str
-        :rtype: int
-        """
         def shrink(s):  # Time: O(n^2), Space: O(1)
             while True:
                 i = 0
@@ -51,11 +46,6 @@ import collections
 # brute force solution
 class Solution_TLE(object):
     def findMinStep(self, board, hand):
-        """
-        :type board: str
-        :type hand: str
-        :rtype: int
-        """
         def shrink(s):  # Time: O(n), Space: O(n)
             stack = []
             start = 0
@@ -100,11 +90,6 @@ import collections
 # greedy solution without proof (possibly incorrect)
 class Solution_GREEDY_ACCEPT_BUT_NOT_PROVED(object):
     def findMinStep(self, board, hand):
-        """
-        :type board: str
-        :type hand: str
-        :rtype: int
-        """
         def shrink(s):  # Time: O(n), Space: O(n)
             stack = []
             start = 0
@@ -177,11 +162,6 @@ class Solution_GREEDY_ACCEPT_BUT_NOT_PROVED(object):
 # we can do by this solution
 class Solution_WRONG_GREEDY_AND_NOT_ACCEPT_NOW(object):
     def findMinStep(self, board, hand):
-        """
-        :type board: str
-        :type hand: str
-        :rtype: int
-        """
         def shrink(s):  # Time: O(n), Space: O(n)
             stack = []
             start = 0

@@ -3,10 +3,6 @@
 # two pointers
 class Solution(object):
     def rearrangeArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         pos, neg = 0, 1
         result = [0]*len(nums)
         for x in nums:
@@ -23,10 +19,6 @@ class Solution(object):
 # generator
 class Solution2(object):
     def rearrangeArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         def pos():
             for x in nums:
                 if x > 0:
@@ -46,10 +38,6 @@ class Solution2(object):
 # array, implementation
 class Solution3(object):
     def rearrangeArray(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         pos, neg = [], []
         for i in reversed(range(len(nums))):
             if nums[i] > 0:

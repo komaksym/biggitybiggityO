@@ -6,11 +6,6 @@
 # 3. for each position (i, j) of paired 'R' character in both strings, i <= j
 class Solution(object):
     def canTransform(self, start, end):
-        """
-        :type start: str
-        :type end: str
-        :rtype: bool
-        """
         if start.count('X') != end.count('X'):
             return False
         i, j = 0, 0

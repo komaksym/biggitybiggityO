@@ -6,10 +6,6 @@ import collections
 # freq table, edge cases
 class Solution(object):
     def equalFrequency(self, word):
-        """
-        :type word: str
-        :rtype: bool
-        """
         cnt = collections.Counter(iter(collections.Counter(word).values()))
         if len(cnt) > 2:
             return False
@@ -29,10 +25,6 @@ import collections
 # brute force, freq table
 class Solution2(object):
     def equalFrequency(self, word):
-        """
-        :type word: str
-        :rtype: bool
-        """
         cnt = collections.Counter(collections.Counter(word))
         for c in word:
             cnt[c] -= 1

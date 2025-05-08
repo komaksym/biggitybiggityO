@@ -6,10 +6,6 @@ import random
 # array, quick select
 class Solution(object):
     def minimumCost(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -44,10 +40,6 @@ class Solution(object):
 # array
 class Solution2(object):
     def minimumCost(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def topk(a, k):
             result = [float("inf")]*k
             for x in a:

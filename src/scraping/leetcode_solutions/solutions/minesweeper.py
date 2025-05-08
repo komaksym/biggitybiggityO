@@ -3,11 +3,6 @@
 # dfs
 class Solution(object):
     def updateBoard(self, board, click):
-        """
-        :type board: List[List[str]]
-        :type click: List[int]
-        :rtype: List[List[str]]
-        """
         if board[click[0]][click[1]] == 'M':
             board[click[0]][click[1]] = 'X'
             return board
@@ -41,11 +36,6 @@ class Solution(object):
 # dfs
 class Solution2(object):
     def updateBoard(self, board, click):
-        """
-        :type board: List[List[str]]
-        :type click: List[int]
-        :rtype: List[List[str]]
-        """
         if board[click[0]][click[1]] == 'M':
             board[click[0]][click[1]] = 'X'
             return board

@@ -3,11 +3,6 @@
 # binary search
 class Solution(object):
     def maximumCandies(self, candies, k):
-        """
-        :type candies: List[int]
-        :type k: int
-        :rtype: int
-        """
         def check(x):
             return sum(c//x for c in candies) >= k
 

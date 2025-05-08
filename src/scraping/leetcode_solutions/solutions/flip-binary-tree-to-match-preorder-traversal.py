@@ -10,11 +10,6 @@ class TreeNode(object):
         
 class Solution(object):
     def flipMatchVoyage(self, root, voyage):
-        """
-        :type root: TreeNode
-        :type voyage: List[int]
-        :rtype: List[int]
-        """
         def dfs(root, voyage, i, result):
             if not root:
                 return True

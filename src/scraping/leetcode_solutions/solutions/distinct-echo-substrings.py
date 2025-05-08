@@ -2,10 +2,6 @@
 
 class Solution(object):
     def distinctEchoSubstrings(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
         def KMP(text, l, result):
             prefix = [-1]*(len(text)-l)
             j = -1
@@ -33,10 +29,6 @@ class Solution(object):
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
 class Solution2(object):
     def distinctEchoSubstrings(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
         result = set()
         for l in range(1, len(text)//2+1):
             count = sum(text[i] == text[i+l] for i in range(l))
@@ -52,10 +44,6 @@ class Solution2(object):
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
 class Solution3(object):
     def distinctEchoSubstrings(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
         MOD = 10**9+7
         D = 27  # a-z and ''
         result = set()
@@ -73,10 +61,6 @@ class Solution3(object):
 # Time:  O(n^3 + d), d is the duplicated of result substrings size
 class Solution_TLE(object):
     def distinctEchoSubstrings(self, text):
-        """
-        :type text: str
-        :rtype: int
-        """
         def compare(text, l, s1, s2):
             for i in range(l):
                 if text[s1+i] != text[s2+i]:

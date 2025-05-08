@@ -6,11 +6,6 @@ import collections
 # optimized from Solution2
 class Solution(object):
     def numWays(self, words, target):
-        """
-        :type words: List[str]
-        :type target: str
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [0]*(len(target)+1)
         dp[0] = 1
@@ -27,11 +22,6 @@ import collections
 
 class Solution2(object):
     def numWays(self, words, target):
-        """
-        :type words: List[str]
-        :type target: str
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [[0]*(len(target)+1) for _ in range(2)]
         for i in range(len(dp)):

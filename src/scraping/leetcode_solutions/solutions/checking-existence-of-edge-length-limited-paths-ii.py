@@ -92,10 +92,6 @@ class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 class DistanceLimitedPathsExist(object):
 
     def __init__(self, n, edgeList):
-        """
-        :type n: int
-        :type edgeList: List[List[int]]
-        """
         edgeList.sort(key = lambda x:x[2])
         self.__uf = UnionFind(n)
         self.__adj = [[] for _ in range(n)]
@@ -107,12 +103,6 @@ class DistanceLimitedPathsExist(object):
         self.__tree_infos = TreeInfos(self.__adj)
 
     def query(self, p, q, limit):
-        """
-        :type p: int
-        :type q: int
-        :type limit: int
-        :rtype: bool
-        """
         if self.__uf.find_set(p) != self.__uf.find_set(q):
             return False
         return self.__tree_infos.max_weights(p, q) < limit
@@ -128,28 +118,15 @@ import bisect
 class SnapshotArray(object):
 
     def __init__(self, length):
-        """
-        :type length: int
-        """
         self.__snaps = collections.defaultdict(lambda:sortedcontainers.SortedList([(0, 0)]))
 
     def set(self, index, val, snap_id):
-        """
-        :type index: int
-        :type val: int
-        :rtype: None
-        """
         i = self.__snaps[index].bisect_left((snap_id, float("-inf")))
         if i != len(self.__snaps[index]) and self.__snaps[index][i][0] == snap_id:
             self.__snaps[index].remove(self.__snaps[index][i])
         self.__snaps[index].add((snap_id, val))
 
     def get(self, index, snap_id):
-        """
-        :type index: int
-        :type snap_id: int
-        :rtype: int
-        """
         i = self.__snaps[index].bisect_left((snap_id+1, float("-inf"))) - 1
         return self.__snaps[index][i][1]   
  
@@ -193,10 +170,6 @@ class VersionedUnionFind(object):  # Time: O(n * α(n)), Space: O(n)
 class DistanceLimitedPathsExist2(object):
 
     def __init__(self, n, edgeList):
-        """
-        :type n: int
-        :type edgeList: List[List[int]]
-        """
         edgeList.sort(key = lambda x:x[2])
         self.__uf = VersionedUnionFind(n)
         self.__weights = []
@@ -207,12 +180,6 @@ class DistanceLimitedPathsExist2(object):
             self.__weights.append(weight)  
 
     def query(self, p, q, limit):
-        """
-        :type p: int
-        :type q: int
-        :type limit: int
-        :rtype: bool
-        """
         snap_id = bisect.bisect_left(self.__weights, limit)-1
         if snap_id == -1:
             return False

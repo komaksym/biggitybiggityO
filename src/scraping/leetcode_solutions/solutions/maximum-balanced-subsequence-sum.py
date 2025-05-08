@@ -6,10 +6,6 @@ from sortedcontainers import SortedList
 # sorted list, binary search, mono stack
 class Solution(object):
     def maxBalancedSubsequenceSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         def query(sl, k):
             j = sl.bisect_left((k,))
@@ -38,10 +34,6 @@ class Solution(object):
 # bit, fenwick tree
 class Solution2(object):
     def maxBalancedSubsequenceSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         class BIT(object):  # 0-indexed.
             def __init__(self, n, default=0, fn=lambda x, y: x+y):
@@ -75,10 +67,6 @@ class Solution2(object):
 # segment tree
 class Solution3(object):
     def maxBalancedSubsequenceSum(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         NEG_INF = float("-inf")
         class SegmentTree(object):
             def __init__(self, N,

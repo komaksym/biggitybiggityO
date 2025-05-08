@@ -3,11 +3,6 @@
 # online solution, segment tree, binary search
 class Solution(object):
     def leftmostBuildingQueries(self, heights, queries):
-        """
-        :type heights: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=lambda _: None,
@@ -60,11 +55,6 @@ import heapq
 # offline solution, heap
 class Solution2(object):
     def leftmostBuildingQueries(self, heights, queries):
-        """
-        :type heights: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         result = [-1]*len(queries)
         qs = [[] for _ in range(len(heights))]
         for i, (a, b) in enumerate(queries):
@@ -88,11 +78,6 @@ class Solution2(object):
 # offline solution, mono stack, binary search
 class Solution3(object):
     def leftmostBuildingQueries(self, heights, queries):
-        """
-        :type heights: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

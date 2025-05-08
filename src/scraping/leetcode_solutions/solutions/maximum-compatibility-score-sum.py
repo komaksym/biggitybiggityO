@@ -6,11 +6,6 @@ import itertools
 # weighted bipartite matching solution
 class Solution(object):
     def maxCompatibilitySum(self, students, mentors):
-        """
-        :type students: List[List[int]]
-        :type mentors: List[List[int]]
-        :rtype: int
-        """
         def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
             if not a:
                 return 0, []
@@ -59,11 +54,6 @@ class Solution(object):
 # dp solution
 class Solution2(object):
     def maxCompatibilitySum(self, students, mentors):
-        """
-        :type students: List[List[int]]
-        :type mentors: List[List[int]]
-        :rtype: int
-        """
         def popcount(n):  # Time: O(logn) ~= O(1) if n is a 32-bit number
             result = 0
             while n:

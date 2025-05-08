@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def findMaxValueOfEquation(self, points, k):
-        """
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         result = float("-inf")
         dq = collections.deque()
         for i, (x, y) in enumerate(points):

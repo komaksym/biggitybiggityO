@@ -23,10 +23,6 @@ class Solution(object):
 # Time:  O(n^2 * n!)
 class Solution2(object):
     def permute(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
         res = []
         self.dfs(nums, [], res)
         return res

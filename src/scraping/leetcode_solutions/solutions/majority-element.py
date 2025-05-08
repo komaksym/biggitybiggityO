@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def boyer_moore_majority_vote():
             result, cnt = None, 0
             for x in nums:
@@ -29,10 +25,6 @@ import collections
 
 class Solution2(object):
     def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         return collections.Counter(nums).most_common(1)[0][0]
 
 
@@ -42,8 +34,4 @@ import collections
 
 class Solution3(object):
     def majorityElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         return sorted(list(collections.Counter(nums).items()), key=lambda a: a[1], reverse=True)[0][0]

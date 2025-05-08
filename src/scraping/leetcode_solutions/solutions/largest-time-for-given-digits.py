@@ -5,10 +5,6 @@ import itertools
 
 class Solution(object):
     def largestTimeFromDigits(self, A):
-        """
-        :type A: List[int]
-        :rtype: str
-        """
         result = ""
         for i in range(len(A)):
             A[i] *= -1

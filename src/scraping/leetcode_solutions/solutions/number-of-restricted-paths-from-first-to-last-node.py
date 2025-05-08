@@ -5,11 +5,6 @@ import heapq
 
 class Solution(object):
     def countRestrictedPaths(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         adj = [[] for _ in range(n)]
         for u, v, w in edges:

@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def countNicePairs(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9 + 7
 
         def rev(x):

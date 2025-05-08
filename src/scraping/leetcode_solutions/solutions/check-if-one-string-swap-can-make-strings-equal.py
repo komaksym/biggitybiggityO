@@ -5,11 +5,6 @@ import itertools
 
 class Solution(object):
     def areAlmostEqual(self, s1, s2):
-        """
-        :type s1: str
-        :type s2: str
-        :rtype: bool
-        """
         diff = []
         for a, b in zip(s1, s2):
             if a == b:

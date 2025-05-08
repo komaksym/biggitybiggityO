@@ -5,11 +5,6 @@ import itertools
 
 class Solution(object):
     def backspaceCompare(self, S, T):
-        """
-        :type S: str
-        :type T: str
-        :rtype: bool
-        """
         def findNextChar(S):
             skip = 0
             for i in reversed(range(len(S))):

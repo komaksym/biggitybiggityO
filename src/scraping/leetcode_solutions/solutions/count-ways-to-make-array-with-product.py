@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def waysToFillArray(self, queries):
-        """
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         MOD = 10**9+7
         fact, inv, inv_fact = [[1]*2 for _ in range(3)]
         def nCr(n, k):

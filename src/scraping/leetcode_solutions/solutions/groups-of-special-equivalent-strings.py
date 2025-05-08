@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numSpecialEquivGroups(self, A):
-        """
-        :type A: List[str]
-        :rtype: int
-        """
         def count(word):
             result = [0]*52
             for i, letter in enumerate(word):

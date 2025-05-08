@@ -21,10 +21,6 @@ class BIT(object):  # 0-indexed.
 # bit solution
 class Solution(object):
     def pancakeSort(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
         bit = BIT(len(arr))
         result = []
         for i in range(len(arr)):
@@ -49,10 +45,6 @@ class Solution(object):
 # merge sort solution
 class Solution2(object):
     def pancakeSort(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
         def smallerMergeSort(idxs, start, end, counts):
             if end - start <= 0:  # The size of range [start, end] less than 2 is always with count 0.
                 return 0
@@ -99,10 +91,6 @@ class Solution2(object):
 # Time:  O(n^2)
 class Solution3(object):
     def pancakeSort(self, A):
-        """
-        :type A: List[int]
-        :rtype: List[int]
-        """
         def reverse(l, begin, end):
             for i in range((end-begin) // 2):
                 l[begin+i], l[end-1-i] = l[end-1-i], l[begin+i]

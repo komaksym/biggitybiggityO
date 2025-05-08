@@ -34,10 +34,6 @@ class SegmentTreeNode(object):
 
 class Solution(object):
     def rectangleArea(self, rectangles):
-        """
-        :type rectangles: List[List[int]]
-        :rtype: int
-        """
         OPEN, CLOSE = 1, -1
         events = []
         X = set()

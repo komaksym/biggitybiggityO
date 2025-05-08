@@ -29,10 +29,6 @@ MAX_NUM = 10
 PRIME_DIVISORS = prime_divisors(MAX_NUM)
 class Solution(object):
     def maxLength(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 2
         lookup = collections.defaultdict(int)
         left = 0

@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def reformat(self, s):
-        """
-        :type s: str
-        :rtype: str
-        """
         def char_gen(start, end, count):
             for c in range(ord(start), ord(end)+1):
                 c = chr(c)

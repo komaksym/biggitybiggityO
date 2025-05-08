@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numberOfWays(self, num_people):
-        """
-        :type num_people: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def inv(x, m):  # Euler's Theorem
             return pow(x, m-2, m)  # O(logMOD) = O(1)
@@ -25,10 +21,6 @@ class Solution(object):
 # Time:  O(n^2)
 class Solution2(object):
     def numberOfWays(self, num_people):
-        """
-        :type num_people: int
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [0]*(num_people//2+1)
         dp[0] = 1

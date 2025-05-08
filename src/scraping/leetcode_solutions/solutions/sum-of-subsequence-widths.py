@@ -3,10 +3,6 @@
 
 class Solution(object):
     def sumSubseqWidths(self, A):
-        """
-        :type A: List[int]
-        :rtype: int
-        """
         M = 10**9+7
         result, c = 0, 1
         A.sort()

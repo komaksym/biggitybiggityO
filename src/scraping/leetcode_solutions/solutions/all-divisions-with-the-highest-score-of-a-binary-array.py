@@ -3,10 +3,6 @@
 # prefix sum
 class Solution(object):
     def maxScoreIndices(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
         result = []
         mx = zeros = 0
         total = sum(nums)

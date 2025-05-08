@@ -10,9 +10,6 @@ import collections
 class MaxStack(object):
 
     def __init__(self):
-        """
-        initialize your data structure here.
-        """
         self.__idx_to_val = collections.defaultdict(int)
         self.__val_to_idxs = collections.defaultdict(list)
         self.__top = None
@@ -20,10 +17,6 @@ class MaxStack(object):
 
 
     def push(self, x):
-        """
-        :type x: int
-        :rtype: void
-        """
         idx = self.__val_to_idxs[self.__top][-1]+1 if self.__val_to_idxs else 0
         self.__idx_to_val[idx] = x
         self.__val_to_idxs[x].append(idx)
@@ -32,32 +25,20 @@ class MaxStack(object):
 
 
     def pop(self):
-        """
-        :rtype: int
-        """
         val = self.__top
         self.__remove(val)
         return val
 
 
     def top(self):
-        """
-        :rtype: int
-        """
         return self.__top
 
 
     def peekMax(self):
-        """
-        :rtype: int
-        """
         return self.__max
 
 
     def popMax(self):
-        """
-        :rtype: int
-        """
         val = self.__max
         self.__remove(val)
         return val

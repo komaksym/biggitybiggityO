@@ -7,10 +7,6 @@ import itertools
 # A* Search Algorithm
 class Solution(object):
     def slidingPuzzle(self, board):
-        """
-        :type board: List[List[int]]
-        :rtype: int
-        """
         def dot(p1, p2):
             return p1[0]*p2[0]+p1[1]*p2[1]
 
@@ -64,10 +60,6 @@ class Solution(object):
 # A* Search Algorithm
 class Solution2(object):
     def slidingPuzzle(self, board):
-        """
-        :type board: List[List[int]]
-        :rtype: int
-        """
         def heuristic_estimate(board, R, C, expected):
             result = 0
             for i in range(R):

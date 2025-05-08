@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def numMatchingSubseq(self, S, words):
-        """
-        :type S: str
-        :type words: List[str]
-        :rtype: int
-        """
         waiting = collections.defaultdict(list)
         for word in words:
             it = iter(word)

@@ -2,11 +2,6 @@
 
 class Solution(object):
     def getHappyString(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
         base = 2**(n-1)
         if k > 3*base:
             return ""

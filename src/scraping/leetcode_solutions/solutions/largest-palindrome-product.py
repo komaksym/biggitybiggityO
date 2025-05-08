@@ -2,10 +2,6 @@
 
 class Solution(object):
     def largestPalindrome(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         if n == 1:
             return 9
         upper = 10**n-1
@@ -23,10 +19,6 @@ class Solution(object):
 # Time:  O(10^(2n))
 class Solution2(object):
     def largestPalindrome(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def divide_ceil(a, b):
             return (a+b-1)//b
 

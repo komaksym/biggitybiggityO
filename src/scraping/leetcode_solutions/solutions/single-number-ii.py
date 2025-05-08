@@ -25,19 +25,11 @@ class Solution2(object):
 
 class Solution3(object):
     def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         return list((collections.Counter(list(set(nums)) * 3) - collections.Counter(nums)).keys())[0]
 
 
 class Solution4(object):
     def singleNumber(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         return (sum(set(nums)) * 3 - sum(nums)) / 2
 
 

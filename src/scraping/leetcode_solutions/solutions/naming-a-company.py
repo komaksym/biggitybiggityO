@@ -3,10 +3,6 @@
 # hash table, math
 class Solution(object):
     def distinctNames(self, ideas):
-        """
-        :type ideas: List[str]
-        :rtype: int
-        """
         lookup = [set() for _ in range(26)]
         for x in ideas:
             lookup[ord(x[0])-ord('a')].add(x[1:])

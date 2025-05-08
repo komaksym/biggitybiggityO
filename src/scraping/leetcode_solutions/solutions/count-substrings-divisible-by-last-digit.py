@@ -3,10 +3,6 @@
 # case works, math, freq table
 class Solution(object):
     def countSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = 0
         for i in range(len(s)):
             if s[i] in ('1', '2', '5'):
@@ -56,10 +52,6 @@ class Solution(object):
 # case works, math, freq table
 class Solution2(object):
     def countSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = 0
         for i in range(len(s)):
             if s[i] == '4':
@@ -95,10 +87,6 @@ class Solution2(object):
 # dp
 class Solution3(object):
     def countSubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result = 0
         dp = [[0]*10 for _ in range(10)]
         for i in range(1, len(s)+1):

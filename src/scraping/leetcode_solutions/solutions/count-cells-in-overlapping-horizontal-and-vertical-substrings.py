@@ -3,11 +3,6 @@
 # z-function
 class Solution(object):
     def countCells(self, grid, pattern):
-        """
-        :type grid: List[List[str]]
-        :type pattern: str
-        :rtype: int
-        """
         def z_function(s):  # Time: O(n), Space: O(n)
             z = [0]*len(s)
             l, r = 0, 0

@@ -10,12 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def btreeGameWinningMove(self, root, n, x):
-        """
-        :type root: TreeNode
-        :type n: int
-        :type x: int
-        :rtype: bool
-        """
         def count(node, x, left_right):
             if not node:
                 return 0

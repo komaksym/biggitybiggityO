@@ -2,11 +2,6 @@
 
 class Solution(object):
     def findKthPositive(self, arr, k):
-        """
-        :type arr: List[int]
-        :type k: int
-        :rtype: int
-        """
         def check(arr, k, x):
             return arr[x]-(x+1) < k
 

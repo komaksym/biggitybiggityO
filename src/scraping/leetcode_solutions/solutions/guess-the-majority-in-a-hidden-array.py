@@ -2,25 +2,14 @@
 
 class ArrayReader(object):
     def query(self, a, b, c, d):
-        """
-        :type a, b, c, d: int
-        :rtype int
-        """
         pass
 
     def length(self):
-        """
-        :rtype int
-        """
         pass
     
 
 class Solution(object):
     def guessMajority(self, reader):
-        """
-        :type reader: ArrayReader
-        :rtype: integer
-        """
         count_a, count_b, idx_b = 1, 0, None
         value_0_1_2_3 = reader.query(0, 1, 2, 3)
         for i in reversed(range(4, reader.length())):

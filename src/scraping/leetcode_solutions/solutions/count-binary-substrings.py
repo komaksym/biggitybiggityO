@@ -2,10 +2,6 @@
 
 class Solution(object):
     def countBinarySubstrings(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
         result, prev, curr = 0, 0, 1
         for i in range(1, len(s)):
             if s[i-1] != s[i]:

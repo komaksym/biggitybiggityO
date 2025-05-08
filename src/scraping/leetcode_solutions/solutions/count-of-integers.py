@@ -4,13 +4,6 @@ from functools import reduce
 # combinatorics, dp
 class Solution(object):
     def count(self, num1, num2, min_sum, max_sum):
-        """
-        :type num1: str
-        :type num2: str
-        :type min_sum: int
-        :type max_sum: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def f(x):
             dp = [[0]*(max_sum+1) for _ in range(2)]

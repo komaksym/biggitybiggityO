@@ -4,11 +4,6 @@ from functools import reduce
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution(object):
     def numberOfPermutations(self, n, requirements):
-        """
-        :type n: int
-        :type requirements: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -35,11 +30,6 @@ class Solution(object):
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution2(object):
     def numberOfPermutations(self, n, requirements):
-        """
-        :type n: int
-        :type requirements: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -65,11 +55,6 @@ class Solution2(object):
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution3(object):
     def numberOfPermutations(self, n, requirements):
-        """
-        :type n: int
-        :type requirements: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -92,11 +77,6 @@ class Solution3(object):
 # knapsack dp, combinatorics
 class Solution4(object):
     def numberOfPermutations(self, n, requirements):
-        """
-        :type n: int
-        :type requirements: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -110,11 +90,6 @@ class Solution4(object):
 
 class Solution_ConstructPermutation(object):
     def numberOfPermutations(self, n, requirements):
-        """
-        :type n: int
-        :type requirements: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:

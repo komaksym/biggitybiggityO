@@ -8,10 +8,6 @@ class TreeNode(object):
 
 class Solution(object):
     def equalToDescendants(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: int
-        """
         def iter_dfs(node):
             result = 0
             stk = [(1, [node, [0]])]
@@ -38,10 +34,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def equalToDescendants(self, root):
-        """
-        :type root: Optional[TreeNode]
-        :rtype: int
-        """
         def dfs(node, result):
             if not node:
                 return 0

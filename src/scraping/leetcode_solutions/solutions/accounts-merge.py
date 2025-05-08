@@ -25,10 +25,6 @@ class UnionFind(object):
 
 class Solution(object):
     def accountsMerge(self, accounts):
-        """
-        :type accounts: List[List[str]]
-        :rtype: List[List[str]]
-        """
         union_find = UnionFind()
         email_to_name = {}
         email_to_id = {}

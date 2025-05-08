@@ -3,10 +3,6 @@
 
 class Solution(object):
     def transpose(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: List[List[int]]
-        """
         result = [[None] * len(A) for _ in range(len(A[0]))]
         for r, row in enumerate(A):
             for c, val in enumerate(row):
@@ -17,9 +13,5 @@ class Solution(object):
 # Time:  O(r * c)
 class Solution2(object):
     def transpose(self, A):
-        """
-        :type A: List[List[int]]
-        :rtype: List[List[int]]
-        """
         return list(zip(*A))
 

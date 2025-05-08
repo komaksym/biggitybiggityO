@@ -3,11 +3,6 @@
 # sort, two pointers, sliding window
 class Solution(object):
     def maxFrequencyScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         nums.sort()
         result = left = curr = 0
         for right in range(len(nums)):
@@ -22,11 +17,6 @@ class Solution(object):
 # sort, two pointers, sliding window
 class Solution2(object):
     def maxFrequencyScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         nums.sort()
         result = left = curr = 0
         for right in range(len(nums)):
@@ -42,11 +32,6 @@ class Solution2(object):
 # sort, prefix sum, binary search
 class Solution3(object):
     def maxFrequencyScore(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def check(l):
             return any((prefix[i+l]-prefix[i+(l+1)//2])-(prefix[i+l//2]-prefix[i]) <= k for i in range(len(nums)-l+1))
 

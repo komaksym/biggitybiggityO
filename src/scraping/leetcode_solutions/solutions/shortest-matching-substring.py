@@ -3,11 +3,6 @@
 # kmp, two pointers (three pointers)
 class Solution(object):
     def shortestMatchingSubstring(self, s, p):
-        """
-        :type s: str
-        :type p: str
-        :rtype: int
-        """
         INF = float("inf")
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
@@ -57,11 +52,6 @@ class Solution(object):
 # kmp, two pointers (three pointers)
 class Solution2(object):
     def shortestMatchingSubstring(self, s, p):
-        """
-        :type s: str
-        :type p: str
-        :rtype: int
-        """
         INF = float("inf")
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)

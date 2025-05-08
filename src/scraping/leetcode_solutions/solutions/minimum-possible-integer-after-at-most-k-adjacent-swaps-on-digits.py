@@ -22,11 +22,6 @@ class BIT(object):  # Fenwick Tree, 1-indexed
 
 class Solution(object):
     def minInteger(self, num, k):
-        """
-        :type num: str
-        :type k: int
-        :rtype: str
-        """
         lookup = collections.defaultdict(list)
         bit = BIT(len(num)+1)
         for i in reversed(range(len(num))):

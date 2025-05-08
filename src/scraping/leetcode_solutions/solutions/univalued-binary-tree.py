@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def isUnivalTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
         s = [root]
         while s:
             node = s.pop()
@@ -26,9 +22,5 @@ class Solution(object):
         return True
 class Solution2(object):
     def isUnivalTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
         return (not root.left or (root.left.val == root.val and self.isUnivalTree(root.left))) and \
                (not root.right or (root.right.val == root.val and self.isUnivalTree(root.right)))

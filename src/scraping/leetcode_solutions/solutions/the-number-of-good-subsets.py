@@ -6,10 +6,6 @@ from functools import reduce
 
 class Solution(object):
     def numberOfGoodSubsets(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         def sieve_of_eratosthenes(n):  # Time: O(n * log(logn)), Space: O(n)
             if n < 2:
                 return []

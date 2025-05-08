@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def countSubgraphsForEachDiameter(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
         def dfs(n, adj, curr, parent, lookup, count, dp):
             for child in adj[curr]:
                 if child == parent or lookup[child]:
@@ -53,11 +48,6 @@ import math
 
 class Solution2(object):
     def countSubgraphsForEachDiameter(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
         def popcount(mask):
             count = 0
             while mask:

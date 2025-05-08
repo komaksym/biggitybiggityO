@@ -42,10 +42,6 @@ from heapq import heappush, heappop
 
 class Solution3(object):
     def minMeetingRooms(self, intervals):
-        """
-        :type intervals: List[Interval]
-        :rtype: int
-        """
         if not intervals:
             return 0
         

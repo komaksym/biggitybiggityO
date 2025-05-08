@@ -26,10 +26,6 @@ class Solution(object):
 # To cache the results of all combinations, thus O(c * 2^c) space.
 class Solution2(object):
     def canWin(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         lookup = {}
 
         def canWinHelper(consecutives):                                         # O(2^c) time
@@ -47,10 +43,6 @@ class Solution2(object):
 #                  Besides, it costs n space for modifying string at each depth.
 class Solution3(object):
     def canWin(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         i, n = 0, len(s) - 1
         is_win = False
         while not is_win and i < n:                                     # O(n) time

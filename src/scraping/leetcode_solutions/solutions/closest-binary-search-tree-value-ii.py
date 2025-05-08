@@ -2,12 +2,6 @@
 
 class Solution(object):
     def closestKValues(self, root, target, k):
-        """
-        :type root: TreeNode
-        :type target: float
-        :type k: int
-        :rtype: List[int]
-        """
         def nextNode(stack, child1, child2):
             if stack:
                 if child2(stack):
@@ -47,12 +41,6 @@ class Solution(object):
 
 class Solution2(object):
     def closestKValues(self, root, target, k):
-        """
-        :type root: TreeNode
-        :type target: float
-        :type k: int
-        :rtype: List[int]
-        """
         class BSTIterator:
             def __init__(self, stack, child1, child2):
                 self.stack = list(stack)

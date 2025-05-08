@@ -10,11 +10,6 @@ class Solution(object):
             self.__lookup[M] += self.__lookup[M-1]+dayOfMonth(M)
 
     def daysBetweenDates(self, date1, date2):
-        """
-        :type date1: str
-        :type date2: str
-        :rtype: int
-        """
         def num_days(date):
             Y, M, D = list(map(int, date.split("-")))
             leap = 1 if M > 2 and (((Y % 4 == 0) and (Y % 100 != 0)) or (Y % 400 == 0)) else 0

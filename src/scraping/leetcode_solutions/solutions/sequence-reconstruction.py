@@ -5,11 +5,6 @@ import collections
 
 class Solution(object):
     def sequenceReconstruction(self, org, seqs):
-        """
-        :type org: List[int]
-        :type seqs: List[List[int]]
-        :rtype: bool
-        """
         if not seqs:
             return False
         pos = [0] * (len(org) + 1)
@@ -36,11 +31,6 @@ class Solution(object):
 # Time:  O(|V| + |E|)
 class Solution2(object):
     def sequenceReconstruction(self, org, seqs):
-        """
-        :type org: List[int]
-        :type seqs: List[List[int]]
-        :rtype: bool
-        """
         graph = collections.defaultdict(set)
         indegree = collections.defaultdict(int)
         integer_set = set()

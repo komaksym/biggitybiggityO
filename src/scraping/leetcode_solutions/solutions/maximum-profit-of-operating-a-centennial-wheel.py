@@ -2,12 +2,6 @@
 
 class Solution(object):
     def minOperationsMaxProfit(self, customers, boardingCost, runningCost):
-        """
-        :type customers: List[int]
-        :type boardingCost: int
-        :type runningCost: int
-        :rtype: int
-        """
         max_run = -1
         i = max_prof = prof = waiting = 0
         run = 1

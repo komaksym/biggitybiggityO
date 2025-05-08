@@ -2,11 +2,6 @@
 
 class Solution(object):
     def maxVacationDays(self, flights, days):
-        """
-        :type flights: List[List[int]]
-        :type days: List[List[int]]
-        :rtype: int
-        """
         if not days or not flights:
             return 0
         dp = [[0] * len(days) for _ in range(2)]

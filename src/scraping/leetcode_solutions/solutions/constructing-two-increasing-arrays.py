@@ -3,11 +3,6 @@
 # dp
 class Solution(object):
     def minLargest(self, nums1, nums2):
-        """
-        :type nums1: List[int]
-        :type nums2: List[int]
-        :rtype: int
-        """
         if len(nums1) < len(nums2):
             nums1, nums2 = nums2, nums1
         dp = [float("inf")]*(len(nums2)+1)

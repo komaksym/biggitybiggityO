@@ -2,11 +2,6 @@
 
 class Solution(object):
     def superpalindromesInRange(self, L, R):
-        """
-        :type L: str
-        :type R: str
-        :rtype: int
-        """
         def is_palindrome(k):
             return str(k) == str(k)[::-1]
 

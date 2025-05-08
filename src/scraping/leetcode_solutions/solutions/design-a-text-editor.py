@@ -13,33 +13,17 @@ class TextEditor(object):
         self.__right = []
 
     def addText(self, text):
-        """
-        :type text: str
-        :rtype: None
-        """
         for x in text:
             self.__left.append(x)
 
     def deleteText(self, k):
-        """
-        :type k: int
-        :rtype: int
-        """
         return self.__move(k, self.__left, None)
 
     def cursorLeft(self, k):
-        """
-        :type k: int
-        :rtype: str
-        """
         self.__move(k, self.__left, self.__right)
         return self.__last_characters()
 
     def cursorRight(self, k):
-        """
-        :type k: int
-        :rtype: str
-        """
         self.__move(k, self.__right, self.__left)
         return self.__last_characters()
 

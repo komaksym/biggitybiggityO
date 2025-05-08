@@ -4,12 +4,6 @@ from functools import reduce
 # bitmask, backtracking, dp
 class Solution(object):
     def buildWall(self, height, width, bricks):
-        """
-        :type height: int
-        :type width: int
-        :type bricks: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def backtracking(height, width, bricks, total, mask, lookup, patterns):
             if mask in lookup:
@@ -35,12 +29,6 @@ class Solution(object):
 # bitmask, backtracking, matrix exponentiation
 class Solution_TLE(object):
     def buildWall(self, height, width, bricks):
-        """
-        :type height: int
-        :type width: int
-        :type bricks: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def backtracking(height, width, bricks, total, mask, lookup, patterns):
             if mask in lookup:

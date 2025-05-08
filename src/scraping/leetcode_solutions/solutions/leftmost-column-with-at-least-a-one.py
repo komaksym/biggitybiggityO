@@ -10,10 +10,6 @@ class BinaryMatrix(object):
 
 class Solution(object):
     def leftMostColumnWithOne(self, binaryMatrix):
-        """
-        :type binaryMatrix: BinaryMatrix
-        :rtype: int
-        """
         m, n = binaryMatrix.dimensions()
         r, c = 0, n-1
         while r < m and c >= 0:

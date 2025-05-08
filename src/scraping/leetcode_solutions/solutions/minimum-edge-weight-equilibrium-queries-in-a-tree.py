@@ -87,12 +87,6 @@ class TreeInfos(object):  # Time: O(N), Space: O(N + Q), N is the number of node
 MAX_W = 26
 class Solution(object):
     def minOperationsQueries(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         adj = [[] for _ in range(n)]
         for u, v, w in edges:
             w -= 1
@@ -176,12 +170,6 @@ class TreeInfos2(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of
 MAX_W = 26
 class Solution2(object):
     def minOperationsQueries(self, n, edges, queries):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         adj = [[] for _ in range(n)]
         for u, v, w in edges:
             w -= 1

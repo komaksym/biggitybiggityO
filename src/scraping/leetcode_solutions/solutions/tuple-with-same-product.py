@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def tupleSameProduct(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
         result = 0
         count = collections.Counter()
         for i in range(len(nums)):

@@ -5,11 +5,6 @@ import itertools
 
 class Solution(object):
     def maxSumRangeQuery(self, nums, requests):
-        """
-        :type nums: List[int]
-        :type requests: List[List[int]]
-        :rtype: int
-        """
         def addmod(a, b, mod):  # avoid overflow in other languages
             a %= mod
             b %= mod

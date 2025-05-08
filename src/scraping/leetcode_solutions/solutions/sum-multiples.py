@@ -3,10 +3,6 @@
 # math, principle of inclusion and exclusion
 class Solution(object):
     def sumOfMultiples(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         def f(d):
             return d*((1+(n//d))*(n//d)//2)
         

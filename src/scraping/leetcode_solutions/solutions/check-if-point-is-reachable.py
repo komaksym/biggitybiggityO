@@ -3,11 +3,6 @@
 # number theory
 class Solution(object):
     def isReachable(self, targetX, targetY):
-        """
-        :type targetX: int
-        :type targetY: int
-        :rtype: bool
-        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

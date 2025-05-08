@@ -8,10 +8,6 @@ class Node(object):
 
 class Solution(object):
     def preorder(self, root):
-        """
-        :type root: Node
-        :rtype: List[int]
-        """
         if not root:
             return []
         result, stack = [], [root]
@@ -26,10 +22,6 @@ class Solution(object):
 
 class Solution2(object):
     def preorder(self, root):
-        """
-        :type root: Node
-        :rtype: List[int]
-        """
         def dfs(root, result):
             result.append(root.val)
             for child in root.children:

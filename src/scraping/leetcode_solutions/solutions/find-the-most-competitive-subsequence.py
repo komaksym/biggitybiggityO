@@ -2,11 +2,6 @@
 
 class Solution(object):
     def mostCompetitive(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
         stk = []
         for i, x in enumerate(nums):
             while stk and stk[-1] > x and len(stk)+(len(nums)-i) > k:

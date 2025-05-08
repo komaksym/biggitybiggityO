@@ -3,12 +3,6 @@
 # math
 class Solution(object):
     def maxCount(self, banned, n, maxSum):
-        """
-        :type banned: List[int]
-        :type n: int
-        :type maxSum: int
-        :rtype: int
-        """
         k = min(int((-1+(1+8*maxSum))**0.5/2), n)  # k = argmax((k+1)*k//2 <= maxSum)
         total = (k+1)*k//2
         result = k
@@ -34,12 +28,6 @@ import bisect
 # binary search, prefix sum
 class Solution2(object):
     def maxCount(self, banned, n, maxSum):
-        """
-        :type banned: List[int]
-        :type n: int
-        :type maxSum: int
-        :rtype: int
-        """
         def check(x):
             return (x+1)*x//2-prefix[bisect.bisect_right(sorted_banned, x)] <= maxSum
     
@@ -59,12 +47,6 @@ class Solution2(object):
 # greedy
 class Solution3(object):
     def maxCount(self, banned, n, maxSum):
-        """
-        :type banned: List[int]
-        :type n: int
-        :type maxSum: int
-        :rtype: int
-        """
         lookup = set(banned)
         result = total = 0
         for i in range(1, n+1):

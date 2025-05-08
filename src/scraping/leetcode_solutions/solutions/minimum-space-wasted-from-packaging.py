@@ -5,11 +5,6 @@ import bisect
 
 class Solution(object):
     def minWastedSpace(self, packages, boxes):
-        """
-        :type packages: List[int]
-        :type boxes: List[List[int]]
-        :rtype: int
-        """
         MOD = 10**9+7
         INF = float("inf")
 

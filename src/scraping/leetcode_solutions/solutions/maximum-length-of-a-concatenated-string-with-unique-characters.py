@@ -9,10 +9,6 @@ for i in range(1, 26):
 
 class Solution(object):
     def maxLength(self, arr):
-        """
-        :type arr: List[str]
-        :rtype: int
-        """
         def bitset(s):
             result = 0
             for c in s:
@@ -44,10 +40,6 @@ class Solution(object):
 # Time:  O(2^n)
 class Solution2(object):
     def maxLength(self, arr):
-        """
-        :type arr: List[str]
-        :rtype: int
-        """ 
         def bitset(s):
             result = 0
             for c in s:

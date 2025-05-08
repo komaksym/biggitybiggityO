@@ -34,10 +34,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 
 class Solution(object):
     def minimumVisitedCells(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         m, n = len(grid), len(grid[0])
         uf1 = [UnionFind(n+1) for _ in range(m)]
         uf2 = [UnionFind(m+1) for _ in range(n)]
@@ -72,10 +68,6 @@ from sortedcontainers import SortedList
 # bfs, sorted list
 class Solution2_TLE(object):
     def minimumVisitedCells(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         m, n = len(grid), len(grid[0])
         sl1 = [SortedList(range(n)) for _ in range(m)]
         sl2 = [SortedList(range(m)) for _ in range(n)]

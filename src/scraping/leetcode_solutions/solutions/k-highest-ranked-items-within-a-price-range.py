@@ -6,13 +6,6 @@ import random
 # bfs, quick select
 class Solution(object):
     def highestRankedKItems(self, grid, pricing, start, k):
-        """
-        :type grid: List[List[int]]
-        :type pricing: List[int]
-        :type start: List[int]
-        :type k: int
-        :rtype: List[List[int]]
-        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):

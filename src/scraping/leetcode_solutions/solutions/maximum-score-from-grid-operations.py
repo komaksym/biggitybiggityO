@@ -3,10 +3,6 @@
 # prefix sum, dp
 class Solution(object):
     def maximumScore(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         prefix = [0]*(len(grid)+1)
         for i in range(len(grid)):
             prefix[i+1] = prefix[i]+grid[i][0]
@@ -29,10 +25,6 @@ class Solution(object):
 # prefix sum, dp
 class Solution2(object):
     def maximumScore(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         prefix = [0]*(len(grid)+1)
         for i in range(len(grid)):
             prefix[i+1] = prefix[i]+grid[i][0]

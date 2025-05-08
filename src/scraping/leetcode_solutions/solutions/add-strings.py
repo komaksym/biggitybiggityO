@@ -2,11 +2,6 @@
 
 class Solution(object):
     def addStrings(self, num1, num2):
-        """
-        :type num1: str
-        :type num2: str
-        :rtype: str
-        """
         result = []
         i, j, carry = len(num1) - 1, len(num2) - 1, 0
 
@@ -24,11 +19,6 @@ class Solution(object):
         return "".join(result)
 
     def addStrings2(self, num1, num2):
-        """
-        :type num1: str
-        :type num2: str
-        :rtype: str
-        """
         length = max(len(num1), len(num2))
         num1 = num1.zfill(length)[::-1]
         num2 = num2.zfill(length)[::-1]

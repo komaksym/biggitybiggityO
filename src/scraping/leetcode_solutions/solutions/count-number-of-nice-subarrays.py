@@ -2,11 +2,6 @@
 
 class Solution(object):
     def numberOfSubarrays(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         def atMost(nums, k):
             result, left, count = 0, 0, 0
             for right, x in enumerate(nums):
@@ -26,11 +21,6 @@ import collections
 
 class Solution2(object):
     def numberOfSubarrays(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: int
-        """
         result = 0
         dq = collections.deque([-1])
         for i in range(len(nums)):

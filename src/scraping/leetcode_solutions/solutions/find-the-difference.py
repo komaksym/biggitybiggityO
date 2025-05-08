@@ -7,19 +7,9 @@ from functools import reduce
 
 class Solution(object):
     def findTheDifference(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
         return chr(reduce(operator.xor, list(map(ord, s)), 0) ^ reduce(operator.xor, list(map(ord, t)), 0))
 
     def findTheDifference2(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
         t = list(t)
         s = list(s)
         for i in s:

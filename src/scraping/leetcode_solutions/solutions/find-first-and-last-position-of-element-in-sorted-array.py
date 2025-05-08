@@ -2,11 +2,6 @@
 
 class Solution(object):
     def searchRange(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
         def binarySearch(n, check):  # usually use
             left, right = 0, n-1  # search in [0, n-1], return n if not found
             while left <= right:

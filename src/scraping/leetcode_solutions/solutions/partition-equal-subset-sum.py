@@ -2,10 +2,6 @@
 
 class Solution(object):
     def canPartition(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
         s = sum(nums)
         if s % 2:
             return False

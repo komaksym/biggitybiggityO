@@ -2,10 +2,6 @@
 
 class Solution(object):
     def minimumMoves(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: int
-        """
         dp = [[0 for _ in range(len(arr)+1)] for _ in range(len(arr)+1)]
         for l in range(1, len(arr)+1):
             for i in range(len(arr)-l+1):

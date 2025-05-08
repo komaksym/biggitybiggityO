@@ -3,11 +3,6 @@ from functools import reduce
 
 class Solution(object):
     def dieSimulator(self, n, rollMax):
-        """
-        :type n: int
-        :type rollMax: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def sum_mod(array):
             return reduce(lambda x, y: (x+y)%MOD, array)

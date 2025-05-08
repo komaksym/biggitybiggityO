@@ -83,11 +83,6 @@ class SegmentTree(object):  # 0-based index
 # competitive programming solution
 class Solution(object):
     def minDayskVariants(self, points, k):
-        """
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def add_rec(rec, intervals):
             x0, y0, x1, y1 = rec
             intervals.append([[x0,   +1], [y0, y1]])
@@ -131,11 +126,6 @@ import collections
 # interview solution
 class Solution2(object):
     def minDayskVariants(self, points, k):
-        """
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
         def add_rec(rec, intervals):
             x0, y0, x1, y1 = rec
             intervals[x0][y0] += 1

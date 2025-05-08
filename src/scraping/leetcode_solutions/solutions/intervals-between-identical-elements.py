@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def getDistances(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: List[int]
-        """
         lookup = collections.defaultdict(list)
         for i, x in enumerate(arr):
             lookup[x].append(i)

@@ -11,11 +11,6 @@ for i in range(26, len(DP)):
     DP[i] = (DP[i-26]+DP[(i-26)+1])%MOD
 class Solution(object):
     def lengthAfterTransformations(self, s, t):
-        """
-        :type s: str
-        :type t: int
-        :rtype: int
-        """
         return reduce(lambda accu, x: (accu+x)%MOD, (DP[((ord(x)-ord('a'))+t)] for x in s), 0)
 
 
@@ -23,11 +18,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def lengthAfterTransformations(self, s, t):
-        """
-        :type s: str
-        :type t: int
-        :rtype: int
-        """
         MOD = 10**9+7
         dp = [1]*26
         for i in range(26, (ord(max(s))-ord('a')+t)+1):
@@ -43,12 +33,6 @@ from functools import reduce
 # matrix fast exponentiation
 class Solution3(object):
     def lengthAfterTransformations(self, s, t):
-        """
-        :type s: str
-        :type t: int
-        :type nums: List[int]
-        :rtype: int
-        """
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -80,11 +64,6 @@ class Solution3(object):
 # dp
 class Solution4(object):
     def lengthAfterTransformations(self, s, t):
-        """
-        :type s: str
-        :type t: int
-        :rtype: int
-        """
         MOD = 10**9+7
         cnt = [0]*26
         for x in s:

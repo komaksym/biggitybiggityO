@@ -2,10 +2,6 @@
 
 class Solution(object):
     def findSubsequences(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
         def findSubsequencesHelper(nums, pos, seq, result):
             if len(seq) >= 2:
                 result.append(list(seq))

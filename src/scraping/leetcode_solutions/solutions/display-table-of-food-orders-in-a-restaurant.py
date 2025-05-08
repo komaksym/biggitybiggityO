@@ -5,10 +5,6 @@ import collections
 
 class Solution(object):
     def displayTable(self, orders):
-        """
-        :type orders: List[List[str]]
-        :rtype: List[List[str]]
-        """
         table_count = collections.defaultdict(collections.Counter)
         for _, table, food in orders:
             table_count[int(table)][food] += 1

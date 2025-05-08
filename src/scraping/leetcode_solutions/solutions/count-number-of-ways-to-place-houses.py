@@ -6,10 +6,6 @@ import itertools
 # matrix exponentiation
 class Solution(object):
     def countHousePlacements(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -31,10 +27,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def countHousePlacements(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         MOD = 10**9+7
         prev, curr = 1, 2
         for _ in range(n-1):

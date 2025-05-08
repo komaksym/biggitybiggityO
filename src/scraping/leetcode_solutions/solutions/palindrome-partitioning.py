@@ -2,10 +2,6 @@
 
 class Solution(object):
     def partition(self, s):
-        """
-        :type s: str
-        :rtype: List[List[str]]
-        """
         is_palindrome = [[False] * len(s) for i in range(len(s))]
         for i in reversed(range(len(s))):
             for j in range(i, len(s)):
@@ -28,10 +24,6 @@ class Solution(object):
 # recursive solution
 class Solution2(object):
     def partition(self, s):
-        """
-        :type s: str
-        :rtype: List[List[str]]
-        """
         result = []
         self.partitionRecu(result, [], s, 0)
         return result

@@ -19,10 +19,6 @@ MAX_N = 10**5
 PRIMES = linear_sieve_of_eratosthenes(int(MAX_N**0.5))
 class Solution(object):
     def smallestValue(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
         while True:
             curr, new_n = n, 0
             for p in PRIMES:

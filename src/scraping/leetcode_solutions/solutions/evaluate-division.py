@@ -64,12 +64,6 @@ class UnionFindPathCompressionOnly(object):
 
 class Solution(object):
     def calcEquation(self, equations, values, queries):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type queries: List[List[str]]
-        :rtype: List[float]
-        """
         union_find = UnionFind()
         for (a, b), k in zip(equations, values):
             union_find.union_set(a, b, k)
@@ -84,12 +78,6 @@ import itertools
 
 class Solution2(object):
     def calcEquation(self, equations, values, queries):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type queries: List[List[str]]
-        :rtype: List[float]
-        """
         adj = collections.defaultdict(dict)
         for (a, b), k in zip(equations, values):
             adj[a][b] = k
@@ -127,12 +115,6 @@ import itertools
 # variant of floyd–warshall algorithm solution
 class Solution3(object):
     def calcEquation(self, equations, values, queries):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type queries: List[List[str]]
-        :rtype: List[float]
-        """
         adj = collections.defaultdict(dict)
         for (a, b), k in zip(equations, values):
             adj[a][a] = adj[b][b] = 1.0
@@ -149,12 +131,6 @@ import collections
 
 class Solution4(object):
     def calcEquation(self, equations, values, query):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type query: List[List[str]]
-        :rtype: List[float]
-        """
         def check(up, down, lookup, visited):
             if up in lookup and down in lookup[up]:
                 return (True, lookup[up][down])

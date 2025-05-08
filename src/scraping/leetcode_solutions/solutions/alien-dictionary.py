@@ -6,10 +6,6 @@ import collections
 # BFS solution.
 class Solution(object):
     def alienOrder(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
         result, in_degree, out_degree = [], {}, {}
         zero_in_degree_queue = collections.deque()
         nodes = set()
@@ -60,10 +56,6 @@ class Solution(object):
 # DFS solution.
 class Solution2(object):
     def alienOrder(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
         nodes, ancestors = set(), {}
         for i in range(len(words)):
             for c in words[i]:

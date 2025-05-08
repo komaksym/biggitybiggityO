@@ -7,13 +7,6 @@ from functools import partial
 # Hopcroft-Karp bipartite max-cardinality matching and max independent set
 # David Eppstein, UC Irvine, 27 Apr 2002
 def bipartiteMatch(graph):
-    '''Find maximum cardinality matching of a bipartite graph (U,V,E).
-    The input format is a dictionary mapping members of U to a list
-    of their neighbors in V.  The output is a triple (M,A,B) where M is a
-    dictionary mapping members of V to their matches in U, A is the part
-    of the maximum independent set in U, and B is the part of the MIS in V.
-    The same object may occur in both U and V, and is treated as two
-    distinct vertices if this happens.'''
     matching = {}
     for u in graph:
         for v in graph[u]:
@@ -108,10 +101,6 @@ import collections
 # Hopcroft-Karp bipartite matching
 class Solution(object):
     def maximumInvitations(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         adj = collections.defaultdict(list)
         for i in range(len(grid)):
             for j in range(len(grid[0])):
@@ -125,10 +114,6 @@ class Solution(object):
 # Hungarian bipartite matching with less space
 class Solution2(object):
     def maximumInvitations(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def augment(grid, u, lookup, match):
             for v in range(V):
                 if not get_grid(u, v) or v in lookup:
@@ -157,10 +142,6 @@ import collections
 # Hungarian bipartite matching
 class Solution3(object):
     def maximumInvitations(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         def augment(adj, u, lookup, match):
             for v in adj[u]:
                 if v in lookup:

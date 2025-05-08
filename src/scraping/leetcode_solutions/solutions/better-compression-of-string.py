@@ -3,10 +3,6 @@
 # freq table, counting sort
 class Solution(object):
     def betterCompression(self, compressed):
-        """
-        :type compressed: str
-        :rtype: str
-        """
         cnt = [0]*26
         x, curr = -1, 0
         for i in range(len(compressed)):

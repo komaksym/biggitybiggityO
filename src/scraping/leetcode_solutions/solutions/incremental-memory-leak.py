@@ -3,11 +3,6 @@
 # Same problem from https://codingcompetitions.withgoogle.com/codejam/round/000000000019ffb9/00000000003384ea
 class Solution(object):
     def memLeak(self, memory1, memory2):
-        """
-        :type memory1: int
-        :type memory2: int
-        :rtype: List[int]
-        """
         def s(a, d, n):
             return (2*a + (n-1)*d)*n//2
 

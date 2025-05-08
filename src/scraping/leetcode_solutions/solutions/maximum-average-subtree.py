@@ -10,10 +10,6 @@ class TreeNode(object):
 
 class Solution(object):
     def maximumAverageSubtree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: float
-        """
         def maximumAverageSubtreeHelper(root, result):
             if not root:
                 return [0.0, 0]

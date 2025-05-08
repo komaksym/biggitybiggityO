@@ -3,11 +3,6 @@
 # bit manipulation, binary search, combinatorics
 class Solution(object):
     def findMaximumNumber(self, k, x):
-        """
-        :type k: int
-        :type x: int
-        :rtype: int
-        """
         def floor_log2(x):
             return x.bit_length()-1
 
@@ -45,11 +40,6 @@ class Solution(object):
 # bit manipulation, combinatorics
 class Solution2(object):
     def findMaximumNumber(self, k, x):
-        """
-        :type k: int
-        :type x: int
-        :rtype: int
-        """
         def floor_log2(x):
             return x.bit_length()-1
 
@@ -72,11 +62,6 @@ class Solution2(object):
 # bit manipulation, combinatorics
 class Solution3(object):
     def findMaximumNumber(self, k, x):
-        """
-        :type k: int
-        :type x: int
-        :rtype: int
-        """
         def floor_log2(x):
             return x.bit_length()-1
 
@@ -96,11 +81,6 @@ class Solution3(object):
 # bit manipulation, binary search, combinatorics
 class Solution4(object):
     def findMaximumNumber(self, k, x):
-        """
-        :type k: int
-        :type x: int
-        :rtype: int
-        """
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left+(right-left)//2

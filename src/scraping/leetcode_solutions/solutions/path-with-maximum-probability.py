@@ -8,14 +8,6 @@ import heapq
 
 class Solution(object):
     def maxProbability(self, n, edges, succProb, start, end):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :type succProb: List[float]
-        :type start: int
-        :type end: int
-        :rtype: float
-        """
         adj = collections.defaultdict(list)
         for (u, v), p in zip(edges, succProb):
             adj[u].append((v, p))

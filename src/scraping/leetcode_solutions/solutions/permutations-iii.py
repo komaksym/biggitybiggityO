@@ -3,10 +3,6 @@
 # backtracking, bitmasks
 class Solution(object):
     def permute(self, n):
-        """
-        :type n: int
-        :rtype: List[List[int]]
-        """
         def backtracking(lookup):
             if len(curr) == n:
                 result.append(curr[:])

@@ -10,10 +10,6 @@ class Node(object):
 
 class Solution(object):
     def flatten(self, head):
-        """
-        :type head: Node
-        :rtype: Node
-        """
         curr = head
         while curr:
             if curr.child:

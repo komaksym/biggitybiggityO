@@ -5,10 +5,6 @@ import random
 
 class Solution(object):
     def trimMean(self, arr):
-        """
-        :type arr: List[int]
-        :rtype: float
-        """
         P = 20
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):

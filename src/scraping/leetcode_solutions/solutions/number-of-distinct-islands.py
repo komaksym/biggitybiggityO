@@ -2,10 +2,6 @@
 
 class Solution(object):
     def numDistinctIslands(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
         directions = {'l':[-1,  0], 'r':[ 1,  0], \
                       'u':[ 0,  1], 'd':[ 0, -1]}
 

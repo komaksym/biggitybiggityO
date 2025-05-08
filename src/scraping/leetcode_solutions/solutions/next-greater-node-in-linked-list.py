@@ -9,10 +9,6 @@ class ListNode(object):
 
 class Solution(object):
     def nextLargerNodes(self, head):
-        """
-        :type head: ListNode
-        :rtype: List[int]
-        """
         result, stk = [], []
         while head:
             while stk and stk[-1][1] < head.val:

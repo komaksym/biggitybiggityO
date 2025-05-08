@@ -3,10 +3,6 @@
 # sort, line sweep, coordinate compression
 class Solution(object):
     def maxIntersectionCount(self, y):
-        """
-        :type y: List[int]
-        :rtype: int
-        """
         val_to_idx = {x:i for i, x in enumerate(sorted(set(y)))}
         cnts = [0]*(2*len(val_to_idx)+1)
         for i in range(len(y)-1):
@@ -23,10 +19,6 @@ class Solution(object):
 # sort, line sweep
 class Solution2(object):
     def maxIntersectionCount(self, y):
-        """
-        :type y: List[int]
-        :rtype: int
-        """
         events = []
         for i in range(len(y)-1):
             left, right = 2*y[i], 2*y[i+1]+(-1 if y[i] < y[i+1] else +1)

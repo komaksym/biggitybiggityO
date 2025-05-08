@@ -3,11 +3,6 @@
 # dp
 class Solution(object):
     def maximumSubarrayXor(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         dp = [[nums[i] if j == 0 else 0 for j in range(len(nums)-i)] for i in range(len(nums))]
         for i in reversed(range(len(nums))):
             for l in range(1, len(nums)-i):
@@ -22,11 +17,6 @@ class Solution(object):
 # dp
 class Solution2(object):
     def maximumSubarrayXor(self, nums, queries):
-        """
-        :type nums: List[int]
-        :type queries: List[List[int]]
-        :rtype: List[int]
-        """
         dp = [[nums[i] if i == j else 0 for j in range(len(nums))] for i in range(len(nums))]
         for i in reversed(range(len(nums))):
             for j in range(i+1, len(nums)):

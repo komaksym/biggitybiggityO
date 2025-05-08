@@ -19,10 +19,6 @@ class UnionFind(object):
 
 class Solution(object):
     def equationsPossible(self, equations):
-        """
-        :type equations: List[str]
-        :rtype: bool
-        """
         union_find = UnionFind(26)
         for eqn in equations:
             x = ord(eqn[0]) - ord('a')
@@ -41,10 +37,6 @@ class Solution(object):
 # Time:  O(n)
 class Solution2(object):
     def equationsPossible(self, equations):
-        """
-        :type equations: List[str]
-        :rtype: bool
-        """
         graph = [[] for _ in range(26)]
 
         for eqn in equations:

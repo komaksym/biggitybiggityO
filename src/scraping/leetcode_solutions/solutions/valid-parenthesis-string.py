@@ -2,10 +2,6 @@
 
 class Solution(object):
     def checkValidString(self, s):
-        """
-        :type s: str
-        :rtype: bool
-        """
         lower, upper = 0, 0  # keep lower bound and upper bound of '(' counts
         for c in s:
             lower += 1 if c == '(' else -1

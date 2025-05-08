@@ -4,10 +4,6 @@
 
 class NumMatrix(object):
     def __init__(self, matrix):
-        """
-        initialize your data structure here.
-        :type matrix: List[List[int]]
-        """
         if not matrix:
             return
         self.__matrix = matrix
@@ -24,26 +20,11 @@ class NumMatrix(object):
                                    self.__bit[last_i][j] + self.__bit[last_i][last_j]
 
     def update(self, row, col, val):
-        """
-        update the element at matrix[row,col] to val.
-        :type row: int
-        :type col: int
-        :type val: int
-        :rtype: void
-        """
         if val - self.__matrix[row][col]:
             self.__add(row, col, val - self.__matrix[row][col])
             self.__matrix[row][col] = val
 
     def sumRegion(self, row1, col1, row2, col2):
-        """
-        sum of elements matrix[(row1,col1)..(row2,col2)], inclusive.
-        :type row1: int
-        :type col1: int
-        :type row2: int
-        :type col2: int
-        :rtype: int
-        """
         return self.__sum(row2, col2) - self.__sum(row2, col1 - 1) - \
                self.__sum(row1 - 1, col2) + self.__sum(row1 - 1, col1 - 1)
 

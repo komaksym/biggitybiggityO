@@ -4,8 +4,6 @@
 import operator
 
 class Solution(object):
-    # @param tokens, a list of string
-    # @return an integer
     def evalRPN(self, tokens):
         numerals, operators = [], {"+": operator.add, "-": operator.sub, "*": operator.mul, "/": operator.div}
         for token in tokens:

@@ -19,9 +19,6 @@ class Solution(object):
                 stk.append(0)
             stk[i] = x
         return result
-    
-
-# Range Maximum Query
 class SegmentTree(object):  # 0-based index
     def __init__(self, N,
                  build_fn=lambda x, y: [y]*(2*x),

@@ -5,9 +5,6 @@ class Solution(object):
     lookup = {'0':'0', '1':'1', '6':'9', '8':'8', '9':'6'}
     cache = {}
 
-    # @param {string} low
-    # @param {string} high
-    # @return {integer}
     def strobogrammaticInRange(self, low, high):
         count = self.countStrobogrammaticUntil(high, False) - \
                 self.countStrobogrammaticUntil(low, False) + \

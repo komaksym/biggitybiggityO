@@ -2,15 +2,12 @@
 # Space: O(n * m) = O(3 * 4)
 
 class Solution(object):
-    # @param s, a string
-    # @return a list of strings
     def restoreIpAddresses(self, s):
         result = []
         self.restoreIpAddressesRecur(result, s, 0, "", 0)
         return result
 
     def restoreIpAddressesRecur(self, result, s, start, current, dots):
-        # pruning to improve performance
         if (4 - dots) * 3 < len(s) - start or (4 - dots) > len(s) - start:
             return
 

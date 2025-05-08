@@ -2,8 +2,6 @@
 # Space: O(n)
 
 class Solution(object):
-    # @param ratings, a list of integer
-    # @return an integer
     def candy(self, ratings):
         candies = [1 for _ in range(len(ratings))]
         for i in range(1, len(ratings)):

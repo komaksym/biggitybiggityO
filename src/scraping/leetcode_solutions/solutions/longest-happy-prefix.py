@@ -45,7 +45,5 @@ class Solution2(object):
             suffix = (suffix + (ord(s[len(s)-(i+1)])-ord('a'))*power) % M
             power = (power*D)%M
             if prefix == suffix:
-                # we assume M is a very large prime without hash collision
-                # assert(check(i+1, s))
                 result = i+1
         return s[:result]

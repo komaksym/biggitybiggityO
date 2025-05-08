@@ -8,7 +8,6 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        # Template: https://cp-algorithms.com/string/z-function.html
         def z_function(s):  # Time: O(n), Space: O(n)
             z = [0]*len(s)
             l, r = 0, 0

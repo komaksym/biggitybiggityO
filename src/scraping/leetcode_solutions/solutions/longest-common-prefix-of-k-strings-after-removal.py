@@ -37,9 +37,6 @@ class Solution(object):
             mx2 = suffix[i+1] if i+1 < len(words) else 0
             result[idx] = max(mx, mx1, mx2)
         return result
-        
-
-# Time:  O(n * l)
 # Space: O(t)
 # trie
 class Solution2(object):

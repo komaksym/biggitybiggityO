@@ -9,7 +9,6 @@ class Solution(object):
         :rtype: int
         """
         MOD = 10**9+7
-        # 2^(odd-1)*2^even = 2^(len(nums)-1)
         return pow(2, len(nums)-1, MOD) if any(x%2 for x in nums) else 0
 
 

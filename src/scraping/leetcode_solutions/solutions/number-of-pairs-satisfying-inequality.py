@@ -21,8 +21,6 @@ class Solution(object):
             sl.add(x-y)
         return result
 
-    
-# Time:  O(nlogn)
 # Space: O(n)
 import itertools
 import bisect

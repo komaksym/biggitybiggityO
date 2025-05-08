@@ -8,7 +8,6 @@ class Solution(object):
         :type q: int
         :rtype: int
         """
-        # explanation commented in the following solution
         return 2 if (p & -p) > (q & -q) else 0 if (p & -p) < (q & -q) else 1
 
 
@@ -27,7 +26,6 @@ class Solution2(object):
             return a
 
         lcm = p*q // gcd(p, q)
-        # let a = lcm / p, b = lcm / q
         if lcm // p % 2 == 1:
             if lcm // q % 2 == 1:
                 return 1  # a is odd, b is odd <=> (p & -p) == (q & -q)

@@ -27,8 +27,6 @@ class Solution(object):
 # Time:  O(n)
 # Space: O(n)
 class Solution2(object):
-    # @param s, a string
-    # @return an integer
     def longestValidParentheses(self, s):
         longest, last, indices = 0, -1, []
         for i in range(len(s)):

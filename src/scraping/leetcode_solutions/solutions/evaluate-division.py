@@ -23,16 +23,10 @@ class UnionFind(object):
         if xp == yp:
             return False
         if self.rank[xp] < self.rank[yp]:  # union by rank
-            # to make x/yp = r*yr and merge xp into yp
-            # => since x/xp = xr, we can merge with xp/yp = r*yr/xr 
             self.set[xp] = (yp, r*yr/xr)
         elif self.rank[xp] > self.rank[yp]:
-            # to make y/xp = 1/r*xr and merge xp into yp
-            # => since y/yp = yr, we can merge with yp/xp = 1/r*xr/yr 
             self.set[yp] = (xp, 1.0/r*xr/yr)
         else:
-            # to make y/xp = 1/r*xr and merge xp into yp
-            # => since y/yp = yr, we can merge with yp/xp = 1/r*xr/yr 
             self.set[yp] = (xp, 1.0/r*xr/yr)
             self.rank[xp] += 1 
         return True
@@ -59,8 +53,6 @@ class UnionFindPathCompressionOnly(object):
         (xp, xr), (yp, yr) =  list(map(self.find_set, (x, y)))
         if xp == yp:
             return False
-        # to make x/yp = r*yr and merge xp into yp
-        # => since x/xp = xr, we can merge with xp/yp = r*yr/xr 
         self.set[xp] = (yp, r*yr/xr)
         return True
 
@@ -155,8 +147,6 @@ class Solution3(object):
                     adj[i][j] = adj[i][k]*adj[k][j]
         return [adj[a].get(b, -1.0) for a, b in queries]
 
-    
-# Time:  O(e + q * n), at most O(n^3 + q)
 # Space: O(e)
 import collections
 

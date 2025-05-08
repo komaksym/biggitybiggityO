@@ -12,8 +12,6 @@ class Solution(object):
         g, g_final = [0], 0
         for p in map(len, re.split('-+', s)):
             while len(g) <= p:
-                # Theorem 2: g[game] = g[subgame1]^g[subgame2]^g[subgame3]...
-                # and find first missing number.
                 g += min(set(range(p)) - {x^y for x, y in zip(g[:len(g)/2], g[-2:-len(g)/2-2:-1])}),
             g_final ^= g[p]
         return g_final > 0  # Theorem 1: First player must win iff g(current_state) != 0
@@ -44,7 +42,6 @@ class Solution2(object):
                                            for j in range(c - 1))              # O(c) time
             return lookup[consecutives]                                         # O(c) time
 
-        # re.findall: O(n) time, canWinHelper: O(c) in depth
         return canWinHelper(list(map(len, re.findall(r'\+\++', s))))
 
 
@@ -62,9 +59,6 @@ class Solution3(object):
         while not is_win and i < n:                                     # O(n) time
             if s[i] == '+':
                 while not is_win and i < n and s[i+1] == '+':           # O(c) time
-                     # t(n, c) = c * (t(n, c-1) + n) + n = ...
-                     # = c! * t(n, 0) + n * c! * (c + 1) * (1/0! + 1/1! + ... 1/c!)
-                     # = n * c! + n * c! * (c + 1) * O(e) = O(c * n * c!)
                     is_win = not self.canWin(s[:i] + '--' + s[i+2:])    # O(n) space
                     i += 1
             i += 1

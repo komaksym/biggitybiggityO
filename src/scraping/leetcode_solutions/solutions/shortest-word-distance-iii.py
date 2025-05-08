@@ -2,10 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param {string[]} words
-    # @param {string} word1
-    # @param {string} word2
-    # @return {integer}
     def shortestWordDistance(self, words, word1, word2):
         dist = float("inf")
         is_same = (word1 == word2)

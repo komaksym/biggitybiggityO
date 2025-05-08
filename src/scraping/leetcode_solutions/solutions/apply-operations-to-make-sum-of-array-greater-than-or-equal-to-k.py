@@ -8,7 +8,6 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        # reference: https://stackoverflow.com/questions/15390807/integer-square-root-in-python
         def isqrt(n):
             a, b = n, (n+1)//2
             while b < a:

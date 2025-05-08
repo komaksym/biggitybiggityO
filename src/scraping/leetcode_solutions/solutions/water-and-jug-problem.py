@@ -14,8 +14,5 @@ class Solution(object):
                 a, b = b, a%b
             return a
 
-        # The problem is to solve:
-        # - check z <= x + y
-        # - check if there is any (a, b) integers s.t. ax + by = z
         return z == 0 or ((z <= x + y) and (z % gcd(x, y) == 0))
 

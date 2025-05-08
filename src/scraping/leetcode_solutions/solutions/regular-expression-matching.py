@@ -2,7 +2,6 @@
 # Space: O(n)
 
 class Solution(object):
-    # @return a boolean
     def isMatch(self, s, p):
         k = 3
         result = [[False for j in range(len(p) + 1)] for i in range(k)]
@@ -27,7 +26,6 @@ class Solution(object):
 # Time:  O(m * n)
 # Space: O(m * n)
 class Solution2(object):
-    # @return a boolean
     def isMatch(self, s, p):
         result = [[False for j in range(len(p) + 1)] for i in range(len(s) + 1)]
 
@@ -47,7 +45,6 @@ class Solution2(object):
 
 # iteration
 class Solution3(object):
-    # @return a boolean
     def isMatch(self, s, p):
         p_ptr, s_ptr, last_s_ptr, last_p_ptr = 0, 0, -1, -1
         last_ptr = []
@@ -81,7 +78,6 @@ class Solution3(object):
 
 # recursive
 class Solution4(object):
-    # @return a boolean
     def isMatch(self, s, p):
         if not p:
             return not s

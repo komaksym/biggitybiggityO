@@ -9,8 +9,6 @@ class ZeroEvenOdd(object):
         self.__n = n
         self.__curr = 0
         self.__cv = threading.Condition()
-        
-	# printNumber(x) outputs "x", where x is an integer.
     def zero(self, printNumber):
         """
         :type printNumber: method

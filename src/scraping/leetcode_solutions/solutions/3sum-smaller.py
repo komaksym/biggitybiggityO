@@ -2,9 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param {integer[]} nums
-    # @param {integer} target
-    # @return {integer}
     def threeSumSmaller(self, nums, target):
         nums.sort()
         n = len(nums)

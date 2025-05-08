@@ -23,9 +23,6 @@ class Solution(object):
 
         count1, count2 = collections.Counter(s1), collections.Counter(s2)
         return is_break(count1, count2) or is_break(count2, count1)
-    
-
-# Time:  O(nlogn)
 # Space: O(1)
 import itertools
 

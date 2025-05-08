@@ -13,7 +13,6 @@ class ListNode(object):
             return "{} -> {}".format(self.val, repr(self.__next__))
 
 class Solution(object):
-    # @return a ListNode
     def removeNthFromEnd(self, head, n):
         dummy = ListNode(-1)
         dummy.next = head

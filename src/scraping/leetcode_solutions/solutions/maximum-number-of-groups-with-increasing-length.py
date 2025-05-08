@@ -55,8 +55,6 @@ class Solution2(object):
                 result += 1
         return result
 
-    
-# Time:  O(nlogn)
 # Space: O(1)
 # constructive algorithms, sort, binary search, greedy
 class Solution3(object):

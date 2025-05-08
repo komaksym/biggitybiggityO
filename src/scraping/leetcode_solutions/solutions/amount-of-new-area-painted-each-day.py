@@ -32,9 +32,6 @@ class Solution(object):
                 else:
                     lookup[i] = True
         return result
-                    
-            
-# Time:  O(nlogn)
 # Space: O(n)
 from sortedcontainers import SortedList
 

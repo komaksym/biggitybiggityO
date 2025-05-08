@@ -65,7 +65,6 @@ class Solution2(object):
             r = start
             tmp = []
             for i in range(mid+1, end + 1):
-                # Merge the two sorted arrays into tmp.
                 while r <= mid and idxs[r][0] < idxs[i][0]:
                     tmp.append(idxs[r])
                     r += 1
@@ -75,7 +74,6 @@ class Solution2(object):
             while r <= mid:
                 tmp.append(idxs[r])
                 r += 1
-            # Copy tmp back to idxs
             idxs[start:start+len(tmp)] = tmp
             
         idxs = []

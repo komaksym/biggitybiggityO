@@ -45,7 +45,6 @@ class Solution(object):
                     l[right + 1] = l[right]+1
                 if mask(cnt, right-left+1) != andValues[j]:
                     continue
-                # new_dp[right+1] = min(dp[left-l[left]], dp[left-l[left]+1], ..., dp[left])+nums[right]
                 while idx <= left:
                     while dq and dp[dq[-1]] >= dp[idx]:
                         dq.pop()
@@ -70,11 +69,6 @@ class Solution2(object):
         :rtype: int
         """
         INF = float("inf")
-        # RMQ - Sparse Table
-        # Template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20D/genetic_sequences2.py3
-        # Time:  ctor:  O(NlogN) * O(fn)
-        #        query: O(fn)
-        # Space: O(NlogN)
         class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn
@@ -106,7 +100,6 @@ class Solution2(object):
                 masks = [x for k, x in enumerate(masks) if k == 0 or masks[k-1][0] != masks[k][0]]
                 for k, [mask, left] in enumerate(masks):
                     if mask == andValues[j]:
-                        # any j in range(left, right+1) has same and(nums[j:i+1]) = mask
                         right = masks[k+1][1]-1 if k+1 != len(masks) else i
                         new_dp[i+1] = min(new_dp[i+1], st.query(left, right)+nums[i])
                         break

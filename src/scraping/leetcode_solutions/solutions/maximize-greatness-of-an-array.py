@@ -9,9 +9,6 @@ class Solution(object):
         :rtype: int
         """
         return len(nums)-max(collections.Counter(nums).values())
-  
-
-# Time:  O(nlogn)
 # Space: O(1)
 # sort, greedy, two pointers
 class Solution2(object):

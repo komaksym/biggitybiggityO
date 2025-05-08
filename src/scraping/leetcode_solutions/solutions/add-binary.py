@@ -2,9 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param a, a string
-    # @param b, a string
-    # @return a string
     def addBinary(self, a, b):
         result, carry, val = "", 0, 0
         for i in range(max(len(a), len(b))):

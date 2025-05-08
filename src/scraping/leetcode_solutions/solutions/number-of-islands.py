@@ -80,8 +80,6 @@ class Solution2(object):
                     count += 1
         return count
 
- 
-# Time:  O(m * n)
 # Space: O(m * n)
 import collections
 

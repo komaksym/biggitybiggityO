@@ -13,8 +13,6 @@ class Solution(object):
         count = collections.Counter(moves)
         return count['L'] == count['R'] and count['U'] == count['D']
 
- 
-# Time:  O(n)
 # Space: O(1)
 class Solution(object):
     def judgeCircle(self, moves):

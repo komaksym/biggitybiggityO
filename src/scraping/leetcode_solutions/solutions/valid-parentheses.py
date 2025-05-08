@@ -2,7 +2,6 @@
 # Space: O(n)
 
 class Solution(object):
-    # @return a boolean
     def isValid(self, s):
         stack, lookup = [], {"(": ")", "{": "}", "[": "]"}
         for parenthese in s:

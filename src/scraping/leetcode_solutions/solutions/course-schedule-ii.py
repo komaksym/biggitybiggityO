@@ -95,8 +95,6 @@ class Solution3(object):
                 return []
         return result
 
-    
-# Time:  O(|V| + |E|)
 # Space: O(|E|)
 import collections
 

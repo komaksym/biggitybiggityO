@@ -22,13 +22,6 @@ class Solution(object):
         """
         def nCr(n, k, mod):
             return (fact[n]*inv_fact[n-k] % mod) * inv_fact[k] % mod
-    
-        # find k segments with 1+ length and (k+1) spaces with 0+ length s.t. total length is n-1
-        # => find k segments with 0+ length and (k+1) spaces with 0+ length s.t. total length is n-k-1
-        # => find the number of combinations of 2k+1 variables with total sum n-k-1
-        # => H(2k+1, n-k-1)
-        # => C((2k+1) + (n-k-1) - 1, n-k-1)
-        # => C(n+k-1, n-k-1) = C(n+k-1, 2k)
         return nCr(n+k-1, 2*k, MOD)
 
 
@@ -50,11 +43,4 @@ class Solution2(object):
                 c *= n-k+1
                 c //= k
             return c
-        
-        # find k segments with 1+ length and (k+1) spaces with 0+ length s.t. total length is n-1
-        # => find k segments with 0+ length and (k+1) spaces with 0+ length s.t. total length is n-k-1
-        # => find the number of combinations of 2k+1 variables with total sum n-k-1
-        # => H(2k+1, n-k-1)
-        # => C((2k+1) + (n-k-1) - 1, n-k-1)
-        # => C(n+k-1, n-k-1) = C(n+k-1, 2k)
         return nCr(n+k-1, 2*k) % MOD

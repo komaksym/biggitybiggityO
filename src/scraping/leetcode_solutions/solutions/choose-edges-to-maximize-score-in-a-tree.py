@@ -32,8 +32,6 @@ class Solution(object):
             adj[p].append((i, w))
         return iter_dfs()
 
-    
-# Time:  O(n)
 # Space: O(n)
 # dfs, tree dp
 class Solution2(object):

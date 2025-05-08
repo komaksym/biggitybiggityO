@@ -25,9 +25,6 @@ class Solution(object):
                 pre_level.append(i)
             unvisited.add(i)
 
-        # A graph can have 2 MHTs at most.
-        # BFS from the leaves until the number
-        # of the unvisited nodes is less than 3.
         while len(unvisited) > 2:
             cur_level = []
             for u in pre_level:

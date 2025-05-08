@@ -2,8 +2,6 @@
 # Space: O(k)
 
 class Solution(object):
-    # @param {integer} n
-    # @return {boolean}
     def isHappy(self, n):
         lookup = {}
         while n != 1 and n not in lookup:

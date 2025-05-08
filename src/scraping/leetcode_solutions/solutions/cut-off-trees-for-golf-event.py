@@ -22,7 +22,6 @@ class Solution(object):
                 if not closer:  # cannot find a path in the closer expansions
                     if not detour:  # no other possible path
                         return -1
-                    # try other possible paths in detour expansions with extra 2-step cost
                     min_steps += 2
                     closer, detour = detour, closer
                 i, j = closer.pop()

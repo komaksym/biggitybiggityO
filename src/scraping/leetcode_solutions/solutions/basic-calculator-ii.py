@@ -42,8 +42,6 @@ class Solution(object):
 # Time:  O(n)
 # Space: O(n)
 class Solution2(object):
-    # @param {string} s
-    # @return {integer}
     def calculate(self, s):
         operands, operators = [], []
         operand = ""

@@ -23,8 +23,6 @@ class Solution(object):
 # Time:  O(n)
 # Space: O(1)
 class Solution2(object):
-    # @param A, a list of integers
-    # @return an integer
     def trap(self, A):
         result = 0
         top = 0

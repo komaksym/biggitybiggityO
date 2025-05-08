@@ -13,30 +13,6 @@ class Solution(object):
         if width < height:
             width, height = height, width
 
-        # 1. split matrix by SxS tiles
-        # 2. split each SxS tile into four parts
-        #    (r, c), (r, S-c), (S-r, c), (S-r, S-c)
-        # 3. for each count of tile part in matrix is
-        #    (R+1)*(C+1), (R+1)*C, R*(C+1), R*C (already in descending order)
-        # 4. fill one into matrix by tile part of which count is in descending order
-        #    until number of ones in a tile comes to maxOnes
-        # 
-        # ps. area of a tile and its count in matrix are as follows:
-        #
-        #  |<---- c ---->|<-- S-c -->|
-        #  ^             |           |
-        #  |             |           |
-        #  r (R+1)*(C+1) |  (R+1)*C  |
-        #  |             |           |
-        #  v             |           |
-        #  ---------------------------
-        #  ^             |           |
-        #  |             |           |
-        #  S-r  R*(C+1)  |   R*C     |
-        #  |             |           |
-        #  v             |           |
-        #  ---------------------------
-        #
 
         R, r = divmod(height, sideLength)
         C, c = divmod(width, sideLength)

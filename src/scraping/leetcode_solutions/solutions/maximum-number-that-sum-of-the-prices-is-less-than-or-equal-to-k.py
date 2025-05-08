@@ -31,8 +31,6 @@ class Solution(object):
             lookup.append((lookup[-1]<<x)+(1<<(i+x-1)))
             i += x
         while k >= prefix_cnt:
-            # l = result.bit_length()
-            # assert(prefix_cnt == sum(c == '1' and (l-i)%x == 0 for i, c in enumerate(bin(result)[2:])))
             l = binary_search_right(1, len(lookup)-1, lambda l: count(l) <= k)
             cnt, i = count(l), x*l
             c = min(floor_log2(k//cnt) if cnt else float("inf"), x-1)
@@ -59,8 +57,6 @@ class Solution2(object):
 
         result = prefix_cnt = 0
         while k >= prefix_cnt:
-            # l = result.bit_length()
-            # assert(prefix_cnt == sum(c == '1' and (l-i)%x == 0 for i, c in enumerate(bin(result)[2:])))
             cnt, i = prefix_cnt, 0
             while (cnt<<x)+(1<<(i+x-1)) <= k:
                 cnt = (cnt<<x)+(1<<(i+x-1))
@@ -89,8 +85,6 @@ class Solution3(object):
 
         result = prefix_cnt = 0
         while k >= prefix_cnt:
-            # l = result.bit_length()
-            # assert(prefix_cnt == sum(c == '1' and (l-i)%x == 0 for i, c in enumerate(bin(result)[2:])))
             cnt, i = prefix_cnt, 0
             while (cnt<<1)+(1<<i if (i+1)%x == 0 else 0) <= k:
                 cnt = (cnt<<1)+(1<<i if (i+1)%x == 0 else 0)

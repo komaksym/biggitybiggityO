@@ -2,8 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param {integer} num
-    # @return {boolean}
     def isUgly(self, num):
         if num == 0:
             return False

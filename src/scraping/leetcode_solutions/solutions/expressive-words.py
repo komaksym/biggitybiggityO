@@ -11,7 +11,6 @@ class Solution(object):
         :type words: List[str]
         :rtype: int
         """
-        # Run length encoding
         def RLE(S):
             return zip(*[(k, len(list(grp)))
                                   for k, grp in itertools.groupby(S)])

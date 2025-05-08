@@ -62,8 +62,6 @@ class Solution_TLE(object):
         :rtype: int
         """
         MAX, TOTAL, PREFIX, SUFFIX = list(range(4))
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/block-placement-queries.py
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: None,

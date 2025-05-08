@@ -2,8 +2,6 @@
 # Space: O(n)
 
 class Solution(object):
-    # @param {character[][]} matrix
-    # @return {integer}
     def maximalSquare(self, matrix):
         if not matrix:
             return 0
@@ -38,8 +36,6 @@ class Solution(object):
 # Space: O(n^2)
 # DP.
 class Solution2(object):
-    # @param {character[][]} matrix
-    # @return {integer}
     def maximalSquare(self, matrix):
         if not matrix:
             return 0
@@ -74,20 +70,15 @@ class Solution2(object):
 # Space: O(n^2)
 # DP.
 class Solution3(object):
-    # @param {character[][]} matrix
-    # @return {integer}
     def maximalSquare(self, matrix):
         if not matrix:
             return 0
 
         H, W = 0, 1
-        # DP table stores (h, w) for each (i, j).
         table = [[[0, 0] for j in range(len(matrix[0]))] \
                          for i in range(len(matrix))]
         for i in reversed(range(len(matrix))):
             for j in reversed(range(len(matrix[i]))):
-                # Find the largest h such that (i, j) to (i + h - 1, j) are feasible.
-                # Find the largest w such that (i, j) to (i, j + w - 1) are feasible.
                 if matrix[i][j] == '1':
                     h, w = 1, 1
                     if i + 1 < len(matrix):
@@ -96,7 +87,6 @@ class Solution3(object):
                         w = table[i][j + 1][W] + 1
                     table[i][j] = [h, w]
 
-        # A table stores the length of largest square for each (i, j).
         s = [[0 for j in range(len(matrix[0]))] \
                 for i in range(len(matrix))]
         max_square_area = 0
@@ -104,7 +94,6 @@ class Solution3(object):
             for j in reversed(range(len(matrix[i]))):
                 side = min(table[i][j][H], table[i][j][W])
                 if matrix[i][j] == '1':
-                    # Get the length of largest square with bottom-left corner (i, j).
                     if i + 1 < len(matrix) and j + 1 < len(matrix[i + 1]):
                         side = min(s[i + 1][j + 1] + 1, side)
                     s[i][j] = side

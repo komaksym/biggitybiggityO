@@ -98,9 +98,6 @@ class Solution2(object):
                     a, b, c = nums[0]^nums[i]^nums[j], nums[i], nums[j]
                 result = min(result, max(a, b, c)-min(a, b, c))
         return result
-            
-
-# Time:  O(n^2)
 # Space: O(n)
 # dfs with recursion
 class Solution3(object):
@@ -136,9 +133,6 @@ class Solution3(object):
                     a, b, c = total^total2, x, total2^x
                     result = min(result, max(a, b, c)-min(a, b, c))
         return result
-            
-
-# Time:  O(n^2)
 # Space: O(n)
 # dfs with stk (slower, sometimes TLE)
 class Solution4(object):

@@ -45,9 +45,6 @@ class Solution(object):
             return result
         
         return iter_dfs(root, p, q)
-                    
-
-# Time:  O(n)
 # Space: O(h)
 class Solution2(object):
     def findDistance(self, root, p, q):

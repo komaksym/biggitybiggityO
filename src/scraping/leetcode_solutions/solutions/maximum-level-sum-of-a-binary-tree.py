@@ -32,8 +32,6 @@ class Solution(object):
         dfs(root, 0, level_sums)
         return level_sums.index(max(level_sums))+1
 
-    
-# Time:  O(n)
 # Space: O(w)
 # bfs solution
 class Solution2(object):

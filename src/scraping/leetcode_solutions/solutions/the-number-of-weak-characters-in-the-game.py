@@ -15,8 +15,6 @@ class Solution(object):
             max_d = max(max_d, d)
         return result
 
-    
-# Time:  O(nlogn)
 # Space: O(n)
 import collections
 

@@ -40,7 +40,6 @@ class Solution(object):
 # Time:  O(m * n)
 # Space: O(n)
 class Solution2(object):
-    # @return a boolean
     def isMatch(self, s, p):
         k = 2
         result = [[False for j in range(len(p) + 1)] for i in range(k)]
@@ -64,7 +63,6 @@ class Solution2(object):
 # Time:  O(m * n)
 # Space: O(m * n)
 class Solution3(object):
-    # @return a boolean
     def isMatch(self, s, p):
         result = [[False for j in range(len(p) + 1)] for i in range(len(s) + 1)]
 
@@ -85,7 +83,6 @@ class Solution3(object):
 
 # recursive, slowest, TLE
 class Solution4(object):
-    # @return a boolean
     def isMatch(self, s, p):
         if not p or not s:
             return not s and not p

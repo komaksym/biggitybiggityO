@@ -28,8 +28,6 @@ class Solution(object):
                     min_i, min_len = i, start-i
         return S[min_i:min_i+min_len] if min_i is not None else ""
 
-    
-# Time:  O(s * t)
 # Space: O(s)
 class Solution2(object):
     def minWindow(self, S, T):

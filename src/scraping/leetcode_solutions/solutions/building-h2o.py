@@ -52,7 +52,6 @@ class H2O2(object):
             while (self.__nH+1) - 2*self.__nO > 2:
                 self.__cv.wait()
             self.__nH += 1
-            # releaseHydrogen() outputs "H". Do not change or remove this line.
             releaseHydrogen()
             self.__cv.notifyAll()
 
@@ -65,6 +64,5 @@ class H2O2(object):
             while 2*(self.__nO+1) - self.__nH > 2:
                 self.__cv.wait()
             self.__nO += 1
-            # releaseOxygen() outputs "O". Do not change or remove this line.
             releaseOxygen()
             self.__cv.notifyAll()

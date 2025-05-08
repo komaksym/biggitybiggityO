@@ -21,8 +21,6 @@ class Solution(object):
             lookup[nums[c]] += 1
         return result
 
-    
-# Time:  O(n^2) ~ O(n^4)
 # Space: O(n^2)
 import collections
 

@@ -10,10 +10,6 @@ class Solution(object):
         :type target: List[int]
         :rtype: bool
         """
-        # (1) x + remain = y
-        # (2) y + remain = total
-        # (1) - (2) => x - y = y - total
-        #           => x = 2*y - total
         total = sum(target)
         max_heap = [-x for x in target]
         heapq.heapify(max_heap)

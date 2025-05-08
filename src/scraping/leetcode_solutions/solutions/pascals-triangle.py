@@ -2,7 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @return a list of lists of integers
     def generate(self, numRows):
         result = []
         for i in range(numRows):

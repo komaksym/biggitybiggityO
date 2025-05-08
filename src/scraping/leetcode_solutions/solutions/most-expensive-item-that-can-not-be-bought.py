@@ -9,9 +9,6 @@ class Solution(object):
         :type primeTwo: int
         :rtype: int
         """
-        # reference:
-        # - https://en.wikipedia.org/wiki/Coin_problem
-        # - https://mikebeneschan.medium.com/the-chicken-mcnugget-theorem-explained-2daca6fbbe1e
         return primeOne*primeTwo-primeOne-primeTwo
 
 

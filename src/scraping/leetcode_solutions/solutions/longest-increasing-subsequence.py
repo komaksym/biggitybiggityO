@@ -13,7 +13,6 @@ class Solution(object):
         LIS = []
         def insert(target):
             left = bisect.bisect_left(LIS, target)
-            # If not found, append the target.
             if left == len(LIS):
                 LIS.append(target)
             else:
@@ -35,14 +34,12 @@ class Solution2(object):
         LIS = []
         def insert(target):
             left, right = 0, len(LIS) - 1
-            # Find the first index "left" which satisfies LIS[left] >= target
             while left <= right:
                 mid = left + (right - left) // 2
                 if LIS[mid] >= target:
                     right = mid - 1
                 else:
                     left = mid + 1
-            # If not found, append the target.
             if left == len(LIS):
                 LIS.append(target)
             else:

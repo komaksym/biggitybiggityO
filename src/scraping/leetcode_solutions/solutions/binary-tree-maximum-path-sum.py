@@ -9,8 +9,6 @@ class TreeNode(object):
 
 
 class Solution(object):
-    # @param root, a tree node
-    # @return an integer
     def maxPathSum(self, root):
         def iter_dfs(node):
             result = float("-inf")
@@ -38,8 +36,6 @@ class Solution(object):
 # Time:  O(n)
 # Space: O(h), h is height of binary tree
 class Solution2(object):
-    # @param root, a tree node
-    # @return an integer
     def maxPathSum(self, root):
         def dfs(node):
             if not node:

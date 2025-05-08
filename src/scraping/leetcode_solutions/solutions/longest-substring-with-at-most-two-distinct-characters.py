@@ -2,8 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param s, a string
-    # @return an integer
     def lengthOfLongestSubstringTwoDistinct(self, s):
         longest, start, distinct_count, visited = 0, 0, 0, [0 for _ in range(256)]
         for i, char in enumerate(s):

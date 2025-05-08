@@ -5,8 +5,6 @@ import collections
 
 
 class Solution(object):
-    # @param {string[]} strings
-    # @return {string[][]}
     def groupStrings(self, strings):
         groups = collections.defaultdict(list)
         for s in strings:  # Grouping.

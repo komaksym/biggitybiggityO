@@ -2,12 +2,10 @@
 # Space: O(t), t is the number of nodes in trie
 
 class TrieNode(object):
-    # Initialize your data structure here.
     def __init__(self):
         self.is_string = False
         self.leaves = {}
 
-    # Inserts a word into the trie.
     def insert(self, word):
         cur = self
         for c in word:

@@ -17,8 +17,6 @@ class Solution(object):
             lanes = set(j for j in range(1, 4) if j not in [obstacles[i], obstacles[i+1]])
         return result
 
-        
-# Time:  O(n)
 # Space: O(1)
 # dp solution
 class Solution2(object):

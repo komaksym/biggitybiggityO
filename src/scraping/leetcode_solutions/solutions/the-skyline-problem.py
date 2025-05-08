@@ -3,8 +3,6 @@
 
 start, end, height = 0, 1, 2
 class Solution(object):
-    # @param {integer[][]} buildings
-    # @return {integer[][]}
     def getSkyline(self, buildings):
         intervals = self.ComputeSkylineInInterval(buildings, 0, len(buildings))
 
@@ -20,7 +18,6 @@ class Solution(object):
 
         return res
 
-    # Divide and Conquer.
     def ComputeSkylineInInterval(self, buildings, left_endpoint, right_endpoint):
         if right_endpoint - left_endpoint <= 1:
             return buildings[left_endpoint:right_endpoint]
@@ -29,7 +26,6 @@ class Solution(object):
         right_skyline = self.ComputeSkylineInInterval(buildings, mid, right_endpoint)
         return self.MergeSkylines(left_skyline, right_skyline)
 
-    # Merge Sort.
     def MergeSkylines(self, left_skyline, right_skyline):
         i, j = 0, 0
         merged = []
@@ -48,12 +44,10 @@ class Solution(object):
                 j, i = self.MergeIntersectSkylines(merged, right_skyline[j], j, \
                                                    left_skyline[i], i)
 
-        # Insert the remaining skylines.
         merged += left_skyline[i:]
         merged += right_skyline[j:]
         return merged
 
-    # a[start] <= b[start]
     def MergeIntersectSkylines(self, merged, a, a_idx, b, b_idx):
         if a[end] <= b[end]:
             if a[height] > b[height]:   # |aaa|
@@ -74,8 +68,6 @@ class Solution(object):
             if a[height] >= b[height]:  # aaaa
                 b_idx += 1              # abba
             else:
-                #    |bb|
-                # |a||bb|a
                 if a[start] != b[start]:
                     merged.append([a[start], b[start], a[height]])
                 a[start] = b[end]

@@ -55,7 +55,6 @@ class Solution2(object):
                 LOOKUP[n][r] = c
             return LOOKUP[n][r]
 
-        # https://en.wikipedia.org/wiki/Lucas%27s_theorem
         def nCr_mod(n, r, mod):
             result = 1
             while n > 0 or r > 0:

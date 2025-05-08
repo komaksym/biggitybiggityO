@@ -22,9 +22,6 @@ class Solution(object):
                 break
         nums[k], nums[l] = nums[l], nums[k]
         nums[k+1:] = nums[:k:-1]
-        
-
-# Time:  O(n)
 # Space: O(1)
 class Solution2(object):
     def nextPermutation(self, nums):

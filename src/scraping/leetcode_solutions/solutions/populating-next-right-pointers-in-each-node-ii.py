@@ -11,8 +11,6 @@ class Node(object):
 
 
 class Solution(object):
-    # @param root, a tree node
-    # @return nothing
     def connect(self, root):
         head = root
         pre = Node(0)

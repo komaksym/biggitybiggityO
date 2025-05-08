@@ -1,7 +1,6 @@
 # Time:  O(n)
 # Space: O(1)
 
-  # Generator version of zip.
 
 class Solution(object):
     def isIsomorphic(self, s, t):
@@ -19,7 +18,6 @@ class Solution(object):
                 s2t[w] = p
                 t2s[p] = w
             elif w not in s2t or s2t[w] != p:
-                # Contradict mapping.
                 return False
         return True
 

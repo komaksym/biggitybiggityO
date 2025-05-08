@@ -41,12 +41,12 @@ def main():
     inline_commnts_ptrn = set_regex_pattern(r"[^\n]#.*")
     ## Remove docstrings 
     docstrings_pttrn = set_regex_pattern(r"(\"{3}.*?\"{3}\s*)|('{3}.*?'{3}\s*)", flags=re.DOTALL | re.IGNORECASE)
+    ## Code comments
+    line_commnts_ptrn = set_regex_pattern(r"^[^\n#]\s*#.*\n", flags=re.MULTILINE)
 
-    FILTER_PATTERNS = [space_comp_pttrn, inline_commnts_ptrn, docstrings_pttrn]
 
     # Clean the data up
-    for pttrn in FILTER_PATTERNS:
-        clean_files(raw_data['files'], raw_data['file_paths'], pttrn)
+    clean_files(raw_data['files'], raw_data['file_paths'], line_commnts_ptrn)
 
 
 if __name__ == '__main__':

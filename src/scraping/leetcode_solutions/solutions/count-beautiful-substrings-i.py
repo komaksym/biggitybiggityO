@@ -32,9 +32,6 @@ class Solution(object):
             result += cnt[p, i%new_k]
             cnt[p, i%new_k] += 1
         return result
-    
-
-# Time:  O(n^2)
 # Space: O(1)
 # brute force
 class Solution2(object):

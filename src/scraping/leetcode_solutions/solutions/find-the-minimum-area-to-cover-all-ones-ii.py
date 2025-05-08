@@ -88,11 +88,6 @@ class Solution2(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        # RMQ - Sparse Table
-        # Template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20D/genetic_sequences2.py3
-        # Time:  ctor:  O(NlogN) * O(fn)
-        #        query: O(fn)
-        # Space: O(NlogN)
         class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn
@@ -195,11 +190,6 @@ class Solution3(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        # RMQ - Sparse Table
-        # Template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20D/genetic_sequences2.py3
-        # Time:  ctor:  O(NlogN) * O(fn)
-        #        query: O(fn)
-        # Space: O(NlogN)
         class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn

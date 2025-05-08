@@ -184,7 +184,6 @@ class Solution2(object):
             index.add(left+size-1)
         index = sorted(list(index))
         tree = SegmentTree(len(index), max, max, 0)
-        # tree = SegmentTree2([0]*len(index), max, max, 0)
         max_height = 0
         result = []
         for left, size in positions:

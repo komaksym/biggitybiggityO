@@ -2,9 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param gas, a list of integers
-    # @param cost, a list of integers
-    # @return an integer
     def canCompleteCircuit(self, gas, cost):
         start, total_sum, current_sum = 0, 0, 0
         for i in range(len(gas)):

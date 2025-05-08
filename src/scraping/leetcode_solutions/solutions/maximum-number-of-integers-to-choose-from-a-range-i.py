@@ -58,8 +58,6 @@ class Solution2(object):
                 left = mid+1
         return right-bisect.bisect_right(sorted_banned, right)
 
- 
-# Time:  O(n)
 # Space: O(b)
 # greedy
 class Solution3(object):

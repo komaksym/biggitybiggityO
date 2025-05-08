@@ -45,9 +45,6 @@ class Solution2(object):
             left += 1
             right += 1
         return "".join([chr(ord('a')+x) for x in result])
-    
-
-# Time:  O(n * 26)
 # Space: O(26)
 # freq table, greedy
 class Solution3(object):

@@ -163,7 +163,6 @@ class Solution3(object):
                 tmp.append(order[l])
             order[left:left+len(tmp)] = tmp
 
-            # added below
             stripe = [order[i] for i in range(left, right+1) if abs(points[order[i]][0]-x) <= result[0]]
             for i in range(len(stripe)-1):
                 for j in range(i+1, len(stripe)):
@@ -204,7 +203,6 @@ class Solution4(object):
         :rtype: List[int]
         """
         INF = float("inf")
-        # Range Maximum Query
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=lambda _: [-INF, -INF],  # modified

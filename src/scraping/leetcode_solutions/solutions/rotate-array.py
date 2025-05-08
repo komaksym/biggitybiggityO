@@ -86,9 +86,6 @@ class Solution4(object):
         :rtype: void Do not return anything, modify nums in-place instead.
         """
         nums[:] = nums[len(nums) - k:] + nums[:len(nums) - k]
-        
-
-# Time:  O(k * n)
 # Space: O(1)
 class Solution5(object):
     """

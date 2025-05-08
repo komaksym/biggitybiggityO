@@ -48,9 +48,6 @@ class Solution(object):
                 for max_d in range(d, min(2*d+1, n)):  # for each max distance
                     result[max_d-1] += dp[i][d][max_d]
         return result
-    
-
-# Time:  O(n * 2^n)
 # Space: O(n)
 import collections
 import math

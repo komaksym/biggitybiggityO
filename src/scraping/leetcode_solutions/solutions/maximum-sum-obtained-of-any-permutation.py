@@ -44,6 +44,5 @@ class Solution(object):
         count.sort()
         result = 0
         for i, (num, c) in enumerate(zip(nums, count)):
-            # result = addmod(result, mulmod(num, c, MOD), MOD)
             result = (result+num*c)%MOD
         return result

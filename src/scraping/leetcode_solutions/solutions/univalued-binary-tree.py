@@ -25,9 +25,6 @@ class Solution(object):
             s.append(node.left)
             s.append(node.right)
         return True
-    
-
-# Time:  O(n)
 # Space: O(h)
 class Solution2(object):
     def isUnivalTree(self, root):

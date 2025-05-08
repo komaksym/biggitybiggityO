@@ -20,7 +20,6 @@ class FooBar(object):
                 while self.__curr != False:
                     self.__cv.wait()
                 self.__curr = not self.__curr
-                # printFoo() outputs "foo". Do not change or remove this line.
                 printFoo()
                 self.__cv.notify()
 
@@ -34,6 +33,5 @@ class FooBar(object):
                 while self.__curr != True:
                         self.__cv.wait()
                 self.__curr = not self.__curr
-                # printBar() outputs "bar". Do not change or remove this line.
                 printBar()
                 self.__cv.notify()

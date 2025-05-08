@@ -16,7 +16,6 @@ class Foo(object):
         :rtype: void
         """
         with self.__cv:
-            # printFirst() outputs "first". Do not change or remove this line.
             printFirst()            
             self.__has_first = True
             self.__cv.notifyAll()
@@ -29,7 +28,6 @@ class Foo(object):
         with self.__cv:
             while not self.__has_first:
                 self.__cv.wait()
-            # printSecond() outputs "second". Do not change or remove this line.
             printSecond()
             self.__has_second = True
             self.__cv.notifyAll()
@@ -42,7 +40,6 @@ class Foo(object):
         with self.__cv:
             while not self.__has_second:
                 self.__cv.wait()
-            # printThird() outputs "third". Do not change or remove this line.
             printThird()
             self.__cv.notifyAll()
         

@@ -39,8 +39,6 @@ class Solution(object):
         """
         union_find = UnionFind(n)
         for i in range(threshold+1, n+1):
-            # https://stackoverflow.com/questions/25905118/finding-big-o-of-the-harmonic-series
-            # sum of harmonic series is O(logn)
             for j in range(2*i, n+1, i):  # step by i
                 union_find.union_set(i-1, j-1)
         return [union_find.find_set(q[0]-1) == union_find.find_set(q[1]-1) for q in queries]

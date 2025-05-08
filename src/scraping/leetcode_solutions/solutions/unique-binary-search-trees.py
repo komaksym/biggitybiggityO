@@ -12,7 +12,6 @@ class Solution(object):
 
         def combination(n, k):
             count = 1
-            # C(n, k) = (n) / 1 * (n - 1) / 2 ... * (n - k + 1) / k
             for i in range(1, k + 1):
                 count = count * (n - i + 1) / i
             return count
@@ -23,7 +22,6 @@ class Solution(object):
 # Space: O(n)
 # DP solution.
 class Solution2(object):
-    # @return an integer
     def numTrees(self, n):
         counts = [1, 1]
         for i in range(2, n + 1):

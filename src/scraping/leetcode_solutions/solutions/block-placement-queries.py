@@ -61,8 +61,6 @@ class Solution2(object):
         :type queries: List[List[int]]
         :rtype: List[bool]
         """
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/booking-concert-tickets-in-groups.py
         class SegmentTree(object):
             def __init__(self, N,
                         build_fn=lambda _: None,

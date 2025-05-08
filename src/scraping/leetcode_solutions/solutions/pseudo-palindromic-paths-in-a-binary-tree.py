@@ -26,9 +26,6 @@ class Solution(object):
             stk.append((node.right, count))
             stk.append((node.left, count))
         return result
-    
-
-# Time:  O(n)
 # Space: O(h)
 class Solution2(object):
     def pseudoPalindromicPaths (self, root):

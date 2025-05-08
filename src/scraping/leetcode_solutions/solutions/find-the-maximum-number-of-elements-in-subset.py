@@ -32,9 +32,6 @@ class Solution(object):
                 dp[stk.pop()] = l
             result = max(result, l)
         return result 
-        
-
-# Time:  O(n * log(logr)) = O(9 * n)
 # Space: O(n)
 import collections
 

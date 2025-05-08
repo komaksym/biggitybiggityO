@@ -12,8 +12,6 @@ class Solution(object):
         for i in range(len(grid)):
             prefix[i+1] = prefix[i]+grid[i][0]
         result = 0
-        # dp[0][i]: the maximum score from 0 to the current column, and the current column has i black cells, without scoring the white cells of the current column
-        # dp[1][i]: the maximum score from 0 to the current column, and the current column has i black cells, with scoring the white cells of the current column
         dp = [[0]*(len(grid)+1) for _ in range(2)]
         for j in range(1, len(grid[0])):
             new_prefix = [0]*(len(grid)+1)
@@ -29,9 +27,6 @@ class Solution(object):
                 new_dp[1][i] = max(new_dp[1][i], new_dp[0][i])
             dp, prefix = new_dp, new_prefix
         return max(dp[1])
-    
-
-# Time:  O(n^3)
 # Space: O(n)
 # prefix sum, dp
 class Solution2(object):
@@ -43,8 +38,6 @@ class Solution2(object):
         prefix = [0]*(len(grid)+1)
         for i in range(len(grid)):
             prefix[i+1] = prefix[i]+grid[i][0]
-        # dp[0][i]: the maximum score from 0 to the current column, and the current column has i black cells, without scoring the white cells of the current column
-        # dp[1][i]: the maximum score from 0 to the current column, and the current column has i black cells, with scoring the white cells of the current column
         dp = [[0]*(len(grid)+1) for _ in range(2)]
         for j in range(1, len(grid[0])):
             new_prefix = [0]*(len(grid)+1)

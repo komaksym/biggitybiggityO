@@ -71,8 +71,6 @@ class Solution2(object):
         :rtype: int
         """
         MOD = 10**9+7
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/longest-substring-of-one-repeating-character.py
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=None,
@@ -115,8 +113,6 @@ class Solution2(object):
 
                 L += self.base
                 R += self.base
-                # self.__push(L)  # enable if range assignment
-                # self.__push(R)  # enable if range assignment
                 L0, R0 = L, R
                 while L <= R:
                     if L & 1:  # is right child
@@ -154,9 +150,6 @@ class Solution2(object):
         st = SegmentTree(len(nums))
         for i in range(len(nums)):
             j = sl[nums[i]] if nums[i] in sl else -1
-            # sum(count(k, i)^2 for k in range(i+1)) - sum(count(k, i-1)^2 for k in range(i))
-            # = sum(2*count(k, i-1)+1 for k in range(j+1, i+1))
-            # = (i-j) + sum(2*count(k, i-1) for k in range(j+1, i+1))
             accu = (accu+((i-j)+2*max(st.query(j+1, i), 0)))%MOD
             result = (result+accu)%MOD
             st.update(j+1, i, 1)  # count(k, i) = count(k, i-1)+(1 if k >= j+1 else 0) for k in range(i+1)

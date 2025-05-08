@@ -2,7 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @return an integer
     def maxArea(self, height):
         max_area, i, j = 0, 0, len(height) - 1
         while i < j:

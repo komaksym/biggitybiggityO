@@ -16,6 +16,4 @@ class Solution(object):
             y1 += int(s1[i] == 'y')
         if x1%2 !=  y1%2:  # impossible
             return -1
-        # case1: per xx or yy needs one swap, (x1//2 + y1//2) 
-        # case2: per xy or yx needs two swaps, (x1%2 + y1%2)
         return (x1//2 + y1//2) + (x1%2 + y1%2)

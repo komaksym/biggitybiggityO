@@ -7,8 +7,6 @@ from functools import reduce
 
 
 class Solution(object):
-    # @param {integer[]} nums
-    # @return {integer[]}
     def singleNumber(self, nums):
         x_xor_y = reduce(operator.xor, nums)
         bit =  x_xor_y & -x_xor_y
@@ -19,8 +17,6 @@ class Solution(object):
 
 
 class Solution2(object):
-    # @param {integer[]} nums
-    # @return {integer[]}
     def singleNumber(self, nums):
         x_xor_y = 0
         for i in nums:

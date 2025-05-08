@@ -65,8 +65,6 @@ class Solution2(object):
             base1 //= 10
         return "".join([expression[:best[0]], '(', expression[best[0]:best[1]+1], ')', expression[best[1]+1:]])  # Space: O(n)
 
-    
-# Time:  O(n^3)
 # Space: O(n)
 # brute force
 class Solution3(object):

@@ -20,8 +20,6 @@ class Solution(object):
                     dp[j] += cnt
         return result
 
-    
-# Time:  O(n^2)
 # Space: O(n^2)
 # prefix sum
 class Solution2(object):

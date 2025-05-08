@@ -45,9 +45,6 @@ class Solution(object):
 # Time:  O(n) on average, using Median of Medians could achieve O(n) (Intro Select)
 # Space: O(1)
 class Solution2(object):
-    # @param {integer[]} nums
-    # @param {integer} k
-    # @return {integer}
     def findKthLargest(self, nums, k):
         left, right = 0, len(nums) - 1
         while left <= right:

@@ -41,8 +41,6 @@ class Solution(object):
         kthElement(points, K-1, lambda a, b: dist(a) < dist(b))
         return points[:K]
 
-    
-# Time:  O(nlogk)
 # Space: O(k)
 import heapq
 

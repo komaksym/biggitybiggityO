@@ -17,7 +17,6 @@ class MedianFinder(object):
         :type num: int
         :rtype: void
         """
-        # Balance smaller half and larger half.
         if not self.__max_heap or num > -self.__max_heap[0]:
             heappush(self.__min_heap, num)
             if len(self.__min_heap) > len(self.__max_heap) + 1:

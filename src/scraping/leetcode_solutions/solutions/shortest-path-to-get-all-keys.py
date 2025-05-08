@@ -44,7 +44,6 @@ class Solution(object):
                      if place not in '.#'}
         dists = {place: bfs(grid, place, locations) for place in locations}
 
-        # Dijkstra's algorithm
         min_heap = [(0, '@', 0)]
         best = collections.defaultdict(lambda: collections.defaultdict(
                                                    lambda: float("inf")))

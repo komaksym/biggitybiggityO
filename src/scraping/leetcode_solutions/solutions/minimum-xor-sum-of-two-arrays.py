@@ -4,8 +4,6 @@
 # weighted bipartite matching solution
 class Solution(object):
     def minimumXORSum(self, nums1, nums2):
-        # Template translated from:
-        # https://github.com/kth-competitive-programming/kactl/blob/main/content/graph/WeightedMatching.h
         def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
             if not a:
                 return 0, []

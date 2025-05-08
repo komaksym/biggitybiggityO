@@ -20,7 +20,6 @@ class MapSum(object):
         :type val: int
         :rtype: void
         """
-        # Time: O(n)
         curr = self.__root
         for c in key:
             curr = curr[c]
@@ -43,7 +42,6 @@ class MapSum(object):
         :type prefix: str
         :rtype: int
         """
-        # Time: O(n)
         curr = self.__root
         for c in prefix:
             if c not in curr:

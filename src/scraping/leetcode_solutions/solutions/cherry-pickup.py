@@ -7,9 +7,6 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        # dp holds the max # of cherries two k-length paths can pickup.
-        # The two k-length paths arrive at (i, k - i) and (j, k - j),
-        # respectively.
         n = len(grid)
         dp = [[-1 for _ in range(n)] for _ in range(n)]
         dp[0][0] = grid[0][0]

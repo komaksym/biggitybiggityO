@@ -28,7 +28,6 @@ def parse_data(files_path, files):
         label_matches = re.findall(LABELS_PATTERN, file)
 
         if len(code_matches) != len(label_matches):
-            #pdb.set_trace()
             corrupted_data.append(path)
             continue
 

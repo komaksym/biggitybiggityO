@@ -8,7 +8,6 @@ class Solution(object):
         :type sessionTime: int
         :rtype: int
         """
-        # dp[mask]: min used time by choosing tasks in mask bitset
         dp = [float("inf") for _ in range(1<<len(tasks))]
         dp[0] = 0
         for mask in range(len(dp)-1):
@@ -33,8 +32,6 @@ class Solution2(object):
         :type sessionTime: int
         :rtype: int
         """
-        # dp[mask][0]: min number of sessions by choosing tasks in mask bitset
-        # dp[mask][1]: min used time of last session by choosing tasks in mask bitset
         dp = [[float("inf")]*2 for _ in range(1<<len(tasks))]
         dp[0] = [0, sessionTime]
         for mask in range(len(dp)-1):

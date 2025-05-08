@@ -29,8 +29,6 @@ class Solution(object):
              [1, 0]]
         return pow(matrix_mult([[2, 1]], matrix_expo(T, n-1))[0][0], 2, MOD)  # [a1, a0] * T^(n-1) = [an, a(n-1)]
 
-    
-# Time:  O(n)
 # Space: O(1)
 # dp
 class Solution2(object):

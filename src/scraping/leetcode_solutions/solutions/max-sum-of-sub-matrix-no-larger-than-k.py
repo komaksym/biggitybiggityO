@@ -23,7 +23,6 @@ class Solution(object):
                 for l in range(n):
                     sums[l] += matrix[j][l] if m == len(matrix) else matrix[l][j]
 
-                # Find the max subarray no more than K.
                 accu_sum_set, accu_sum = [0], 0
                 for sum in sums:
                     accu_sum += sum
@@ -89,7 +88,6 @@ class Solution_TLE(object):
                 for l in range(n):
                     sums[l] += matrix[j][l] if m == len(matrix) else matrix[l][j]
 
-                # Find the max subarray no more than K.
                 accu_sum_set = BST(0)
                 accu_sum = 0
                 for sum in sums:

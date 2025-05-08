@@ -21,15 +21,8 @@ class Solution(object):
             return nCr(n+r-1, r)
 
         MOD = 10**9+7
-        # arr1 = [0+x1, arr1[0]+max(nums[1]-nums[0], 0)+x2, ..., arr[n-2]+max(nums[n-1]-nums[n-2], 0)+xn]
-        # => sum(max(nums[i]-nums[i-1], 0) for i in xrange(1, len(nums)))+(x1+x2+...+xn) <= nums[-1]
-        # => x1+x2+...+xn <= nums[-1]-sum(max(nums[i]-nums[i-1], 0) for i in xrange(1, len(nums))) = cnt <= min(nums)
-        # => the answer is the number of solutions s.t. x1+x2+...+xn <= cnt, where cnt >= 0
         cnt = nums[-1]-sum(max(nums[i]-nums[i-1], 0) for i in range(1, len(nums)))
         return nHr(len(nums)+1, cnt) if cnt >= 0 else 0
-    
-
-# Time:  O(n * r), r = max(nums)
 # Space: O(r)
 # dp, prefix sum
 class Solution2(object):
@@ -41,14 +34,6 @@ class Solution2(object):
         MOD = 10**9+7
         dp = [int(i <= nums[0]) for i in range(max(nums)+1)]  # dp[j]: numbers of arr1, which is of length i+1 and arr1[i] is j
         for i in range(1, len(nums)):
-            # arr1[i-1] <= arr1[i]
-            # => arr1[i]-arr1[i-1] >= 0 (1)
-            #
-            # arr2[i-1] >= arr2[i]
-            # => nums[i-1]-arr1[i-1] >= nums[i]-arr1[i] 
-            # => arr1[i]-arr1[i-1] >= nums[i]-nums[i-1] (2)
-            #
-            # (1)+(2): arr1[i]-arr1[i-1] >= max(nums[i]-nums[i-1], 0)
             new_dp = [0]*len(dp)
             diff = max(nums[i]-nums[i-1], 0)
             for j in range(diff, nums[i]+1):

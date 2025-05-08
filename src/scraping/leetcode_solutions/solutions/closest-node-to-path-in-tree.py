@@ -44,7 +44,6 @@ class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
 class TreeInfos(object):  # Time: O(N), Space: O(N + Q), N is the number of nodes
     def __init__(self, children, pairs):
         def preprocess(curr, parent):
-            # depth of the node i
             D[curr] = 1 if parent == -1 else D[parent]+1
 
         def divide(curr, parent):
@@ -108,16 +107,13 @@ from functools import partial
 class TreeInfos2(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of nodes
     def __init__(self, children):  # modified
         def preprocess(curr, parent):
-            # depth of the node i
             D[curr] = 1 if parent == -1 else D[parent]+1
-            # ancestors of the node i
             if parent != -1:
                 P[curr].append(parent)
             i = 0
             while i < len(P[curr]) and i < len(P[P[curr][i]]):
                 P[curr].append(P[P[curr][i]][i])
                 i += 1
-            # the subtree of the node i is represented by traversal index L[i]..R[i]
             C[0] += 1
             L[curr] = C[0]
 
@@ -142,8 +138,6 @@ class TreeInfos2(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of
         assert(C[0] == N-1)
         self.L, self.R, self.D, self.P = L, R, D, P
 
-    # Template:
-    # https://github.com/kamyu104/FacebookHackerCup-2019/blob/master/Final%20Round/little_boat_on_the_sea.py
     def is_ancestor(self, a, b):  # includes itself
         return self.L[a] <= self.L[b] <= self.R[b] <= self.R[a]
 
@@ -184,9 +178,7 @@ from functools import partial
 class TreeInfos3(object):  # Time: O(N), Space: O(N), N is the number of nodes
     def __init__(self, children):  # modified
         def preprocess(curr, parent):
-            # depth of the node i
             D[curr] = 1 if parent == -1 else D[parent]+1
-            # ancestors of the node i
             P[curr] = parent
 
         def divide(curr, parent):

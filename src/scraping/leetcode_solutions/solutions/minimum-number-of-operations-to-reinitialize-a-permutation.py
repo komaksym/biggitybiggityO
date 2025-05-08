@@ -7,7 +7,6 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        # reference: https://cp-algorithms.com/algebra/discrete-log.html
         def discrete_log(a, b, m):
             a %= m
             b %= m

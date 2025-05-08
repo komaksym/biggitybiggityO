@@ -12,8 +12,6 @@ class Solution(object):
         :type mentors: List[List[int]]
         :rtype: int
         """
-        # Template translated from:
-        # https://github.com/kth-competitive-programming/kactl/blob/main/content/graph/WeightedMatching.h
         def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
             if not a:
                 return 0, []

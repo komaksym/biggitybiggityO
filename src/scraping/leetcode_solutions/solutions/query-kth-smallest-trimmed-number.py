@@ -32,8 +32,6 @@ class Solution(object):
                 result[i] = idxs[k-1]
         return result
 
-            
-# Time:  O(q * n * t) on average
 # Space: O(n + q)
 import random
 

@@ -35,9 +35,6 @@ class Solution(object):
             count += 1
         for node in reversed(buckets):
             print_nodes(node, bucket_count)
-            
-        
-# Time:  O(n)
 # Space: O(n)
 class Solution2(object):
     def printLinkedListInReverse(self, head):

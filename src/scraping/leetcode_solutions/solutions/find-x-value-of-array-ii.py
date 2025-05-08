@@ -10,8 +10,6 @@ class Solution(object):
         :type queries: List[List[int]]
         :rtype: List[int]
         """
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/block-placement-queries.py
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=lambda _: None,

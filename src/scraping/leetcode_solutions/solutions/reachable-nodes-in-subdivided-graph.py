@@ -34,7 +34,6 @@ class Solution(object):
                 if next_total <= M and next_total < best[v]:
                     best[v] = next_total
                     heapq.heappush(min_heap, (next_total, v))  # binary heap O(|E|*log|V|) in total
-                                                               # Fibonacci heap O(|E|) in total
         for u, v, w in edges:
             result += min(w, count[u][v]+count[v][u])
         return result

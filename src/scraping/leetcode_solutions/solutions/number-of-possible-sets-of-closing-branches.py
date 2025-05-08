@@ -35,9 +35,6 @@ class Solution(object):
         result = [0]
         backtracking(0, 0, [d[:] for d in dist])
         return result[0]
-    
-
-# Time:  O(r + 2^n * n^3)
 # Space: O(n^2)
 # bitmasks, Floyd-Warshall algorithm
 class Solution2(object):

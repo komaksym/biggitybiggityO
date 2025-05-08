@@ -2,8 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param num, a list of integer
-    # @return an integer
     def rob(self, nums):
         """
         :type nums: List[int]

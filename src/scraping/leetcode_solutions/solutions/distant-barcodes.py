@@ -24,8 +24,6 @@ class Solution(object):
                     i = (i-1)%k
         return result
 
-    
-# Time:  O(n + klogk), k is the number of distinct barcodes
 # Space: O(k)
 import collections
 

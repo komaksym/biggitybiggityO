@@ -12,7 +12,6 @@ class Solution(object):
         """
         def centroid_decomposition(adj, k):
             def dfs(u):
-                # https://usaco.guide/plat/centroid
                 def find_subtree_size(u, p):
                     sizes[u] = 1
                     for v in adj[u]:

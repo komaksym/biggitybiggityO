@@ -7,7 +7,6 @@ class Solution(object):
         :type mat: List[List[int]]
         :rtype: int
         """
-        # values could be duplicated in each row
         intersections = set(mat[0])
         for i in range(1, len(mat)):
             intersections &= set(mat[i])
@@ -27,7 +26,6 @@ class Solution2(object):
         :type mat: List[List[int]]
         :rtype: int
         """
-        # assumed value is unique in each row
         counter = collections.Counter()
         for row in mat:
             for c in row:

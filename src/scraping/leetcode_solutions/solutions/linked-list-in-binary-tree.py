@@ -54,9 +54,6 @@ class Solution(object):
             return True
         pattern, prefix = getPrefix(head)
         return dfs(pattern, prefix, root, -1)
-    
-
-# Time:  O(n * min(h, l))
 # Space: O(h)
 # dfs solution
 class Solution2(object):

@@ -55,8 +55,6 @@ class Solution(object):
                 last_v, last_p = v_p_stk.pop()
                 profits.append(prices[last_p]-prices[last_v])  # count [prices[last_v], prices[last_p]] interval
             while v_p_stk and prices[v_p_stk[-1][1]] <= prices[p]:  # overlapped
-                # prices[last_v] <= prices[v] <= prices[last_p] <= prices[p],
-                # treat overlapped as [prices[v], prices[last_p]], [prices[last_v], prices[p]] intervals due to invariant max profit
                 last_v, last_p = v_p_stk.pop()
                 profits.append(prices[last_p]-prices[v])  # count [prices[v], prices[last_p]] interval
                 v = last_v

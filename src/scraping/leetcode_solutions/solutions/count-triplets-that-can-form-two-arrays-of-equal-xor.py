@@ -16,8 +16,6 @@ class Solution(object):
         for i, x in enumerate(arr):
             prefix ^= x
             c, t = count_sum[prefix]
-            # sum(i-(j+1) for j in index[prefix])
-            # = len(index[prefix])*i - sum((j+1) for j in index[prefix])
             result += c*i - t
             count_sum[prefix] = [c+1, t+i+1]
         return result

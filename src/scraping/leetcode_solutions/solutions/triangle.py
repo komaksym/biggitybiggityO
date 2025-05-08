@@ -3,8 +3,6 @@ from functools import reduce
 # Space: O(n)
 
 class Solution(object):
-    # @param triangle, a list of lists of integers
-    # @return an integer
     def minimumTotal(self, triangle):
         if not triangle:
             return 0

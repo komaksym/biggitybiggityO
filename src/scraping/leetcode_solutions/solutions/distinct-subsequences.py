@@ -2,7 +2,6 @@
 # Space: O(n)
 
 class Solution(object):
-    # @return an integer
     def numDistinct(self, S, T):
         ways = [0 for _ in range(len(T) + 1)]
         ways[0] = 1

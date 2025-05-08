@@ -48,10 +48,8 @@ class Solution(object):
                     left = mid
             return left+1  # or return right
 
-        # Find the first idx where nums[idx] >= target
         left = binarySearch(len(nums), lambda i: nums[i] >= target)
         if left == len(nums) or nums[left] != target:
             return [-1, -1]
-        # Find the first idx where nums[idx] > target
         right = binarySearch(len(nums), lambda i: nums[i] > target)
         return [left, right-1]

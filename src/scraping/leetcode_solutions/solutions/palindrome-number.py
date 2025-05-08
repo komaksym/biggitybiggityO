@@ -2,7 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @return a boolean
     def isPalindrome(self, x):
         if x < 0:
             return False

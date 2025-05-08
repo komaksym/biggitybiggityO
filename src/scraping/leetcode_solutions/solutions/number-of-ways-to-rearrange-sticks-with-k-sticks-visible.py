@@ -13,7 +13,5 @@ class Solution(object):
         dp[1][1] = 1
         for i in range(2, n+1):
             for j in range(1, min(i, k)+1):
-                # choose the tallest as the last one which would be visible:    dp[i-1][j-1]
-                # choose the non-tallest as the last one which would be hidden: (i-1)*dp[i-1][j]
                 dp[i%2][j] = (dp[(i-1)%2][j-1]+(i-1)*dp[(i-1)%2][j]) % MOD 
         return dp[n%2][k]

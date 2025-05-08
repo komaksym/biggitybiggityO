@@ -48,8 +48,6 @@ class Solution(object):
             nCr = nCr*INV[div%10]%10
         return result
 
-    
-# Time:  O(n^2)
 # Space: O(n)
 # combinatorics
 class Solution2(object):

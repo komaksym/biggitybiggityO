@@ -19,10 +19,6 @@ class Solution(object):
             return left
 
         def check(target):
-            # t * (1 + 2 + 3 + ... + x) <= target
-            # t * (x+1)*x/2 <= target
-            # x^2+x-2*target/t <= 0
-            # x <= (-1+(1+8*target/t)**0.5)/2
             return sum(int((-1+(1+8*target/t)**0.5)/2) for t in workerTimes) >= mountainHeight
     
         mn = min(workerTimes)

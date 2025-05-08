@@ -91,7 +91,6 @@ class Solution(object):
         """
         def add_rec(rec, intervals):
             x0, y0, x1, y1 = rec
-            # add [y0, y1] by 1 in [x0, x1+1)
             intervals.append([[x0,   +1], [y0, y1]])
             intervals.append([[x1+1, -1], [y0, y1]])
 
@@ -141,7 +140,6 @@ class Solution2(object):
         """
         def add_rec(rec, intervals):
             x0, y0, x1, y1 = rec
-            # add [y0, y1+1) by 1 in [x0, x1+1)
             intervals[x0][y0] += 1
             intervals[x0][y1+1] -= 1
             intervals[x1+1][y0] -= 1

@@ -5,17 +5,11 @@ import collections
 
 
 class WordDistance(object):
-    # initialize your data structure here.
-    # @param {string[]} words
     def __init__(self, words):
         self.wordIndex = collections.defaultdict(list)
         for i in range(len(words)):
             self.wordIndex[words[i]].append(i)
 
-    # @param {string} word1
-    # @param {string} word2
-    # @return {integer}
-    # Adds a word into the data structure.
     def shortest(self, word1, word2):
         indexes1 = self.wordIndex[word1]
         indexes2 = self.wordIndex[word2]

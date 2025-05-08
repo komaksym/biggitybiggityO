@@ -14,7 +14,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: TreeNode
         """
-        # https://github.com/kamyu104/LintCode/blob/master/C++/max-tree.cpp
         nodeStack = []
         for num in nums:
             node = TreeNode(num)

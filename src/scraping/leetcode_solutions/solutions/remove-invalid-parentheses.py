@@ -7,7 +7,6 @@ class Solution(object):
         :type s: str
         :rtype: List[str]
         """
-        # Calculate the minimum left and right parantheses to remove
         def findMinRemove(s):
             left_removed, right_removed = 0, 0
             for c in s:
@@ -20,7 +19,6 @@ class Solution(object):
                         left_removed -= 1
             return (left_removed, right_removed)
 
-        # Check whether s is valid or not.
         def isValid(s):
             sum = 0
             for c in s:

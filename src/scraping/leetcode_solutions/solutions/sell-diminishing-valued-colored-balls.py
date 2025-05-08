@@ -22,6 +22,5 @@ class Solution(object):
                 right = mid-1
             else:
                 left = mid+1
-        # assert(orders-count(inventory, left) >= 0)
         return (sum((left+cnt)*(cnt-left+1)//2 for cnt in inventory if cnt >= left) +
                 (left-1)*(orders-count(inventory, left)))% MOD

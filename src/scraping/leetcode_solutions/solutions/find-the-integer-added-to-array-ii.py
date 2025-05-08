@@ -14,7 +14,6 @@ class Solution(object):
         :rtype: int
         """
         def check(cnt2, cnt1):
-            # return cnt2 <= cnt1  # for python3
             return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items())  # for python2
             
         mx = max(nums2)
@@ -36,7 +35,6 @@ class Solution2(object):
         :rtype: int
         """
         def check(cnt2, cnt1):
-            # return cnt2 <= cnt1  # for python3
             return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items())  # for python2
         
         def topk(a, k):  # Time: O(k * n)

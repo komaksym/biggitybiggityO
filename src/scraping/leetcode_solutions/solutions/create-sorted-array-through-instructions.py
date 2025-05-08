@@ -55,7 +55,6 @@ class Solution_TLE(object):
             r = start
             tmp = []
             for i in range(mid+1, end + 1):
-                # Merge the two sorted arrays into tmp.
                 while r <= mid and idxs[r][0] < idxs[i][0]:
                     tmp.append(idxs[r])
                     r += 1
@@ -64,7 +63,6 @@ class Solution_TLE(object):
             while r <= mid:
                 tmp.append(idxs[r])
                 r += 1
-            # Copy tmp back to idxs
             idxs[start:start+len(tmp)] = tmp
         
         def largerMergeSort(idxs, start, end, counts):
@@ -77,7 +75,6 @@ class Solution_TLE(object):
             r = start
             tmp = []
             for i in range(mid+1, end + 1):
-                # Merge the two sorted arrays into tmp.
                 while r <= mid and idxs[r][0] <= idxs[i][0]:
                     tmp.append(idxs[r])
                     r += 1
@@ -87,7 +84,6 @@ class Solution_TLE(object):
             while r <= mid:
                 tmp.append(idxs[r])
                 r += 1
-            # Copy tmp back to idxs
             idxs[start:start+len(tmp)] = tmp
 
         idxs = []

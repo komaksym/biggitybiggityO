@@ -27,9 +27,6 @@ class Solution(object):
                 right[int(s[k])][i] += cnt[i]
             cnt[int(s[k])] += 1
         return result
-                    
-
-# Time:  O(10^(l/2) * n * l), l = 5
 # Space: O(l)
 # dp
 class Solution2(object):

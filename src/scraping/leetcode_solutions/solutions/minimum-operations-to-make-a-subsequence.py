@@ -22,9 +22,6 @@ class Solution(object):
             else:
                 lis[i] = lookup[x]
         return len(target)-len(lis)
-    
-    
-# Range Maximum Query
 class SegmentTree(object):  # 0-based index
     def __init__(self, N,
                  build_fn=lambda x, y: [y]*(2*x),

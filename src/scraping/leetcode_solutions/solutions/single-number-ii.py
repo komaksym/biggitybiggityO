@@ -5,8 +5,6 @@ import collections
 
 
 class Solution(object):
-    # @param A, a list of integer
-    # @return an integer
     def singleNumber(self, A):
         one, two = 0, 0
         for x in A:
@@ -15,8 +13,6 @@ class Solution(object):
 
 
 class Solution2(object):
-    # @param A, a list of integer
-    # @return an integer
     def singleNumber(self, A):
         one, two, carry = 0, 0, 0
         for x in A:
@@ -48,9 +44,6 @@ class Solution4(object):
 
 #  every element appears 4 times except for one with 2 times
 class SolutionEX(object):
-    # @param A, a list of integer
-    # @return an integer
-    # [1, 1, 1, 1, 2, 2, 2, 2, 3, 3]
     def singleNumber(self, A):
         one, two, three = 0, 0, 0
         for x in A:

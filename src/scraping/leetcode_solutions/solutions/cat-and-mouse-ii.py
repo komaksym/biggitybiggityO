@@ -140,21 +140,17 @@ class Solution2(object):
         degree = {}
         for m in range(N):
             for c in range(N):
-                # degree[m, c, MOUSE] = len(graph[m, MOUSE])
                 degree[m, c, CAT] = len(graph[c, CAT])
         color = collections.defaultdict(int)
         q1 = collections.deque()
-        # q2 = collections.deque()
         for i in range(N):
             if i in WALLS or i == FOOD:
                 continue
             color[FOOD, i, CAT] = MOUSE
             q1.append((FOOD, i, CAT))
             color[i, FOOD, MOUSE] = CAT
-            # q2.append((i, FOOD, MOUSE))
             for t in [MOUSE, CAT]:
                 color[i, i, t] = CAT
-                # q2.append((i, i, t))
         while q1:
             i, j, t = q1.popleft()
             for ni, nj, nt in parents(i, j, t):
@@ -168,17 +164,4 @@ class Solution2(object):
                 if not degree[ni, nj, nt]:
                     color[ni, nj, nt] = MOUSE
                     q1.append((ni, nj, nt))
-        # while q2:
-        #     i, j, t = q2.popleft()
-        #     for ni, nj, nt in parents(i, j, t):
-        #         if color[ni, nj, nt] != DRAW:
-        #             continue
-        #         if t == MOUSE:
-        #             color[ni, nj, nt] = CAT
-        #             q2.append((ni, nj, nt))
-        #             continue
-        #         degree[ni, nj, nt] -= 1
-        #         if not degree[ni, nj, nt]:
-        #             color[ni, nj, nt] = CAT
-        #             q2.append((ni, nj, nt))
         return color[MOUSE_START, CAT_START, MOUSE] == MOUSE

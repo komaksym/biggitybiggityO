@@ -67,9 +67,6 @@ class Solution(object):
         for u, v in trips:
             iter_dfs(u, v)
         return iter_dfs2()
-    
-
-# Time:  O(t * n)
 # Space: O(n)
 # dfs, tree dp
 class Solution2(object):

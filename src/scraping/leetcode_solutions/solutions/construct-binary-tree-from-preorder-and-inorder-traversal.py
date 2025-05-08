@@ -8,9 +8,6 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-    # @param preorder, a list of integers
-    # @param inorder, a list of integers
-    # @return a tree node
     def buildTree(self, preorder, inorder):
         lookup = {}
         for i, num in enumerate(inorder):

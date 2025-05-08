@@ -2,8 +2,6 @@
 # Space: O(m + n)
 
 class Solution(object):
-    # @param obstacleGrid, a list of lists of integers
-    # @return an integer
     def uniquePathsWithObstacles(self, obstacleGrid):
         """
         :type obstacleGrid: List[List[int]]

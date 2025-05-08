@@ -27,9 +27,6 @@ class Solution(object):
                 left += 1
             result += right-left+1
         return result
-    
-
-# Time:  O(n)
 # Space: O(n)
 import collections
 

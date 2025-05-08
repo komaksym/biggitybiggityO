@@ -18,7 +18,6 @@ class Solution(object):
                 return lookup[i]
             lookup[i] = 1
             for j in itertools.chain(left[i], right[i]):
-                # each dp[j] will be visited at most twice 
                 lookup[i] = max(lookup[i], dp(arr, d, j, left, right, lookup)+1)
             return lookup[i]
 
@@ -78,7 +77,6 @@ class Solution2(object):
         for a, i in sorted([a, i] for i, a in enumerate(arr)):
             dp[i] = 1
             for j in itertools.chain(left[i], right[i]):
-                # each dp[j] will be visited at most twice 
                 dp[i] = max(dp[i], dp[j]+1)
         return max(dp)
 

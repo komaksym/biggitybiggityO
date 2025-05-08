@@ -2,8 +2,6 @@
 # Space: O(n^2)
 
 class Solution(object):
-    # @param s, a string
-    # @return an integer
     def minCut(self, s):
         lookup = [[False for j in range(len(s))] for i in range(len(s))]
         mincut = [len(s) - 1 - i for i in range(len(s) + 1)]

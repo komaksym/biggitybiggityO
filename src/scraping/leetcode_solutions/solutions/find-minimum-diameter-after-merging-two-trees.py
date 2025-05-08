@@ -41,9 +41,6 @@ class Solution(object):
         d1 = tree_diameter(edges1)
         d2 = tree_diameter(edges2)
         return max(ceil_divide(d1, 2)+1+ceil_divide(d2, 2), d1, d2)
-        
-
-# Time:  O(n + m)
 # Space: O(n + m)
 # dfs, tree diameter
 class Solution2(object):

@@ -13,7 +13,6 @@ class SeatManager(object):
         :type n: int
         """
         self.__min_heap = list(range(1, n+1))
-        # heapq.heapify(self.__min_heap)  # no need for sorted list
 
     def reserve(self):
         """

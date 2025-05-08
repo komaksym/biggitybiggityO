@@ -2,7 +2,6 @@
 # Space: O(m + n)
 
 class Solution(object):
-    # @return a boolean
     def isInterleave(self, s1, s2, s3):
         if len(s1) + len(s2) != len(s3):
             return False
@@ -23,7 +22,6 @@ class Solution(object):
 # Space: O(m * n)
 # Dynamic Programming
 class Solution2(object):
-    # @return a boolean
     def isInterleave(self, s1, s2, s3):
         if len(s1) + len(s2) != len(s3):
             return False
@@ -43,7 +41,6 @@ class Solution2(object):
 # Space: O(m * n)
 # Recursive + Hash
 class Solution3(object):
-    # @return a boolean
     def isInterleave(self, s1, s2, s3):
         self.match = {}
         if len(s1) + len(s2) != len(s3):

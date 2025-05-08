@@ -2,8 +2,6 @@
 # Space: O(logn)
 
 class Solution(object):
-    # @param {integer} n
-    # @return {integer[][]}
     def getFactors(self, n):
         result = []
         factors = []

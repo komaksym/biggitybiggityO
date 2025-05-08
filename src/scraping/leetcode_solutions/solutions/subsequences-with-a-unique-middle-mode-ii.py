@@ -34,27 +34,13 @@ class Solution(object):
             right[v] -= 1
 
             l, r = i, len(nums)-(i+1)
-            # all possibles
             result += nC2(l)*nC2(r)
-            # only mid is a
             result -= nC2(l-left[v])*nC2(r-right[v])
-            # bb/a/ac
-            # sum((left[x]*(left[x]-1)//2)*right[v]*((r-right[v])-right[x]) for x != v)
             result -= ((left_x_sq-(l-left[v]))*(r-right[v])-(left_x_sq_right_x-left_x_right_x))*right[v]//2
-            # ac/a/bb
-            # sum(left[v]*((l-left[v])-left[x])*(right[x]*(right[x]-1)//2) for x != v)
             result -= ((right_x_sq-(r-right[v]))*(l-left[v])-(left_x_right_x_sq-left_x_right_x))*left[v]//2
-            # ab/a/bc
-            # sum(left[v]*left[x]*right[x]*((r-right[v])-right[x]) for x != v)
             result -= left[v]*left_x_right_x*(r-right[v])-left[v]*left_x_right_x_sq
-            # bc/a/ab
-            # sum(left[x]*((l-left[v])-left[x])*right[v]*right[x] for x != v)
             result -= right[v]*left_x_right_x*(l-left[v])-right[v]*left_x_sq_right_x
-            # bb/a/ab
-            # sum((left[x]*(left[x]-1)//2)*right[v]*right[x] for x != v)
             result -= right[v]*(left_x_sq_right_x-left_x_right_x)//2
-            # ab/a/bb
-            # sum((right[x]*(right[x]-1)//2)*left[v]*left[x] for x != v)
             result -= left[v]*(left_x_right_x_sq-left_x_right_x)//2
 
             left[v] += 1

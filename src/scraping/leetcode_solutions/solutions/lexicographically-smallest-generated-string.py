@@ -77,7 +77,6 @@ class Solution2(object):
         :type str2: str
         :rtype: str
         """
-        # Template: https://cp-algorithms.com/string/z-function.html
         def z_function(s):  # Time: O(n), Space: O(n)
             z = [0]*len(s)
             l, r = 0, 0

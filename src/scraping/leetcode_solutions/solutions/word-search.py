@@ -2,9 +2,6 @@
 # Space: O(l)
 
 class Solution(object):
-    # @param board, a list of lists of 1 length string
-    # @param word, a string
-    # @return a boolean
     def exist(self, board, word):
         visited = [[False for j in range(len(board[0]))] for i in range(len(board))]
 

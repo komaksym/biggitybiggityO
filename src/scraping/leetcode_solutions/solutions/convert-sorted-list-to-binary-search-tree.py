@@ -15,8 +15,6 @@ class ListNode(object):
 
 class Solution(object):
     head = None
-    # @param head, a list node
-    # @return a tree node
     def sortedListToBST(self, head):
         current, length = head, 0
         while current is not None:

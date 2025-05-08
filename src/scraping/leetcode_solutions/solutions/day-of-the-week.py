@@ -12,7 +12,6 @@ class Solution(object):
         DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", \
                 "Thursday", "Friday", "Saturday"]
 
-        # Zeller Formula
         if month < 3:
             month += 12
             year -= 1

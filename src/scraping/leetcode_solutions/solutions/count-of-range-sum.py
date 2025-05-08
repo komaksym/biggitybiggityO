@@ -18,19 +18,16 @@ class Solution(object):
             j, k, r = mid, mid, mid
             tmp = []
             for i in range(start, mid):
-                # Count the number of range sums that lie in [lower, upper].
                 while k < end and sums[k] - sums[i] < lower:
                     k += 1
                 while j < end and sums[j] - sums[i] <= upper:
                     j += 1
                 count += j - k
 
-                # Merge the two sorted arrays into tmp.
                 while r < end and sums[r] < sums[i]:
                     tmp.append(sums[r])
                     r += 1
                 tmp.append(sums[i])
-            # Copy tmp back to sums.
             sums[start:start+len(tmp)] = tmp
             return count
 
@@ -59,20 +56,17 @@ class Solution2(object):
             j, k, r = mid + 1, mid + 1, mid + 1
             tmp = []
             for i in range(start, mid + 1):
-                # Count the number of range sums that lie in [lower, upper].
                 while k <= end and sums[k] - sums[i] < lower:
                     k += 1
                 while j <= end and sums[j] - sums[i] <= upper:
                     j += 1
                 count += j - k
 
-                # Merge the two sorted arrays into tmp.
                 while r <= end and sums[r] < sums[i]:
                     tmp.append(sums[r])
                     r += 1
                 tmp.append(sums[i])
 
-            # Copy tmp back to sums
             sums[start:start+len(tmp)] = tmp
             return count
 

@@ -9,7 +9,6 @@ class Solution(object):
         :type queries: List[List[int]]
         :rtype: List[int]
         """
-        # Range Maximum Query
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=lambda _: None,

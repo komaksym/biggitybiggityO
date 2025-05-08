@@ -2,7 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @return a list of lists of integer
     def generateMatrix(self, n):
         matrix = [[0 for _ in range(n)] for _ in range(n)]
 

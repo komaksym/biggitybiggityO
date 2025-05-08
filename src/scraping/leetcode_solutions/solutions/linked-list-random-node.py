@@ -15,8 +15,6 @@ class Solution(object):
         self.__head = head
 
 
-    # Proof of Reservoir Sampling:
-    # https://discuss.leetcode.com/topic/53753/brief-explanation-for-reservoir-sampling
     def getRandom(self):
         """
         :rtype: int

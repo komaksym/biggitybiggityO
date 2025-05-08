@@ -15,8 +15,6 @@ class TreeNode(object):
             return "{} -> {}".format(self.val, repr(self.__next__))
 
 class Solution(object):
-    # @param root, a tree node
-    # @return nothing
     def connect(self, root):
         head = root
         while head:
@@ -32,8 +30,6 @@ class Solution(object):
 # Space: O(logn)
 # recusion
 class Solution2(object):
-    # @param root, a tree node
-    # @return nothing
     def connect(self, root):
         if root is None:
             return

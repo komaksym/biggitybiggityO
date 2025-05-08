@@ -9,16 +9,13 @@ class TreeNode(object):
 
 
 class BSTIterator(object):
-    # @param root, a binary search tree's root node
     def __init__(self, root):
         self.__stk = []
         self.__traversalLeft(root)
 
-    # @return a boolean, whether we have a next smallest number
     def hasNext(self):
         return self.__stk
 
-    # @return an integer, the next smallest number
     def __next__(self):
         node = self.__stk.pop()
         self.__traversalLeft(node.right)

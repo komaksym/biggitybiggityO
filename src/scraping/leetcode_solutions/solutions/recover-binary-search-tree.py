@@ -33,8 +33,6 @@ class TreeNode(object):
             return None
 
 class Solution(object):
-    # @param root, a tree node
-    # @return a tree node
     def recoverTree(self, root):
         return self.MorrisTraversal(root)
 

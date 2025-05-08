@@ -15,8 +15,6 @@ class Solution(object):
         return [cell for i, row in enumerate(matrix)
                      for j, cell in enumerate(row) if rows[i] == cols[j]]
 
-    
-# Time:  O(m * n)
 # Space: O(m + n)
 import itertools
 

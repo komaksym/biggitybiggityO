@@ -123,7 +123,6 @@ class Solution3(object):
                 K /= 2
             return result
 
-        # Template: https://cp-algorithms.com/string/z-function.html
         def z_function(s):  # Time: O(n), Space: O(n)
             z = [0]*len(s)
             l, r = 0, 0

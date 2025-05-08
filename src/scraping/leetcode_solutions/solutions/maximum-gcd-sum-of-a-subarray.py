@@ -91,11 +91,6 @@ class Solution3_TLE(object):
                     left = mid+1
             return right
 
-        # RMQ - Sparse Table
-        # Template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20D/genetic_sequences2.py3
-        # Time:  ctor:  O(NlogN) * O(fn)
-        #        query: O(fn)
-        # Space: O(NlogN)
         class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn

@@ -2,8 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param A, a list of integers
-    # @return an integer
     def firstMissingPositive(self, A):
         i = 0
         while i < len(A):

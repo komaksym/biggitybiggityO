@@ -25,8 +25,6 @@ class Solution(object):
         return result
 
 
-    
-# Time:  O(n)
 # Space: O(n)
 import itertools
 

@@ -26,8 +26,6 @@ class Solution(object):
             i = j+1
         return "".join(result)
 
-    
-# Time:  O(n)
 # Space: O(n)
 # string
 class Solution2(object):

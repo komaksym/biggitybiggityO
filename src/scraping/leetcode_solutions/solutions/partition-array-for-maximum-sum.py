@@ -12,7 +12,6 @@ class Solution(object):
         dp = [0]*W
         for i in range(len(A)):
             curr_max = 0
-            # dp[i % W] = 0;  # no need in this problem
             for k in range(1, min(K, i+1) + 1):
                 curr_max = max(curr_max, A[i-k+1])
                 dp[i % W] = max(dp[i % W], (dp[(i-k) % W] if i >= k else 0) + curr_max*k)

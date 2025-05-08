@@ -45,9 +45,6 @@ class Solution(object):
 
         lookup = {}
         return all(color in lookup or not has_cycle(adj, color, lookup) for color in boxes.keys())
-            
-
-# Time:  O(c * m * n + e), c is the number of colors
 #                        , e is the number of edges in adj, at most O(c^2)
 # Space: O(e)
 class Solution2(object):

@@ -8,9 +8,6 @@ class Solution(object):
         :type primeFactors: int
         :rtype: int
         """
-        # given a1 + a2 + ... + ak <= n, find max of a1 * a2 * ... * ak 
-        # => given a1 + a2 + ... + ak = n, find max of a1 * a2 * ... * ak 
-        # => ai is either 3 or 2, see proof in "343. integer break"
         MOD = 10**9 + 7
         if primeFactors <= 3:
             return primeFactors

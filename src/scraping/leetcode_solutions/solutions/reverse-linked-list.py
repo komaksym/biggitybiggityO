@@ -12,8 +12,6 @@ class ListNode(object):
 
 # Iterative solution.
 class Solution(object):
-    # @param {ListNode} head
-    # @return {ListNode}
     def reverseList(self, head):
         dummy = ListNode(float("-inf"))
         while head:
@@ -24,8 +22,6 @@ class Solution(object):
 # Space: O(n)
 # Recursive solution.
 class Solution2(object):
-    # @param {ListNode} head
-    # @return {ListNode}
     def reverseList(self, head):
         [begin, end] = self.reverseListRecu(head)
         return begin

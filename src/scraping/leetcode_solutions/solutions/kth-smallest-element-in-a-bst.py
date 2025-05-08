@@ -2,9 +2,6 @@
 # Space: O(h)
 
 class Solution(object):
-    # @param {TreeNode} root
-    # @param {integer} k
-    # @return {integer}
     def kthSmallest(self, root, k):
         s, cur, rank = [], root, 0
 

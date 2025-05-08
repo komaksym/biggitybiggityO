@@ -28,7 +28,6 @@ class Solution(object):
             return n*(n+1)*(2*n+1)//6
 
         def f(n):
-            # sum((d*(n-d) for d in xrange(1, n)))
             return (n*sum_n(n-1)-sum_n_square(n-1))
 
         return (f(n)*m*m+f(m)*n*n)*nCr(m*n-2, k-2)%MOD

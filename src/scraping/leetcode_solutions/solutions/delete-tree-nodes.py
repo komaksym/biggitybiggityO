@@ -37,7 +37,6 @@ class Solution2(object):
         :type value: List[int]
         :rtype: int
         """
-        # assuming parent[i] < i for all i > 0
         result = [1]*nodes
         for i in reversed(range(1, nodes)):
             value[parent[i]] += value[i]

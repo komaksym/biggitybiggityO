@@ -83,7 +83,6 @@ class Solution3(object):
         :rtype: int
         """
         NEG_INF = float("-inf")
-        # Range Maximum Query
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=lambda _: None,

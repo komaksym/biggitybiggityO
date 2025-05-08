@@ -64,8 +64,6 @@ class Solution(object):
         for mask1, masks2 in adj.items():
             for mask2 in masks2:
                 normalized_adj[mask1][lookup[mask2]] = (normalized_adj[mask1][lookup[mask2]]+1)%MOD
-        # divided by 3 * 2 is since the first two colors in upper row are normalized to speed up performance,
-        # since first two colors in lower row which has at most 3 choices could be also normalized, lower bound is upper bound divided by at most 3
         assert(2*3**m // 3 // 2 // 3 <= sum(len(v) for v in normalized_adj.values()) <= 2*3**m // 3 // 2)
         return reduce(lambda x,y: (x+y)%MOD,
                       matrix_mult([list(normalized_mask_cnt.values())],
@@ -103,13 +101,6 @@ class Solution2(object):
             return masks
 
         def find_adj(m, basis, dp):
-            # Time:  3*2^(m-1) * (1 + 2 + 2 * (3/2) + 2 * (3/2)^2 + ... + 2 * (3/2)^(m-2)) =
-            #        3*2^(m-1) * (1+2*((3/2)^(m-1)-1)/((3/2)-1)) =
-            #        3*2^(m-1) * (1+4*((3/2)^(m-1)-1)) =
-            #        3*2^(m-1) * (4*(3/2)^(m-1)-3) =
-            #        4*3^m-9*2^(m-1) =
-            #        O(3^m),
-            # Space: O(3^m)
             adj = collections.defaultdict(list)
             for mask in dp.keys():  # O(2^m)
                 adj[mask].append(mask)
@@ -147,25 +138,10 @@ class Solution2(object):
         lookup = {mask:normalize(basis, mask) for mask in masks}  # Time: O(m * 2^m)
         dp = collections.Counter(lookup[mask] for mask in masks)  # normalize colors to speed up performance
         adj = find_adj(m, basis, dp)  # alternative of backtracking, Time: O(3^m), Space: O(3^m)
-        # proof:
-        #   'o' uses the same color with its bottom-left one, 
-        #   'x' uses the remaining color different from its left one and bottom-left one,
-        #   k is the cnt of 'o', 
-        #     [3, 1(o), 1(x), 1(o), ..., 1(o), 1(x)] => nCr(m-1, k) * 3 * 2 * 2^k for k in xrange(m) = 3 * 2 * (2+1)^(m-1) = 2*3^m combinations
-        #     [2,    2,    1,    2, ...,  2,      1]
-        # another proof:
-        #   given previous pair of colors, each pair of '?' has 3 choices of colors
-        #     [3, ?, ?, ..., ?] => 3 * 2 * 3^(m-1) = 2*3^m combinations
-        #         |  |       |
-        #         3  3       3
-        #         |  |       |
-        #     [2, ?, ?, ..., ?]
         normalized_adj = collections.defaultdict(lambda:collections.defaultdict(int))
         for mask1, mask2s in adj.items():
             for mask2 in mask2s:
                 normalized_adj[lookup[mask1]][lookup[mask2]] = (normalized_adj[lookup[mask1]][lookup[mask2]]+1)%MOD
-        # divided by 3 * 2 is since the first two colors in upper row are normalized to speed up performance,
-        # since first two colors in lower row which has at most 3 choices could be also normalized, lower bound is upper bound divided by at most 3
         assert(2*3**m // 3 // 2 // 3 <= sum(len(v) for v in normalized_adj.values()) <= 2*3**m // 3 // 2)
         for _ in range(n-1):  # Time: O(n * 3^m), Space: O(2^m)
             assert(len(dp) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
@@ -211,14 +187,9 @@ class Solution3(object):
         dp = collections.Counter({0: 1})
         for idx in range(m*n):
             r, c = divmod(idx, m)
-            # sliding window with size m doesn't cross rows:
-            #   [3, 2, ..., 2] => 3*2^(m-1) combinations
             assert(r != 0 or c != 0 or len(dp) == 1)
             assert(r != 0 or c == 0 or len(dp) == 3*2**(c-1) // 3 // (2 if c >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
             assert(r == 0 or c != 0 or len(dp) == 3*2**(m-1) // 3 // (2 if m >= 2 else 1))  # divided by 3 * 2 is since the first two colors are normalized to speed up performance
-            # sliding window with size m crosses rows:
-            #   [*, ..., *, *, 3, 2, ..., 2] => 3*3 * 2^(m-2) combinations
-            #   [2, ..., 2, 3, *, *, ..., *]
             assert(r == 0 or c == 0 or len(dp) == (1 if m == 1 else 2 if m == 2 else 3*3 * 2**(m-2) // 3 // 2))  # divided by 3 * 2 for m >= 3 is since the first two colors of window are normalized to speed up performance
             new_dp = collections.Counter()
             for mask, v in dp.items():

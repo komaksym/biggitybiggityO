@@ -3,8 +3,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param n, an integer
-    # @return an integer
     def hammingWeight(self, n):
         n = (n & 0x55555555) + ((n >> 1) & 0x55555555)
         n = (n & 0x33333333) + ((n >> 2) & 0x33333333)
@@ -31,8 +29,6 @@ class Solution2(object):
             3,4,4,5,4,5,5,6,4,5,5,6,5,6,6,7,4,5,5,6,5,6,6,7,5,6,6,7,6,7,7,8 \
         ]
 
-    # @param n, an integer
-    # @return an integer
     def hammingWeight(self, n):
         result = 0
         while n:
@@ -40,12 +36,8 @@ class Solution2(object):
             n >>= 8
         return result
 
-    
-# Time:  O(logn) = O(32)
 # Space: O(1)
 class Solution3(object):
-    # @param n, an integer
-    # @return an integer
     def hammingWeight(self, n):
         result = 0
         while n:
@@ -56,8 +48,6 @@ class Solution3(object):
 # Time:  O(logn) = O(32)
 # Space: O(1)
 class Solution4(object):
-    # @param n, an integer
-    # @return an integer
     def hammingWeight(self, n: int) -> int:
         b="{0:b}".format(n)
         result=b.count("1")

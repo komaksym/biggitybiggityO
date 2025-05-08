@@ -2,8 +2,6 @@
 # Space: O(h)
 
 class Solution(object):
-    # @param {TreeNode} root
-    # @return {string[]}
     def binaryTreePaths(self, root):
         result, path = [], []
         self.binaryTreePathsRecu(root, path, result)

@@ -2,8 +2,6 @@
 # Space: O(n)
 
 class Solution(object):
-    # @param {integer} n
-    # @return {integer}
     def countPrimes(self, n):
         if n <= 2:
             return 0

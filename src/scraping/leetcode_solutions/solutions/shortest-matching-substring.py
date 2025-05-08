@@ -55,9 +55,6 @@ class Solution(object):
                 break
             result = min(result, (k+lc)-i)
         return result if result != INF else -1 
-            
-
-# Time:  O(n + m)
 # Space: O(n + m)
 # kmp, two pointers (three pointers)
 class Solution2(object):

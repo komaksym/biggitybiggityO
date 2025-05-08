@@ -8,7 +8,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        # Template: https://github.com/kth-competitive-programming/kactl/blob/main/content/numerical/FastSubsetTransform.h
         def fst(a, inverse):
             n = len(a)
             step = 1

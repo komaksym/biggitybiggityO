@@ -31,8 +31,6 @@ class Solution(object):
             h -= 1
         return result
 
-    
-# Time:  O(h * logn) = O((logn)^2)
 # Space: O(1)
 class Solution2(object):
     def countNodes(self, root):

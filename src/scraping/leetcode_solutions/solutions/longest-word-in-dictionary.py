@@ -16,7 +16,6 @@ class Solution(object):
         for i, word in enumerate(words):
             reduce(getitem, word, trie)["_end"] = i
 
-        # DFS
         stack = list(trie.values())
         result = ""
         while stack:

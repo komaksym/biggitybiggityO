@@ -41,9 +41,6 @@ class Solution2(object):
                 found = True
             i += l  
         return found
-        
-
-# Time:  O(n)
 # Space: O(1)
 class Solution3(object):
     def isDecomposable(self, s):

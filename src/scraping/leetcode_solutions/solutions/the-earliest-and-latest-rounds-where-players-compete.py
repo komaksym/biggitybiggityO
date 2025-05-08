@@ -10,9 +10,6 @@ class Solution(object):
         :rtype: List[int]
         """
         def memoization(t, l, r, lookup):
-            # t: total number of players,
-            # l: number of players left to the nearest top2 player,
-            # r: number of players right to the nearest top2 player
             if (t, l, r) not in lookup:
                 if l == r:
                     return (1, 1)

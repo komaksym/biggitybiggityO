@@ -53,9 +53,6 @@ class Solution(object):
                 count -= arr[left]
                 left += 1
         return result
-                    
-  
-# Time:  O(nlogm), m is the max value of arr
 # Space: O(logm)
 class Solution2(object):
     def closestToTarget(self, arr, target):

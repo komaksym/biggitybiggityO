@@ -49,10 +49,6 @@ class Solution(object):
         m, M = min(nums), sum(nums)
         return (sumLessOrEqualTo(prefix, nums, m, M, right) -
                 sumLessOrEqualTo(prefix, nums, m, M, left-1))%MOD
-    
-
-    
-# Time:  O(rlogr), worst: O(n^2 * logn)
 # Space: O(n)
 import heapq
 

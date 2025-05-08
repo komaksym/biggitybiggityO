@@ -37,9 +37,6 @@ class Solution(object):
             adj[u][v] = 0
             adj[v][u] = 1
         return iter_dfs2(iter_dfs1())
-        
-
-# Time:  O(n)
 # Space: O(n)
 # dfs, tree dp
 class Solution2(object):

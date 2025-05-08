@@ -13,8 +13,6 @@ class ListNode(object):
             return "Nil"
 
 class Solution(object):
-    # @param head, a ListNode
-    # @return a ListNode
     def insertionSortList(self, head):
         if head is None or self.isSorted(head):
             return head

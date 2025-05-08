@@ -171,8 +171,6 @@ class TweetCounts2(object):
             i += delta
         return result
 
-    
-# Time:  add:   O(1),
 #        query: O(n)
 # Space: O(n)
 class TweetCounts3(object):

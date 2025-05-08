@@ -2,8 +2,6 @@
 # Space: O(1)
 
 class Solution(object):
-    # @param A, a list of integers
-    # @return an integer
     def maxProduct(self, A):
         global_max, local_max, local_min = float("-inf"), 1, 1
         for x in A:
@@ -12,8 +10,6 @@ class Solution(object):
         return global_max
 
 class Solution2(object):
-    # @param A, a list of integers
-    # @return an integer
     def maxProduct(self, A):
         global_max, local_max, local_min = float("-inf"), 1, 1
         for x in A:

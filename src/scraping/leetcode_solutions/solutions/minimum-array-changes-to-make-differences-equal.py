@@ -17,11 +17,8 @@ class Solution(object):
         for i in range(len(nums)//2):
             curr = abs(nums[i]-nums[~i])
             mx = max(nums[i]-0, k-nums[i], nums[~i]-0, k-nums[~i])
-            # 1 change for i in range(0, curr)
             update(0, curr-1, 1)
-            # 1 change for i in range(curr+1, mx+1)
             update(curr+1, mx, 1)
-            # 2 changes for i in range(mx+1, k+1)
             update(mx+1, k, 2)
         result = len(nums)//2
         curr = 0

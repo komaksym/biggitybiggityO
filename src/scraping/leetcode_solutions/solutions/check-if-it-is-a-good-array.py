@@ -12,7 +12,6 @@ class Solution(object):
                 a, b = b, a%b
             return a
 
-        # Bézout's identity
         result = nums[0]
         for num in nums:
             result = gcd(result, num)

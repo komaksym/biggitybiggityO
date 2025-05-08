@@ -19,10 +19,8 @@ class Solution(object):
                 return False
             if min_right < max_left:  # non-overlapped
                 return prefix[max_left]-prefix[min_right+1] == 0 and same(min_left, min_right) and same(max_left, max_right)
-            # overlapped
             if (left1 == min_left) == (right1 == max_right):  # inside another
                 return same(min_left, max_right)
-            # not inside another
             p1, p2 = (prefixs1, prefixs2) if min_left == left1 else (prefixs2, prefixs1)
             diff1 = [(p1[min_right+1][i]-p1[min_left][i])-(p2[max_left][i]-p2[min_left][i]) for i in range(d)]
             diff2 = [(p2[max_right+1][i]-p2[max_left][i])-(p1[max_right+1][i]-p1[min_right+1][i]) for i in range(d)]
@@ -67,10 +65,8 @@ class Solution2(object):
                 return False
             if min_right < max_left:  # non-overlapped
                 return prefix[max_left]-prefix[min_right+1] == 0 and same(min_left, min_right) and same(max_left, max_right)
-            # overlapped
             if (left1 == min_left) == (right1 == max_right):  # inside another
                 return same(min_left, max_right)
-            # not inside another
             p1, p2 = (prefixs1, prefixs2) if min_left == left1 else (prefixs2, prefixs1)
             diff1 = [(p1[min_right+1][i]-p1[min_left][i])-(p2[max_left][i]-p2[min_left][i]) for i in range(26)]
             diff2 = [(p2[max_right+1][i]-p2[max_left][i])-(p1[max_right+1][i]-p1[min_right+1][i]) for i in range(26)]

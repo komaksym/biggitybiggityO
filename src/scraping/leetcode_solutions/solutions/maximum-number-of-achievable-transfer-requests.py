@@ -21,9 +21,6 @@ class Solution(object):
                 if all(c == 0 for c in change):
                     return k  # early return
         return 0
-    
-
-# Time:  O((n + r) * 2^r)
 # Space: O(n + r)
 # full search solution (much slower)
 class Solution2(object):

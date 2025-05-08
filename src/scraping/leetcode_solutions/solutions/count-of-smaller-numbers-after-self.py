@@ -17,14 +17,12 @@ class Solution(object):
             r = mid + 1
             tmp = []
             for i in range(start, mid + 1):
-                # Merge the two sorted arrays into tmp.
                 while r <= end and num_idxs[r][0] < num_idxs[i][0]:
                     tmp.append(num_idxs[r])
                     r += 1
                 tmp.append(num_idxs[i])
                 counts[num_idxs[i][1]] += r - (mid + 1)
 
-            # Copy tmp back to num_idxs
             num_idxs[start:start+len(tmp)] = tmp
 
         num_idxs = []
@@ -62,11 +60,9 @@ class Solution2(object):
                     i -= (i & -i)
                 return ret
 
-        # Get the place (position in the ascending order) of each number.
         sorted_nums = sorted(zip(nums, list(range(len(nums)))))
         lookup = {i:new_i for new_i, (_, i) in enumerate(sorted_nums)}
 
-        # Count the smaller elements after the number.
         result, bit = [0]*len(nums), BIT(len(nums))
         for i in reversed(range(len(nums))):
             result[i] = bit.query(lookup[i]-1)
@@ -85,7 +81,6 @@ class Solution3(object):
         """
         res = [0] * len(nums)
         bst = self.BST()
-        # Insert into BST and get left count.
         for i in reversed(range(len(nums))):
             bst.insertNode(nums[i])
             res[i] = bst.query(nums[i])
@@ -102,7 +97,6 @@ class Solution3(object):
         def __init__(self):
             self.root = None
 
-        # Insert node into BST.
         def insertNode(self, val):
             node = self.BSTreeNode(val)
             if not self.root:
@@ -110,7 +104,6 @@ class Solution3(object):
                 return
             curr = self.root
             while curr:
-                # Insert left if smaller.
                 if node.val < curr.val:
                     curr.count += 1  # Increase the number of left children.
                     if curr.left:
@@ -125,12 +118,10 @@ class Solution3(object):
                         curr.right = node
                         break
 
-        # Query the smaller count of the value.
         def query(self, val):
             count = 0
             curr = self.root
             while curr:
-                # Insert left.
                 if val < curr.val:
                     curr = curr.left
                 elif val > curr.val:

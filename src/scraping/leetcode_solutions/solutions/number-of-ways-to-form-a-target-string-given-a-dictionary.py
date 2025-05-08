@@ -35,7 +35,6 @@ class Solution2(object):
         :rtype: int
         """
         MOD = 10**9+7
-        # dp[i+1][j+1]: number of ways of target[0..j] using count[0..i].
         dp = [[0]*(len(target)+1) for _ in range(2)]
         for i in range(len(dp)):
             dp[i][0] = 1

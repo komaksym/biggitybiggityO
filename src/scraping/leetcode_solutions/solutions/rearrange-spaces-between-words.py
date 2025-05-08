@@ -9,7 +9,6 @@ class Solution(object):
         :rtype: str
         """
         text = list(text)
-        # count the spaces and words
         space_count, word_count = 0, 0
         for i, c in enumerate(text):
             if c == ' ':
@@ -17,7 +16,6 @@ class Solution(object):
             elif i == 0 or text[i-1] == ' ':
                 word_count += 1
 
-        # rearrange all the spaces to the right
         left, i = 0, 0
         while i < len(text):
             has_word = False
@@ -30,7 +28,6 @@ class Solution(object):
                 left += 1  # keep one space
             i += 1
 
-        # rearrange all the spaces to the left
         equal_count = space_count//(word_count-1) if word_count-1 > 0 else 0
         extra_count = space_count%(word_count-1) if word_count-1 > 0 else space_count
         right, i = len(text)-1-extra_count, len(text)-1

@@ -93,7 +93,5 @@ class Codec2(object):
             node.left = builder(chunk_iter)
             node.right = builder(chunk_iter)
             return node
-        
-        # https://stackoverflow.com/a/42373311/568901
         chunk_iter = iter(data.split())
         return builder(chunk_iter)

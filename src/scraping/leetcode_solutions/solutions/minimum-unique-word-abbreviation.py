@@ -51,9 +51,6 @@ class Solution(object):
             if all(d & mask for d in diffs) and bits_to_abbr_len(target, mask) < bits_to_abbr_len(target, result):
                 result = mask
         return bits_to_abbr(target, result)
-    
-
-# Time:  O((d + n) * 2^n)
 # Space: O(d + n)
 class Solution2(object):
     def minAbbreviation(self, target, dictionary):

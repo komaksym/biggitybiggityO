@@ -7,8 +7,6 @@ class ListNode(object):
         self.next = None
 
 class Solution(object):
-    # @param two ListNodes
-    # @return the intersected ListNode
     def getIntersectionNode(self, headA, headB):
         curA, curB = headA, headB
         while curA != curB:

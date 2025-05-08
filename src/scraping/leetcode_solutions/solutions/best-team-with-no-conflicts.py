@@ -117,9 +117,6 @@ class Solution2(object):
         for age, score in players:
             segment_tree.update(lookup[score], lookup[score], segment_tree.query(0, lookup[score])+score)
         return segment_tree.query(0, len(lookup)-1)
- 
-
-# Time:  O(n * a)
 # Space: O(n)
 import collections
 

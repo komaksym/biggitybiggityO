@@ -9,7 +9,6 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
-        # Helper to make a stack to the next node.
         def nextNode(stack, child1, child2):
             if stack:
                 if child2(stack):
@@ -21,11 +20,9 @@ class Solution(object):
                     while stack and child is child2(stack):
                         child = stack.pop()
 
-        # The forward or backward iterator.
         backward = lambda stack: stack[-1].left
         forward = lambda stack: stack[-1].right
 
-        # Build the stack to the closest node.
         stack = []
         while root:
             stack.append(root)
@@ -33,11 +30,9 @@ class Solution(object):
         dist = lambda node: abs(node.val - target)
         forward_stack = stack[:stack.index(min(stack, key=dist))+1]
 
-        # Get the stack to the next smaller node.
         backward_stack = list(forward_stack)
         nextNode(backward_stack, backward, forward)
 
-        # Get the closest k values by advancing the iterators of the stacks.
         result = []
         for _ in range(k):
             if forward_stack and \
@@ -59,16 +54,13 @@ class Solution2(object):
         :type k: int
         :rtype: List[int]
         """
-        # Helper class to make a stack to the next node.
         class BSTIterator:
-            # @param root, a binary search tree's root node
             def __init__(self, stack, child1, child2):
                 self.stack = list(stack)
                 self.cur = self.stack.pop()
                 self.child1 = child1
                 self.child2 = child2
 
-            # @return an integer, the next node
             def __next__(self):
                 node = None
                 if self.cur and self.child1(self.cur):
@@ -89,7 +81,6 @@ class Solution2(object):
                 self.cur = node
                 return node
 
-        # Build the stack to the closet node.
         stack = []
         while root:
             stack.append(root)
@@ -97,13 +88,11 @@ class Solution2(object):
         dist = lambda node: abs(node.val - target) if node else float("inf")
         stack = stack[:stack.index(min(stack, key=dist))+1]
 
-        # The forward or backward iterator.
         backward = lambda node: node.left
         forward = lambda node: node.right
         smaller_it, larger_it = BSTIterator(stack, backward, forward), BSTIterator(stack, forward, backward)
         smaller_node, larger_node = next(smaller_it), next(larger_it)
 
-        # Get the closest k values by advancing the iterators of the stacks.
         result = [stack[-1].val]
         for _ in range(k - 1):
             if dist(smaller_node) < dist(larger_node):

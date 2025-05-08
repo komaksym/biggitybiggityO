@@ -27,8 +27,6 @@ class Solution(object):
             used[i] = False
 
 class Solution2(object):
-    # @param num, a list of integer
-    # @return a list of lists of integers
     def permuteUnique(self, nums):
         solutions = [[]]
 

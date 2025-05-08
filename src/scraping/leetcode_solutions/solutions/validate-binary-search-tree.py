@@ -9,8 +9,6 @@ class TreeNode(object):
 
 # Morris Traversal Solution
 class Solution(object):
-    # @param root, a tree node
-    # @return a list of integers
     def isValidBST(self, root):
         prev, cur = None, root
         while cur:
@@ -40,8 +38,6 @@ class Solution(object):
 # Time:  O(n)
 # Space: O(h)
 class Solution2(object):
-    # @param root, a tree node
-    # @return a boolean
     def isValidBST(self, root):
         return self.isValidBSTRecu(root, float("-inf"), float("inf"))
 

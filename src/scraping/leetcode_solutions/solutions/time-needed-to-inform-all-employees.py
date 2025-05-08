@@ -31,8 +31,6 @@ class Solution(object):
                 stk.append((c, curr))
         return result
 
-    
-# Time:  O(n)
 # Space: O(n)
 # dfs solution with recursion
 class Solution2(object):

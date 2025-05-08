@@ -11,7 +11,6 @@ class Solution(object):
         def xorNums(n, start):
             def xorNumsBeginEven(n, start):
                 assert(start%2 == 0)
-                # 2*i ^ (2*i+1) = 1
                 return ((n//2)%2)^((start+n-1) if n%2 else 0)
 
             return start^xorNumsBeginEven(n-1, start+1) if start%2 else xorNumsBeginEven(n, start)

@@ -33,9 +33,6 @@ class Solution(object):
                         result = min(result, (x-lookup[y1, y2]) * (y2-y1))
                     lookup[y1, y2] = x
         return result if result != float("inf") else 0
- 
-
-# Time:  O(n^2)
 # Space: O(n)
 class Solution2(object):
     def minAreaRect(self, points):

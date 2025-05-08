@@ -10,8 +10,6 @@ class Solution(object):
         :type change: int
         :rtype: int
         """
-        # Template:
-        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/find-if-path-exists-in-graph.py
         def bi_bfs(adj, start, target):
             left, right = {start}, {target}
             lookup = set()

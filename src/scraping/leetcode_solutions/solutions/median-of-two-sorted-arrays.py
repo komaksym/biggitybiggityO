@@ -53,7 +53,6 @@ class Solution_Generic(object):
 
         def getKth(arrays, k):
             def check(num):
-                # count the number of values which are less or equal to num
                 return sum(binary_search(0, len(arr)-1, lambda x: arr[x] > num) for arr in arrays) >= k
     
             return binary_search(min(arr[0] for arr in arrays if arr), max(arr[-1] for arr in arrays if arr), check)

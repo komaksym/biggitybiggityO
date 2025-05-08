@@ -14,7 +14,6 @@ class Solution(object):
                 right_cnt += 1
                 if s[i+k] != t[j+k]:
                     left_cnt, right_cnt = right_cnt, 0
-                    # prev_i = i+k-prev+1
                 result += left_cnt  # target substrs are [s[left_i+c:i+k+1] for c in xrange(left_cnt)]
             return result
 

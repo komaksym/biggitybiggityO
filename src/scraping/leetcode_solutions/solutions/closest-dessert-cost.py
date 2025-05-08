@@ -28,9 +28,6 @@ class Solution(object):
             if i >= target:
                 break
         return result
-            
-
-# Time:  O(n * 3^m)
 # Space: O(m * t)
 class Solution2(object):
     def closestCost(self, baseCosts, toppingCosts, target):

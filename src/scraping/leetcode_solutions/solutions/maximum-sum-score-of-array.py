@@ -18,8 +18,6 @@ class Solution(object):
             result = max(result, prefix, suffix)
         return result
 
-    
-# Time:  O(n)
 # Space: O(1)
 # prefix sum
 class Solution2(object):

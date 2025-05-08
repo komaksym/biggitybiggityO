@@ -8,7 +8,6 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        # dp1[i][j]: minimum number of changes to make s[i, j] palindrome
         dp1 = [[0]*len(s) for _ in range(len(s))]
         for l in range(1, len(s)+1):
             for i in range(len(s)-l+1):
@@ -18,7 +17,6 @@ class Solution(object):
                 elif i != j:
                     dp1[i][j] = dp1[i+1][j-1] if s[i] == s[j] else dp1[i+1][j-1]+1
 
-        # dp2[d][i]: minimum number of changes to divide s[0, i] into d palindromes
         dp2 = [[float("inf")]*len(s) for _ in range(2)]
         dp2[1] = dp1[0][:]
         for d in range(2, k+1):

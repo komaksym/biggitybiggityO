@@ -14,8 +14,6 @@ class Solution(object):
                 result += 1
         return result
 
-    
-# Time:  O(n)
 # Space: O(n)
 # mono stack solution
 class Solution2(object):

@@ -11,8 +11,6 @@ class ListNode(object):
             return "{} -> {}".format(self.val, repr(self.__next__))
 
 class Solution(object):
-    # @param head, a ListNode
-    # @return a ListNode
     def sortList(self, head):
         if head == None or head.__next__ == None:
             return head

@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def deleteAndEarn(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         vals = [0] * 10001
         for num in nums:
             vals[num] += num

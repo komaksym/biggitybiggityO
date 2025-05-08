@@ -1,8 +1,13 @@
 # Time:  O(h)
+# Space: O(1)
 
 class Solution(object):
     def closestValue(self, root, target):
-        
+        """
+        :type root: TreeNode
+        :type target: float
+        :rtype: int
+        """
         gap = float("inf")
         closest = float("inf")
         while root:

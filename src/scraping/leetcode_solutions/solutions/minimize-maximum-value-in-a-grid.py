@@ -1,9 +1,13 @@
 # Time:  O((m * n) * log(m * n))
+# Space: O(m * n)
 
 # sort, greedy
 class Solution(object):
     def minScore(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: List[List[int]]
+        """
         idxs = [(i, j) for i in range(len(grid)) for j in range(len(grid[0]))]
         idxs.sort(key=lambda x: grid[x[0]][x[1]])
         row_max, col_max = [0]*len(grid), [0]*len(grid[0])

@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # graph, prefix sum, two pointers, sliding window
 class Solution(object):
     def getMaxFunctionValue(self, receiver, k):
-        
+        """
+        :type receiver: List[int]
+        :type k: int
+        :rtype: int
+        """
         def find_cycles(adj):
             result = []
             lookup = [0]*len(adj)
@@ -76,10 +81,15 @@ class Solution(object):
 
 
 # Time:  O(nlogk)
+# Space: O(nlogk)
 # binary lifting
 class Solution2(object):
     def getMaxFunctionValue(self, receiver, k):
-        
+        """
+        :type receiver: List[int]
+        :type k: int
+        :rtype: int
+        """
         l = (k+1).bit_length()
         P = [receiver[:] for _ in range(l)]
         S = [list(range(len(receiver))) for _ in range(l)]

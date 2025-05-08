@@ -1,8 +1,12 @@
 # Time:  O(h * 2^h)
+# Space: O(h * 2^h)
 
 class Solution(object):
     def printTree(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[List[str]]
+        """
         def getWidth(root):
             if not root:
                 return 0

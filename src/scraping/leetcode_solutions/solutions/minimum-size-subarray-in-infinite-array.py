@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # two pointers, sliding window
 class Solution(object):
     def minSizeSubarray(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         INF = float("inf")
         q, target = divmod(target, sum(nums))
         if not target:
@@ -21,10 +26,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # prefix sum, hash table
 class Solution2(object):
     def minSizeSubarray(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         INF = float("inf")
         q, target = divmod(target, sum(nums))
         if not target:

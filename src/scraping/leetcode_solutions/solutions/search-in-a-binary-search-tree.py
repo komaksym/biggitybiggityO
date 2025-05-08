@@ -1,4 +1,5 @@
 # Time:  O(h)
+# Space: O(1)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -9,7 +10,11 @@ class TreeNode(object):
 
 class Solution(object):
     def searchBST(self, root, val):
-        
+        """
+        :type root: TreeNode
+        :type val: int
+        :rtype: TreeNode
+        """
         while root and val != root.val:
             if val < root.val:
                 root = root.left

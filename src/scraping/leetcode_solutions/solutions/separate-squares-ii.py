@@ -1,9 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # sort, line sweep, segment tree
 class Solution(object):
     def separateSquares(self, squares):
-        
+        """
+        :type squares: List[List[int]]
+        :rtype: float
+        """
         class SegmentTreeRecu(object):
             def __init__(self, sorted_x):
                 self.sorted_x = sorted_x
@@ -12,7 +16,7 @@ class Solution(object):
                 self.tree = [0]*l
                 self.cnt = [0]*l
         
-            def update(self, ql, qr, v, l, r, i): 
+            def update(self, ql, qr, v, l, r, i):  # update [ql, qr) by v, interval [l, r) in sorted_x is covered by i
                 if ql >= r or qr <= l:
                     return
                 if ql <= l and r <= qr:

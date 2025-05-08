@@ -1,15 +1,20 @@
 from functools import reduce
 # Time:  O(m * nlogn)
+# Space: O(n)
 
 class Solution(object):
     def longestCommonSubpath(self, n, paths):
-        
-        def RabinKarp(arr, x): 
+        """
+        :type n: int
+        :type paths: List[List[int]]
+        :rtype: int
+        """
+        def RabinKarp(arr, x):  # double hashing
             hashes = tuple([reduce(lambda h,x: (h*p+x)%MOD, (arr[i] for i in range(x)), 0) for p in P])
             powers = [pow(p, x, MOD) for p in P]
             lookup = {hashes}
             for i in range(x, len(arr)):
-                hashes = tuple([(hashes[j]*P[j] - arr[i-x]*powers[j] + arr[i])%MOD for j in range(len(P))]) 
+                hashes = tuple([(hashes[j]*P[j] - arr[i-x]*powers[j] + arr[i])%MOD for j in range(len(P))])  # in smaller datasets, tuple from list is much faster than tuple from generator, see https://stackoverflow.com/questions/16940293/why-is-there-no-tuple-comprehension-in-python
                 lookup.add(hashes)
             return lookup
         
@@ -21,7 +26,7 @@ class Solution(object):
                     return False
             return True
 
-        MOD, P = 10**9+7, (113, 109) 
+        MOD, P = 10**9+7, (113, 109)  # MOD could be the min prime of 7-digit number (10**6+3), P could be (2, 3)
         left, right = 1, min(len(p) for p in paths)
         while left <= right:
             mid = left + (right-left)//2
@@ -33,9 +38,14 @@ class Solution(object):
 
 
 # Time:  O(m * nlogn)
+# Space: O(n)
 class Solution2(object):
     def longestCommonSubpath(self, n, paths):
-        
+        """
+        :type n: int
+        :type paths: List[List[int]]
+        :rtype: int
+        """
         def RabinKarp(arr, x):
             h = reduce(lambda h,x: (h*P+x)%MOD, (arr[i] for i in range(x)), 0)
             power = pow(P, x, MOD)
@@ -53,7 +63,7 @@ class Solution2(object):
                     return False
             return True
 
-        MOD, P = 10**11+19, max(x for p in paths for x in p)+1 
+        MOD, P = 10**11+19, max(x for p in paths for x in p)+1  # MOD is the min prime of 12-digit number
         left, right = 1, min(len(p) for p in paths)
         while left <= right:
             mid = left + (right-left)//2

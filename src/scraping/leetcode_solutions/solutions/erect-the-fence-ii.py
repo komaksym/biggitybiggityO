@@ -1,4 +1,5 @@
 # Time:  O(n) on average
+# Space: O(n)
 
 import random
 
@@ -6,7 +7,10 @@ import random
 # reference: https://en.wikipedia.org/wiki/Smallest-circle_problem
 class Solution(object):
     def outerTrees(self, trees):
-        
+        """
+        :type trees: List[List[int]]
+        :rtype: List[float]
+        """
         def dist(a, b):
             return ((a[0]-b[0])**2 + (a[1]-b[1])**2)**0.5
 
@@ -31,7 +35,7 @@ class Solution(object):
             I[1] += A[1]
             return [I, dist(I, A)]
 
-        def trivial(boundaries): 
+        def trivial(boundaries):  # circumscribed circle
             if not boundaries:
                 return None
             if len(boundaries) == 1:

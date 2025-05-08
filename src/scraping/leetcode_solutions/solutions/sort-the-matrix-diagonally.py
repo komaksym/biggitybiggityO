@@ -1,11 +1,15 @@
 # Time:  O(m * n * log(min(m, n))
+# Space: O(m * n)
 
 import collections
 
 
 class Solution(object):
     def diagonalSort(self, mat):
-        
+        """
+        :type mat: List[List[int]]
+        :rtype: List[List[int]]
+        """
         lookup = collections.defaultdict(list)
         for i in range(len(mat)):
             for j in range(len(mat[0])):

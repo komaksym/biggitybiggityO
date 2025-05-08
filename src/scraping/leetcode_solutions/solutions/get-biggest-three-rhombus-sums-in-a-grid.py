@@ -1,11 +1,15 @@
 # Time:  O(m * n * min(m, n))
+# Space: O(m * n)
 
 import heapq
 
 
 class Solution(object):
     def getBiggestThree(self, grid):
-        	
+        """
+        :type grid: List[List[int]]
+        :rtype: List[int]
+        """	
         K = 3
         left = [[grid[i][j] for j in range(len(grid[i]))] for i in range(len(grid))]
         right = [[grid[i][j] for j in range(len(grid[i]))] for i in range(len(grid))]

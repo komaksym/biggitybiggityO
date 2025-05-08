@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def numPermsDISequence(self, S):
-        
+        """
+        :type S: str
+        :rtype: int
+        """
         dp = [1]*(len(S)+1)
         for c in S:
             if c == "I":

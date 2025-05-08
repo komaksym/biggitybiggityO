@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def lengthOfLongestSubstringKDistinct(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         longest, start, distinct_count, visited = 0, 0, 0, [0 for _ in range(256)]
         for i, char in enumerate(s):
             if visited[ord(char)] == 0:
@@ -18,12 +23,17 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 from collections import Counter
 
 
 class Solution2(object):
     def lengthOfLongestSubstringKDistinct(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         counter = Counter()
         left, max_length = 0, 0
         for right, char in enumerate(s):

@@ -1,21 +1,26 @@
 # Time:  O(n^3)
+# Space: O(n^2)
 
 # hungarian algorithm, weighted bipartite matching
 class Solution(object):
     def findMinimumTime(self, strength):
-        
-       
-       
-        def hungarian(a): 
+        """
+        :type strength: List[int]
+        :rtype: int
+        """
+        # Template translated from:
+        # https://github.com/kth-competitive-programming/kactl/blob/main/content/graph/WeightedMatching.h
+        def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
+            if not a:
                 return 0, []
             n, m = len(a)+1, len(a[0])+1
             u, v, p, ans = [0]*n, [0]*m, [0]*m, [0]*(n-1)
             for i in range(1, n):
                 p[0] = i
-                j0 = 0 
+                j0 = 0  # add "dummy" worker 0
                 dist, pre = [float("inf")]*m, [-1]*m
                 done = [False]*(m+1)
-                while True: 
+                while True:  # dijkstra
                     done[j0] = True
                     i0, j1, delta = p[j0], None, float("inf")
                     for j in range(1, m):
@@ -35,13 +40,13 @@ class Solution(object):
                     j0 = j1
                     if not p[j0]:
                         break
-                while j0: 
+                while j0:  # update alternating path
                     j1 = pre[j0]
                     p[j0], j0 = p[j1], j1
             for j in range(1, m):
                 if p[j]:
                     ans[p[j]-1] = j-1
-            return -v[0], ans 
+            return -v[0], ans  # min cost
 
         K = 1
         def ceil_divide(a, b):

@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def partitionDisjoint(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         B = A[:]
         for i in reversed(range(len(A)-1)):
             B[i] = min(B[i], B[i+1])

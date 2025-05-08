@@ -1,8 +1,12 @@
 # Time:  O(n * s), s is the sum of nums
+# Space: O(s)
 
 class Solution(object):
     def canPartition(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
         s = sum(nums)
         if s % 2:
             return False

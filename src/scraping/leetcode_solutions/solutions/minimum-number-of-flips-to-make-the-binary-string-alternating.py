@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def minFlips(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result = float("inf")
         cnt1 = cnt2 = 0
         for i in range(2*len(s)-1 if len(s)%2 else len(s)):

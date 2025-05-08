@@ -1,8 +1,13 @@
 # Time:  O(s + n * k), n is the number of the word_lens
+# Space: O(k)
 
 class Solution(object):
     def minimumCost(self, sentence, k):
-        
+        """
+        :type sentence: str
+        :type k: int
+        :rtype: int
+        """
         def lens(sentence):
             j = len(sentence)-1
             for i in reversed(range(-1, len(sentence))):
@@ -10,7 +15,7 @@ class Solution(object):
                     yield j-i
                     j = i-1
 
-        word_lens, dp = [], [] 
+        word_lens, dp = [], []  # dp[i]: min cost of word_lens[-1-i:]
         t = -1
         for l in lens(sentence):
             word_lens.append(l)
@@ -24,16 +29,21 @@ class Solution(object):
                 dp[-1] = min(dp[-1], dp[j] + (k-total)**2)
                 total += (word_lens[j]+1)
                 if total > k:
-                    word_lens = word_lens[j:] 
+                    word_lens = word_lens[j:]  # minimize len(word_lens) s.t. sum(word_lens) > k
                     dp = dp[j:]
                     break
         return dp[-1] if dp else 0
 
 
 # Time:  O(s + n * k), n is the number of the word_lens
+# Space: O(n)
 class Solution2(object):
     def minimumCost(self, sentence, k):
-        
+        """
+        :type sentence: str
+        :type k: int
+        :rtype: int
+        """
         word_lens = []
         j = 0
         for i in range(len(sentence)+1):
@@ -41,9 +51,9 @@ class Solution2(object):
                 continue
             word_lens.append(i-j)
             j = i+1
-        dp = [float("inf")]*(len(word_lens)) 
+        dp = [float("inf")]*(len(word_lens))  # dp[i]: min cost of word_lens[i:]
         i, total = len(word_lens)-1, -1
-        while i >= 0 and total + (word_lens[i]+1) <= k: 
+        while i >= 0 and total + (word_lens[i]+1) <= k:  # find max i s.t. the length of the last line > k
             total += (word_lens[i]+1)
             dp[i] = 0
             i -= 1
@@ -58,9 +68,14 @@ class Solution2(object):
 
 
 # Time:  O(s + n * k), n is the number of the word_lens
+# Space: O(n)
 class Solution3(object):
     def minimumCost(self, sentence, k):
-        
+        """
+        :type sentence: str
+        :type k: int
+        :rtype: int
+        """
         word_lens = []
         j = 0
         for i in range(len(sentence)+1):
@@ -68,7 +83,7 @@ class Solution3(object):
                 continue
             word_lens.append(i-j)
             j = i+1
-        dp = [float("inf")]*(1+(len(word_lens)-1)) 
+        dp = [float("inf")]*(1+(len(word_lens)-1))  # dp[i]: min cost of the first i word_lens where i in [0, len(words)-1]
         dp[0] = 0
         for i in range(1, (len(word_lens)-1)+1):
             total = word_lens[i-1]
@@ -80,7 +95,7 @@ class Solution3(object):
                 if total > k:
                     break
         i, total = len(word_lens)-1, -1
-        while i >= 0 and total + (word_lens[i]+1) <= k: 
+        while i >= 0 and total + (word_lens[i]+1) <= k:  # find max i s.t. the length of the last line > k
             total += (word_lens[i]+1)
             i -= 1
         return min(dp[j] for j in range(i+1, len(dp)))

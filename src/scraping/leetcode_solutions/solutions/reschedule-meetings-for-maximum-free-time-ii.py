@@ -1,10 +1,16 @@
 # Time:  O(n)
+# Space: O(1)
 
 # array
 class Solution(object):
     def maxFreeTime(self, eventTime, startTime, endTime):
-        
-        def topk(a, k): 
+        """
+        :type eventTime: int
+        :type startTime: List[int]
+        :type endTime: List[int]
+        :rtype: int
+        """
+        def topk(a, k):  # Time: O(k * n)
             result = [[float("-inf")]*2 for _ in range(k)]
             for x in a:
                 for i in range(len(result)):

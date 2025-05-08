@@ -1,8 +1,14 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def countSubTrees(self, n, edges, labels):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type labels: str
+        :rtype: List[int]
+        """
         def iter_dfs(labels, adj, node, parent, result):
             stk = [(1, (node, parent, [0]*26))]
             while stk:
@@ -39,12 +45,18 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 import collections
 
 
 class Solution2(object):
     def countSubTrees(self, n, edges, labels):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type labels: str
+        :rtype: List[int]
+        """
         def dfs(labels, adj, node, parent, result):
             count = [0]*26
             for child in adj[node]:

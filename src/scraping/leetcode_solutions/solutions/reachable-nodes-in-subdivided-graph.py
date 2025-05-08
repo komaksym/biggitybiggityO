@@ -1,12 +1,18 @@
 # Time:  O((|E| + |V|) * log|V|) = O(|E| * log|V|),
 #        if we can further to use Fibonacci heap, it would be O(|E| + |V| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import collections
 import heapq
 
 class Solution(object):
     def reachableNodes(self, edges, M, N):
-        
+        """
+        :type edges: List[List[int]]
+        :type M: int
+        :type N: int
+        :rtype: int
+        """
         adj = [[] for _ in range(N)]
         for u, v, w in edges:
             adj[u].append((v, w))
@@ -18,7 +24,7 @@ class Solution(object):
         count = collections.defaultdict(lambda: collections.defaultdict(int))
         result = 0
         while min_heap:
-            curr_total, u = heapq.heappop(min_heap) 
+            curr_total, u = heapq.heappop(min_heap)  # O(|V|*log|V|) in total
             if best[u] < curr_total:
                 continue
             result += 1
@@ -27,8 +33,8 @@ class Solution(object):
                 next_total = curr_total+w+1
                 if next_total <= M and next_total < best[v]:
                     best[v] = next_total
-                    heapq.heappush(min_heap, (next_total, v)) 
-                                                              
+                    heapq.heappush(min_heap, (next_total, v))  # binary heap O(|E|*log|V|) in total
+                                                               # Fibonacci heap O(|E|) in total
         for u, v, w in edges:
             result += min(w, count[u][v]+count[v][u])
         return result

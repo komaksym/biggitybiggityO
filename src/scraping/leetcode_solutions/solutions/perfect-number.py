@@ -1,8 +1,12 @@
 # Time:  O(sqrt(n))
+# Space: O(1)
 
 class Solution(object):
     def checkPerfectNumber(self, num):
-        
+        """
+        :type num: int
+        :rtype: bool
+        """
         if num <= 0:
             return False
 

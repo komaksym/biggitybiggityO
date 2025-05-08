@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import pandas as pd
 
@@ -12,6 +13,7 @@ def createDataframe(student_data: List[List[int]]) -> pd.DataFrame:
 
 
 # Time:  O(n)
+# Space: O(n)
 import pandas as pd
 
 

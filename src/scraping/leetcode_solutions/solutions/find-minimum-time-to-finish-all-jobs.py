@@ -1,8 +1,13 @@
 # Time:  O(k^n * logr), the real complexity shoud be much less, but hard to analyze
+# Space: O(n + k)
 
 class Solution(object):
     def minimumTimeRequired(self, jobs, k):
-        
+        """
+        :type jobs: List[int]
+        :type k: int
+        :rtype: int
+        """
         def backtracking(jobs, i, cap, counts):
             if i == len(jobs):
                 return True
@@ -28,9 +33,14 @@ class Solution(object):
 
 
 # Time:  O(k * k^n), the real complexity shoud be less, but hard to analyze
+# Space: O(n + k)
 class Solution2(object):
     def minimumTimeRequired(self, jobs, k):
-        
+        """
+        :type jobs: List[int]
+        :type k: int
+        :rtype: int
+        """
         def backtracking(jobs, i, counts, result):
             if i == len(jobs):
                 result[0] = min(result[0], max(counts))

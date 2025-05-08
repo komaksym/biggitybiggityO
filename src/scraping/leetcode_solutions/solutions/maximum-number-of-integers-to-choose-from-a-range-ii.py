@@ -1,10 +1,16 @@
 # Time:  O(b)
+# Space: O(b)
 
 # math
 class Solution(object):
     def maxCount(self, banned, n, maxSum):
-        
-        k = min(int((-1+(1+8*maxSum))**0.5/2), n) 
+        """
+        :type banned: List[int]
+        :type n: int
+        :type maxSum: int
+        :rtype: int
+        """
+        k = min(int((-1+(1+8*maxSum))**0.5/2), n)  # k = argmax((k+1)*k//2 <= maxSum)
         total = (k+1)*k//2
         result = k
         lookup = set(banned)
@@ -23,13 +29,19 @@ class Solution(object):
 
 
 # Time:  O(blogb + logn * logb)
+# Space: O(b)
 import bisect
 
 
 # binary search, prefix sum
 class Solution2(object):
     def maxCount(self, banned, n, maxSum):
-        
+        """
+        :type banned: List[int]
+        :type n: int
+        :type maxSum: int
+        :rtype: int
+        """
         def check(x):
             return (x+1)*x//2-prefix[bisect.bisect_right(sorted_banned, x)] <= maxSum
     

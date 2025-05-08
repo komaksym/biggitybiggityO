@@ -1,4 +1,5 @@
 # Time:  O(n * l), n is the length of S, l is the average length of words
+# Space: O(t)    , t is the size of trie
 
 import collections
 import functools
@@ -6,7 +7,11 @@ import functools
 
 class Solution(object):
     def boldWords(self, words, S):
-        
+        """
+        :type words: List[str]
+        :type S: str
+        :rtype: str
+        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         for i, word in enumerate(words):
@@ -36,9 +41,14 @@ class Solution(object):
 
 
 # Time:  O(n * d * l), l is the average length of words
+# Space: O(n)
 class Solution2(object):
     def boldWords(self, words, S):
-        
+        """
+        :type words: List[str]
+        :type S: str
+        :rtype: str
+        """
         lookup = [0] * len(S)
         for d in words:
             pos = S.find(d)

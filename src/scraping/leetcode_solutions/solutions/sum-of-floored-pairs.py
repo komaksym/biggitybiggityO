@@ -1,4 +1,5 @@
 # Time:  O(n/1+n/2+...+n/n) = O(nlogn), n is the max of nums
+# Space: O(n)
 
 import collections
 from functools import reduce
@@ -6,7 +7,10 @@ from functools import reduce
 
 class Solution(object):
     def sumOfFlooredPairs(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         prefix, counter = [0]*(max(nums)+1), collections.Counter(nums)
         for num, cnt in counter.items():

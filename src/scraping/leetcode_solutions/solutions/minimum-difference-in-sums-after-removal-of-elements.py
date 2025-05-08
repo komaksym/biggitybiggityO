@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import heapq
 
@@ -6,7 +7,10 @@ import heapq
 # heap, prefix sum
 class Solution(object):
     def minimumDifference(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         max_heap = []
         for i in range(len(nums)//3):
             heapq.heappush(max_heap, -nums[i])

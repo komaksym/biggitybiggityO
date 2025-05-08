@@ -1,9 +1,13 @@
 from functools import reduce
 # Time:  O(n * k)
+# Space: O(k)
 
 class Solution2(object):
     def minCostII(self, costs):
-        
+        """
+        :type costs: List[List[int]]
+        :rtype: int
+        """
         return min(reduce(self.combine, costs)) if costs else 0
 
     def combine(self, tmp, house):
@@ -14,7 +18,10 @@ class Solution2(object):
 
 class Solution2(object):
     def minCostII(self, costs):
-        
+        """
+        :type costs: List[List[int]]
+        :rtype: int
+        """
         if not costs:
             return 0
 

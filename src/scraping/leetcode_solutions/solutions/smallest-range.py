@@ -1,11 +1,15 @@
 # Time:  O(nlogk)
+# Space: O(k)
 
 import heapq
 
 
 class Solution(object):
     def smallestRange(self, nums):
-        
+        """
+        :type nums: List[List[int]]
+        :rtype: List[int]
+        """
         left, right = float("inf"), float("-inf")
         min_heap = []
         for row in nums:

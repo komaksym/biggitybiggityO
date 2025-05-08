@@ -1,4 +1,5 @@
 # Time:  O(1), per operation.
+# Space: O(k), k is the capacity of cache.
 
 import collections
 
@@ -28,6 +29,7 @@ class LRUCache(object):
 
 
 # Time:  O(1), per operation.
+# Space: O(k), k is the capacity of cache.
 
 
 class ListNode(object):
@@ -43,7 +45,7 @@ class LinkedList(object):
         self.tail = None
 
     def insert(self, node):
-        node.next, node.prev = None, None 
+        node.next, node.prev = None, None  # avoid dirty node
         if self.head is None:
             self.head = node
         else:
@@ -60,7 +62,7 @@ class LinkedList(object):
             node.next.prev = node.prev
         else:
             self.tail = node.prev
-        node.next, node.prev = None, None 
+        node.next, node.prev = None, None  # make node clean
 
 class LRUCache2(object):
 

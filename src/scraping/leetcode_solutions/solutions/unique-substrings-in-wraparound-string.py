@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def findSubstringInWraproundString(self, p):
-        
+        """
+        :type p: str
+        :rtype: int
+        """
         letters = [0] * 26
         result, length = 0, 0
         for i in range(len(p)):

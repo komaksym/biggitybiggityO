@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # line sweep
 class Solution(object):
     def shiftingLetters(self, s, shifts):
-        
+        """
+        :type s: str
+        :type shifts: List[List[int]]
+        :rtype: str
+        """
         events = [0]*(len(s)+1)
         for b, e, d in shifts:
             events[b] += 1 if d else -1

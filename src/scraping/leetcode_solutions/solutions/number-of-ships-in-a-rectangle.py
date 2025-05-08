@@ -1,9 +1,17 @@
 # Time:  O(s * log(m * n)), s is the max number of ships, which is 10 in this problem
+# Space: O(log(m * n))
 
-# 
+# """
+# This is Sea's API interface.
+# You should not implement it, or speculate about its implementation
+# """
 class Sea(object):
    def hasShips(self, topRight, bottomLeft):
-       
+       """
+       :type topRight: Point
+		 :type bottomLeft: Point
+       :rtype bool
+       """
        pass
 
 class Point(object):
@@ -13,7 +21,12 @@ class Point(object):
 
 class Solution(object):
     def countShips(self, sea, topRight, bottomLeft):
-        
+        """
+        :type sea: Sea
+        :type topRight: Point
+        :type bottomLeft: Point
+        :rtype: integer
+        """
         result = 0
         if topRight.x >= bottomLeft.x and \
            topRight.y >= bottomLeft.y and \

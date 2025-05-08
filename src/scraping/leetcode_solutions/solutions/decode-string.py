@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def decodeString(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         n, curr, nums, strs = 0, [], [], []
         for c in s:
             if c.isdigit():

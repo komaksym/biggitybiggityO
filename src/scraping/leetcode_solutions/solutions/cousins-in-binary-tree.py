@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,12 @@ class TreeNode(object):
 
 class Solution(object):
     def isCousins(self, root, x, y):
-        
+        """
+        :type root: TreeNode
+        :type x: int
+        :type y: int
+        :rtype: bool
+        """
         def dfs(root, x, depth, parent):
             if not root:
                 return False

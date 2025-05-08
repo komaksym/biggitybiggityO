@@ -1,4 +1,5 @@
 # Time:  O(n) ~ O(2^n)
+# Space: O(1) ~ O(2^n)
 
 power = [1]
 log2 = {1:0}
@@ -9,7 +10,10 @@ for i in range(1, 26):
 
 class Solution(object):
     def maxLength(self, arr):
-        
+        """
+        :type arr: List[str]
+        :rtype: int
+        """
         def bitset(s):
             result = 0
             for c in s:
@@ -39,9 +43,13 @@ class Solution(object):
 
 
 # Time:  O(2^n)
+# Space: O(1)
 class Solution2(object):
     def maxLength(self, arr):
-         
+        """
+        :type arr: List[str]
+        :rtype: int
+        """ 
         def bitset(s):
             result = 0
             for c in s:
@@ -55,9 +63,9 @@ class Solution2(object):
         for i in range(power[len(arr)]):
             curr_bitset, curr_len = 0, 0
             while i:
-                j = i & -i 
+                j = i & -i  # rightmost bit
                 i ^= j
-                j = log2[j] 
+                j = log2[j]  # log2(j)
                 if not bitsets[j] or (curr_bitset & bitsets[j]):
                     break
                 curr_bitset |= bitsets[j]

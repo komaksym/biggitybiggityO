@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def maxArrayValue(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = curr = 0
         for i in reversed(range(len(nums))):
             if nums[i] > curr:

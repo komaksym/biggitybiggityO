@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # iterative dfs, hash table
 class Solution(object):
     def findSubtreeSizes(self, parent, s):
-        
+        """
+        :type parent: List[int]
+        :type s: str
+        :rtype: List[int]
+        """
         def iter_dfs():
             lookup = [[] for _ in range(26)]
             result = [1]*len(parent)
@@ -29,10 +34,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # dfs, hash table
 class Solution2(object):
     def findSubtreeSizes(self, parent, s):
-        
+        """
+        :type parent: List[int]
+        :type s: str
+        :rtype: List[int]
+        """
         def dfs(u):
             lookup[ord(s[u])-ord('a')].append(u)
             for v in adj[u]:

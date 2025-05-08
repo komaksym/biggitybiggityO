@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -14,7 +15,11 @@ import collections
 # bfs solution
 class Solution(object):
     def flipEquiv(self, root1, root2):
-        
+        """
+        :type root1: TreeNode
+        :type root2: TreeNode
+        :rtype: bool
+        """
         dq1, dq2 = collections.deque([root1]), collections.deque([root2])
         while dq1 and dq2:
             node1, node2 = dq1.pop(), dq2.pop()
@@ -32,10 +37,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # iterative dfs solution
 class Solution2(object):
     def flipEquiv(self, root1, root2):
-        
+        """
+        :type root1: TreeNode
+        :type root2: TreeNode
+        :rtype: bool
+        """
         stk1, stk2 = [root1], [root2]
         while stk1 and stk2:
             node1, node2 = stk1.pop(), stk2.pop()
@@ -53,10 +63,15 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # recursive dfs solution
 class Solution3(object):
     def flipEquiv(self, root1, root2):
-        
+        """
+        :type root1: TreeNode
+        :type root2: TreeNode
+        :rtype: bool
+        """
         if not root1 and not root2:
             return True
         if not root1 or not root2 or root1.val != root2.val:

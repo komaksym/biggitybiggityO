@@ -1,8 +1,12 @@
 # Time:  O(n!)
+# Space: O(n)
 
 class Solution(object):
     def totalNQueens(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def dfs(row):
             if row == n:
                 return 1

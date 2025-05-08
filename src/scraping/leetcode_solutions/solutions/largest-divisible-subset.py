@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def largestDivisibleSubset(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         if not nums:
             return []
 

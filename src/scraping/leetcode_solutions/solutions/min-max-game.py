@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # simulation, optimized from solution2
 class Solution(object):
     def minMaxGame(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         n = len(nums)
         while n != 1:
             new_q = []
@@ -14,10 +18,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # simulation
 class Solution2(object):
     def minMaxGame(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         q = nums[:]
         while len(q) != 1:
             new_q = []

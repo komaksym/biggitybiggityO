@@ -1,9 +1,14 @@
 # Time:  O(n + q)
+# Space: O(n)
 
 # prefix sum
 class Solution(object):
     def vowelStrings(self, words, queries):
-        
+        """
+        :type words: List[str]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         VOWELS = {'a', 'e', 'i', 'o', 'u'}
         prefix = [0]*(len(words)+1)
         for i, w in enumerate(words):

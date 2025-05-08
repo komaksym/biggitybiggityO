@@ -1,8 +1,12 @@
 # Time:  O((R * C)^2)
+# Space: O(1)
 
 class Solution(object):
     def candyCrush(self, board):
-        
+        """
+        :type board: List[List[int]]
+        :rtype: List[List[int]]
+        """
         R, C = len(board), len(board[0])
         changed = True
 

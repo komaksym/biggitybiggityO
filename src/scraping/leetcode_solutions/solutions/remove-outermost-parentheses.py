@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def removeOuterParentheses(self, S):
-        
+        """
+        :type S: str
+        :rtype: str
+        """
         deep = 1
         result, cnt = [], 0
         for c in S:

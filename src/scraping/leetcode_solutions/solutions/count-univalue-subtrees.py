@@ -1,8 +1,9 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
-   
-   
+    # @param {TreeNode} root
+    # @return {integer}
     def countUnivalSubtrees(self, root):
         [is_uni, count] = self.isUnivalSubtrees(root, 0)
         return count

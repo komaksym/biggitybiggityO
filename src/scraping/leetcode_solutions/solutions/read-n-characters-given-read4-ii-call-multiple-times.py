@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 def read4(buf):
     global file_content
@@ -25,18 +26,22 @@ class Solution(object):
         self.__n4 = 0
 
     def read(self, buf, n):
-        
+        """
+        :type buf: Destination buffer (List[str])
+        :type n: Maximum number of characters to read (int)
+        :rtype: The number of characters read (int)
+        """
         i = 0
         while i < n:
-            if self.__i4 < self.__n4: 
+            if self.__i4 < self.__n4:  # Any characters in buf4.
                 buf[i] = self.__buf4[self.__i4]
                 i += 1
                 self.__i4 += 1
             else:
-                self.__n4 = read4(self.__buf4) 
+                self.__n4 = read4(self.__buf4)  # Read more characters.
                 if self.__n4:
                     self.__i4 = 0
-                else: 
+                else:  # Buffer has been empty.
                     break
 
         return i

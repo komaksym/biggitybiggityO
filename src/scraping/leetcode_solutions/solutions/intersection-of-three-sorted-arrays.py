@@ -1,9 +1,15 @@
 from functools import reduce
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def arraysIntersection(self, arr1, arr2, arr3):
-        
+        """
+        :type arr1: List[int]
+        :type arr2: List[int]
+        :type arr3: List[int]
+        :rtype: List[int]
+        """
         result = []
         i, j, k = 0, 0, 0
         while i != len(arr1) and j != len(arr2) and k != len(arr3):
@@ -24,8 +30,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def arraysIntersection(self, arr1, arr2, arr3):
-        
+        """
+        :type arr1: List[int]
+        :type arr2: List[int]
+        :type arr3: List[int]
+        :rtype: List[int]
+        """
         intersect = reduce(set.intersection, list(map(set, [arr2, arr3])))
         return [x for x in arr1 if x in intersect]

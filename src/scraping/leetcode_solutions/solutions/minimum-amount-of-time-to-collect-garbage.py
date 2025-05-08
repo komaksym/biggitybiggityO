@@ -1,9 +1,14 @@
 # Time:  O(n * l), l = max(len(g) for g in garbage) = O(10)
+# Space: O(1)
 
 # simulation, prefix sum
 class Solution(object):
     def garbageCollection(self, garbage, travel):
-        
+        """
+        :type garbage: List[str]
+        :type travel: List[int]
+        :rtype: int
+        """
         result = 0
         lookup = {}
         for i in range(len(garbage)):
@@ -17,10 +22,15 @@ class Solution(object):
 
 
 # Time:  O(n * l), l = max(len(g) for g in garbage) = O(10)
+# Space: O(1)
 # simulation, prefix sum
 class Solution2(object):
     def garbageCollection(self, garbage, travel):
-        
+        """
+        :type garbage: List[str]
+        :type travel: List[int]
+        :rtype: int
+        """
         result = 0
         for t in 'MPG':
             curr = 0

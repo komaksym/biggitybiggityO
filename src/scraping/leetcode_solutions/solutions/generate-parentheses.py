@@ -1,9 +1,13 @@
 # Time:  O(4^n / n^(3/2)) ~= Catalan numbers
+# Space: O(n)
 
 # iterative solution
 class Solution(object):
     def generateParenthesis(self, n):
-        
+        """
+        :type n: int
+        :rtype: List[str]
+        """
         result, curr = [], []
         stk = [(1, (n, n))]
         while stk:
@@ -28,10 +32,14 @@ class Solution(object):
 
 
 # Time:  O(4^n / n^(3/2)) ~= Catalan numbers
+# Space: O(n)
 # recursive solution
 class Solution2(object):
     def generateParenthesis(self, n):
-        
+        """
+        :type n: int
+        :rtype: List[str]
+        """
         def generateParenthesisRecu(left, right, curr, result):
             if left == 0 and right == 0:
                 result.append("".join(curr))

@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -9,7 +10,10 @@ class ListNode(object):
 
 class Solution(object):
     def nextLargerNodes(self, head):
-        
+        """
+        :type head: ListNode
+        :rtype: List[int]
+        """
         result, stk = [], []
         while head:
             while stk and stk[-1][1] < head.val:

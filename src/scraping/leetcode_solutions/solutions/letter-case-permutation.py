@@ -1,8 +1,12 @@
 # Time:  O(n * 2^n)
+# Space: O(n * 2^n)
 
 class Solution(object):
     def letterCasePermutation(self, S):
-        
+        """
+        :type S: str
+        :rtype: List[str]
+        """
         result = [[]]
         for c in S:
             if c.isalpha():

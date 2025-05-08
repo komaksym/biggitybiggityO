@@ -1,11 +1,17 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def minTime(self, n, edges, hasApple):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type hasApple: List[bool]
+        :rtype: int
+        """
         graph = collections.defaultdict(list)
         for u, v in edges:
             graph[u].append(v)
@@ -32,9 +38,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution_Recu(object):
     def minTime(self, n, edges, hasApple):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type hasApple: List[bool]
+        :rtype: int
+        """
         def dfs(graph, par, node, hasApple):
             result, extra = 0, int(hasApple[node])
             for nei in graph[node]:
@@ -53,9 +65,15 @@ class Solution_Recu(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def minTime(self, n, edges, hasApple):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type hasApple: List[bool]
+        :rtype: int
+        """
         graph = collections.defaultdict(list)
         for u, v in edges:
             graph[u].append(v)
@@ -86,9 +104,15 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2_Recu(object):
     def minTime(self, n, edges, hasApple):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type hasApple: List[bool]
+        :rtype: int
+        """
         def dfs(graph, par, node, has_subtree):
             result, extra = 0, int(hasApple[node])
             for nei in graph[node]:

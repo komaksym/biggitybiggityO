@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def nextPermutation(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
         k, l = -1, 0
         for i in reversed(range(len(nums)-1)):
             if nums[i] < nums[i+1]:
@@ -21,9 +25,13 @@ class Solution(object):
         
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def nextPermutation(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
         k, l = -1, 0
         for i in range(len(nums)-1):
             if nums[i] < nums[i+1]:

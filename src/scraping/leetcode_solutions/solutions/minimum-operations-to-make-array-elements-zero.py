@@ -1,9 +1,13 @@
 # Time:  O(qlogr)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def minOperations(self, queries):
-        
+        """
+        :type queries: List[List[int]]
+        :rtype: int
+        """
         result = 0
         for l, r in queries:
             total = 0

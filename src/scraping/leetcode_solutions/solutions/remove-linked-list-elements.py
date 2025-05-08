@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -7,9 +8,9 @@ class ListNode(object):
 
 
 class Solution(object):
-   
-   
-   
+    # @param {ListNode} head
+    # @param {integer} val
+    # @return {ListNode}
     def removeElements(self, head, val):
         dummy = ListNode(float("-inf"))
         dummy.next = head

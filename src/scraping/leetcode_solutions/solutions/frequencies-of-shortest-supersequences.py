@@ -1,4 +1,5 @@
 # Time:  O(n + k^2 * 2^k), k = len(indegree) <= 16
+# Space: O(k^2)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # bitmasks, topological sort
 class Solution(object):
     def supersequences(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[List[int]]
+        """
         def f(x):
             x = ord(x)-ord('a')
             if char_to_int[x] == -1:

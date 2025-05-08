@@ -1,13 +1,17 @@
 # Time:  O(logc) = O(1)
+# Space: O(c) = O(1)
 
 import bisect
 
 
 class Solution(object):
     def nextBeautifulNumber(self, n):
-        
-       
-       
+        """
+        :type n: int
+        :rtype: int
+        """
+        # precomputed by generating all balanced's permutations in solution2
+        # candidates = sorted(set(int("".join(perm)) for x in [1, 22, 122, 333, 1333, 4444, 14444, 22333, 55555, 122333, 155555, 224444, 666666] for perm in itertools.permutations(str(x)))) + [1224444]
         candidates = [     1,     22,    122,    212,    221,    333  , 1333,   3133,   3313,   3331,
                         4444,  14444,  22333,  23233,  23323,  23332,  32233,  32323,  32332,  33223,
                        33232,  33322,  41444,  44144,  44414,  44441,  55555, 122333, 123233, 123323,
@@ -23,9 +27,13 @@ class Solution(object):
 
 
 # Time:  O(l * c) = O(1), c is the count of all balanced's permutations, l is the max length of permutations
+# Space: O(l * b) = O(1), b is the count of balanced
 class Solution2(object):
     def nextBeautifulNumber(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def next_permutation(nums, begin, end):
             def reverse(nums, begin, end):
                 left, right = begin, end-1
@@ -50,7 +58,7 @@ class Solution2(object):
             reverse(nums, k+1, end)
             return True
 
-       
+        # obtained by manually enumerating min number of permutations in each length
         balanced = [1,
                     22,
                     122, 333,
@@ -69,19 +77,23 @@ class Solution2(object):
             while True:
                 if x > s:
                     result = min(result, int("".join(x)))
-                if not next_permutation(x, 0, len(x)): 
+                if not next_permutation(x, 0, len(x)):  # distinct permutations
                     break
         return result
 
 
 # Time:  O(l * c) = O(1), c is the count of all balanced's permutations, l is the max length of permutations
+# Space: O(l * b) = O(1), b is the count of balanced
 import itertools
 
 
 class Solution3(object):
     def nextBeautifulNumber(self, n):
-        
-       
+        """
+        :type n: int
+        :rtype: int
+        """
+        # obtained by manually enumerating min number of permutations in each length
         balanced = [1,
                     22,
                     122, 333,
@@ -97,7 +109,7 @@ class Solution3(object):
             if len(x) > len(s):
                 result = min(result, int("".join(x)))
                 continue
-            for perm in itertools.permutations(x): 
+            for perm in itertools.permutations(x):  # not distinct permutations
                 if perm > s:
                     result = min(result, int("".join(perm)))
         return result

@@ -1,9 +1,14 @@
 # Time:  O(k * 3^n)
+# Space: O(2^n)
 
 # dp, submask enumeration
 class Solution(object):
     def distributeCookies(self, cookies, k):
-        
+        """
+        :type cookies: List[int]
+        :type k: int
+        :rtype: int
+        """
         total = [0]*(1<<len(cookies))
         for mask in range(1<<len(cookies)):
             total[mask] = sum(cookies[i] for i in range(len(cookies)) if mask&(1<<i))

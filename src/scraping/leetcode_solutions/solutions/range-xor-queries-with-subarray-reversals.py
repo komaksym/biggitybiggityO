@@ -1,4 +1,5 @@
 # Time:  O(n + qlogn)
+# Space: O(n)
 
 import random
 
@@ -95,7 +96,11 @@ def build(a, i, n):
 # treap
 class Solution_TLE(object):
     def getResults(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         def update(root, index, value):
             left, mid = split(root, index)
             mid, right = split(mid, 1)

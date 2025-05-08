@@ -1,11 +1,15 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 import collections
 
 
 class Solution(object):
     def shortestBridge(self, A):
-        
+        """
+        :type A: List[List[int]]
+        :rtype: int
+        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
 
         def get_islands(A):

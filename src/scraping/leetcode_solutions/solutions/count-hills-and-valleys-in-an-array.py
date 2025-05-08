@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # simulation, array
 class Solution(object):
     def countHillValley(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result, inc = 0, -1
         for i in range(len(nums)-1):
             if nums[i] < nums[i+1]:

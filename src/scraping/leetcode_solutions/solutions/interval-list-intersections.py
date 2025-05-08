@@ -1,4 +1,5 @@
 # Time:  O(m + n)
+# Space: O(1)
 
 # Definition for an interval.
 class Interval(object):
@@ -9,7 +10,11 @@ class Interval(object):
 
 class Solution(object):
     def intervalIntersection(self, A, B):
-        
+        """
+        :type A: List[Interval]
+        :type B: List[Interval]
+        :rtype: List[Interval]
+        """
         result = []
         i, j = 0, 0
         while i < len(A) and j < len(B):

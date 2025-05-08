@@ -2,10 +2,14 @@
 #                    n is the length of S,
 #                    w is the number of word,
 #                    l is the average length of word
+# Space: O(n)
 
 class Solution(object):
     def toGoatLatin(self, S):
-        
+        """
+        :type S: str
+        :rtype: str
+        """
         def convert(S):
             vowel = set('aeiouAEIOU')
             for i, word in enumerate(S.split(), 1):

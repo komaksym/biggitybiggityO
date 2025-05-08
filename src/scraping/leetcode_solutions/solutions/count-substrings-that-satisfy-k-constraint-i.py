@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # two pointers, sliding window
 class Solution(object):
     def countKConstraintSubstrings(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         result = cnt = left = 0
         for right in range(len(s)):
             cnt += int(s[right] == '1')

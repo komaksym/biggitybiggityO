@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n^2), used by Counter, this could be reduced to O(n) by skipping invalid input
 
 import collections
 import itertools
@@ -6,7 +7,10 @@ import itertools
 
 class Solution(object):
     def movesToChessboard(self, board):
-        
+        """
+        :type board: List[List[int]]
+        :rtype: int
+        """
         N = len(board)
         result = 0
         for count in (collections.Counter(list(map(tuple, board))), \

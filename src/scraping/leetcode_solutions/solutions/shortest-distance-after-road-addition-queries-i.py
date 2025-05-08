@@ -1,9 +1,14 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 # bfs
 class Solution(object):
     def shortestDistanceAfterQueries(self, n, queries):
-        
+        """
+        :type n: int
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         def bfs(u, v):
             adj[u].append(v)
             q = [u]
@@ -26,13 +31,18 @@ class Solution(object):
 
 
 # Time:  O(n^2 * logn)
+# Space: O(n^2)
 import heapq
 
 
 # dijkstra's algorithm
 class Solution2(object):
     def shortestDistanceAfterQueries(self, n, queries):
-        
+        """
+        :type n: int
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         def dijkstra(u, v):
             adj[u].append((v, 1))
             min_heap = [(dist[u], u)]

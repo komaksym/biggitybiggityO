@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # dp
 class Solution(object):
     def maxCoins(self, lane1, lane2):
-        
+        """
+        :type lane1: List[int]
+        :type lane2: List[int]
+        :rtype: int
+        """
         result = dp1 = dp12 = dp121 = float("-inf")
         for i in range(len(lane1)):
             dp1 = max(dp1, 0)+lane1[i]

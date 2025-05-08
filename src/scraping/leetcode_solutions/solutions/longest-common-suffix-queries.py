@@ -1,9 +1,14 @@
 # Time:  O((n + q) * l)
+# Space: O(t)
 
 # trie
 class Solution(object):
     def stringIndices(self, wordsContainer, wordsQuery):
-        
+        """
+        :type wordsContainer: List[str]
+        :type wordsQuery: List[str]
+        :rtype: List[int]
+        """
         INF = float("INF")
         class Trie(object):
             def __init__(self):

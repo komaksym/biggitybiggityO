@@ -1,8 +1,12 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def findFarmland(self, land):
-        
+        """
+        :type land: List[List[int]]
+        :rtype: List[List[int]]
+        """
         result = []
         for i in range(len(land)):
             for j in range(len(land[0])):

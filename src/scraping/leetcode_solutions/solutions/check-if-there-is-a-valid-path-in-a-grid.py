@@ -1,8 +1,12 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def hasValidPath(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: bool
+        """
         E, S, W, N = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         directions = [
             [W, E], [N, S],

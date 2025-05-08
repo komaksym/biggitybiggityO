@@ -1,9 +1,15 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # sort, greedy
 class Solution(object):
     def minDamage(self, power, damage, health):
-        
+        """
+        :type power: int
+        :type damage: List[int]
+        :type health: List[int]
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//b
         

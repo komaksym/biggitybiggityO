@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -12,7 +13,11 @@ class ListNode(object):
 
 class Solution(object):
     def mergeTwoLists(self, l1, l2):
-        
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
         curr = dummy = ListNode(0)
         while l1 and l2:
             if l1.val < l2.val:

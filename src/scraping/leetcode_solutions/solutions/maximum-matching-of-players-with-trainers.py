@@ -1,9 +1,14 @@
 # Time:  O(nlogn + mlogm)
+# Space: O(1)
 
 # greedy, sort
 class Solution(object):
     def matchPlayersAndTrainers(self, players, trainers):
-        
+        """
+        :type players: List[int]
+        :type trainers: List[int]
+        :rtype: int
+        """
         players.sort()
         trainers.sort()
         result = 0

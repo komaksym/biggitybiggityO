@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -11,7 +12,10 @@ class TreeNode(object):
 # dfs solution with stack
 class Solution(object):
     def balanceBST(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         def inorderTraversal(root):
             result, stk = [], [(root, False)]
             while stk:
@@ -50,10 +54,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # dfs solution with recursion
 class Solution2(object):
     def balanceBST(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         def inorderTraversalHelper(node, arr):
             if not node:
                 return

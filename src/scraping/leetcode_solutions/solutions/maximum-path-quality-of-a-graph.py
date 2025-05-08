@@ -3,7 +3,12 @@
 
 class Solution(object):
     def maximalPathQuality(self, values, edges, maxTime):
-        
+        """
+        :type values: List[int]
+        :type edges: List[List[int]]
+        :type maxTime: int
+        :rtype: int
+        """
         def iter_dfs(values, adj, maxTime):
             lookup, lookup2 = [0]*len(adj), set()
             result = 0
@@ -19,7 +24,7 @@ class Solution(object):
                         result = max(result, total)
                     stk.append((4, (u,)))
                     for v, t in reversed(adj[u]):
-                        if (u, v) in lookup2 or time < t: 
+                        if (u, v) in lookup2 or time < t:  # same directed edge won't be visited twice
                             continue
                         stk.append((3, (u, v)))
                         stk.append((1, (v, time-t, total)))
@@ -46,7 +51,12 @@ class Solution(object):
 # Time: O(|V| + |E|)
 class Solution2(object):
     def maximalPathQuality(self, values, edges, maxTime):
-        
+        """
+        :type values: List[int]
+        :type edges: List[List[int]]
+        :type maxTime: int
+        :rtype: int
+        """
         def dfs(values, adj, u, time, total, lookup, lookup2, result):
             lookup[u] += 1
             if lookup[u] == 1:
@@ -54,7 +64,7 @@ class Solution2(object):
             if not u:
                 result[0] = max(result[0], total)
             for v, t in adj[u]:
-                if (u, v) in lookup2 or time < t: 
+                if (u, v) in lookup2 or time < t:  # same directed edge won't be visited twice
                     continue
                 lookup2.add((u, v))
                 dfs(values, adj, v, time-t, total, lookup, lookup2, result)
@@ -74,14 +84,19 @@ class Solution2(object):
 # Time: O(|V| + |E|)
 class Solution3(object):
     def maximalPathQuality(self, values, edges, maxTime):
-        
+        """
+        :type values: List[int]
+        :type edges: List[List[int]]
+        :type maxTime: int
+        :rtype: int
+        """
         def dfs(values, adj, u, time, total, lookup, lookup2):
             lookup[u] += 1
             if lookup[u] == 1:
                 total += values[u]
             result = total if not u else 0
             for v, t in adj[u]:
-                if (u, v) in lookup2 or time < t: 
+                if (u, v) in lookup2 or time < t:  # same directed edge won't be visited twice
                     continue
                 lookup2.add((u, v))
                 result = max(result, dfs(values, adj, v, time-t, total, lookup, lookup2))

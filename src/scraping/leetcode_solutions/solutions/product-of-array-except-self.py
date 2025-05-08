@@ -1,8 +1,9 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
-   
-   
+    # @param {integer[]} nums
+    # @return {integer[]}
     def productExceptSelf(self, nums):
         if not nums:
             return []

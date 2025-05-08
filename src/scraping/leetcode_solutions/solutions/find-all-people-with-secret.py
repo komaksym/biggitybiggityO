@@ -1,11 +1,17 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def findAllPeople(self, n, meetings, firstPerson):
-        
+        """
+        :type n: int
+        :type meetings: List[List[int]]
+        :type firstPerson: int
+        :rtype: List[int]
+        """
         meetings.sort(key=lambda x: x[2])
         result = {0, firstPerson}
         adj = collections.defaultdict(list)
@@ -29,12 +35,18 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import collections
 
 
 class Solution2(object):
     def findAllPeople(self, n, meetings, firstPerson):
-        
+        """
+        :type n: int
+        :type meetings: List[List[int]]
+        :type firstPerson: int
+        :rtype: List[int]
+        """
         meetings.sort(key=lambda x: x[2])
         result = {0, firstPerson}
         adj = collections.defaultdict(list)
@@ -56,13 +68,15 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-class UnionFind(object): 
+# Space: O(n)
+class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -73,7 +87,7 @@ class UnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]: 
+        if self.rank[x] > self.rank[y]:  # union by rank
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -87,7 +101,12 @@ class UnionFind(object):
 
 class Solution3(object):
     def findAllPeople(self, n, meetings, firstPerson):
-        
+        """
+        :type n: int
+        :type meetings: List[List[int]]
+        :type firstPerson: int
+        :rtype: List[int]
+        """
         meetings.sort(key=lambda x: x[2])
         uf = UnionFind(n)
         uf.union_set(0, firstPerson)

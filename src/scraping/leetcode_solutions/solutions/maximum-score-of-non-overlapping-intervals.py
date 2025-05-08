@@ -1,4 +1,5 @@
 # Time:  O(nlogn + n * k^2)
+# Space: O(n * k^2)
 
 import bisect
 
@@ -6,7 +7,10 @@ import bisect
 # dp, binary search
 class Solution(object):
     def maximumWeight(self, intervals):
-        
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[int]
+        """
         K = 4
         lookup = {}
         for i, (l, r, w) in enumerate(intervals):
@@ -25,13 +29,17 @@ class Solution(object):
 
 
 # Time:  O(nlogn + n * k^2)
+# Space: O(n * k^2)
 import bisect
 
 
 # dp, binary search
 class Solution2(object):
     def maximumWeight(self, intervals):
-        
+        """
+        :type intervals: List[List[int]]
+        :rtype: List[int]
+        """
         K = 4
         lookup = {}
         for i, (l, r, w) in enumerate(intervals):

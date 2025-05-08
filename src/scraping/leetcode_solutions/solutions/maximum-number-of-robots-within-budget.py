@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,12 @@ import collections
 # sliding window, two pointers, mono deque
 class Solution(object):
     def maximumRobots(self, chargeTimes, runningCosts, budget):
-        
+        """
+        :type chargeTimes: List[int]
+        :type runningCosts: List[int]
+        :type budget: int
+        :rtype: int
+        """
         result = left = curr = 0
         dq = collections.deque()
         for right in range(len(chargeTimes)):
@@ -23,13 +29,19 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 import collections
 
 
 # sliding window, two pointers, mono deque
 class Solution2(object):
     def maximumRobots(self, chargeTimes, runningCosts, budget):
-        
+        """
+        :type chargeTimes: List[int]
+        :type runningCosts: List[int]
+        :type budget: int
+        :rtype: int
+        """
         result = left = curr = 0
         dq = collections.deque()
         for right in range(len(chargeTimes)):

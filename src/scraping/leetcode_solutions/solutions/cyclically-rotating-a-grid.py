@@ -1,4 +1,5 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 import fractions
 
@@ -6,7 +7,11 @@ import fractions
 # inplace rotation
 class Solution(object):
     def rotateGrid(self, grid, k):
-        
+        """
+        :type grid: List[List[int]]
+        :type k: int
+        :rtype: List[List[int]]
+        """
         def get_index(m, n, l):
             if l < m-1:
                 return l, 0
@@ -32,10 +37,15 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(1)
 # inplace rotation
 class Solution2(object):
     def rotateGrid(self, grid, k):
-        
+        """
+        :type grid: List[List[int]]
+        :type k: int
+        :rtype: List[List[int]]
+        """
         def get_index(m, n, l):
             if l < m-1:
                 return l, 0

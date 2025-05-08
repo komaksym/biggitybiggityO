@@ -1,11 +1,15 @@
 # Time:  O(n^4)
+# Space: O(n)
 
 import itertools
 
 
 class Solution(object):
     def ambiguousCoordinates(self, S):
-        
+        """
+        :type S: str
+        :rtype: List[str]
+        """
         def make(S, i, n):
             for d in range(1, n+1):
                 left = S[i:i+d]

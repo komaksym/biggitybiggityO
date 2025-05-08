@@ -1,8 +1,13 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 class Solution(object):
     def bestCoordinate(self, towers, radius):
-        
+        """
+        :type towers: List[List[int]]
+        :type radius: int
+        :rtype: List[int]
+        """
         min_x = min(towers, key=lambda x:x[0])[0]
         max_x = max(towers, key=lambda x:x[0])[0]
         min_y = min(towers, key=lambda x:x[1])[1]

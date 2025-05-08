@@ -1,9 +1,13 @@
 # Time:  O(logn)
+# Space: O(logn)
 
 # constructive algorithms, greedy
 class Solution(object):
     def closestFair(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         digits = list(map(int, str(n)))
         result = []
         if len(digits)%2 == 0:            

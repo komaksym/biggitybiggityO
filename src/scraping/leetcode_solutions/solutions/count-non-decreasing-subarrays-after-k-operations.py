@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # mono deque, two pointers, sliding window
 class Solution(object):
     def countNonDecreasingSubarrays(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = cnt = 0
         dq = collections.deque()
         right = len(nums)-1

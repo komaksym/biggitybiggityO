@@ -1,11 +1,16 @@
 # Time:  O(n * S)
+# Space: O(S)
 
 import collections
 
 
 class Solution(object):
     def findTargetSumWays(self, nums, S):
-        
+        """
+        :type nums: List[int]
+        :type S: int
+        :rtype: int
+        """
         def subsetSum(nums, S):
             dp = collections.defaultdict(int)
             dp[0] = 1

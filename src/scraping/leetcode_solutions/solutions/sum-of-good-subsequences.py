@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 from functools import reduce
@@ -7,7 +8,10 @@ from functools import reduce
 # freq table, dp
 class Solution(object):
     def sumOfGoodSubsequences(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         dp = collections.defaultdict(int)
         cnt = collections.defaultdict(int)

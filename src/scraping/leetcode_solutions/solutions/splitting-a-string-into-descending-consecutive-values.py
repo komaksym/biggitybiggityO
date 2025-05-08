@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def splitString(self, s):
-        
+        """
+        :type s: str
+        :rtype: bool
+        """
         def backtracking(s, i, num, cnt):
             if i == len(s):
                 return cnt >= 2

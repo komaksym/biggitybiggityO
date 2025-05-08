@@ -1,11 +1,15 @@
 # Time:  O(n!)
+# Space: O(n^2)
 
 import collections
 
 
 class Solution(object):
     def numSquarefulPerms(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         def dfs(candidate, x, left, count, result):
             count[x] -= 1
             if left == 0:

@@ -1,9 +1,13 @@
 # Time:  O(1)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def findLatestTime(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         result = list(s)
         if result[0] == '?': 
             result[0] = '1' if result[1] == '?' or result[1] <= '1' else '0'

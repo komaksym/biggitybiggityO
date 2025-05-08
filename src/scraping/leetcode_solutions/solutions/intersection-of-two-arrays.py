@@ -1,8 +1,13 @@
 # Time:  O(m + n)
+# Space: O(min(m, n))
 
 class Solution(object):
     def intersection(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
         if len(nums1) > len(nums2):
             return self.intersection(nums2, nums1)
 
@@ -19,15 +24,24 @@ class Solution(object):
         return res
 
     def intersection2(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
         return list(set(nums1) & set(nums2))
 
 
 # Time:  O(max(m, n) * log(max(m, n)))
+# Space: O(1)
 # Binary search solution.
 class Solution2(object):
     def intersection(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
         if len(nums1) > len(nums2):
             return self.intersection(nums2, nums1)
 
@@ -54,10 +68,15 @@ class Solution2(object):
 
 
 # Time:  O(max(m, n) * log(max(m, n)))
+# Space: O(1)
 # Two pointers solution.
 class Solution3(object):
     def intersection(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
         nums1.sort(), nums2.sort()
         res = []
 

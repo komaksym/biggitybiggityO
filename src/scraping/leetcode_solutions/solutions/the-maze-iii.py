@@ -1,11 +1,17 @@
 # Time:  O(max(r, c) * wlogw)
+# Space: O(w^2)
 
 import heapq
 
 
 class Solution(object):
     def findShortestWay(self, maze, ball, hole):
-        
+        """
+        :type maze: List[List[int]]
+        :type ball: List[int]
+        :type hole: List[int]
+        :rtype: str
+        """
         ball, hole = tuple(ball), tuple(hole)
         dirs = {'u' : (-1, 0), 'r' : (0, 1), 'l' : (0, -1), 'd': (1, 0)}
 

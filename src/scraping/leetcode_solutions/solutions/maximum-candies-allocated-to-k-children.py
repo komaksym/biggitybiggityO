@@ -1,9 +1,14 @@
 # Time:  O(nlogr), r is max(candies)
+# Space: O(1)
 
 # binary search
 class Solution(object):
     def maximumCandies(self, candies, k):
-        
+        """
+        :type candies: List[int]
+        :type k: int
+        :rtype: int
+        """
         def check(x):
             return sum(c//x for c in candies) >= k
 

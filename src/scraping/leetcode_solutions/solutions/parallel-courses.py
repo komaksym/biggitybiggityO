@@ -1,11 +1,16 @@
 # Time:  O(|V| + |E|)
+# Space: O(|E|)
 
 import collections
 
 
 class Solution(object):
     def minimumSemesters(self, N, relations):
-        
+        """
+        :type N: int
+        :type relations: List[List[int]]
+        :rtype: int
+        """
         g = collections.defaultdict(list)
         in_degree = [0]*N
         for x, y in relations:

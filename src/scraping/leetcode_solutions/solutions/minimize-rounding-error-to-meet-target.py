@@ -1,4 +1,5 @@
 # Time:  O(n) on average
+# Space: O(n)
 
 import math
 import random
@@ -6,7 +7,11 @@ import random
 
 class Solution(object):
     def minimizeError(self, prices, target):
-        
+        """
+        :type prices: List[str]
+        :type target: int
+        :rtype: str
+        """
         def kthElement(nums, k, compare=lambda a, b: a < b):
             def PartitionAroundPivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left
@@ -27,7 +32,7 @@ class Solution(object):
                     return
                 elif new_pivot_idx > k:
                     right = new_pivot_idx - 1
-                else: 
+                else:  # new_pivot_idx < k.
                     left = new_pivot_idx + 1
         
         errors = []

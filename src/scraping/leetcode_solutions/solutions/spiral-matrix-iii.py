@@ -1,8 +1,15 @@
 # Time:  O(max(m, n)^2)
+# Space: O(1)
 
 class Solution(object):
     def spiralMatrixIII(self, R, C, r0, c0):
-        
+        """
+        :type R: int
+        :type C: int
+        :type r0: int
+        :type c0: int
+        :rtype: List[List[int]]
+        """
         r, c = r0, c0
         result = [[r, c]]
         x, y, n, i = 0, 1, 0, 0

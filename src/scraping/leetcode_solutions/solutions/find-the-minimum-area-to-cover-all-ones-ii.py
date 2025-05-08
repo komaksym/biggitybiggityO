@@ -1,9 +1,13 @@
 # Time:  O(max(n, m)^2)
+# Space: O(max(n, m)^2)
 
 # dp
 class Solution(object):
     def minimumSum(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def count(dir1, dir2):
             dp = [[0]*len(grid[0]) for _ in range(len(grid))]
             up = [len(grid)]*len(grid[0])
@@ -76,30 +80,35 @@ class Solution(object):
 
 
 # Time:  O(n * m * log(max(n, m)) + max(n, m)^2)
+# Space: O(n * m * log(max(n, m)))
 # sparse table
 class Solution2(object):
     def minimumSum(self, grid):
-        
-       
-       
-       
-       
-                class SparseTable(object):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        # RMQ - Sparse Table
+        # Template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20D/genetic_sequences2.py3
+        # Time:  ctor:  O(NlogN) * O(fn)
+        #        query: O(fn)
+        # Space: O(NlogN)
+        class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn
                 self.bit_length = [0]
                 n = len(arr)
-                k = n.bit_length()-1 
+                k = n.bit_length()-1  # log2_floor(n)
                 for i in range(k+1):
                     self.bit_length.extend(i+1 for _ in range(min(1<<i, (n+1)-len(self.bit_length))))
                 self.st = [[0]*n for _ in range(k+1)]
                 self.st[0] = arr[:]
-                for i in range(1, k+1): 
+                for i in range(1, k+1):  # Time: O(NlogN) * O(fn)
                     for j in range((n-(1<<i))+1):
                         self.st[i][j] = fn(self.st[i-1][j], self.st[i-1][j+(1<<(i-1))])
         
-            def query(self, L, R): 
-                i = self.bit_length[R-L+1]-1 
+            def query(self, L, R):  # Time: O(fn)
+                i = self.bit_length[R-L+1]-1  # log2_floor(R-L+1)
                 return self.fn(self.st[i][L], self.st[i][R-(1<<i)+1])
 
         def minimumArea(min_i, max_i, min_j, max_j):
@@ -178,30 +187,35 @@ class Solution2(object):
 
 
 # Time:  O(n * m * log(max(n, m)) + max(n, m)^2)
+# Space: O(n * m * log(max(n, m)))
 # sparse table
 class Solution3(object):
     def minimumSum(self, grid):
-        
-       
-       
-       
-       
-                class SparseTable(object):
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
+        # RMQ - Sparse Table
+        # Template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20D/genetic_sequences2.py3
+        # Time:  ctor:  O(NlogN) * O(fn)
+        #        query: O(fn)
+        # Space: O(NlogN)
+        class SparseTable(object):
             def __init__(self, arr, fn):
                 self.fn = fn
                 self.bit_length = [0]
                 n = len(arr)
-                k = n.bit_length()-1 
+                k = n.bit_length()-1  # log2_floor(n)
                 for i in range(k+1):
                     self.bit_length.extend(i+1 for _ in range(min(1<<i, (n+1)-len(self.bit_length))))
                 self.st = [[0]*n for _ in range(k+1)]
                 self.st[0] = arr[:]
-                for i in range(1, k+1): 
+                for i in range(1, k+1):  # Time: O(NlogN) * O(fn)
                     for j in range((n-(1<<i))+1):
                         self.st[i][j] = fn(self.st[i-1][j], self.st[i-1][j+(1<<(i-1))])
         
-            def query(self, L, R): 
-                i = self.bit_length[R-L+1]-1 
+            def query(self, L, R):  # Time: O(fn)
+                i = self.bit_length[R-L+1]-1  # log2_floor(R-L+1)
                 return self.fn(self.st[i][L], self.st[i][R-(1<<i)+1])
 
         def minimumArea(min_i, max_i, min_j, max_j):
@@ -258,10 +272,14 @@ class Solution3(object):
 
 
 # Time:  O(max(n, m)^2 * log(max(n, m)))
+# Space: O(1)
 # prefix sum, binary search
 class Solution4(object):
     def minimumSum(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -347,10 +365,14 @@ class Solution4(object):
 
 
 # Time:  O(max(n, m)^2 * log(max(n, m)))
+# Space: O(n * m)
 # prefix sum, binary search
 class Solution5(object):
     def minimumSum(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -415,10 +437,14 @@ class Solution5(object):
 
 
 # Time:  O((n^2 + m^2 + 4 * n * m) * n * m) = O(max(n, m)^3 * min(n, m))
+# Space: O(1)
 # brute force
 class Solution6(object):
     def minimumSum(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def minimumArea(min_i, max_i, min_j, max_j):
             min_r, max_r, min_c, max_c = max_i+1, min_i-1, max_j+1, min_j-1
             for i in range(min_i, max_i+1):
@@ -469,10 +495,14 @@ class Solution6(object):
 
 
 # Time:  O((n^2 + m^2 + 4 * n * m) * n * m) = O(max(n, m)^3 * min(n, m))
+# Space: O(n * m)
 # brute force
 class Solution7(object):
     def minimumSum(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def minimumArea(min_i, max_i, min_j, max_j):
             min_r, max_r, min_c, max_c = max_i+1, min_i-1, max_j+1, min_j-1
             for i in range(min_i, max_i+1):

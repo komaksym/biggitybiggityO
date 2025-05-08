@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # sort
 class Solution(object):
     def canSortArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
         def popcount(x):
             return bin(x).count("1")
     
@@ -19,13 +23,17 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 import itertools
 
 
 # sort
 class Solution2(object):
     def canSortArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
         def popcount(x):
             return bin(x).count("1")
         
@@ -38,10 +46,14 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 # sort
 class Solution3(object):
     def canSortArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
         def popcount(x):
             return bin(x).count("1")
     

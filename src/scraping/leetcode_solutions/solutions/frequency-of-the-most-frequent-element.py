@@ -1,8 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 class Solution(object):
     def maxFrequency(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         left = 0
         nums.sort()
         for right in range(len(nums)):

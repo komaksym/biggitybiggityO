@@ -1,12 +1,16 @@
 # Time:  O(c * m * n + e), c is the number of colors
 #                        , e is the number of edges in adj, at most O(c^2)
+# Space: O(e)
 
 import collections
 
 
 class Solution(object):
     def isPrintable(self, targetGrid):
-        
+        """
+        :type targetGrid: List[List[int]]
+        :rtype: bool
+        """
         VISITING, VISITED = list(range(2))
         def has_cycle(adj, color, lookup):
             stk = [(1, color)]
@@ -19,7 +23,7 @@ class Solution(object):
                         if new_color in lookup:
                             if lookup[new_color] == VISITED:
                                 continue
-                            return True 
+                            return True  # VISITING
                         stk.append((1, new_color))
                 elif step == 2:
                     lookup[color] = VISITED
@@ -45,9 +49,13 @@ class Solution(object):
 
 # Time:  O(c * m * n + e), c is the number of colors
 #                        , e is the number of edges in adj, at most O(c^2)
+# Space: O(e)
 class Solution2(object):
     def isPrintable(self, targetGrid):
-        
+        """
+        :type targetGrid: List[List[int]]
+        :rtype: bool
+        """
         VISITING, VISITED = list(range(2))
         def has_cycle(adj, color, lookup):
             lookup[color] = VISITING

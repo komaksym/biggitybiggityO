@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 import itertools
@@ -8,7 +9,11 @@ import heapq
 # heap
 class Solution(object):
     def mostFrequentIDs(self, nums, freq):
-        
+        """
+        :type nums: List[int]
+        :type freq: List[int]
+        :rtype: List[int]
+        """
         result = []
         cnt = collections.Counter()
         max_heap = []
@@ -22,6 +27,7 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import collections
 import itertools
 from sortedcontainers import SortedList
@@ -30,7 +36,11 @@ from sortedcontainers import SortedList
 # sorted list
 class Solution2(object):
     def mostFrequentIDs(self, nums, freq):
-        
+        """
+        :type nums: List[int]
+        :type freq: List[int]
+        :rtype: List[int]
+        """
         result = []
         cnt = collections.Counter()
         cnt2 = collections.Counter()

@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 
 
 class Solution(object):
     def countVowelSubstrings(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         VOWELS = set("aeiou")
         k = 5
         def atLeastK(word, k):
@@ -29,12 +33,16 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 import collections
 
 
 class Solution2(object):
     def countVowelSubstrings(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         VOWELS = set("aeiou")
         k = 5
         def atMostK(word, k):

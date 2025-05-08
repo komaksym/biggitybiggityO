@@ -1,8 +1,9 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
-   
-   
+    # @param {integer[]} preorder
+    # @return {boolean}
     def verifyPreorder(self, preorder):
         low, i = float("-inf"), -1
         for p in preorder:
@@ -16,9 +17,10 @@ class Solution(object):
         return True
 
 # Time:  O(n)
+# Space: O(h)
 class Solution2(object):
-   
-   
+    # @param {integer[]} preorder
+    # @return {boolean}
     def verifyPreorder(self, preorder):
         low = float("-inf")
         path = []

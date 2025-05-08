@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -11,7 +12,9 @@ class TreeNode(object):
 class FindElements(object):
 
     def __init__(self, root):
-        
+        """
+        :type root: TreeNode
+        """
         def dfs(node, v, lookup):
             if not node:
                 return
@@ -24,5 +27,8 @@ class FindElements(object):
         dfs(root, 0, self.__lookup)
 
     def find(self, target):
-        
+        """
+        :type target: int
+        :rtype: bool
+        """
         return target in self.__lookup 

@@ -1,4 +1,5 @@
 # Time:  O(n) on average
+# Space: O(1)
 
 # quick select solution
 from random import randint
@@ -6,7 +7,11 @@ from random import randint
 
 class Solution(object):
     def kClosest(self, points, K):
-        
+        """
+        :type points: List[List[int]]
+        :type K: int
+        :rtype: List[List[int]]
+        """
         def dist(point):
             return point[0]**2 + point[1]**2
         
@@ -30,7 +35,7 @@ class Solution(object):
                     return
                 elif new_pivot_idx > k:
                     right = new_pivot_idx - 1
-                else: 
+                else:  # new_pivot_idx < k.
                     left = new_pivot_idx + 1
                     
         kthElement(points, K-1, lambda a, b: dist(a) < dist(b))
@@ -38,12 +43,17 @@ class Solution(object):
 
     
 # Time:  O(nlogk)
+# Space: O(k)
 import heapq
 
 
 class Solution2(object):
     def kClosest(self, points, K):
-        
+        """
+        :type points: List[List[int]]
+        :type K: int
+        :rtype: List[List[int]]
+        """
         def dist(point):
             return point[0]**2 + point[1]**2
         

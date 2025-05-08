@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # sliding window, two pointers
 class Solution(object):
     def takeCharacters(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         cnt = [0]*3
         for c in s:
             cnt[ord(c)-ord('a')] += 1

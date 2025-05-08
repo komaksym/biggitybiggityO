@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -9,7 +10,10 @@ class TreeNode(object):
 # dfs
 class Solution(object):
     def heightOfTree(self, root):
-        
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
         result = -1
         stk = [(root, 0)]
         while stk:
@@ -23,10 +27,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(w)
 # bfs
 class Solution2(object):
     def heightOfTree(self, root):
-        
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
         result = -1
         q = [root]
         while q:

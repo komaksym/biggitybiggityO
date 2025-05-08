@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -9,7 +10,10 @@ class TreeNode(object):
 
 class Solution(object):
     def increasingBST(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         def increasingBSTHelper(root, tail):
             if not root:
                 return tail

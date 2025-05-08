@@ -1,10 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # string
 class Solution(object):
     def strongPasswordCheckerII(self, password):
-        
-        SPECIAL = set("!
+        """
+        :type password: str
+        :rtype: bool
+        """
+        SPECIAL = set("!@#$%^&*()-+")
         return (len(password) >= 8 and
                 any(c.islower() for c in password) and
                 any(c.isupper() for c in password) and

@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def decodeAtIndex(self, S, K):
-        
+        """
+        :type S: str
+        :type K: int
+        :rtype: str
+        """
         i = 0
         for c in S:
             if c.isdigit():

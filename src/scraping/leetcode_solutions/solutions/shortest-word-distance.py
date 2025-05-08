@@ -1,10 +1,11 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
-   
-   
-   
-   
+    # @param {string[]} words
+    # @param {string} word1
+    # @param {string} word2
+    # @return {integer}
     def shortestDistance(self, words, word1, word2):
         dist = float("inf")
         i, index1, index2 = 0, None, None

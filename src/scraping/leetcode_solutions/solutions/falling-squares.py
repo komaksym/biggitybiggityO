@@ -1,4 +1,5 @@
 # Time:  O(n^2), could be improved to O(nlogn) in cpp by ordered map (bst)
+# Space: O(n)
 
 import bisect
 
@@ -13,8 +14,8 @@ class Solution(object):
             l = bisect.bisect_right(pos, left)
             r = bisect.bisect_left(pos, left+side)
             high = max(heights[l-1:r] or [0]) + side
-            pos[l:r] = [left, left+side]        
-            heights[l:r] = [high, heights[r-1]] 
+            pos[l:r] = [left, left+side]         # Time: O(n)
+            heights[l:r] = [high, heights[r-1]]  # Time: O(n)
             maxH = max(maxH, high)
             result.append(maxH)
         return result
@@ -103,7 +104,10 @@ class SegmentTree2(object):
                  query_fn=min,
                  update_fn=lambda x, y: y,
                  default_val=float("inf")):
-        
+        """
+        initialize your data structure here.
+        :type nums: List[int]
+        """
         N = len(nums)
         self.__original_length = N
         self.__tree_length = 2**(N.bit_length() + (N&(N-1) != 0))-1
@@ -170,6 +174,7 @@ class SegmentTree2(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 # Segment Tree solution.
 class Solution2(object):
     def fallingSquares(self, positions):
@@ -179,7 +184,7 @@ class Solution2(object):
             index.add(left+size-1)
         index = sorted(list(index))
         tree = SegmentTree(len(index), max, max, 0)
-       
+        # tree = SegmentTree2([0]*len(index), max, max, 0)
         max_height = 0
         result = []
         for left, size in positions:
@@ -192,6 +197,7 @@ class Solution2(object):
 
 
 # Time:  O(n * sqrt(n))
+# Space: O(n)
 class Solution3(object):
     def fallingSquares(self, positions):
         def query(heights, left, right, B, blocks, blocks_read):
@@ -243,9 +249,13 @@ class Solution3(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 class Solution4(object):
     def fallingSquares(self, positions):
-        
+        """
+        :type positions: List[List[int]]
+        :rtype: List[int]
+        """
         heights = [0] * len(positions)
         for i in range(len(positions)):
             left_i, size_i = positions[i]
@@ -254,7 +264,7 @@ class Solution4(object):
             for j in range(i+1, len(positions)):
                 left_j, size_j = positions[j]
                 right_j = left_j + size_j
-                if left_j < right_i and left_i < right_j: 
+                if left_j < right_i and left_i < right_j:  # intersect
                     heights[j] = max(heights[j], heights[i])
 
         result = []

@@ -1,10 +1,14 @@
 # Time:  ctor:   O(n),
 #        update: O(logn),
 #        query:  O(logn)
+# Space: O(n)
 
 class NumArray(object):
     def __init__(self, nums):
-        
+        """
+        initialize your data structure here.
+        :type nums: List[int]
+        """
         if not nums:
             return
         self.__nums = nums
@@ -17,13 +21,22 @@ class NumArray(object):
             self.__bit[i] -= self.__bit[last_i]
 
     def update(self, i, val):
-        
+        """
+        :type i: int
+        :type val: int
+        :rtype: int
+        """
         if val - self.__nums[i]:
             self.__add(i, val - self.__nums[i])
             self.__nums[i] = val
 
     def sumRange(self, i, j):
-        
+        """
+        sum of elements nums[i..j], inclusive.
+        :type i: int
+        :type j: int
+        :rtype: int
+        """
         return self.__sum(j) - self.__sum(i-1)
 
     def __sum(self, i):
@@ -44,13 +57,17 @@ class NumArray(object):
 # Time:  ctor:   O(n),
 #        update: O(logn),
 #        query:  O(logn)
+# Space: O(n)
 # Segment Tree solution.
 class NumArray2(object):
     def __init__(self, nums,
                  query_fn=lambda x, y: x+y,
                  update_fn=lambda x, y: y,
                  default_val=0):
-        
+        """
+        initialize your data structure here.
+        :type nums: List[int]
+        """
         N = len(nums)
         self.__original_length = N
         self.__tree_length = 2**(N.bit_length() + (N&(N-1) != 0))-1

@@ -1,8 +1,12 @@
 # Time:  O(n * s * 2^n), s is the number of subset of which sum equals to side length.
+# Space: O(n * (2^n + s))
 
 class Solution(object):
     def makesquare(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
         total_len = sum(nums)
         if total_len % 4:
             return False

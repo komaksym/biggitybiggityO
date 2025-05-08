@@ -1,4 +1,5 @@
 # Time:  O(1)
+# Space: O(1)
 
 class Solution(object):
     def convertToBase7(self, num):
@@ -13,7 +14,10 @@ class Solution(object):
 
 class Solution2(object):
     def convertToBase7(self, num):
-        
+        """
+        :type num: int
+        :rtype: str
+        """
         if num < 0:
             return '-' + self.convertToBase7(-num)
         if num < 7:

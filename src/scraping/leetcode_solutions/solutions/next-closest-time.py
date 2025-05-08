@@ -1,8 +1,12 @@
 # Time:  O(1)
+# Space: O(1)
 
 class Solution(object):
     def nextClosestTime(self, time):
-        
+        """
+        :type time: str
+        :rtype: str
+        """
         h, m = time.split(":")
         curr = int(h) * 60 + int(m)
         result = None

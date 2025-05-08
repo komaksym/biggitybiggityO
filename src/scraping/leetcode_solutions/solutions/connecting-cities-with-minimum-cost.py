@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -7,7 +8,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -21,7 +22,11 @@ class UnionFind(object):
 
 class Solution(object):
     def minimumCost(self, N, connections):
-        
+        """
+        :type N: int
+        :type connections: List[List[int]]
+        :rtype: int
+        """
         connections.sort(key = lambda x: x[2])
         union_find = UnionFind(N)
         result = 0

@@ -1,8 +1,13 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def placeWordInCrossword(self, board, word):
-        
+        """
+        :type board: List[List[str]]
+        :type word: str
+        :rtype: bool
+        """
         def get_val(mat, i, j, transposed):
             return mat[i][j] if not transposed else mat[j][i]
 
@@ -15,7 +20,7 @@ class Solution(object):
                 for row in get_vecs(board, transposed):
                     it, matched = direction(word), True
                     for c in row:
-                        if c == 
+                        if c == '#':
                             if next(it, None) is None and matched:
                                 return True
                             it, matched = direction(word), True
@@ -30,13 +35,18 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(m * n)
 class Solution2(object):
     def placeWordInCrossword(self, board, word):
-        
+        """
+        :type board: List[List[str]]
+        :type word: str
+        :rtype: bool
+        """
         words = [word, word[::-1]]
         for mat in (board, list(zip(*board))):
             for row in mat:
-                blocks = ''.join(row).split(
+                blocks = ''.join(row).split('#')
                 for s in blocks:
                     if len(s) != len(word):
                         continue

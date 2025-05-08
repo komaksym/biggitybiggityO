@@ -1,8 +1,12 @@
 # Time:  O(3^n)
+# Space: O(2^n)
 
 class Solution(object):
     def maxProduct(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def palindromic_subsequence_length(s, mask):
             result = 0
             left, right = 0, len(s)-1
@@ -23,11 +27,11 @@ class Solution(object):
         dp = [palindromic_subsequence_length(s, mask) for mask in range(1<<len(s))]
         result = 0
         for mask in range(len(dp)):
-            if dp[mask]*(len(s)-dp[mask]) <= result: 
+            if dp[mask]*(len(s)-dp[mask]) <= result:  # optimize
                 continue
-           
-           
-           
+            # submask enumeration:
+            # => sum(nCr(n, k) * 2^k for k in xrange(n+1)) = (1 + 2)^n = 3^n
+            # => Time: O(3^n), see https://cp-algorithms.com/algebra/all-submasks.html
             submask = inverse_mask = (len(dp)-1)^mask
             while submask:
                 result = max(result, dp[mask]*dp[submask])

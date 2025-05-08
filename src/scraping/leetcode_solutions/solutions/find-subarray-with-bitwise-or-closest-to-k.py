@@ -1,4 +1,5 @@
 # Time:  O(nlogr), r = max(nums)
+# Space: O(logr)
 
 # freq table, two pointers, sliding window, lc1521
 class BitCount(object):
@@ -36,7 +37,11 @@ class BitCount(object):
                     
 class Solution(object):
     def minimumDifference(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         count = BitCount(max(nums).bit_length())
         result, left = float("inf"), 0
         for right in range(len(nums)):
@@ -52,11 +57,16 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
+# Space: O(logr)
 # dp, lc1521
 class Solution2(object):
     def minimumDifference(self, nums, k):
-        
-        result, dp = float("inf"), set() 
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        result, dp = float("inf"), set()  # at most O(logr) dp states
         for x in nums:
             dp = {x}|{f|x for f in dp}
             for f in dp:

@@ -1,4 +1,5 @@
 # Time:  O(n * l)
+# Space: O(1)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # freq table
 class Solution(object):
     def removeAnagrams(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
         result = []
         prev = None
         for x in words:
@@ -19,13 +23,17 @@ class Solution(object):
 
 
 # Time:  O(n * llogl)
+# Space: O(l)
 import collections
 
 
 # sort
 class Solution2(object):
     def removeAnagrams(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
         result = []
         prev = None
         for x in words:
@@ -38,11 +46,15 @@ class Solution2(object):
 
 
 # Time:  O(n * llogl)
+# Space: O(l)
 import collections
 
 
 # sort
 class Solution3(object):
     def removeAnagrams(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[str]
+        """
         return [words[i] for i in range(len(words)) if i == 0 or sorted(words[i-1]) != sorted(words[i])]

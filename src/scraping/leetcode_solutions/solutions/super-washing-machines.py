@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def findMinMoves(self, machines):
-        
+        """
+        :type machines: List[int]
+        :rtype: int
+        """
         total = sum(machines)
         if total % len(machines): return -1
 

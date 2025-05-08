@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,12 @@ import collections
 # sort, freq table, two pointers, sliding window
 class Solution(object):
     def maxFrequency(self, nums, k, numOperations):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type numOperations: int
+        :rtype: int
+        """
         nums.sort()
         result = 0
         left, right = 0, -1
@@ -28,14 +34,20 @@ class Solution(object):
     
 
 # Time:  O(nlogn)
+# Space: O(n)
 import collections
 
 
 # sort, freq table, difference array, line sweep
 class Solution2(object):
     def maxFrequency(self, nums, k, numOperations):
-        
-        cnt = collections.defaultdict(int) 
+        """
+        :type nums: List[int]
+        :type k: int
+        :type numOperations: int
+        :rtype: int
+        """
+        cnt = collections.defaultdict(int)  # defaultdict is much faster than Counter
         for x in nums:
             cnt[x] += 1
         diff = defaultdict(int)

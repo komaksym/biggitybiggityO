@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result, left = 0, 0
         lookup = {}
         for right in range(len(s)):

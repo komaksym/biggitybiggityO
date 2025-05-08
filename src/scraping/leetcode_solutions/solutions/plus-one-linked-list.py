@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -9,7 +10,10 @@ class ListNode(object):
 # Two pointers solution.
 class Solution(object):
     def plusOne(self, head):
-        
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
         if not head:
             return None
 
@@ -35,9 +39,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def plusOne(self, head):
-        
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
         def reverseList(head):
             dummy = ListNode(0)
             curr = head

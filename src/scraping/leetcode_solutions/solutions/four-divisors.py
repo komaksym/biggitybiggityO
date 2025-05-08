@@ -1,8 +1,12 @@
 # Time:  O(n * sqrt(n))
+# Space: O(1)
 
 class Solution(object):
     def sumFourDivisors(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = 0
         for num in nums:
             facs, i = [], 1
@@ -22,12 +26,16 @@ class Solution(object):
 
 
 # Time:  O(n * sqrt(n))
+# Space: O(sqrt(n))
 import itertools
 
 
 class Solution2(object):
     def sumFourDivisors(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def factorize(x):
             result = []
             d = 2
@@ -47,7 +55,7 @@ class Solution2(object):
         for facs in map(factorize, nums):
             if len(facs) == 1 and facs[0][1] == 3:
                 p = facs[0][0]
-                result += (p**4-1)//(p-1) 
+                result += (p**4-1)//(p-1)  # p^0 + p^1 +p^2 +p^3
             elif len(facs) == 2 and facs[0][1] == facs[1][1] == 1:
                 p, q = facs[0][0], facs[1][0]
                 result += (1 + p) * (1 + q)

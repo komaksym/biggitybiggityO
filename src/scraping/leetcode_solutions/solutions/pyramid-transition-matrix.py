@@ -1,9 +1,14 @@
 # Time:  O((a^(b+1)-a)/(a-1)) = O(a^b) , a is the size of allowed,
 #                                        b is the length of bottom
+# Space: O((a^(b+1)-a)/(a-1)) = O(a^b)
 
 class Solution(object):
     def pyramidTransition(self, bottom, allowed):
-        
+        """
+        :type bottom: str
+        :type allowed: List[str]
+        :rtype: bool
+        """
         def pyramidTransitionHelper(bottom, edges, lookup):
             def dfs(bottom, edges, new_bottom, idx, lookup):
                 if idx == len(bottom)-1:

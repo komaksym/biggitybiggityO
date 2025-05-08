@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def findDerangement(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         M = 1000000007
         mul, total = 1, 0
         for i in reversed(range(n+1)):

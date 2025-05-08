@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def decodeCiphertext(self, encodedText, rows):
-        
+        """
+        :type encodedText: str
+        :type rows: int
+        :rtype: str
+        """
         cols = len(encodedText)//rows
         k = len(encodedText)
         for i in reversed(range(cols)):
@@ -26,9 +31,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def decodeCiphertext(self, encodedText, rows):
-        
+        """
+        :type encodedText: str
+        :type rows: int
+        :rtype: str
+        """
         cols = len(encodedText)//rows
         result = []
         for i in range(cols):

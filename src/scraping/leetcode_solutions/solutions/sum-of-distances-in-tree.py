@@ -1,11 +1,16 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def sumOfDistancesInTree(self, N, edges):
-        
+        """
+        :type N: int
+        :type edges: List[List[int]]
+        :rtype: List[int]
+        """
         def dfs(graph, node, parent, count, result):
             for nei in graph[node]:
                 if nei != parent:

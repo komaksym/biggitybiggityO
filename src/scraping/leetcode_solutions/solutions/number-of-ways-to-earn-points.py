@@ -1,9 +1,14 @@
 # Time:  O(n * t * c)
+# Space: O(t)
 
 # knapsack dp
 class Solution(object):
     def waysToReachTarget(self, target, types):
-        
+        """
+        :type target: int
+        :type types: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9+7
         dp = [0]*(target+1)
         dp[0] = 1
@@ -15,10 +20,15 @@ class Solution(object):
 
 
 # Time:  O(n * t * c)
+# Space: O(t)
 # knapsack dp
 class Solution2(object):
     def waysToReachTarget(self, target, types):
-        
+        """
+        :type target: int
+        :type types: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9+7
         dp = [0]*(target+1)
         dp[0] = 1

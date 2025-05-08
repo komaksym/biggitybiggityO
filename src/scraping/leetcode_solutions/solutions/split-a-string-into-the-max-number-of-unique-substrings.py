@@ -1,8 +1,12 @@
 # Time:  O(n * 2^(n - 1))
+# Space: O(n)
 
 class Solution(object):
     def maxUniqueSplit(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def popcount(n):
             count = 0
             while n:
@@ -22,7 +26,7 @@ class Solution(object):
                 curr.append(s[i])
                 if (mask&base) or base == 0:
                     if "".join(curr) in lookup:
-                        mask = (mask | (base-1)) + 1 if base else mask+1 
+                        mask = (mask | (base-1)) + 1 if base else mask+1  # pruning, try next mask without base
                         break
                     lookup.add("".join(curr))
                     curr = []

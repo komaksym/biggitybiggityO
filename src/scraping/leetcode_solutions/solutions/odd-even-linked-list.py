@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def oddEvenList(self, head):
-        
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
         if head:
             odd_tail, cur = head, head.__next__
             while cur and cur.__next__:

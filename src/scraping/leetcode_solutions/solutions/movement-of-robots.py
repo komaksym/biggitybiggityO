@@ -1,10 +1,16 @@
 from functools import reduce
 # Time:  O(nlogn)
+# Space: O(1)
 
 # sort, math
 class Solution(object):
     def sumDistance(self, nums, s, d):
-        
+        """
+        :type nums: List[int]
+        :type s: str
+        :type d: int
+        :rtype: int
+        """
         MOD = 10**9+7
         for i in range(len(nums)):
             nums[i] += d if s[i] == 'R' else -d

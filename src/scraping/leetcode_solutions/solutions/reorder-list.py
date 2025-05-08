@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -10,8 +11,8 @@ class ListNode(object):
             return "{} -> {}".format(self.val, repr(self.__next__))
 
 class Solution(object):
-   
-   
+    # @param head, a ListNode
+    # @return nothing
     def reorderList(self, head):
         if head == None or head.__next__ == None:
             return head

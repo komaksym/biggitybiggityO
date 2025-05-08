@@ -1,4 +1,5 @@
 # Time:  O(|V| + |E|)
+# Space: O(|V|)
 
 import heapq
 
@@ -6,7 +7,11 @@ import heapq
 # graph
 class Solution(object):
     def maximumScore(self, scores, edges):
-        
+        """
+        :type scores: List[int]
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def find_top3(scores, x, top3):
             heapq.heappush(top3, (scores[x], x))
             if len(top3) > 3:

@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -7,7 +8,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -21,7 +22,11 @@ class UnionFind(object):
 
 class Solution(object):
     def earliestAcq(self, logs, N):
-        
+        """
+        :type logs: List[List[int]]
+        :type N: int
+        :rtype: int
+        """
         logs.sort()
         union_find = UnionFind(N)
         for t, a, b in logs:

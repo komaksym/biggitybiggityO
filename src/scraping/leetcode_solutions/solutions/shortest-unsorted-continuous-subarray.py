@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def findUnsortedSubarray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         n = len(nums)
         left, right = -1, -2
         min_from_right, max_from_left = nums[-1], nums[0]
@@ -14,11 +18,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 class Solution2(object):
     def findUnsortedSubarray(self, nums):
-        
-        a = sorted(nums)
-        left, right = 0, len(nums) -1
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        a = sorted(nums) #sort the list
+        left, right = 0, len(nums) -1 #define left and right pointer
         while (nums[left] == a[left] or nums[right] == a[right]):
             if right - left <= 1:
                 return 0

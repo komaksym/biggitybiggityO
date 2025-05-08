@@ -1,9 +1,14 @@
 # Time:  O(n * k)
+# Space: O(k)
 
 # dp
 class Solution(object):
     def maximumLength(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = 0
         for i in range(k):
             dp = [0]*k

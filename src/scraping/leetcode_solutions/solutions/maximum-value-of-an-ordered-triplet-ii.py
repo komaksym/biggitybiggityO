@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # array
 class Solution(object):
     def maximumTripletValue(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         NEG_INF = float("-inf")
         result = 0
         mx_diff = mx = NEG_INF

@@ -1,4 +1,5 @@
 # Time:  O(25 * l * (n + q))
+# Space: O(25 * l * n)
 
 import string
 from functools import reduce
@@ -7,8 +8,12 @@ from functools import reduce
 # hash
 class Solution(object):
     def twoEditWords(self, queries, dictionary):
-        
-        MOD = (1<<64)-59 
+        """
+        :type queries: List[str]
+        :type dictionary: List[str]
+        :rtype: List[str]
+        """
+        MOD = (1<<64)-59  # largest 64-bit prime
         BASE = 113
         POW = [1]
         def add(a, b):
@@ -47,11 +52,16 @@ class Solution(object):
 
 
 # Time:  O(q * n * l)
+# Space: O(1)
 import itertools
 
 
 # brute force
 class Solution2(object):
     def twoEditWords(self, queries, dictionary):
-        
+        """
+        :type queries: List[str]
+        :type dictionary: List[str]
+        :rtype: List[str]
+        """
         return [q for q in queries if any(sum(c1 != c2 for c1, c2 in zip(q, d)) <= 2 for d in dictionary)]

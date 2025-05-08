@@ -1,8 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 class Solution(object):
     def eliminateMaximum(self, dist, speed):
-        
+        """
+        :type dist: List[int]
+        :type speed: List[int]
+        :rtype: int
+        """
         for i in range(len(dist)):
             dist[i] = (dist[i]-1)//speed[i]
         dist.sort()

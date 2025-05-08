@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def halvesAreAlike(self, s):
-        
+        """
+        :type s: str
+        :rtype: bool
+        """
         vowels = set("aeiouAEIOU")
         cnt1 = cnt2 = 0
         left, right = 0, len(s)-1

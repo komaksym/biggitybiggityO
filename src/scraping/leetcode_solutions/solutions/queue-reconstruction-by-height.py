@@ -1,8 +1,12 @@
 # Time:  O(n * sqrt(n))
+# Space: O(n)
 
 class Solution(object):
     def reconstructQueue(self, people):
-        
+        """
+        :type people: List[List[int]]
+        :rtype: List[List[int]]
+        """
         people.sort(key=lambda h_k: (-h_k[0], h_k[1]))
 
         blocks = [[]]
@@ -23,9 +27,13 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 class Solution2(object):
     def reconstructQueue(self, people):
-        
+        """
+        :type people: List[List[int]]
+        :rtype: List[List[int]]
+        """
         people.sort(key=lambda h_k1: (-h_k1[0], h_k1[1]))
         result = []
         for p in people:

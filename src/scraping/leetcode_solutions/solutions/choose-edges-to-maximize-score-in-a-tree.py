@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # iterative dfs, tree dp
 class Solution(object):
     def maxScore(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def iter_dfs():
             result = [(0, 0) for _ in range(len(adj))]
             stk = [(1, 0)]
@@ -30,10 +34,14 @@ class Solution(object):
 
     
 # Time:  O(n)
+# Space: O(n)
 # dfs, tree dp
 class Solution2(object):
     def maxScore(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def dfs(u):
             if not adj[u]:
                 return (0, 0)

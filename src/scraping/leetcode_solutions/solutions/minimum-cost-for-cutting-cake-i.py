@@ -1,9 +1,16 @@
 # Time:  O(mlogm + nlogn)
+# Space: O(1)
 
 # sort, greedy
 class Solution(object):
     def minimumCost(self, m, n, horizontalCut, verticalCut):
-        
+        """
+        :type m: int
+        :type n: int
+        :type horizontalCut: List[int]
+        :type verticalCut: List[int]
+        :rtype: int
+        """
         horizontalCut.sort()
         verticalCut.sort()
         result = 0
@@ -19,10 +26,17 @@ class Solution(object):
 
 
 # Time:  O(mlogm + nlogn)
+# Space: O(1)
 # sort, greedy
 class Solution2(object):
     def minimumCost(self, m, n, horizontalCut, verticalCut):
-        
+        """
+        :type m: int
+        :type n: int
+        :type horizontalCut: List[int]
+        :type verticalCut: List[int]
+        :rtype: int
+        """
         horizontalCut.sort(reverse=True)
         verticalCut.sort(reverse=True)
         result = i = j = 0
@@ -37,10 +51,17 @@ class Solution2(object):
 
 
 # Time:  O((m + n) * m^2 * n^2)
+# Space: O(m^2 * n^2)
 # memoization
 class Solution3(object):
     def minimumCost(self, m, n, horizontalCut, verticalCut):
-        
+        """
+        :type m: int
+        :type n: int
+        :type horizontalCut: List[int]
+        :type verticalCut: List[int]
+        :rtype: int
+        """
         def memoization(x1, y1, x2, y2):
             if (x1, y1) == (x2, y2):
                 return 0

@@ -1,4 +1,5 @@
 # Time:  O(o + k * eloge + n), k = len(set(original)), e is the number of edges reachable from a given node u
+# Space: O(o + k * v), v is the number of nodes reachable from a given node u
 
 import heapq
 
@@ -6,7 +7,14 @@ import heapq
 # dijkstra's algorithm, memoization
 class Solution(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         def dijkstra(start):
             best = {start:0}
@@ -43,10 +51,18 @@ class Solution(object):
 
 
 # Time:  O(o + 26^3 + n)
+# Space: O(o + 26^2)
 # Floyd-Warshall algorithm 
 class Solution2(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         def floydWarshall(dist):
             for k in range(len(dist)):

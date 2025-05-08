@@ -1,11 +1,16 @@
 # Time:  O(10! * n * l)
+# Space: O(n * l)
 
 import collections
 
 
 class Solution(object):
     def isSolvable(self, words, result):
-        
+        """
+        :type words: List[str]
+        :type result: str
+        :rtype: bool
+        """
         def backtracking(words, result, i, j, carry, lookup, used):
             if j == len(result):
                 return carry == 0

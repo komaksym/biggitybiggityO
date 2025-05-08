@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # dp
 class Solution(object):
     def maxScore(self, nums, x):
-        
+        """
+        :type nums: List[int]
+        :type x: int
+        :rtype: int
+        """
         dp = [float("-inf")]*2
         dp[nums[0]%2] = nums[0]
         for i in range(1, len(nums)):

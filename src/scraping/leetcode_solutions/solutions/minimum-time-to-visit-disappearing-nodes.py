@@ -1,5 +1,6 @@
 # Time:  O((|E| + |V|) * log|V|) = O(|E| * log|V|) by using binary heap,
 #        if we can further to use Fibonacci heap, it would be O(|E| + |V| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import heapq
 
@@ -7,7 +8,12 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def minimumTime(self, n, edges, disappear):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type disappear: List[int]
+        :rtype: List[int]
+        """
         INF = float("inf")
         def modified_dijkstra(start):
             best = [-1]*n
@@ -18,7 +24,7 @@ class Solution(object):
                 if curr != best[u]:
                     continue
                 for v, w in adj[u]: 
-                    if not curr+w < min(best[v] if best[v] != -1 else INF, disappear[v]): 
+                    if not curr+w < min(best[v] if best[v] != -1 else INF, disappear[v]):  # modified
                         continue
                     best[v] = curr+w
                     heapq.heappush(min_heap, (best[v], v))

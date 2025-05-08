@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h), h is height of binary tree
 
 class TreeNode(object):
     def __init__(self, x):
@@ -7,8 +8,8 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-   
-   
+    # @param root, a tree node
+    # @return an integer
     def minDepth(self, root):
         if root is None:
             return 0

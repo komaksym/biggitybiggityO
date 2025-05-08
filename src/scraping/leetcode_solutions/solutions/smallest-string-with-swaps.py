@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
@@ -9,7 +10,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -22,7 +23,11 @@ class UnionFind(object):
 
 class Solution(object):
     def smallestStringWithSwaps(self, s, pairs):
-        
+        """
+        :type s: str
+        :type pairs: List[List[int]]
+        :rtype: str
+        """
         union_find = UnionFind(len(s))
         for x,y in pairs: 
             union_find.union_set(x, y)
@@ -38,10 +43,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import itertools
 class Solution2(object):
     def smallestStringWithSwaps(self, s, pairs):
-        
+        """
+        :type s: str
+        :type pairs: List[List[int]]
+        :rtype: str
+        """
         def dfs(i, adj, lookup, component):
             lookup.add(i)
             component.append(i)

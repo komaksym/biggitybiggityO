@@ -1,10 +1,15 @@
 from functools import reduce
 # Time:  O(logb)
+# Space: O(1)
 
 # hash table, bitmasks, combinatorics
 class Solution(object):
     def numberCount(self, a, b):
-        
+        """
+        :type a: int
+        :type b: int
+        :rtype: int
+        """
         def popcount(x):
             return bin(x).count('1')
 
@@ -40,13 +45,18 @@ class Solution(object):
 
 
 # Time:  O(logb)
+# Space: O(logb)
 # hash table, bitmasks, combinatorics
 class Solution2(object):
     def numberCount(self, a, b):
-        
+        """
+        :type a: int
+        :type b: int
+        :rtype: int
+        """
         fact = [1]*2
         def nPr(n, k):
-            while len(fact) <= n: 
+            while len(fact) <= n:  # lazy initialization
                 fact.append(fact[-1]*len(fact))
             return fact[n]//fact[n-k]
         
@@ -69,10 +79,15 @@ class Solution2(object):
 
 
 # Time:  O(blogb)
+# Space: O(1)
 # brute force, hash table, bitmasks
 class Solution3(object):
     def numberCount(self, a, b):
-        
+        """
+        :type a: int
+        :type b: int
+        :rtype: int
+        """
         def check(x):
             lookup = 0
             while x:
@@ -86,8 +101,13 @@ class Solution3(object):
 
 
 # Time:  O(blogb)
+# Space: O(logb)
 # brute force, hash table
 class Solution4(object):
     def numberCount(self, a, b):
-        
+        """
+        :type a: int
+        :type b: int
+        :rtype: int
+        """
         return sum(len(set(str(x))) == len(str(x)) for x in range(a, b+1))

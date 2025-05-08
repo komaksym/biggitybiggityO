@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def longestValidParentheses(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def length(it, start, c):
             depth, longest = 0, 0
             for i in it:
@@ -21,9 +25,10 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
-   
-   
+    # @param s, a string
+    # @return an integer
     def longestValidParentheses(self, s):
         longest, last, indices = 0, -1, []
         for i in range(len(s)):

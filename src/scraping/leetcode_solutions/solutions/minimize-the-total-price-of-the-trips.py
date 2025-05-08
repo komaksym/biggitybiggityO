@@ -1,9 +1,16 @@
 # Time:  O(t * n)
+# Space: O(n)
 
 # iterative dfs, tree dp
 class Solution(object):
     def minimumTotalPrice(self, n, edges, price, trips):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type price: List[int]
+        :type trips: List[List[int]]
+        :rtype: int
+        """
         def iter_dfs(u, target):
             stk = [(1, (u, -1))]
             while stk:
@@ -63,10 +70,17 @@ class Solution(object):
     
 
 # Time:  O(t * n)
+# Space: O(n)
 # dfs, tree dp
 class Solution2(object):
     def minimumTotalPrice(self, n, edges, price, trips):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type price: List[int]
+        :type trips: List[List[int]]
+        :rtype: int
+        """
         def dfs(u, p, target):
             lookup[u] += 1
             if u == target:

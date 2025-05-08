@@ -1,11 +1,16 @@
 # Time:  O(m * n)
+# Space: O(m + n)
 
 import collections
 
 
 class Solution(object):
     def numTriplets(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: int
+        """
         def two_product(nums, i):
             count = 0
             lookup = collections.defaultdict(int)

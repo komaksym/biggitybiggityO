@@ -1,9 +1,14 @@
 # Time:  O(m * 2^n), n is the number of skills
 #                    m is the number of people
+# Space: O(2^n)
 
 class Solution(object):
     def smallestSufficientTeam(self, req_skills, people):
-        
+        """
+        :type req_skills: List[str]
+        :type people: List[List[str]]
+        :rtype: List[int]
+        """
         lookup = {v: i for i, v in enumerate(req_skills)}
         dp = {0: []}
         for i, p in enumerate(people):

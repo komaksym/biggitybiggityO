@@ -1,8 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 class Solution(object):
     def maxBoxesInWarehouse(self, boxes, warehouse):
-        
+        """
+        :type boxes: List[int]
+        :type warehouse: List[int]
+        :rtype: int
+        """
         boxes.sort(reverse=True)
         result = 0
         for h in boxes:
@@ -15,9 +20,14 @@ class Solution(object):
 
 
 # Time:  O(nlogn + m)
+# Space: O(1)
 class Solution2(object):
     def maxBoxesInWarehouse(self, boxes, warehouse):
-        
+        """
+        :type boxes: List[int]
+        :type warehouse: List[int]
+        :rtype: int
+        """
         boxes.sort()
         for i in range(1, len(warehouse)):
             warehouse[i] = min(warehouse[i], warehouse[i-1])

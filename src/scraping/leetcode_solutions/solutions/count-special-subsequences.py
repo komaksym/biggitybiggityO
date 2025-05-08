@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # freq table
 class Solution(object):
     def numberOfSubsequences(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         cnt = collections.defaultdict(int)
         result = 0
         for r in range(4, len(nums)-2):
@@ -19,13 +23,17 @@ class Solution(object):
 
 
 # Time:  O(n^2 * logr)
+# Space: O(n^2)
 import collections
 
 
 # freq table, number theory
 class Solution2(object):
     def numberOfSubsequences(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

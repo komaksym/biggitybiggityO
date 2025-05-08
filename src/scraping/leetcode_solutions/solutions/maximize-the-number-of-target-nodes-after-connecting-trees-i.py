@@ -1,12 +1,18 @@
 # Time:  O(nlogn + mlogm)
+# Space: O(n + m)
 
 # dfs, centroid decomposition, prefix sum
 class Solution(object):
     def maxTargetNodes(self, edges1, edges2, k):
-        
+        """
+        :type edges1: List[List[int]]
+        :type edges2: List[List[int]]
+        :type k: int
+        :rtype: List[int]
+        """
         def centroid_decomposition(adj, k):
             def dfs(u):
-               
+                # https://usaco.guide/plat/centroid
                 def find_subtree_size(u, p):
                     sizes[u] = 1
                     for v in adj[u]:
@@ -96,10 +102,16 @@ class Solution(object):
 
 
 # Time:  O((n + m) * k)
+# Space: O((n + m) * k)
 # dfs, tree dp
 class Solution2(object):
     def maxTargetNodes(self, edges1, edges2, k):
-        
+        """
+        :type edges1: List[List[int]]
+        :type edges2: List[List[int]]
+        :type k: int
+        :rtype: List[int]
+        """
         def tree_dp(adj, k):
             def dfs1(u, p):
                 for v in adj[u]:
@@ -149,10 +161,16 @@ class Solution2(object):
 
 
 # Time:  O(n^2 + m^2)
+# Space: O(n + m)
 # brute force, bfs
 class Solution3(object):
     def maxTargetNodes(self, edges1, edges2, k):
-        
+        """
+        :type edges1: List[List[int]]
+        :type edges2: List[List[int]]
+        :type k: int
+        :rtype: List[int]
+        """
         def bfs(u, adj, k):
             result = 0
             q = [(u, -1)]

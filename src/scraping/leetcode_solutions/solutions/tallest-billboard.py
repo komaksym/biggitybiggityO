@@ -1,11 +1,15 @@
 # Time:  O(n * 3^(n/2))
+# Space: O(3^(n/2))
 
 import collections
 
 
 class Solution(object):
     def tallestBillboard(self, rods):
-        
+        """
+        :type rods: List[int]
+        :rtype: int
+        """
         def dp(A):
             lookup = collections.defaultdict(int)
             lookup[0] = 0

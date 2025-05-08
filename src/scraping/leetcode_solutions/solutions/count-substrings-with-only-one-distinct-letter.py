@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def countLetters(self, S):
-        
+        """
+        :type S: str
+        :rtype: int
+        """
         result = len(S)
         left = 0
         for right in range(1, len(S)):

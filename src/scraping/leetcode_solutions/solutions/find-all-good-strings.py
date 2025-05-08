@@ -1,8 +1,15 @@
 # Time:  O(m * n)
+# Space: O(m)
 
 class Solution(object):
     def findGoodStrings(self, n, s1, s2, evil):
-        
+        """
+        :type n: int
+        :type s1: str
+        :type s2: str
+        :type evil: str
+        :rtype: int
+        """
         MOD = 10**9+7
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)

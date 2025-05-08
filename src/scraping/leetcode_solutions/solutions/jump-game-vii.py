@@ -1,9 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
 # dp with line sweep solution
 class Solution(object):
     def canReach(self, s, minJump, maxJump):
-        
+        """
+        :type s: str
+        :type minJump: int
+        :type maxJump: int
+        :rtype: bool
+        """
         dp = [False]*len(s)
         dp[0] = True
         cnt = 0
@@ -17,13 +23,19 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 import collections
 
 
 # bfs solution
 class Solution2(object):
     def canReach(self, s, minJump, maxJump):
-        
+        """
+        :type s: str
+        :type minJump: int
+        :type maxJump: int
+        :rtype: bool
+        """
         q = collections.deque([0])
         reachable = 0
         while q:

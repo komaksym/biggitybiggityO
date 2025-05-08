@@ -1,9 +1,14 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # sort, line sweep
 class Solution(object):
     def findMaximalUncoveredRanges(self, n, ranges):
-        
+        """
+        :type n: int
+        :type ranges: List[List[int]]
+        :rtype: List[List[int]]
+        """
         ranges.sort()
         covered = [[-1, -1]]
         for left, right in ranges:

@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # sort, line sweep
 class Solution(object):
     def minGroups(self, intervals):
-        
+        """
+        :type intervals: List[List[int]]
+        :rtype: int
+        """
         events = collections.Counter()
         for l, r in intervals:
             events[l] += 1

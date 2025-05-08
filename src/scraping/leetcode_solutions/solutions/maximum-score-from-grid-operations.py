@@ -1,15 +1,19 @@
 # Time:  O(n^3)
+# Space: O(n)
 
 # prefix sum, dp
 class Solution(object):
     def maximumScore(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         prefix = [0]*(len(grid)+1)
         for i in range(len(grid)):
             prefix[i+1] = prefix[i]+grid[i][0]
         result = 0
-       
-       
+        # dp[0][i]: the maximum score from 0 to the current column, and the current column has i black cells, without scoring the white cells of the current column
+        # dp[1][i]: the maximum score from 0 to the current column, and the current column has i black cells, with scoring the white cells of the current column
         dp = [[0]*(len(grid)+1) for _ in range(2)]
         for j in range(1, len(grid[0])):
             new_prefix = [0]*(len(grid)+1)
@@ -28,15 +32,19 @@ class Solution(object):
     
 
 # Time:  O(n^3)
+# Space: O(n)
 # prefix sum, dp
 class Solution2(object):
     def maximumScore(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         prefix = [0]*(len(grid)+1)
         for i in range(len(grid)):
             prefix[i+1] = prefix[i]+grid[i][0]
-       
-       
+        # dp[0][i]: the maximum score from 0 to the current column, and the current column has i black cells, without scoring the white cells of the current column
+        # dp[1][i]: the maximum score from 0 to the current column, and the current column has i black cells, with scoring the white cells of the current column
         dp = [[0]*(len(grid)+1) for _ in range(2)]
         for j in range(1, len(grid[0])):
             new_prefix = [0]*(len(grid)+1)

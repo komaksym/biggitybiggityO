@@ -1,9 +1,13 @@
 # Time:  O(n) ~ O(n^2), O(n) on average
+# Space: O(1)
 
 # Tri Partition (aka Dutch National Flag Problem) with virtual index solution
 class Solution(object):
     def rearrangeArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -27,7 +31,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
 
         def reversedTriPartitionWithVI(nums, val):
@@ -54,10 +58,14 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 # Sorting and reorder solution
 class Solution2(object):
     def rearrangeArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         nums.sort()
         mid = (len(nums)-1)//2
         nums[::2], nums[1::2] = nums[mid::-1], nums[:mid:-1]

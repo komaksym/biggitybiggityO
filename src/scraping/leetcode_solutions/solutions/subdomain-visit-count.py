@@ -1,11 +1,15 @@
 # Time:  O(n), is the length of cpdomains (assuming the length of cpdomains[i] is fixed)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def subdomainVisits(self, cpdomains):
-        
+        """
+        :type cpdomains: List[str]
+        :rtype: List[str]
+        """
         result = collections.defaultdict(int)
         for domain in cpdomains:
             count, domain = domain.split()

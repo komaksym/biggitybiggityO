@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import random
 
@@ -6,7 +7,10 @@ import random
 # array, quick select
 class Solution(object):
     def minimumCost(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -30,7 +34,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
 
         nth_element(nums, 1+(2-1), 1)
@@ -38,10 +42,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 # array
 class Solution2(object):
     def minimumCost(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def topk(a, k):
             result = [float("inf")]*k
             for x in a:

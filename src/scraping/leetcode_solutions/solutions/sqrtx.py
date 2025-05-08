@@ -1,8 +1,12 @@
 # Time:  O(logn)
+# Space: O(1)
 
 class Solution(object):
     def mySqrt(self, x):
-        
+        """
+        :type x: int
+        :rtype: int
+        """
         if x < 2:
             return x
 

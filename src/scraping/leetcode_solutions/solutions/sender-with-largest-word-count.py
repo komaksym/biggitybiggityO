@@ -1,4 +1,5 @@
 # Time:  O(n * l)
+# Space: O(n)
 
 import collections
 import itertools
@@ -7,7 +8,11 @@ import itertools
 # freq table
 class Solution(object):
     def largestWordCount(self, messages, senders):
-        
+        """
+        :type messages: List[str]
+        :type senders: List[str]
+        :rtype: str
+        """
         cnt = collections.Counter()
         for m, s in zip(messages, senders):
             cnt[s] += m.count(' ')+1

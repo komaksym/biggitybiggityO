@@ -1,8 +1,12 @@
 # Time:  O(loga)
+# Space: O(1)
 
 class Solution(object):
     def smallestFactorization(self, a):
-        
+        """
+        :type a: int
+        :rtype: int
+        """
         if a < 2:
             return a
         result, mul = 0, 1

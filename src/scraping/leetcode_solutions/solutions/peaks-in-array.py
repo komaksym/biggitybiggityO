@@ -1,12 +1,17 @@
 # Time:  O(n + qlogn)
+# Space: O(n)
 
 # bit, fenwick tree
 class Solution(object):
     def countOfPeaks(self, nums, queries):
-        
-        class BIT(object): 
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
+        class BIT(object):  # 0-indexed.
             def __init__(self, nums):
-                self.__bit = [0]*(len(nums)+1) 
+                self.__bit = [0]*(len(nums)+1)  # Extra one for dummy node.
                 for i in range(1, len(self.__bit)):
                     self.__bit[i] = nums[i-1] + self.__bit[i-1]
                 for i in reversed(range(1, len(self.__bit))):
@@ -14,13 +19,13 @@ class Solution(object):
                     self.__bit[i] -= self.__bit[last_i]
 
             def add(self, i, val):
-                i += 1 
+                i += 1  # Extra one for dummy node.
                 while i < len(self.__bit):
                     self.__bit[i] += val
                     i += (i & -i)
 
             def query(self, i):
-                i += 1 
+                i += 1  # Extra one for dummy node.
                 ret = 0
                 while i > 0:
                     ret += self.__bit[i]
@@ -48,22 +53,27 @@ class Solution(object):
 
 
 # Time:  O(nlogn + qlogn)
+# Space: O(n)
 # bit, fenwick tree
 class Solution2(object):
     def countOfPeaks(self, nums, queries):
-        
-        class BIT(object): 
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
+        class BIT(object):  # 0-indexed.
             def __init__(self, n):
-                self.__bit = [0]*(n+1) 
+                self.__bit = [0]*(n+1)  # Extra one for dummy node.
 
             def add(self, i, val):
-                i += 1 
+                i += 1  # Extra one for dummy node.
                 while i < len(self.__bit):
                     self.__bit[i] += val
                     i += (i & -i)
 
             def query(self, i):
-                i += 1 
+                i += 1  # Extra one for dummy node.
                 ret = 0
                 while i > 0:
                     ret += self.__bit[i]

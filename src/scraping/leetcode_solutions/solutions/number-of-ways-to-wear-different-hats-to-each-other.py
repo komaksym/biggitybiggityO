@@ -1,8 +1,12 @@
 # Time:  O(h * 2^n)
+# Space: O(2^n)
 
 class Solution(object):
     def numberWays(self, hats):
-        
+        """
+        :type hats: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9 + 7
         HAT_SIZE = 40
         hat_to_people = [[] for _ in range(HAT_SIZE)]

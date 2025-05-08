@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def secondHighest(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         first = second = -1
         for c in s:
             if not c.isdigit():

@@ -1,4 +1,5 @@
 # Time:  O(b^(d/2)), b is the branch factor of bfs, d is the result depth
+# Space: O(w * l), w is the number of words, l is the max length of words
 
 from collections import defaultdict
 from string import ascii_lowercase
@@ -6,7 +7,12 @@ from string import ascii_lowercase
 
 class Solution(object):
     def findLadders(self, beginWord, endWord, wordList):
-        
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordList: List[str]
+        :rtype: List[List[str]]
+        """
         def backtracking(tree, beginWord, word): 
             return [[beginWord]] if word == beginWord else [path + [word] for new_word in tree[word] for path in backtracking(tree, beginWord, new_word)]
 
@@ -36,9 +42,15 @@ class Solution(object):
 
 
 # Time:  O(b^d), b is the branch factor of bfs, d is the result depth
+# Space: O(w * l), w is the number of words, l is the max length of words
 class Solution2(object):
     def findLadders(self, beginWord, endWord, wordList):
-        
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordList: List[str]
+        :rtype: List[List[str]]
+        """
         dictionary = set(wordList)
         result, cur, visited, found, trace = [], [beginWord], set([beginWord]), False, defaultdict(list)
 

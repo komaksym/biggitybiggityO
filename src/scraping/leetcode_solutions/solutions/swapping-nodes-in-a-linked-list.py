@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -8,7 +9,11 @@ class ListNode(object):
 
 class Solution(object):
     def swapNodes(self, head, k):
-        
+        """
+        :type head: ListNode
+        :type k: int
+        :rtype: ListNode
+        """
         left, right, curr = None, None, head
         while curr:
             k -= 1

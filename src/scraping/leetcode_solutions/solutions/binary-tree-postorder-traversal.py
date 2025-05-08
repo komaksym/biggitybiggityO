@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -10,7 +11,10 @@ class TreeNode(object):
 # Morris Traversal Solution
 class Solution(object):
     def postorderTraversal(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
         dummy = TreeNode(0)
         dummy.left = root
         result, cur = [], dummy
@@ -43,10 +47,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # Stack Solution
 class Solution2(object):
     def postorderTraversal(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
         result, stack = [], [(root, False)]
         while stack:
             root, is_visited = stack.pop()

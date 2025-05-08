@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 class Solution(object):
     def triangleNumber(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = 0
         nums.sort()
         for i in reversed(range(2, len(nums))):
@@ -17,9 +21,13 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 class Solution2(object):
     def triangleNumber(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = 0
         nums.sort()
         for i in range(len(nums)-2):

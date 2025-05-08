@@ -1,11 +1,15 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 # fast exponentiation
 class Solution(object):
     def hasSameDigits(self, s):
-        
+        """
+        :type s: str
+        :rtype: bool
+        """
         def check(mod):
-            def decompose(x, mod): 
+            def decompose(x, mod):  # x = a * mod^cnt
                 cnt = 0
                 while x > 1 and x%mod == 0:
                     x //= mod
@@ -29,13 +33,17 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(1)
 LOOKUP = [[-1]*(5+1) for _ in range(5+1)]
 
 
 # lucas's theorem
 class Solution2(object):
     def hasSameDigits(self, s):
-        
+        """
+        :type s: str
+        :rtype: bool
+        """
         def nCr(n, r):
             if n-r < r:
                 r = n-r
@@ -47,7 +55,7 @@ class Solution2(object):
                 LOOKUP[n][r] = c
             return LOOKUP[n][r]
 
-       
+        # https://en.wikipedia.org/wiki/Lucas%27s_theorem
         def nCr_mod(n, r, mod):
             result = 1
             while n > 0 or r > 0:

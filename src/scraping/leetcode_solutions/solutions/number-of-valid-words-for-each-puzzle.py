@@ -1,9 +1,14 @@
 # Time:  O(n*l + m*L), m is the number of puzzles, L is the length of puzzles
 #                    , n is the number of words, l is the max length of words
+# Space: O(L!)
 
 class Solution(object):
     def findNumOfValidWords(self, words, puzzles):
-        
+        """
+        :type words: List[str]
+        :type puzzles: List[str]
+        :rtype: List[int]
+        """
         L = 7
         def search(node, puzzle, start, first, met_first):
             result = 0
@@ -34,13 +39,18 @@ class Solution(object):
 
 # Time:  O(m*2^(L-1) + n*(l+m)), m is the number of puzzles, L is the length of puzzles
 #                              , n is the number of words, l is the max length of words
+# Space: O(m*2^(L-1))
 import collections
 from functools import reduce
 
 
 class Solution2(object):
     def findNumOfValidWords(self, words, puzzles):
-        
+        """
+        :type words: List[str]
+        :type puzzles: List[str]
+        :rtype: List[int]
+        """
         L = 7
         lookup = collections.defaultdict(list)
         for i in range(len(puzzles)):

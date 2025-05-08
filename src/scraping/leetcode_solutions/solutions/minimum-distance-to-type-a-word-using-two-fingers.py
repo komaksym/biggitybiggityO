@@ -1,8 +1,12 @@
 # Time:  O(26n)
+# Space: O(26)
 
 class Solution(object):
     def minimumDistance(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         def distance(a, b):
             return abs(a//6 - b//6) + abs(a%6 - b%6)
 
@@ -14,9 +18,13 @@ class Solution(object):
 
 
 # Time:  O(52n)
+# Space: O(52)
 class Solution2(object):
     def minimumDistance(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         def distance(a, b):
             if -1 in [a, b]:
                 return 0

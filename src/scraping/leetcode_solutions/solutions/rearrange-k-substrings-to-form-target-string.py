@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,12 @@ import collections
 # freq table
 class Solution(object):
     def isPossibleToRearrange(self, s, t, k):
-        
+        """
+        :type s: str
+        :type t: str
+        :type k: int
+        :rtype: bool
+        """
         cnt = collections.defaultdict(int)
         l = len(s)//k
         for i in range(0, len(s), l):

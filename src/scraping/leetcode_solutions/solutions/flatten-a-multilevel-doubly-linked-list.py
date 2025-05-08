@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Node(object):
     def __init__(self, val, prev, next, child):
@@ -10,7 +11,10 @@ class Node(object):
 
 class Solution(object):
     def flatten(self, head):
-        
+        """
+        :type head: Node
+        :rtype: Node
+        """
         curr = head
         while curr:
             if curr.child:

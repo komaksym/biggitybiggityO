@@ -1,4 +1,5 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -9,7 +10,12 @@ class ListNode(object):
 # linked list, array
 class Solution(object):
     def spiralMatrix(self, m, n, head):
-        
+        """
+        :type m: int
+        :type n: int
+        :type head: Optional[ListNode]
+        :rtype: List[List[int]]
+        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         result = [[-1]*n for _ in range(m)]
         i = j = d = 0

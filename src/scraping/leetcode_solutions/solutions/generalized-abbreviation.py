@@ -1,8 +1,12 @@
 # Time:  O(n * 2^n)
+# Space: O(n)
 
 class Solution(object):
     def generateAbbreviations(self, word):
-        
+        """
+        :type word: str
+        :rtype: List[str]
+        """
         def generateAbbreviationsHelper(word, i, cur, res):
             if i == len(word):
                 res.append("".join(cur))

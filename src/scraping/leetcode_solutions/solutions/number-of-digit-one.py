@@ -1,8 +1,12 @@
 # Time:  O(logn)
+# Space: O(1)
 
 class Solution(object):
     def countDigitOne(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         DIGIT = 1
         is_zero = int(DIGIT == 0)
         result = is_zero

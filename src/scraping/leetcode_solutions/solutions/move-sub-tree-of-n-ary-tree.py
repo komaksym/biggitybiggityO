@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a Node.
 class Node(object):
@@ -10,7 +11,12 @@ class Node(object):
 # one pass solution without recursion
 class Solution(object):
     def moveSubTree(self, root, p, q):
-        
+        """
+        :type root: Node
+        :type p: Node
+        :type q: Node
+        :rtype: Node
+        """
         def iter_find_parents(node, parent, p, q, is_ancestor, lookup):
             stk = [(1, [node, None, False])]
             while stk:
@@ -49,10 +55,16 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # one pass solution with recursion (bad in deep tree)
 class Solution_Recu(object):
     def moveSubTree(self, root, p, q):
-        
+        """
+        :type root: Node
+        :type p: Node
+        :type q: Node
+        :rtype: Node
+        """
         def find_parents(node, parent, p, q, is_ancestor, lookup):
             if node in (p, q):
                 lookup[node] = parent
@@ -81,10 +93,16 @@ class Solution_Recu(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # two pass solution without recursion
 class Solution2(object):
     def moveSubTree(self, root, p, q):
-        
+        """
+        :type root: Node
+        :type p: Node
+        :type q: Node
+        :rtype: Node
+        """
         def iter_find_parents(node, parent, p, q, lookup):
             stk = [(1, [node, None])]
             while stk:
@@ -139,10 +157,16 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # two pass solution with recursion (bad in deep tree)
 class Solution2_Recu(object):
     def moveSubTree(self, root, p, q):
-        
+        """
+        :type root: Node
+        :type p: Node
+        :type q: Node
+        :rtype: Node
+        """
         def find_parents(node, parent, p, q, lookup):
             if node in (p, q):
                 lookup[node] = parent

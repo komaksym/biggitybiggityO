@@ -1,4 +1,5 @@
 # Time:  O(4^n / n^(3/2)) ~= Catalan numbers
+# Space: O(4^n / n^(3/2)) ~= Catalan numbers
 
 class TreeNode(object):
     def __init__(self, x):
@@ -19,11 +20,11 @@ class TreeNode(object):
                     queue.append(cur.left)
                     queue.append(cur.right)
                 else:
-                    serial.append(
+                    serial.append("#")
 
                 queue = queue[1:]
 
-            while serial[-1] == 
+            while serial[-1] == "#":
                 serial.pop()
 
             return repr(serial)
@@ -32,7 +33,7 @@ class TreeNode(object):
             return None
 
 class Solution(object):
-   
+    # @return a list of tree node
     def generateTrees(self, n):
         return self.generateTreesRecu(1, n)
 

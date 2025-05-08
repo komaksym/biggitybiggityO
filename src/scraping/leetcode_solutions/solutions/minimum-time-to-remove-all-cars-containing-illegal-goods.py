@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # dp
 class Solution(object):
     def minimumTime(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         left = 0
         result = left+(len(s)-0)
         for i in range(1, len(s)+1):
@@ -13,10 +17,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # dp
 class Solution2(object):
     def minimumTime(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result, right = len(s), [0]*(len(s)+1)
         for i in reversed(range(len(s))):
             right[i] = min(right[i+1]+2*(s[i] == '1'), len(s)-i)

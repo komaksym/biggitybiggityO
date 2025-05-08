@@ -1,9 +1,14 @@
 # Time:  O(n + m), m = len(offers)
+# Space: O(n + m)
 
 # dp
 class Solution(object):
     def maximizeTheProfit(self, n, offers):
-        
+        """
+        :type n: int
+        :type offers: List[List[int]]
+        :rtype: int
+        """
         lookup = [[] for _ in range(n)]
         for s, e, g in offers:
             lookup[e].append([s, g])

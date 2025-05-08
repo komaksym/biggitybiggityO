@@ -1,11 +1,15 @@
 # Time:  O(nlogx), x is the max denominator
+# Space: O(n)
 
 import re
 
 
 class Solution(object):
     def fractionAddition(self, expression):
-        
+        """
+        :type expression: str
+        :rtype: str
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

@@ -1,12 +1,17 @@
 # Time:  O(n + s), n is the sum of all word lengths, s is the length of S
+# Space: O(l + s), l is the max word length
 
 import itertools
 
 
 class Solution(object):
     def expressiveWords(self, S, words):
-        
-       
+        """
+        :type S: str
+        :type words: List[str]
+        :rtype: int
+        """
+        # Run length encoding
         def RLE(S):
             return zip(*[(k, len(list(grp)))
                                   for k, grp in itertools.groupby(S)])

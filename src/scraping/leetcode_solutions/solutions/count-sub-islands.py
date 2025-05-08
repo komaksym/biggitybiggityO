@@ -1,8 +1,13 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def countSubIslands(self, grid1, grid2):
-        
+        """
+        :type grid1: List[List[int]]
+        :type grid2: List[List[int]]
+        :rtype: int
+        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def dfs(grid1, grid2, i, j):
             if not (0 <= i < len(grid2) and

@@ -1,4 +1,5 @@
 # Time:  O(n + tlogt)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # freq table, sort, greedy
 class Solution(object):
     def maxProfit(self, workers, tasks):
-        
+        """
+        :type workers: List[int]
+        :type tasks: List[List[int]]
+        :rtype: int
+        """
         cnt = collections.defaultdict(int)
         for x in workers:
             cnt[x] += 1

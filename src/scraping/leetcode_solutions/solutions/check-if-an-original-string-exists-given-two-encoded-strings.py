@@ -1,10 +1,16 @@
 # Time:  O(m * n * k), k is the max number of consecutive digits in s1 and s2
+# Space: O(m * n * k)
 
 # top-down dp (faster since accessing less states)
 class Solution(object):
     def possiblyEquals(self, s1, s2):
-        
-        def general_possible_numbers(s): 
+        """
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """
+        def general_possible_numbers(s):  # Time: O(2^l), Space: O(2^l), l is the length of consecutive digits, and l is at most 3
+            dp = [set() for _ in range(len(s))]
             for i in range(len(s)):
                 curr, basis = 0, 1
                 for j in reversed(range(i+1)):
@@ -65,10 +71,15 @@ class Solution(object):
 
 
 # Time:  O(m * n * k), k is the max number of consecutive digits in s1 and s2
+# Space: O(m * n * k)
 # top-down dp (faster since accessing less states)
 class Solution2(object):
     def possiblyEquals(self, s1, s2):
-        
+        """
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """
         def memoization(s1, s2, i, j, k, lookup):
             if (i, j, k) not in lookup:
                 if i == len(s1) and j == len(s2):
@@ -101,10 +112,15 @@ class Solution2(object):
 
 
 # Time:  O(m * n * k), k is the max number of consecutive digits in s1 and s2
+# Space: O(min(m, n) * k)
 # bottom-up dp
 class Solution3(object):
     def possiblyEquals(self, s1, s2):
-        
+        """
+        :type s1: str
+        :type s2: str
+        :rtype: bool
+        """
         MAX_DIGIT_LEN = 3
         w = 1+MAX_DIGIT_LEN
         dp = [[set() for _ in range(len(s2)+1)] for _ in range(w)]

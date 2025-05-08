@@ -1,8 +1,14 @@
 # Time:  O(k * (m + n + k)) ~ O(k * (m + n + k^2))
+# Space: O(m + n + k^2)
 
 class Solution(object):
     def maxNumber(self, nums1, nums2, k):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
         def get_max_digits(nums, start, end, max_digits):
             max_digits[end] = max_digit(nums, end)
             for i in reversed(range(start, end)):

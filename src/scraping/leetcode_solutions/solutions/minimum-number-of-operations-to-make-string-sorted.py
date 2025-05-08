@@ -1,15 +1,19 @@
 # Time:  O(26 * n) = O(n)
+# Space: O(max_n) = O(max_n)
 
 inv = [0, 1]
 
 
 class Solution(object):
-    def makeStringSorted(self, s): 
-        
+    def makeStringSorted(self, s):  # count of prev_permutation
+        """
+        :type s: str
+        :rtype: int
+        """
         def inverse(n, m):
             i = len(inv)
-            while len(inv) <= n: 
-                inv.append(inv[m%i]*(m-m//i) % m) 
+            while len(inv) <= n:  # lazy initialization
+                inv.append(inv[m%i]*(m-m//i) % m)  # https://cp-algorithms.com/algebra/module-inverse.html
                 i += 1
             return inv[n]
     

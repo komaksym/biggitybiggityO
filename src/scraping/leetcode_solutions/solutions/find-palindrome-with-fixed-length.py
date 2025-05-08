@@ -1,9 +1,14 @@
 # Time:  O(n * l)
+# Space: O(1)
 
 # math
 class Solution(object):
     def kthPalindrome(self, queries, intLength):
-        
+        """
+        :type queries: List[int]
+        :type intLength: int
+        :rtype: List[int]
+        """
         def reverse(x):
             result = 0
             while x:
@@ -21,10 +26,15 @@ class Solution(object):
 
 
 # Time:  O(n * l)
+# Space: O(l)
 # math
 class Solution2(object):
     def kthPalindrome(self, queries, intLength):
-        
+        """
+        :type queries: List[int]
+        :type intLength: int
+        :rtype: List[int]
+        """
         def f(l, x):
             if 10**((l-1)//2)+(x-1) > 10**((l+1)//2)-1:
                 return -1

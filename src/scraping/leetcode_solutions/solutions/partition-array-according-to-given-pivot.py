@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # two pointers
 class Solution(object):
     def pivotArray(self, nums, pivot):
-        
+        """
+        :type nums: List[int]
+        :type pivot: int
+        :rtype: List[int]
+        """
         result = [pivot]*len(nums)
         left, right = 0, len(nums)-sum(x > pivot for x in nums)
         for x in nums:

@@ -1,9 +1,13 @@
 # Time:  O(n * 2^n)
+# Space: O(n)
 
 # backtracking
 class Solution(object):
     def validStrings(self, n):
-        
+        """
+        :type n: int
+        :rtype: List[str]
+        """
         def backtracking(i):
             if i == n:
                 result.append("".join(curr))
@@ -22,10 +26,14 @@ class Solution(object):
 
 
 # Time:  O(n * 2^n)
+# Space: O(n * 2^n)
 # bfs
 class Solution2(object):
     def validStrings(self, n):
-        
+        """
+        :type n: int
+        :rtype: List[str]
+        """
         q = [[]]
         for _ in range(n):
             new_q = []

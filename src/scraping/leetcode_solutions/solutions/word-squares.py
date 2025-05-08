@@ -1,4 +1,5 @@
 # Time:  O(n^2 * n!)
+# Space: O(n^2)
 
 class TrieNode(object):
     def __init__(self):
@@ -16,7 +17,10 @@ class TrieNode(object):
 
 class Solution(object):
     def wordSquares(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[List[str]]
+        """
         result = []
 
         trie = TrieNode()

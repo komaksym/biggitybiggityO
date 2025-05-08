@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # freq table
 class Solution(object):
     def divisibleTripletCount(self, nums, d):
-        
+        """
+        :type nums: List[int]
+        :type d: int
+        :rtype: int
+        """
         result = 0
         cnt = collections.Counter()
         for i in range(len(nums)):
@@ -18,13 +23,18 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n^2)
 import collections
 
 
 # freq table
 class Solution2(object):
     def divisibleTripletCount(self, nums, d):
-        
+        """
+        :type nums: List[int]
+        :type d: int
+        :rtype: int
+        """
         result = 0
         cnt = collections.Counter()
         for i in range(len(nums)):
@@ -36,13 +46,18 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 import collections
 
 
 # freq table
 class Solution3(object):
     def divisibleTripletCount(self, nums, d):
-        
+        """
+        :type nums: List[int]
+        :type d: int
+        :rtype: int
+        """
         result = 0
         for i in range(len(nums)):
             cnt = collections.Counter()

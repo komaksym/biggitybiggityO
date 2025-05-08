@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # tree, bfs
 class Solution(object):
     def collectTheCoins(self, coins, edges):
-        
+        """
+        :type coins: List[int]
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         DISTANCE = 2
 
         adj = [set() for _ in range(len(coins))]

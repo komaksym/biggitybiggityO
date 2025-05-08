@@ -1,11 +1,16 @@
 # Time:  O(m * n), m is the length of chars, n is the number of words
+# Space: O(1)
 
 import collections
 
 
 class Solution(object):
     def countCharacters(self, words, chars):
-        
+        """
+        :type words: List[str]
+        :type chars: str
+        :rtype: int
+        """
         def check(word, chars, count):
             if len(word) > len(chars):
                 return False

@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -8,7 +9,10 @@ class TreeNode(object):
 # dfs with stack
 class Solution(object):
     def evaluateTree(self, root):
-        
+        """
+        :type root: Optional[TreeNode]
+        :rtype: bool
+        """
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,
@@ -38,10 +42,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # dfs with recursion
 class Solution2(object):
     def evaluateTree(self, root):
-        
+        """
+        :type root: Optional[TreeNode]
+        :rtype: bool
+        """
         INF = float("inf")
         OP = {
             2: lambda x, y: x or y,

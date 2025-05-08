@@ -1,9 +1,13 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def minCostConnectPoints(self, points):
-        
-        result, u = 0, 0 
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
+        result, u = 0, 0  # we can start from any node as u
         dist = [float("inf")]*len(points)
         lookup = set()
         for _ in range(len(points)-1):
@@ -14,21 +18,23 @@ class Solution(object):
                     continue
                 dist[v] = min(dist[v], abs(x-x0) + abs(y-y0))
             val, u = min((val, v) for v, val in enumerate(dist)) 
-            dist[u] = float("inf") 
+            dist[u] = float("inf")  # used
             result += val
         return result
 
 
 
 # Time:  O(eloge) = O(n^2 * logn)
+# Space: O(e) = O(n^2)
 # kruskal's algorithm
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -39,7 +45,7 @@ class UnionFind(object):
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]: 
+        if self.rank[x_root] < self.rank[y_root]:  # union by rank
             self.set[x_root] = y_root
         elif self.rank[x_root] > self.rank[y_root]:
             self.set[y_root] = x_root
@@ -51,7 +57,10 @@ class UnionFind(object):
 
 class Solution2(object):
     def minCostConnectPoints(self, points):
-        
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
         edges = []
         for u in range(len(points)):
             for v in range(u+1, len(points)):

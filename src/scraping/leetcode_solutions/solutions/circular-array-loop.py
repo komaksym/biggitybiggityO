@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def circularArrayLoop(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
         def next_index(nums, i):
             return (i + nums[i]) % len(nums)
 

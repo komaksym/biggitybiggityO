@@ -1,9 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # merge sort solution
 class Solution(object):
     def sortArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def mergeSort(left, right, nums):
             if left == right:
                 return
@@ -24,11 +28,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn), on average
+# Space: O(logn)
 import random
 # quick sort solution
 class Solution2(object):
     def sortArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def nth_element(nums, left, n, right, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target):
                 i = left
@@ -51,7 +59,7 @@ class Solution2(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
 
         def quickSort(left, right, nums):

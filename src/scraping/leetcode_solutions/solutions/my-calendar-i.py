@@ -1,4 +1,5 @@
 # Time:  O(nlogn) on average, O(n^2) on worst case
+# Space: O(n)
 
 class Node(object):
     def __init__(self, start, end):
@@ -29,7 +30,11 @@ class MyCalendar(object):
 
 
     def book(self, start, end):
-        
+        """
+        :type start: int
+        :type end: int
+        :rtype: bool
+        """
         if self.__root is None:
             self.__root = Node(start, end)
             return True
@@ -37,6 +42,7 @@ class MyCalendar(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 class MyCalendar2(object):
 
     def __init__(self):
@@ -44,7 +50,11 @@ class MyCalendar2(object):
 
 
     def book(self, start, end):
-        
+        """
+        :type start: int
+        :type end: int
+        :rtype: bool
+        """
         for i, j in self.__calendar:
             if start < j and end > i:
                 return False

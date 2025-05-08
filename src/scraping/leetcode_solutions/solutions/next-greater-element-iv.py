@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # mono stack
 class Solution(object):
     def secondGreaterElement(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         result, stk1, stk2 = [-1]*len(nums), [], []
         for i, x in enumerate(nums):
             while stk2 and nums[stk2[-1]] < x:

@@ -1,11 +1,16 @@
 # Time:  O(m * klogk)
+# Space: O(k)
 
 import heapq
 
 
 class Solution(object):
     def kthSmallest(self, mat, k):
-        
+        """
+        :type mat: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         def kSmallestPairs(nums1, nums2, k):
             result, min_heap = [], []
             for c in range(min(len(nums1), k)):
@@ -26,10 +31,15 @@ class Solution(object):
 
 
 # Time:  O((k + m) * log(m * MAX_NUM)) ~ O(k * m * log(m * MAX_NUM))
+# Space: O(m)
 class Solution2(object):
     def kthSmallest(self, mat, k):
-                
-        def countArraysHaveSumLessOrEqual(mat, k, r, target): 
+        """
+        :type mat: List[List[int]]
+        :type k: int
+        :rtype: int
+        """        
+        def countArraysHaveSumLessOrEqual(mat, k, r, target):  # Time: O(k + m) ~ O(k * m)
             if target < 0:
                 return 0
             if r == len(mat):

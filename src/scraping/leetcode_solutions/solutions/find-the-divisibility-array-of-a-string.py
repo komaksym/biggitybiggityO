@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # prefix sum
 class Solution(object):
     def divisibilityArray(self, word, m):
-        
+        """
+        :type word: str
+        :type m: int
+        :rtype: List[int]
+        """
         result = []
         curr = 0
         for c in word:

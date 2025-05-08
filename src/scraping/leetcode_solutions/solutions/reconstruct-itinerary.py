@@ -1,4 +1,5 @@
 # Time:  O(|V| + |E|log|V|)
+# Space: O(|V| + |E|)
 
 # Hierholzer Algorithm
 import collections
@@ -6,7 +7,10 @@ import collections
 
 class Solution(object):
     def findItinerary(self, tickets):
-        
+        """
+        :type tickets: List[List[str]]
+        :rtype: List[str]
+        """
         adj = collections.defaultdict(list)
         for ticket in tickets:
             adj[ticket[0]].append(ticket[1])
@@ -26,12 +30,16 @@ class Solution(object):
 # Time:  O(t! / (n1! * n2! * ... nk!)), t is the total number of tickets,
 #                                       ni is the number of the ticket which from is city i,
 #                                       k is the total number of cities.
+# Space: O(t)
 import collections
 
 
 class Solution2(object):
     def findItinerary(self, tickets):
-        
+        """
+        :type tickets: List[List[str]]
+        :rtype: List[str]
+        """
         def route_helper(origin, ticket_cnt, graph, ans):
             if ticket_cnt == 0:
                 return True

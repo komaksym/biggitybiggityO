@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 import string
 
 class Solution(object):
     def minDeletions(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         count = collections.Counter(s)
         result = 0
         lookup = set()

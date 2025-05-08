@@ -1,5 +1,6 @@
 from functools import reduce
 # Time:  O(n + k^2)
+# Space: O(n + k)
 
 # dp, prefix sum
 class Solution(object):

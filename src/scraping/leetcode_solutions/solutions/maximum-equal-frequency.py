@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def maxEqualFreq(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = 0
         count = collections.Counter()
         freq = [0 for _ in range(len(nums)+1)]

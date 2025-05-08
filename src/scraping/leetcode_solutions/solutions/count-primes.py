@@ -1,8 +1,9 @@
 # Time:  O(n/2 + n/3 + ... + n/p) = O(nlog(logn)), see https://mathoverflow.net/questions/4596/on-the-series-1-2-1-3-1-5-1-7-1-11
+# Space: O(n)
 
 class Solution(object):
-   
-   
+    # @param {integer} n
+    # @return {integer}
     def countPrimes(self, n):
         if n <= 2:
             return 0
@@ -24,12 +25,16 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution_TLE(object):
     def countPrimes(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def linear_sieve_of_eratosthenes(n):
             primes = []
-            spf = [-1]*(n+1) 
+            spf = [-1]*(n+1)  # the smallest prime factor
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i

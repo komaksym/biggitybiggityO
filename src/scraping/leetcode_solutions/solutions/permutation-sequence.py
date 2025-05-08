@@ -1,11 +1,16 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 import math
 
 # Cantor ordering solution
 class Solution(object):
     def getPermutation(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: str
+        """
         seq, k, fact = "", k - 1, math.factorial(n - 1)
         perm = [i for i in range(1, n + 1)]
         for i in reversed(range(n)):

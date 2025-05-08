@@ -1,10 +1,14 @@
 # Time:  O(logn)
+# Space: O(1)
 
 # math
 class Solution(object):
     def minOperations(self, k):
-        
-       
+        """
+        :type k: int
+        :rtype: int
+        """
+        # reference: https://stackoverflow.com/questions/15390807/integer-square-root-in-python
         def isqrt(n):
             a, b = n, (n+1)//2
             while b < a:

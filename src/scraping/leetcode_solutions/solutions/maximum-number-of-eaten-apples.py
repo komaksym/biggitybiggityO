@@ -1,11 +1,16 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import heapq
 
 
 class Solution(object):
     def eatenApples(self, apples, days):
-        
+        """
+        :type apples: List[int]
+        :type days: List[int]
+        :rtype: int
+        """
         min_heap = []
         result = i = 0
         while i < len(apples) or min_heap:

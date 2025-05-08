@@ -1,9 +1,14 @@
 # Time:  O(nlogr)
+# Space: O(1)
 
 # binary search
 class Solution(object):
     def equalizeWater(self, buckets, loss):
-        
+        """
+        :type buckets: List[int]
+        :type loss: int
+        :rtype: float
+        """
         def check(buckets, rate, x):
             return sum(b-x for b in buckets if b-x > 0)*rate >= sum(x-b for b in buckets if x-b > 0)
 

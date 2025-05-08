@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 import itertools
@@ -7,7 +8,11 @@ import itertools
 # queue, simulation
 class Solution(object):
     def timeTaken(self, arrival, state):
-        
+        """
+        :type arrival: List[int]
+        :type state: List[int]
+        :rtype: List[int]
+        """
         def go_until(t):
             while curr[0] <= t and any(q):
                 if not q[direction[0]]:

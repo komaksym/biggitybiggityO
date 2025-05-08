@@ -1,8 +1,13 @@
 # Time:  O(logn), where logn is the length of result strings
+# Space: O(1)
 
 class Solution(object):
     def fractionToDecimal(self, numerator, denominator):
-        
+        """
+        :type numerator: int
+        :type denominator: int
+        :rtype: str
+        """
         result = ""
         if (numerator > 0 and denominator < 0) or (numerator < 0 and denominator > 0):
             result = "-"

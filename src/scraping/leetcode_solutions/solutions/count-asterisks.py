@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # string
 class Solution(object):
     def countAsterisks(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result = cnt = 0
         for c in s:
             if c == '|':

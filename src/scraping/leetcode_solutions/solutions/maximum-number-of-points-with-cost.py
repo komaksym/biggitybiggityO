@@ -1,8 +1,12 @@
 # Time:  O(m * n)
+# Space: O(n)
 
 class Solution(object):
     def maxPoints(self, points):
-        
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
         dp = points[0]
         for i in range(1, len(points)):
             prefix = [0]*len(points[i])

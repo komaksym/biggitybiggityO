@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def longestSubarray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         count, left = 0, 0
         for right in range(len(nums)):
             count += (nums[right] == 0)
@@ -13,9 +17,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def longestSubarray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result, count, left = 0, 0, 0
         for right in range(len(nums)):
             count += (nums[right] == 0)

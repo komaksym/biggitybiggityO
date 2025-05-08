@@ -1,9 +1,14 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # sort
 class Solution(object):
     def lexicographicallySmallestArray(self, nums, limit):
-        
+        """
+        :type nums: List[int]
+        :type limit: int
+        :rtype: List[int]
+        """
         idxs = list(range(len(nums)))
         idxs.sort(key=lambda x: nums[x])
         groups = []

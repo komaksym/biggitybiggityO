@@ -1,4 +1,5 @@
 # Time:  O(n^2 * 2^n)
+# Space: O(2^n)
 
 import itertools
 from fractions import gcd
@@ -6,7 +7,10 @@ from fractions import gcd
 
 class Solution(object):
     def maxScore(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def popcount(n):
             count = 0
             while n:
@@ -29,6 +33,6 @@ class Solution(object):
             cnt = popcount(mask)
             if cnt%2:
                 continue
-            for i, j in itertools.combinations(bits(mask), 2): 
+            for i, j in itertools.combinations(bits(mask), 2):  # Time: O(n^2)
                 dp[mask] = max(dp[mask], cnt//2*gcd(nums[i], nums[j]) + dp[mask^(1<<i)^(1<<j)])
         return dp[-1]

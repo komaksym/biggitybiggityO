@@ -1,9 +1,14 @@
 # Time:  O(n * 2^n)
+# Space: O(n)
 
 # bitmasks
 class Solution(object):
     def maximumBobPoints(self, numArrows, aliceArrows):
-        
+        """
+        :type numArrows: int
+        :type aliceArrows: List[int]
+        :rtype: List[int]
+        """
         def check(mask, numArrows):
             score = 0
             cnt = [0]*len(aliceArrows)

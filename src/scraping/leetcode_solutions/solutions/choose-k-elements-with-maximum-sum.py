@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import heapq
 
@@ -6,7 +7,12 @@ import heapq
 # sort, greedy, two pointers, heap
 class Solution(object):
     def findMaxSum(self, nums1, nums2, k):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
         result = [0]*len(nums1)
         min_heap = []
         idxs = list(range(len(nums1)))

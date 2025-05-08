@@ -1,8 +1,9 @@
 # Time:  O(m * n)
+# Space: O(m * n)
 
 # template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20B/railroad_maintenance.py3
-# Reference: https://en.wikipedia.org/wiki/Biconnected_componen
-def iter_get_articulation_points(graph, v): 
+# Reference: https://en.wikipedia.org/wiki/Biconnected_component#Algorithms
+def iter_get_articulation_points(graph, v):  # modified
     def iter_dfs(v, p):
         stk = [(1, (v, p))]
         while stk:
@@ -38,14 +39,17 @@ def iter_get_articulation_points(graph, v):
                     cutpoints.append(v)
     index_counter, index, lowlinks = [0], [-1]*len(graph), [0]*len(graph)
     cutpoints = []
-    iter_dfs(v, -1) 
+    iter_dfs(v, -1)  # modified
     return cutpoints
 
 
 # flood fill, tarjan's algorithm, articulation points
 class Solution(object):
     def minDays(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     
         def floodfill(grid, i, j, lookup):
@@ -91,21 +95,23 @@ class Solution(object):
 
 
 # Time:  O((m * n) * log(m * n))
+# Space: O((m * n) * log(m * n))
 # Template: https://github.com/kamyu104/MetaHackerCup-2022/blob/main/Final%20Round/tile_transposing.py3
-class PersistentUnionFind(object): 
+class PersistentUnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.size = [1]*n
-        self.snapshots = [] 
-        self.undos = [] 
+        self.snapshots = []  # added
+        self.undos = []  # added
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
             y = stk.pop()
-            self.undos.append((~y, self.set[y])) 
+            self.undos.append((~y, self.set[y]))  # added
             self.set[y] = x
         return x
 
@@ -113,9 +119,9 @@ class PersistentUnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.size[x] > self.size[y]: 
+        if self.size[x] > self.size[y]:  # union by size
             x, y = y, x
-        self.undos.append((x, y)) 
+        self.undos.append((x, y))  # added
         self.set[x] = self.set[y]
         self.size[y] += self.size[x]
         return True
@@ -123,10 +129,10 @@ class PersistentUnionFind(object):
     def total(self, x):
         return self.size[self.find_set(x)]
 
-    def snapshot(self): 
+    def snapshot(self):  # added
         self.snapshots.append(len(self.undos))
 
-    def rollback(self): 
+    def rollback(self):  # added
         for _ in range(len(self.undos)-self.snapshots.pop()):
             x, y = self.undos.pop()
             if x >= 0:
@@ -139,7 +145,10 @@ class PersistentUnionFind(object):
 # flood fill, persistent union find
 class Solution2(object):
     def minDays(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     
         def floodfill(grid, i, j, lookup):
@@ -211,10 +220,14 @@ class Solution2(object):
 
 
 # Time:  O(m^2 * n^2)
+# Space: O(m * n)
 # flood fill
 class Solution3(object):
     def minDays(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0)]
     
         def floodfill(grid, i, j, lookup):

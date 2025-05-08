@@ -1,9 +1,13 @@
 # Time:  O(n^2 * logn)
+# Space: O(n^2)
 
 # sort
 class Solution(object):
     def sortMatrix(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: List[List[int]]
+        """
         lookup = [[] for _ in range((len(grid)-1)+(len(grid[0])-1)-(0-(len(grid[0])-1))+1)]
         for i in range(len(grid)):
             for j in range(len(grid[0])):

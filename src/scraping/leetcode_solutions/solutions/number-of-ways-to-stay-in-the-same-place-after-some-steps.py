@@ -1,8 +1,13 @@
 # Time:  O(n^2), n is the number of steps
+# Space: O(n)
     
 class Solution(object):
     def numWays(self, steps, arrLen):
-        
+        """
+        :type steps: int
+        :type arrLen: int
+        :rtype: int
+        """
         MOD = int(1e9+7)
         l = min(1+steps//2, arrLen)
         dp = [0]*(l+2)

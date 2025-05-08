@@ -1,9 +1,15 @@
 # Time:  O(k^2 + r + c), r = len(rowConditions), c = len(colConditions)
+# Space: O(k + r + c)
 
 # topological sort
 class Solution(object):
     def buildMatrix(self, k, rowConditions, colConditions):
-        
+        """
+        :type k: int
+        :type rowConditions: List[List[int]]
+        :type colConditions: List[List[int]]
+        :rtype: List[List[int]]
+        """
         def topological_sort(conditions):
             adj = [[] for _ in range(k)]
             in_degree = [0]*k

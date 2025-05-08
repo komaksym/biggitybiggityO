@@ -1,8 +1,15 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def allCellsDistOrder(self, R, C, r0, c0):
-        
+        """
+        :type R: int
+        :type C: int
+        :type r0: int
+        :type c0: int
+        :rtype: List[List[int]]
+        """
         def append(R, C, r, c, result):
             if 0 <= r < R and 0 <= c < C:
                 result.append([r, c])

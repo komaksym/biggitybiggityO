@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,12 @@ import collections
 # DFS solution.
 class Solution(object):
     def killProcess(self, pid, ppid, kill):
-        
+        """
+        :type pid: List[int]
+        :type ppid: List[int]
+        :type kill: int
+        :rtype: List[int]
+        """
         def killAll(pid, children, killed):
             killed.append(pid)
             for child in children[pid]:
@@ -21,10 +27,16 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # BFS solution.
 class Solution2(object):
     def killProcess(self, pid, ppid, kill):
-        
+        """
+        :type pid: List[int]
+        :type ppid: List[int]
+        :type kill: int
+        :rtype: List[int]
+        """
         def killAll(pid, children, killed):
             killed.append(pid)
             for child in children[pid]:

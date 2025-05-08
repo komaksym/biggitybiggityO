@@ -1,11 +1,16 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def canReach(self, arr, start):
-        
+        """
+        :type arr: List[int]
+        :type start: int
+        :rtype: bool
+        """
         q, lookup = collections.deque([start]), set([start])
         while q:
             i = q.popleft()

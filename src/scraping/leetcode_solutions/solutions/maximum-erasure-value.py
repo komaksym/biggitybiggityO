@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def maximumUniqueSubarray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         lookup = {}
         prefix = [0]*(len(nums)+1)
         result, left = 0, 0

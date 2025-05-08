@@ -1,10 +1,14 @@
 # Time:  O(m * n * log(m + n)) ~ O(m * n * log(m * n))
+# Space: O(m * n)
 
 from heapq import heappush, heappop
 
 class Solution(object):
     def trapRainWater(self, heightMap):
-        
+        """
+        :type heightMap: List[List[int]]
+        :rtype: int
+        """
         m = len(heightMap)
         if not m:
             return 0

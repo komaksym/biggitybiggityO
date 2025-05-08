@@ -1,9 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 # array
 class Solution(object):
     def closetTarget(self, words, target, startIndex):
-        
+        """
+        :type words: List[str]
+        :type target: str
+        :type startIndex: int
+        :rtype: int
+        """
         INF = float("inf")
         result = INF
         for i, w in enumerate(words):

@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def findMaximums(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def find_bound(nums, direction, init):
             result = [0]*len(nums)
             stk = [init]

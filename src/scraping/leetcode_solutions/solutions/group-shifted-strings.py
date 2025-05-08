@@ -1,14 +1,15 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
-   
-   
+    # @param {string[]} strings
+    # @return {string[][]}
     def groupStrings(self, strings):
         groups = collections.defaultdict(list)
-        for s in strings: 
+        for s in strings:  # Grouping.
             groups[self.hashStr(s)].append(s)
 
         result = []

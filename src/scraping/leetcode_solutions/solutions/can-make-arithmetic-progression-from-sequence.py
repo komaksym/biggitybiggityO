@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def canMakeArithmeticProgression(self, arr):
-        
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
         m = min(arr)
         d = (max(arr)-m)//(len(arr)-1)
         if not d:

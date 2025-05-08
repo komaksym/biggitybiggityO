@@ -1,4 +1,5 @@
 # Time:  O(b^(d/2)), b is the branch factor of bfs, d is the result depth
+# Space: O(w * l), w is the number of words, l is the max length of words
 
 from string import ascii_lowercase
 
@@ -6,7 +7,12 @@ from string import ascii_lowercase
 # two-end bfs
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
-        
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordList: List[str]
+        :rtype: int
+        """
         words = set(wordList)
         if endWord not in words:
             return 0
@@ -30,9 +36,15 @@ class Solution(object):
 
 
 # Time:  O(b^d), b is the branch factor of bfs, d is the result depth
+# Space: O(w * l), w is the number of words, l is the max length of words
 class Solution2(object):
     def ladderLength(self, beginWord, endWord, wordList):
-        
+        """
+        :type beginWord: str
+        :type endWord: str
+        :type wordList: List[str]
+        :rtype: int
+        """
         lookup = set(wordList)
         if endWord not in lookup:
             return 0

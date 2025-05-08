@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # sliding window, two pointers
 class Solution(object):
     def countSubarrays(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = total = left = 0
         for right in range(len(nums)):
             total += nums[right]

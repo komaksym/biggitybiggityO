@@ -1,9 +1,14 @@
 # Time:  O(n + 26)
+# Space: O(26)
 
 # freq table, two pointers, sliding window
 class Solution(object):
     def numberOfSubstrings(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         cnt = [0]*26
         result = left = 0
         for right in range(len(s)):

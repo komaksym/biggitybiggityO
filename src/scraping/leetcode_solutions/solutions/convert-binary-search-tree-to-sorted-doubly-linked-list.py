@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Node(object):
     def __init__(self, val, left, right):
@@ -9,7 +10,10 @@ class Node(object):
 
 class Solution(object):
     def treeToDoublyList(self, root):
-        
+        """
+        :type root: Node
+        :rtype: Node
+        """
         if not root:
             return None
         left_head, left_tail, right_head, right_tail = root, root, root, root

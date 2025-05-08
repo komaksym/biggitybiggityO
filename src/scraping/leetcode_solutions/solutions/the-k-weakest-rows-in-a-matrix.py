@@ -1,8 +1,13 @@
 # Time:  O(m * n)
+# Space: O(k)
 
 class Solution(object):
     def kWeakestRows(self, mat, k):
-        
+        """
+        :type mat: List[List[int]]
+        :type k: int
+        :rtype: List[int]
+        """
         result, lookup = [], set()
         for j in range(len(mat[0])):
             for i in range(len(mat)):
@@ -23,12 +28,17 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(k)
 import collections
 
 
 class Solution2(object):
     def kWeakestRows(self, mat, k):
-        
+        """
+        :type mat: List[List[int]]
+        :type k: int
+        :rtype: List[int]
+        """
         lookup = collections.OrderedDict()
         for j in range(len(mat[0])):
             for i in range(len(mat)):
@@ -47,12 +57,17 @@ class Solution2(object):
 
 
 # Time:  O(m * n + klogk)
+# Space: O(m)
 import random
 
 
 class Solution3(object):
     def kWeakestRows(self, mat, k):
-        
+        """
+        :type mat: List[List[int]]
+        :type k: int
+        :rtype: List[int]
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def partition_around_pivot(left, right, pivot_idx, nums, compare):
                 new_pivot_idx = left
@@ -73,7 +88,7 @@ class Solution3(object):
                     return
                 elif new_pivot_idx > n:
                     right = new_pivot_idx - 1
-                else: 
+                else:  # new_pivot_idx < n
                     left = new_pivot_idx + 1
         
         nums = [(sum(mat[i]), i) for i in range(len(mat))]

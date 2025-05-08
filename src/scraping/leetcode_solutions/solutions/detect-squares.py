@@ -1,6 +1,7 @@
 # Time:  ctor:  O(1)
 #        add:   O(1)
 #        count: O(n)
+# Space: O(n)
 
 import collections
 
@@ -12,13 +13,19 @@ class DetectSquares(object):
         self.__point_counts = collections.defaultdict(int)
 
     def add(self, point):
-        
+        """
+        :type point: List[int]
+        :rtype: None
+        """
         self.__x_to_ys[point[0]].add(point[1])
         self.__point_counts[tuple(point)] += 1
         
 
     def count(self, point):
-        
+        """
+        :type point: List[int]
+        :rtype: int
+        """
         result = 0
         for y in self.__x_to_ys[point[0]]:
             if y == point[1]:
@@ -32,6 +39,7 @@ class DetectSquares(object):
 # Time:  ctor:  O(1)
 #        add:   O(1)
 #        count: O(n)
+# Space: O(n)
 import collections
 
 
@@ -42,12 +50,18 @@ class DetectSquares2(object):
         self.__point_counts = collections.defaultdict(int)
 
     def add(self, point):
-        
+        """
+        :type point: List[int]
+        :rtype: None
+        """
         self.__points.append(point)
         self.__point_counts[tuple(point)] += 1
 
     def count(self, point):
-        
+        """
+        :type point: List[int]
+        :rtype: int
+        """
         result = 0
         for x, y in self.__points:
             if not (point[0] != x and point[1] != y and (abs(point[0]-x) == abs(point[1]-y))):

@@ -1,6 +1,7 @@
 # Time:  ctor:  O(1)
 #        add:   O(logn), amortized
 #        count: O(1)
+# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -13,7 +14,11 @@ class CountIntervals(object):
         self.__cnt = 0
 
     def add(self, left, right):
-        
+        """
+        :type left: int
+        :type right: int
+        :rtype: None
+        """
         i = self.__sl.bisect_right((left,))
         if i-1 >= 0 and self.__sl[i-1][1]+1 >= left:
             i -= 1
@@ -31,5 +36,7 @@ class CountIntervals(object):
         self.__cnt += right-left+1
 
     def count(self):
-        
+        """
+        :rtype: int
+        """
         return self.__cnt

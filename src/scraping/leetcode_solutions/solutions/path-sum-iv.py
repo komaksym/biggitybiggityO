@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(p), p is the number of paths
 
 import collections
 
 
 class Solution(object):
     def pathSum(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         class Node(object):
             def __init__(self, num):
                 self.level = num/100 - 1

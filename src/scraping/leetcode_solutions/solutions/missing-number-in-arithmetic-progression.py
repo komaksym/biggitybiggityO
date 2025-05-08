@@ -1,8 +1,12 @@
 # Time:  O(logn)
+# Space: O(1)
 
 class Solution(object):
     def missingNumber(self, arr):
-        
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
         def check(arr, d, x):
             return arr[x] != arr[0] + d*x
 
@@ -18,7 +22,11 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def missingNumber(self, arr):
-        
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
         return (min(arr)+max(arr))*(len(arr)+1)//2 - sum(arr)

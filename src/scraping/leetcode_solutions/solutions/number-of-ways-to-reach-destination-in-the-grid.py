@@ -1,9 +1,17 @@
 # Time:  O(logn)
+# Space: O(1)
 
 # dp, matrix exponentiation
 class Solution(object):
     def numberOfWays(self, n, m, k, source, dest):
-        
+        """
+        :type n: int
+        :type m: int
+        :type k: int
+        :type source: List[int]
+        :type dest: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         def matrix_mult(A, B):
             ZB = list(zip(*B))
@@ -22,7 +30,7 @@ class Solution(object):
              [1, m-2,   0,         n-1],
              [1,   0, n-2,         m-1],
              [0,   1,   1, (n-2)+(m-2)]]
-        dp = [0]*4 
+        dp = [0]*4  # dp[0] = both_same, dp[1] = row_same, dp[2] = col_same, dp[3] = no_same
         if source == dest:
             dp[0] = 1
         elif source[0] == dest[0]:
@@ -31,15 +39,23 @@ class Solution(object):
             dp[2] = 1
         else:
             dp[3] = 1
-        dp = matrix_mult([dp], matrix_expo(T, k))[0] 
+        dp = matrix_mult([dp], matrix_expo(T, k))[0]  # [dp[0], dp[1], dp[2], dp[3]] * T^k
         return dp[0]
 
 
 # Time:  O(n)
+# Space: O(1)
 # dp
 class Solution2(object):
     def numberOfWays(self, n, m, k, source, dest):
-        
+        """
+        :type n: int
+        :type m: int
+        :type k: int
+        :type source: List[int]
+        :type dest: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         both_same = row_same = col_same = no_same = 0
         if source == dest:

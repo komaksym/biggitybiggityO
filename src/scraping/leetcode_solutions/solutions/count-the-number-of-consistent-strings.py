@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def countConsistentStrings(self, allowed, words):
-        
+        """
+        :type allowed: str
+        :type words: List[str]
+        :rtype: int
+        """
         lookup = [False]*26
         for c in allowed:
             lookup[ord(c)-ord('a')] = True

@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -10,8 +11,8 @@ class ListNode(object):
             return "{} -> {}".format(self.val, self.__next__)
 
 class Solution(object):
-   
-   
+    # @param a ListNode
+    # @return a ListNode
     def swapPairs(self, head):
         dummy = ListNode(0)
         dummy.next = head

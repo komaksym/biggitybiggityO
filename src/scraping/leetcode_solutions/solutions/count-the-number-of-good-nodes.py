@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(h)
 
 # iterative dfs
 class Solution(object):
     def countGoodNodes(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def iter_dfs():
             result = 0
             stk = [(1, (0, -1, [0]))]
@@ -46,10 +50,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # dfs
 class Solution2(object):
     def countGoodNodes(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def dfs(u, p):
             total = l = 0
             valid = True

@@ -1,11 +1,15 @@
 # Time:  O(n * k^2), n is the number of the words, k is the max length of the words.
+# Space: O(n * k)
 
 import collections
 
 
 class Solution(object):
     def palindromePairs(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[List[int]]
+        """
         def is_palindrome(s, i, j):
             while i < j:
                 if s[i] != s[j]:
@@ -35,18 +39,22 @@ class Solution(object):
 
 
 # Time:  O(n * k^2), n is the number of the words, k is the max length of the words.
+# Space: O(n * k^2)
 # Manacher solution.
 class Solution_TLE(object):
     def palindromePairs(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[List[int]]
+        """
         def manacher(s, P):
             def preProcess(s):
                 if not s:
                     return ['^', '$']
                 T = ['^']
                 for c in s:
-                    T +=  [
-                T += [
+                    T +=  ["#", c]
+                T += ['#', '$']
                 return T
 
             T = preProcess(s)
@@ -83,6 +91,7 @@ class Solution_TLE(object):
 
 
 # Time:  O(n * k^2), n is the number of the words, k is the max length of the words.
+# Space: O(n * k)
 # Trie solution.
 class TrieNode(object):
     def __init__(self):
@@ -119,7 +128,10 @@ class TrieNode(object):
 
 class Solution_MLE(object):
     def palindromePairs(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[List[int]]
+        """
         res = []
         trie = TrieNode()
         for i in range(len(words)):

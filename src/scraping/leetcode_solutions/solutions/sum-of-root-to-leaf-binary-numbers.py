@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,10 @@ class TreeNode(object):
 
 class Solution(object):
     def sumRootToLeaf(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         M = 10**9 + 7
         def sumRootToLeafHelper(root, val):
             if not root:

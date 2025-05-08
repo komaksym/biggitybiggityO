@@ -1,8 +1,15 @@
 # Time:  O(C(m * n, i) * C(m * n - i, e))
+# Space: O(min(m * n, i + e))
 
 class Solution(object):
     def getMaxGridHappiness(self, m, n, introvertsCount, extrovertsCount):
-        
+        """
+        :type m: int
+        :type n: int
+        :type introvertsCount: int
+        :type extrovertsCount: int
+        :rtype: int
+        """
         def left(curr):
             return curr[-1] if len(curr)%n else 0
 
@@ -27,7 +34,7 @@ class Solution(object):
                     if len(curr) == m*n or (i == 0 and e == 0):
                         result = max(result, total)                
                         continue
-                    if total + (i+e)*120 < result: 
+                    if total + (i+e)*120 < result:  # pruning
                         continue
                     if e > 0:
                         stk.append((3, tuple()))
@@ -37,7 +44,7 @@ class Solution(object):
                         stk.append((3, tuple()))
                         stk.append((2, (i-1, e, count_total(curr, 1, total))))
                         stk.append((1, (1,)))
-                    if left(curr) or up(curr): 
+                    if left(curr) or up(curr):  # leave unoccupied iff left or up is occupied
                         stk.append((3, tuple()))
                         stk.append((2, (i, e, total)))
                         stk.append((1, (0,)))
@@ -52,9 +59,16 @@ class Solution(object):
 
 
 # Time:  O(C(m * n, i) * C(m * n - i, e))
+# Space: O(min(m * n, i + e))
 class Solution2(object):
     def getMaxGridHappiness(self, m, n, introvertsCount, extrovertsCount):
-        
+        """
+        :type m: int
+        :type n: int
+        :type introvertsCount: int
+        :type extrovertsCount: int
+        :rtype: int
+        """
         def left(curr):
             return curr[-1] if len(curr)%n else 0
 
@@ -72,9 +86,9 @@ class Solution2(object):
             if len(curr) == m*n or (i == 0 and e == 0):
                 result[0] = max(result[0], total)                
                 return
-            if total + (i+e)*120 < result[0]: 
+            if total + (i+e)*120 < result[0]:  # pruning
                 return
-            if left(curr) or up(curr): 
+            if left(curr) or up(curr):  # leave unoccupied iff left or up is occupied
                 curr.append(0)
                 backtracking(i, e, total, curr, result)
                 curr.pop()

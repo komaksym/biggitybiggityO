@@ -1,4 +1,5 @@
 # Time:  O(c + klogc)
+# Space: O(c)
 
 import heapq
 
@@ -6,7 +7,12 @@ import heapq
 # heap, two pointers
 class Solution(object):
     def totalCost(self, costs, k, candidates):
-        
+        """
+        :type costs: List[int]
+        :type k: int
+        :type candidates: int
+        :rtype: int
+        """
         left, right = candidates, max(len(costs)-candidates, candidates)-1
         min_heap1, min_heap2 = costs[:left], costs[right+1:]
         heapq.heapify(min_heap1), heapq.heapify(min_heap2)

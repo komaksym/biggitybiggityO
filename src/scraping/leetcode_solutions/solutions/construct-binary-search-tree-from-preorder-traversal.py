@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,10 @@ class TreeNode(object):
 
 class Solution(object):
     def bstFromPreorder(self, preorder):
-        
+        """
+        :type preorder: List[int]
+        :rtype: TreeNode
+        """
         def bstFromPreorderHelper(preorder, left, right, index):
             if index[0] == len(preorder) or \
                preorder[index[0]] < left or \

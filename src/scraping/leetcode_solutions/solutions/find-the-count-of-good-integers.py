@@ -1,9 +1,14 @@
 # Time:  O(n + 10 * 10^((n + 1)/2))
+# Space: O(n + 10 * (10 * nHr(10, n/2)))
 
 # combinatorics, freq table
 class Solution(object):
     def countGoodIntegers(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: int
+        """
         def reverse(x, n):
             if n%2:
                 x //= 10

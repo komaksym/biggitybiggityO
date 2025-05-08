@@ -1,4 +1,5 @@
 # Time:  O(nlogk + sqrt(k)^2) = O(nlogk + k)
+# Space: O(sqrt(k)), number of factors of k is at most sqrt(k)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # math, number theory
 class Solution(object):
     def countPairs(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def gcd(x, y):
             while y:
                 x, y = y, x%y
@@ -25,13 +30,18 @@ class Solution(object):
 
 
 # Time:  O(nlogk + n * sqrt(k))
+# Space: O(sqrt(k)), number of factors of k is at most sqrt(k)
 import collections
 
 
 # math, number theory
 class Solution2(object):
     def countPairs(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def gcd(x, y):
             while y:
                 x, y = y, x%y

@@ -1,9 +1,14 @@
 # Time:  O(n * m)
+# Space: O(1)
 
 # prefix sum
 class Solution(object):
     def countSubmatrices(self, grid, k):
-        
+        """
+        :type grid: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         result = 0
         for i in range(len(grid)):
             for j in range(len(grid[0])):

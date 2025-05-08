@@ -1,9 +1,13 @@
 # Time:  O((logn)^2)
+# Space: O((logn)^2)
 
 # complexity analysis: see https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/discuss/794847/Polylogarithmic-solution
 class Solution(object):
     def minDays(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def memoization(lookup, i):
             if i <= 1:
                 return i
@@ -17,6 +21,7 @@ class Solution(object):
 
 
 # Time:  O((logn)^2)
+# Space: O((logn)^2)
 class Solution2(object):
     def minDays(self, n):
         result = 0

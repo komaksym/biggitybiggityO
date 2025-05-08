@@ -1,4 +1,5 @@
 # Time:  O(m * n * α(m * n)) ~= O(m * n)
+# Space: O(m * n)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -7,7 +8,7 @@ class UnionFind(object):
 
     def find_set(self, x):
        if self.set[x] != x:
-           self.set[x] = self.find_set(self.set[x]) 
+           self.set[x] = self.find_set(self.set[x])  # path compression.
        return self.set[x]
 
     def union_set(self, x, y):
@@ -19,7 +20,10 @@ class UnionFind(object):
 
 class Solution(object):
     def numIslands(self, grid):
-        
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
         def index(n, i, j):
             return i*n + j
     
@@ -43,10 +47,14 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(m * n)
 # dfs solution
 class Solution2(object):
     def numIslands(self, grid):
-        
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def dfs(grid, i, j):
             if grid[i][j] == '0':
@@ -74,13 +82,17 @@ class Solution2(object):
 
  
 # Time:  O(m * n)
+# Space: O(m * n)
 import collections
 
 
 # bfs solution
 class Solution3(object):
     def numIslands(self, grid):
-        
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def bfs(grid, i, j):
             if grid[i][j] == '0':

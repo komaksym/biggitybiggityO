@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def minSwaps(self, data):
-        
+        """
+        :type data: List[int]
+        :rtype: int
+        """
         total_count = sum(data)
         result, count, left = 0, 0, 0
         for i in range(len(data)):

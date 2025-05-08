@@ -1,8 +1,12 @@
 # Time:  O(n * sqrt(n))
+# Space: O(n)
 
 class Solution(object):
     def winnerSquareGame(self, n):
-        
+        """
+        :type n: int
+        :rtype: bool
+        """
         dp = [False]*(n+1)
         for i in range(1, n+1):
             j = 1

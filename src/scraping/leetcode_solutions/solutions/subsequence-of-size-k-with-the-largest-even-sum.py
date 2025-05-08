@@ -1,4 +1,5 @@
 # Time:  O(n) on average
+# Space: O(1)
 
 import random
 
@@ -6,7 +7,11 @@ import random
 # quick select solution
 class Solution(object):
     def largestEvenSum(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -30,7 +35,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
 
         nth_element(nums, k-1, compare=lambda a, b: a > b)

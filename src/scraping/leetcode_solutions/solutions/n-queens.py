@@ -1,8 +1,12 @@
 # Time:  O(n^2 * n!)
+# Space: O(n)
 
 class Solution(object):
     def solveNQueens(self, n):
-        
+        """
+        :type n: int
+        :rtype: List[List[str]]
+        """
         def dfs(row):
             if row == n:
                 result.append(['.'*x + "Q" + '.'*(n-x-1) for x in curr])
@@ -33,7 +37,10 @@ class Solution(object):
 # - xy_sum：the list of x+y
 class Solution2(object):
     def solveNQueens(self, n):
-        
+        """
+        :type n: int
+        :rtype: List[List[str]]
+        """
         def dfs(col_per_row, xy_diff, xy_sum):
             cur_row = len(col_per_row)
             if cur_row == n:

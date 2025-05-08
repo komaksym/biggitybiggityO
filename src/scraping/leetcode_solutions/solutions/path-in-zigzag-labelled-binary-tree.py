@@ -1,8 +1,12 @@
 # Time:  O(logn)
+# Space: O(logn)
 
 class Solution(object):
     def pathInZigZagTree(self, label):
-        
+        """
+        :type label: int
+        :rtype: List[int]
+        """
         count = 2**label.bit_length()
         result = []
         while label >= 1:

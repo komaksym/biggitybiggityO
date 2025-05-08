@@ -1,10 +1,15 @@
 # Time:  O(m + n), m is the length of source
 #                , n is the length of target
+# Space: O(m)
 
 # greedy solution
 class Solution(object):
     def shortestWay(self, source, target):
-        
+        """
+        :type source: str
+        :type target: str
+        :rtype: int
+        """
         lookup = [[None for _ in range(26)] for _ in range(len(source)+1)]
         find_char_next_pos = [None]*26
         for i in reversed(range(len(source))):

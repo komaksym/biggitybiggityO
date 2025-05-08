@@ -1,8 +1,13 @@
 # Time:  O(logn)
+# Space: O(1)
 
 class Solution(object):
     def myPow(self, x, n):
-        
+        """
+        :type x: float
+        :type n: int
+        :rtype: float
+        """
         result = 1
         abs_n = abs(n)
         while abs_n:
@@ -15,10 +20,15 @@ class Solution(object):
 
 
 # Time:  O(logn)
+# Space: O(logn)
 # Recursive solution.
 class Solution2(object):
     def myPow(self, x, n):
-        
+        """
+        :type x: float
+        :type n: int
+        :rtype: float
+        """
         if n < 0 and n != -n:
             return 1.0 / self.myPow(x, -n)
         if n == 0:

@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # sliding window, two pointers
 class Solution(object):
     def longestNiceSubarray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = left = curr = 0
         for right in range(len(nums)):
             while curr&nums[right]:

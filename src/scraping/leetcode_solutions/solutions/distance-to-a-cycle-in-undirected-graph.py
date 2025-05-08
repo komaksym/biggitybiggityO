@@ -1,9 +1,14 @@
 # Time:  O(|V| + |E|)
+# Space: O(|V| + |E|)
 
 # graph, dfs, bfs
 class Solution(object):
     def distanceToCycle(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: List[int]
+        """
         def cycle(parent, v, u):
             result = [parent[v], v]
             while u != parent[v]:

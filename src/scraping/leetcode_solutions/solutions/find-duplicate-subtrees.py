@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def findDuplicateSubtrees(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[TreeNode]
+        """
         def getid(root, lookup, trees):
             if not root:
                 return -1
@@ -23,9 +27,13 @@ class Solution(object):
 
 
 # Time:  O(n * h)
+# Space: O(n * h)
 class Solution2(object):
     def findDuplicateSubtrees(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[TreeNode]
+        """
         def postOrderTraversal(node, lookup, result):
             if not node:
                 return ""

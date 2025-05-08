@@ -1,10 +1,15 @@
 from functools import reduce
 # Time:  O(nlogr), r = max(nums)
+# Space: O(logr)
 
 # bit manipulation, greedy, freq table
 class Solution(object):
     def maxSum(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         l = max(nums).bit_length()
         cnt = [0]*l

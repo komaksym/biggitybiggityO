@@ -1,9 +1,13 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 # dp
 class Solution(object):
     def maxCollectedFruits(self, fruits):
-        
+        """
+        :type fruits: List[List[int]]
+        :rtype: int
+        """
         n = len(fruits)
         for i in range(n):
             for j in range(i+1, n-(i+1)):

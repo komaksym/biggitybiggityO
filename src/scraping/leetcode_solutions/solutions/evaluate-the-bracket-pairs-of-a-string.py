@@ -1,8 +1,13 @@
 # Time:  O(n + m)
+# Space: O(n + m)
 
 class Solution(object):
     def evaluate(self, s, knowledge):
-        
+        """
+        :type s: str
+        :type knowledge: List[List[str]]
+        :rtype: str
+        """
         lookup = {k: v for k, v in knowledge}
         result, curr = [], []
         has_pair = False

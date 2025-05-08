@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -8,7 +9,10 @@ class TreeNode(object):
 
 class Solution(object):
     def str2tree(self, s):
-        
+        """
+        :type s: str
+        :rtype: TreeNode
+        """
         def str2treeHelper(s, i):
             start = i
             if s[i] == '-': i += 1

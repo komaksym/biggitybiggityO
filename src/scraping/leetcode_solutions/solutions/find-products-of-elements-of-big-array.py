@@ -1,9 +1,13 @@
 # Time:  O(q * (logr)^2)
+# Space: O(1)
 
 # binary search, combinatorics, bitmasks, fast exponentiation
 class Solution(object):
     def findProductsOfElements(self, queries):
-        
+        """
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + ((right-left)>>1)

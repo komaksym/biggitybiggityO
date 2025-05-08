@@ -1,5 +1,6 @@
 # Time:  precompute: O(max_r^2 * log(max_r))
 #        runtime:    O(n + r^2)
+# Space: O(max_r^2)
 
 # number theory, mobius function, principle of inclusion-exclusion
 MOD = 10**9+7
@@ -12,24 +13,27 @@ def gcd(a, b):
 def lcm(a, b):
     return a//gcd(a, b)*b
 
-POW2 = [1]*(MAX_NUM+1) 
+POW2 = [1]*(MAX_NUM+1)  # Time: O(max_r)
 for i in range(len(POW2)-1):
     POW2[i+1] = (POW2[i]*2)%MOD
 POW3 = [1]*(MAX_NUM+1)
-for i in range(len(POW3)-1): 
+for i in range(len(POW3)-1):  # Time: O(max_r)
     POW3[i+1] = (POW3[i]*3)%MOD
 LCM = [[0]*(MAX_NUM+1) for _ in range(MAX_NUM+1)]
-for i in range(1, MAX_NUM+1): 
+for i in range(1, MAX_NUM+1):  # Time: O(max_r^2 * log(max_r))
     for j in range(i, MAX_NUM+1):
         LCM[i][j] = LCM[j][i] = lcm(i, j)
 MU = [0]*(MAX_NUM+1)
 MU[1] = 1
-for i in range(1, MAX_NUM+1): 
+for i in range(1, MAX_NUM+1):  # Time: O(max_r * log(max_r))
     for j in range(i+i, MAX_NUM+1, i):
         MU[j] -= MU[i] 
 class Solution(object):
     def subsequencePairCount(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def count(g):
             return reduce(lambda accu, x: (accu+x)%MOD, (MU[i]*MU[j]*f[i*g][j*g] for i in range(1, mx//g+1) for j in range(1, mx//g+1)), 0)
             
@@ -47,10 +51,11 @@ class Solution(object):
                 c = cnt[l] if l < len(cnt) else 0
                 c1, c2 = cnt[g1], cnt[g2]
                 f[g1][g2] = f[g2][g1] = (POW3[c]*POW2[(c1-c)+(c2-c)]-POW2[c1]-POW2[c2]+1)%MOD
-        return reduce(lambda accu, x: (accu+x)%MOD, (count(g) for g in range(1, mx+1)), 0) 
+        return reduce(lambda accu, x: (accu+x)%MOD, (count(g) for g in range(1, mx+1)), 0)  # Time: O(mx^2 * (1 + 1/4 + 1/9 + ... + (1/mx)^2))) = O(mx^2 * pi^2/6), see https://en.wikipedia.org/wiki/Basel_problem
 
 
 # Time:  O(n * r^2 * logr)
+# Space: O(r^2)
 import collections
 from functools import reduce
 
@@ -58,7 +63,10 @@ from functools import reduce
 # dp, number theory
 class Solution2(object):
     def subsequencePairCount(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         def gcd(a, b):
             while b:
@@ -79,13 +87,17 @@ class Solution2(object):
 
 
 # Time:  O(n * r^2 * logr)
+# Space: O(r^2)
 import collections
 
 
 # dp, number theory
 class SolutionTLE(object):
     def subsequencePairCount(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         def gcd(a, b):
             while b:

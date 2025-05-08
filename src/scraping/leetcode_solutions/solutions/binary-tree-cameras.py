@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,10 @@ class TreeNode(object):
 
 class Solution(object):
     def minCameraCover(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         UNCOVERED, COVERED, CAMERA = list(range(3))
         def dfs(root, result):
             left = dfs(root.left, result) if root.left else COVERED

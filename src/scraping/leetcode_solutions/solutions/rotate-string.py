@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def rotateString(self, A, B):
-        
+        """
+        :type A: str
+        :type B: str
+        :rtype: bool
+        """
         def check(index):
             return all(A[(i+index) % len(A)] == c
                        for i, c in enumerate(B))
@@ -39,10 +44,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # KMP algorithm
 class Solution2(object):
     def rotateString(self, A, B):
-        
+        """
+        :type A: str
+        :type B: str
+        :rtype: bool
+        """
         def strStr(haystack, needle):
             def KMP(text, pattern):
                 prefix = getPrefix(pattern)
@@ -77,8 +87,13 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 class Solution3(object):
     def rotateString(self, A, B):
-        
+        """
+        :type A: str
+        :type B: str
+        :rtype: bool
+        """
         return len(A) == len(B) and B in A*2
 

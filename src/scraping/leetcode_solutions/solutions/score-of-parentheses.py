@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 
 class Solution(object):
     def scoreOfParentheses(self, S):
-        
+        """
+        :type S: str
+        :rtype: int
+        """
         result, depth = 0, 0
         for i in range(len(S)):
             if S[i] == '(':
@@ -16,9 +20,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 class Solution2(object):
     def scoreOfParentheses(self, S):
-        
+        """
+        :type S: str
+        :rtype: int
+        """
         stack = [0]
         for c in S:
             if c == '(':

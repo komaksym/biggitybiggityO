@@ -1,9 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 # two pointers
 class Solution(object):
     def findKDistantIndices(self, nums, key, k):
-        
+        """
+        :type nums: List[int]
+        :type key: int
+        :type k: int
+        :rtype: List[int]
+        """
         result = []
         prev = -1
         for i, x in enumerate(nums):

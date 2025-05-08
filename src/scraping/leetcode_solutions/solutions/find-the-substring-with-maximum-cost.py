@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import itertools
 
@@ -6,7 +7,12 @@ import itertools
 # greedy, kadane's algorithm
 class Solution(object):
     def maximumCostSubstring(self, s, chars, vals):
-        
+        """
+        :type s: str
+        :type chars: str
+        :type vals: List[int]
+        :rtype: int
+        """
         def kadane(s):
             result = curr = 0
             for c in s:

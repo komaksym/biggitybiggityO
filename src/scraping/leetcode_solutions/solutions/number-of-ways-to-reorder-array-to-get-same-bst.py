@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 MAX_N = 1000
 MOD = 10**9+7
@@ -11,7 +12,10 @@ for i in range(len(dp)):
 
 class Solution(object):
     def numOfWays(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def iter_dfs(nums):
             result = [0]
             stk = [[1, [nums, result]]]
@@ -39,9 +43,13 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n^2)
 class Solution(object):
     def numOfWays(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def dfs(nums):
             if len(nums) <= 2:
                 return 1

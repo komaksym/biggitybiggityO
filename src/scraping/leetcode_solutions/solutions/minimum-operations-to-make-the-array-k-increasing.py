@@ -1,11 +1,16 @@
 # Time:  O(k * (n/k)log(n/k)) = O(nlog(n/k))
+# Space: O(n/k)
 
 import bisect
 
 
 class Solution(object):
     def kIncreasing(self, arr, k):
-        
+        """
+        :type arr: List[int]
+        :type k: int
+        :rtype: int
+        """
         def longest_non_decreasing_subsequence(arr):
             result = []
             for x in arr:

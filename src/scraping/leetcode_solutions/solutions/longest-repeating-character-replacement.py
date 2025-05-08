@@ -1,11 +1,16 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 
 
 class Solution(object):
     def characterReplacement(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         result, max_count = 0, 0
         count = collections.Counter()
         for i in range(len(s)):

@@ -1,9 +1,13 @@
 # Time:  O(logk)
+# Space: O(logk)
 
 # combinatorics
 class Solution(object):
     def waysToReachStair(self, k):
-        
+        """
+        :type k: int
+        :rtype: int
+        """
         def ceil_log2_x(x):
             return (x-1).bit_length()
 

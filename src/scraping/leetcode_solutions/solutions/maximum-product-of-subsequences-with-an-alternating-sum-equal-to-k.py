@@ -1,4 +1,5 @@
 # Time:  O(n * k * l), l = limits
+# Space: O(n * k * l)
 
 import collections
 
@@ -6,9 +7,14 @@ import collections
 # dp
 class Solution(object):
     def maxProduct(self, nums, k, limit):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type limit: int
+        :rtype: int
+        """
         total = sum(nums)
-        if k > total or k < -total: 
+        if k > total or k < -total:  # optimized to speed up
             return -1
         dp = collections.defaultdict(set)
         for x in nums:

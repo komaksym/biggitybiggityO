@@ -1,11 +1,16 @@
 # Time:  O(n)
+# Space: O(1)
 
 import itertools
 
 
 class Solution(object):
     def buddyStrings(self, A, B):
-        
+        """
+        :type A: str
+        :type B: str
+        :rtype: bool
+        """
         if len(A) != len(B):
             return False
         diff = []

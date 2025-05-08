@@ -1,10 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 nums = [0, 1]
 dp = [0, 1]
 class Solution(object):
     def getMaximumGenerated(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         if n+1 > len(dp):
             for i in range(len(nums), n+1):
                 if i%2 == 0:
@@ -16,9 +20,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def getMaximumGenerated(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         if n == 0:
             return 0
         nums = [0]*(n+1)

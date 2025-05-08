@@ -1,8 +1,12 @@
 # Time:  O(n * l)
+# Space: O(n)
 
 class Solution(object):
     def minDeletionSize(self, A):
-        
+        """
+        :type A: List[str]
+        :rtype: int
+        """
         result = 0
         unsorted = set(range(len(A)-1))
         for j in range(len(A[0])):
@@ -14,9 +18,13 @@ class Solution(object):
 
 
 # Time:  O(n * m)
+# Space: O(n)
 class Solution2(object):
     def minDeletionSize(self, A):
-        
+        """
+        :type A: List[str]
+        :rtype: int
+        """
         result = 0
         is_sorted = [False]*(len(A)-1)
         for j in range(len(A[0])):

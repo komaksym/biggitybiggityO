@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def minimumMoves(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         level, q, lookup = 0, [(0, 0, False)], set()
         while q:
             next_q = []

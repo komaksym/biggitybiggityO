@@ -1,9 +1,13 @@
 # Time:  O(n^3)
+# Space: O(n)
 
 
 class Solution(object):
     def isAdditiveNumber(self, num):
-        
+        """
+        :type num: str
+        :rtype: bool
+        """
         def add(a, b):
             res, carry, val = "", 0, 0
             for i in range(max(len(a), len(b))):

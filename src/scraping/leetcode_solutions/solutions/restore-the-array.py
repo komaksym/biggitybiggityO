@@ -1,8 +1,13 @@
 # Time:  O(nlogk)
+# Space: O(logk)
 
 class Solution(object):
     def numberOfArrays(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9 + 7
         klen = len(str(k))
         dp = [0]*(klen+1)

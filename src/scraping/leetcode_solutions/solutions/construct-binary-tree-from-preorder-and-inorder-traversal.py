@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -7,9 +8,9 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-   
-   
-   
+    # @param preorder, a list of integers
+    # @param inorder, a list of integers
+    # @return a tree node
     def buildTree(self, preorder, inorder):
         lookup = {}
         for i, num in enumerate(inorder):
@@ -27,9 +28,14 @@ class Solution(object):
 
 
 # time: O(n)
+# space: O(n)
 class Solution2(object):
     def buildTree(self, preorder, inorder):
-        
+        """
+        :type preorder: List[int]
+        :type inorder: List[int]
+        :rtype: TreeNode
+        """
         preorder_iterator = iter(preorder)
         inorder_lookup = {n: i for i, n in enumerate(inorder)}
         

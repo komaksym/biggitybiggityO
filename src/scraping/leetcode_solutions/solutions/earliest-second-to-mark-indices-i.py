@@ -1,9 +1,14 @@
 # Time:  O(mlogm)
+# Space: O(n)
 
 # binary search, greedy
 class Solution(object):
     def earliestSecondToMarkIndices(self, nums, changeIndices):
-        
+        """
+        :type nums: List[int]
+        :type changeIndices: List[int]
+        :rtype: int
+        """
         def check(t):
             lookup = [-1]*len(nums)
             for i in range(t):

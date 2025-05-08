@@ -1,8 +1,12 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 class Solution(object):
     def maxNumberOfApples(self, arr):
-        
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
         LIMIT = 5000
         arr.sort()
         result, total = 0, 0

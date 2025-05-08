@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # array
 class Solution(object):
     def longestAlternatingSubarray(self, nums, threshold):
-        
+        """
+        :type nums: List[int]
+        :type threshold: int
+        :rtype: int
+        """
         result = l = 0
         for x in nums:
             if x > threshold:

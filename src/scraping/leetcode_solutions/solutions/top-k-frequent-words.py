@@ -1,4 +1,5 @@
 # Time:  O(n + klogk) on average
+# Space: O(n)
 
 import collections
 import heapq
@@ -7,7 +8,11 @@ from random import randint
 
 class Solution(object):
     def topKFrequent(self, words, k):
-        
+        """
+        :type words: List[str]
+        :type k: int
+        :rtype: List[str]
+        """
         counts = collections.Counter(words)
         p = []
         for key, val in counts.items():
@@ -20,7 +25,7 @@ class Solution(object):
             result.append(sorted_p[i][1])
         return result
 
-    def kthElement(self, nums, k): 
+    def kthElement(self, nums, k):  # O(n) on average
         def PartitionAroundPivot(left, right, pivot_idx, nums):
             pivot_value = nums[pivot_idx]
             new_pivot_idx = left
@@ -41,15 +46,20 @@ class Solution(object):
                 return
             elif new_pivot_idx > k:
                 right = new_pivot_idx - 1
-            else: 
+            else:  # new_pivot_idx < k.
                 left = new_pivot_idx + 1
 
 
 # Time:  O(nlogk)
+# Space: O(n)
 # Heap Solution
 class Solution2(object):
     def topKFrequent(self, words, k):
-        
+        """
+        :type words: List[str]
+        :type k: int
+        :rtype: List[str]
+        """
         class MinHeapObj(object):
             def __init__(self,val):
                 self.val = val
@@ -74,10 +84,15 @@ class Solution2(object):
 
 
 # Time:  O(n + klogk) ~ O(n + nlogn)
+# Space: O(n)
 # Bucket Sort Solution
 class Solution3(object):
     def topKFrequent(self, words, k):
-        
+        """
+        :type words: List[str]
+        :type k: int
+        :rtype: List[str]
+        """
         counts = collections.Counter(words)
         buckets = [[] for _ in range(len(words)+1)]
         for word, count in counts.items():
@@ -93,13 +108,18 @@ class Solution3(object):
 
 
 # time: O(nlogn)
+# space: O(n)
 
 from collections import Counter
 
 
 class Solution4(object):
     def topKFrequent(self, words, k):
-        
+        """
+        :type words: List[str]
+        :type k: int
+        :rtype: List[str]
+        """
         counter = Counter(words)
         candidates = list(counter.keys())
         candidates.sort(key=lambda w: (-counter[w], w))

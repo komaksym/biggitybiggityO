@@ -1,4 +1,5 @@
 # Time:  O(n * m)
+# Space: O(1)
 
 import random
 
@@ -6,7 +7,12 @@ import random
 # greedy, quick select
 class Solution(object):
     def maxSum(self, grid, limits, k):
-        
+        """
+        :type grid: List[List[int]]
+        :type limits: List[int]
+        :type k: int
+        :rtype: int
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -30,7 +36,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
 
         candidates = []

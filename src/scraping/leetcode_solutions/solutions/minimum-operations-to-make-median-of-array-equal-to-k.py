@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import random
 
@@ -6,7 +7,11 @@ import random
 # quick select, greedy
 class Solution(object):
     def minOperationsToMakeMedianK(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -30,7 +35,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
     
         nth_element(nums, len(nums)//2)
@@ -39,10 +44,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(1)
 # sort, greedy
 class Solution2(object):
     def minOperationsToMakeMedianK(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         nums.sort()
         return (sum(max(nums[i]-k, 0) for i in range(len(nums)//2+1))+
                 sum(max(k-nums[i], 0) for i in range(len(nums)//2, len(nums))))

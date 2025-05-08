@@ -1,12 +1,16 @@
 # Time:  O(n^1.5) on average
 #        O(n^2) on worst
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def minAreaRect(self, points):
-        
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
         nx = len(set(x for x, y in points))
         ny = len(set(y for x, y in points))
 
@@ -32,9 +36,13 @@ class Solution(object):
  
 
 # Time:  O(n^2)
+# Space: O(n)
 class Solution2(object):
     def minAreaRect(self, points):
-        
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
         lookup = set()
         result = float("inf")
         for x1, y1 in points:

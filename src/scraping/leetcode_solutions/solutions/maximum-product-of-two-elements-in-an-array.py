@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def maxProduct(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         m1 = m2 = 0
         for num in nums:
             if num > m1:

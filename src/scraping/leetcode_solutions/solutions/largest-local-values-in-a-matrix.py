@@ -1,9 +1,13 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 # array
 class Solution(object):
     def largestLocal(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: List[List[int]]
+        """
         def find_max(i, j):
             return max(grid[ni][nj] for ni in range(i, i+3) for nj in range(j, j+3))
 

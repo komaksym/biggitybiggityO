@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 
 class Solution(object):
     def pushDominoes(self, dominoes):
-        
+        """
+        :type dominoes: str
+        :rtype: str
+        """
         force = [0]*len(dominoes)
 
         f = 0

@@ -1,4 +1,5 @@
 # Time:  O(nlogr)
+# Space: O(logr)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # dp, lc3171
 class Solution(object):
     def countSubarrays(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = 0
         dp = collections.defaultdict(int)
         for x in nums:

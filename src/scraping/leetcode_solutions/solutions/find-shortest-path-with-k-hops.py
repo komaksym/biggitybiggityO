@@ -1,4 +1,5 @@
 # Time:  O(n * k + (e * k) * log(n * k))
+# Space: O(n * k + e)
 
 import heapq
 
@@ -6,7 +7,14 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def shortestPathWithHops(self, n, edges, s, d, k):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type s: int
+        :type d: int
+        :type k: int
+        :rtype: int
+        """
         def modified_dijkstra():
             best = [[float("inf")]*(k+1) for _ in range(len(adj))]
             best[s][0] = 0

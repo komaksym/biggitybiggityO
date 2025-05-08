@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(w)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,10 @@ class TreeNode(object):
 
 class Solution(object):
     def deepestLeavesSum(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         curr = [root]
         while curr:
             prev, curr = curr, [child for p in curr for child in [p.left, p.right] if child]

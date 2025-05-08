@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # math
 class Solution(object):
     def furthestDistanceFromOrigin(self, moves):
-        
+        """
+        :type moves: str
+        :rtype: int
+        """
         curr = cnt = 0
         for x in moves:
             if x == 'L':

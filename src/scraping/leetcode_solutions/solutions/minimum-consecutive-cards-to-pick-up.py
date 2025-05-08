@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # hash table
 class Solution(object):
     def minimumCardPickup(self, cards):
-        
+        """
+        :type cards: List[int]
+        :rtype: int
+        """
         lookup = {}
         result = float("inf")
         for i, x in enumerate(cards):

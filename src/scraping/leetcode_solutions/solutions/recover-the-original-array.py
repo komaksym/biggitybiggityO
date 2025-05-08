@@ -1,11 +1,15 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def recoverArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def check(k, cnt, result):
             for x in nums:
                 if cnt[x] == 0:

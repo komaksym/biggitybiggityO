@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # constructive algorithms
 class Solution(object):
     def smallestNumber(self, pattern):
-        
+        """
+        :type pattern: str
+        :rtype: str
+        """
         result = []
         for i in range(len(pattern)+1):
             if not (i == len(pattern) or pattern[i] == 'I'):

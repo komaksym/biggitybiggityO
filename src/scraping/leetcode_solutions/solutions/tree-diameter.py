@@ -1,9 +1,13 @@
 # Time:  O(|V| + |E|)
+# Space: O(|E|)
 
 # iterative dfs
 class Solution(object):
     def treeDiameter(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def iter_dfs():
             result = 0
             stk = [(1, (0, -1, [0]))]
@@ -31,10 +35,14 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
+# Space: O(|E|)
 # dfs
 class Solution2(object):
     def treeDiameter(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def dfs(u, p):
             mx = 0
             for v in adj[u]:
@@ -55,10 +63,14 @@ class Solution2(object):
 
 
 # Time:  O(|V| + |E|)
+# Space: O(|E|)
 # bfs, tree dp
 class Solution3(object):
     def treeDiameter(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def bfs():
             result = 0
             dp = [0]*len(adj)
@@ -89,10 +101,14 @@ class Solution3(object):
 
 
 # Time:  O(|V| + |E|)
+# Space: O(|E|)
 # bfs
 class Solution4(object):
     def treeDiameter(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         def bfs(root):
             d = new_root = -1
             lookup = [False]*len(adj)

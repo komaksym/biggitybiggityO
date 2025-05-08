@@ -1,9 +1,13 @@
 # Time:  O(sqrt(n))
+# Space: O(1)
 
 # number theory
 class Solution(object):
     def sumOfSquares(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = 0
         for i in range(1, int(len(nums)**0.5)+1):
             if len(nums)%i:

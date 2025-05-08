@@ -1,9 +1,14 @@
 # Time:  O(min(n * k^2, m * k)), m = sum(len(pile) for pile in piles)
+# Space: O(k)
 
 # dp
 class Solution(object):
     def maxValueOfCoins(self, piles, k):
-        
+        """
+        :type piles: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         dp = [0]
         for pile in piles:
             new_dp = [0]*min(len(dp)+len(pile), k+1)

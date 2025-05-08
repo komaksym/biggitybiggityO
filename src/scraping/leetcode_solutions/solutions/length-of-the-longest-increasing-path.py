@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import bisect
 
@@ -6,7 +7,11 @@ import bisect
 # sort, binary search, longest increasing subsequence, lis
 class Solution(object):
     def maxPathLength(self, coordinates, k):
-        
+        """
+        :type coordinates: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         def longest_increasing_subsequence(arr):
             result = []
             for x in arr:

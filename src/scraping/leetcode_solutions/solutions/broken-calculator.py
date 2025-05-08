@@ -1,8 +1,13 @@
 # Time:  O(logn)
+# Space: O(1)
 
 class Solution(object):
     def brokenCalc(self, X, Y):
-        
+        """
+        :type X: int
+        :type Y: int
+        :rtype: int
+        """
         result = 0
         while X < Y:
             if Y%2:

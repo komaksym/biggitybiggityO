@@ -1,8 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def missingRolls(self, rolls, mean, n):
-        
+        """
+        :type rolls: List[int]
+        :type mean: int
+        :type n: int
+        :rtype: List[int]
+        """
         MAX_V = 6
         MIN_V = 1
         total = sum(rolls)
@@ -14,9 +20,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def missingRolls(self, rolls, mean, n):
-        
+        """
+        :type rolls: List[int]
+        :type mean: int
+        :type n: int
+        :rtype: List[int]
+        """
         MAX_V = 6
         MIN_V = 1
         total = sum(rolls)

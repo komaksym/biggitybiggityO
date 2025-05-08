@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def findMaxConsecutiveOnes(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result, prev, curr = 0, 0, 0
         for n in nums:
             if n == 0:

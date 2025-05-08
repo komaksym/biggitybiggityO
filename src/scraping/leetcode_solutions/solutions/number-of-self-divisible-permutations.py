@@ -1,9 +1,13 @@
 # Time:  O(n^2 * logn + n * 2^n) = O(n * 2^n)
+# Space: O(n^2 + 2^n) = O(2^n)
 
 # bitmasks, dp
 class Solution(object):
     def selfDivisiblePermutationCount(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def popcount(x):
             return bin(x).count('1')
 

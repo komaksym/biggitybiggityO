@@ -1,9 +1,15 @@
 # Time:  O(nlogn + mlogm)
+# Space: O(1)
 
 # sort, two pointers
 class Solution(object):
     def latestTimeCatchTheBus(self, buses, passengers, capacity):
-        
+        """
+        :type buses: List[int]
+        :type passengers: List[int]
+        :type capacity: int
+        :rtype: int
+        """
         buses.sort()
         passengers.sort()
         cnt = j = 0

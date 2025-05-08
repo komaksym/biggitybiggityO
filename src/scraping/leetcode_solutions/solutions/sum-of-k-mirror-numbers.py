@@ -1,8 +1,13 @@
 # Time:  O(10^6), the most times of finding x is 665502 (k = 7, n = 30)
+# Space: O(1)
 
 class Solution(object):
     def kMirror(self, k, n):
-        
+        """
+        :type k: int
+        :type n: int
+        :rtype: int
+        """
         def mirror(n, base, odd):
             result = n
             if odd:
@@ -37,15 +42,20 @@ class Solution(object):
                     break
             return x
 
-        base1, base2 = k, 10 
+        base1, base2 = k, 10  # (10, k) is slower
         gen = num_gen(base1)
         return sum(mirror_num(gen, base2) for _ in range(n))
 
 
 # Time:  O(10^6), the most times of finding x is 665502 (k = 7, n = 30)
+# Space: O(1)
 class Solution2(object):
     def kMirror(self, k, n):
-        
+        """
+        :type k: int
+        :type n: int
+        :rtype: int
+        """
         def num_gen(k):
             digits = ['0']
             while True:

@@ -1,9 +1,13 @@
 # Time:  O(nlogr)
+# Space: O(n)
 
 # prefix sum
 class Solution(object):
     def maxScore(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

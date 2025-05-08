@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 import itertools
 
@@ -6,7 +7,12 @@ import itertools
 # dp, backtracing
 class Solution(object):
     def getWordsInLongestSubsequence(self, n, words, groups):
-        
+        """
+        :type n: int
+        :type words: List[str]
+        :type groups: List[int]
+        :rtype: List[str]
+        """
         def check(s1, s2):
             return len(s1) == len(s2) and sum(a != b for a, b in zip(s1, s2)) == 1
 
@@ -24,13 +30,19 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 import itertools
 
 
 # dp, backtracing
 class Solution2(object):
     def getWordsInLongestSubsequence(self, n, words, groups):
-        
+        """
+        :type n: int
+        :type words: List[str]
+        :type groups: List[int]
+        :rtype: List[str]
+        """
         def check(s1, s2):
             return len(s1) == len(s2) and sum(a != b for a, b in zip(s1, s2)) == 1
 
@@ -49,13 +61,19 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
+# Space: O(n^2)
 import itertools
 
 
 # lis dp
 class Solution3(object):
     def getWordsInLongestSubsequence(self, n, words, groups):
-        
+        """
+        :type n: int
+        :type words: List[str]
+        :type groups: List[int]
+        :rtype: List[str]
+        """
         def check(s1, s2):
             return len(s1) == len(s2) and sum(a != b for a, b in zip(s1, s2)) == 1
 

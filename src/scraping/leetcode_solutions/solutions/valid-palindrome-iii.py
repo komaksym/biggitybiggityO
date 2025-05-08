@@ -1,9 +1,14 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def isValidPalindrome(self, s, k):
-        
-        if s == s[::-1]: 
+        """
+        :type s: str
+        :type k: int
+        :rtype: bool
+        """
+        if s == s[::-1]:  # optional, to optimize special case
             return True
 
         dp = [[1] * len(s) for _ in range(2)]

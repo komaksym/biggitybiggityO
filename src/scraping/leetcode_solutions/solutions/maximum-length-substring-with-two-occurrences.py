@@ -1,9 +1,13 @@
 # Time:  O(n + 26)
+# Space: O(26)
 
 # freq table, sliding window, two pointers
 class Solution(object):
     def maximumLengthSubstring(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         COUNT = 2
         result = 0
         cnt = [0]*26
@@ -21,10 +25,14 @@ class Solution(object):
 
 
 # Time:  O(n + 26)
+# Space: O(26)
 # freq table, sliding window, two pointers
 class Solution2(object):
     def maximumLengthSubstring(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         COUNT = 2
         result = 0
         cnt = [0]*26

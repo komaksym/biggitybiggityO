@@ -1,15 +1,17 @@
 # Time:  O(nlogn + n * α(n) + m * log(logm)) ~= O(nlogn + m), m is the max of nums
+# Space: O(n + m)
 
 import itertools
 
 
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -20,7 +22,7 @@ class UnionFind(object):
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]: 
+        if self.rank[x_root] < self.rank[y_root]:  # union by rank
             self.set[x_root] = y_root
         elif self.rank[x_root] > self.rank[y_root]:
             self.set[y_root] = x_root
@@ -32,8 +34,12 @@ class UnionFind(object):
 
 class Solution(object):
     def gcdSort(self, nums):
-        
-        def modified_sieve_of_eratosthenes(n, lookup, uf): 
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        def modified_sieve_of_eratosthenes(n, lookup, uf):  # Time: O(n * log(logn)), Space: O(n)
+            if n < 2:
                 return
             is_prime = [True]*(n+1)
             for i in range(2, len(is_prime)):
@@ -41,7 +47,7 @@ class Solution(object):
                     continue
                 for j in range(i+i, len(is_prime), i):
                     is_prime[j] = False
-                    if j in lookup: 
+                    if j in lookup:  # modified
                         uf.union_set(i-1, j-1)
 
         max_num = max(nums)

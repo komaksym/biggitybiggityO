@@ -1,8 +1,12 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 class Solution(object):
     def eraseOverlapIntervals(self, intervals):
-        
+        """
+        :type intervals: List[List[int]]
+        :rtype: int
+        """
         intervals.sort(key=lambda interval: interval[1])
         result, right = 0, float("-inf")
         for l, r in intervals:
@@ -14,9 +18,13 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(1)
 class Solution2(object):
     def eraseOverlapIntervals(self, intervals):
-        
+        """
+        :type intervals: List[List[int]]
+        :rtype: int
+        """
         intervals.sort(key=lambda interval: interval[0])
         result, prev = 0, 0
         for i in range(1, len(intervals)):

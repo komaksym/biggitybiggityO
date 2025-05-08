@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a Node.
 class Node(object):
@@ -9,7 +10,10 @@ class Node(object):
 
 class Solution(object):
     def cloneTree(self, root):
-        
+        """
+        :type root: Node
+        :rtype: Node
+        """
         result = [None]
         stk = [(1, (root, result))]
         while stk:
@@ -30,9 +34,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 class Solution2(object):
     def cloneTree(self, root):
-        
+        """
+        :type root: Node
+        :rtype: Node
+        """
         def dfs(node):
             if not node:
                 return None

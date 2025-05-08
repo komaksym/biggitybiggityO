@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def addNegabinary(self, arr1, arr2):
-        
+        """
+        :type arr1: List[int]
+        :type arr2: List[int]
+        :rtype: List[int]
+        """
         result = []
         carry = 0
         while arr1 or arr2 or carry:

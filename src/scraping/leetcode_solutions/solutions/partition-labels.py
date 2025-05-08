@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def partitionLabels(self, S):
-        
+        """
+        :type S: str
+        :rtype: List[int]
+        """
         lookup = {c: i for i, c in enumerate(S)}
         first, last = 0, 0
         result = []

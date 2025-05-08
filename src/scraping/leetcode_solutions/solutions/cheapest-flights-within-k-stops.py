@@ -1,5 +1,6 @@
 # Time:  O((|E| + |V|) * log|V|) = O(|E| * log|V|),
 #        if we can further to use Fibonacci heap, it would be O(|E| + |V| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import collections
 import heapq
@@ -7,7 +8,14 @@ import heapq
 
 class Solution(object):
     def findCheapestPrice(self, n, flights, src, dst, K):
-        
+        """
+        :type n: int
+        :type flights: List[List[int]]
+        :type src: int
+        :type dst: int
+        :type K: int
+        :rtype: int
+        """
         adj = collections.defaultdict(list)
         for u, v, w in flights:
             adj[u].append((v, w))

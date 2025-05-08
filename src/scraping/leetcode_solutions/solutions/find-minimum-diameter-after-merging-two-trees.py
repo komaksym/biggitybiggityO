@@ -1,9 +1,14 @@
 # Time:  O(n + m)
+# Space: O(n + m)
 
 # iterative dfs, tree diameter
 class Solution(object):
     def minimumDiameterAfterMerge(self, edges1, edges2):
-        
+        """
+        :type edges1: List[List[int]]
+        :type edges2: List[List[int]]
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//2
     
@@ -39,10 +44,15 @@ class Solution(object):
         
 
 # Time:  O(n + m)
+# Space: O(n + m)
 # dfs, tree diameter
 class Solution2(object):
     def minimumDiameterAfterMerge(self, edges1, edges2):
-        
+        """
+        :type edges1: List[List[int]]
+        :type edges2: List[List[int]]
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//2
     
@@ -71,10 +81,15 @@ class Solution2(object):
 
 
 # Time:  O(n + m)
+# Space: O(n + m)
 # bfs, tree dp, tree diameter
 class Solution3(object):
     def minimumDiameterAfterMerge(self, edges1, edges2):
-        
+        """
+        :type edges1: List[List[int]]
+        :type edges2: List[List[int]]
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//2
     
@@ -113,10 +128,15 @@ class Solution3(object):
 
 
 # Time:  O(n + m)
+# Space: O(n + m)
 # bfs, tree diameter
 class Solution4(object):
     def minimumDiameterAfterMerge(self, edges1, edges2):
-        
+        """
+        :type edges1: List[List[int]]
+        :type edges2: List[List[int]]
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//2
     

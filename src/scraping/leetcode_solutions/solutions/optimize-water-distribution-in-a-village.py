@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -7,7 +8,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -21,7 +22,12 @@ class UnionFind(object):
 
 class Solution(object):
     def minCostToSupplyWater(self, n, wells, pipes):
-        
+        """
+        :type n: int
+        :type wells: List[int]
+        :type pipes: List[List[int]]
+        :rtype: int
+        """
         w = [[c, 0, i] for i, c in enumerate(wells, 1)]
         p = [[c, i, j] for i, j, c in pipes]
         result = 0

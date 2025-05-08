@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # Two pointers solution
 class Solution(object):
     def numSubarraysWithSum(self, A, S):
-        
+        """
+        :type A: List[int]
+        :type S: int
+        :rtype: int
+        """
         result = 0
         left, right, sum_left, sum_right = 0, 0, 0, 0
         for i, a in enumerate(A):

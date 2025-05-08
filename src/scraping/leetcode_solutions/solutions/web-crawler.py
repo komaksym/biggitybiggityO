@@ -1,15 +1,26 @@
 # Time:  O(|V| + |E|)
+# Space: O(|V|)
 
-# 
+# """
+# This is HtmlParser's API interface.
+# You should not implement it, or speculate about its implementation
+# """
 class HtmlParser(object):
    def getUrls(self, url):
-       
+       """
+       :type url: str
+       :rtype List[str]
+       """
        pass
 
 
 class Solution(object):
     def crawl(self, startUrl, htmlParser):
-        
+        """
+        :type startUrl: str
+        :type htmlParser: HtmlParser
+        :rtype: List[str]
+        """
         SCHEME = "http://"
         def hostname(url):
             pos = url.find('/', len(SCHEME))

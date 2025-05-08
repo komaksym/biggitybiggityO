@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def maximumNumber(self, num, change):
-        
+        """
+        :type num: str
+        :type change: List[int]
+        :rtype: str
+        """
         mutated = False
         result = list(map(int, list(num)))
         for i, d in enumerate(result):

@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # freq table
 class Solution(object):
     def getLargestOutlier(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = float("-inf")
         total = sum(nums)
         cnt = collections.defaultdict(int)

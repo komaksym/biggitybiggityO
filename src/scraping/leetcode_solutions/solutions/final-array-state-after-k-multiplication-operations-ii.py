@@ -1,4 +1,5 @@
 # Time:  O(n + (n + logr) + nlog(logr) + nlogn) = O(nlogn), assumed log(x) takes O(1) time
+# Space: O(n)
 
 import math
 
@@ -6,7 +7,12 @@ import math
 # sort, two pointers, sliding window, fast exponentiation
 class Solution(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         MOD = 10**9+7
         EPS = 1e-15
         def count(x, target):
@@ -37,13 +43,19 @@ class Solution(object):
 
 
 # Time:  O(n + min(n, k) * log(logr) + nlog(logr) + nlogn) = O(nlogr), assumed log(x) takes O(1) time
+# Space: O(n)
 import math
 
 
 # binary search, sort, fast exponentiation
 class Solution2(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         MOD = 10**9+7
         EPS = 1e-15
         def binary_search_right(left, right, check):
@@ -86,13 +98,19 @@ class Solution2(object):
 
 
 # Time:  O(min(nlogr, k) * logn + nlogn) = O(nlogn * logr)
+# Space: O(n)
 import heapq
 
 
 # heap, sort, fast exponentiation
 class Solution3(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         MOD = 10**9+7
         if multiplier == 1:
             return nums

@@ -4,6 +4,7 @@
 #        getMean:                O(1)
 #        getMedian:              O(1)
 #        getMode:                O(1)
+# Space: O(n)
 
 # deque, freq table, sorted list
 from sortedcontainers import SortedList
@@ -42,7 +43,10 @@ class StatisticsTracker(object):
             self.__sl2.add(self.__sl1.pop(-1))
         
     def addNumber(self, number):
-        
+        """
+        :type number: int
+        :rtype: None
+        """
         self.__total += number
         self.__dq.append(number)
         self.__update(number, +1)
@@ -50,7 +54,9 @@ class StatisticsTracker(object):
         self.__rebalance()
 
     def removeFirstAddedNumber(self):
-        
+        """
+        :rtype: None
+        """
         number = self.__dq.popleft()
         self.__total -= number
         self.__update(number, -1)
@@ -58,13 +64,19 @@ class StatisticsTracker(object):
         self.__rebalance()
 
     def getMean(self):
-        
+        """
+        :rtype: int
+        """
         return self.__total//len(self.__dq)
 
     def getMedian(self):
-        
+        """
+        :rtype: int
+        """
         return self.__sl2[0]
 
     def getMode(self):
-        
+        """
+        :rtype: int
+        """
         return self.__freq_to_nums[self.__sorted_freqs[-1]][0]

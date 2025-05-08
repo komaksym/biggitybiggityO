@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -11,7 +12,11 @@ class ListNode(object):
 
 class Solution(object):
     def rotateRight(self, head, k):
-        
+        """
+        :type head: ListNode
+        :type k: int
+        :rtype: ListNode
+        """
         if not head or not head.__next__:
             return head
 

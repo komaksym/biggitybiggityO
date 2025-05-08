@@ -1,9 +1,13 @@
 # Time:  O(n * m)
+# Space: O(n * m)
 
 # dp
 class Solution(object):
     def numberOfSubmatrices(self, grid):
-        
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
         result = 0
         dp1 = [[0]*(len(grid[0])+1) for _ in range(len(grid)+1)]
         dp2 = [[0]*(len(grid[0])+1) for _ in range(len(grid)+1)]
@@ -16,10 +20,14 @@ class Solution(object):
 
 
 # Time:  O(n * m)
+# Space: O(n * m)
 # dp
 class Solution2(object):
     def numberOfSubmatrices(self, grid):
-        
+        """
+        :type grid: List[List[str]]
+        :rtype: int
+        """
         result = 0
         dp1 = [[0]*len(grid[0]) for _ in range(len(grid))]
         dp2 = [[0]*len(grid[0]) for _ in range(len(grid))]

@@ -1,8 +1,13 @@
 # Time:  O(m + n)
+# Space: O(1)
 
 class Solution(object):
     def isOneEditDistance(self, s, t):
-        
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
         m, n = len(s), len(t)
         if m > n:
             return self.isOneEditDistance(t, s)

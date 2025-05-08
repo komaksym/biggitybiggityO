@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -9,7 +10,10 @@ class ListNode(object):
 
 class Solution(object):
     def nodesBetweenCriticalPoints(self, head):
-        
+        """
+        :type head: Optional[ListNode]
+        :rtype: List[int]
+        """
         first = last = -1
         result = float("inf")
         i, prev, head = 0, head.val, head.__next__

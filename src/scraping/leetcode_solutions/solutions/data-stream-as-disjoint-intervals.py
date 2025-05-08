@@ -1,4 +1,5 @@
 # Time:  addNum: O(n), getIntervals: O(n), n is the number of disjoint intervals.
+# Space: O(n)
 
 class Interval(object):
     def __init__(self, s=0, e=0):
@@ -9,11 +10,16 @@ class Interval(object):
 class SummaryRanges(object):
 
     def __init__(self):
-        
+        """
+        Initialize your data structure here.
+        """
         self.__intervals = []
 
     def addNum(self, val):
-        
+        """
+        :type val: int
+        :rtype: void
+        """
         def upper_bound(nums, target):
             left, right = 0, len(nums) - 1
             while left <= right:
@@ -36,7 +42,9 @@ class SummaryRanges(object):
         self.__intervals.insert(i, Interval(start, end))
 
     def getIntervals(self):
-        
+        """
+        :rtype: List[Interval]
+        """
         return self.__intervals
 
 

@@ -1,9 +1,13 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 # constructive algorithms, greedy, dp
 class Solution(object):
     def findTheString(self, lcp):
-        
+        """
+        :type lcp: List[List[int]]
+        :rtype: str
+        """
         result = [-1]*len(lcp)
         curr = 0
         for i in range(len(lcp)):

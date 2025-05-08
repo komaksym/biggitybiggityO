@@ -1,5 +1,6 @@
 # Time:  O((|E| + |V|) * log|V|) = O(|E| * log|V|) by using binary heap,
 #        if we can further to use Fibonacci heap, it would be O(|E| + |V| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import collections
 import itertools
@@ -8,7 +9,14 @@ import heapq
 
 class Solution(object):
     def maxProbability(self, n, edges, succProb, start, end):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type succProb: List[float]
+        :type start: int
+        :type end: int
+        :rtype: float
+        """
         adj = collections.defaultdict(list)
         for (u, v), p in zip(edges, succProb):
             adj[u].append((v, p))

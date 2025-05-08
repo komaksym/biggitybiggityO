@@ -1,4 +1,5 @@
 # Time:  O(n + l)
+# Space: O(h + l)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -18,7 +19,11 @@ class TreeNode(object):
 # kmp solution
 class Solution(object):
     def isSubPath(self, head, root):
-        
+        """
+        :type head: ListNode
+        :type root: TreeNode
+        :rtype: bool
+        """
         def getPrefix(head):
             pattern, prefix = [head.val], [-1]
             j = -1
@@ -52,10 +57,15 @@ class Solution(object):
     
 
 # Time:  O(n * min(h, l))
+# Space: O(h)
 # dfs solution
 class Solution2(object):
     def isSubPath(self, head, root):
-        
+        """
+        :type head: ListNode
+        :type root: TreeNode
+        :rtype: bool
+        """
         def dfs(head, root):
             if not head:
                 return True

@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def nextPalindrome(self, num):
-        
+        """
+        :type num: str
+        :rtype: str
+        """
         def next_permutation(nums, begin, end):
             def reverse(nums, begin, end):
                 left, right = begin, end-1

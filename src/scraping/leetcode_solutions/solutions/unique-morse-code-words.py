@@ -1,8 +1,12 @@
 # Time:  O(n), n is the sume of all word lengths
+# Space: O(n)
 
 class Solution(object):
     def uniqueMorseRepresentations(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: int
+        """
         MORSE = [".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
                  "....", "..", ".---", "-.-", ".-..", "--", "-.",
                  "---", ".--.", "--.-", ".-.", "...", "-", "..-",

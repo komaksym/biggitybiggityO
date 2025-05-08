@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -6,8 +7,8 @@ class ListNode(object):
         self.next = None
 
 class Solution(object):
-   
-   
+    # @param head, a ListNode
+    # @return a boolean
     def hasCycle(self, head):
         fast, slow = head, head
         while fast and fast.__next__:

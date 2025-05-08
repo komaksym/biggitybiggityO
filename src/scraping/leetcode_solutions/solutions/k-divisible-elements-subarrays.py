@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(t), t is the size of trie
 
 import collections
 
@@ -6,7 +7,12 @@ import collections
 # trie
 class Solution(object):
     def countDistinct(self, nums, k, p):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type p: int
+        :rtype: int
+        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         result = 0
@@ -24,13 +30,19 @@ class Solution(object):
 
 
 # Time:  O(n^2) on average, worst is O(n^3)
+# Space: O(n)
 import collections
 
 
 # rolling hash
 class Solution2(object):
     def countDistinct(self, nums, k, p):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type p: int
+        :rtype: int
+        """
         MOD, P = 10**9+7, 113
         def check(nums, lookup, l, i):
             return all(any(nums[i+k] != nums[j+k] for k in range(l)) for j in lookup)
@@ -52,10 +64,16 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 # rolling hash
 class Solution3(object):
     def countDistinct(self, nums, k, p):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type p: int
+        :rtype: int
+        """
         MOD, P = 10**9+7, 200
         result = 0
         cnt, h = [0]*len(nums), [0]*len(nums)

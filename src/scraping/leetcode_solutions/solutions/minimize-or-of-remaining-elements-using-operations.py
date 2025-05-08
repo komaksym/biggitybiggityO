@@ -1,9 +1,14 @@
 # Time:  O(nlogr)
+# Space: O(1)
 
 # bitmasks, greedy
 class Solution(object):
     def minOrAfterOperations(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = 0
         l = max(nums).bit_length()
         mask = (1<<l)-1

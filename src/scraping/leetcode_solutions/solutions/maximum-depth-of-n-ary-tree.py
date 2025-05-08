@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Node(object):
     def __init__(self, val, children):
@@ -8,7 +9,10 @@ class Node(object):
 
 class Solution(object):
     def maxDepth(self, root):
-        
+        """
+        :type root: Node
+        :rtype: int
+        """
         if not root:
             return 0
         depth = 0

@@ -1,4 +1,5 @@
 # Time:  O(m * n)
+# Space: O(m)
 
 import itertools
 import collections
@@ -6,7 +7,10 @@ import collections
 
 class Solution(object):
     def findDiagonalOrder(self, nums):
-        
+        """
+        :type nums: List[List[int]]
+        :rtype: List[int]
+        """
         result, dq, col = [], collections.deque(), 0
         for i in range(len(nums)+max(map(len, nums))-1):
             new_dq = collections.deque()
@@ -21,9 +25,13 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(m * n)
 class Solution2(object):
     def findDiagonalOrder(self, nums):
-        
+        """
+        :type nums: List[List[int]]
+        :rtype: List[int]
+        """
         result = []
         for r, row in enumerate(nums):
             for c, num in enumerate(row):

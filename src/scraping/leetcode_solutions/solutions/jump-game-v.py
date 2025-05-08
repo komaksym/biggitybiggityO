@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 import itertools
@@ -7,13 +8,17 @@ import itertools
 # sliding window + top-down dp
 class Solution(object):
     def maxJumps(self, arr, d):
-        
+        """
+        :type arr: List[int]
+        :type d: int
+        :rtype: int
+        """
         def dp(arr, d, i, left, right, lookup):
             if lookup[i]:
                 return lookup[i]
             lookup[i] = 1
             for j in itertools.chain(left[i], right[i]):
-               
+                # each dp[j] will be visited at most twice 
                 lookup[i] = max(lookup[i], dp(arr, d, j, left, right, lookup)+1)
             return lookup[i]
 
@@ -41,10 +46,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 # mono stack + bottom-up dp
 class Solution2(object):
     def maxJumps(self, arr, d):
-        
+        """
+        :type arr: List[int]
+        :type d: int
+        :rtype: int
+        """
         left, decreasing_stk = [[] for _ in range(len(arr))], []
         for i in range(len(arr)):
             while decreasing_stk and arr[decreasing_stk[-1]] < arr[i]:
@@ -68,7 +78,7 @@ class Solution2(object):
         for a, i in sorted([a, i] for i, a in enumerate(arr)):
             dp[i] = 1
             for j in itertools.chain(left[i], right[i]):
-               
+                # each dp[j] will be visited at most twice 
                 dp[i] = max(dp[i], dp[j]+1)
         return max(dp)
 
@@ -94,7 +104,8 @@ class SegmentTree(object):
         if x < self.N:
             self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-    def update(self, L, R, h): 
+    def update(self, L, R, h):  # Time: O(logN), Space: O(N)
+        def pull(x):
             while x > 1:
                 x //= 2
                 self.tree[x] = self.query_fn(self.tree[x*2], self.tree[x*2+1])
@@ -104,10 +115,10 @@ class SegmentTree(object):
         R += self.N
         L0, R0 = L, R
         while L <= R:
-            if L & 1: 
+            if L & 1:  # is right child
                 self.__apply(L, h)
                 L += 1
-            if R & 1 == 0: 
+            if R & 1 == 0:  # is left child
                 self.__apply(R, h)
                 R -= 1
             L //= 2
@@ -115,7 +126,8 @@ class SegmentTree(object):
         pull(L0)
         pull(R0)
 
-    def query(self, L, R): 
+    def query(self, L, R):  # Time: O(logN), Space: O(N)
+        def push(x):
             n = 2**self.H
             while n != 1:
                 y = x // n
@@ -134,10 +146,10 @@ class SegmentTree(object):
         push(L)
         push(R)
         while L <= R:
-            if L & 1: 
+            if L & 1:  # is right child
                 result = self.query_fn(result, self.tree[L])
                 L += 1
-            if R & 1 == 0: 
+            if R & 1 == 0:  # is left child
                 result = self.query_fn(result, self.tree[R])
                 R -= 1
             L //= 2
@@ -152,10 +164,15 @@ class SegmentTree(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 # mono stack + bottom-up dp + segment tree
 class Solution3(object):
     def maxJumps(self, arr, d):
-        
+        """
+        :type arr: List[int]
+        :type d: int
+        :rtype: int
+        """
         left, decreasing_stk = list(range(len(arr))), []
         for i in range(len(arr)):
             while decreasing_stk and arr[decreasing_stk[-1]] < arr[i]:

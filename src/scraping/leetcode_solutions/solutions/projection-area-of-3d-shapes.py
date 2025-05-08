@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 class Solution(object):
     def projectionArea(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         result = 0
         for i in range(len(grid)):
             max_row, max_col = 0, 0

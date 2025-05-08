@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def numDifferentIntegers(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         result, num = set(), None
         for i in range(len(word)+1):
             c = word[i] if i < len(word) else ' '

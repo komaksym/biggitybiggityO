@@ -1,9 +1,13 @@
 # Time:  O(m * n)
+# Space: O(m + n)
 
 # bfs
 class Solution(object):
     def findMaxFish(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def bfs(i, j):
             result = grid[i][j]
@@ -33,10 +37,14 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(m * n)
 # dfs
 class Solution2(object):
     def findMaxFish(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1))
         def dfs(i, j):
             result = grid[i][j]

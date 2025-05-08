@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # mono stack
 class Solution(object):
     def maximumLengthOfRanges(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         result = [0]*len(nums)
         stk = [-1]
         nums.append(float("inf"))

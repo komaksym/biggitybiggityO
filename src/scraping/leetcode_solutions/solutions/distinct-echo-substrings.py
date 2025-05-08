@@ -1,8 +1,12 @@
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
+# Space: O(r), r is the size of result substrings set
 
 class Solution(object):
     def distinctEchoSubstrings(self, text):
-        
+        """
+        :type text: str
+        :rtype: int
+        """
         def KMP(text, l, result):
             prefix = [-1]*(len(text)-l)
             j = -1
@@ -21,16 +25,20 @@ class Solution(object):
 
         result = set()
         i, l = 0, len(text)-1
-        while i < l: 
+        while i < l:  # aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabcdefabcdefabcdef
             l = min(l, i + KMP(text, i, result))
             i += 1
         return len(result)
 
 
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
+# Space: O(r), r is the size of result substrings set
 class Solution2(object):
     def distinctEchoSubstrings(self, text):
-        
+        """
+        :type text: str
+        :rtype: int
+        """
         result = set()
         for l in range(1, len(text)//2+1):
             count = sum(text[i] == text[i+l] for i in range(l))
@@ -44,27 +52,35 @@ class Solution2(object):
 
 
 # Time:  O(n^2 + d), d is the duplicated of result substrings size
+# Space: O(r), r is the size of result substrings set
 class Solution3(object):
     def distinctEchoSubstrings(self, text):
-        
+        """
+        :type text: str
+        :rtype: int
+        """
         MOD = 10**9+7
-        D = 27 
+        D = 27  # a-z and ''
         result = set()
         for i in range(len(text)-1):
             left, right, pow_D = 0, 0, 1
             for l in range(1, min(i+2, len(text)-i)):
                 left = (D*left + (ord(text[i-l+1])-ord('a')+1)) % MOD
                 right = (pow_D*(ord(text[i+l])-ord('a')+1) + right) % MOD
-                if left == right: 
+                if left == right:  # assumed no collision
                     result.add(left)
                 pow_D = (pow_D*D) % MOD 
         return len(result)
 
 
 # Time:  O(n^3 + d), d is the duplicated of result substrings size
+# Space: O(r), r is the size of result substrings set
 class Solution_TLE(object):
     def distinctEchoSubstrings(self, text):
-        
+        """
+        :type text: str
+        :rtype: int
+        """
         def compare(text, l, s1, s2):
             for i in range(l):
                 if text[s1+i] != text[s2+i]:
@@ -72,7 +88,7 @@ class Solution_TLE(object):
             return True
 
         MOD = 10**9+7
-        D = 27 
+        D = 27  # a-z and ''
         result = set()
         for i in range(len(text)):
             left, right, pow_D = 0, 0, 1

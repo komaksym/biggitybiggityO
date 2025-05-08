@@ -1,4 +1,5 @@
 # Time:  O(nlogn) ~ O(n^2)
+# Space: O(n)
 
 import bisect
 
@@ -10,7 +11,11 @@ class MyCalendarThree(object):
         self.__count = 0
 
     def book(self, start, end):
-        
+        """
+        :type start: int
+        :type end: int
+        :rtype: int
+        """
         i = bisect.bisect_right(self.__books, [start, float("inf")])
         if self.__books[i-1][0] == start:
             i -= 1
@@ -28,6 +33,7 @@ class MyCalendarThree(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 class MyCalendarThree2(object):
 
     def __init__(self):
@@ -35,7 +41,11 @@ class MyCalendarThree2(object):
 
 
     def book(self, start, end):
-        
+        """
+        :type start: int
+        :type end: int
+        :rtype: int
+        """
         i = bisect.bisect_left(self.__books, (start, 1))
         if i < len(self.__books) and self.__books[i][0] == start:
             self.__books[i] = (self.__books[i][0], self.__books[i][1]+1)

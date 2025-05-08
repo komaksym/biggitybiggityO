@@ -1,4 +1,5 @@
 # Time:  O(n + 26)
+# Space: O(26)
 
 import itertools
 
@@ -6,7 +7,10 @@ import itertools
 # hash table
 class Solution(object):
     def numberOfSpecialChars(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         lookup1 = [False]*26
         lookup2 = [False]*26
         for x in word:

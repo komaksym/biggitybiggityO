@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def minInsertions(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def longestCommonSubsequence(text1, text2):
             if len(text1) < len(text2):
                 return self.longestCommonSubsequence(text2, text1)

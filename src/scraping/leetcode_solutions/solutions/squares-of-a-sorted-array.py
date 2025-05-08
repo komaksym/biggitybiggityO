@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 import bisect
 
 
 class Solution(object):
     def sortedSquares(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: List[int]
+        """
         right = bisect.bisect_left(A, 0)
         left = right-1
         result = []

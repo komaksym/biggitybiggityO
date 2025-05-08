@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def lenLongestFibSubseq(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         lookup = set(A)
         result = 2
         for i in range(len(A)):

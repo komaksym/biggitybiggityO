@@ -1,4 +1,5 @@
 # Time:  O(n + (logn)^2) = O(n)
+# Space: O(n + logn) = O(n)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # bit manipulation, freq table, combinatorics
 class Solution(object):
     def countExcellentPairs(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def popcount(x):
             return bin(x)[2:].count('1')
 
@@ -15,10 +20,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 # bit manipulation, sort, two pointers
 class Solution2(object):
     def countExcellentPairs(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def popcount(x):
             return bin(x)[2:].count('1')
 

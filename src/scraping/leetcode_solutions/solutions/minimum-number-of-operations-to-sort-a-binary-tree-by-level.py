@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(w)
 
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
@@ -8,7 +9,10 @@ class TreeNode(object):
 # bfs, sort
 class Solution(object):
     def minimumOperations(self, root):
-        
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
         result = 0
         q = [root]
         while q:

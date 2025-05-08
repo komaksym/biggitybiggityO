@@ -1,4 +1,5 @@
 # Time:  O((m * n) * (m * n)!)
+# Space: O((m * n) * (m * n)!)
 
 import heapq
 import itertools
@@ -7,7 +8,10 @@ import itertools
 # A* Search Algorithm
 class Solution(object):
     def slidingPuzzle(self, board):
-        
+        """
+        :type board: List[List[int]]
+        :rtype: int
+        """
         def dot(p1, p2):
             return p1[0]*p2[0]+p1[1]*p2[1]
 
@@ -58,10 +62,14 @@ class Solution(object):
 
 
 # Time:  O((m * n) * (m * n)! * log((m * n)!))
+# Space: O((m * n) * (m * n)!)
 # A* Search Algorithm
 class Solution2(object):
     def slidingPuzzle(self, board):
-        
+        """
+        :type board: List[List[int]]
+        :rtype: int
+        """
         def heuristic_estimate(board, R, C, expected):
             result = 0
             for i in range(R):

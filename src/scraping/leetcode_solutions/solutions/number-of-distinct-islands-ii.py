@@ -1,8 +1,12 @@
 # Time:  O((m * n) * log(m * n))
+# Space: O(m * n)
 
 class Solution(object):
     def numDistinctIslands2(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
         def dfs(i, j, grid, island):
@@ -24,7 +28,7 @@ class Solution(object):
                 for i in range(len(rotations_and_reflections)):
                     shapes[i].append(rotations_and_reflections[i])
             for shape in shapes:
-                shape.sort() 
+                shape.sort()  # Time: O(ilogi), i is the size of the island, the max would be (m * n)
                 origin = list(shape[0])
                 for p in shape:
                     p[0] -= origin[0]

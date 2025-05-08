@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def removePalindromeSub(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def is_palindrome(s):
             for i in range(len(s)//2):
                 if s[i] != s[-1-i]:

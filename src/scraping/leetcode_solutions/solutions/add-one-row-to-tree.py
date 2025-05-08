@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -9,7 +10,12 @@ class TreeNode(object):
 
 class Solution(object):
     def addOneRow(self, root, v, d):
-        
+        """
+        :type root: TreeNode
+        :type v: int
+        :type d: int
+        :rtype: TreeNode
+        """
         if d in (0, 1):
             node = TreeNode(v)
             if d == 1:

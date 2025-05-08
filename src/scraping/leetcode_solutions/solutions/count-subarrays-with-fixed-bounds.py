@@ -1,9 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 # two pointers
 class Solution(object):
     def countSubarrays(self, nums, minK, maxK):
-        
+        """
+        :type nums: List[int]
+        :type minK: int
+        :type maxK: int
+        :rtype: int
+        """
         result = left = 0
         right = [-1]*2
         for i, x in enumerate(nums):

@@ -3,6 +3,7 @@
 #                             = O(k*r*c + (k*(k*2^k))*(logk + k*log2))
 #                             = O(k*r*c + (k*(k*2^k))*k)
 #                             = O(k*r*c + k^3*2^k)
+# Space: O(|V|) = O(k*2^k)
 
 import collections
 import heapq
@@ -10,7 +11,10 @@ import heapq
 
 class Solution(object):
     def shortestPathAllKeys(self, grid):
-        
+        """
+        :type grid: List[str]
+        :rtype: int
+        """
         directions = [(0, -1), (0, 1), (-1, 0), (1, 0)]
 
         def bfs(grid, source, locations):
@@ -29,7 +33,7 @@ class Solution(object):
                     if not ((0 <= cr < len(grid)) and
                             (0 <= cc < len(grid[cr]))):
                         continue
-                    if grid[cr][cc] != 
+                    if grid[cr][cc] != '#' and not lookup[cr][cc]:
                         lookup[cr][cc] = True
                         q.append((cr, cc, d+1))
             return dist
@@ -37,10 +41,10 @@ class Solution(object):
         locations = {place: (r, c)
                      for r, row in enumerate(grid)
                      for c, place in enumerate(row)
-                     if place not in '
+                     if place not in '.#'}
         dists = {place: bfs(grid, place, locations) for place in locations}
 
-       
+        # Dijkstra's algorithm
         min_heap = [(0, '@', 0)]
         best = collections.defaultdict(lambda: collections.defaultdict(
                                                    lambda: float("inf")))

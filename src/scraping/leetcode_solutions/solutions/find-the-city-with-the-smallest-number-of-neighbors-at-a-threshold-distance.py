@@ -1,8 +1,14 @@
 # Time:  O(n^3)
+# Space: O(n^2)
 
 class Solution(object):
     def findTheCity(self, n, edges, distanceThreshold):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type distanceThreshold: int
+        :rtype: int
+        """
         dist = [[float("inf")]*n for _ in range(n)]
         for i, j, w in edges:
             dist[i][j] = dist[j][i] = w

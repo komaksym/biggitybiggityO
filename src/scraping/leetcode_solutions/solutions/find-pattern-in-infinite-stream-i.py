@@ -1,4 +1,5 @@
 # Time:  O(p + n)
+# Space: O(p)
 
 class InfiniteStream:
     def __next__(self):
@@ -8,7 +9,11 @@ class InfiniteStream:
 # kmp
 class Solution(object):
     def findPattern(self, stream, pattern):
-        
+        """
+        :type stream: InfiniteStream
+        :type pattern: List[int]
+        :rtype: int
+        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1

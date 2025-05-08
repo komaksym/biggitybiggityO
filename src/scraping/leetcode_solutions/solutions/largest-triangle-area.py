@@ -1,9 +1,13 @@
 # Time:  O(n^3)
+# Space: O(1)
 
 
 class Solution(object):
     def largestTriangleArea(self, points):
-        
+        """
+        :type points: List[List[int]]
+        :rtype: float
+        """
         result = 0
         for i in range(len(points)-2):
             for j in range(i+1, len(points)-1):

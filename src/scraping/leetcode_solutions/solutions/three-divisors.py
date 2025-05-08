@@ -1,8 +1,12 @@
 # Time:  O(sqrt(n))
+# Space: O(1)
 
 class Solution(object):
     def isThree(self, n):
-        
+        """
+        :type n: int
+        :rtype: bool
+        """
         cnt = 0
         i = 1
         while i*i <= n and cnt <= 3:

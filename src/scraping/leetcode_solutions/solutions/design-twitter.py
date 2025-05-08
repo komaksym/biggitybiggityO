@@ -1,5 +1,6 @@
 # Time:  O(u + klogk), k is most recently number of tweets,
 #                      u is the number of the user's following.
+# Space: O(t + f), t is the total number of tweets,
 #                  f is the total number of followings.
 
 import collections
@@ -10,19 +11,30 @@ import random
 class Twitter(object):
 
     def __init__(self):
-        
+        """
+        Initialize your data structure here.
+        """
         self.__number_of_most_recent_tweets = 10
         self.__followings = collections.defaultdict(set)
         self.__messages = collections.defaultdict(list)
         self.__time = 0
 
     def postTweet(self, userId, tweetId):
-        
+        """
+        Compose a new tweet.
+        :type userId: int
+        :type tweetId: int
+        :rtype: void
+        """
         self.__time += 1
         self.__messages[userId].append((self.__time, tweetId))
 
     def getNewsFeed(self, userId):
-        
+        """
+        Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent.
+        :type userId: int
+        :rtype: List[int]
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -46,7 +58,7 @@ class Twitter(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
 
         candidates = []
@@ -68,10 +80,20 @@ class Twitter(object):
         return result
 
     def follow(self, followerId, followeeId):
-        
+        """
+        Follower follows a followee. If the operation is invalid, it should be a no-op.
+        :type followerId: int
+        :type followeeId: int
+        :rtype: void
+        """
         if followerId != followeeId:
             self.__followings[followerId].add(followeeId)
 
     def unfollow(self, followerId, followeeId):
-        
+        """
+        Follower unfollows a followee. If the operation is invalid, it should be a no-op.
+        :type followerId: int
+        :type followeeId: int
+        :rtype: void
+        """
         self.__followings[followerId].discard(followeeId)

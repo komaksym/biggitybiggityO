@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # iterative dfs
 class Solution(object):
     def placedCoins(self, edges, cost):
-        
+        """
+        :type edges: List[List[int]]
+        :type cost: List[int]
+        :rtype: List[int]
+        """
         def iter_dfs():
             result = [0]*len(cost)
             stk = [(1, (0, -1, [cost[0]]))]
@@ -43,10 +48,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # dfs
 class Solution2(object):
     def placedCoins(self, edges, cost):
-        
+        """
+        :type edges: List[List[int]]
+        :type cost: List[int]
+        :rtype: List[int]
+        """
         def dfs(u, p):
             arr = [cost[u]]
             for v in adj[u]:

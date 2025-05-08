@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(w)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -9,7 +10,10 @@ class TreeNode(object):
 # bfs
 class Solution(object):
     def minimumLevel(self, root):
-        
+        """
+        :type root: Optional[TreeNode]
+        :rtype: int
+        """
         q = [root]
         d = 1
         result = ((float("inf"), float("inf")))

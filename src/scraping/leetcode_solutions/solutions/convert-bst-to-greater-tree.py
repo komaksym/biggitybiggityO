@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def convertBST(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         def convertBSTHelper(root, cur_sum):
             if not root:
                 return cur_sum

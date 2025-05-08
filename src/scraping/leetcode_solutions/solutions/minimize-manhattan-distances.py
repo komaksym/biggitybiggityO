@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # math
 class Solution(object):
     def minimumDistance(self, points):
-        
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
         def max_distance(exclude):
             max_sum = max((x+y, i) for i, (x, y) in enumerate(points) if i != exclude)
             min_sum = min((x+y, i) for i, (x, y) in enumerate(points) if i != exclude)

@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,10 @@ class TreeNode(object):
         
 class Solution(object):
     def distributeCoins(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         def dfs(root, result):
             if not root:
                 return 0

@@ -1,8 +1,12 @@
 # Time:  O(n^2 * (l^2 + 2^n))
+# Space: O(n^2)
 
 class Solution(object):
     def shortestSuperstring(self, A):
-        
+        """
+        :type A: List[str]
+        :rtype: str
+        """
         n = len(A)
         overlaps = [[0]*n for _ in range(n)]
         for i, x in enumerate(A):

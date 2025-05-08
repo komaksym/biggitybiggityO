@@ -1,4 +1,5 @@
 # Time:  O(nlogk)
+# Space: O(n)
 
 import heapq
 
@@ -6,7 +7,11 @@ import heapq
 # heap
 class Solution(object):
     def kBigIndices(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         right = [False]*len(nums)
         max_heap1 = []
         for i in reversed(range(len(nums))):
@@ -27,13 +32,18 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 from sortedcontainers import SortedList
 
 
 # sorted list
 class Solution2(object):
     def kBigIndices(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         sl1, sl2 = SortedList(), SortedList(nums)
         result = 0
         for x in nums:

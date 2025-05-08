@@ -1,4 +1,5 @@
 # Time:  O(o * l + k * eloge + n * c * l), e is the number of edges reachable from a given node u, o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
+# Space: O(o * l + k * v + c + l), v is the number of nodes reachable from a given node u
 
 import collections
 import itertools
@@ -7,7 +8,14 @@ import itertools
 # hash table, dijkstra's algorithm, dp, memoization
 class Solution(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         lookups = collections.defaultdict(dict)
         for x in itertools.chain(original, changed):
@@ -64,6 +72,7 @@ class Solution(object):
 
 
 # Time:  O(o * l + k^3 + n * c * l), o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
+# Space: O(o * l + k^2 + c + l)
 import collections
 import itertools
 
@@ -71,7 +80,14 @@ import itertools
 # hash table, Floyd-Warshall algorithm, dp
 class Solution2(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         def floydWarshall(dist):
             for k in range(len(dist)):
@@ -117,6 +133,7 @@ class Solution2(object):
 
 
 # Time:  O(o * l + k * eloge + n * c * l), e is the number of edges reachable from a given node u, o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
+# Space: O(t + k * v + c + l), v is the number of nodes reachable from a given node u
 import collections
 import itertools
 
@@ -124,7 +141,14 @@ import itertools
 # hash table, dijkstra's algorithm, dp, memoization
 class Solution3(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
 
         lookup = {}
@@ -181,6 +205,7 @@ class Solution3(object):
 
 
 # Time:  O(o * l + k^3 + n * c * l), o = len(original), l = max(len(x) for x in original), k = len(lookups), c = len({len(x) for x in original})
+# Space: O(o * l + k^2 + c + l)
 import collections
 import itertools
 
@@ -188,7 +213,14 @@ import itertools
 # hash table, Floyd-Warshall algorithm, dp
 class Solution4(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         def floydWarshall(dist):
             for k in dist.keys():
@@ -236,6 +268,7 @@ class Solution4(object):
 
 
 # Time:  O(o * l + k * eloge + n * l), e is the number of edges reachable from a given node u, o = len(original), l = max(len(x) for x in original), k = trie.k
+# Space: O(t + k * v + l), v is the number of nodes reachable from a given node u
 import itertools
 import heapq
 
@@ -243,7 +276,14 @@ import heapq
 # trie, dijkstra's algorithm, dp, memoization
 class Solution5(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         class Trie(object):
             def __init__(self):
@@ -335,13 +375,21 @@ class Solution5(object):
 
 
 # Time:  O(o * l + k^3 + n * l), o = len(original), l = max(len(x) for x in original), k = trie.k
+# Space: O(t + k^2 + l)
 import itertools
 
 
 # trie, Floyd-Warshall algorithm, dp
 class Solution6(object):
     def minimumCost(self, source, target, original, changed, cost):
-        
+        """
+        :type source: str
+        :type target: str
+        :type original: List[str]
+        :type changed: List[str]
+        :type cost: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         class Trie(object):
             def __init__(self):

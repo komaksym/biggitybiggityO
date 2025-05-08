@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def myAtoi(self, str):
-        
+        """
+        :type str: str
+        :rtype: int
+        """
         INT_MAX =  2147483647
         INT_MIN = -2147483648
         result = 0
@@ -11,7 +15,8 @@ class Solution(object):
             return result
 
         i = 0
-        while i < len(str) and str[i].is            i += 1
+        while i < len(str) and str[i].isspace():
+            i += 1
 
         if len(str) == i:
             return result

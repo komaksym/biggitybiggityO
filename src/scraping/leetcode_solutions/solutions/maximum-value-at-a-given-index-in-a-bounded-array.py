@@ -1,8 +1,14 @@
 # Time:  O(logm)
+# Space: O(1)
 
 class Solution(object):
     def maxValue(self, n, index, maxSum):
-        
+        """
+        :type n: int
+        :type index: int
+        :type maxSum: int
+        :rtype: int
+        """
         def check(n, index, maxSum, x):
             y = max(x-index, 0)
             total = (x+y)*(x-y+1)//2

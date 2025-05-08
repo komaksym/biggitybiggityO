@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 
 
 class Solution(object):
     def countGoodSubstrings(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         K = 3
 
         result = 0

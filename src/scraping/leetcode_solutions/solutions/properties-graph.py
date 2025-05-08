@@ -1,9 +1,14 @@
 # Time:  O(n^2 * m)
+# Space: O(n)
 
 # graph, flood fill, bfs
 class Solution(object):
     def numberOfComponents(self, properties, k):
-        
+        """
+        :type properties: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         def bfs(u):
             q = [u]
             while q:
@@ -34,17 +39,23 @@ class Solution(object):
 
 
 # Time:  O(n^2 * m)
+# Space: O(n)
 # graph, union find
 class Solution2(object):
     def numberOfComponents(self, properties, k):
-        
-        class UnionFind(object): 
+        """
+        :type properties: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
+        class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+            def __init__(self, n):
                 self.set = list(range(n))
                 self.rank = [0]*n
 
             def find_set(self, x):
                 stk = []
-                while self.set[x] != x: 
+                while self.set[x] != x:  # path compression
                     stk.append(x)
                     x = self.set[x]
                 while stk:
@@ -55,7 +66,7 @@ class Solution2(object):
                 x, y = self.find_set(x), self.find_set(y)
                 if x == y:
                     return False
-                if self.rank[x] > self.rank[y]: 
+                if self.rank[x] > self.rank[y]:  # union by rank
                     x, y = y, x
                 self.set[x] = self.set[y]
                 if self.rank[x] == self.rank[y]:

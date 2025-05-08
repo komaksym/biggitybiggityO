@@ -1,9 +1,13 @@
 # Time:  O(logn)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def minMaxDifference(self, num):
-        
+        """
+        :type num: int
+        :rtype: int
+        """
         def f(dst):
             result = 0
             base = 1

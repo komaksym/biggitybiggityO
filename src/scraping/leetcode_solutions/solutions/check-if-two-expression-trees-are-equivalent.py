@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 import functools
@@ -13,7 +14,11 @@ class Node(object):
 # morris traversal
 class Solution(object):
     def checkEquivalence(self, root1, root2):
-        
+        """
+        :type root1: Node
+        :type root2: Node
+        :rtype: bool
+        """
         def add_counter(counter, prev, d, val):
             if val.isalpha():
                 counter[ord(val)-ord('a')] += d if prev[0] == '+' else -d
@@ -44,13 +49,18 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 import collections
 import functools
 
 
 class Solution2(object):
     def checkEquivalence(self, root1, root2):
-        
+        """
+        :type root1: Node
+        :type root2: Node
+        :rtype: bool
+        """
         def add_counter(counter, prev, d, val):
             if val.isalpha():
                 counter[ord(val)-ord('a')] += d if prev[0] == '+' else -d

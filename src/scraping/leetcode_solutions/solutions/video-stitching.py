@@ -1,8 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 class Solution(object):
     def videoStitching(self, clips, T):
-        
+        """
+        :type clips: List[List[int]]
+        :type T: int
+        :rtype: int
+        """
         if T == 0:
             return 0
         result = 1

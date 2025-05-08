@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def licenseKeyFormatting(self, S, K):
-        
+        """
+        :type S: str
+        :type K: int
+        :rtype: str
+        """
         result = []
         for i in reversed(range(len(S))):
             if S[i] == '-':

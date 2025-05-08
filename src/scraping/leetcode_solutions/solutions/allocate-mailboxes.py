@@ -1,8 +1,13 @@
 # Time:  O(m * n^2)
+# Space: O(n)
 
 class Solution(object):
     def minDistance(self, houses, k):
-        
+        """
+        :type houses: List[int]
+        :type k: int
+        :rtype: int
+        """
         def cost(prefix, i, j):
             return (prefix[j+1]-prefix[(i+j+1)//2])-(prefix[(i+j)//2+1]-prefix[i])
 

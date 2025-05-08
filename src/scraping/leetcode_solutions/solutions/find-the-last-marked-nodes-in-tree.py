@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # bfs
 class Solution(object):
     def lastMarkedNodes(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: List[int]
+        """
         def bfs(root):
             new_root = -1
             dist = [-1]*len(adj)
@@ -32,10 +36,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # bfs
 class Solution2(object):
     def lastMarkedNodes(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: List[int]
+        """
         def increase(x):
             return (x[0]+1, x[1])
 
@@ -87,10 +95,14 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # bfs
 class Solution3(object):
     def lastMarkedNodes(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: List[int]
+        """
         def increase(x):
             return (x[0]+1, x[1])
 
@@ -138,10 +150,14 @@ class Solution3(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # iterative dfs, tree dp
 class Solution4(object):
     def lastMarkedNodes(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: List[int]
+        """
         def increase(x):
             return (x[0]+1, x[1])
 
@@ -192,10 +208,14 @@ class Solution4(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # dfs, tree dp
 class Solution5(object):
     def lastMarkedNodes(self, edges):
-        
+        """
+        :type edges: List[List[int]]
+        :rtype: List[int]
+        """
         def increase(x):
             return (x[0]+1, x[1])
 

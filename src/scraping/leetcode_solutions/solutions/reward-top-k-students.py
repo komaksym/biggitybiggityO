@@ -1,4 +1,5 @@
 # Time:  O(pf * l + nf * l + n * l + klogk)
+# Space: O(pf * l + nf * l + n)
 
 import random
 import itertools
@@ -7,7 +8,14 @@ import itertools
 # quick select, partial sort
 class Solution(object):
     def topStudents(self, positive_feedback, negative_feedback, report, student_id, k):
-        
+        """
+        :type positive_feedback: List[str]
+        :type negative_feedback: List[str]
+        :type report: List[str]
+        :type student_id: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -31,7 +39,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
 
         pos, neg = set(positive_feedback), set(negative_feedback)

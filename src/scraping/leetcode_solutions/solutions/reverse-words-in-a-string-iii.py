@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def reverseWords(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         def reverse(s, begin, end):
             for i in range((end - begin) // 2):
                 s[begin + i], s[end - 1 - i] = s[end - 1 - i], s[begin + i]

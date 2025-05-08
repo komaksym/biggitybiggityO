@@ -1,10 +1,16 @@
 # Time:  O(nlogn + m + qlogn)
+# Space: O(n)
 
 # segment tree
 class Solution(object):
     def handleQuery(self, nums1, nums2, queries):
-        
-        class SegmentTree(object): 
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
+        class SegmentTree(object):  # 0-based index
             def __init__(self, N,
                         build_fn=lambda _: 0,
                         query_fn=lambda x, y: y if x is None else max(x, y),
@@ -25,7 +31,8 @@ class Solution(object):
                 if x < self.base:
                     self.lazy[x] = self.update_fn(self.lazy[x], val)
 
-            def update(self, L, R, h): 
+            def update(self, L, R, h):  # Time: O(logN), Space: O(N)
+                def pull(x):
                     while x > 1:
                         x >>= 1
                         self.tree[x] = self.query_fn(self.tree[x<<1], self.tree[(x<<1)+1])
@@ -38,10 +45,10 @@ class Solution(object):
                 R += self.base
                 L0, R0 = L, R
                 while L <= R:
-                    if L & 1: 
+                    if L & 1:  # is right child
                         self.__apply(L, h)
                         L += 1
-                    if R & 1 == 0: 
+                    if R & 1 == 0:  # is left child
                         self.__apply(R, h)
                         R -= 1
                     L >>= 1
@@ -49,7 +56,8 @@ class Solution(object):
                 pull(L0)
                 pull(R0)
 
-            def query(self, L, R): 
+            def query(self, L, R):  # Time: O(logN), Space: O(N)
+                def push(x):
                     n = self.H
                     while n:
                         y = x >> n
@@ -68,10 +76,10 @@ class Solution(object):
                 push(L)
                 push(R)
                 while L <= R:
-                    if L & 1: 
+                    if L & 1:  # is right child
                         result = self.query_fn(result, self.tree[L])
                         L += 1
-                    if R & 1 == 0: 
+                    if R & 1 == 0:  # is left child
                         result = self.query_fn(result, self.tree[R])
                         R -= 1
                     L >>= 1

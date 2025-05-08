@@ -1,4 +1,5 @@
 # Time:  O(nlogn + mlogn)
+# Space: O(n)
 
 import bisect
 
@@ -6,7 +7,11 @@ import bisect
 # line sweep, binary search
 class Solution(object):
     def fullBloomFlowers(self, flowers, persons):
-        
+        """
+        :type flowers: List[List[int]]
+        :type persons: List[int]
+        :rtype: List[int]
+        """
         cnt = collections.Counter()
         for s, e in flowers:
             cnt[s] += 1
@@ -19,13 +24,18 @@ class Solution(object):
 
 
 # Time:  O(nlogn + mlogn)
+# Space: O(n)
 import bisect
 
 
 # binary search
 class Solution(object):
     def fullBloomFlowers(self, flowers, persons):
-        
+        """
+        :type flowers: List[List[int]]
+        :type persons: List[int]
+        :rtype: List[int]
+        """
         starts, ends = [], []
         for s, e in flowers:
             starts.append(s)

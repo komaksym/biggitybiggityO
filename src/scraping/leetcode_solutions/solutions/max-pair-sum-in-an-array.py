@@ -1,9 +1,13 @@
 # Time:  O(nlogr)
+# Space: O(1)
 
 # hash table
 class Solution(object):
     def maxSum(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def max_digit(x):
             result = 0
             while x:

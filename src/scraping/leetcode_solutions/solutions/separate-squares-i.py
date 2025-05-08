@@ -1,9 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # sort, line sweep
 class Solution(object):
     def separateSquares(self, squares):
-        
+        """
+        :type squares: List[List[int]]
+        :rtype: float
+        """
         events = []
         for x, y, l in squares:
             events.append((y, 1, l))
@@ -30,10 +34,14 @@ class Solution(object):
 
 
 # Time:  O(nlogr)
+# Space: O(1)
 # binary search
 class Solution2(object):
     def separateSquares(self, squares):
-        
+        """
+        :type squares: List[List[int]]
+        :rtype: float
+        """
         EPS = 1e-5
         def binary_search(left, right, check):
             while right-left > EPS:

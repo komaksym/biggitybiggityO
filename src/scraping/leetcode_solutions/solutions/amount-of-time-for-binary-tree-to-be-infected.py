@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -9,7 +10,11 @@ class TreeNode(object):
 # iterative dfs, tree dp
 class Solution(object):
     def amountOfTime(self, root, start):
-        
+        """
+        :type root: Optional[TreeNode]
+        :type start: int
+        :rtype: int
+        """
         def iter_dfs(root, start):
             result = -1
             stk = [(1, (root, [-1]*2))]
@@ -35,17 +40,22 @@ class Solution(object):
                     elif right[1] >= 0:
                         d = right[1]+1
                         result = max(result, left[0]+1+d)
-                    ret[:] = [max(left[0], right[0])+1, d] 
+                    ret[:] = [max(left[0], right[0])+1, d]  # [height, dist_to_start]
             return result
 
         return iter_dfs(root, start)
 
 
 # Time:  O(n)
+# Space: O(h)
 # dfs, tree dp
 class Solution2(object):
     def amountOfTime(self, root, start):
-        
+        """
+        :type root: Optional[TreeNode]
+        :type start: int
+        :rtype: int
+        """
         def dfs(curr, start, result):
             if curr is None:
                 return [-1, -1]
@@ -61,7 +71,7 @@ class Solution2(object):
             elif right[1] >= 0:
                 d = right[1]+1
                 result[0] = max(result[0], left[0]+1+d)
-            return [max(left[0], right[0])+1, d] 
+            return [max(left[0], right[0])+1, d]  # [height, dist_to_start]
 
         result = [-1]
         dfs(root, start, result)
@@ -69,10 +79,15 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # bfs
 class Solution3(object):
     def amountOfTime(self, root, start):
-        
+        """
+        :type root: Optional[TreeNode]
+        :type start: int
+        :rtype: int
+        """
         def bfs(root):
             adj = collections.defaultdict(list)
             q = [root]

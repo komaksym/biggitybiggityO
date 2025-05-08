@@ -1,9 +1,14 @@
 # Time:  O(nlogm + nlogn), m is the max of nums
+# Space: O(n)
 
 # sort
 class Solution(object):
     def sortJumbled(self, mapping, nums):
-        
+        """
+        :type mapping: List[int]
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def transform(mapping, x):
             if not x:
                 return mapping[x]

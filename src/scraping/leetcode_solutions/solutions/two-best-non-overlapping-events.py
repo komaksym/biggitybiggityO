@@ -1,11 +1,15 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import heapq
 
 
 class Solution(object):
     def maxTwoEvents(self, events):
-        
+        """
+        :type events: List[List[int]]
+        :rtype: int
+        """
         events.sort()
         result = best = 0
         min_heap = []

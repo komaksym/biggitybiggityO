@@ -1,8 +1,13 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 class Solution(object):
     def threeSumClosest(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         result, min_diff = 0, float("inf")
         nums.sort()
         for i in reversed(range(2, len(nums))):

@@ -1,4 +1,5 @@
 # Time:  O(m^2 * (n + m))
+# Space: O(m^2)
 
 import itertools
 
@@ -6,19 +7,24 @@ import itertools
 # weighted bipartite matching solution
 class Solution(object):
     def maxCompatibilitySum(self, students, mentors):
-        
-       
-       
-        def hungarian(a): 
+        """
+        :type students: List[List[int]]
+        :type mentors: List[List[int]]
+        :rtype: int
+        """
+        # Template translated from:
+        # https://github.com/kth-competitive-programming/kactl/blob/main/content/graph/WeightedMatching.h
+        def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
+            if not a:
                 return 0, []
             n, m = len(a)+1, len(a[0])+1
             u, v, p, ans = [0]*n, [0]*m, [0]*m, [0]*(n-1)
             for i in range(1, n):
                 p[0] = i
-                j0 = 0 
+                j0 = 0  # add "dummy" worker 0
                 dist, pre = [float("inf")]*m, [-1]*m
                 done = [False]*(m+1)
-                while True: 
+                while True:  # dijkstra
                     done[j0] = True
                     i0, j1, delta = p[j0], None, float("inf")
                     for j in range(1, m):
@@ -38,13 +44,13 @@ class Solution(object):
                     j0 = j1
                     if not p[j0]:
                         break
-                while j0: 
+                while j0:  # update alternating path
                     j1 = pre[j0]
                     p[j0], j0 = p[j1], j1
             for j in range(1, m):
                 if p[j]:
                     ans[p[j]-1] = j-1
-            return -v[0], ans 
+            return -v[0], ans  # min cost
 
         def score(s, m):
             return sum(int(a == b) for a, b in zip(s, m))
@@ -53,11 +59,16 @@ class Solution(object):
 
 
 # Time:  O(m * (n + 2^m))
+# Space: O(2^m)
 # dp solution
 class Solution2(object):
     def maxCompatibilitySum(self, students, mentors):
-        
-        def popcount(n): 
+        """
+        :type students: List[List[int]]
+        :type mentors: List[List[int]]
+        :rtype: int
+        """
+        def popcount(n):  # Time: O(logn) ~= O(1) if n is a 32-bit number
             result = 0
             while n:
                 n &= n-1

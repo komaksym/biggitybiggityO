@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # bfs, constructive algorithms
 class Solution(object):
     def constructGridLayout(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: List[List[int]]
+        """
         def bfs(u):
             dist = [0]*n
             dist[u] = 1

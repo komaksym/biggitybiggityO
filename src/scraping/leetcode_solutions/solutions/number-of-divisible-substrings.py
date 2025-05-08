@@ -1,4 +1,5 @@
 # Time:  O(d * n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # prefix sum, freq table
 class Solution(object):
     def countDivisibleSubstrings(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         result = 0
         for d in range(1, 10):
             prefix = 0

@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 import heapq
@@ -7,7 +8,10 @@ import heapq
 # line sweep, heap
 class Solution(object):
     def amountPainted(self, paint):
-        
+        """
+        :type paint: List[List[int]]
+        :rtype: List[int]
+        """
         points = collections.defaultdict(list)
         for i, (s, e) in enumerate(paint):
             points[s].append((True, i))
@@ -31,13 +35,17 @@ class Solution(object):
                     
             
 # Time:  O(nlogn)
+# Space: O(n)
 from sortedcontainers import SortedList
 
 
 # line sweep, sorted list
 class Solution2(object):
     def amountPainted(self, paint):
-        
+        """
+        :type paint: List[List[int]]
+        :rtype: List[int]
+        """
         points = collections.defaultdict(list)
         for i, (s, e) in enumerate(paint):
             points[s].append((True, i))
@@ -103,8 +111,8 @@ class SegmentTree(object):
             return
         L += self.base
         R += self.base
-        self.__push(L) 
-        self.__push(R) 
+        self.__push(L)  # key point
+        self.__push(R)  # key point
         L0, R0 = L, R
         while L <= R:
             if L & 1:
@@ -140,10 +148,14 @@ class SegmentTree(object):
 
 
 # Time:  O(nlogr), r is the max position
+# Space: O(r)
 # segment tree
 class SolutionTLE(object):
     def amountPainted(self, paint):
-        
+        """
+        :type paint: List[List[int]]
+        :rtype: List[int]
+        """
         result = []
         st = SegmentTree(max(e for _, e in paint))
         for s, e in paint:

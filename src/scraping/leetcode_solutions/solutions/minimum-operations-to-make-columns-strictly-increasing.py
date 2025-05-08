@@ -1,9 +1,13 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def minimumOperations(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         result = 0
         for i in range(len(grid)-1):
             for j in range(len(grid[0])):

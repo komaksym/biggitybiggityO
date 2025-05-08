@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -7,9 +8,9 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-   
-   
-   
+    # @param inorder, a list of integers
+    # @param postorder, a list of integers
+    # @return a tree node
     def buildTree(self, inorder, postorder):
         lookup = {}
         for i, num in enumerate(inorder):

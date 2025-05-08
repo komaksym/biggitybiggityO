@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def maxWidthRamp(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         result = 0
         s = []
         for i in A:

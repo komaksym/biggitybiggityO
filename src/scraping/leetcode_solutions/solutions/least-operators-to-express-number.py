@@ -1,8 +1,13 @@
 # Time:  O(logn/logx) = O(1)
+# Space: O(logn) = O(1)
 
 class Solution(object):
     def leastOpsExpressTarget(self, x, target):
-        
+        """
+        :type x: int
+        :type target: int
+        :rtype: int
+        """
         pos, neg, k = 0, 0, 0
         while target:
             target, r = divmod(target, x)

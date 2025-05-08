@@ -1,4 +1,5 @@
 # Time:  O(n^2 * logn)
+# Space: O(n)
 
 import math
 
@@ -8,7 +9,11 @@ import math
 # https://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/discuss/636345/Python-O(n3)-and-O(n2logn)-solution-explained-in-detail-with-pictures
 class Solution(object):
     def numPoints(self, points, r):
-        
+        """
+        :type points: List[List[int]]
+        :type r: int
+        :rtype: int
+        """
         def count_points(points, r, i):
             angles = []
             for j in range(len(points)):
@@ -22,7 +27,7 @@ class Solution(object):
                 angles.append((angle-delta, 0)), angles.append((angle+delta, 1))
             angles.sort()
             result, count = 1, 1
-            for _, is_closed in angles: 
+            for _, is_closed in angles:  # angle sweep
                 if not is_closed:
                     count += 1
                 else:

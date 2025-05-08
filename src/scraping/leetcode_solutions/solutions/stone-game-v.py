@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 class Solution(object):
     def stoneGameV(self, stoneValue):
-        
+        """
+        :type stoneValue: List[int]
+        :rtype: int
+        """
         n = len(stoneValue)
         prefix = [0]
         for v in stoneValue:
@@ -19,7 +23,7 @@ class Solution(object):
             for i in range(n-l+1):
                 j = i+l-1
                 while prefix[mid[i]]-prefix[i] < prefix[j+1]-prefix[mid[i]]:
-                    mid[i] += 1 
+                    mid[i] += 1  # Time: O(n^2) in total
                 p = mid[i]
                 max_score = 0
                 if prefix[p]-prefix[i] == prefix[j+1]-prefix[p]:
@@ -35,9 +39,13 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n^2)
 class Solution2(object):
     def stoneGameV(self, stoneValue):
-        
+        """
+        :type stoneValue: List[int]
+        :rtype: int
+        """
         n = len(stoneValue)
         prefix = [0]
         for v in stoneValue:
@@ -49,7 +57,7 @@ class Solution2(object):
                 j = i+l-1
                 p = i if l == 1 else mid[i][j-1]
                 while prefix[p]-prefix[i] < prefix[j+1]-prefix[p]:
-                    p += 1 
+                    p += 1  # Time: O(n^2) in total
                 mid[i][j] = p
         
         rmq = [[0]*n for _ in range(n)]

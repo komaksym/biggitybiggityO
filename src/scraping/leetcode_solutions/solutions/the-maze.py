@@ -1,11 +1,17 @@
 # Time:  O(max(r, c) * w)
+# Space: O(w)
 
 import collections
 
 
 class Solution(object):
     def hasPath(self, maze, start, destination):
-        
+        """
+        :type maze: List[List[int]]
+        :type start: List[int]
+        :type destination: List[int]
+        :rtype: bool
+        """
         def neighbors(maze, node):
             for i, j in [(-1, 0), (0, 1), (0, -1), (1, 0)]:
                 x, y = node

@@ -1,9 +1,14 @@
 # Time:  O(nlogn + nlogr) = O(nlogr)
+# Space: O(1)
 
 # binary search, greedy
 class Solution(object):
     def maxPossibleScore(self, start, d):
-        
+        """
+        :type start: List[int]
+        :type d: int
+        :rtype: int
+        """
         def binary_search_right(left, right, check):
             while left <= right:
                 mid = left+(right-left)//2

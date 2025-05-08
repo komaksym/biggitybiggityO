@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,10 @@ class TreeNode(object):
 
 class Solution(object):
     def maxProduct(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         MOD = 10**9 + 7
         def dfs(root, total, result):
             if not root:

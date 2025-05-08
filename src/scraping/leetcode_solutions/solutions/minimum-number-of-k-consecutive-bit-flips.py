@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def minKBitFlips(self, A, K):
-        
+        """
+        :type A: List[int]
+        :type K: int
+        :rtype: int
+        """
         result, curr = 0, 0
         for i in range(len(A)):
             if i >= K:

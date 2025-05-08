@@ -1,10 +1,14 @@
 # Time:  O(n * m * l + n^2 * m), n is favoriteCompanies.length
 #                              , m is the max of favoriteCompanies[i].length
 #                              , l is the max of favoriteCompanies[i][j].length
+# Space: O(n * m * l)
 
 class Solution(object):
     def peopleIndexes(self, favoriteCompanies):
-        
+        """
+        :type favoriteCompanies: List[List[str]]
+        :rtype: List[int]
+        """
         lookup, comps = {}, []
         for cs in favoriteCompanies:
             comps.append(set())
@@ -21,6 +25,7 @@ class Solution(object):
 # Time:  O(n * m * l + n^2 * m * log*(n)), n is favoriteCompanies.length
 #                                        , m is the max of favoriteCompanies[i].length
 #                                        , l is the max of favoriteCompanies[i][j].length
+# Space: O(n * m * l)
 class UnionFind(object):
     def __init__(self, data):
         self.data = [set(d) for d in data]
@@ -28,7 +33,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -45,7 +50,10 @@ class UnionFind(object):
 
 class Solution2(object):
     def peopleIndexes(self, favoriteCompanies):
-        
+        """
+        :type favoriteCompanies: List[List[str]]
+        :rtype: List[int]
+        """
         lookup, comps = {}, []
         for cs in favoriteCompanies:
             comps.append(set())

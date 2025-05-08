@@ -1,4 +1,5 @@
 # Time:  O(1)
+# Space: O(1)
 
 # observation:
 # i*(i-1)/(i-2) = i+1+2/(i-2)
@@ -18,7 +19,10 @@
 
 class Solution(object):
     def clumsy(self, N):
-        
+        """
+        :type N: int
+        :rtype: int
+        """
         if N <= 2:
             return N
         if N <= 4:

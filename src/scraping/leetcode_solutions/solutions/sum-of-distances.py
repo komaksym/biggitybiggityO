@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # freq table, prefix sum
 class Solution(object):
     def distance(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         result = [0]*len(nums)
         cnt1, left = collections.Counter(), collections.Counter()
         for i in range(len(nums)):

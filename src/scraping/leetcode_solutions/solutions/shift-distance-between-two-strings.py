@@ -1,9 +1,16 @@
 # Time:  O(n + 26)
+# Space: O(26)
 
 # prefix sum
 class Solution(object):
     def shiftDistance(self, s, t, nextCost, previousCost):
-        
+        """
+        :type s: str
+        :type t: str
+        :type nextCost: List[int]
+        :type previousCost: List[int]
+        :rtype: int
+        """
         prefix1 = [0]*(len(nextCost)+1)
         for i in range(len(nextCost)):
             prefix1[i+1] = prefix1[i]+nextCost[i]

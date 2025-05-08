@@ -1,4 +1,5 @@
 # Time:  O(m + n)
+# Space: O(1)
 
 class PolyNode:
     def __init__(self, x=0, y=0, next=None):
@@ -7,7 +8,11 @@ class PolyNode:
 
 class Solution:
     def addPoly(self, poly1, poly2):
-        
+        """
+        :type poly1: PolyNode
+        :type poly2: PolyNode
+        :rtype: PolyNode
+        """
         curr = dummy = PolyNode()
         while poly1 and poly2:
             if poly1.power > poly2.power:

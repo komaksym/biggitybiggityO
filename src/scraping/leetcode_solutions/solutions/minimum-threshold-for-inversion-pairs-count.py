@@ -1,4 +1,5 @@
 # Time:  O(nlogn * logr)
+# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -6,7 +7,11 @@ from sortedcontainers import SortedList
 # binary search, sorted list
 class Solution(object):
     def minThreshold(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

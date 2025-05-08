@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def parseBoolExpr(self, expression):
-        
+        """
+        :type expression: str
+        :rtype: bool
+        """
         def parse(expression, i):
             if expression[i[0]] not in "&|!":
                 result = expression[i[0]] == 't'

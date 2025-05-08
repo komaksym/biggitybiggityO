@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def isRobotBounded(self, instructions):
-        
+        """
+        :type instructions: str
+        :rtype: bool
+        """
         directions = [[ 1, 0], [0, -1], [-1, 0], [0, 1]]
         x, y, i = 0, 0, 0
         for instruction in instructions:

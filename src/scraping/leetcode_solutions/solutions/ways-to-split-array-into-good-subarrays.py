@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # combinatorics
 class Solution(object):
     def numberOfGoodSubarraySplits(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         result, prev = 1, -1
         for i in range(len(nums)):

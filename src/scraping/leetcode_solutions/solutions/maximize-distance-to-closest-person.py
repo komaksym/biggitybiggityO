@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 
 class Solution(object):
     def maxDistToClosest(self, seats):
-        
+        """
+        :type seats: List[int]
+        :rtype: int
+        """
         prev, result = -1, 1
         for i in range(len(seats)):
             if seats[i]:

@@ -1,11 +1,16 @@
 # Time:  O(n * l), n is the size of nums, l is the average length of the digit string in nums
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def numOfPairs(self, nums, target):
-        
+        """
+        :type nums: List[str]
+        :type target: str
+        :rtype: int
+        """
         lookup = collections.Counter()
         result = 0
         for num in nums:
@@ -20,12 +25,17 @@ class Solution(object):
 
 
 # Time:  O(n * l), n is the size of nums, l is the average length of the digit string in nums
+# Space: O(n)
 import collections
 
 
 class Solution2(object):
     def numOfPairs(self, nums, target):
-        
+        """
+        :type nums: List[str]
+        :type target: str
+        :rtype: int
+        """
         prefix, suffix = collections.Counter(), collections.Counter()
         result = 0
         for num in nums:

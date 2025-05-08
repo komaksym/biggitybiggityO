@@ -1,8 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 class Solution(object):
     def twoSumLessThanK(self, A, K):
-        
+        """
+        :type A: List[int]
+        :type K: int
+        :rtype: int
+        """
         A.sort()
         result = -1
         left, right = 0, len(A)-1

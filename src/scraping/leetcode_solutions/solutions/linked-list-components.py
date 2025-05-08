@@ -1,4 +1,5 @@
 # Time:  O(m + n), m is the number of G, n is the number of nodes
+# Space: O(m)
 
 class ListNode(object):
     def __init__(self, x):
@@ -8,7 +9,11 @@ class ListNode(object):
 
 class Solution(object):
     def numComponents(self, head, G):
-        
+        """
+        :type head: ListNode
+        :type G: List[int]
+        :rtype: int
+        """
         lookup = set(G)
         dummy = ListNode(-1)
         dummy.next = head

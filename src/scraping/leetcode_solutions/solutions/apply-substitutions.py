@@ -1,4 +1,5 @@
 # Time:  O(r * 2^r)
+# Space: O(r * 2^r)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # topological sort
 class Solution(object):
     def applySubstitutions(self, replacements, text):
-        
+        """
+        :type replacements: List[List[str]]
+        :type text: str
+        :rtype: str
+        """
         def find_adj(s):
             result = set()
             i = 0
@@ -59,10 +64,15 @@ class Solution(object):
 
 
 # Time:  O(r * 2^r)
+# Space: O(r * 2^r)
 # memoization
 class Solution2(object):
     def applySubstitutions(self, replacements, text):
-        
+        """
+        :type replacements: List[List[str]]
+        :type text: str
+        :rtype: str
+        """
         lookup = {k:v for k, v in replacements}
         memo = {}
         def replace(s):

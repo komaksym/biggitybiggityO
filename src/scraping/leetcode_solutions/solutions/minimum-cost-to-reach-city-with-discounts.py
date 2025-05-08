@@ -1,5 +1,6 @@
 # Time:  O((|E| + |V|) * log|V|) = O(|E| * log|V|) by using binary heap,
 #        if we can further to use Fibonacci heap, it would be O(|E| + |V| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import collections
 import heapq
@@ -7,7 +8,12 @@ import heapq
 
 class Solution(object):
     def minimumCost(self, n, highways, discounts):
-        
+        """
+        :type n: int
+        :type highways: List[List[int]]
+        :type discounts: int
+        :rtype: int
+        """
         adj = [[] for _ in range(n)]
         for u, v, w in highways:
             adj[u].append((v, w))

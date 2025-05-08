@@ -1,11 +1,16 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import bisect
 
 
 class Solution(object):
     def minAbsoluteSumDiff(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
 
         sorted_nums1 = sorted(nums1)

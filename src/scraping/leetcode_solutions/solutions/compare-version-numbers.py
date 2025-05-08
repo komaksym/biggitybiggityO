@@ -1,11 +1,16 @@
 # Time:  O(n)
+# Space: O(1)
 
 import itertools
 
 
 class Solution(object):
     def compareVersion(self, version1, version2):
-        
+        """
+        :type version1: str
+        :type version2: str
+        :rtype: int
+        """
         n1, n2 = len(version1), len(version2)
         i, j = 0, 0
         while i < n1 or j < n2:
@@ -24,11 +29,16 @@ class Solution(object):
         return 0
 
 # Time:  O(n)
+# Space: O(n)
 
 
 class Solution2(object):
     def compareVersion(self, version1, version2):
-        
+        """
+        :type version1: str
+        :type version2: str
+        :rtype: int
+        """
         v1, v2 = version1.split("."), version2.split(".")
 
         if len(v1) > len(v2):
@@ -48,7 +58,11 @@ class Solution2(object):
         return 0
 
     def compareVersion2(self, version1, version2):
-        
+        """
+        :type version1: str
+        :type version2: str
+        :rtype: int
+        """
         v1 = [int(x) for x in version1.split('.')]
         v2 = [int(x) for x in version2.split('.')]
         while len(v1) != len(v2):

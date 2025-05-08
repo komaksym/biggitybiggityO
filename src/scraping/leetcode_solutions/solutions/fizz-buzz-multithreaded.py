@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import threading
 
@@ -9,9 +10,12 @@ class FizzBuzz(object):
         self.__curr = 0
         self.__cv = threading.Condition()
 
-   
+    # printFizz() outputs "fizz"
     def fizz(self, printFizz):
-        
+        """
+        :type printFizz: method
+        :rtype: void
+        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 0:
@@ -21,9 +25,12 @@ class FizzBuzz(object):
                     printFizz()
                 self.__cv.notify_all()
 
-   
+    # printBuzz() outputs "buzz"
     def buzz(self, printBuzz):
-        
+        """
+        :type printBuzz: method
+        :rtype: void
+        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 1:
@@ -33,9 +40,12 @@ class FizzBuzz(object):
                     printBuzz()
                 self.__cv.notify_all()
 
-   
+    # printFizzBuzz() outputs "fizzbuzz"
     def fizzbuzz(self, printFizzBuzz):
-        
+        """
+        :type printFizzBuzz: method
+        :rtype: void
+        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 2:
@@ -45,9 +55,12 @@ class FizzBuzz(object):
                     printFizzBuzz()
                 self.__cv.notify_all()
 
-   
+    # printNumber(x) outputs "x", where x is an integer.
     def number(self, printNumber):
-        
+        """
+        :type printNumber: method
+        :rtype: void
+        """
         for i in range(1, self.__n+1):
             with self.__cv:
                 while self.__curr % 4 != 3:

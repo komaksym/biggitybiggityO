@@ -1,7 +1,8 @@
 # Time:  O(n * m)
+# Space: O(n + m)
 
 class Solution(object):
-   
+    # @return an integer
     def minDistance(self, word1, word2):
         if len(word1) < len(word2):
             return self.minDistance(word2, word1)
@@ -23,8 +24,9 @@ class Solution(object):
         return distance[-1]
 
 # Time:  O(n * m)
+# Space: O(n * m)
 class Solution2(object):
-   
+    # @return an integer
     def minDistance(self, word1, word2):
         distance = [[i] for i in range(len(word1) + 1)]
         distance[0] = [j for j in range(len(word2) + 1)]

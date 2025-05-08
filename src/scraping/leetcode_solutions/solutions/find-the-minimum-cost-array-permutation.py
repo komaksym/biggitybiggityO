@@ -1,9 +1,13 @@
 # Time:  O((n-1)^2 * 2^(n-1))
+# Space: O((n-1) * 2^(n-1))
 
 # dp, backtracing
 class Solution(object):
     def findPermutation(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         INF = float("inf")
         n = len(nums)
         dp = [[(INF, -1) for _ in range(n-1)] for _ in range(1<<(n-1))]

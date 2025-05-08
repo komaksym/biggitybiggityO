@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import itertools
 
@@ -6,7 +7,12 @@ import itertools
 # greedy
 class Solution(object):
     def minOperations(self, nums1, nums2, k):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :type k: int
+        :rtype: int
+        """
         cnt1 = cnt2 = 0
         for x, y in zip(nums1, nums2):
             if y == x:

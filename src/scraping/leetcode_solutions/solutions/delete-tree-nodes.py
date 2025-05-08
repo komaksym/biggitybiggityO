@@ -1,11 +1,17 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def deleteTreeNodes(self, nodes, parent, value):
-        
+        """
+        :type nodes: int
+        :type parent: List[int]
+        :type value: List[int]
+        :rtype: int
+        """
         def dfs(value, children, x):
             total, count = value[x], 1
             for y in children[x]:
@@ -22,10 +28,16 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def deleteTreeNodes(self, nodes, parent, value):
-        
-       
+        """
+        :type nodes: int
+        :type parent: List[int]
+        :type value: List[int]
+        :rtype: int
+        """
+        # assuming parent[i] < i for all i > 0
         result = [1]*nodes
         for i in reversed(range(1, nodes)):
             value[parent[i]] += value[i]

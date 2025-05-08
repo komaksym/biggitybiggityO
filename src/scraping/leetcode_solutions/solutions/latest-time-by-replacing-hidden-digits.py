@@ -1,8 +1,12 @@
 # Time:  O(1)
+# Space: O(1)
 
 class Solution(object):
     def maximumTime(self, time):
-        
+        """
+        :type time: str
+        :rtype: str
+        """
         result = list(time)
         for i, c in enumerate(time): 
             if c != "?":

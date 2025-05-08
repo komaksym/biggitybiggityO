@@ -1,13 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, nums):
         self.set = list(range(len(nums)))
         self.rank = [0]*len(nums)
         self.size = nums[:]
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -18,7 +20,7 @@ class UnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]: 
+        if self.rank[x] > self.rank[y]:  # union by rank
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -33,7 +35,11 @@ class UnionFind(object):
 # union find
 class Solution(object):
     def maximumSegmentSum(self, nums, removeQueries):
-        
+        """
+        :type nums: List[int]
+        :type removeQueries: List[int]
+        :rtype: List[int]
+        """
         result = [0]*len(removeQueries)
         lookup = [0]*len(nums)
         uf = UnionFind(nums)
@@ -49,13 +55,18 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 from sortedcontainers import SortedList
 
 
 # prefix sum, sorted list
 class Solution2(object):
     def maximumSegmentSum(self, nums, removeQueries):
-        
+        """
+        :type nums: List[int]
+        :type removeQueries: List[int]
+        :rtype: List[int]
+        """
         removed_idxs = SortedList([-1, len(nums)])
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):

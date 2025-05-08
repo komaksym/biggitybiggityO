@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 import collections
 
@@ -13,7 +14,11 @@ class TreeNode(object):
 class Codec(object):
 
     def serialize(self, root):
-        
+        """Encodes a tree to a single string.
+
+        :type root: TreeNode
+        :rtype: str
+        """
         def serializeHelper(node, vals):
             if node:
                 vals.append(node.val)
@@ -27,7 +32,11 @@ class Codec(object):
 
 
     def deserialize(self, data):
-        
+        """Decodes your encoded data to tree.
+
+        :type data: str
+        :rtype: TreeNode
+        """
         def deserializeHelper(minVal, maxVal, vals):
             if not vals:
                 return None

@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 # the followings are invariant if the number of 'X' in both strings are the same
 # 1. the ordering of 'L', 'R' in both strings are the same
@@ -6,7 +7,11 @@
 # 3. for each position (i, j) of paired 'R' character in both strings, i <= j
 class Solution(object):
     def canTransform(self, start, end):
-        
+        """
+        :type start: str
+        :type end: str
+        :rtype: bool
+        """
         if start.count('X') != end.count('X'):
             return False
         i, j = 0, 0

@@ -1,10 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # counting sort
 class Solution(object):
     def sortVowels(self, s):
-        
-        def inplace_counting_sort(nums, reverse=False): 
+        """
+        :type s: str
+        :rtype: str
+        """
+        def inplace_counting_sort(nums, reverse=False):  # Time: O(n)
             if not nums:
                 return
             count = [0]*(max(nums)+1)
@@ -12,14 +16,14 @@ class Solution(object):
                 count[num] += 1
             for i in range(1, len(count)):
                 count[i] += count[i-1]
-            for i in reversed(range(len(nums))): 
+            for i in reversed(range(len(nums))):  # inplace but unstable sort
                 while nums[i] >= 0:
                     count[nums[i]] -= 1
                     j = count[nums[i]]
                     nums[i], nums[j] = nums[j], ~nums[i]
             for i in range(len(nums)):
-                nums[i] = ~nums[i] 
-            if reverse: 
+                nums[i] = ~nums[i]  # restore values
+            if reverse:  # unstable sort
                 nums.reverse()
     
         VOWELS = "AEIOUaeiou"
@@ -30,10 +34,14 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(1)
 # sort
 class Solution2(object):
     def sortVowels(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         VOWELS = "AEIOUaeiou"
         LOOKUP = set(VOWELS)
         vowels = [x for x in s if x in LOOKUP]

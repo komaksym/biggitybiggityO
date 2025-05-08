@@ -1,8 +1,12 @@
 # Time:  O(10 * n)
+# Space: O(1024)
 
 class Solution(object):
     def longestAwesome(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         ALPHABET_SIZE = 10
         result, mask, lookup = 0, 0, [len(s)]*(2**ALPHABET_SIZE)
         lookup[0] = -1

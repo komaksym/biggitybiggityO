@@ -1,11 +1,15 @@
 # Time:  O(logn)
+# Space: O(1)
 
 import itertools
 
 
 class Solution(object):
     def fib(self, N):
-        
+        """
+        :type N: int
+        :rtype: int
+        """
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))] \
                       for i in range(len(A))]
@@ -23,13 +27,17 @@ class Solution(object):
 
         T = [[1, 1],
              [1, 0]]
-        return matrix_mult([[1, 0]], matrix_expo(T, N))[0][1] 
+        return matrix_mult([[1, 0]], matrix_expo(T, N))[0][1]  # [a1, a0] * T^N
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def fib(self, N):
-        
+        """
+        :type N: int
+        :rtype: int
+        """
         prev, current = 0, 1
         for i in range(N):
             prev, current = current, prev + current,

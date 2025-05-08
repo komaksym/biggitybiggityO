@@ -1,4 +1,5 @@
 # Time:  O(n + klogn)
+# Space: O(1)
 
 import heapq
 
@@ -6,7 +7,11 @@ import heapq
 # heap
 class Solution(object):
     def maxKelements(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//b
     
@@ -27,13 +32,18 @@ class Solution(object):
   
 
 # Time:  O(n + klogn)
+# Space: O(1)
 import heapq
 
 
 # heap
 class Solution2(object):
     def maxKelements(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//b
     

@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import bisect
 
@@ -46,11 +47,15 @@ class SegmentTree(object):
 # segment tree with coordinate compression
 class Solution(object):
     def lengthOfLIS(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         sorted_nums = sorted({x-1 for x in nums})
         num_to_idx = {x:i for i, x in enumerate(sorted_nums)}
         st = SegmentTree(len(num_to_idx))
         for x in nums:
             x -= 1
             st.update(num_to_idx[x], st.query(bisect.bisect_left(sorted_nums, x-k), num_to_idx[x]-1)+1)
-        return st.tree[1] 
+        return st.tree[1]  # st.query(0, len(num_to_idx)-1)

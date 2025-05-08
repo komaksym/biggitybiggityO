@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def toHexspeak(self, num):
-        
+        """
+        :type num: str
+        :rtype: str
+        """
         lookup = {0:'O', 1:'I'}
         for i in range(6):
             lookup[10+i] = chr(ord('A')+i)
@@ -17,8 +21,12 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def toHexspeak(self, num):
-        
+        """
+        :type num: str
+        :rtype: str
+        """
         result = hex(int(num)).upper()[2:].replace('0', 'O').replace('1', 'I')
         return result if all(c in "ABCDEFOI" for c in result) else "ERROR"

@@ -1,11 +1,17 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def distanceK(self, root, target, K):
-        
+        """
+        :type root: TreeNode
+        :type target: TreeNode
+        :type K: int
+        :rtype: List[int]
+        """
         def dfs(parent, child, neighbors):
             if not child:
                 return

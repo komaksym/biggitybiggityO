@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def findTarget(self, root, k):
-        
+        """
+        :type root: TreeNode
+        :type k: int
+        :rtype: bool
+        """
         class BSTIterator(object):
             def __init__(self, root, forward):
                 self.__node = root

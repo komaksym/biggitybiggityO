@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 class Solution(object):
     def countPalindromicSubsequences(self, S):
-        
+        """
+        :type S: str
+        :rtype: int
+        """
         def dp(i, j, prv, nxt, lookup):
             if lookup[i][j] is not None:
                 return lookup[i][j]

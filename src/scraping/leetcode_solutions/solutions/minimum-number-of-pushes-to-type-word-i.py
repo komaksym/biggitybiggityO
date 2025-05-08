@@ -1,9 +1,13 @@
 # Time:  O(4)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def minimumPushes(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//b
 
@@ -11,11 +15,15 @@ class Solution(object):
 
 
 # Time:  O(26)
+# Space: O(26)
 import collections
 
 
 # freq table, greedy
 class Solution2(object):
     def minimumPushes(self, word):
-        
+        """
+        :type word: str
+        :rtype: int
+        """
         return sum(x*(i//(9-2+1)+1) for i, x in enumerate(sorted(iter(collections.Counter(word).values()), reverse=True)))

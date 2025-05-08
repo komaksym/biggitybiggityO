@@ -1,9 +1,13 @@
 # Time:  O(n^2 * 2^n)
+# Space: O(1)
 
 # brute force, bitmask
 class Solution(object):
     def maximumGood(self, statements):
-        
+        """
+        :type statements: List[List[int]]
+        :rtype: int
+        """
         def check(mask):
             return all(((mask>>j)&1) == statements[i][j]
                        for i in range(len(statements)) if (mask>>i)&1 

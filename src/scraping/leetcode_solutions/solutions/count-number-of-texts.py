@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # dp
 class Solution(object):
     def countTexts(self, pressedKeys):
-        
+        """
+        :type pressedKeys: str
+        :rtype: int
+        """
         MOD = 10**9+7
         dp = [1]*5
         for i in range(1, len(pressedKeys)+1):

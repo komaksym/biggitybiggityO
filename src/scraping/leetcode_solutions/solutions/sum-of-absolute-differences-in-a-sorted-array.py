@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def getSumAbsoluteDifferences(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         prefix, suffix = 0, sum(nums)
         result = []
         for i, num in enumerate(nums):

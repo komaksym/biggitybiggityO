@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Node(object):
     def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):
@@ -12,7 +13,10 @@ class Node(object):
 
 class Solution(object):
     def construct(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: Node
+        """
         def dfs(grid, x, y, l):
             if l == 1:
                 return Node(grid[x][y] == 1, True, None, None, None, None)

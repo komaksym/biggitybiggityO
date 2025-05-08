@@ -1,4 +1,5 @@
 # Time:  O(|V| + |E|)
+# Space: O(|E|)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # Khan's algorithm (bfs solution)
 class Solution(object):
     def canFinish(self, numCourses, prerequisites):
-        
+        """
+        :type numCourses: int
+        :type prerequisites: List[List[int]]
+        :rtype: List[int]
+        """
         adj = collections.defaultdict(list)
         in_degree = collections.Counter()
         for u, v in prerequisites:
@@ -27,13 +32,18 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|)
+# Space: O(|E|)
 import collections
 
 
 # dfs solution
 class Solution2(object):
     def canFinish(self, numCourses, prerequisites):
-        
+        """
+        :type numCourses: int
+        :type prerequisites: List[List[int]]
+        :rtype: List[int]
+        """
         adj = collections.defaultdict(list)
         in_degree = collections.Counter()
         for u, v in prerequisites:

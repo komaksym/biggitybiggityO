@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def decode(self, encoded):
-        
+        """
+        :type encoded: List[int]
+        :rtype: List[int]
+        """
         curr = 0
         for i in range(1, (len(encoded)+1) + 1):
             curr ^= i

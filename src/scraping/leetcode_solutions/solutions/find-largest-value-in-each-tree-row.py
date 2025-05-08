@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def largestValues(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
         def largestValuesHelper(root, depth, result):
             if not root:
                 return
@@ -19,9 +23,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def largestValues(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
         result = []
         curr = [root]
         while any(curr):

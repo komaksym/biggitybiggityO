@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(k), k is size of the alphabet
 
 from collections import Counter
 
 
 class Solution(object):
     def removeDuplicateLetters(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         remaining = Counter(s)
 
         in_stack, stk = set(), []

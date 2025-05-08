@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def minArrayLength(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         if 0 in nums:
             return 1
         result = len(nums)

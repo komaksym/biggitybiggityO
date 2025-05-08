@@ -1,8 +1,13 @@
 # Time:  O(sqrt(n))
+# Space: O(1)
 
 class Solution(object):
     def kthFactor(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: int
+        """
         def kth_factor(n, k=0):
             mid = None
             i = 1
@@ -24,9 +29,14 @@ class Solution(object):
 
 
 # Time:  O(sqrt(n))
+# Space: O(sqrt(n))
 class Solution2(object):
     def kthFactor(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: int
+        """
         result = []
         i = 1
         while i*i <= n:

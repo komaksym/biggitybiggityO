@@ -1,8 +1,13 @@
 # Time:  O(n * sqrt(n))
+# Space: O(n * sqrt(n))
 
 class Solution(object):
     def solve(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         MOD = 10**9+7
 
         prefix = {}          

@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def countValidWords(self, sentence):
-        
+        """
+        :type sentence: str
+        :rtype: int
+        """
         result = token = hyphen = 0
         for i in range(len(sentence)+1):
             if i == len(sentence) or sentence[i] == ' ':

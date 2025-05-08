@@ -1,8 +1,12 @@
 # Time:  O(logn) = O(1)
+# Space: O(logn) = O(1)
 
 class Solution(object):
     def monotoneIncreasingDigits(self, N):
-        
+        """
+        :type N: int
+        :rtype: int
+        """
         nums = list(map(int, list(str(N))))
         leftmost_inverted_idx = len(nums)
         for i in reversed(range(1, len(nums))):

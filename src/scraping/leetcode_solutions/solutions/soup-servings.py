@@ -1,8 +1,12 @@
 # Time:  O(1)
+# Space: O(1)
 
 class Solution(object):
     def soupServings(self, N):
-        
+        """
+        :type N: int
+        :rtype: float
+        """
         def dp(a, b, lookup):
             if (a, b) in lookup:
                 return lookup[a, b]

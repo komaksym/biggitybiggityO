@@ -1,9 +1,14 @@
 # Time:  O(m * n)
+# Space: O(m * n)
 
 # array
 class Solution(object):
     def resultGrid(self, image, threshold):
-        
+        """
+        :type image: List[List[int]]
+        :type threshold: int
+        :rtype: List[List[int]]
+        """
         def check(i, j):
             return (all(abs(image[ni][nj]-image[ni+1][nj]) <= threshold for ni in range(i-1, i+1) for nj in range(j-1, j+2)) and
                     all(abs(image[ni][nj]-image[ni][nj+1]) <= threshold for ni in range(i-1, i+2) for nj in range(j-1, j+1)))

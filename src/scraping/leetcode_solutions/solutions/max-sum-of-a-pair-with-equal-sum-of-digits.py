@@ -1,9 +1,13 @@
 # Time:  O(nlogr), r is max(nums)
+# Space: O(n)
 
 # greedy
 class Solution(object):
     def maximumSum(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def sum_digits(x):
             result = 0
             while x:

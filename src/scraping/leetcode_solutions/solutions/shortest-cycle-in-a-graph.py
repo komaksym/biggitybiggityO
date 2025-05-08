@@ -1,9 +1,14 @@
 # Time:  O(n^2)
+# Space: O(n + e)
 
 # bfs
 class Solution(object):
     def findShortestCycle(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: int
+        """
         INF = float("inf")
         def bfs(u):
             result = INF
@@ -17,11 +22,11 @@ class Solution(object):
                         if dist[v] != INF:
                             assert(abs(dist[v]-dist[u]) <= 1)
                             if dist[v] != dist[u]-1:
-                                result = min(result, 1+dist[u]+dist[v]) 
+                                result = min(result, 1+dist[u]+dist[v])  # d = dist[u]+1 >= 2, check if any cycle of length 2*d-1 or 2*d exists
                             continue
                         dist[v] = dist[u]+1
                         new_q.append(v)
-                if result != INF: 
+                if result != INF:  # a cycle of length 2*d-1 or 2*d was found, early return
                     break
                 q = new_q
             return result

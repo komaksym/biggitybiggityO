@@ -1,4 +1,5 @@
 # Time:  O(h)
+# Space: O(1)
 
 # Definition for a Node.
 class Node:
@@ -8,7 +9,10 @@ class Node:
 
 class Solution(object):
     def flipBinaryTree(self, root, leaf):
-        
+        """
+        :type node: Node
+        :rtype: Node
+        """
         curr, parent = leaf, None
         while True:
             child = curr.parent

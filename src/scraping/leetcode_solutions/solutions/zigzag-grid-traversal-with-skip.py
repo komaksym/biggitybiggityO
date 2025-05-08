@@ -1,9 +1,13 @@
 # Time:  O(n * m)
+# Space: O(1)
 
 # array
 class Solution(object):
     def zigzagTraversal(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: List[int]
+        """
         result = []
         for i in range(len(grid)):
             if i%2 == 0:

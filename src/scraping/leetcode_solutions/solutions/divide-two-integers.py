@@ -1,8 +1,13 @@
 # Time:  O(logn) = O(1)
+# Space: O(1)
 
 class Solution(object):
     def divide(self, dividend, divisor):
-        
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
         result, dvd, dvs = 0, abs(dividend), abs(divisor)
         while dvd >= dvs:
             inc = dvs
@@ -18,7 +23,11 @@ class Solution(object):
             return result
 
     def divide2(self, dividend, divisor):
-        
+        """
+        :type dividend: int
+        :type divisor: int
+        :rtype: int
+        """
         positive = (dividend < 0) is (divisor < 0)
         dividend, divisor = abs(dividend), abs(divisor)
         res = 0

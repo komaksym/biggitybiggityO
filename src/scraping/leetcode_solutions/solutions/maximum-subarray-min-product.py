@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def maxSumMinProduct(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):

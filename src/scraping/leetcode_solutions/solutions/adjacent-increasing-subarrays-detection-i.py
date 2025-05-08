@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # array
 class Solution(object):
     def hasIncreasingSubarrays(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: bool
+        """
         result = 0
         curr, prev = 1, 0
         for i in range(len(nums)-1):

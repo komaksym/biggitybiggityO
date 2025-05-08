@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 # [observation]
 # 1. we can never take two adjacent slices
@@ -12,9 +13,13 @@
 #   - so we can always find a sequence of two unwanted slices with one wanted slice
 #     to take firstly, then we can find a way to take the remaining N ones by induction, QED
 
-# better optimized class Solution(object):
+# better optimized space
+class Solution(object):
     def maxSizeSlices(self, slices):
-        
+        """
+        :type slices: List[int]
+        :rtype: int
+        """
         def maxSizeSlicesLinear(slices, start, end):
             dp = [[0]*(len(slices)//3+1) for _ in range(2)]
             for i in range(start, end):
@@ -27,9 +32,13 @@
 
 
 # Time:  O(n^2)
+# Space: O(n)
 class Solution2(object):
     def maxSizeSlices(self, slices):
-        
+        """
+        :type slices: List[int]
+        :rtype: int
+        """
         def maxSizeSlicesLinear(slices, start, end):
             dp = [[0]*(len(slices)//3+1) for _ in range(3)]
             for i in range(start, end):

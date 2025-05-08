@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # two pointers
 class Solution(object):
     def findTheLongestBalancedSubstring(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result = 0
         for i in range(len(s)):
             left, right = i+1, i
@@ -15,10 +19,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 # string
 class Solution2(object):
     def findTheLongestBalancedSubstring(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result = 0
         prev, cnt = [0]*2, [0]*2
         for c in s:

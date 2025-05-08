@@ -1,8 +1,13 @@
 # Time:  O(m * n)
+# Space: O(m * n)
 
 class Solution(object):
     def matrixBlockSum(self, mat, K):
-        
+        """
+        :type mat: List[List[int]]
+        :type K: int
+        :rtype: List[List[int]]
+        """
         m, n = len(mat), len(mat[0])
         accu = [[0 for _ in range(n+1)] for _ in range(m+1)]
         for i in range(m):

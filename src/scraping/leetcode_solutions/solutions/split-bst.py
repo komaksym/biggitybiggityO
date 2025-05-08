@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def splitBST(self, root, V):
-        
+        """
+        :type root: TreeNode
+        :type V: int
+        :rtype: List[TreeNode]
+        """
         if not root:
             return None, None
         elif root.val <= V:

@@ -1,8 +1,13 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def probabilityOfHeads(self, prob, target):
-        
+        """
+        :type prob: List[float]
+        :type target: int
+        :rtype: float
+        """
         dp = [0.0]*(target+1)
         dp[0] = 1.0
         for p in prob:

@@ -1,8 +1,13 @@
 # Time:  O(nlogr)
+# Space: O(1)
 
 class Solution(object):
     def shipWithinDays(self, weights, D):
-        
+        """
+        :type weights: List[int]
+        :type D: int
+        :rtype: int
+        """
         def possible(weights, D, mid):
             result, curr = 1, 0
             for w in weights:

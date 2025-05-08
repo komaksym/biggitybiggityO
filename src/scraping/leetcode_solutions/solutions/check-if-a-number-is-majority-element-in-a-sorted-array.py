@@ -1,11 +1,16 @@
 # Time:  O(logn)
+# Space: O(1)
 
 import bisect
 
 
 class Solution(object):
     def isMajorityElement(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: bool
+        """
         if len(nums) % 2:
             if nums[len(nums)//2] != target:
                 return False

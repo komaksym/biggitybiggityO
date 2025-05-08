@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # prefix sum, greedy
 class Solution(object):
     def maximumOr(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         right = [0]*(len(nums)+1)
         for i in reversed(range(len(nums))):
             right[i] = right[i+1]|nums[i]

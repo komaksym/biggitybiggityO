@@ -1,4 +1,5 @@
 # Time:  O(n * w * l)
+# Space: O(l)
 
 import itertools
 from functools import reduce
@@ -7,7 +8,12 @@ from functools import reduce
 # dp
 class Solution(object):
     def minimumCost(self, target, words, costs):
-        
+        """
+        :type target: str
+        :type words: List[str]
+        :type costs: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         l = max(len(w) for w in words)
         dp = [INF]*(l+1)
@@ -23,13 +29,19 @@ class Solution(object):
 
 
 # Time:  O(n^2 + w * l)
+# Space: O(t)
 import itertools
 
 
 # trie, dp
 class Solution2(object):
     def minimumCost(self, target, words, costs):
-        
+        """
+        :type target: str
+        :type words: List[str]
+        :type costs: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         def query(i):
             curr = trie
@@ -58,13 +70,19 @@ class Solution2(object):
 
 
 # Time:  O(n^2 + w * l)
+# Space: O(t)
 import itertools
 
 
 # trie, dp
 class Solution3(object):
     def minimumCost(self, target, words, costs):
-        
+        """
+        :type target: str
+        :type words: List[str]
+        :type costs: List[int]
+        :rtype: int
+        """
         INF = float("inf")
         class Trie(object):
             def __init__(self):

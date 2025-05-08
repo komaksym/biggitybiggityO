@@ -1,12 +1,13 @@
 # Time:  O(5^(n/2))
+# Space: O(n)
 
 class Solution(object):
     lookup = {'0':'0', '1':'1', '6':'9', '8':'8', '9':'6'}
     cache = {}
 
-   
-   
-   
+    # @param {string} low
+    # @param {string} high
+    # @return {integer}
     def strobogrammaticInRange(self, low, high):
         count = self.countStrobogrammaticUntil(high, False) - \
                 self.countStrobogrammaticUntil(low, False) + \
@@ -28,22 +29,22 @@ class Solution(object):
         for key, val in self.lookup.items():
             if can_start_with_0 or key != '0':
                 if num[0] > key:
-                    if len(num) == 2: 
+                    if len(num) == 2:  # num is like "21"
                         count += 1
-                    else: 
+                    else:  # num is like "201"
                         count += self.countStrobogrammaticUntil('9' * (len(num) - 2), True)
                 elif num[0] == key:
-                    if len(num) == 2: 
+                    if len(num) == 2:  # num is like 12".
                         if num[-1] >= val:
                             count += 1
                     else:
-                        if num[-1] >= val: 
+                        if num[-1] >= val:  # num is like "102".
                             count += self.countStrobogrammaticUntil(self.getMid(num), True)
-                        elif (self.getMid(num) != '0' * (len(num) - 2)): 
+                        elif (self.getMid(num) != '0' * (len(num) - 2)):  # num is like "110".
                             count += self.countStrobogrammaticUntil(self.getMid(num), True) - \
                                      self.isStrobogrammatic(self.getMid(num))
 
-        if not can_start_with_0:
+        if not can_start_with_0: # Sum up each length.
             for i in range(len(num) - 1, 0, -1):
                 count += self.countStrobogrammaticByLength(i)
         else:

@@ -1,4 +1,5 @@
 # Time:  O((b+h)^2 * h!*(b+h-1)!/(b-1)!)
+# Space: O((b+h) * h!*(b+h-1)!/(b-1)!)
 
 import collections
 
@@ -6,8 +7,13 @@ import collections
 # brute force solution with worse complexity but pass
 class Solution(object):
     def findMinStep(self, board, hand):
-        
-        def shrink(s): 
+        """
+        :type board: str
+        :type hand: str
+        :rtype: int
+        """
+        def shrink(s):  # Time: O(n^2), Space: O(1)
+            while True:
                 i = 0
                 for start in range(len(s)):
                     while i < len(s) and s[start] == s[i]:
@@ -40,14 +46,20 @@ class Solution(object):
 
 
 # Time:  O((b+h) * h!*(b+h-1)!/(b-1)!)
+# Space: O((b+h) * h!*(b+h-1)!/(b-1)!)
 import collections
 
 
 # brute force solution
 class Solution_TLE(object):
     def findMinStep(self, board, hand):
-        
-        def shrink(s): 
+        """
+        :type board: str
+        :type hand: str
+        :rtype: int
+        """
+        def shrink(s):  # Time: O(n), Space: O(n)
+            stack = []
             start = 0
             for i in range(len(s)+1):
                 if i == len(s) or s[i] != s[start]:
@@ -84,14 +96,20 @@ class Solution_TLE(object):
 
 
 # Time:  O((b * h) * b * b! * h!)
+# Space: O(b * b! * h!)
 import collections
 
 
 # greedy solution without proof (possibly incorrect)
 class Solution_GREEDY_ACCEPT_BUT_NOT_PROVED(object):
     def findMinStep(self, board, hand):
-        
-        def shrink(s): 
+        """
+        :type board: str
+        :type hand: str
+        :rtype: int
+        """
+        def shrink(s):  # Time: O(n), Space: O(n)
+            stack = []
             start = 0
             for i in range(len(s)+1):
                 if i == len(s) or s[i] != s[start]:
@@ -158,12 +176,18 @@ class Solution_GREEDY_ACCEPT_BUT_NOT_PROVED(object):
 
 
 # Time:  O(b * b! * h!)
+# Space: O(b * b! * h!)
 # if a ball can be only inserted beside a ball with same color,
 # we can do by this solution
 class Solution_WRONG_GREEDY_AND_NOT_ACCEPT_NOW(object):
     def findMinStep(self, board, hand):
-        
-        def shrink(s): 
+        """
+        :type board: str
+        :type hand: str
+        :rtype: int
+        """
+        def shrink(s):  # Time: O(n), Space: O(n)
+            stack = []
             start = 0
             for i in range(len(s)+1):
                 if i == len(s) or s[i] != s[start]:

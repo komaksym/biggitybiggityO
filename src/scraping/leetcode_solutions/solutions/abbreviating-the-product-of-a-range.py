@@ -1,4 +1,5 @@
 # Time:  O(r - l)
+# Space: O(1)
 
 import math
 from functools import reduce
@@ -6,7 +7,11 @@ from functools import reduce
 
 class Solution(object):
     def abbreviateProduct(self, left, right):
-        
+        """
+        :type left: int
+        :type right: int
+        :rtype: str
+        """
         PREFIX_LEN = SUFFIX_LEN = 5
         MOD = 10**(PREFIX_LEN+SUFFIX_LEN)
         curr, zeros = 1, 0

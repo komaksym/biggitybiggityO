@@ -1,8 +1,12 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 class Solution(object):
     def numberOfWeakCharacters(self, properties):
-        
+        """
+        :type properties: List[List[int]]
+        :rtype: int
+        """
         properties.sort(cmp=lambda a, b: cmp(b[1], a[1]) if a[0] == b[0] else cmp(a[0], b[0]))
         result = max_d = 0
         for a, d in reversed(properties):
@@ -13,12 +17,17 @@ class Solution(object):
 
     
 # Time:  O(nlogn)
+# Space: O(n)
 import collections
 
 
-# faster in sort by using more class Solution(object):
+# faster in sort by using more space
+class Solution(object):
     def numberOfWeakCharacters(self, properties):
-        
+        """
+        :type properties: List[List[int]]
+        :rtype: int
+        """
         lookup = collections.defaultdict(list)
         for a, d in properties:
             lookup[a].append(d)

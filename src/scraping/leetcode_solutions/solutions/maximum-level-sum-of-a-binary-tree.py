@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 import collections
 
@@ -14,7 +15,10 @@ class TreeNode(object):
 # dfs solution
 class Solution(object):
     def maxLevelSum(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         def dfs(node, i, level_sums):
             if not node:
                 return
@@ -30,10 +34,14 @@ class Solution(object):
 
     
 # Time:  O(n)
+# Space: O(w)
 # bfs solution
 class Solution2(object):
     def maxLevelSum(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         result, level, max_total = 0, 1, float("-inf")
         q = collections.deque([root])
         while q:

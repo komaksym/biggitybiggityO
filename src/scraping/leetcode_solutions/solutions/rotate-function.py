@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def maxRotateFunction(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         s = sum(A)
         fi = 0
         for i in range(len(A)):

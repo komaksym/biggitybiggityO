@@ -1,8 +1,14 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 class Solution(object):
     def unhappyFriends(self, n, preferences, pairs):
-        
+        """
+        :type n: int
+        :type preferences: List[List[int]]
+        :type pairs: List[List[int]]
+        :rtype: int
+        """
         friends = [[0]*n for _ in range(n)]
         for i in range(len(preferences)):
             for j in range(len(preferences[i])):

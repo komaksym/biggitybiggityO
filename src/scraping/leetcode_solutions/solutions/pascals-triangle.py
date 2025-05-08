@@ -1,7 +1,8 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 class Solution(object):
-   
+    # @return a list of lists of integers
     def generate(self, numRows):
         result = []
         for i in range(numRows):
@@ -21,7 +22,10 @@ class Solution(object):
         return res[:numRows]
 
     def generate3(self, numRows):
-        
+        """
+        :type numRows: int
+        :rtype: List[List[int]]
+        """
         if numRows == 0: return []
         if numRows == 1: return [[1]]
         res = [[1], [1, 1]]

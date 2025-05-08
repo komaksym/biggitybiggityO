@@ -1,9 +1,10 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
-   
-   
-   
+    # @param a, a string
+    # @param b, a string
+    # @return a string
     def addBinary(self, a, b):
         result, carry, val = "", 0, 0
         for i in range(max(len(a), len(b))):
@@ -20,12 +21,17 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 from itertools import zip_longest
 
 
 class Solution2(object):
     def addBinary(self, a, b):
-        
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
         result = ""
         carry = 0
         for x, y in zip_longest(reversed(a), reversed(b), fillvalue="0"):

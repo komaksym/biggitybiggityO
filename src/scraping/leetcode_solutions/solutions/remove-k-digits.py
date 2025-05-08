@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def removeKdigits(self, num, k):
-        
+        """
+        :type num: str
+        :type k: int
+        :rtype: str
+        """
         result = []
         for d in num:
             while k and result and result[-1] > d:

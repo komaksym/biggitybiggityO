@@ -1,4 +1,5 @@
 # Time:  O((m + n) * l), n = len(word), m = len(forbidden), l = max(len(w) for w in forbidden)
+# Space: O(t), t is the size of trie
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # two pointers, sliding window, trie
 class Solution(object):
     def longestValidSubstring(self, word, forbidden):
-        
+        """
+        :type word: str
+        :type forbidden: List[str]
+        :rtype: int
+        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         for w in forbidden:
@@ -16,7 +21,7 @@ class Solution(object):
         for left in reversed(range(len(word))):
             node = trie
             for i in range(left, right+1):
-                if word[i] not in node: 
+                if word[i] not in node:  # O(l) times
                     break
                 node = node[word[i]]
                 if "_end" in node:

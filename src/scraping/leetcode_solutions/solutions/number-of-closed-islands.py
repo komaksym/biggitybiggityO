@@ -1,8 +1,12 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def closedIsland(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         def fill(grid, i, j):
             if not (0 <= i < len(grid) and 

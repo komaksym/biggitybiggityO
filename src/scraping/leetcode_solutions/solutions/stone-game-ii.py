@@ -1,8 +1,12 @@
 # Time:  O(n*(logn)^2)
+# Space: O(nlogn)
 
 class Solution(object):
     def stoneGameII(self, piles):
-        
+        """
+        :type piles: List[int]
+        :rtype: int
+        """
         def dp(piles, lookup, i, m):
             if i+2*m >= len(piles):
                 return piles[i]

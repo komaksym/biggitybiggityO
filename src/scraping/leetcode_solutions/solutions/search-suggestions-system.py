@@ -1,6 +1,7 @@
 # Time:  ctor: O(n * l), n is the number of products
 #                      , l is the average length of product name
 #        suggest: O(l^2)
+# Space: O(t), t is the number of nodes in trie
 
 import collections
 
@@ -27,7 +28,11 @@ class TrieNode(object):
 
 class Solution(object):
     def suggestedProducts(self, products, searchWord):
-        
+        """
+        :type products: List[str]
+        :type searchWord: str
+        :rtype: List[List[str]]
+        """
         trie = TrieNode()
         for i in range(len(products)):
             trie.insert(products, i)
@@ -43,6 +48,7 @@ class Solution(object):
 # Time:  ctor: O(n * l * log(n * l)), n is the number of products
 #                                   , l is the average length of product name
 #        suggest: O(l^2)
+# Space: O(t), t is the number of nodes in trie
 class TrieNode2(object):
 
     def __init__(self):
@@ -64,7 +70,11 @@ class TrieNode2(object):
 
 class Solution2(object):
     def suggestedProducts(self, products, searchWord):
-        
+        """
+        :type products: List[str]
+        :type searchWord: str
+        :rtype: List[List[str]]
+        """
         products.sort()
         trie = TrieNode2()
         for i in range(len(products)):
@@ -81,20 +91,25 @@ class Solution2(object):
 # Time:  ctor: O(n * l * log(n * l)), n is the number of products
 #                                   , l is the average length of product name
 #        suggest: O(l^2 * n)
+# Space: O(n * l)
 import bisect
 
 
 class Solution3(object):
     def suggestedProducts(self, products, searchWord):
-        
-        products.sort() 
+        """
+        :type products: List[str]
+        :type searchWord: str
+        :rtype: List[List[str]]
+        """
+        products.sort()  # Time: O(n * l * log(n * l))
         result = []
         prefix = ""
-        for i, c in enumerate(searchWord): 
+        for i, c in enumerate(searchWord):  # Time: O(l)
             prefix += c
-            start = bisect.bisect_left(products, prefix) 
+            start = bisect.bisect_left(products, prefix)  # Time: O(log(n * l))
             new_products = []
-            for j in range(start, len(products)): 
+            for j in range(start, len(products)):  # Time: O(n * l)
                 if not (i < len(products[j]) and products[j][i] == c):
                     break
                 new_products.append(products[j])

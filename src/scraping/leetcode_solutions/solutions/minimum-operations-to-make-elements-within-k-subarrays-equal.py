@@ -1,4 +1,5 @@
 # Time:  O(nlogx + k * n)
+# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -6,7 +7,12 @@ from sortedcontainers import SortedList
 # two sorted lists, dp
 class Solution(object):
     def minOperations(self, nums, x, k):
-        
+        """
+        :type nums: List[int]
+        :type x: int
+        :type k: int
+        :rtype: int
+        """
         class SlidingWindow(object):
             def __init__(self):
                 self.left = SortedList()
@@ -66,6 +72,7 @@ class Solution(object):
 
 
 # Time:  O(nlogx + k * n)
+# Space: O(n)
 import heapq
 import collections
 
@@ -73,7 +80,12 @@ import collections
 # two heaps, dp
 class Solution2(object):
     def minOperations(self, nums, x, k):
-        
+        """
+        :type nums: List[int]
+        :type x: int
+        :type k: int
+        :rtype: int
+        """
         class LazyHeap(object):
             def __init__(self, sign):
                 self.heap = []
@@ -121,8 +133,8 @@ class Solution2(object):
 
         class SlidingWindow(object):
             def __init__(self):
-                self.left = LazyHeap(-1)  
-                self.right = LazyHeap(+1) 
+                self.left = LazyHeap(-1)   # max heap
+                self.right = LazyHeap(+1)  # min heap
                 self.total1 = self.total2 = 0
 
             def add(self, val):

@@ -1,7 +1,13 @@
 # Time:  O(k * n^2)
+# Space: O(k * n)
 
 class Solution(object):
-    def min        
+    def minSpaceWastedKResizing(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         INF = float("inf")
         k += 1
         dp = [[INF]*(k+1) for _ in range(len(nums)+1)]

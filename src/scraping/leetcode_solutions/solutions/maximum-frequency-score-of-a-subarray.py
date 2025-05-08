@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,12 +7,16 @@ import collections
 # two pointers, sliding window freq table, hash table
 class Solution(object):
     def maxFrequencyScore(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         lookup = {}
         def powmod(n, p):
             if (n, p) not in lookup:
-                lookup[n, p] = (lookup[n, p-1]*n)%MOD if p >= 2 else n%MOD 
+                lookup[n, p] = (lookup[n, p-1]*n)%MOD if p >= 2 else n%MOD  # assumed powmod(n, p-1) was accessed before powmod(n, p)
             return lookup[n, p]
 
         result = curr = 0
@@ -32,13 +37,18 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import collections
 
 
 # two pointers, sliding window, freq table
 class Solution2(object):
     def maxFrequencyScore(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         result = curr = 0
         cnt = collections.Counter()

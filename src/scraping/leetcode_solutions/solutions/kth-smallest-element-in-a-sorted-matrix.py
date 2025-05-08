@@ -1,10 +1,15 @@
 # Time:  O(k * log(min(n, m, k))), with n x m matrix
+# Space: O(min(n, m, k))
 
 from heapq import heappush, heappop
 
 class Solution(object):
     def kthSmallest(self, matrix, k):
-        
+        """
+        :type matrix: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         kth_smallest = 0
         min_heap = []
 

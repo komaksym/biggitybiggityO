@@ -1,11 +1,15 @@
 # Time:  O(m * n)
+# Space: O(m + n)
 
 from random import randint
 
 
 class Solution(object):
     def minTotalDistance(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         x = [i for i, row in enumerate(grid) for v in row if v == 1]
         y = [j for row in grid for j, v in enumerate(row) if v == 1]
         mid_x = self.findKthLargest(x, len(x) / 2 + 1)
@@ -25,7 +29,7 @@ class Solution(object):
                 return nums[new_pivot_idx]
             elif new_pivot_idx > k - 1:
                 right = new_pivot_idx - 1
-            else: 
+            else:  # new_pivot_idx < k - 1.
                 left = new_pivot_idx + 1
 
     def PartitionAroundPivot(self, left, right, pivot_idx, nums):

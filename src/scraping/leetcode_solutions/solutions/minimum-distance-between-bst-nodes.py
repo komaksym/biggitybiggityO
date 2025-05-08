@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def minDiffInBST(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         def dfs(node):
             if not node:
                 return

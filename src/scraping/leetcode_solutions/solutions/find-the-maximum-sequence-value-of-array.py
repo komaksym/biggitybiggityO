@@ -1,9 +1,14 @@
 # Time:  O(n * r + r^2)
+# Space: O(r)
 
 # bitmasks, prefix sum, dp
 class Solution(object):
     def maxValue(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         INF = float("inf")
         MAX_MASK = 127
         def is_submask(a, b):
@@ -30,10 +35,15 @@ class Solution(object):
 
 
 # Time:  O(n * k * r + n * r^2)
+# Space: O(n * k * r)
 # prefix sum, dp
 class Solution(object):
     def maxValue(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         left = [[set() if j else {0} for j in range(k+1)] for i in range(len(nums)+1)]
         for i in range(len(nums)):
             for j in range(1, len(left[i+1])):

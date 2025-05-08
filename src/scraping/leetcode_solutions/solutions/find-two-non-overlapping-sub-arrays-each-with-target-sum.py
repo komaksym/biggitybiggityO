@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def minSumOfLengths(self, arr, target):
-        
-        prefix, dp = {0: -1}, [0]*len(arr) 
+        """
+        :type arr: List[int]
+        :type target: int
+        :rtype: int
+        """
+        prefix, dp = {0: -1}, [0]*len(arr)  # dp[i], min len of target subarray until i
         result = min_len = float("inf")
         accu = 0
         for right in range(len(arr)):

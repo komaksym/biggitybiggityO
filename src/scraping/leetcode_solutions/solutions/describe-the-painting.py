@@ -1,11 +1,15 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def splitPainting(self, segments):
-        
+        """
+        :type segments: List[List[int]]
+        :rtype: List[List[int]]
+        """
         counts = collections.defaultdict(int)
         for s, e, c in segments:
             counts[s] += c

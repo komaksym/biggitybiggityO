@@ -1,8 +1,14 @@
 # Time:  O(31)
+# Space: O(1)
 
 class Solution(object):
     def minFlips(self, a, b, c):
-        
+        """
+        :type a: int
+        :type b: int
+        :type c: int
+        :rtype: int
+        """
         def number_of_1_bits(n):
             result = 0
             while n:
@@ -14,9 +20,15 @@ class Solution(object):
 
 
 # Time:  O(31)
+# Space: O(1)
 class Solution2(object):
     def minFlips(self, a, b, c):
-        
+        """
+        :type a: int
+        :type b: int
+        :type c: int
+        :rtype: int
+        """
         result = 0
         for i in range(31):
             a_i, b_i, c_i = [x&1 for x in [a, b, c]]

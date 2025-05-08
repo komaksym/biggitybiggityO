@@ -1,4 +1,5 @@
 # Time:  O(n * 2^n * (log(mx) + log(k * mn))) = O(n * 2^n * logk), mn = min(coins), mx = max(coins)
+# Space: O(2^n)
 
 import itertools
 from functools import reduce
@@ -7,7 +8,11 @@ from functools import reduce
 # binary search, principle of inclusion and exclusion, number theory
 class Solution(object):
     def findKthSmallest(self, coins, k):
-        
+        """
+        :type coins: List[int]
+        :type k: int
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -40,10 +45,15 @@ class Solution(object):
 
 
 # Time:  O(n * 2^n * (log(mx) + log(k * mn))) = O(n * 2^n * logk), mn = min(coins), mx = max(coins)
+# Space: O(2^n)
 # binary search, principle of inclusion and exclusion, number theory
 class Solution2(object):
     def findKthSmallest(self, coins, k):
-        
+        """
+        :type coins: List[int]
+        :type k: int
+        :rtype: int
+        """
         def popcount(x):
             return bin(x).count('1')
 

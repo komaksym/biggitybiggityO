@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -7,7 +8,7 @@ class UnionFind(object):
 
     def find_set(self, x):
        if self.set[x] != x:
-           self.set[x] = self.find_set(self.set[x]) 
+           self.set[x] = self.find_set(self.set[x])  # path compression.
        return self.set[x]
 
     def union_set(self, x, y):
@@ -19,7 +20,10 @@ class UnionFind(object):
 
 class Solution(object):
     def regionsBySlashes(self, grid):
-        
+        """
+        :type grid: List[str]
+        :rtype: int
+        """
         def index(n, i, j, k):
             return (i*n + j)*4 + k
     

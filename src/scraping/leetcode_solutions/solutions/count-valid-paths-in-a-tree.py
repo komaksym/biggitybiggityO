@@ -1,11 +1,17 @@
 # Time:  O(n)
+# Space: O(n)
 
 # number theory, tree dp, iterative dfs
 class Solution(object):
     def countPaths(self, n, edges):
-        
-        def linear_sieve_of_eratosthenes(n): 
-            spf = [-1]*(n+1) 
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: int
+        """
+        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+            primes = []
+            spf = [-1]*(n+1)  # the smallest prime factor
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i
@@ -59,12 +65,18 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # number theory, tree dp, dfs
 class Solution2(object):
     def countPaths(self, n, edges):
-        
-        def linear_sieve_of_eratosthenes(n): 
-            spf = [-1]*(n+1) 
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: int
+        """
+        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+            primes = []
+            spf = [-1]*(n+1)  # the smallest prime factor
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i
@@ -104,15 +116,17 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # number theory, union find
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
         self.size = [1]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -123,7 +137,7 @@ class UnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]: 
+        if self.rank[x] > self.rank[y]:  # union by rank
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -137,9 +151,14 @@ class UnionFind(object):
 
 class Solution3(object):
     def countPaths(self, n, edges):
-        
-        def linear_sieve_of_eratosthenes(n): 
-            spf = [-1]*(n+1) 
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: int
+        """
+        def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+            primes = []
+            spf = [-1]*(n+1)  # the smallest prime factor
             for i in range(2, n+1):
                 if spf[i] == -1:
                     spf[i] = i

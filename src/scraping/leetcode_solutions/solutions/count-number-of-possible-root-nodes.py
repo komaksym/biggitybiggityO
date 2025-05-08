@@ -1,4 +1,5 @@
 # Time:  O(n) 
+# Space: O(h)
 
 import collections
 
@@ -6,7 +7,12 @@ import collections
 # iterative dfs
 class Solution(object):
     def rootCount(self, edges, guesses, k):
-        
+        """
+        :type edges: List[List[int]]
+        :type guesses: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         def iter_dfs():
             result = 0
             stk = [(0, -1)]
@@ -45,13 +51,19 @@ class Solution(object):
 
 
 # Time:  O(n) 
+# Space: O(h)
 import collections
 
 
 # dfs
 class Solution2(object):
     def rootCount(self, edges, guesses, k):
-        
+        """
+        :type edges: List[List[int]]
+        :type guesses: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         def dfs(u, p):
             cnt = int((p, u) in lookup)
             for v in adj[u]:
@@ -82,13 +94,19 @@ class Solution2(object):
 
 
 # Time:  O(n) ~ O(n^2), worst case in star tree 
+# Space: O(n)
 import collections
 
 
 # memoization
 class Solution3(object):
     def rootCount(self, edges, guesses, k):
-        
+        """
+        :type edges: List[List[int]]
+        :type guesses: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         cnt = [0]
         def memoization(u, p):
             if (u, p) not in memo:

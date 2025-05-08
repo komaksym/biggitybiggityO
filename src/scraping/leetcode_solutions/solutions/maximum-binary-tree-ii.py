@@ -1,4 +1,5 @@
 # Time:  O(h)
+# Space: O(1)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,11 @@ class TreeNode(object):
 
 class Solution(object):
     def insertIntoMaxTree(self, root, val):
-        
+        """
+        :type root: TreeNode
+        :type val: int
+        :rtype: TreeNode
+        """
         if not root:
             return TreeNode(val)
 

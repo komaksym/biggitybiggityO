@@ -1,4 +1,5 @@
 # Time:  O(m + n + 26^2)
+# Space: O(26)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # freq table
 class Solution(object):
     def isItPossible(self, word1, word2):
-        
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: bool
+        """
         cnt1 = collections.Counter(word1)
         cnt2 = collections.Counter(word2)
         for i in cnt1.keys():

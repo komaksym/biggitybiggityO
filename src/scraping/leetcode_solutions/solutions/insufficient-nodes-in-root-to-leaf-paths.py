@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,11 @@ class TreeNode(object):
 
 class Solution(object):
     def sufficientSubset(self, root, limit):
-        
+        """
+        :type root: TreeNode
+        :type limit: int
+        :rtype: TreeNode
+        """
         if not root:
             return None
         if not root.left and not root.right:

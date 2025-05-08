@@ -1,11 +1,16 @@
 # Time:  O(n * (n/k)!)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def longestSubsequenceRepeatedK(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: str
+        """
         def check(s, k, curr):
             if not curr:
                 return True

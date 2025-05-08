@@ -1,9 +1,13 @@
 # Time:  O(m * n)
+# Space: O(m + n)
 
 # dp
 class Solution(object):
     def isPossibleToCutPath(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: bool
+        """
         for i in range(len(grid)):
             for j in range(len(grid[0])):
                 if (i, j) == (0, 0) or grid[i][j] == 0:
@@ -24,10 +28,14 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(m + n)
 # iterative dfs
 class Solution2(object):
     def isPossibleToCutPath(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: bool
+        """
         def iter_dfs():
             stk = [(0, 0)]
             while stk:
@@ -46,10 +54,14 @@ class Solution2(object):
 
 
 # Time:  O(m * n)
+# Space: O(m + n)
 # dfs
 class Solution3(object):
     def isPossibleToCutPath(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: bool
+        """
         def dfs(i, j):
             if not (i < len(grid) and j < len(grid[0]) and grid[i][j]):
                 return False

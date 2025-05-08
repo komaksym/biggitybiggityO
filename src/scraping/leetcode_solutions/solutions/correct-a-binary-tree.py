@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(w)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -8,7 +9,10 @@ class TreeNode(object):
 
 class Solution(object):
     def correctBinaryTree(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         q = {root:None}
         while q:
             new_q = {}

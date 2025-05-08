@@ -4,6 +4,7 @@
 #        *:        O(d * t^2)
 #        eval:     O(d * t)
 #        to_list:  O(d * tlogt)
+# Space: O(e + d * t), e is the number of evalvars
 
 import collections
 import itertools
@@ -81,7 +82,12 @@ class Poly(collections.Counter):
 
 class Solution(object):
     def basicCalculatorIV(self, expression, evalvars, evalints):
-        
+        """
+        :type expression: str
+        :type evalvars: List[str]
+        :type evalints: List[int]
+        :rtype: List[str]
+        """
         ops = {'+':operator.add, '-':operator.sub, '*':operator.mul}
         def compute(operands, operators):
             right, left = operands.pop(), operands.pop()
@@ -117,7 +123,12 @@ class Solution(object):
 
 class Solution2(object):
     def basicCalculatorIV(self, expression, evalvars, evalints):
-        
+        """
+        :type expression: str
+        :type evalvars: List[str]
+        :type evalints: List[int]
+        :rtype: List[str]
+        """
         def compute(operands, operators):
             left, right = operands.pop(), operands.pop()
             op = operators.pop()

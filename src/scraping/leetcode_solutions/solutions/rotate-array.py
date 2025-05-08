@@ -1,7 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
-    
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: void Do not return anything, modify nums in-place instead.
+    """
     def rotate(self, nums, k):
         def reverse(nums, start, end):
             while start < end:
@@ -16,11 +21,16 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 from fractions import gcd
 
 
 class Solution2(object):
-    
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: void Do not return anything, modify nums in-place instead.
+    """
 
     def rotate(self, nums, k):
         def apply_cycle_permutation(k, offset, cycle_len, nums):
@@ -37,8 +47,13 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution3(object):
-    
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: void Do not return anything, modify nums in-place instead.
+    """
 
     def rotate(self, nums, k):
         count = 0
@@ -57,16 +72,30 @@ class Solution3(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution4(object):
-    
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: void Do not return anything, modify nums in-place instead.
+    """
     def rotate(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
         nums[:] = nums[len(nums) - k:] + nums[:len(nums) - k]
         
 
 # Time:  O(k * n)
+# Space: O(1)
 class Solution5(object):
-    
+    """
+    :type nums: List[int]
+    :type k: int
+    :rtype: void Do not return anything, modify nums in-place instead.
+    """
     def rotate(self, nums, k):
         while k > 0:
             nums.insert(0, nums.pop())

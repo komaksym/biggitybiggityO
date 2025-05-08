@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import threading
 
@@ -9,9 +10,12 @@ class ZeroEvenOdd(object):
         self.__curr = 0
         self.__cv = threading.Condition()
         
-
+	# printNumber(x) outputs "x", where x is an integer.
     def zero(self, printNumber):
-        
+        """
+        :type printNumber: method
+        :rtype: void
+        """
         for i in range(self.__n):
             with self.__cv:
                 while self.__curr % 2 != 0:
@@ -21,7 +25,10 @@ class ZeroEvenOdd(object):
                 self.__cv.notifyAll()
         
     def even(self, printNumber):
-        
+        """
+        :type printNumber: method
+        :rtype: void
+        """
         for i in range(2, self.__n+1, 2):
             with self.__cv:
                 while self.__curr % 4 != 3:
@@ -31,7 +38,10 @@ class ZeroEvenOdd(object):
                 self.__cv.notifyAll()
         
     def odd(self, printNumber):
-        
+        """
+        :type printNumber: method
+        :rtype: void
+        """
         for i in range(1, self.__n+1, 2):
             with self.__cv:
                 while self.__curr % 4 != 1:

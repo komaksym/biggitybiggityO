@@ -1,9 +1,14 @@
 # Time:  O(n + m)
+# Space: O(n + m)
 
 # greedy
 class Solution(object):
     def maxSubarrays(self, n, conflictingPairs):
-        
+        """
+        :type n: int
+        :type conflictingPairs: List[List[int]]
+        :rtype: int
+        """
         right = [[] for _ in range(n)]
         for l, r in conflictingPairs:
             l, r = l-1, r-1

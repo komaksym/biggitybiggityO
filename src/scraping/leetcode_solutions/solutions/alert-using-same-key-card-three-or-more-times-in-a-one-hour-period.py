@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 import itertools
@@ -6,7 +7,11 @@ import itertools
 
 class Solution(object):
     def alertNames(self, keyName, keyTime):
-        
+        """
+        :type keyName: List[str]
+        :type keyTime: List[str]
+        :rtype: List[str]
+        """
         THRESHOLD = 3
         name_to_times = collections.defaultdict(list)
         for name, hour_minute in zip(keyName, keyTime):

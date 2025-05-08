@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def isPrefixOfWord(self, sentence, searchWord):
-        
+        """
+        :type sentence: str
+        :type searchWord: str
+        :rtype: int
+        """
         def KMP(text, pattern):
             def getPrefix(pattern):
                 prefix = [-1] * len(pattern)

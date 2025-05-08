@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -6,7 +7,11 @@ from sortedcontainers import SortedList
 # sorted list
 class Solution(object):
     def shortestDistanceAfterQueries(self, n, queries):
-        
+        """
+        :type n: int
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         sl = SortedList(range(n))
         result = []
         for u, v in queries:

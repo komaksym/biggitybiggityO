@@ -1,8 +1,12 @@
 # Time:  O(nlogr), r = max(nums)
+# Space: O(t)
 
 class Solution(object):
     def findMaximumXOR(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         class Trie(object):
             def __init__(self, bit_length):
                 self.__nodes = []
@@ -42,9 +46,13 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
+# Space: O(n)
 class Solution2(object):
     def findMaximumXOR(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = 0
         for i in reversed(range(max(nums).bit_length())):
             result <<= 1

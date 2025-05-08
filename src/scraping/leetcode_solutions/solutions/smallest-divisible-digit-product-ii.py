@@ -1,9 +1,14 @@
 # Time:  O(n + logt)
+# Space: O(1)
 
 # freq table, greedy, prefix sum, number theory
 class Solution(object):
     def smallestNumber(self, num, t):
-        
+        """
+        :type num: str
+        :type t: int
+        :rtype: str
+        """
         LOOKUP = [[(0, 0, 0, 0), (0, 1, 0, 0)],
                   [(1, 0, 0, 0), (0, 0, 0, 1)],
                   [(0, 0, 1, 0), (1, 0, 0, 1)]]
@@ -58,16 +63,21 @@ class Solution(object):
 
 
 # Time:  O(nlogt)
+# Space: O(logt)
 # freq table, greedy, prefix sum, number theory
 class Solution2(object):
     def smallestNumber(self, num, t):
-        
+        """
+        :type num: str
+        :type t: int
+        :rtype: str
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
             return a
 
-        def find_candidates(t, l): 
+        def find_candidates(t, l):  # Time: O(logt)
             candidates = []
             for x in reversed(range(2, 9+1)):
                 while t%x == 0:

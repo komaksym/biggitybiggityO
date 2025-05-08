@@ -1,11 +1,15 @@
 # Time:  O(logn)
+# Space: O(1)
 
 import itertools
 
 
 class Solution(object):
     def climbStairs(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))] \
                       for i in range(len(A))]
@@ -23,12 +27,16 @@ class Solution(object):
 
         T = [[1, 1],
              [1, 0]]
-        return matrix_mult([[1,  0]], matrix_expo(T, n))[0][0] 
+        return matrix_mult([[1,  0]], matrix_expo(T, n))[0][0]  # [a0, a(-1)] * T^n
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
-    
+    """
+    :type n: int
+    :rtype: int
+    """
     def climbStairs(self, n):
         prev, current = 0, 1
         for i in range(n):

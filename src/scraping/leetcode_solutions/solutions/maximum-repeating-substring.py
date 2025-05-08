@@ -1,9 +1,14 @@
 # Time:  O(n), n is the length of sequence
+# Space: O(m), m is the length of word
 
 # optimized kmp solution
 class Solution(object):
     def maxRepeating(self, sequence, word):
-        
+        """
+        :type sequence: str
+        :type word: str
+        :rtype: int
+        """
         def getPrefix(pattern):
             prefix = [-1] * len(pattern)
             j = -1
@@ -33,10 +38,15 @@ class Solution(object):
 
 
 # Time:  O(n), n is the length of sequence
+# Space: O(n)
 # kmp solution
 class Solution2(object):
     def maxRepeating(self, sequence, word):
-        
+        """
+        :type sequence: str
+        :type word: str
+        :rtype: int
+        """
         def getPrefix(pattern):
             prefix = [-1] * len(pattern)
             j = -1

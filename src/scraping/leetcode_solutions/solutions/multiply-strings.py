@@ -1,8 +1,13 @@
 # Time:  O(m * n)
+# Space: O(m + n)
 
 class Solution(object):
     def multiply(self, num1, num2):
-        
+        """
+        :type num1: str
+        :type num2: str
+        :rtype: str
+        """
         result = [0]*(len(num1)+len(num2))
         for i in reversed(range(len(num1))):
             for j in reversed(range(len(num2))):
@@ -15,9 +20,14 @@ class Solution(object):
         return "".join([str(x) for x in result[i:]])
 
 # Time:  O(m * n)
+# Space: O(m + n)
 class Solution2(object):
     def multiply(self, num1, num2):
-        
+        """
+        :type num1: str
+        :type num2: str
+        :rtype: str
+        """
         num1, num2 = num1[::-1], num2[::-1]
         result = [0]*(len(num1)+len(num2))
         for i in range(len(num1)):
@@ -31,8 +41,13 @@ class Solution2(object):
         return "".join(map(str, result[i::-1]))
 
 # Time:  O(m * n)
+# Space: O(m + n)
 # Using built-in bignum solution.
 class Solution3(object):
     def multiply(self, num1, num2):
-        
+        """
+        :type num1: str
+        :type num2: str
+        :rtype: str
+        """
         return str(int(num1) * int(num2))

@@ -1,8 +1,13 @@
 # Time:  O(n^2 * k)
+# Space: O(n * k)
 
 class Solution(object):
     def getLengthOfOptimalCompression(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         def length(cnt):
             l = 2 if cnt >= 2 else 1
             while cnt >= 10:

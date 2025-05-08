@@ -1,4 +1,5 @@
 # Time:  O(n^2 + len(diffs) * n * k) = O(n^3 * k) at most
+# Space: O(len(diffs) + n * k) = O(n^2) at most
 
 # sort, dp, prefix sum, two pointers
 class Solution(object):
@@ -13,9 +14,9 @@ class Solution(object):
             for i in range(len(nums)):
                 j = next((j for j in range(j, len(nums)) if nums[i]-nums[j] < mn), len(nums))
                 for l in range(1, k+1):
-                    dp[i+1][l] = (dp[i+1][l]+dp[(j-1)+1][l-1])%MOD 
+                    dp[i+1][l] = (dp[i+1][l]+dp[(j-1)+1][l-1])%MOD  # dp[i+1][l]: count of subsequences of length l ending at i having min diff >= mn
                 for l in range(k+1):
-                    dp[i+1][l] = (dp[i+1][l]+dp[i][l])%MOD 
+                    dp[i+1][l] = (dp[i+1][l]+dp[i][l])%MOD  # dp[i+1][l]: accumulated count of subsequences of length l ending at [0, i] having min diff >= mn
             cnt = (dp[-1][k]-prev)%MOD
             result = (result+mn*cnt)%MOD
             prev = dp[-1][k]
@@ -23,6 +24,7 @@ class Solution(object):
 
 
 # Time:  O(n^3 * len(diffs)) = O(n^5) at most
+# Space: O(n^2 * len(diffs)) = O(n^4) at most
 import collections
 from functools import reduce
 
@@ -30,7 +32,11 @@ from functools import reduce
 # sort, dp
 class Solution2(object):
     def sumOfPowers(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         nums.sort()
         dp = [[collections.defaultdict(int) for _ in range(len(nums)+1)] for _ in range(len(nums))]        

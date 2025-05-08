@@ -1,15 +1,20 @@
 # Time:  O(1)
+# Space: O(1)
 
 # Same problem from https://codingcompetitions.withgoogle.com/codejam/round/000000000019ffb9/00000000003384ea
 class Solution(object):
     def memLeak(self, memory1, memory2):
-        
+        """
+        :type memory1: int
+        :type memory2: int
+        :rtype: List[int]
+        """
         def s(a, d, n):
             return (2*a + (n-1)*d)*n//2
 
         def f(a, d, x):
             r = int((-(2*a-d)+((2*a-d)**2+8*d*x)**0.5)/(2*d))
-            if s(a, d, r) > x: 
+            if s(a, d, r) > x:  # adjust float accuracy
                 r -= 1
             return r
 

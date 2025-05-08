@@ -1,4 +1,5 @@
 # Time:  O(n + q)
+# Space: O(n + q)
 
 import collections
 from functools import partial
@@ -7,14 +8,15 @@ from functools import partial
 # Template:
 # https://github.com/kamyu104/GoogleKickStart-2021/blob/main/Round%20H/dependent_events3.py
 # Tarjan's Offline LCA Algorithm
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
-        self.ancestor = list(range(n)) 
+        self.ancestor = list(range(n))  # added
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -25,23 +27,24 @@ class UnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]: 
+        if self.rank[x] > self.rank[y]:  # union by rank
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
             self.rank[y] += 1
         return True
 
-    def find_ancestor_of_set(self, x): 
+    def find_ancestor_of_set(self, x):  # added
         return self.ancestor[self.find_set(x)]
 
-    def update_ancestor_of_set(self, x): 
+    def update_ancestor_of_set(self, x):  # added
         self.ancestor[self.find_set(x)] = x
 
 
-class TreeInfos(object): 
+class TreeInfos(object):  # Time: O(N), Space: O(N + Q), N is the number of nodes
+    def __init__(self, children, pairs):
         def preprocess(curr, parent):
-           
+            # depth of the node i
             D[curr] = 1 if parent == -1 else D[parent]+1
 
         def divide(curr, parent):
@@ -77,7 +80,12 @@ class TreeInfos(object):
 # Tarjan's Offline LCA Algorithm
 class Solution(object):
     def closestNode(self, n, edges, query):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type query: List[List[int]]
+        :rtype: List[int]
+        """
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v), adj[v].append(u)
@@ -91,23 +99,25 @@ class Solution(object):
 
 
 # Time:  O(nlogn + qlogn)
+# Space: O(nlogn)
 from functools import partial
 
 
 # Template:
 # https://github.com/kamyu104/GoogleKickStart-2021/blob/main/Round%20H/dependent_events2.py
-class TreeInfos2(object): 
+class TreeInfos2(object):  # Time: O(NlogN), Space: O(NlogN), N is the number of nodes
+    def __init__(self, children):  # modified
         def preprocess(curr, parent):
-           
+            # depth of the node i
             D[curr] = 1 if parent == -1 else D[parent]+1
-           
+            # ancestors of the node i
             if parent != -1:
                 P[curr].append(parent)
             i = 0
             while i < len(P[curr]) and i < len(P[P[curr][i]]):
                 P[curr].append(P[P[curr][i]][i])
                 i += 1
-           
+            # the subtree of the node i is represented by traversal index L[i]..R[i]
             C[0] += 1
             L[curr] = C[0]
 
@@ -132,9 +142,9 @@ class TreeInfos2(object):
         assert(C[0] == N-1)
         self.L, self.R, self.D, self.P = L, R, D, P
 
-   
-   
-    def is_ancestor(self, a, b): 
+    # Template:
+    # https://github.com/kamyu104/FacebookHackerCup-2019/blob/master/Final%20Round/little_boat_on_the_sea.py
+    def is_ancestor(self, a, b):  # includes itself
         return self.L[a] <= self.L[b] <= self.R[b] <= self.R[a]
 
     def lca(self, a, b):
@@ -142,7 +152,7 @@ class TreeInfos2(object):
             a, b = b, a
         if self.is_ancestor(a, b):
             return a
-        for i in reversed(range(len(self.P[a]))): 
+        for i in reversed(range(len(self.P[a]))):  # O(logN)
             if i < len(self.P[a]) and not self.is_ancestor(self.P[a][i], b):
                 a = self.P[a][i]
         return self.P[a][0]
@@ -151,7 +161,12 @@ class TreeInfos2(object):
 # binary lifting (online lca algorithm)
 class Solution2(object):
     def closestNode(self, n, edges, query):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type query: List[List[int]]
+        :rtype: List[int]
+        """
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v), adj[v].append(u)
@@ -160,16 +175,18 @@ class Solution2(object):
 
 
 # Time:  O(n + q * h)
+# Space: O(n)
 from functools import partial
 
 
 # Template:
 # https://github.com/kamyu104/GoogleKickStart-2021/blob/main/Round%20H/dependent_events2.py
-class TreeInfos3(object): 
+class TreeInfos3(object):  # Time: O(N), Space: O(N), N is the number of nodes
+    def __init__(self, children):  # modified
         def preprocess(curr, parent):
-           
+            # depth of the node i
             D[curr] = 1 if parent == -1 else D[parent]+1
-           
+            # ancestors of the node i
             P[curr] = parent
 
         def divide(curr, parent):
@@ -188,7 +205,7 @@ class TreeInfos3(object):
             stk.pop()()
         self.D, self.P = D, P
 
-    def lca(self, a, b): 
+    def lca(self, a, b):  # Time: O(h)
         while self.D[a] > self.D[b]:
             a = self.P[a]
         while self.D[a] < self.D[b]:
@@ -201,7 +218,12 @@ class TreeInfos3(object):
 # lca
 class Solution3(object):
     def closestNode(self, n, edges, query):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type query: List[List[int]]
+        :rtype: List[int]
+        """
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v), adj[v].append(u)
@@ -210,10 +232,16 @@ class Solution3(object):
 
 
 # Time:  O(n^2 + q * n)
+# Space: O(n^2)
 # bfs
 class Solution4(object):
     def closestNode(self, n, edges, query):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type query: List[List[int]]
+        :rtype: List[int]
+        """
         def bfs(adj, root):
             dist = [len(adj)]*len(adj)
             q = [root]
@@ -247,10 +275,16 @@ class Solution4(object):
 
 
 # Time:  O(n^2 + q * n)
+# Space: O(n^2)
 # bfs
 class Solution5(object):
     def closestNode(self, n, edges, query):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type query: List[List[int]]
+        :rtype: List[int]
+        """
         def bfs(adj, root):
             dist = [len(adj)]*len(adj)
             q = [root]

@@ -1,4 +1,5 @@
 # Time:  O(n * 2^p), p is the number of primes in [1, n]
+# Space: O(2^p)
 
 import collections
 from functools import reduce
@@ -6,8 +7,12 @@ from functools import reduce
 
 class Solution(object):
     def numberOfGoodSubsets(self, nums):
-        
-        def sieve_of_eratosthenes(n): 
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        def sieve_of_eratosthenes(n):  # Time: O(n * log(logn)), Space: O(n)
+            if n < 2:
                 return []
             primes = [2]
             is_prime = [True]*((n+1)//2)
@@ -29,7 +34,7 @@ class Solution(object):
 
         MOD = 10**9+7
         primes = sieve_of_eratosthenes(max(nums))
-        dp = [0]*(1<<len(primes)) 
+        dp = [0]*(1<<len(primes))  # dp[i] = the number of different good subsets of which the total product equals to the product of the primes in bitset i
         dp[0] = 1
         cnts = collections.Counter(nums)
         for x, cnt in cnts.items():

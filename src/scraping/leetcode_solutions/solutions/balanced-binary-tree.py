@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h), h is height of binary tree
 
 class TreeNode(object):
     def __init__(self, x):
@@ -8,8 +9,8 @@ class TreeNode(object):
 
 
 class Solution(object):
-   
-   
+    # @param root, a tree node
+    # @return a boolean
     def isBalanced(self, root):
         def getHeight(root):
             if root is None:

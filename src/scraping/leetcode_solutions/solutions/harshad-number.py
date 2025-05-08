@@ -1,9 +1,13 @@
 # Time:  O(logx)
+# Space: O(1)
 
 # math
 class Solution(object):
     def sumOfTheDigitsOfHarshadNumber(self, x):
-        
+        """
+        :type x: int
+        :rtype: int
+        """
         result = 0
         y = x
         while y:

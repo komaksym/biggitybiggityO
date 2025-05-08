@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Node(object):
     def __init__(self, val, next):
@@ -8,7 +9,11 @@ class Node(object):
 
 class Solution(object):
     def insert(self, head, insertVal):
-        
+        """
+        :type head: Node
+        :type insertVal: int
+        :rtype: Node
+        """
         def insertAfter(node, val):
             node.next = Node(val, node.next)
         

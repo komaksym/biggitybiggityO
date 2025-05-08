@@ -1,9 +1,14 @@
 # Time:  O(n * logr + q), r = max(a^b for a, b in queries)
+# Space: O(min(n * logr, r))
 
 # hash table
 class Solution(object):
     def substringXorQueries(self, s, queries):
-        
+        """
+        :type s: str
+        :type queries: List[List[int]]
+        :rtype: List[List[int]]
+        """
         mx = max(a^b for a, b in queries)
         lookup = {}
         for i in range(len(s)):

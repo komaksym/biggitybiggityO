@@ -1,4 +1,5 @@
 # Time:  O(n + e)
+# Space: O(n + e)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # iterative dfs, two pointers, sliding window, prefix sum
 class Solution(object):
     def longestSpecialPath(self, edges, nums):
-        
+        """
+        :type edges: List[List[int]]
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def iter_dfs():
             result = [float("inf")]*2
             lookup = collections.defaultdict(lambda: -1)
@@ -47,13 +52,18 @@ class Solution(object):
 
 
 # Time:  O(n + e)
+# Space: O(n + e)
 import collections
 
 
 # dfs, two pointers, sliding window, prefix sum
 class Solution2(object):
     def longestSpecialPath(self, edges, nums):
-        
+        """
+        :type edges: List[List[int]]
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         def dfs(u, p, d, left):
             prev_d, lookup[nums[u]-1] = lookup[nums[u]-1], d
             left = max(left, prev_d)

@@ -1,9 +1,13 @@
 # Time:  O(nlogn + nlogr) = O(nlogr), r = max(nums)
+# Space: O(t)
 
 # bit manipulation, greedy, trie, sort, two pointers
 class Solution(object):
     def maximumStrongPairXor(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         class Trie(object):
             def __init__(self, bit_length):
                 self.__nodes = []
@@ -50,10 +54,14 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
+# Space: O(t)
 # bit manipulation, greedy, trie, dp
 class Solution2(object):
     def maximumStrongPairXor(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         class Trie(object):
             def __init__(self, bit_length):
                 self.__nodes = []
@@ -103,10 +111,14 @@ class Solution2(object):
 
 
 # Time:  O(nlogr), r = max(nums)
+# Space: O(n)
 # bit manipulation, greedy, dp
 class Solution3(object):
     def maximumStrongPairXor(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result = 0
         for i in reversed(range(max(nums).bit_length())):
             prefix_min, prefix_max = {}, {}
@@ -127,8 +139,12 @@ class Solution3(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 # bit manipulation, brute force
 class Solution4(object):
     def maximumStrongPairXor(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         return max(nums[i]^nums[j] for i in range(len(nums)) for j in range(i, len(nums)) if abs(nums[i]-nums[j]) <= min(nums[i], nums[j]))

@@ -1,9 +1,13 @@
 from functools import reduce
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def countHighestScoreNodes(self, parents):
-        
+        """
+        :type parents: List[int]
+        :rtype: int
+        """
         def iter_dfs(adj):
             result = [0]*2
             stk = [(1, (0, [0]))]
@@ -25,15 +29,20 @@ class Solution(object):
                         result[1] += 1
             return result[1]
 
-        adj = [[] for _ in range(len(parents))]          for i in range(1, len(parents)):
+        adj = [[] for _ in range(len(parents))]  # Space: O(n)
+        for i in range(1, len(parents)):
             adj[parents[i]].append(i)
         return iter_dfs(adj)
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def countHighestScoreNodes(self, parents):
-        
+        """
+        :type parents: List[int]
+        :rtype: int
+        """
         def dfs(adj, i, result):
             cnts = [dfs(adj, child, result) for child in adj[i]]
             total = sum(cnts)+1
@@ -44,7 +53,8 @@ class Solution2(object):
                 result[1] += 1
             return total
 
-        adj = [[] for _ in range(len(parents))]          for i in range(1, len(parents)):
+        adj = [[] for _ in range(len(parents))]  # Space: O(n)
+        for i in range(1, len(parents)):
             adj[parents[i]].append(i)
         result = [0]*2
         dfs(adj, 0, result)

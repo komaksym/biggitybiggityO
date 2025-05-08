@@ -1,9 +1,13 @@
 # Time:  O(n + 26)
+# Space: O(26)
 
 # freq table
 class Solution(object):
     def maxDifference(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         cnt = [0]*26
         for x in s:
             cnt[ord(x)-ord('a')] += 1

@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def pruneTree(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         if not root:
             return None
         root.left = self.pruneTree(root.left)

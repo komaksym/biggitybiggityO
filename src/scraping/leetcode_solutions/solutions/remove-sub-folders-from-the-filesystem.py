@@ -1,4 +1,5 @@
 # Time:  O(n), n is the total sum of the lengths of folder names
+# Space: O(t), t is the number of nodes in trie
 
 import collections
 import itertools
@@ -6,7 +7,10 @@ import itertools
 
 class Solution(object):
     def removeSubfolders(self, folder):
-        
+        """
+        :type folder: List[str]
+        :rtype: List[str]
+        """
         def dfs(curr, path, result):
             if "_end" in curr:
                 result.append("/" + "/".join(path))

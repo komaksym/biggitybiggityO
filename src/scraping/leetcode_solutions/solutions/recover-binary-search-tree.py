@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -19,11 +20,11 @@ class TreeNode(object):
                     queue.append(cur.left)
                     queue.append(cur.right)
                 else:
-                    serial.append(
+                    serial.append("#")
 
                 queue = queue[1:]
 
-            while serial[-1] == 
+            while serial[-1] == "#":
                 serial.pop()
 
             return repr(serial)
@@ -32,8 +33,8 @@ class TreeNode(object):
             return None
 
 class Solution(object):
-   
-   
+    # @param root, a tree node
+    # @return a tree node
     def recoverTree(self, root):
         return self.MorrisTraversal(root)
 

@@ -1,4 +1,5 @@
 # Time:  O(nlogn + qlogn)
+# Space: O(1)
 
 import bisect
 
@@ -6,7 +7,11 @@ import bisect
 # greedy, sort, binary search
 class Solution(object):
     def answerQueries(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[int]
+        :rtype: List[int]
+        """
         nums.sort()
         for i in range(len(nums)-1):
             nums[i+1] += nums[i]

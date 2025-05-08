@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def numDecodings(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         M, W = 1000000007, 3
         dp = [0] * W
         dp[0] = 1

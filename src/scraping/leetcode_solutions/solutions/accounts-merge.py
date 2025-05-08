@@ -1,5 +1,6 @@
 # Time:  O(nlogn), n is the number of total emails,
 #                  and the max length ofemail is 320, p.s. {64}@{255}
+# Space: O(n)
 
 import collections
 
@@ -14,7 +15,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -25,7 +26,10 @@ class UnionFind(object):
 
 class Solution(object):
     def accountsMerge(self, accounts):
-        
+        """
+        :type accounts: List[List[str]]
+        :rtype: List[List[str]]
+        """
         union_find = UnionFind()
         email_to_name = {}
         email_to_id = {}

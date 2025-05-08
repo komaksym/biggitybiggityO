@@ -1,10 +1,11 @@
 # Time:  O(n)
+# Space: O(1)
 
 import heapq
 
 class Solution(object):
-   
-   
+    # @param {integer} n
+    # @return {integer}
     def nthUglyNumber(self, n):
         ugly_number = 0
 

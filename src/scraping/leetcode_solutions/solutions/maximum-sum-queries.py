@@ -1,4 +1,5 @@
 # Time:  O(nlogn + mlogm + mlogn)
+# Space: O(n + m)
 
 import itertools
 import bisect
@@ -7,7 +8,12 @@ import bisect
 # sort, mono stack, binary search
 class Solution(object):
     def maximumSumQueries(self, nums1, nums2, queries):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         pairs = sorted(((i, j) for i, j in zip(nums1, nums2)))
         result = [0]*len(queries)
         stk = []

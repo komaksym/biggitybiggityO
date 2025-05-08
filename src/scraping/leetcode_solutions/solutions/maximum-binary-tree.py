@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -9,8 +10,11 @@ class TreeNode(object):
 
 class Solution(object):
     def constructMaximumBinaryTree(self, nums):
-        
-       
+        """
+        :type nums: List[int]
+        :rtype: TreeNode
+        """
+        # https://github.com/kamyu104/LintCode/blob/master/C++/max-tree.cpp
         nodeStack = []
         for num in nums:
             node = TreeNode(num)

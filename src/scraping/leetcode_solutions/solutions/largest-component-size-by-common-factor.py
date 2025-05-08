@@ -1,4 +1,5 @@
 # Time:  O(f * n), f is the max number of unique prime factors
+# Space: O(p + n), p is the total number of unique primes
 
 import collections
 
@@ -10,7 +11,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -24,8 +25,11 @@ class UnionFind(object):
 
 class Solution(object):
     def largestComponentSize(self, A):
-        
-        def prime_factors(i): 
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        def prime_factors(i):  # prime factor decomposition
             result = []
             d = 2
             if i%d == 0:
@@ -54,6 +58,7 @@ class Solution(object):
 
 
 # Time:  O(f * n), f is the max number of unique prime factors
+# Space: O(p + n), p is the total number of unique primes
 import collections
 
 
@@ -64,7 +69,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -78,8 +83,11 @@ class UnionFind(object):
 
 class Solution2(object):
     def largestComponentSize(self, A):
-        
-        def prime_factors(x): 
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        def prime_factors(x):  # prime factor decomposition
             result = []
             p = 2
             while p*p <= x:

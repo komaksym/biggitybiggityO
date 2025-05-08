@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -6,7 +7,10 @@ from sortedcontainers import SortedList
 # sorted list
 class Solution(object):
     def resultArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         sl1, sl2 = SortedList([nums[0]]), SortedList([nums[1]])
         a, b = [nums[0]], [nums[1]]
         for i in range(2, len(nums)):

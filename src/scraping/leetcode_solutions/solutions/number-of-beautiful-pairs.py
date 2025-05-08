@@ -1,9 +1,13 @@
 # Time:  O(nlogr)
+# Space: O(1)
 
 # number theory, freq table
 class Solution(object):
     def countBeautifulPairs(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

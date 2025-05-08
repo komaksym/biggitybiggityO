@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -9,7 +10,10 @@ class ListNode(object):
 
 class Solution(object):
     def sortLinkedList(self, head):
-        
+        """
+        :type head: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
         tail, curr, head.next = head, head.next, None
         while curr:
             if curr.val > 0:

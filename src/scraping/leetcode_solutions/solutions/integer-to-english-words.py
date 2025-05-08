@@ -1,8 +1,12 @@
 # Time:  O(logn) = O(1), n is the value of the integer, which is less than 2^31 - 1
+# Space: O(1)
 
 class Solution(object):
     def numberToWords(self, num):
-        
+        """
+        :type num: int
+        :rtype: str
+        """
         if num == 0:
             return "Zero"
 

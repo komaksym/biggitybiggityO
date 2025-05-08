@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def maxOperations(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result = curr = 0
         for i in range(len(s)):
             if s[i] == '1':
@@ -14,10 +18,14 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 # greedy
 class Solution2(object):
     def maxOperations(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result = curr = 0
         for i in range(len(s)):
             if s[i] != '1':

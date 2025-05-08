@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # freq table, constructive algorithms
 class Solution(object):
     def findMatrix(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
         result = []
         cnt = collections.Counter()
         for x in nums:
@@ -18,13 +22,17 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 import collections
 
 
 # freq table, constructive algorithms
 class Solution2(object):
     def findMatrix(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
         result = []
         cnt = collections.Counter(nums)
         while cnt:

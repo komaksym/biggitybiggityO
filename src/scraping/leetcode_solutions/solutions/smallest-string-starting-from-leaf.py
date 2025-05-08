@@ -1,4 +1,5 @@
 # Time:  O(n + l * h), l is the number of leaves
+# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,10 @@ class TreeNode(object):
 
 class Solution(object):
     def smallestFromLeaf(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: str
+        """
         def dfs(node, candidate, result):
             if not node:
                 return

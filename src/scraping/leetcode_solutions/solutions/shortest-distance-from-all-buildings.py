@@ -1,8 +1,12 @@
 # Time:  O(k * m * n), k is the number of the buildings
+# Space: O(m * n)
 
 class Solution(object):
     def shortestDistance(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def bfs(grid, dists, cnts, x, y):
             dist, m, n = 0, len(grid), len(grid[0])
             visited = [[False for _ in range(n)] for _ in range(m)]

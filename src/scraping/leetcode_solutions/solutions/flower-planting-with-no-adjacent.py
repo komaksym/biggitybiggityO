@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def gardenNoAdj(self, N, paths):
-        
+        """
+        :type N: int
+        :type paths: List[List[int]]
+        :rtype: List[int]
+        """
         result = [0]*N
         G = [[] for i in range(N)]
         for x, y in paths:

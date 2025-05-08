@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def isValid(self, code):
-        
+        """
+        :type code: str
+        :rtype: bool
+        """
         def validText(s, i):
             j = i
             i = s.find("<", i)

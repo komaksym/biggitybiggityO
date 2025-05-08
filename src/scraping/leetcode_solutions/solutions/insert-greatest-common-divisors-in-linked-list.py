@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # linked list
 class Solution(object):
     def insertGreatestCommonDivisors(self, head):
-        
+        """
+        :type head: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

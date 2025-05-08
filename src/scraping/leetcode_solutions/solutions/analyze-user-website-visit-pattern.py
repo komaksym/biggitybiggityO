@@ -1,4 +1,5 @@
 # Time:  O(n^3)
+# Space: O(n^3)
 
 import collections
 import itertools
@@ -6,7 +7,12 @@ import itertools
 
 class Solution(object):
     def mostVisitedPattern(self, username, timestamp, website):
-        
+        """
+        :type username: List[str]
+        :type timestamp: List[int]
+        :type website: List[str]
+        :rtype: List[str]
+        """
         lookup = collections.defaultdict(list)
         A = list(zip(timestamp, username, website))
         A.sort()

@@ -1,11 +1,16 @@
 # Time:  O(n) ~ O(n^2), O(n) on average
+# Space: O(1)
 
 import random
 
 
 class Solution(object):
     def kthLargestNumber(self, nums, k):
-        
+        """
+        :type nums: List[str]
+        :type k: int
+        :rtype: str
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -29,7 +34,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
         
         nth_element(nums, k-1, compare=lambda a, b: a > b if len(a) == len(b) else len(a) > len(b))

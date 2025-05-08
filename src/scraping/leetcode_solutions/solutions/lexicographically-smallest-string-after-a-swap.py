@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def getSmallestString(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         result = list(map(int, s))
         for i in range(len(s)-1):
             if result[i]%2 != result[i+1]%2:

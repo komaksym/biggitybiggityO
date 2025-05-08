@@ -1,10 +1,15 @@
 # Time:  O(n)
+# Space: O(logn)
 
 # codeforces, https://codeforces.com/problemset/problem/1303/D
 # counting sort, greedy
 class Solution(object):
     def minOperations(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         def floor_log2_x(x):
             return x.bit_length()-1
 
@@ -31,11 +36,16 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(1)
 # codeforces, https://codeforces.com/problemset/problem/1303/D
 # sort, greedy
 class Solution2(object):
     def minOperations(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         total = sum(nums)
         if total < target:
             return -1
@@ -57,6 +67,7 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import heapq
 
 
@@ -64,7 +75,11 @@ import heapq
 # heap, greedy
 class Solution3(object):
     def minOperations(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         total = sum(nums)
         if total < target:
             return -1
@@ -87,11 +102,16 @@ class Solution3(object):
 
 
 # Time:  O(nlogr)
+# Space: O(logr)
 # codeforces, https://codeforces.com/problemset/problem/1303/D
 # bitmasks, greedy
 class Solution4(object):
     def minOperations(self, nums, target):
-        
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
         def floor_log2_x(x):
             return x.bit_length()-1
 

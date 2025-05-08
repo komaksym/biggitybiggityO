@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def ipToCIDR(self, ip, n):
-        
+        """
+        :type ip: str
+        :type n: int
+        :rtype: List[str]
+        """
         def ipToInt(ip):
             result = 0
             for i in ip.split('.'):

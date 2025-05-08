@@ -1,11 +1,17 @@
 # Time:  O((n * C(c, min(c, k))) * 2^n)
+# Space: O(2^n)
 
 import itertools
 
 
 class Solution(object):
     def minNumberOfSemesters(self, n, dependencies, k):
-        
+        """
+        :type n: int
+        :type dependencies: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         reqs = [0]*n
         for u, v in dependencies:
             reqs[v-1] |= 1 << (u-1)
@@ -25,6 +31,7 @@ class Solution(object):
 
 
 # Time:  O(nlogn + e), e is the number of edges in graph
+# Space: O(n + e)
 import collections
 import heapq
 
@@ -36,7 +43,12 @@ import heapq
 # 3
 class Solution_WA(object):
     def minNumberOfSemesters(self, n, dependencies, k):
-        
+        """
+        :type n: int
+        :type dependencies: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         def dfs(graph, i, depths):
             if depths[i] == -1:
                 depths[i] = max(dfs(graph, child, depths) for child in graph[i])+1 if i in graph else 1

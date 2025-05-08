@@ -1,9 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 # sort, line sweep
 class Solution(object):
     def numberOfPoints(self, nums):
-        
+        """
+        :type nums: List[List[int]]
+        :rtype: int
+        """
         nums.sort()
         result = 0
         curr = nums[0]

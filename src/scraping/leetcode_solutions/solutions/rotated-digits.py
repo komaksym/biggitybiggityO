@@ -1,8 +1,12 @@
 # Time:  O(logn)
+# Space: O(logn)
 
 class Solution(object):
     def rotatedDigits(self, N):
-        
+        """
+        :type N: int
+        :rtype: int
+        """
         A = list(map(int, str(N)))
         invalid, diff = set([3, 4, 7]), set([2, 5, 6, 9])
         def dp(A, i, is_prefix_equal, is_good, lookup):
@@ -23,9 +27,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def rotatedDigits(self, N):
-        
+        """
+        :type N: int
+        :rtype: int
+        """
         INVALID, SAME, DIFF = 0, 1, 2
         same, diff = [0, 1, 8], [2, 5, 6, 9]
         dp = [0] * (N+1)
@@ -42,9 +50,13 @@ class Solution2(object):
 
 
 # Time:  O(nlogn) = O(n), because O(logn) = O(32) by this input
+# Space: O(logn) = O(1)
 class Solution3(object):
     def rotatedDigits(self, N):
-        
+        """
+        :type N: int
+        :rtype: int
+        """
         invalid, diff = set(['3', '4', '7']), set(['2', '5', '6', '9'])
         result = 0
         for i in range(N+1):

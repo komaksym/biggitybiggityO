@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Solution(object):
     def largestBSTSubtree(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         if root is None:
             return 0
 

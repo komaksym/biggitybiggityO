@@ -1,8 +1,12 @@
 # Time:  O(n^3) ~ O(n^4)
+# Space: O(n^3)
 
 class Solution(object):
     def removeBoxes(self, boxes):
-        
+        """
+        :type boxes: List[int]
+        :rtype: int
+        """
         def dfs(boxes, l, r, k, lookup):
             if l > r: return 0
             if lookup[l][r][k]: return lookup[l][r][k]

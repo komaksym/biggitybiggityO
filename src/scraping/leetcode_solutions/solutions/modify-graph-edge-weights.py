@@ -1,5 +1,6 @@
 # Time:  O((|E| + |V|) * log|V|) = O(|E| * log|V|) by using binary heap,
 #        if we can further to use Fibonacci heap, it would be O(|E| + |V| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import heapq
 
@@ -7,7 +8,14 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def modifiedGraphEdges(self, n, edges, source, destination, target):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type source: int
+        :type destination: int
+        :type target: int
+        :rtype: List[List[int]]
+        """
         def dijkstra(start, x):
             best = [target+1]*len(adj)
             best[start] = 0

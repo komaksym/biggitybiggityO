@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 
 
 class Solution(object):
     def balancedString(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         count = collections.Counter(s)
         result = len(s) 
         left = 0

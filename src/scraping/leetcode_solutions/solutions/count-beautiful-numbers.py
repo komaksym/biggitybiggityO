@@ -1,4 +1,5 @@
 # Time:  O(logr * 2 * 10 * s)
+# Space: O(s) ~= O(2026), s = len(states)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # dp
 class Solution(object):
     def beautifulNumbers(self, l, r):
-        
+        """
+        :type l: int
+        :type r: int
+        :rtype: int
+        """
         def count(x):
             s = [ord(x)-ord('0') for x in str(x)]
             dp = [collections.defaultdict(int) for _ in range(2)]

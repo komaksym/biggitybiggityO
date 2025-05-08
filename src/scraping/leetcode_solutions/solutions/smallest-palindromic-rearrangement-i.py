@@ -1,9 +1,13 @@
 # Time:  O(n + 26)
+# Space: O(26)
 
 # freq table, counting sort, greedy
 class Solution(object):
     def smallestPalindrome(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         cnt = [0]*26
         for i in range(len(s)//2):
             cnt[ord(s[i])-ord('a')] += 1

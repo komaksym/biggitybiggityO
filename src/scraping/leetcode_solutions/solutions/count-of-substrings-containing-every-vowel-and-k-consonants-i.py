@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # two pointers, sliding window, freq table
 class Solution(object):
     def countOfSubstrings(self, word, k):
-        
+        """
+        :type word: str
+        :type k: int
+        :rtype: int
+        """
         VOWELS = set("aeiou")
         def update(i, d):
             if word[i] not in VOWELS:
@@ -39,10 +44,15 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 # two pointers, sliding window, freq table
 class Solution2(object):
     def countOfSubstrings(self, word, k):
-        
+        """
+        :type word: str
+        :type k: int
+        :rtype: int
+        """
         VOWELS = set("aeiou")
         def count(k):
             def update(i, d):

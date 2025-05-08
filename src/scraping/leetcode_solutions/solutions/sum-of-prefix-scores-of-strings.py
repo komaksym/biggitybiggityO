@@ -1,4 +1,5 @@
 # Time:  O(n * l), n is the number of words, l is the max length of words
+# Space: O(t), t is the size of trie
     
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # trie
 class Solution(object):
     def sumPrefixScores(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[int]
+        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         for w in words:

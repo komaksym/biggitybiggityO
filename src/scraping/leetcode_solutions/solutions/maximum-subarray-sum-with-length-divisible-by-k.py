@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(k)
 
 # prefix sum, dp
 class Solution(object):
     def maxSubarraySum(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         dp = [float("inf")]*k
         dp[-1] = 0
         curr = 0

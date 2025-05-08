@@ -1,8 +1,13 @@
 # Time:  O(nlogm), m is the max of quantities
+# Space: O(1)
 
 class Solution(object):
     def minimizedMaximum(self, n, quantities):
-        
+        """
+        :type n: int
+        :type quantities: List[int]
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+(b-1))//b
 

@@ -1,11 +1,17 @@
 # Time:  O(m)
+# Space: O(m)
 
 import collections
 
 
 class Solution(object):
     def executeInstructions(self, n, startPos, s):
-        
+        """
+        :type n: int
+        :type startPos: List[int]
+        :type s: str
+        :rtype: List[int]
+        """
         directions = {'U':(-1, 0), 'R':(0, 1), 'D':(1, 0), 'L':(0, -1)}
         (x0, y0), (x, y) = startPos, (0, 0)
         result = list(range(len(s), 0, -1))

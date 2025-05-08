@@ -1,4 +1,5 @@
 # Time:  O(rlogr + qlogr), r = max(nums)
+# Space: O(r)
 
 import collections
 import bisect
@@ -7,7 +8,11 @@ import bisect
 # number theory, freq table, prefix sum, binary search
 class Solution(object):
     def gcdValues(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[int]
+        :rtype: List[int]
+        """
         cnt1 = collections.Counter(nums)
         cnt2 = [0]*(max(nums)+1)
         for g in reversed(range(1, len(cnt2))):

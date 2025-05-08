@@ -1,12 +1,18 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def minSkips(self, dist, speed, hoursBefore):
-        
+        """
+        :type dist: List[int]
+        :type speed: int
+        :type hoursBefore: int
+        :rtype: int
+        """
         def ceil(a, b):
             return (a+b-1)//b
 
-        dp = [0]*((len(dist)-1)+1) 
+        dp = [0]*((len(dist)-1)+1)  # dp[i]: (min time by i skips) * speed
         for i, d in enumerate(dist):
             for j in reversed(range(len(dp))):
                 dp[j] = ceil(dp[j]+d, speed)*speed if i < len(dist)-1 else dp[j]+d

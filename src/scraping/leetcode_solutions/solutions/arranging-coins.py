@@ -1,18 +1,26 @@
 # Time:  O(logn)
+# Space: O(1)
 
 import math
 
 
 class Solution(object):
     def arrangeCoins(self, n):
-        
-        return int((math.sqrt(8*n+1)-1) / 2) 
+        """
+        :type n: int
+        :rtype: int
+        """
+        return int((math.sqrt(8*n+1)-1) / 2)  # sqrt is O(logn) time.
 
 
 # Time:  O(logn)
+# Space: O(1)
 class Solution2(object):
     def arrangeCoins(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def check(mid, n):
             return mid*(mid+1) <= 2*n
 

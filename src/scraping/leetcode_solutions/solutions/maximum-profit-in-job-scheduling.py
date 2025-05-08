@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import itertools
 import bisect
@@ -6,7 +7,12 @@ import bisect
 
 class Solution(object):
     def jobScheduling(self, startTime, endTime, profit):
-        
+        """
+        :type startTime: List[int]
+        :type endTime: List[int]
+        :type profit: List[int]
+        :rtype: int
+        """
         jobs = sorted(zip(endTime, startTime, profit))
         dp = [(0, 0)]
         for e, s, p in jobs:
@@ -17,10 +23,16 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import heapq
 class Solution(object):
     def jobScheduling(self, startTime, endTime, profit):
-        
+        """
+        :type startTime: List[int]
+        :type endTime: List[int]
+        :type profit: List[int]
+        :rtype: int
+        """
         min_heap = list(zip(startTime, endTime, profit))
         heapq.heapify(min_heap)
         result = 0

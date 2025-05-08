@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def isPathCrossing(self, path):
-        
+        """
+        :type path: str
+        :rtype: bool
+        """
         x = y = 0
         lookup = {(0, 0)}
         for c in path:

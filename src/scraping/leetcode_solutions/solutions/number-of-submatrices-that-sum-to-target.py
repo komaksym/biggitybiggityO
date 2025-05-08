@@ -1,11 +1,16 @@
 # Time:  O(m^2*n), m is min(r, c), n is max(r, c)
+# Space: O(n), which doesn't include transposed space
 
 import collections
 
 
 class Solution(object):
     def numSubmatrixSumTarget(self, matrix, target):
-        
+        """
+        :type matrix: List[List[int]]
+        :type target: int
+        :rtype: int
+        """
         if len(matrix) > len(matrix[0]):
             return self.numSubmatrixSumTarget(list(map(list, list(zip(*matrix)))), target)
         

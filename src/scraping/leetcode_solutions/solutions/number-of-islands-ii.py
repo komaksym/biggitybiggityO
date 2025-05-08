@@ -1,14 +1,20 @@
 # Time:  O(klog*k) ~= O(k), k is the length of the positions
+# Space: O(k)
 
 class Solution(object):
     def numIslands2(self, m, n, positions):
-        
+        """
+        :type m: int
+        :type n: int
+        :type positions: List[List[int]]
+        :rtype: List[int]
+        """
         def node_id(node, n):
             return node[0] * n + node[1]
 
         def find_set(x):
            if set[x] != x:
-               set[x] = find_set(set[x]) 
+               set[x] = find_set(set[x])  # path compression.
            return set[x]
 
         def union_set(x, y):
@@ -29,7 +35,7 @@ class Solution(object):
                 if 0 <= neighbor[0] < m and 0 <= neighbor[1] < n and \
                    node_id(neighbor, n) in set:
                    if find_set(node_id(node, n)) != find_set(node_id(neighbor, n)):
-                      
+                       # Merge different islands, amortised time: O(log*k) ~= O(1)
                        union_set(node_id(node, n), node_id(neighbor, n))
                        number -= 1
             numbers.append(number)

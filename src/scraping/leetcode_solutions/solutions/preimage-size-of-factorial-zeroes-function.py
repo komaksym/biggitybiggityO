@@ -1,8 +1,12 @@
 # Time:  O((logn)^2)
+# Space: O(1)
 
 class Solution(object):
     def preimageSizeFZF(self, K):
-        
+        """
+        :type K: int
+        :rtype: int
+        """
         def count_of_factorial_primes(n, p):
             cnt = 0
             while n > 0:

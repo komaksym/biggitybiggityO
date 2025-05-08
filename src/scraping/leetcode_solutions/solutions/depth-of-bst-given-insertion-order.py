@@ -1,11 +1,15 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import sortedcontainers
 
 
 class Solution(object):
     def maxDepthBST(self, order):
-        
+        """
+        :type order: List[int]
+        :rtype: int
+        """
         depths = sortedcontainers.SortedDict({float("-inf"):0, float("inf"):0})
         values_view = list(depths.values())
         result = 0

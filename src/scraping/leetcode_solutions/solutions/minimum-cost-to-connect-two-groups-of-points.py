@@ -1,9 +1,13 @@
 # Time:  O(m * n * 2^n)
+# Space: O(2^n)
 
 # dp with rolling window
 class Solution(object):
     def connectTwoGroups(self, cost):
-        
+        """
+        :type cost: List[List[int]]
+        :rtype: int
+        """
         total = 2**len(cost[0])
         dp = [[float("inf")]*total for _ in range(2)]
         dp[0][0] = 0

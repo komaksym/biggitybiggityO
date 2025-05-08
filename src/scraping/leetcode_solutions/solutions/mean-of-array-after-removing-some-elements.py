@@ -1,11 +1,15 @@
 # Time:  O(n) on average, using Median of Medians could achieve O(n) (Intro Select)
+# Space: O(1)
 
 import random
 
 
 class Solution(object):
     def trimMean(self, arr):
-        
+        """
+        :type arr: List[int]
+        :rtype: float
+        """
         P = 20
         def nth_element(nums, n, left=0, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
@@ -30,7 +34,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
         
         k = len(arr)//P

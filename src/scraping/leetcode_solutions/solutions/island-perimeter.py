@@ -1,11 +1,15 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 import operator
 
 
 class Solution(object):
     def islandPerimeter(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         count, repeat = 0, 0
 
         for i in range(len(grid)):

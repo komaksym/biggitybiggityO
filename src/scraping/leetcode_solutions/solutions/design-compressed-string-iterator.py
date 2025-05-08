@@ -1,4 +1,5 @@
 # Time:  O(1)
+# Space: O(1)
 
 import re
 
@@ -6,12 +7,16 @@ import re
 class StringIterator(object):
 
     def __init__(self, compressedString):
-        
+        """
+        :type compressedString: str
+        """
         self.__result = re.findall(r"([a-zA-Z])(\d+)", compressedString)
         self.__index, self.__num, self.__ch = 0, 0, ' '
 
     def __next__(self):
-        
+        """
+        :rtype: str
+        """
         if not self.hasNext():
             return ' '
         if self.__num == 0:
@@ -23,7 +28,9 @@ class StringIterator(object):
 
 
     def hasNext(self):
-        
+        """
+        :rtype: bool
+        """
         return self.__index != len(self.__result) or self.__num != 0
 
 

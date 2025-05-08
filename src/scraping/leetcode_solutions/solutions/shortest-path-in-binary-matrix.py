@@ -1,11 +1,15 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def shortestPathBinaryMatrix(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         directions = [(-1, -1), (-1, 0), (-1, 1), \
                       ( 0, -1), ( 0, 1), \
                       ( 1, -1), ( 1, 0), ( 1, 1)]

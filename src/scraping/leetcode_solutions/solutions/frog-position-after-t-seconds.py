@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,13 @@ import collections
 # bfs solution with better precision
 class Solution(object):
     def frogPosition(self, n, edges, t, target):
-                        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type t: int
+        :type target: int
+        :rtype: float
+        """                
         G = collections.defaultdict(list)
         for u, v in edges:
             G[u].append(v)
@@ -31,10 +38,17 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # dfs solution with stack with better precision
 class Solution2(object):
     def frogPosition(self, n, edges, t, target):
-                        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type t: int
+        :type target: int
+        :rtype: float
+        """                
         G = collections.defaultdict(list)
         for u, v in edges:
             G[u].append(v)
@@ -56,10 +70,17 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # dfs solution with recursion with better precision
 class Solution3(object):
     def frogPosition(self, n, edges, t, target):
-                
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type t: int
+        :type target: int
+        :rtype: float
+        """        
         def dfs(G, target, t, node, parent):
             if not t or not (len(G[node])-(parent != 0)):
                 return int(node == target)
@@ -81,10 +102,17 @@ class Solution3(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 # dfs solution with recursion
 class Solution4(object):
     def frogPosition(self, n, edges, t, target):
-                
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type t: int
+        :type target: int
+        :rtype: float
+        """        
         def dfs(G, target, t, node, parent):
             if not t or not (len(G[node])-(parent != 0)):
                 return float(node == target)

@@ -1,6 +1,7 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
-class BIT(object): 
+class BIT(object):  # Fenwick Tree, 1-indexed
     def __init__(self, n):
         self.__bit = [0] * n
 
@@ -19,7 +20,11 @@ class BIT(object):
 
 class Solution(object):
     def processQueries(self, queries, m):
-        
+        """
+        :type queries: List[int]
+        :type m: int
+        :rtype: List[int]
+        """
         bit = BIT(2*m+1)
         lookup = {}
         for i in range(1, m+1):

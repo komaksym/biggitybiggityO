@@ -1,14 +1,21 @@
 # Time:  O(1), amortized
+# Space: O(n)
 
 class OrderedStream(object):
 
     def __init__(self, n):
-        
+        """
+        :type n: int
+        """
         self.__i = 0      
         self.__values = [None]*n
 
     def insert(self, id, value):
-        
+        """
+        :type id: int
+        :type value: str
+        :rtype: List[str]
+        """
         id -= 1
         self.__values[id] = value
         result = []

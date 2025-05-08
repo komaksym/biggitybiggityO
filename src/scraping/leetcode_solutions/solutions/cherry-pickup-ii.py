@@ -1,8 +1,12 @@
 # Time:  O(m * n^2)
+# Space: O(n^2)
 
 class Solution(object):
     def cherryPickup(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         dp = [[[float("-inf")]*(len(grid[0])+2) for _ in range(len(grid[0])+2)] for _ in range(2)]
         dp[0][1][len(grid[0])] = grid[0][0] + grid[0][len(grid[0])-1]
         for i in range(1, len(grid)):
@@ -14,10 +18,14 @@ class Solution(object):
 
 
 # Time:  O(m * n^2)
+# Space: O(n^2)
 
 class Solution2(object):
     def cherryPickup(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         dp = [[[float("-inf")]*len(grid[0]) for _ in range(len(grid[0]))] for _ in range(2)]
         dp[0][0][len(grid[0])-1] = grid[0][0] + grid[0][len(grid[0])-1]
         for i in range(1, len(grid)):

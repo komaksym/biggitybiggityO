@@ -1,9 +1,14 @@
 # Time:  O(n * k)
+# Space: O(1)
 
 # two pointers, greedy
 class Solution(object):
     def maxPalindromes(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
         result = prev = 0
         for mid in range(2*len(s)-1):
             left, right = mid//2, mid//2+mid%2

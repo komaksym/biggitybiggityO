@@ -1,8 +1,13 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 class Solution(object):
     def orderOfLargestPlusSign(self, N, mines):
-        
+        """
+        :type N: int
+        :type mines: List[List[int]]
+        :rtype: int
+        """
         lookup = {tuple(mine) for mine in mines}
         dp = [[0] * N for _ in range(N)]
         result = 0

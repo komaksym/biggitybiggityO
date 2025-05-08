@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(c)
 
 import collections
 import itertools
@@ -6,7 +7,11 @@ import itertools
 
 class Solution(object):
     def rearrangeString(self, s, k):
-        
+        """
+        :type s: str
+        :type k: int
+        :rtype: str
+        """
         if not k:
             return s
         cnts = collections.Counter(s)
@@ -25,6 +30,7 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 import collections
 import itertools
 
@@ -32,7 +38,11 @@ import itertools
 # reference: https://codeforces.com/blog/entry/110184 1774B - Coloring
 class Solution2(object):
     def rearrangeString(self, s, k):
-        
+        """
+        :type str: str
+        :type k: int
+        :rtype: str
+        """
         if not k:
             return s
         cnts = collections.Counter(s)
@@ -53,13 +63,18 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 import collections
 import itertools
 
 
 class Solution3(object):
     def rearrangeString(self, s, k):
-        
+        """
+        :type str: str
+        :type k: int
+        :rtype: str
+        """
         cnts = collections.Counter(s)
         bucket_cnt = max(cnts.values())
         buckets = [[] for _ in range(bucket_cnt)]
@@ -76,11 +91,16 @@ class Solution3(object):
 
 
 # Time:  O(nlogc), c is the count of unique characters.
+# Space: O(c)
 from collections import Counter
 from heapq import heappush, heappop
 class Solution4(object):
     def rearrangeString(self, s, k):
-        
+        """
+        :type str: str
+        :type k: int
+        :rtype: str
+        """
         if k <= 1:
             return s
 

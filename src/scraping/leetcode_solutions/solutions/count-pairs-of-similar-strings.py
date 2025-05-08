@@ -1,4 +1,5 @@
 # Time:  O(n * l)
+# Space: O(n)
 
 import collections
 import itertools
@@ -8,7 +9,10 @@ from functools import reduce
 # freq table, bitmask
 class Solution(object):
     def similarPairs(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: int
+        """
         cnt = collections.Counter()
         result = 0
         for w in words:

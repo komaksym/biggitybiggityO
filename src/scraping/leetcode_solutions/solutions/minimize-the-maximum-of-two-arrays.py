@@ -1,9 +1,16 @@
 # Time:  O(log(min(d1, d2)))
+# Space: O(1)
 
 # number theory
 class Solution(object):
     def minimizeSet(self, divisor1, divisor2, uniqueCnt1, uniqueCnt2):
-        
+        """
+        :type divisor1: int
+        :type divisor2: int
+        :type uniqueCnt1: int
+        :type uniqueCnt2: int
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -22,10 +29,17 @@ class Solution(object):
 
 
 # Time:  O(log(min(d1, d2)) + logr)
+# Space: O(1)
 # binary search
 class Solution2(object):
     def minimizeSet(self, divisor1, divisor2, uniqueCnt1, uniqueCnt2):
-        
+        """
+        :type divisor1: int
+        :type divisor2: int
+        :type uniqueCnt1: int
+        :type uniqueCnt2: int
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

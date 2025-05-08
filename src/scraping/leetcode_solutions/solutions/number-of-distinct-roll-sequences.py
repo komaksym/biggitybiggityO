@@ -1,4 +1,5 @@
 # Time:  O(6^3 * n)
+# Space: O(6^2)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # dp
 class Solution(object):
     def distinctSequences(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

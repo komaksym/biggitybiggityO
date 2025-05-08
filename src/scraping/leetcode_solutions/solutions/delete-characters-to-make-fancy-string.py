@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # inplace solution
 class Solution(object):
     def makeFancyString(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         s = list(s)
         cnt = j = 0
         for i, c in enumerate(s):

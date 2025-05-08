@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def minimumBuckets(self, street):
-        
+        """
+        :type street: str
+        :rtype: int
+        """
         result = 0
         street = list(street)
         for i, c in enumerate(street):

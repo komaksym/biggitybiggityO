@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def findDuplicates(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         result = []
         for i in nums:
             if nums[abs(i)-1] < 0:
@@ -13,9 +17,13 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def findDuplicates(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         result = []
         i = 0
         while i < len(nums):
@@ -31,9 +39,13 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n), this doesn't satisfy the question
 from collections import Counter
 class Solution3(object):
     def findDuplicates(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
         return [elem for elem, count in list(Counter(nums).items()) if count == 2]
 

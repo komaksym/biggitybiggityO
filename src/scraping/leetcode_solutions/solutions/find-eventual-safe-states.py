@@ -1,8 +1,12 @@
 # Time:  O(|V| + |E|)
+# Space: O(|V|)
 
 class Solution(object):
     def eventualSafeNodes(self, graph):
-        
+        """
+        :type graph: List[List[int]]
+        :rtype: List[int]
+        """
         WHITE, GRAY, BLACK = list(range(3))
 
         def dfs(graph, node, lookup):

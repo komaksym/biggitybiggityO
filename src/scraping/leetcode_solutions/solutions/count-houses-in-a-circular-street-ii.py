@@ -1,4 +1,5 @@
 # Time:  O(k)
+# Space: O(1)
 
 # Definition for a street.
 class Street:
@@ -13,7 +14,11 @@ class Street:
 # constructive algorithms
 class Solution(object):
     def houseCount(self, street, k):
-        
+        """
+        :type street: Street
+        :type k: int
+        :rtype: int
+        """
         while not street.isDoorOpen():
             street.moveRight()
         result = 0

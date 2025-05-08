@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 # dp
 class Solution(object):
     def minimizeConcatenatedLength(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: int
+        """
         dp = [[float("-inf")]*26 for _ in range(2)]
         dp[0][ord(words[0][-1])-ord('a')] = dp[1][ord(words[0][0])-ord('a')] = 0
         for i in range(1, len(words)):

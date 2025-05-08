@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 
 
 class Solution(object):
     def countPairs(self, deliciousness):
-        
+        """
+        :type deliciousness: List[int]
+        :rtype: int
+        """
         def floor_log2_x(x):
             return x.bit_length()-1
 

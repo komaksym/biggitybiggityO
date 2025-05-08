@@ -1,4 +1,5 @@
 # Time:  O(n + m)
+# Space: O(n + m)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # kmp, two pointers, sliding window, deque, greedy
 class Solution(object):
     def generateString(self, str1, str2):
-        
+        """
+        :type str1: str
+        :type str2: str
+        :rtype: str
+        """
         def getPrefix(pattern):
             prefix = [-1]*len(pattern)
             j = -1
@@ -34,7 +39,7 @@ class Solution(object):
             else:
                 candidate[i:i+m] = str2
             prev = i
-        result = list(str2)+[
+        result = list(str2)+['#']+candidate
         idxs = []
         for i in range(m+1, len(result)):
             if result[i] == '*':
@@ -60,15 +65,21 @@ class Solution(object):
 
 
 # Time:  O(n + m)
+# Space: O(n + m)
 import collections
 
 
 # z-function, two pointers, sliding window, deque, greedy
 class Solution2(object):
     def generateString(self, str1, str2):
-        
-       
-        def z_function(s): 
+        """
+        :type str1: str
+        :type str2: str
+        :rtype: str
+        """
+        # Template: https://cp-algorithms.com/string/z-function.html
+        def z_function(s):  # Time: O(n), Space: O(n)
+            z = [0]*len(s)
             l, r = 0, 0
             for i in range(1, len(z)):
                 if i <= r:
@@ -95,7 +106,7 @@ class Solution2(object):
             else:
                 candidate[i:i+m] = str2
             prev = i
-        result = list(str2)+[
+        result = list(str2)+['#']+candidate
         idxs = []
         for i in range(m+1, len(result)):
             if result[i] == '*':

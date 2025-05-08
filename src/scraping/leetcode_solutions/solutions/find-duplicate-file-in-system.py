@@ -1,11 +1,15 @@
 # Time:  O(n * l), l is the average length of file content
+# Space: O(n * l)
 
 import collections
 
 
 class Solution(object):
     def findDuplicate(self, paths):
-        
+        """
+        :type paths: List[str]
+        :rtype: List[List[str]]
+        """
         files = collections.defaultdict(list)
         for path in paths:
            s = path.split(" ")

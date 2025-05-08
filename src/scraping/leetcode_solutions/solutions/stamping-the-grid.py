@@ -1,8 +1,14 @@
 # Time:  O(m * n)
+# Space: O(m * n)
 
 class Solution(object):
     def possibleToStamp(self, grid, stampHeight, stampWidth):
-        
+        """
+        :type grid: List[List[int]]
+        :type stampHeight: int
+        :type stampWidth: int
+        :rtype: bool
+        """
         prefix = [[0]*(len(grid[0])+1) for _ in range(len(grid)+1)]
         fit = [[0]*len(grid[0]) for _ in range(len(grid))]
         for i in range(len(grid)):

@@ -1,9 +1,13 @@
 # Time:  O(n * l + nlogn)
+# Space: O(n)
 
 # freq table, greedy, sort
 class Solution(object):
     def maxPalindromesAfterOperations(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: int
+        """
         cnt = [0]*26
         for w in words:
             for c in w:

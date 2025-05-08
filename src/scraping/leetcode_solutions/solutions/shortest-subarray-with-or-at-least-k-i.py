@@ -1,10 +1,15 @@
 from functools import reduce
 # Time:  O(nlogr) = O(n * 30)
+# Space: O(logr) = O(30)
 
 # freq table, two pointers
 class Solution(object):
     def minimumSubarrayLength(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def update(x, d, curr):
             for i in range(len(cnt)):
                 if x < (1<<i):
@@ -34,10 +39,15 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 # brute force
 class Solution2(object):
     def minimumSubarrayLength(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = float("inf")
         for left in range(len(nums)):
             curr = 0

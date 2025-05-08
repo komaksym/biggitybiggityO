@@ -1,4 +1,5 @@
 # Time:  O(n * l)
+# Space: O(t)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # trie
 class Solution(object):
     def countPrefixSuffixPairs(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: int
+        """
         _trie = lambda: collections.defaultdict(_trie)
         trie = _trie()
         result = 0
@@ -20,10 +24,14 @@ class Solution(object):
 
 
 # Time:  O(n^2 * l)
+# Space: O(1)
 # brute force
 class Solution2(object):
     def countPrefixSuffixPairs(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: int
+        """
         def check(i, j):
             return words[j].startswith(words[i]) and words[j].endswith(words[i])
     

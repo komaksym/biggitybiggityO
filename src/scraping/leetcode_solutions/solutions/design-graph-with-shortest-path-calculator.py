@@ -1,6 +1,7 @@
 # Time:  ctor:         O(|V| + |E|)
 #        addEdge:      O(1)
 #        shortestPath: O((|E| + |V|) * log|V|) = O(|E| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import heapq
 
@@ -9,18 +10,28 @@ import heapq
 class Graph(object):
 
     def __init__(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        """
         self.__adj = [[] for _ in range(n)]
         for edge in edges:
             self.addEdge(edge)
 
     def addEdge(self, edge):
-        
+        """
+        :type edge: List[int]
+        :rtype: None
+        """
         u, v, w = edge
         self.__adj[u].append((v, w))
 
     def shortestPath(self, node1, node2):
-        
+        """
+        :type node1: int
+        :type node2: int
+        :rtype: int
+        """
         def dijkstra(adj, start, target):
             best = [float("inf")]*len(adj)
             best[start] = 0

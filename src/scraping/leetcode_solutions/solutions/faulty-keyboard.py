@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # deque
 class Solution(object):
     def finalString(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         dq = collections.deque()
         parity = 0
         for x in s:

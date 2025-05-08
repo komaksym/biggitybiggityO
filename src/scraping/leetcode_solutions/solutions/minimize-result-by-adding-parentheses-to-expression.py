@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 import itertools
 
@@ -6,7 +7,10 @@ import itertools
 # brute force
 class Solution(object):
     def minimizeResult(self, expression):
-        
+        """
+        :type expression: str
+        :rtype: str
+        """
         def stoi(s, i, j):
             result = 0
             for k in range(i, j):
@@ -35,14 +39,19 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 # brute force
 class Solution2(object):
     def minimizeResult(self, expression):
-        
+        """
+        :type expression: str
+        :rtype: str
+        """
         best = None
         min_val = float("inf")
         pos = expression.index('+')
-        left, right = int(expression[0:pos]), int(expression[pos+1:])          base1, base2_init = 10**pos, 10**(len(expression)-(pos+1)-1)
+        left, right = int(expression[0:pos]), int(expression[pos+1:])  # Space: O(n)
+        base1, base2_init = 10**pos, 10**(len(expression)-(pos+1)-1)
         for i in range(pos):
             base2 = base2_init
             for j in range(pos+1, len(expression)):
@@ -54,13 +63,18 @@ class Solution2(object):
                     best = (i, j)
                 base2 //= 10
             base1 //= 10
-        return "".join([expression[:best[0]], '(', expression[best[0]:best[1]+1], ')', expression[best[1]+1:]])  
+        return "".join([expression[:best[0]], '(', expression[best[0]:best[1]+1], ')', expression[best[1]+1:]])  # Space: O(n)
+
     
 # Time:  O(n^3)
+# Space: O(n)
 # brute force
 class Solution3(object):
     def minimizeResult(self, expression):
-        
+        """
+        :type expression: str
+        :rtype: str
+        """
         best = None
         min_val = float("inf")
         pos = expression.index('+')
@@ -68,7 +82,8 @@ class Solution3(object):
             for j in range(pos+1, len(expression)):
                 val = (int(expression[:i] or "1")*
                        (int(expression[i:pos])+int(expression[pos+1:j+1]))*
-                       int(expression[j+1:] or "1"))                  if val < min_val:
+                       int(expression[j+1:] or "1"))  # Space: O(n)
+                if val < min_val:
                     min_val = val
                     best = (i, j)
-        return "".join([expression[:best[0]], '(', expression[best[0]:best[1]+1], ')', expression[best[1]+1:]])  
+        return "".join([expression[:best[0]], '(', expression[best[0]:best[1]+1], ')', expression[best[1]+1:]])  # Space: O(n)

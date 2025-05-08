@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -10,7 +11,12 @@ class TreeNode(object):
 
 class Solution(object):
     def twoSumBSTs(self, root1, root2, target):
-        
+        """
+        :type root1: TreeNode
+        :type root2: TreeNode
+        :type target: int
+        :rtype: bool
+        """
         def inorder_gen(root, asc=True):
             result, stack = [], [(root, False)]
             while stack:

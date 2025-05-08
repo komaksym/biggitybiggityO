@@ -1,8 +1,14 @@
 # Time:  O(n * l)
+# Space: O(l)
 
 class Solution(object):
     def numMusicPlaylists(self, N, L, K):
-        
+        """
+        :type N: int
+        :type L: int
+        :type K: int
+        :rtype: int
+        """
         M = 10**9+7
         dp = [[0 for _ in range(1+L)] for _ in range(2)]
         dp[0][0] = dp[1][1] = 1

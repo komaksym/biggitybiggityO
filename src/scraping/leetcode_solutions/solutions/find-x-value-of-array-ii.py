@@ -1,11 +1,17 @@
 # Time:  O(n * k + q * k * logn)
+# Space: O(n * k)
 
 # segment tree
 class Solution(object):
     def resultArray(self, nums, k, queries):
-        
-       
-       
+        """
+        :type nums: List[int]
+        :type k: int
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
+        # Template:
+        # https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/block-placement-queries.py
         class SegmentTree(object):
             def __init__(self, N,
                          build_fn=lambda _: None,

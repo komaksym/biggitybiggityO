@@ -1,8 +1,12 @@
 # Time:  O(n * 2^n)
+# Space: O(1)
 
 class Solution(object):
     def subsets(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
         nums.sort()
         result = [[]]
         for i in range(len(nums)):
@@ -14,9 +18,13 @@ class Solution(object):
 
 
 # Time:  O(n * 2^n)
+# Space: O(1)
 class Solution2(object):
     def subsets(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
         result = []
         i, count = 0, 1 << len(nums)
         nums.sort()
@@ -33,9 +41,13 @@ class Solution2(object):
 
 
 # Time:  O(n * 2^n)
+# Space: O(1)
 class Solution3(object):
     def subsets(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
         return self.subsetsRecu([], sorted(nums))
 
     def subsetsRecu(self, cur, nums):

@@ -1,9 +1,14 @@
 # Time:  O(n * l^2 + n * r), l is the max length of the words,
 #                            r is the number of the results.
+# Space: O(n^2)
 
 class Solution(object):
     def wordBreak(self, s, wordDict):
-        
+        """
+        :type s: str
+        :type wordDict: Set[str]
+        :rtype: List[str]
+        """
         n = len(s)
 
         max_len = 0

@@ -1,5 +1,6 @@
 # Time:  O((|E| + |V|) * log|V|) = O(|E| * log|V|),
 #        if we can further to use Fibonacci heap, it would be O(|E| + |V| * log|V|)
+# Space: O(|E| + |V|) = O(|E|)
 
 import heapq
 
@@ -7,7 +8,14 @@ import heapq
 # dijkstra's algorithm
 class Solution(object):
     def minimumWeight(self, n, edges, src1, src2, dest):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type src1: int
+        :type src2: int
+        :type dest: int
+        :rtype: int
+        """
         def dijkstra(adj, start):
             best = [float("inf")]*len(adj)
             best[start] = 0

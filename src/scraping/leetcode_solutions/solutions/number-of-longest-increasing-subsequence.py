@@ -1,10 +1,14 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def findNumberOfLIS(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         result, max_len = 0, 0
-        dp = [[1, 1] for _ in range(len(nums))] 
+        dp = [[1, 1] for _ in range(len(nums))]  # {length, number} pair
         for i in range(len(nums)):
             for j in range(i):
                 if nums[i] > nums[j]:

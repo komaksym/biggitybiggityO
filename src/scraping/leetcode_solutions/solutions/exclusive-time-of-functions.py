@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def exclusiveTime(self, n, logs):
-        
+        """
+        :type n: int
+        :type logs: List[str]
+        :rtype: List[int]
+        """
         result = [0] * n
         stk, prev = [], 0
         for log in logs:

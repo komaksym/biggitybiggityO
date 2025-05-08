@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def validWordAbbreviation(self, word, abbr):
-        
+        """
+        :type word: str
+        :type abbr: str
+        :rtype: bool
+        """
         i , digit = 0, 0
         for c in abbr:
             if c.isdigit():

@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(sqrt(n))
 
 import math
 
 
 class Solution(object):
     def printLinkedListInReverse(self, head):
-        
+        """
+        :type head: ImmutableListNode
+        :rtype: None
+        """
         def print_nodes(head, count):
             nodes = []
             while head and len(nodes) != count:
@@ -34,9 +38,13 @@ class Solution(object):
             
         
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
     def printLinkedListInReverse(self, head):
-        
+        """
+        :type head: ImmutableListNode
+        :rtype: None
+        """
         nodes = []
         while head:
             nodes.append(head)
@@ -46,9 +54,13 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 class Solution3(object):
     def printLinkedListInReverse(self, head):
-        
+        """
+        :type head: ImmutableListNode
+        :rtype: None
+        """
         tail = None
         while head != tail:
             curr = head

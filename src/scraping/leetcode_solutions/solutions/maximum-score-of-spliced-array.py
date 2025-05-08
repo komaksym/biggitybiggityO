@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # greedy, kadane's algorithm
 class Solution(object):
     def maximumsSplicedArray(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: int
+        """
         def kadane(a):
             result = curr = 0
             for x in a:

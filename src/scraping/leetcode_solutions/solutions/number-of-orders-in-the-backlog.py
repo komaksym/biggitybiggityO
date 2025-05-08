@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import heapq
 from functools import reduce
@@ -6,9 +7,12 @@ from functools import reduce
 
 class Solution(object):
     def getNumberOfBacklogOrders(self, orders):
-        
+        """
+        :type orders: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9 + 7
-        buy, sell  = [], [] 
+        buy, sell  = [], []  # max_heap, min_heap
         for p, a, t in orders:
             if t == 0:
                 heapq.heappush(buy, [-p, a])

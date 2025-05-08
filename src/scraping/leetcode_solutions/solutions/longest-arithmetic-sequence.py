@@ -1,10 +1,14 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 import collections
 
 class Solution(object):
     def longestArithSeqLength(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         dp = collections.defaultdict(int)
         for i in range(len(A)-1):
             for j in range(i+1, len(A)):

@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def splitArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
         if len(nums) < 7:
             return False
 

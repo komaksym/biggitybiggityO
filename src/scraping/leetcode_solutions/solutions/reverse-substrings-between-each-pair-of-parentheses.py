@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def reverseParentheses(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         stk, lookup = [], {}
         for i, c in enumerate(s):
             if c == '(':
@@ -23,9 +27,13 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 class Solution2(object):
     def reverseParentheses(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         stk = [[]]
         for c in s:
             if c == '(':

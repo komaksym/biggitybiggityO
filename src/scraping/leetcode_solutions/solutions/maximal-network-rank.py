@@ -1,23 +1,29 @@
 # Time:  O(m + n + k^2), k is the number of values greater or equal to top2
+# Space: O(m + n)
 
 # optimized from Solution2 with counting sort
 class Solution(object):
     def maximalNetworkRank(self, n, roads):
-        
+        """
+        :type n: int
+        :type roads: List[List[int]]
+        :rtype: int
+        """
         MAX_N = 100
         MAX_NUM = MAX_N-1
-        def counting_sort(arr, key=lambda x:x, reverse=False): 
+        def counting_sort(arr, key=lambda x:x, reverse=False):  # Time: O(n), Space: O(n)
+            count = [0]*(MAX_NUM+1)
             for x in arr:
                 count[key(x)] += 1
             for i in range(1, len(count)):
                 count[i] += count[i-1]
             result = [0]*len(arr)
             if not reverse:
-                for x in reversed(arr): 
+                for x in reversed(arr):  # stable sort
                     count[key(x)] -= 1
                     result[count[key(x)]] = x
             else:
-                for x in arr: 
+                for x in arr:  # stable sort
                     count[key(x)] -= 1
                     result[count[key(x)]] = x
                 result.reverse()
@@ -36,22 +42,27 @@ class Solution(object):
             if degree[sorted_idx[m]] != degree[sorted_idx[1]]:
                 break
             m += 1
-        result = degree[sorted_idx[0]] + degree[sorted_idx[1]] - 1 
-        for i in range(m-1): 
+        result = degree[sorted_idx[0]] + degree[sorted_idx[1]] - 1  # at least sum(top2 values) - 1
+        for i in range(m-1):  # only need to check pairs of top2 values
             for j in range(i+1, m):
-                if degree[sorted_idx[i]]+degree[sorted_idx[j]]-int(sorted_idx[i] in adj and sorted_idx[j] in adj[sorted_idx[i]]) > result: 
+                if degree[sorted_idx[i]]+degree[sorted_idx[j]]-int(sorted_idx[i] in adj and sorted_idx[j] in adj[sorted_idx[i]]) > result:  # if equal to ideal sum of top2 values, break
                     return degree[sorted_idx[i]]+degree[sorted_idx[j]]-int(sorted_idx[i] in adj and sorted_idx[j] in adj[sorted_idx[i]])                                                 
         return result
 
 
 # Time:  O(m + nlogn + k^2), k is the number of values greater or equal to top2
+# Space: O(m + n)
 import collections
 
 
 # optimized from Solution3
 class Solution2(object):
     def maximalNetworkRank(self, n, roads):
-        
+        """
+        :type n: int
+        :type roads: List[List[int]]
+        :rtype: int
+        """
         degree = [0]*n
         adj = collections.defaultdict(set)
         for a, b in roads:
@@ -66,21 +77,26 @@ class Solution2(object):
             if degree[sorted_idx[m]] != degree[sorted_idx[1]]:
                 break
             m += 1
-        result = degree[sorted_idx[0]] + degree[sorted_idx[1]] - 1 
-        for i in range(m-1): 
+        result = degree[sorted_idx[0]] + degree[sorted_idx[1]] - 1  # at least sum(top2 values) - 1
+        for i in range(m-1):  # only need to check pairs of top2 values
             for j in range(i+1, m):
-                if degree[sorted_idx[i]]+degree[sorted_idx[j]]-int(sorted_idx[i] in adj and sorted_idx[j] in adj[sorted_idx[i]]) > result: 
+                if degree[sorted_idx[i]]+degree[sorted_idx[j]]-int(sorted_idx[i] in adj and sorted_idx[j] in adj[sorted_idx[i]]) > result:  # if equal to ideal sum of top2 values, break
                     return degree[sorted_idx[i]]+degree[sorted_idx[j]]-int(sorted_idx[i] in adj and sorted_idx[j] in adj[sorted_idx[i]])                                                 
         return result
 
 
 # Time:  O(m + n^2)
+# Space: O(m + n)
 import collections
 
 
 class Solution3(object):
     def maximalNetworkRank(self, n, roads):
-        
+        """
+        :type n: int
+        :type roads: List[List[int]]
+        :rtype: int
+        """
         degree = [0]*n
         adj = collections.defaultdict(set)
         for a, b in roads:

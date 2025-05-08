@@ -1,9 +1,14 @@
 # Time:  O(mlogm + nlogn + (m + n) * logr), r = 2*(max(max(hens), max(grains))-min(min(hens), min(grains))
+# Space: O(1)
 
 # binary search, greedy
 class Solution(object):
     def minimumTime(self, hens, grains):
-        
+        """
+        :type hens: List[int]
+        :type grains: List[int]
+        :rtype: int
+        """
         def check(x):
             i = 0
             for h in hens:
@@ -11,7 +16,7 @@ class Solution(object):
                     return False
                 elif h-grains[i] > 0:
                     d = h-grains[i]
-                    c = max(x-2*d, (x-d)//2) 
+                    c = max(x-2*d, (x-d)//2)  # max(go left then right, go right then left)
                 else:
                     c = x                   
                 while i < len(grains) and grains[i] <= h+c:

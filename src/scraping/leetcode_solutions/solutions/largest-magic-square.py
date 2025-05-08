@@ -1,8 +1,12 @@
 # Time:  O(max(m, n) * min(m, n)^3)
+# Space: O(m + n)
 
 class Solution(object):
     def largestMagicSquare(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def get_sum(prefix, a, b):
             return prefix[b+1]-prefix[a]
 

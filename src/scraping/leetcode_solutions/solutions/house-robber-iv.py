@@ -1,9 +1,14 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # binary search, greedy
 class Solution(object):
     def minCapability(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def check(x):
             cnt = i = 0
             while i < len(nums):
@@ -26,10 +31,15 @@ class Solution(object):
 
 
 # Time:  O(nlogr)
+# Space: O(1)
 # binary search, greedy
 class Solution2(object):
     def minCapability(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def check(x):
             cnt = i = 0
             while i < len(nums):

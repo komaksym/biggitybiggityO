@@ -1,9 +1,15 @@
 # Time:  O(r + 2^n * n^2)
+# Space: O(n^3)
 
 # graph, bitmasks, Floyd-Warshall algorithm, backtracking
 class Solution(object):
     def numberOfSets(self, n, maxDistance, roads):
-        
+        """
+        :type n: int
+        :type maxDistance: int
+        :type roads: List[List[int]]
+        :rtype: int
+        """
         def check(mask, dist):
             return all(dist[i][j] <= maxDistance for i in range(n) if mask&(1<<i) for j in range(i+1, n) if mask&(1<<j))
 
@@ -32,10 +38,16 @@ class Solution(object):
     
 
 # Time:  O(r + 2^n * n^3)
+# Space: O(n^2)
 # bitmasks, Floyd-Warshall algorithm
 class Solution2(object):
     def numberOfSets(self, n, maxDistance, roads):
-        
+        """
+        :type n: int
+        :type maxDistance: int
+        :type roads: List[List[int]]
+        :rtype: int
+        """
         def check(mask, dist):
             return all(dist[i][j] <= maxDistance for i in range(n) if mask&(1<<i) for j in range(i+1, n) if mask&(1<<j))
 
@@ -44,10 +56,10 @@ class Solution2(object):
                 if mask&(1<<k) == 0:
                     continue
                 for i in range(len(dist)):
-                    if mask&(1<<i) == 0: 
+                    if mask&(1<<i) == 0:  # optional, to speed up performance
                         continue
                     for j in range(i+1, len(dist[i])):
-                        if mask&(1<<j) == 0: 
+                        if mask&(1<<j) == 0:  # optional, to speed up performance
                              continue
                         dist[j][i] = dist[i][j] = min(dist[i][j], dist[i][k]+dist[k][j])
             return check(mask, dist)

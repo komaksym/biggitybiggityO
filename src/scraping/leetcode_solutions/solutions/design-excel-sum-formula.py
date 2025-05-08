@@ -1,6 +1,7 @@
 # Time:  set: O((r * c)^2)
 #        get: O(1)
 #        sum: O((r * c)^2)
+# Space: O(r * c)
 
 import collections
 
@@ -8,7 +9,10 @@ import collections
 class Excel(object):
 
     def __init__(self, H, W):
-        
+        """
+        :type H: int
+        :type W: str
+        """
         self.__exl = [[0 for _ in range(ord(W)-ord('A')+1)] \
                       for _ in range(H+1)]
         self.__fward = collections.defaultdict(lambda : collections.defaultdict(int))
@@ -16,18 +20,32 @@ class Excel(object):
 
 
     def set(self, r, c, v):
-        
+        """
+        :type r: int
+        :type c: str
+        :type v: int
+        :rtype: void
+        """
         self.__reset_dependency(r, c)
         self.__update_others(r, c, v)
 
 
     def get(self, r, c):
-        
+        """
+        :type r: int
+        :type c: str
+        :rtype: int
+        """
         return self.__exl[r][ord(c) - ord('A')]
 
 
     def sum(self, r, c, strs):
-        
+        """
+        :type r: int
+        :type c: str
+        :type strs: List[str]
+        :rtype: int
+        """
         self.__reset_dependency(r, c)
         result = self.__calc_and_update_dependency(r, c, strs)
         self.__update_others(r, c, result)

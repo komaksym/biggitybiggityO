@@ -1,8 +1,13 @@
 # Time:  O(nlogn + nlogr), r is the range of positions
+# Space: O(1)
 
 class Solution(object):
     def maxDistance(self, position, m):
-        
+        """
+        :type position: List[int]
+        :type m: int
+        :rtype: int
+        """
         def check(position, m, x):
             count, prev = 1, position[0]
             for i in range(1, len(position)):

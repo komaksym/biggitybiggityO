@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def longestOnes(self, A, K):
-        
+        """
+        :type A: List[int]
+        :type K: int
+        :rtype: int
+        """
         result, i = 0, 0
         for j in range(len(A)):
             K -= int(A[j] == 0)

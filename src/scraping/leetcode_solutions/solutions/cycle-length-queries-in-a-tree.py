@@ -1,9 +1,14 @@
 # Time:  O(q * n)
+# Space: O(1)
 
 # tree, lca
 class Solution(object):
     def cycleLengthQueries(self, n, queries):
-        
+        """
+        :type n: int
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         result = []
         for x, y in queries:
             cnt = 1

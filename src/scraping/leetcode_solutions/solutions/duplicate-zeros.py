@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def duplicateZeros(self, arr):
-        
+        """
+        :type arr: List[int]
+        :rtype: None Do not return anything, modify arr in-place instead.
+        """
         shift, i = 0, 0
         while i+shift < len(arr):
             shift += int(arr[i] == 0)

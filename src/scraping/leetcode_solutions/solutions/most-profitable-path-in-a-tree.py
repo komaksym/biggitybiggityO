@@ -1,9 +1,15 @@
 # Time:  O(n)
+# Space: O(h)
 
 # iterative dfs
 class Solution(object):
     def mostProfitablePath(self, edges, bob, amount):
-        
+        """
+        :type edges: List[List[int]]
+        :type bob: int
+        :type amount: List[int]
+        :rtype: int
+        """
         def iter_dfs():
             lookup = [[float("-inf"), float("inf")] for _ in range(len(adj))]
             stk = [(1, (0, -1, 0))]
@@ -41,10 +47,16 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 # dfs
 class Solution2(object):
     def mostProfitablePath(self, edges, bob, amount):
-        
+        """
+        :type edges: List[List[int]]
+        :type bob: int
+        :type amount: List[int]
+        :rtype: int
+        """
         def dfs(u, ah):
             lookup[u] = True
             result = 0 if len(adj[u])+(u == 0) == 1 else float("-inf")

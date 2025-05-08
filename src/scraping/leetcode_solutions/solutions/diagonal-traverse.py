@@ -1,8 +1,12 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def findDiagonalOrder(self, matrix):
-        
+        """
+        :type matrix: List[List[int]]
+        :rtype: List[int]
+        """
         if not matrix or not matrix[0]:
             return []
 

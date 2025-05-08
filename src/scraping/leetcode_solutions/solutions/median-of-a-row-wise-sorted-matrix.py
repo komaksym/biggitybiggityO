@@ -1,4 +1,5 @@
 # Time:  O(logr * mlogn), r = O(right-left+1) = O(10^6), O(logr) = O(20)
+# Space: O(1)
 
 import bisect
 
@@ -6,7 +7,10 @@ import bisect
 # binary search
 class Solution(object):
     def matrixMedian(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         def check(x):
             return sum(bisect_right(row, x) for row in grid) > (len(grid)*len(grid[0]))//2
 

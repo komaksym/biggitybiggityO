@@ -1,8 +1,13 @@
 # Time:  O(n + m)
+# Space: O(1)
 
 class Solution(object):
     def repeatedStringMatch(self, A, B):
-        
+        """
+        :type A: str
+        :type B: str
+        :rtype: int
+        """
         def check(index):
             return all(A[(i+index) % len(A)] == c
                        for i, c in enumerate(B))

@@ -1,19 +1,24 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import itertools
 
 
 class Solution(object):
     def maxSumRangeQuery(self, nums, requests):
-        
-        def addmod(a, b, mod): 
+        """
+        :type nums: List[int]
+        :type requests: List[List[int]]
+        :rtype: int
+        """
+        def addmod(a, b, mod):  # avoid overflow in other languages
             a %= mod
             b %= mod
             if mod-a <= b:
                 b -= mod
             return a+b
         
-        def mulmod(a, b, mod): 
+        def mulmod(a, b, mod):  # avoid overflow in other languages
             a %= mod
             b %= mod
             if a < b:
@@ -39,6 +44,6 @@ class Solution(object):
         count.sort()
         result = 0
         for i, (num, c) in enumerate(zip(nums, count)):
-           
+            # result = addmod(result, mulmod(num, c, MOD), MOD)
             result = (result+num*c)%MOD
         return result

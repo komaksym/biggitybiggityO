@@ -1,6 +1,7 @@
 from functools import reduce
 # Time:  precompute: O(max_n^2 + max_y * min(max_n, max_x))
 #        runtime:    O(min(n, x))
+# Space: O(max_n^2 + max_y * min(max_n, max_x))
 
 MOD = 10**9+7
 MAX_N = MAX_X = MAX_Y = 1000
@@ -21,5 +22,10 @@ for i in range(1, MAX_Y+1):
 # dp, combinatorics
 class Solution(object):
     def numberOfWays(self, n, x, y):
-        
+        """
+        :type n: int
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
         return reduce(lambda accu, x: (accu+x)%MOD, (NCR[x][i]*DP[n][i]*POW[y][i] for i in range(1, min(n, x)+1)), 0)

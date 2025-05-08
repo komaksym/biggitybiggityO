@@ -1,4 +1,5 @@
 # Time:  O(nlogk + n * sqrt(k))
+# Space: O(n + sqrt(k)), number of factors of k is at most sqrt(k)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # math, number theory
 class Solution(object):
     def countPairs(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def gcd(x, y):
             while y:
                 x, y = y, x%y
@@ -26,13 +31,18 @@ class Solution(object):
 
 
 # Time:  O(nlogk + n * sqrt(k)^2) = O(n * k)
+# Space: O(n * sqrt(k)), number of factors of k is at most sqrt(k)
 import collections
 
 
 # math, number theory
 class Solution2(object):
     def countPairs(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def gcd(x, y):
             while y:
                 x, y = y, x%y
@@ -52,13 +62,18 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 import collections
 
 
 # brute force
 class Solution3(object):
     def countPairs(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         idxs = collections.defaultdict(list)
         for i, x in enumerate(nums):
             idxs[x].append(i)

@@ -1,8 +1,14 @@
 # Time:  O(d * f * t)
+# Space: O(t)
 
 class Solution(object):
     def numRollsToTarget(self, d, f, target):
-        
+        """
+        :type d: int
+        :type f: int
+        :type target: int
+        :rtype: int
+        """
         MOD = 10**9+7
         dp = [[0 for _ in range(target+1)] for _ in range(2)]
         dp[0][0] = 1

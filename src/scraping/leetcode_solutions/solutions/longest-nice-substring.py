@@ -1,8 +1,12 @@
 # Time:  O(26 * n) = O(n)
+# Space: O(26 * n) = O(n)
 
 class Solution(object):
     def longestNiceSubstring(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         lookup = set(list(s))
         prev = -1
         result = ""

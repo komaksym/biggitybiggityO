@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def repeatedSubstringPattern(self, str):
-        
+        """
+        :type str: str
+        :rtype: bool
+        """
         def getPrefix(pattern):
             prefix = [-1] * len(pattern)
             j = -1
@@ -19,7 +23,10 @@ class Solution(object):
                (prefix[-1] + 1) % (len(str) - prefix[-1] - 1) == 0
 
     def repeatedSubstringPattern2(self, str):
-        
+        """
+        :type str: str
+        :rtype: bool
+        """
         if not str:
             return False
 

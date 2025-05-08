@@ -1,21 +1,25 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 # sort, fenwick tree, hash table
 class Solution(object):
     def maxRectangleArea(self, points):
-        
-        class BIT(object): 
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
+        class BIT(object):  # 0-indexed.
             def __init__(self, n):
-                self.__bit = [0]*(n+1) 
+                self.__bit = [0]*(n+1)  # Extra one for dummy node.
 
             def add(self, i, val):
-                i += 1 
+                i += 1  # Extra one for dummy node.
                 while i < len(self.__bit):
                     self.__bit[i] += val
                     i += (i & -i)
 
             def query(self, i):
-                i += 1 
+                i += 1  # Extra one for dummy node.
                 ret = 0
                 while i > 0:
                     ret += self.__bit[i]
@@ -41,10 +45,14 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 # sort, brute force
 class Solution2(object):
     def maxRectangleArea(self, points):
-        
+        """
+        :type points: List[List[int]]
+        :rtype: int
+        """
         result = -1
         points.sort()
         for i in range(len(points)-3):

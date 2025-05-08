@@ -1,8 +1,13 @@
 # Time:  O(n + k)
+# Space: O(1)
 
 class Solution(object):
     def splitListToParts(self, root, k):
-        
+        """
+        :type root: ListNode
+        :type k: int
+        :rtype: List[ListNode]
+        """
         n = 0
         curr = root
         while curr:

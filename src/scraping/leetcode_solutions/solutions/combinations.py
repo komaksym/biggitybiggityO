@@ -1,8 +1,13 @@
 # Time:  O(k * C(n, k))
+# Space: O(k)
 
 class Solution(object):
     def combine(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """
         if k > n:
             return []
         nums, idxs = list(range(1, n+1)), list(range(k))
@@ -21,9 +26,14 @@ class Solution(object):
 
 
 # Time:  O(k * C(n, k))
+# Space: O(k)
 class Solution2(object):
     def combine(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """
         result, combination = [], []
         i = 1
         while True:
@@ -41,9 +51,14 @@ class Solution2(object):
 
 
 # Time:  O(k * C(n, k))
+# Space: O(k)
 class Solution3(object):
     def combine(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """
         def combineDFS(n, start, intermediate, k, result):
             if k == 0:
                 result.append(intermediate[:])

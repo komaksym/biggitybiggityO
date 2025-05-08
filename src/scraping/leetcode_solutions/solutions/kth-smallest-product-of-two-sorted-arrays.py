@@ -1,8 +1,14 @@
 # Time:  O((m + n) * logr), r is the range size of [min(products), max(products)]
+# Space: O(1)
 
 class Solution(object):
     def kthSmallestProduct(self, nums1, nums2, k):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :type k: int
+        :rtype: int
+        """
         def check(nums1, nums2, k, neg_cnt, target):
             cnt = 0
             left, right = 0, len(nums2)-1

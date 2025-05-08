@@ -1,9 +1,14 @@
 # Time:  O((n + q) * logn)
+# Space: O(n)
 
 # sort, binary search, greedy, prefix sum
 class Solution(object):
     def minimumRelativeLosses(self, prices, queries):
-        
+        """
+        :type prices: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

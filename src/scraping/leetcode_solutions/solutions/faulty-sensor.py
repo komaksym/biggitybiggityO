@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def badSensor(self, sensor1, sensor2):
-        
+        """
+        :type sensor1: List[int]
+        :type sensor2: List[int]
+        :rtype: int
+        """
         for i in range(len(sensor1)-1):
             if sensor1[i] == sensor2[i]:
                 continue

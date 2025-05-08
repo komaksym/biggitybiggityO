@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def insert(self, intervals, newInterval):
-        
+        """
+        :type intervals: List[List[int]]
+        :type newInterval: List[int]
+        :rtype: List[List[int]]
+        """
         result = []
         i = 0
         while i < len(intervals) and newInterval[0] > intervals[i][1]:

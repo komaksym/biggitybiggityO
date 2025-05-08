@@ -1,8 +1,14 @@
 # Time:  O(nlogd), d is the max day of bloomDay
+# Space: O(1)
 
 class Solution(object):
     def minDays(self, bloomDay, m, k):
-        
+        """
+        :type bloomDay: List[int]
+        :type m: int
+        :type k: int
+        :rtype: int
+        """
         def check(bloomDay, m, k, x):
             result = count = 0
             for d in bloomDay:

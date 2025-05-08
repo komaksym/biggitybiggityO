@@ -1,15 +1,19 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def longestPalindrome(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         def preProcess(s):
             if not s:
                 return ['^', '$']
             T = ['^']
             for c in s:
-                T +=  [
-            T += [
+                T +=  ['#', c]
+            T += ['#', '$']
             return T
 
         T = preProcess(s)
@@ -37,9 +41,13 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 class Solution2(object):
     def longestPalindrome(self, s):
-        
+        """
+        :type s: str
+        :rtype: str
+        """
         def expand(s, left, right):
             while left >= 0 and right < len(s) and s[left] == s[right]:
                 left -= 1

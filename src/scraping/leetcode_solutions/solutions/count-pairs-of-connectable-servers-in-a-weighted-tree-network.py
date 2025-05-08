@@ -1,9 +1,14 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 # iterative dfs
 class Solution(object):
     def countPairsOfConnectableServers(self, edges, signalSpeed):
-        
+        """
+        :type edges: List[List[int]]
+        :type signalSpeed: int
+        :rtype: List[int]
+        """
         def iter_dfs(u, p, dist):
             result = 0
             stk = [(u, p, dist)]
@@ -32,10 +37,15 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 # dfs
 class Solution2(object):
     def countPairsOfConnectableServers(self, edges, signalSpeed):
-        
+        """
+        :type edges: List[List[int]]
+        :type signalSpeed: int
+        :rtype: List[int]
+        """
         def dfs(u, p, dist):
             cnt = 1 if dist%signalSpeed == 0 else 0
             for v, w in adj[u]:
@@ -59,10 +69,15 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
+# Space: O(n)
 # bfs
 class Solution3(object):
     def countPairsOfConnectableServers(self, edges, signalSpeed):
-        
+        """
+        :type edges: List[List[int]]
+        :type signalSpeed: int
+        :rtype: List[int]
+        """
         def bfs(u, p, dist):
             result = 0
             q = [(u, p, dist)]

@@ -1,10 +1,15 @@
 from functools import reduce
 # Time:  O(n * k)
+# Space: O(k)
 
 # knapsack dp
 class Solution(object):
     def countPartitions(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         if sum(nums) < 2*k:
             return 0

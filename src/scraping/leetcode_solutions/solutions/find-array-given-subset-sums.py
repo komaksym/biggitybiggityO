@@ -1,4 +1,5 @@
 # Time:  O(n * 2^n), len(sums) = 2^n
+# Space: O(1)
 
 # [proof]
 # - let d = sorted_sums[0]-sorted_sums[1] and d != -d (d = 0 is trival), where one of +d/-d is the smallest positive or largest negative number of the original solution of [S1, ..., S(2^n)]
@@ -21,25 +22,29 @@
 # optimized from solution4 (not using dict), runtime: 1040 ms
 class Solution(object):
     def recoverArray(self, n, sums):
-        
-        sums.sort() 
+        """
+        :type n: int
+        :type sums: List[int]
+        :rtype: List[int]
+        """
+        sums.sort()  # Time: O(2^n * log(2^n)) = O(n * 2^n)
         shift, l = 0, len(sums)
         result = []
-        for _ in range(n): 
+        for _ in range(n):  # log(2^n) times, each time costs O(2^(n-len(result))), Total Time: O(2^n)
             new_shift = sums[0]-sums[1]
             assert(new_shift <= 0)
             has_zero, j, k = False, 0, 0
             for i in range(l):
-                if k < j and sums[k] == sums[i]: 
+                if k < j and sums[k] == sums[i]:  # skip shifted one
                     k += 1
                 else:
                     if shift == sums[i]-new_shift:
                         has_zero = True
                     sums[j] = sums[i]-new_shift
                     j += 1
-            if has_zero: 
+            if has_zero:  # contain 0, choose this side
                 result.append(new_shift)
-            else: 
+            else:  # contain no 0, choose another side and shift 0 offset
                 result.append(-new_shift)
                 shift -= new_shift
             l //= 2
@@ -48,6 +53,7 @@ class Solution(object):
 
 # Time:  O(2^n + n * r), len(sums) = 2^n
 #                      , r = max(sums)-min(sums)
+# Space: O(2^n + r)
 import collections
 from functools import reduce
 
@@ -55,15 +61,19 @@ from functools import reduce
 # optimized from solution4 (not using dict), runtime: 968 ms
 class Solution2(object):
     def recoverArray(self, n, sums):
-        
+        """
+        :type n: int
+        :type sums: List[int]
+        :rtype: List[int]
+        """
         min_sum, max_sum = min(sums), max(sums)
         dp = [0]*(max_sum-min_sum+1)
         for x in sums:
             dp[x-min_sum] += 1
-        sorted_sums = [x for x in range(min_sum, max_sum+1) if dp[x-min_sum]] 
+        sorted_sums = [x for x in range(min_sum, max_sum+1) if dp[x-min_sum]]  # Time: O(r)
         shift = 0
         result = []
-        for _ in range(n): 
+        for _ in range(n):  # log(2^n) times, each time costs O(2^(n-len(result)))+O(r), Total Time: O(2^n + n * r)
             new_dp = [0]*(max_sum-min_sum+1)
             new_sorted_sums = []
             new_shift = sorted_sums[0]-sorted_sums[1] if dp[sorted_sums[0]-min_sum] == 1 else 0
@@ -76,15 +86,16 @@ class Solution2(object):
                 new_sorted_sums.append(x-new_shift)
             dp = new_dp
             sorted_sums = new_sorted_sums
-            if dp[shift-min_sum]: 
+            if dp[shift-min_sum]:  # contain 0, choose this side
                 result.append(new_shift)
-            else: 
+            else:  # contain no 0, choose another side and shift 0 offset
                 result.append(-new_shift)
                 shift -= new_shift
         return result
 
 
 # Time:  O(n * 2^n), len(sums) = 2^n
+# Space: O(2^n)
 import collections
 import operator
 
@@ -92,17 +103,21 @@ import operator
 # optimized from solution4, runtime: 1044 ms
 class Solution3(object):
     def recoverArray(self, n, sums):
-        
+        """
+        :type n: int
+        :type sums: List[int]
+        :rtype: List[int]
+        """
         dp = {k: v for k, v in collections.Counter(sums).items()}
         total = reduce(operator.ior, iter(dp.values()), 0)
-        basis = total&-total 
+        basis = total&-total  # find rightmost bit 1
         if basis > 1:
             for k in dp.keys():
                 dp[k] //= basis
-        sorted_sums = sorted(dp.keys()) 
+        sorted_sums = sorted(dp.keys())  # Time: O(2^n * log(2^n)) = O(n * 2^n)
         shift = 0
         result = [0]*(basis.bit_length()-1)
-        for _ in range(n-len(result)): 
+        for _ in range(n-len(result)):  # log(2^n) times, each time costs O(2^(n-len(result))), Total Time: O(2^n)
             new_dp = {}
             new_sorted_sums = []
             new_shift = sorted_sums[0]-sorted_sums[1]
@@ -115,27 +130,32 @@ class Solution3(object):
                 new_sorted_sums.append(x-new_shift)
             dp = new_dp
             sorted_sums = new_sorted_sums
-            if shift in dp: 
+            if shift in dp:  # contain 0, choose this side
                 result.append(new_shift)
-            else: 
+            else:  # contain no 0, choose another side and shift 0 offset
                 result.append(-new_shift)
                 shift -= new_shift
         return result
 
 
 # Time:  O(n * 2^n), len(sums) = 2^n
+# Space: O(2^n)
 import collections
 
 
 # optimized from solution4 (not using OrderedDict), runtime: 1024 ms
 class Solution4(object):
     def recoverArray(self, n, sums):
-        
+        """
+        :type n: int
+        :type sums: List[int]
+        :rtype: List[int]
+        """
         dp = {k: v for k, v in collections.Counter(sums).items()}
-        sorted_sums = sorted(dp.keys()) 
+        sorted_sums = sorted(dp.keys())  # Time: O(2^n * log(2^n)) = O(n * 2^n)
         shift = 0
         result = []
-        for _ in range(n): 
+        for _ in range(n):  # log(2^n) times, each time costs O(2^(n-len(result))), Total Time: O(2^n)
             new_dp = {}
             new_sorted_sums = []
             new_shift = sorted_sums[0]-sorted_sums[1] if dp[sorted_sums[0]] == 1 else 0
@@ -148,26 +168,31 @@ class Solution4(object):
                 new_sorted_sums.append(x-new_shift)
             dp = new_dp
             sorted_sums = new_sorted_sums
-            if shift in dp: 
+            if shift in dp:  # contain 0, choose this side
                 result.append(new_shift)
-            else: 
+            else:  # contain no 0, choose another side and shift 0 offset
                 result.append(-new_shift)
                 shift -= new_shift
         return result
 
 
 # Time:  O(n * 2^n), len(sums) = 2^n
+# Space: O(2^n)
 import collections
 
 
 # runtime: 1720 ms
 class Solution5(object):
     def recoverArray(self, n, sums):
-        
-        dp = OrderedDict(sorted(collections.Counter(sums).items())) 
+        """
+        :type n: int
+        :type sums: List[int]
+        :rtype: List[int]
+        """
+        dp = OrderedDict(sorted(collections.Counter(sums).items()))  # Time: O(2^n * log(2^n)) = O(n * 2^n)
         shift = 0
         result = []
-        for _ in range(n): 
+        for _ in range(n):  # log(2^n) times, each time costs O(2^(n-len(result))), Total Time: O(2^n)
             new_dp = OrderedDict()
             it = iter(dp)
             min_sum = next(it)
@@ -179,9 +204,9 @@ class Solution5(object):
                 dp[x-new_shift] -= dp[x] if new_shift else dp[x]//2
                 new_dp[x-new_shift] = dp[x]
             dp = new_dp
-            if shift in dp: 
+            if shift in dp:  # contain 0, choose this side
                 result.append(new_shift)
-            else: 
+            else:  # contain no 0, choose another side and shift 0 offset
                 result.append(-new_shift)
                 shift -= new_shift
         return result

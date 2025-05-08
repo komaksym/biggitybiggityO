@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 # Definition for singly-linked list.
 class ListNode(object):
@@ -9,7 +10,10 @@ class ListNode(object):
 
 class Solution(object):
     def deleteMiddle(self, head):
-        
+        """
+        :type head: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
         dummy = ListNode()
         dummy.next = head
         slow = fast = dummy

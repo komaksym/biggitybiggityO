@@ -1,8 +1,13 @@
 # Time:  O(q * n)
+# Space: O(1)
 
 class Solution(object):
     def countPoints(self, points, queries):
-        
+        """
+        :type points: List[List[int]]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         result = []
         for i, j, r in queries:
             result.append(0)

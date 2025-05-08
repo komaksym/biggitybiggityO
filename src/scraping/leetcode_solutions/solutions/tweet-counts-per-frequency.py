@@ -1,5 +1,6 @@
 # Time:  add:   O(logn),
 #        query: O(c), c is the total count of matching records
+# Space: O(n)
 
 import collections
 import random
@@ -14,8 +15,8 @@ class SkipNode(object):
         self.prevs = [None]*level
 
 class SkipList(object):
-    P_NUMERATOR, P_DENOMINATOR = 1, 2 
-    MAX_LEVEL = 32 
+    P_NUMERATOR, P_DENOMINATOR = 1, 2  # P = 1/4 in redis implementation
+    MAX_LEVEL = 32  # enough for 2^32 elements
 
     def __init__(self, end=float("inf"), can_duplicated=False):
         random.seed(0)
@@ -90,7 +91,7 @@ class SkipList(object):
         return level
 
     def __len__(self):
-        return self.__len-1 
+        return self.__len-1  # excluding end node
     
     def __str__(self):
         result = []
@@ -110,11 +111,21 @@ class TweetCounts(object):
         self.__lookup = {"minute":60, "hour":3600, "day":86400}
 
     def recordTweet(self, tweetName, time):
-        
+        """
+        :type tweetName: str
+        :type time: int
+        :rtype: None
+        """
         self.__records[tweetName].add(time)
 
     def getTweetCountsPerFrequency(self, freq, tweetName, startTime, endTime):
-        
+        """
+        :type freq: str
+        :type tweetName: str
+        :type startTime: int
+        :type endTime: int
+        :rtype: List[int]
+        """
         delta = self.__lookup[freq]
         result = [0]*((endTime-startTime)//delta+1)
         it = self.__records[tweetName].lower_bound(startTime)
@@ -126,6 +137,7 @@ class TweetCounts(object):
 
 # Time:  add:   O(n),
 #        query: O(rlogn), r is the size of result
+# Space: O(n)
 import bisect
 class TweetCounts2(object):
 
@@ -134,11 +146,21 @@ class TweetCounts2(object):
         self.__lookup = {"minute":60, "hour":3600, "day":86400}
 
     def recordTweet(self, tweetName, time):
-        
+        """
+        :type tweetName: str
+        :type time: int
+        :rtype: None
+        """
         bisect.insort(self.__records[tweetName], time)
 
     def getTweetCountsPerFrequency(self, freq, tweetName, startTime, endTime):
-        
+        """
+        :type freq: str
+        :type tweetName: str
+        :type startTime: int
+        :type endTime: int
+        :rtype: List[int]
+        """
         delta = self.__lookup[freq]
         i = startTime
         result = []
@@ -152,6 +174,7 @@ class TweetCounts2(object):
     
 # Time:  add:   O(1),
 #        query: O(n)
+# Space: O(n)
 class TweetCounts3(object):
 
     def __init__(self):
@@ -159,11 +182,21 @@ class TweetCounts3(object):
         self.__lookup = {"minute":60, "hour":3600, "day":86400}
 
     def recordTweet(self, tweetName, time):
-        
+        """
+        :type tweetName: str
+        :type time: int
+        :rtype: None
+        """
         self.__records[tweetName].append(time)
 
     def getTweetCountsPerFrequency(self, freq, tweetName, startTime, endTime):
-        
+        """
+        :type freq: str
+        :type tweetName: str
+        :type startTime: int
+        :type endTime: int
+        :rtype: List[int]
+        """
         delta = self.__lookup[freq]
         result = [0]*((endTime- startTime)//delta+1)
         for t in self.__records[tweetName]:

@@ -1,4 +1,5 @@
 # Time:  O(nlog*n) ~= O(n), n is the length of S
+# Space: O(n)
 
 class UnionFind(object):
     def __init__(self, n):
@@ -6,7 +7,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         if self.set[x] != x:
-            self.set[x] = self.find_set(self.set[x]) 
+            self.set[x] = self.find_set(self.set[x])  # path compression.
         return self.set[x]
 
     def union_set(self, x, y):
@@ -19,7 +20,12 @@ class UnionFind(object):
 
 class Solution(object):
     def smallestEquivalentString(self, A, B, S):
-        
+        """
+        :type A: str
+        :type B: str
+        :type S: str
+        :rtype: str
+        """
         union_find = UnionFind(26)
         for i in range(len(A)):
             union_find.union_set(ord(A[i])-ord('a'), ord(B[i])-ord('a'))

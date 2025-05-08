@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, val=0, next=None):
@@ -8,7 +9,10 @@ class ListNode(object):
 
 class Solution(object):
     def reverseEvenLengthGroups(self, head):
-        
+        """
+        :type head: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
         prev, l = head, 2
         while prev.__next__:
             curr, cnt = prev, 0

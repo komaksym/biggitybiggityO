@@ -1,9 +1,14 @@
 # Time:  O(|V| * |E|)
+# Space: O(|V| + |E|)
 
 # dfs
 class Solution(object):
     def getAncestors(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: List[List[int]]
+        """
         def iter_dfs(adj, i, result):
             lookup = [False]*len(adj)
             stk = [i]
@@ -26,10 +31,15 @@ class Solution(object):
 
 
 # Time:  O(|V| * |E| * log(|V| * |E|))
+# Space: O(|V| + |E|)
 # bfs
 class Solution2(object):
     def getAncestors(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: List[List[int]]
+        """
         def bfs(adj, i, result):
             lookup = [False]*len(adj)
             q = [i]
@@ -56,10 +66,15 @@ class Solution2(object):
 
 
 # Time:  O(|V| * |E| * log(|V| * |E|))
+# Space: O(|V| + |E|)
 # topological sort
 class Solution3(object):
     def getAncestors(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: List[List[int]]
+        """
         result = [set() for _ in range(n)]
         in_degree = [0]*n
         adj = [[] for _ in range(n)]

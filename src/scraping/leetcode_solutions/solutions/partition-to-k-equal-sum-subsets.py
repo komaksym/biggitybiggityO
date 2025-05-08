@@ -1,8 +1,13 @@
 # Time:  O(n*2^n)
+# Space: O(2^n)
 
 class Solution(object):
     def canPartitionKSubsets(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: bool
+        """
         def dfs(nums, target, used, todo, lookup):
             if lookup[used] is None:
                 targ = (todo-1)%target + 1
@@ -20,10 +25,15 @@ class Solution(object):
 
 
 # Time:  O(k^(n-k) * k!)
+# Space: O(n)
 # DFS solution with pruning.
 class Solution2(object):
     def canPartitionKSubsets(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: bool
+        """
         def dfs(nums, target, i, subset_sums):
             if i == len(nums):
                 return True

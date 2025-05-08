@@ -2,6 +2,7 @@
 #        mkdir: O(l)
 #        addContentToFile: O(l + c), c is the content size
 #        readContentFromFile: O(l + c)
+# Space: O(n + s), n is the number of dir/file nodes, s is the total content size.
 
 class TrieNode(object):
 
@@ -17,7 +18,10 @@ class FileSystem(object):
 
 
     def ls(self, path):
-        
+        """
+        :type path: str
+        :rtype: List[str]
+        """
         curr = self.__getNode(path)
 
         if curr.is_file:
@@ -27,20 +31,30 @@ class FileSystem(object):
 
 
     def mkdir(self, path):
-        
+        """
+        :type path: str
+        :rtype: void
+        """
         curr = self.__putNode(path)
         curr.is_file = False
 
 
     def addContentToFile(self, filePath, content):
-        
+        """
+        :type filePath: str
+        :type content: str
+        :rtype: void
+        """
         curr = self.__putNode(filePath)
         curr.is_file = True
         curr.content += content
 
 
     def readContentFromFile(self, filePath):
-        
+        """
+        :type filePath: str
+        :rtype: str
+        """
         return self.__getNode(filePath).content
 
 

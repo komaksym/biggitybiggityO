@@ -1,8 +1,12 @@
 # Time:  O(min(n, m) * log(max(n, m)))
+# Space: O(1)
 
 class Solution(object):
     def findPeakGrid(self, mat):
-        
+        """
+        :type mat: List[List[int]]
+        :rtype: List[int]
+        """
         def get_vec(mat, i):
             return mat[i] if len(mat) > len(mat[0]) else (mat[j][i] for j in range(len(mat)))
 

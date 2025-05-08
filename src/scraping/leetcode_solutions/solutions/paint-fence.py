@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def numWays(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: int
+        """
         if n == 0:
             return 0
         elif n == 1:
@@ -15,10 +20,15 @@ class Solution(object):
         return ways[(n - 1) % 3]
 
 # Time:  O(n)
+# Space: O(n)
 # DP solution.
 class Solution2(object):
     def numWays(self, n, k):
-        
+        """
+        :type n: int
+        :type k: int
+        :rtype: int
+        """
         if n == 0:
             return 0
         elif n == 1:

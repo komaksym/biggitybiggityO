@@ -1,8 +1,12 @@
 # Time:  O(1)
+# Space: O(1)
 
 class Solution(object):
     def tictactoe(self, moves):
-        
+        """
+        :type moves: List[List[int]]
+        :rtype: str
+        """
         row, col = [[0]*3 for _ in range(2)], [[0]*3 for _ in range(2)]
         diag, anti_diag = [0]*2, [0]*2
         p = 0

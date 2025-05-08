@@ -1,4 +1,5 @@
 # Time:  O(n * l^2)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # freq table, combinatorics
 class Solution(object):
     def countPairs(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         L = 7
         POW10 = [0]*L
         POW10[0] = 1
@@ -26,13 +30,17 @@ class Solution(object):
 
 
 # Time:  O(n * l^(2 * k)) = O(n * l^2)
+# Space: O(n + l^(2 * k)) = O(n + l^2) = O(n)
 import collections
 
 
 # freq table, combinatorics, bfs
 class Solution2(object):
     def countPairs(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         L = 7
         K = 1
         POW10 = [0]*L

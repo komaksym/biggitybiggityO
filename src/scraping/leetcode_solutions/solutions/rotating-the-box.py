@@ -1,8 +1,12 @@
 # Time:  O(m * n)
+# Space: O(1)
 
 class Solution(object):
     def rotateTheBox(self, box):
-        
+        """
+        :type box: List[List[str]]
+        :rtype: List[List[str]]
+        """
         result = [['.']*len(box) for _ in range(len(box[0]))]
         for i in range(len(box)):
             k = len(box[0])-1

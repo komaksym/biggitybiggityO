@@ -1,4 +1,5 @@
 # Time:  O(m + n)
+# Space: O(m + n)
 
 class ListNode(object):
     def __init__(self, x):
@@ -8,7 +9,11 @@ class ListNode(object):
 
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
-        
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
         stk1, stk2 = [], []
         while l1:
             stk1.append(l1.val)

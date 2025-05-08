@@ -1,4 +1,5 @@
 # Time:  O(n + (n + logr) + nlog(logr) + nlogn) = O(nlogn), assumed log(x) takes O(1) time
+# Space: O(n)
 
 import math
 
@@ -6,7 +7,12 @@ import math
 # sort, two pointers, sliding window, fast exponentiation
 class Solution(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         EPS = 1e-15
         def count(x, target):
             return int(target-x+EPS)
@@ -36,13 +42,19 @@ class Solution(object):
 
 
 # Time:  O(n + min(n, k) * log(logr) + nlog(logr) + nlogn) = O(nlogr), assumed log(x) takes O(1) time
+# Space: O(n)
 import math
 
 
 # binary search, sort, fast exponentiation
 class Solution2(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         EPS = 1e-15
         def binary_search_right(left, right, check):
             while left <= right:
@@ -84,13 +96,19 @@ class Solution2(object):
 
 
 # Time:  O(min(nlogr, k) * logn + nlogn) = O(nlogn * logr)
+# Space: O(n)
 import heapq
 
 
 # heap, sort, fast exponentiation
 class Solution3(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         if multiplier == 1:
             return nums
         min_heap = [(x, i) for i, x in enumerate(nums)]
@@ -113,13 +131,19 @@ class Solution3(object):
 
 
 # Time:  O(n + klogn)
+# Space: O(n)
 import heapq
 
 
 # simulation, heap
 class Solution4(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         if multiplier == 1:
             return nums
         min_heap = [(x, i) for i, x in enumerate(nums)]
@@ -132,10 +156,16 @@ class Solution4(object):
 
 
 # Time:  O(k * n)
+# Space: O(1)
 # simulation
 class Solution5(object):
     def getFinalState(self, nums, k, multiplier):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :type multiplier: int
+        :rtype: List[int]
+        """
         if multiplier == 1:
             return nums
         for _ in range(k):

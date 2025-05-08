@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # graph
 class Solution(object):
     def longestCycle(self, edges):
-        
+        """
+        :type edges: List[int]
+        :rtype: int
+        """
         result = -1
         lookup = [-1]*len(edges)
         idx = 0

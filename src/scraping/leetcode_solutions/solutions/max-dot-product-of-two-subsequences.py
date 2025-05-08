@@ -1,8 +1,13 @@
 # Time:  O(m * n)
+# Space: O(min(m, n))
 
 class Solution(object):
     def maxDotProduct(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: int
+        """
         if len(nums1) < len(nums2):
             return self.maxDotProduct(nums2, nums1)
         dp = [[0]*len(nums2) for i in range(2)]

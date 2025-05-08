@@ -1,8 +1,12 @@
 # Time:  O(n^3)
+# Space: O(n^2)
 
 class Solution(object):
     def minScoreTriangulation(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         dp = [[0 for _ in range(len(A))] for _ in range(len(A))]
         for p in range(3, len(A)+1):
             for i in range(len(A)-p+1):

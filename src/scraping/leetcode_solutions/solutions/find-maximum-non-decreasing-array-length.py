@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(n)
 
 # dp, greedy, prefix sum, mono stack, two pointers
 class Solution(object):
     def findMaximumLength(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         dp = prefix = left = 0
         stk = [(0, 0, 0)]
         for right in range(len(nums)):
@@ -19,13 +23,17 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 import collections
 
 
 # greedy, prefix sum, mono deque
 class Solution2(object):
     def findMaximumLength(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         dp = prefix = prev_prefix = prev_dp = 0
         dq = collections.deque()
         for right in range(len(nums)):
@@ -40,13 +48,17 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import bisect
 
 
 # dp, greedy, prefix sum, mono stack, binary search
 class Solution3(object):
     def findMaximumLength(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         dp = prefix = left = 0
         stk = [(0, 0, 0)]
         for right in range(len(nums)):
@@ -60,13 +72,17 @@ class Solution3(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import bisect
 
 
 # dp, greedy, prefix sum, binary search
 class Solution4(object):
     def findMaximumLength(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         prefix = [0]*(len(nums)+1)
         for i in range(len(nums)):
             prefix[i+1] = prefix[i]+nums[i]

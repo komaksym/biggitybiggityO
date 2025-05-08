@@ -1,8 +1,9 @@
 # Time:  O(m * n)
+# Space: O(m + n)
 
 class Solution(object):
-   
-   
+    # @param grid, a list of lists of integers
+    # @return an integer
     def minPathSum(self, grid):
         sum = list(grid[0])
         for j in range(1, len(grid[0])):

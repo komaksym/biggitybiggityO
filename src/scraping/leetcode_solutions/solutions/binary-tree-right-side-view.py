@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -8,8 +9,8 @@ class TreeNode(object):
 
 
 class Solution(object):
-   
-   
+    # @param root, a tree node
+    # @return a list of integers
     def rightSideView(self, root):
         result = []
         self.rightSideViewDFS(root, 1, result)
@@ -28,9 +29,10 @@ class Solution(object):
 
 # BFS solution
 # Time:  O(n)
+# Space: O(n)
 class Solution2(object):
-   
-   
+    # @param root, a tree node
+    # @return a list of integers
     def rightSideView(self, root):
         if root is None:
             return []

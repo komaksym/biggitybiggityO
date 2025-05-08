@@ -1,4 +1,5 @@
 # Time:  O(h * h) = O((logn)^2)
+# Space: O(1)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -8,7 +9,10 @@ class TreeNode(object):
 
 class Solution(object):
     def countNodes(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         def height(root):
             h = -1
             while root:
@@ -29,9 +33,13 @@ class Solution(object):
 
     
 # Time:  O(h * logn) = O((logn)^2)
+# Space: O(1)
 class Solution2(object):
     def countNodes(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
         def check(node, n):
             base = 1
             while base <= n:

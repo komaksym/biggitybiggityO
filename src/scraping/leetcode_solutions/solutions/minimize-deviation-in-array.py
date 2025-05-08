@@ -1,11 +1,15 @@
 # Time:  O((n * log(max_num)) * logn)
+# Space: O(n)
 
 import heapq
 
 
 class Solution(object):
     def minimumDeviation(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         max_heap = [-num*2 if num%2 else -num for num in nums]
         heapq.heapify(max_heap)
         min_elem = -max(max_heap)

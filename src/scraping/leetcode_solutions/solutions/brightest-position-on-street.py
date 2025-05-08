@@ -1,11 +1,15 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def brightestPosition(self, lights):
-        
+        """
+        :type lights: List[List[int]]
+        :rtype: int
+        """
         count = collections.Counter()
         for i, r in lights:
             count[i-r] += 1

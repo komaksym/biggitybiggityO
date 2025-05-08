@@ -1,4 +1,5 @@
 # Time:  O(n * sqrt(k) * logk)
+# Space: O(sqrt(k))
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # dp
 class Solution(object):
     def subarrayLCM(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b
@@ -29,10 +34,15 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 # brute force
 class Solution2(object):
     def subarrayLCM(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         def gcd(a, b):
             while b:
                 a, b = b, a%b

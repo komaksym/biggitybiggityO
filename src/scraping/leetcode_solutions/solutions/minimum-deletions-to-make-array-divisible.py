@@ -1,11 +1,16 @@
 from functools import reduce
 # Time:  O(n + m + logr), r is max(numsDivide)
+# Space: O(1)
 
 # gcd
 class Solution(object):
     def minOperations(self, nums, numsDivide):
-        
-        def gcd(a, b): 
+        """
+        :type nums: List[int]
+        :type numsDivide: List[int]
+        :rtype: int
+        """
+        def gcd(a, b):  # Time: O(log(min(a, b)))
             while b:
                 a, b = b, a%b
             return a

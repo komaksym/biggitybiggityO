@@ -1,4 +1,5 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 import collections
 
@@ -6,7 +7,12 @@ import collections
 # dijkstra's algorithm in a complete graph (no heap required)
 class Solution(object):
     def minimumCost(self, start, target, specialRoads):
-        
+        """
+        :type start: List[int]
+        :type target: List[int]
+        :type specialRoads: List[List[int]]
+        :rtype: int
+        """
         start, target = tuple(start), tuple(target)
         adj = collections.defaultdict(list, {target:[]})
         for x1, y1, x2, y2, c in specialRoads:
@@ -29,12 +35,18 @@ class Solution(object):
 
 
 # Time:  O(n^2 * logn)
+# Space: O(n^2)
 import collections
 import heapq
 # dijkstra's algorithm
 class Solution2(object):
     def minimumCost(self, start, target, specialRoads):
-        
+        """
+        :type start: List[int]
+        :type target: List[int]
+        :type specialRoads: List[List[int]]
+        :rtype: int
+        """
         start, target = tuple(start), tuple(target)
         adj = collections.defaultdict(list, {target:[]})
         for x1, y1, x2, y2, c in specialRoads:

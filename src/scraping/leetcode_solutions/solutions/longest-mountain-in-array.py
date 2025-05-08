@@ -1,9 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 
 class Solution(object):
     def longestMountain(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: int
+        """
         result, up_len, down_len = 0, 0, 0
         for i in range(1, len(A)):
             if (down_len and A[i-1] < A[i]) or A[i-1] == A[i]:

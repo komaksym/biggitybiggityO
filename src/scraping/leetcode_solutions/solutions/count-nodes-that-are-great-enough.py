@@ -1,4 +1,5 @@
 # Time:  O(k * h)
+# Space: O(k + h)
 
 import bisect
 
@@ -12,7 +13,11 @@ class TreeNode(object):
 # merge sort
 class Solution(object):
     def countGreatEnoughNodes(self, root, k):
-        
+        """
+        :type root: Optional[TreeNode]
+        :type k: int
+        :rtype: int
+        """
         def merge_at_most_k(a, b):
             result = []
             i = j = 0

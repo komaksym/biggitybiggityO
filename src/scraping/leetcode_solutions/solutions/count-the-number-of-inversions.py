@@ -1,10 +1,15 @@
 from functools import reduce
 # Time:  O(n * k), k = max(cnt for _, cnt in requirements)
+# Space: O(n + k)
 
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution(object):
     def numberOfPermutations(self, n, requirements):
-        
+        """
+        :type n: int
+        :type requirements: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -12,7 +17,7 @@ class Solution(object):
         dp = [1]
         prev = 0
         for i in range(n):
-            if lookup[i] != -1: 
+            if lookup[i] != -1:  # optimized
                 dp = [reduce(lambda total, i: (total+dp[i])%MOD, range(max((lookup[i]-i)-prev, 0), min((lookup[i]+1)-prev, len(dp))), 0)]
                 prev = lookup[i]
                 continue
@@ -28,10 +33,15 @@ class Solution(object):
 
 
 # Time:  O(n * k), k = max(cnt for _, cnt in requirements)
+# Space: O(n + k)
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution2(object):
     def numberOfPermutations(self, n, requirements):
-        
+        """
+        :type n: int
+        :type requirements: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -40,7 +50,7 @@ class Solution2(object):
         dp[0] = 1
         for i in range(n):
             new_dp = [0]*len(dp)
-            if lookup[i] != -1: 
+            if lookup[i] != -1:  # optimized
                 new_dp[lookup[i]] = reduce(lambda total, i: (total+dp[i])%MOD, range(max(lookup[i]-i, 0), lookup[i]+1), 0)
             else:
                 for j in range(len(dp)):
@@ -54,10 +64,15 @@ class Solution2(object):
 
 
 # Time:  O(n * k), k = max(cnt for _, cnt in requirements)
+# Space: O(n + k)
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution3(object):
     def numberOfPermutations(self, n, requirements):
-        
+        """
+        :type n: int
+        :type requirements: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -77,10 +92,15 @@ class Solution3(object):
 
 
 # Time:  O(n^2 * k), k = max(cnt for _, cnt in requirements)
+# Space: O(n + k)
 # knapsack dp, combinatorics
 class Solution4(object):
     def numberOfPermutations(self, n, requirements):
-        
+        """
+        :type n: int
+        :type requirements: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:
@@ -94,7 +114,11 @@ class Solution4(object):
 
 class Solution_ConstructPermutation(object):
     def numberOfPermutations(self, n, requirements):
-        
+        """
+        :type n: int
+        :type requirements: List[List[int]]
+        :rtype: int
+        """
         MOD = 10**9+7
         lookup = [-1]*n
         for i, c in requirements:

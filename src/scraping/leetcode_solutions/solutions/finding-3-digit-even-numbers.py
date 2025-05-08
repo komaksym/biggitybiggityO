@@ -1,8 +1,12 @@
 # Time:  O(1) ~ O(n), n is 10^3
+# Space: O(1)
 
 class Solution(object):
     def findEvenNumbers(self, digits):
-        
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
         k = 3
         def backtracking(curr, cnt, result):
             if len(curr) == k:
@@ -26,13 +30,17 @@ class Solution(object):
 
 
 # Time:  O(n), n is 10^3
+# Space: O(1)
 import collections
 from functools import reduce
 
 
 class Solution2(object):
     def findEvenNumbers(self, digits):
-        
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
         result, cnt = [], collections.Counter(digits)
         for i in range(1, 10):
             for j in range(10):
@@ -43,6 +51,7 @@ class Solution2(object):
 
 
 # Time:  O(1) ~ O(n), n is 10^3
+# Space: O(1)
 import collections
 
 
@@ -55,7 +64,10 @@ class Node(object):
 
 class Solution3(object):
     def findEvenNumbers(self, digits):
-        
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
         k = 3
         def backtracking(curr, dummy, result):
             if len(curr) == k:
@@ -93,12 +105,16 @@ class Solution3(object):
 
 
 # Time:  O(1) ~ O(nlogn), n is 10^3
+# Space: O(1)
 import collections
 
 
 class Solution4(object):
     def findEvenNumbers(self, digits):
-        
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
         k = 3
         def backtracking(curr, digit_cnt, result):
             if len(curr) == k:

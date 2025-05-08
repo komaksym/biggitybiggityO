@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(10) = O(1)
 
 import operator
 
@@ -10,7 +11,11 @@ from collections import defaultdict, Counter
 
 class Solution(object):
     def getHint(self, secret, guess):
-        
+        """
+        :type secret: str
+        :type guess: str
+        :rtype: str
+        """
         A, B = 0, 0
         lookup = defaultdict(int)
         for s, g in zip(secret, guess):
@@ -26,7 +31,11 @@ class Solution(object):
 # Two pass solution.
 class Solution2(object):
     def getHint(self, secret, guess):
-        
+        """
+        :type secret: str
+        :type guess: str
+        :rtype: str
+        """
         A = sum(map(operator.eq, secret, guess))
         B = sum((Counter(secret) & Counter(guess)).values()) - A
         return "%dA%dB" % (A, B)

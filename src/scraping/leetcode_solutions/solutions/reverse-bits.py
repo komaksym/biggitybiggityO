@@ -1,8 +1,9 @@
 # Time : O(32)
+# Space: O(1)
 
 class Solution(object):
-   
-   
+    # @param n, an integer
+    # @return an integer
     def reverseBits(self, n):
         n = (n >> 16) | (n << 16)
         n = ((n & 0xff00ff00) >> 8) | ((n & 0x00ff00ff) << 8)
@@ -13,9 +14,10 @@ class Solution(object):
 
 
 # Time : O(logn) = O(32)
+# Space: O(1)
 class Solution2(object):
-   
-   
+    # @param n, an integer
+    # @return an integer
     def reverseBits(self, n):
         result = 0
         for i in range(32):

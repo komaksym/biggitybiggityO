@@ -1,9 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
 # bfs
 class Solution(object):
     def reachableNodes(self, n, edges, restricted):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :type restricted: List[int]
+        :rtype: int
+        """
         adj = [[] for _ in range(n)]
         for u, v in edges:
             adj[u].append(v)

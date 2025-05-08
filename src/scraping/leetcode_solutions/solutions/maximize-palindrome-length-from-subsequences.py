@@ -1,8 +1,13 @@
 # Time:  O((m + n)^2)
+# Space: O((m + n)^2)
 
 class Solution(object):
     def longestPalindrome(self, word1, word2):
-        
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: int
+        """
         s = word1+word2
         dp = [[0]*len(s) for _ in range(len(s))]
         result = 0
@@ -19,9 +24,14 @@ class Solution(object):
 
 
 # Time:  O((m + n)^2)
+# Space: O((m + n)^2)
 class Solution2(object):
     def longestPalindrome(self, word1, word2):
-        
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: int
+        """
         s = word1+word2
         dp = [[0]*len(s) for _ in range(len(s))]
         for j in range(len(s)):

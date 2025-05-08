@@ -1,9 +1,14 @@
 # Time:  O(n^2 * r * logq), r = max(nums)
+# Space: O(r)
 
 # binary search, dp
 class Solution(object):
     def minZeroArray(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: int
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -28,10 +33,15 @@ class Solution(object):
 
 
 # Time:  O(q * n * 2^n)
+# Space: O(n * 2^n)
 # dp
 class Solution2(object):
     def minZeroArray(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: int
+        """
         dp = [{0} for _ in range(len(nums))]
         for i, (l, r, v) in enumerate(queries):
             if all(nums[i] in dp[i] for i in range(len(dp))):

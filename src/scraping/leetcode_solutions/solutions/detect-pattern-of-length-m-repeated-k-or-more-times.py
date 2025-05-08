@@ -1,8 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def containsPattern(self, arr, m, k):
-        
+        """
+        :type arr: List[int]
+        :type m: int
+        :type k: int
+        :rtype: bool
+        """
         cnt = 0
         for i in range(len(arr)-m):
             if arr[i] != arr[i+m]:

@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -8,7 +9,10 @@ class ListNode(object):
 
 class Solution(object):
     def deleteDuplicates(self, head):
-        
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
         cur = head
         while cur:
             runner = cur.__next__
@@ -19,7 +23,10 @@ class Solution(object):
         return head
 
     def deleteDuplicates2(self, head):
-        
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
         if not head: return head
         if head.__next__:
             if head.val == head.next.val:

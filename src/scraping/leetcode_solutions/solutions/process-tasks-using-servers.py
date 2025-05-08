@@ -1,11 +1,16 @@
 # Time:  O(n + mlogn)
+# Space: O(n)
 
 import heapq
 
 
 class Solution(object):
     def assignTasks(self, servers, tasks):
-        
+        """
+        :type servers: List[int]
+        :type tasks: List[int]
+        :rtype: List[int]
+        """
         idle = [(servers[i], i) for i in range(len(servers))]
         working = []
         heapq.heapify(idle)

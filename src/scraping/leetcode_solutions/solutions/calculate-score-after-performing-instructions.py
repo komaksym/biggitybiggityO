@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # simulation
 class Solution(object):
     def calculateScore(self, instructions, values):
-        
+        """
+        :type instructions: List[str]
+        :type values: List[int]
+        :rtype: int
+        """
         result = 0
         lookup = [False]*len(instructions)
         i = 0

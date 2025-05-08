@@ -1,9 +1,15 @@
 # Time:  O(mlogm + nlogn), m is the number of workers,
 #                        , n is the number of jobs
+# Space: O(n)
 
 class Solution(object):
     def maxProfitAssignment(self, difficulty, profit, worker):
-        
+        """
+        :type difficulty: List[int]
+        :type profit: List[int]
+        :type worker: List[int]
+        :rtype: int
+        """
         jobs = list(zip(difficulty, profit))
         jobs.sort()
         worker.sort()

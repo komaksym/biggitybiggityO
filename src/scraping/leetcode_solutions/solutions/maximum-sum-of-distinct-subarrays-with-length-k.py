@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(k)
 
 # two pointers
 class Solution(object):
     def maximumSubarraySum(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = left = total = 0
         lookup = set()
         for right in range(len(nums)):

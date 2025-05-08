@@ -1,6 +1,7 @@
 # Time:  addRange:    O(n)
 #        removeRange: O(n)
 #        queryRange:  O(logn)
+# Space: O(n)
 
 import bisect
 
@@ -11,7 +12,11 @@ class RangeModule(object):
         self.__intervals = []
 
     def addRange(self, left, right):
-        
+        """
+        :type left: int
+        :type right: int
+        :rtype: void
+        """
         tmp = []
         i = 0
         for interval in self.__intervals:
@@ -32,7 +37,11 @@ class RangeModule(object):
         self.__intervals = tmp
 
     def queryRange(self, left, right):
-        
+        """
+        :type left: int
+        :type right: int
+        :rtype: bool
+        """
         i = bisect.bisect_left(self.__intervals, (left, float("inf")))
         if i: i -= 1
         return bool(self.__intervals) and \
@@ -40,7 +49,11 @@ class RangeModule(object):
                right <= self.__intervals[i][1]
 
     def removeRange(self, left, right):
-        
+        """
+        :type left: int
+        :type right: int
+        :rtype: void
+        """
         tmp = []
         for interval in self.__intervals:
             if interval[1] <= left or interval[0] >= right:

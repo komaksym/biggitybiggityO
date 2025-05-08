@@ -1,13 +1,15 @@
 # Time:  O(n + tlogt), t = threshold
+# Space: O(t)
 
 # union find, number theory
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -18,7 +20,7 @@ class UnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]: 
+        if self.rank[x] > self.rank[y]:  # union by rank
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -28,7 +30,11 @@ class UnionFind(object):
 
 class Solution(object):
     def countComponents(self, nums, threshold):
-        
+        """
+        :type nums: List[int]
+        :type threshold: int
+        :rtype: int
+        """
         uf = UnionFind(threshold)
         lookup = [-1]*threshold
         result = len(nums)
@@ -47,10 +53,15 @@ class Solution(object):
 
 
 # Time:  O(n + tlogt), t = threshold
+# Space: O(t)
 # union find, number theory
 class Solution2(object):
     def countComponents(self, nums, threshold):
-        
+        """
+        :type nums: List[int]
+        :type threshold: int
+        :rtype: int
+        """
         uf = UnionFind(threshold)
         lookup = [-1]*threshold
         for x in nums:

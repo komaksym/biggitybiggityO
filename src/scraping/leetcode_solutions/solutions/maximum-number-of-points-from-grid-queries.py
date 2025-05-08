@@ -1,4 +1,5 @@
 # Time:  O((m * n + q) * log(m * n))
+# Space: O(m * n)
 
 import heapq
 
@@ -6,7 +7,11 @@ import heapq
 # bfs, heap, prefix sum, binary search
 class Solution(object):
     def maxPoints(self, grid, queries):
-        
+        """
+        :type grid: List[List[int]]
+        :type queries: List[int]
+        :rtype: List[int]
+        """
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         min_heap = [(grid[0][0], 0, 0)]
         lookup = [[False]*len(grid[0]) for _ in range(len(grid))]

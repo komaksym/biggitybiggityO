@@ -1,7 +1,9 @@
 from functools import reduce
 # Time:  O(26 * n)
+# Space: O(26 * n)
 
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
         self.size = [1]*n
@@ -9,7 +11,7 @@ class UnionFind(object):
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -20,7 +22,7 @@ class UnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]: 
+        if self.rank[x] > self.rank[y]:  # union by rank
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
@@ -33,7 +35,10 @@ class UnionFind(object):
 # bitmasks, union find
 class Solution(object):
     def groupStrings(self, words):
-        
+        """
+        :type words: List[str]
+        :rtype: List[int]
+        """
         uf = UnionFind(len(words))
         lookup = {}
         for i, x in enumerate(words):

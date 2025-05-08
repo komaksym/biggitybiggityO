@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h), h is height of binary tree
 
 class TreeNode(object):
     def __init__(self, x):
@@ -7,9 +8,9 @@ class TreeNode(object):
         self.right = None
 
 class Solution(object):
-   
-   
-   
+    # @param root, a tree node
+    # @param sum, an integer
+    # @return a boolean
     def hasPathSum(self, root, sum):
         if root is None:
             return False

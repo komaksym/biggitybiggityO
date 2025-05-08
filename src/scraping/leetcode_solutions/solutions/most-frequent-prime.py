@@ -1,12 +1,14 @@
 # Time:  precompute: O(10^MAX_N_M)
 #        runtime:    O(n * m * (n + m))
+# Space: O(10^MAX_N_M + n * m * (n + m))
 
 import collections
 
 
 # number theory, freq table
-def linear_sieve_of_eratosthenes(n): 
-    spf = [-1]*(n+1) 
+def linear_sieve_of_eratosthenes(n):  # Time: O(n), Space: O(n)
+    primes = []
+    spf = [-1]*(n+1)  # the smallest prime factor
     for i in range(2, n+1):
         if spf[i] == -1:
             spf[i] = i
@@ -22,7 +24,10 @@ MAX_M_N = 6
 SPF = linear_sieve_of_eratosthenes(10**MAX_M_N-1)
 class Solution(object):
     def mostFrequentPrime(self, mat):
-        
+        """
+        :type mat: List[List[int]]
+        :rtype: int
+        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1))
         def numbers(i, j, di, dj):
             curr = 0
@@ -37,6 +42,7 @@ class Solution(object):
 
 
 # Time:  O(n * m * (n + m) * sqrt(10^MAX_N_M))
+# Space: O(n * m * (n + m))
 import collections
 
 
@@ -54,7 +60,10 @@ def is_prime(n):
 
 class Solution2(object):
     def mostFrequentPrime(self, mat):
-        
+        """
+        :type mat: List[List[int]]
+        :rtype: int
+        """
         DIRECTIONS = ((1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1))
         def numbers(i, j, di, dj):
             curr = 0

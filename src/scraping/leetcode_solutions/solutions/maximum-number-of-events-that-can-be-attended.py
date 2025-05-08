@@ -1,11 +1,15 @@
 # Time:  O(r + nlogn), r is the max end day of events
+# Space: O(n)
 
 import heapq
 
 
 class Solution(object):
     def maxEvents(self, events):
-        
+        """
+        :type events: List[List[int]]
+        :rtype: int
+        """
         events.sort(reverse=True)
         min_heap = []
         result = 0

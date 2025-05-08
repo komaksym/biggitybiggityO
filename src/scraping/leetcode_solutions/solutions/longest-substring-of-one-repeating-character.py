@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import itertools
 
@@ -30,7 +31,12 @@ class SegmentTree(object):
 # segment tree
 class Solution(object):
     def longestRepeating(self, s, queryCharacters, queryIndices):
-        
+        """
+        :type s: str
+        :type queryCharacters: str
+        :type queryIndices: List[int]
+        :rtype: List[int]
+        """
         LEFT, RIGHT, LEFT_LEN, RIGHT_LEN, LEN, MAX_LEN, SIZE = range(7)
         def build(i):
             return update(s[i])
@@ -59,6 +65,7 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 import itertools
 
 
@@ -106,7 +113,12 @@ class SegmentTree2(object):
 # segment tree
 class Solution2(object):
     def longestRepeating(self, s, queryCharacters, queryIndices):
-        
+        """
+        :type s: str
+        :type queryCharacters: str
+        :type queryIndices: List[int]
+        :rtype: List[int]
+        """
         LEFT, RIGHT, LEFT_LEN, RIGHT_LEN, LEN, MAX_LEN, SIZE = range(7)
         def build(i):
             return update(s[i])

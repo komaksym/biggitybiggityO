@@ -1,8 +1,10 @@
 # Time:  O(n)
+# Space: O(n)
 
 # tarjan's algorithm, SCC, strongly connected compoenents
 # reference: https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
-def strongly_connected_components(adj): 
+def strongly_connected_components(adj):  # Time: O(|V| + |E|) = O(N + 2N) = O(N), Space: O(|V|) = O(N)
+    def strongconnect(v):
         index[v] = index_counter[0]
         lowlinks[v] = index_counter[0]
         index_counter[0] += 1
@@ -34,7 +36,13 @@ def strongly_connected_components(adj):
 
 class Solution(object):
     def minRunesToAdd(self, n, crystals, flowFrom, flowTo):
-        
+        """
+        :type n: int
+        :type crystals: List[int]
+        :type flowFrom: List[int]
+        :type flowTo: List[int]
+        :rtype: int
+        """
         adj = [[] for _ in range(n)]
         for i in range(len(flowFrom)):
             adj[flowFrom[i]].append(flowTo[i])

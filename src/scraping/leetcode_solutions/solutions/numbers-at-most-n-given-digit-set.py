@@ -1,8 +1,13 @@
 # Time:  O(logn)
+# Space: O(logn)
 
 class Solution(object):
     def atMostNGivenDigitSet(self, D, N):
-        
+        """
+        :type D: List[str]
+        :type N: int
+        :rtype: int
+        """
         str_N = str(N)
         set_D = set(D)
         result = sum(len(D)**i for i in range(1, len(str_N)))

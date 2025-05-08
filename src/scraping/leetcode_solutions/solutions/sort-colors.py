@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def sortColors(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
         def triPartition(nums, target):
             i, left, right = 0, 0, len(nums)-1
             while i <= right:

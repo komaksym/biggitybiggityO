@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(1)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # freq table, greedy
 class Solution(object):
     def largestPalindromic(self, num):
-        
+        """
+        :type num: str
+        :rtype: str
+        """
         cnt = collections.Counter(num)
         result = []
         for i in reversed(range(10)):

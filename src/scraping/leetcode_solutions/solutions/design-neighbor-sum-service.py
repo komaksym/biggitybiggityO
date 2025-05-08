@@ -1,6 +1,7 @@
 # Time:  ctor:        O(n^2)
 #        adjacentSum: O(1)
 #.       diagonalSum: O(1)
+# Space: O(n^2)
 
 # hash table
 class neighborSum(object):
@@ -9,7 +10,9 @@ class neighborSum(object):
 
 
     def __init__(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        """
         self.__grid = grid
         self.__lookup = [None]*(len(grid)*len(grid[0]))
         for i in range(len(grid)):
@@ -18,12 +21,18 @@ class neighborSum(object):
 
 
     def adjacentSum(self, value):
-        
+        """
+        :type value: int
+        :rtype: int
+        """
         return self.__sum(value, neighborSum.ADJACENTS)
     
 
     def diagonalSum(self, value):
-        
+        """
+        :type value: int
+        :rtype: int
+        """
         return self.__sum(value, neighborSum.DIAGONALS)
 
 

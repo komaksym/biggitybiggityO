@@ -1,4 +1,5 @@
 # Time:  O(nlogk)
+# Space: O(1)
 
 class ListNode(object):
     def __init__(self, x):
@@ -13,7 +14,10 @@ class ListNode(object):
 # Merge two by two solution.
 class Solution(object):
     def mergeKLists(self, lists):
-        
+        """
+        :type lists: List[ListNode]
+        :rtype: ListNode
+        """
         def mergeTwoLists(l1, l2):
             curr = dummy = ListNode(0)
             while l1 and l2:
@@ -40,10 +44,11 @@ class Solution(object):
 
 
 # Time:  O(nlogk)
+# Space: O(logk)
 # Divide and Conquer solution.
 class Solution2(object):
-   
-   
+    # @param a list of ListNode
+    # @return a ListNode
     def mergeKLists(self, lists):
         def mergeTwoLists(l1, l2):
             curr = dummy = ListNode(0)
@@ -70,11 +75,12 @@ class Solution2(object):
 
 
 # Time:  O(nlogk)
+# Space: O(k)
 # Heap solution.
 import heapq
 class Solution3(object):
-   
-   
+    # @param a list of ListNode
+    # @return a ListNode
     def mergeKLists(self, lists):
         dummy = ListNode(0)
         current = dummy

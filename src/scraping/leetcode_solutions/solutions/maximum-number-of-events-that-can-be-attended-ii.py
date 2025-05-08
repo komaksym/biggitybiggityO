@@ -1,11 +1,16 @@
 # Time:  O(nlogn + n * k)
+# Space: O(n * k)
 
 import bisect
 
 
 class Solution(object):
     def maxValue(self, events, k):
-        
+        """
+        :type events: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         events.sort(key=lambda x: x[1])
         sorted_ends = [x[1] for x in events]
         dp = [[0]*(k+1) for _ in range(len(events)+1)]
@@ -17,12 +22,17 @@ class Solution(object):
 
 
 # Time:  O(nlogn + n * k)
+# Space: O(n * k)
 import bisect
 
 
 class Solution2(object):
     def maxValue(self, events, k):
-        
+        """
+        :type events: List[List[int]]
+        :type k: int
+        :rtype: int
+        """
         events.sort()
         sorted_starts = [x[0] for x in events]
         dp = [[0]*(k+1) for _ in range(len(events)+1)]

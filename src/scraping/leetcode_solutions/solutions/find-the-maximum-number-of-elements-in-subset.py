@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # freq table, dp
 class Solution(object):
     def maximumLength(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         cnt = collections.Counter(nums)
         dp = {}
         result = 0
@@ -31,13 +35,17 @@ class Solution(object):
         
 
 # Time:  O(n * log(logr)) = O(9 * n)
+# Space: O(n)
 import collections
 
 
 # freq table
 class Solution2(object):
     def maximumLength(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         cnt = collections.Counter(nums)
         result = 0
         for x in cnt.keys():

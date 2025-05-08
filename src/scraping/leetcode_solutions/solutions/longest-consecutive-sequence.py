@@ -1,8 +1,9 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
-   
-   
+    # @param num, a list of integer
+    # @return an integer
     def longestConsecutive(self, num):
         result, lengths = 1, {key: 0 for key in num}
         for i in num:

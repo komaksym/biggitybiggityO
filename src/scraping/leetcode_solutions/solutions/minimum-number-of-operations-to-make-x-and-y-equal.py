@@ -1,9 +1,14 @@
 # Time:  O(x)
+# Space: O(x)
 
 # memoization
 class Solution(object):
     def minimumOperationsToMakeEqual(self, x, y):
-        
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
         def memoization(x):
             if y >= x:
                 return y-x
@@ -16,10 +21,15 @@ class Solution(object):
 
 
 # Time:  O(x)
+# Space: O(x)
 # bfs
 class Solution2(object):
     def minimumOperationsToMakeEqual(self, x, y):
-        
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
 
         if y >= x:
             return y-x

@@ -1,8 +1,13 @@
 # Time:  O(logn)
+# Space: O(1)
 
 class Solution(object):
     def findKthPositive(self, arr, k):
-        
+        """
+        :type arr: List[int]
+        :type k: int
+        :rtype: int
+        """
         def check(arr, k, x):
             return arr[x]-(x+1) < k
 
@@ -13,4 +18,4 @@ class Solution(object):
                 right = mid-1
             else:
                 left = mid+1
-        return right+1+k 
+        return right+1+k  # arr[right] + (k-(arr[right]-(right+1))) if right >= 0 else k

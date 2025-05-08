@@ -1,11 +1,16 @@
 # Time:  O(|V| + |E|)
+# Space: O(|V| + |E|)
 
 import collections
 
 
 class Solution(object):
     def possibleBipartition(self, N, dislikes):
-        
+        """
+        :type N: int
+        :type dislikes: List[List[int]]
+        :rtype: bool
+        """
         adj = [[] for _ in range(N)]
         for u, v in dislikes:
             adj[u-1].append(v-1)

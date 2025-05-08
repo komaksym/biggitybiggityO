@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(h)
 
 import collections
 
 
 class Solution(object):
     def subtreeWithAllDeepest(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
         Result = collections.namedtuple("Result", ("node", "depth"))
 
         def dfs(node):

@@ -1,9 +1,13 @@
 # Time:  O(n * m)
+# Space: O(1)
 
 # array
 class Solution(object):
     def minimumArea(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         min_r, max_r, min_c, max_c = len(grid), -1, len(grid[0]), -1
         for i in range(len(grid)):
             for j in range(len(grid[0])):

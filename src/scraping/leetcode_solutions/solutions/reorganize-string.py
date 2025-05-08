@@ -1,4 +1,5 @@
 # Time:  O(nloga) = O(n), a is the size of alphabet
+# Space: O(a) = O(1)
 
 import collections
 import heapq
@@ -6,7 +7,10 @@ import heapq
 
 class Solution(object):
     def reorganizeString(self, S):
-        
+        """
+        :type S: str
+        :rtype: str
+        """
         counts = collections.Counter(S)
         if any(v > (len(S)+1)/2 for k, v in counts.items()):
             return ""

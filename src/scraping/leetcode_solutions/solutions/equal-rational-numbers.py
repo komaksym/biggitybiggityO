@@ -1,11 +1,16 @@
 # Time:  O(1)
+# Space: O(1)
 
 from fractions import Fraction
 
 
 class Solution(object):
     def isRationalEqual(self, S, T):
-        
+        """
+        :type S: str
+        :type T: str
+        :rtype: bool
+        """
         def frac(S):
             if '.' not in S:
                 return Fraction(int(S), 1)

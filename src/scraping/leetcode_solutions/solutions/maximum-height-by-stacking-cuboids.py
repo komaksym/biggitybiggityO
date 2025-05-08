@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(n)
     
 class Solution(object):
     def maxHeight(self, cuboids):
-        
+        """
+        :type cuboids: List[List[int]]
+        :rtype: int
+        """
         for cuboid in cuboids:
             cuboid.sort()
         cuboids.append([0, 0, 0])

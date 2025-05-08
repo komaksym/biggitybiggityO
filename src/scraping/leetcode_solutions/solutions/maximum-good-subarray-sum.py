@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # prefix sum
 class Solution(object):
     def maximumSubarraySum(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         prefix = collections.defaultdict(lambda: float("inf"))
         curr = 0
         result = float("-inf")

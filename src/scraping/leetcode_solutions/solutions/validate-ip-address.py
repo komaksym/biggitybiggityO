@@ -1,11 +1,15 @@
 # Time:  O(1)
+# Space: O(1)
 
 import string
 
 
 class Solution(object):
     def validIPAddress(self, IP):
-        
+        """
+        :type IP: str
+        :rtype: str
+        """
         blocks = IP.split('.')
         if len(blocks) == 4:
             for i in range(len(blocks)):

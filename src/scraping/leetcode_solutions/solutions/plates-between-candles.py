@@ -1,8 +1,13 @@
 # Time:  O(n + q)
+# Space: O(n)
 
 class Solution(object):
     def platesBetweenCandles(self, s, queries):
-        
+        """
+        :type s: str
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         left, prefix = [0]*len(s), {}
         curr, cnt = -1, 0
         for i in range(len(s)):

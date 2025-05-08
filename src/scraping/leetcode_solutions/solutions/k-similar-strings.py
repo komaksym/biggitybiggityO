@@ -1,13 +1,18 @@
 # Time:  O(n * n!/(c_a!*...*c_z!), n is the length of A, B,
 #                                  c_a...c_z is the count of each alphabet,
 #                                  n = sum(c_a...c_z)
+# Space: O(n * n!/(c_a!*...*c_z!)
 
 import collections
 
 
 class Solution(object):
     def kSimilarity(self, A, B):
-        
+        """
+        :type A: str
+        :type B: str
+        :rtype: int
+        """
         def neighbors(s, B):
             for i, c in enumerate(s):
                 if c != B[i]:

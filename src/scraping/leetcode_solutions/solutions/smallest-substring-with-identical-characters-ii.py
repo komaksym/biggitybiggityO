@@ -1,9 +1,14 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 # binary search, greedy
 class Solution(object):
     def minLength(self, s, numOps):
-        
+        """
+        :type s: str
+        :type numOps: int
+        :rtype: int
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2
@@ -31,10 +36,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 # binary search, greedy
 class Solution2(object):
     def minLength(self, s, numOps):
-        
+        """
+        :type s: str
+        :type numOps: int
+        :rtype: int
+        """
         def binary_search(left, right, check):
             while left <= right:
                 mid = left + (right-left)//2

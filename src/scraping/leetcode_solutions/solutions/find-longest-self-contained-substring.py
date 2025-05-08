@@ -1,4 +1,5 @@
 # Time:  O(n + 26^3 * logn)
+# Space: O(n)
 
 import bisect
 
@@ -6,7 +7,10 @@ import bisect
 # hash table, binary search
 class Solution(object):
     def maxSubstringLength(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def check(left, right):
             for x in idxs:
                 if not x or x[-1] < left or x[0] > right or (left <= x[0] and x[-1] <= right):
@@ -34,13 +38,17 @@ class Solution(object):
 
 
 # Time:  O(n + 26^3 * logn)
+# Space: O(n)
 import bisect
 
 
 # hash table, binary search
 class Solution2(object):
     def maxSubstringLength(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def check(left, right):
             for x in idxs:
                 if not x:
@@ -69,10 +77,14 @@ class Solution2(object):
 
 
 # Time:  O(26 * n)
+# Space: O(26)
 # freq table, two pointers
 class Solution3(object):
     def maxSubstringLength(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def update(x, d, distinct, valid):
             x = ord(x)-ord('a')
             if cnt2[x] == cnt[x]:
@@ -104,10 +116,14 @@ class Solution3(object):
 
 
 # Time:  O(26^2 * n)
+# Space: O(26)
 # hash table, brute force
 class Solution5(object):
     def maxSubstringLength(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         def check(l, r):
             return all(l <= left[ord(s[i])-ord('a')] and right[ord(s[i])-ord('a')] <= r for i in range(l, r+1))
 

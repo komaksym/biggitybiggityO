@@ -1,4 +1,5 @@
 # Time:  O(n * k)
+# Space: O(n * k)
 
 import collections
 
@@ -6,7 +7,11 @@ import collections
 # dp
 class Solution(object):
     def maximumLength(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         lookup = {x:i for i, x in enumerate(set(nums))}
         dp = [[0]*len(lookup) for _ in range(k+1)]
         result = [0]*(k+1)
@@ -19,13 +24,18 @@ class Solution(object):
 
 
 # Time:  O(n * k)
+# Space: O(n * k)
 import collections
 
 
 # dp
 class Solution2(object):
     def maximumLength(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         dp = [collections.defaultdict(int) for _ in range(k+1)]
         result = [0]*(k+1)
         for x in nums:
@@ -36,10 +46,15 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * k)
+# Space: O(n * k)
 # dp
 class Solution(object):
     def maximumLength(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         dp = [[0]*(k+1) for _ in range(len(nums))]
         result = 0
         for i in range(len(nums)):

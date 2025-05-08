@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # array
 class Solution(object):
     def countCoveredBuildings(self, n, buildings):
-        
+        """
+        :type n: int
+        :type buildings: List[List[int]]
+        :rtype: int
+        """
         left = [n]*n
         right = [-1]*n
         up = [-1]*n

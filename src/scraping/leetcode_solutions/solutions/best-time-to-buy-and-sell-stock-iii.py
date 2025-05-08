@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def maxProfit(self, prices):
-        
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
         hold1, hold2 = float("-inf"), float("-inf")
         release1, release2 = 0, 0
         for i in prices:
@@ -14,9 +18,13 @@ class Solution(object):
 
 
 # Time:  O(k * n)
+# Space: O(k)
 class Solution2(object):
     def maxProfit(self, prices):
-        
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
         def maxAtMostKPairsProfit(prices, k):
             max_buy = [float("-inf") for _ in range(k + 1)]
             max_sell = [0 for _ in range(k + 1)]
@@ -30,9 +38,10 @@ class Solution2(object):
 
 
 # Time:  O(n)
+# Space: O(n)
 class Solution3(object):
-   
-   
+    # @param prices, a list of integer
+    # @return an integer
     def maxProfit(self, prices):
         min_price, max_profit_from_left, max_profits_from_left = \
             float("inf"), 0, []

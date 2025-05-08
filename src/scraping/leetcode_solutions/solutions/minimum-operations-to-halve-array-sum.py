@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import heapq
 
@@ -6,7 +7,10 @@ import heapq
 # heap
 class Solution(object):
     def halveArray(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         target = sum(nums)/2.0
         max_heap = [-x for x in nums]
         heapq.heapify(max_heap)

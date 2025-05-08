@@ -1,4 +1,5 @@
 # Time:  O(nlogn + qlogn)
+# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -6,8 +7,12 @@ from sortedcontainers import SortedList
 # sorted list, freq table, bit, fenwick tree
 class Solution(object):
     def numberOfAlternatingGroups(self, colors, queries):
-        
-        class BIT(object): 
+        """
+        :type colors: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
+        class BIT(object):  # 0-indexed.
             def __init__(self, n):
                 self.__bit = [0]*(n+1)
 

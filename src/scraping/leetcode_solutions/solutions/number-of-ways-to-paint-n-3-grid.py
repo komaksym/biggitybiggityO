@@ -1,11 +1,15 @@
 # Time:  O(logn)
+# Space: O(1)
 
 import itertools
 
 
 class Solution(object):
     def numOfWays(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         def matrix_expo(A, K):
             result = [[int(i==j) for j in range(len(A))]
                        for i in range(len(A))]
@@ -24,13 +28,17 @@ class Solution(object):
         MOD = 10**9 + 7
         T = [[3, 2],
              [2, 2]]
-        return sum(matrix_mult([[6, 6]], matrix_expo(T, n-1))[0]) % MOD 
+        return sum(matrix_mult([[6, 6]], matrix_expo(T, n-1))[0]) % MOD  # [a1, a0] * T^(n-1)
 
 
 # Time:  O(n)
+# Space: O(1)
 class Solution2(object):
     def numOfWays(self, n):
-        
+        """
+        :type n: int
+        :rtype: int
+        """
         MOD = 10**9 + 7
         aba, abc = 6, 6
         for _ in range(n-1):

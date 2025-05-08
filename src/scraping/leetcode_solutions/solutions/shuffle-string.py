@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # in-place solution
 class Solution(object):
     def restoreString(self, s, indices):
-        
+        """
+        :type s: str
+        :type indices: List[int]
+        :rtype: str
+        """
         result = list(s)
         for i, c in enumerate(result):
             if indices[i] == i:
@@ -17,12 +22,17 @@ class Solution(object):
 
 
 # Time:  O(n)
+# Space: O(1)
 import itertools
 
 
 class Solution2(object):
     def restoreString(self, s, indices):
-        
+        """
+        :type s: str
+        :type indices: List[int]
+        :rtype: str
+        """
         result = ['']*len(s)
         for i, c in zip(indices, s):
             result[i] = c

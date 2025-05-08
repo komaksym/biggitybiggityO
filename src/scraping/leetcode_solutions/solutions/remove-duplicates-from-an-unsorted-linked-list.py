@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
@@ -12,7 +13,10 @@ class ListNode(object):
 
 class Solution(object):
     def deleteDuplicatesUnsorted(self, head):
-        
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
         count = collections.defaultdict(int)
         curr = head
         while curr:

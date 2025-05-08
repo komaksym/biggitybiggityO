@@ -1,4 +1,5 @@
 # Time:  O(k + nlogk)
+# Space: O(k)
 
 import heapq
 
@@ -6,7 +7,12 @@ import heapq
 # heap, simulation
 class Solution(object):
     def findCrossingTime(self, n, k, time):
-        
+        """
+        :type n: int
+        :type k: int
+        :type time: List[List[int]]
+        :rtype: int
+        """
         left_bridge, right_ware, right_bridge, left_ware = [(-(time[i][0]+time[i][2]), -i) for i in range(k)], [], [], []
         heapq.heapify(left_bridge)
         curr = 0

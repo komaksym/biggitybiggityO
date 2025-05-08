@@ -1,8 +1,13 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def checkPalindromeFormation(self, a, b):
-        
+        """
+        :type a: str
+        :type b: str
+        :rtype: bool
+        """
         def is_palindrome(s, i, j):
             while i < j:
                 if s[i] != s[j]:

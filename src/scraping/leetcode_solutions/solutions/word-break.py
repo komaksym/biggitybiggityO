@@ -1,8 +1,13 @@
 # Time:  O(n * l^2)
+# Space: O(n)
 
 class Solution(object):
     def wordBreak(self, s, wordDict):
-        
+        """
+        :type s: str
+        :type wordDict: Set[str]
+        :rtype: bool
+        """
         n = len(s)
 
         max_len = 0

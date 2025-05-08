@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # dp, mono stack
 class Solution(object):
     def minCost(self, nums, costs):
-        
+        """
+        :type nums: List[int]
+        :type costs: List[int]
+        :rtype: int
+        """
         stk1, stk2 = [], []
         dp = [float("inf")]*len(nums)
         dp[0] = 0

@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def restoreArray(self, adjacentPairs):
-        
+        """
+        :type adjacentPairs: List[List[int]]
+        :rtype: List[int]
+        """
         adj = collections.defaultdict(list)
         for u, v in adjacentPairs: 
             adj[u].append(v)

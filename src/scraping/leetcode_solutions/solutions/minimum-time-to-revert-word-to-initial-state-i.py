@@ -1,13 +1,19 @@
 # Time:  O(n)
+# Space: O(n)
 
 # z-function
 class Solution(object):
     def minimumTimeToInitialState(self, word, k):
-        
+        """
+        :type word: str
+        :type k: int
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//b
     
-        def z_function(s): 
+        def z_function(s):  # Time: O(n), Space: O(n)
+            z = [0]*len(s)
             l, r = 0, 0
             for i in range(1, len(z)):
                 if i <= r:
@@ -26,10 +32,15 @@ class Solution(object):
 
 
 # Time:  O(n^2)
+# Space: O(1)
 # brute force
 class Solution2(object):
     def minimumTimeToInitialState(self, word, k):
-        
+        """
+        :type word: str
+        :type k: int
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//b
 

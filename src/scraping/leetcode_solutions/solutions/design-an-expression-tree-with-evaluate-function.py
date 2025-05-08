@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 import abc 
 from abc import ABCMeta, abstractmethod 
@@ -43,7 +44,10 @@ class NodeIter(Node):
 
 class TreeBuilder(object):
     def buildTree(self, postfix):
-        
+        """
+        :type s: List[str]
+        :rtype: int
+        """
         stk = []
         for c in postfix:
             if c.isdigit():
@@ -57,6 +61,7 @@ class TreeBuilder(object):
 
 
 # Time:  O(n)
+# Space: O(h)
 class NodeRecu(Node):
     ops = {'+':operator.add, '-':operator.sub, '*':operator.mul, '/':operator.div}
     
@@ -73,7 +78,10 @@ class NodeRecu(Node):
 
 class TreeBuilder2(object):
     def buildTree(self, postfix):
-        
+        """
+        :type s: List[str]
+        :rtype: int
+        """
         stk = []
         for c in postfix:
             if c.isdigit():

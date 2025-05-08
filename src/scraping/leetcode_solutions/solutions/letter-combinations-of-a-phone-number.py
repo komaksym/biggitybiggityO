@@ -1,9 +1,13 @@
 # Time:  O(n * 4^n)
+# Space: O(1)
 
 # iterative solution
 class Solution(object):
     def letterCombinations(self, digits):
-        
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
         if not digits:
             return []
 
@@ -23,10 +27,14 @@ class Solution(object):
 
 
 # Time:  O(n * 4^n)
+# Space: O(1)
 # iterative solution
 class Solution2(object):
     def letterCombinations(self, digits):
-        
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
         if not digits:
             return []
 
@@ -42,10 +50,14 @@ class Solution2(object):
 
 
 # Time:  O(n * 4^n)
+# Space: O(n)
 # recursive solution
 class Solution3(object):
     def letterCombinations(self, digits):
-        
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
         lookup = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
 
         def letterCombinationsRecu(result, digits, curr, n):

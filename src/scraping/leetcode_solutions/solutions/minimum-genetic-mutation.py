@@ -1,10 +1,16 @@
 # Time:  O(n * b), n is the length of gene string, b is size of bank
+# Space: O(b)
 
 from collections import deque
 
 class Solution(object):
     def minMutation(self, start, end, bank):
-        
+        """
+        :type start: str
+        :type end: str
+        :type bank: List[str]
+        :rtype: int
+        """
         lookup = {}
         for b in bank:
             lookup[b] = False

@@ -1,9 +1,14 @@
 # Time:  O(n * log(m * r))
+# Space: O(1)
 
 # binary search, greedy
 class Solution(object):
     def maxScore(self, points, m):
-        
+        """
+        :type points: List[int]
+        :type m: int
+        :rtype: int
+        """
         def ceil_divide(a, b):
             return (a+b-1)//b
 

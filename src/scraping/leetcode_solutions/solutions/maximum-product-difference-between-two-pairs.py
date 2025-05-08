@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def maxProductDifference(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         largest, smallest = [0]*2, [float("inf")]*2
         for x in nums:
             if x >= largest[0]:

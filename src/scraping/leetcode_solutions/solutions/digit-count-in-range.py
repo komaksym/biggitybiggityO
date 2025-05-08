@@ -1,8 +1,14 @@
 # Time:  O(logn)
+# Space: O(1)
 
 class Solution(object):
     def digitsCount(self, d, low, high):
-        
+        """
+        :type d: int
+        :type low: int
+        :type high: int
+        :rtype: int
+        """
         def digitsCount(n, k):
             pivot, result = 1, 0
             while n >= pivot:

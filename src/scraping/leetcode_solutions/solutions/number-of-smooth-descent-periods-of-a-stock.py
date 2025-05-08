@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def getDescentPeriods(self, prices):
-        
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
         result = l = 0
         for i in range(len(prices)):
             l += 1

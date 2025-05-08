@@ -1,4 +1,5 @@
 # Time:  O(logn) on average for each operation
+# Space: O(n)
 
 # see proof in references:
 # 1. https://kunigami.blog/2012/09/25/skip-lists-in-python/
@@ -14,19 +15,25 @@ class SkipNode(object):
 
 
 class Skiplist(object):
-    P_NUMERATOR, P_DENOMINATOR = 1, 2 
-    MAX_LEVEL = 32 
+    P_NUMERATOR, P_DENOMINATOR = 1, 2  # P = 1/4 in redis implementation
+    MAX_LEVEL = 32  # enough for 2^32 elements
 
     def __init__(self):
         self.__head = SkipNode()
         self.__len = 0
 
     def search(self, target):
-        
+        """
+        :type target: int
+        :rtype: bool
+        """
         return True if self.__find(target, self.__find_prev_nodes(target)) else False
         
     def add(self, num):
-        
+        """
+        :type num: int
+        :rtype: None
+        """
         node = SkipNode(self.__random_level(), num)
         if len(self.__head.nexts) < len(node.nexts): 
             self.__head.nexts.extend([None]*(len(node.nexts)-len(self.__head.nexts)))
@@ -37,7 +44,10 @@ class Skiplist(object):
         self.__len += 1
 
     def erase(self, num):
-        
+        """
+        :type num: int
+        :rtype: bool
+        """
         prevs = self.__find_prev_nodes(num)
         curr = self.__find(num, prevs)
         if not curr:

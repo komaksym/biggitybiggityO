@@ -1,4 +1,5 @@
 # Time:  O(n + logr)
+# Space: O(logr)
 
 import random
 
@@ -7,7 +8,10 @@ import random
 # quick select, math, string
 class Solution(object):
     def minimumCost(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def nth_element(nums, n, compare=lambda a, b: a < b):
             def tri_partition(nums, left, right, target, compare):
                 mid = left
@@ -31,7 +35,7 @@ class Solution(object):
                     return
                 elif pivot_left > n:
                     right = pivot_left-1
-                else: 
+                else:  # pivot_right < n.
                     left = pivot_right+1
     
         def nearest_palindromic(x):
@@ -52,11 +56,15 @@ class Solution(object):
 
 
 # Time:  O(nlogn + logr)
+# Space: O(logr)
 # lc0564
 # sort, math, string
 class Solution2(object):
     def minimumCost(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         def nearest_palindromic(x):
             n = str(x)
             l = len(n)

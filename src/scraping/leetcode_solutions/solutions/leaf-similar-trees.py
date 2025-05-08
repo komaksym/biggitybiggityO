@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 import itertools
 
@@ -13,7 +14,11 @@ class TreeNode(object):
 
 class Solution(object):
     def leafSimilar(self, root1, root2):
-        
+        """
+        :type root1: TreeNode
+        :type root2: TreeNode
+        :rtype: bool
+        """
         def dfs(node):
             if not node:
                 return

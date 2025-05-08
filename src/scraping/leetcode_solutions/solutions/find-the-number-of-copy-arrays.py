@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(1)
 
 # greedy
 class Solution(object):
     def countArrays(self, original, bounds):
-        
+        """
+        :type original: List[int]
+        :type bounds: List[List[int]]
+        :rtype: int
+        """
         left, right = bounds[0]
         result = right-left+1
         for i in range(1, len(original)):

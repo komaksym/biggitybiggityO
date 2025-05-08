@@ -1,8 +1,13 @@
 # Time:  O(nlogr) = O(n)
+# Space: O(logr) = O(1)
 
 class Solution(object):
     def selfDividingNumbers(self, left, right):
-        
+        """
+        :type left: int
+        :type right: int
+        :rtype: List[int]
+        """
         def isDividingNumber(num):
             n = num
             while n > 0:
@@ -15,11 +20,16 @@ class Solution(object):
 
 
 # Time:  O(nlogr) = O(n)
+# Space: O(logr) = O(1)
 import itertools
 
 
 class Solution2(object):
     def selfDividingNumbers(self, left, right):
-        
+        """
+        :type left: int
+        :type right: int
+        :rtype: List[int]
+        """
         return [num for num in range(left, right+1) \
                 if not any(map(lambda x: int(x) == 0 or num%int(x) != 0, str(num)))]

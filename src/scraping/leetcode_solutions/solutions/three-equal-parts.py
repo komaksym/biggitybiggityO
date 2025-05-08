@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def threeEqualParts(self, A):
-        
+        """
+        :type A: List[int]
+        :rtype: List[int]
+        """
         total = sum(A)
         if total % 3 != 0:
             return [-1, -1]

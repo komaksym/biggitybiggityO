@@ -1,4 +1,5 @@
 # Time:  O(h)
+# Space: O(1)
 
 # Definition for a Node.
 class Node(object):
@@ -11,7 +12,10 @@ class Node(object):
         
 class Solution(object):
     def inorderSuccessor(self, node):
-        
+        """
+        :type node: Node
+        :rtype: Node
+        """
         if not node:
             return None
         

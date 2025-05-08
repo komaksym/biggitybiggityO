@@ -1,9 +1,13 @@
 # Time:  O(m * n)
+# Space: O(m * n)
 
 # prefix sum
 class Solution(object):
     def constructProductMatrix(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: List[List[int]]
+        """
         MOD = 12345
         right = [1]*(len(grid)*len(grid[0])+1)
         for i in reversed(range(len(grid))):
@@ -17,10 +21,14 @@ class Solution(object):
 
 
 # Time:  O(m * n)
+# Space: O(m * n)
 # prefix sum
 class Solution2(object):
     def constructProductMatrix(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: List[List[int]]
+        """
         MOD = 12345
         left = [1]*(len(grid)*len(grid[0])+1)
         for i in range(len(grid)):

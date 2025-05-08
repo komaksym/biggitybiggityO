@@ -1,11 +1,15 @@
 # Time:  O(n^2)
+# Space: O(n^2)
 
 import collections
 
 
 class Solution(object):
     def snakesAndLadders(self, board):
-        
+        """
+        :type board: List[List[int]]
+        :rtype: int
+        """
         def coordinate(n, s):
             a, b = divmod(s-1, n)
             r = n-1-a

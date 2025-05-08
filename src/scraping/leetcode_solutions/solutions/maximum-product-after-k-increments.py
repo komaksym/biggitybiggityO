@@ -1,9 +1,14 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 # math, sort
 class Solution(object):
     def maximumProduct(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         nums.sort()
         total = sum(nums)
@@ -17,6 +22,7 @@ class Solution(object):
 
 
 # Time:  O(n + k)
+# Space: O(n)
 import collections
 from functools import reduce
 
@@ -24,7 +30,11 @@ from functools import reduce
 # freq table
 class Solution2(object):
     def maximumProduct(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         cnt = collections.Counter(nums)
         min_num = min(cnt.keys())
@@ -40,13 +50,18 @@ class Solution2(object):
 
 
 # Time:  O(n + klogn)
+# Space: O(1)
 import heapq
 
 
 # heap
 class Solution3(object):
     def maximumProduct(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         MOD = 10**9+7
         min_heap = nums
         heapq.heapify(min_heap)

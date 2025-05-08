@@ -1,9 +1,15 @@
 # Time:  O(nlogr), r = max(max(a), max(b), max(c))
+# Space: O(1)
 
 # bit manipulation, parity
 class Solution(object):
     def tripletCount(self, a, b, c):
-        
+        """
+        :type a: List[int]
+        :type b: List[int]
+        :type c: List[int]
+        :rtype: int
+        """
         def popcount(x):
             return bin(x).count('1')
 
@@ -16,10 +22,16 @@ class Solution(object):
     
 
 # Time:  O(nlogr), r = max(max(a), max(b), max(c))
+# Space: O(1)
 # bit manipulation, parity
 class Solution2(object):
     def tripletCount(self, a, b, c):
-        
+        """
+        :type a: List[int]
+        :type b: List[int]
+        :type c: List[int]
+        :rtype: int
+        """
         def popcount(x):
             return bin(x).count('1')
 
@@ -34,10 +46,16 @@ class Solution2(object):
 
 
 # Time:  O(n^3 * logr), r = max(max(a), max(b), max(c))
+# Space: O(1)
 # brute force, bit manipulation
 class Solution3(object):
     def tripletCount(self, a, b, c):
-        
+        """
+        :type a: List[int]
+        :type b: List[int]
+        :type c: List[int]
+        :rtype: int
+        """
         def popcount(x):
             return bin(x).count('1')
 

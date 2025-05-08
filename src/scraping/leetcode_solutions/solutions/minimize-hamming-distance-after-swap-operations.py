@@ -1,8 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 class Solution(object):
     def minimumHammingDistance(self, source, target, allowedSwaps):
-        
+        """
+        :type source: List[int]
+        :type target: List[int]
+        :type allowedSwaps: List[List[int]]
+        :rtype: int
+        """
         def iter_flood_fill(adj, node, lookup, idxs):
             stk = [node]
             while stk:
@@ -33,16 +39,18 @@ class Solution(object):
 
 
 # Time:  O(n * α(n)) ~= O(n)
+# Space: O(n)
 import collections
 
 
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -53,7 +61,7 @@ class UnionFind(object):
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]: 
+        if self.rank[x_root] < self.rank[y_root]:  # union by rank
             self.set[x_root] = y_root
         elif self.rank[x_root] > self.rank[y_root]:
             self.set[y_root] = x_root
@@ -65,7 +73,12 @@ class UnionFind(object):
 
 class Solution2(object):
     def minimumHammingDistance(self, source, target, allowedSwaps):
-        
+        """
+        :type source: List[int]
+        :type target: List[int]
+        :type allowedSwaps: List[List[int]]
+        :rtype: int
+        """
         uf = UnionFind(len(source))
         for x, y in allowedSwaps: 
             uf.union_set(x, y)

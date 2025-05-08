@@ -1,4 +1,5 @@
 # Time:  O(min(cnt.values()) * n/min(cnt.values())) = O(n)
+# Space: O(n)
 
 import collections
 
@@ -6,7 +7,10 @@ import collections
 # linear search, greedy, math
 class Solution(object):
     def minGroupsForValidAssignment(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         INF = float("inf")
 
         def ceil_divide(a, b):

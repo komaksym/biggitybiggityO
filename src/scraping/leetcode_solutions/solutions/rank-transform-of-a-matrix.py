@@ -1,16 +1,18 @@
 # Time:  O(m * n * log(m * n) + m * n * α(m * n)) = O(m * n * log(m * n))
+# Space: O(m * n)
 
 import collections
 
 
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * α(n)), Space: O(n)
+    def __init__(self, n, cb):
         self.set = list(range(n))
         self.rank = [0]*n
         self.cb = cb
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -21,7 +23,7 @@ class UnionFind(object):
         x_root, y_root = list(map(self.find_set, (x, y)))
         if x_root == y_root:
             return False
-        if self.rank[x_root] < self.rank[y_root]: 
+        if self.rank[x_root] < self.rank[y_root]:  # union by rank
             self.set[x_root] = y_root
             self.cb(y_root, x_root, y_root)
         elif self.rank[x_root] > self.rank[y_root]:
@@ -36,7 +38,10 @@ class UnionFind(object):
 
 class Solution(object):
     def matrixRankTransform(self, matrix):
-        
+        """
+        :type matrix: List[List[int]]
+        :rtype: List[List[int]]
+        """
         def cb(x, y, z):
             new_rank[x] = max(new_rank[y], new_rank[z])
 

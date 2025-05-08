@@ -1,4 +1,5 @@
 # Time:  O(n^2 * v), v is max(max(nums1), max(nums2))
+# Space: O(n * v)
 
 import collections
 import itertools
@@ -7,7 +8,11 @@ import itertools
 # dp
 class Solution(object):
     def countSubranges(self, nums1, nums2):
-        
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: int
+        """
         MOD = 10**9+7
 
         result = 0

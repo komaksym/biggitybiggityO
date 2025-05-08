@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # graph
 class Solution(object):
     def isPossible(self, n, edges):
-        
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: bool
+        """
         adj = [set() for _ in range(n)]
         for u, v in edges:
             adj[u-1].add(v-1)

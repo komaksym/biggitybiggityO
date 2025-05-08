@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def findLHS(self, nums):
-        
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
         lookup = collections.defaultdict(int)
         result = 0
         for num in nums:

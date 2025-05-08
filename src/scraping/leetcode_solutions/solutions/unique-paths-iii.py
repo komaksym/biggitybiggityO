@@ -1,8 +1,12 @@
 # Time:  O(m * n * 2^(m * n))
+# Space: O(m * n * 2^(m * n))
 
 class Solution(object):
     def uniquePathsIII(self, grid):
-        
+        """
+        :type grid: List[List[int]]
+        :rtype: int
+        """
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         
         def index(grid, r, c):

@@ -1,9 +1,10 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import collections
 
 
-class BIT(object): 
+class BIT(object):  # Fenwick Tree, 1-indexed
     def __init__(self, n):
         self.__bit = [0] * n
 
@@ -22,7 +23,11 @@ class BIT(object):
 
 class Solution(object):
     def minInteger(self, num, k):
-        
+        """
+        :type num: str
+        :type k: int
+        :rtype: str
+        """
         lookup = collections.defaultdict(list)
         bit = BIT(len(num)+1)
         for i in reversed(range(len(num))):

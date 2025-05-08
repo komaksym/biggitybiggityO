@@ -1,8 +1,13 @@
 # Time:  O(nlogr), r is the range of speed
+# Space: O(1)
 
 class Solution(object):
     def minSpeedOnTime(self, dist, hour):
-        
+        """
+        :type dist: List[int]
+        :type hour: float
+        :rtype: int
+        """
         def ceil(a, b):
             return (a+b-1)//b
 

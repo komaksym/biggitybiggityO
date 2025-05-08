@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(h)
 
 class Node(object):
     def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):
@@ -12,7 +13,11 @@ class Node(object):
 
 class Solution(object):
     def intersect(self, quadTree1, quadTree2):
-        
+        """
+        :type quadTree1: Node
+        :type quadTree2: Node
+        :rtype: Node
+        """
         if quadTree1.isLeaf:
             return quadTree1 if quadTree1.val else quadTree2
         elif quadTree2.isLeaf:

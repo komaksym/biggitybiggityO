@@ -1,13 +1,15 @@
 # Time:  O(n * alpha(n)) = O(n)
+# Space: O(n)
 
-class UnionFind(object): 
+class UnionFind(object):  # Time: O(n * alpha(n)), Space: O(n)
+    def __init__(self, n):
         self.set = list(range(n))
         self.rank = [0]*n
-        self.right = list(range(n)) 
+        self.right = list(range(n))  # added
 
     def find_set(self, x):
         stk = []
-        while self.set[x] != x: 
+        while self.set[x] != x:  # path compression
             stk.append(x)
             x = self.set[x]
         while stk:
@@ -18,22 +20,28 @@ class UnionFind(object):
         x, y = self.find_set(x), self.find_set(y)
         if x == y:
             return False
-        if self.rank[x] > self.rank[y]: 
+        if self.rank[x] > self.rank[y]:  # union by rank
             x, y = y, x
         self.set[x] = self.set[y]
         if self.rank[x] == self.rank[y]:
             self.rank[y] += 1
-        self.right[y] = max(self.right[x], self.right[y]) 
+        self.right[y] = max(self.right[x], self.right[y])  # added
         return True
 
-    def right_set(self, x): 
+    def right_set(self, x):  # added
         return self.right[self.find_set(x)]
 
 
 # bfs, union find
 class Solution(object):
     def minReverseOperations(self, n, p, banned, k):
-        
+        """
+        :type n: int
+        :type p: int
+        :type banned: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
         lookup = [False]*n
         for i in banned:
             lookup[i] = True
@@ -61,13 +69,20 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
+# Space: O(n)
 from sortedcontainers import SortedList
 
 
 # bfs, sorted list
 class Solution2(object):
     def minReverseOperations(self, n, p, banned, k):
-        
+        """
+        :type n: int
+        :type p: int
+        :type banned: List[int]
+        :type k: int
+        :rtype: List[int]
+        """
         lookup = [False]*n
         for i in banned:
             lookup[i] = True

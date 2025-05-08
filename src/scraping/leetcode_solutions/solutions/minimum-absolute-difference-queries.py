@@ -1,8 +1,13 @@
 # Time:  O(r * (n + q)), r is the max of nums
+# Space: O(r * n)
 
 class Solution(object):
     def minDifference(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         INF = float("inf")
         prefix = [[0]*(max(nums)+1)]
         for num in nums:
@@ -22,12 +27,17 @@ class Solution(object):
 
 
 # Time:  O(r + n + q * r * logn), r is the max of nums
+# Space: O(r + n)
 import bisect
 
 
 class Solution2(object):
     def minDifference(self, nums, queries):
-        
+        """
+        :type nums: List[int]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
         INF = float("inf")
         idxs = [[] for _ in range(max(nums)+1)]
         for i, num in enumerate(nums):

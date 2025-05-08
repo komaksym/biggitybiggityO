@@ -1,4 +1,5 @@
 # Time:  O(nlogm), m is the max value of arr
+# Space: O(logm)
 
 class BitCount(object):
     def __init__(self, n):
@@ -35,7 +36,11 @@ class BitCount(object):
 
 class Solution(object):
     def closestToTarget(self, arr, target):
-        
+        """
+        :type arr: List[int]
+        :type target: int
+        :rtype: int
+        """
         count = BitCount(max(arr).bit_length())
         result, left = float("inf"), 0
         for right in range(len(arr)):
@@ -51,10 +56,15 @@ class Solution(object):
                     
   
 # Time:  O(nlogm), m is the max value of arr
+# Space: O(logm)
 class Solution2(object):
     def closestToTarget(self, arr, target):
-        
-        result, dp = float("inf"), set() 
+        """
+        :type arr: List[int]
+        :type target: int
+        :rtype: int
+        """
+        result, dp = float("inf"), set()  # at most O(logm) dp states
         for x in arr:
             dp = {x}|{f&x for f in dp}
             for f in dp:

@@ -1,10 +1,15 @@
 from functools import reduce
 # Time:  O(n)
+# Space: O(1)
 
 # dp
 class Solution(object):
     def countSteppingNumbers(self, low, high):
-        
+        """
+        :type low: str
+        :type high: str
+        :rtype: int
+        """
         MOD = 10**9+7
         def f(s):
             dp = [[0]*10 for _ in range(2)]

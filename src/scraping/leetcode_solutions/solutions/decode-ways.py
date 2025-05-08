@@ -1,8 +1,12 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def numDecodings(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         if len(s) == 0 or s[0] == '0':
             return 0
         prev, prev_prev = 1, 0

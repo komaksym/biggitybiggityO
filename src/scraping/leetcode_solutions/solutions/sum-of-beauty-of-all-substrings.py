@@ -1,8 +1,12 @@
 # Time:  O(n^2)
+# Space: O(1)
 
 class Solution(object):
     def beautySum(self, s):
-        
+        """
+        :type s: str
+        :rtype: int
+        """
         result = 0 
         for i in range(len(s)):
             lookup = [0]*26

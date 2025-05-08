@@ -1,21 +1,27 @@
 # Time:  O(n^3)
+# Space: O(n^2)
 
 # weighted bipartite matching solution
 class Solution(object):
     def maximumANDSum(self, nums, numSlots):
-        
-       
-       
-        def hungarian(a): 
+        """
+        :type nums: List[int]
+        :type numSlots: int
+        :rtype: int
+        """
+        # Template translated from:
+        # https://github.com/kth-competitive-programming/kactl/blob/main/content/graph/WeightedMatching.h
+        def hungarian(a):  # Time: O(n^2 * m), Space: O(n + m)
+            if not a:
                 return 0, []
             n, m = len(a)+1, len(a[0])+1
             u, v, p, ans = [0]*n, [0]*m, [0]*m, [0]*(n-1)
             for i in range(1, n):
                 p[0] = i
-                j0 = 0 
+                j0 = 0  # add "dummy" worker 0
                 dist, pre = [float("inf")]*m, [-1]*m
                 done = [False]*(m+1)
-                while True: 
+                while True:  # dijkstra
                     done[j0] = True
                     i0, j1, delta = p[j0], None, float("inf")
                     for j in range(1, m):
@@ -35,18 +41,19 @@ class Solution(object):
                     j0 = j1
                     if not p[j0]:
                         break
-                while j0: 
+                while j0:  # update alternating path
                     j1 = pre[j0]
                     p[j0], j0 = p[j1], j1
             for j in range(1, m):
                 if p[j]:
                     ans[p[j]-1] = j-1
-            return -v[0], ans 
+            return -v[0], ans  # min cost
     
         return -hungarian([[-((nums[i] if i < len(nums) else 0) & (1+x//2)) for x in range(2*numSlots)] for i in range(2*numSlots)])[0]
 
 
 # Time:  O(n^3)
+# Space: O(n^2)
 from scipy.optimize import linear_sum_assignment as hungarian
 import itertools
 
@@ -54,16 +61,25 @@ import itertools
 # 3rd-party weighted bipartite matching solution
 class Solution2(object):
     def maximumANDSum(self, nums, numSlots):
-        
+        """
+        :type nums: List[int]
+        :type numSlots: int
+        :rtype: int
+        """
         adj = [[-((nums[i] if i < len(nums) else 0) & (1+x//2)) for x in range(2*numSlots)] for i in range(2*numSlots)]
         return -sum(adj[i][j] for i, j in zip(*hungarian(adj)))    
 
 
 # Time:  O(n * 3^n)
+# Space: O(3^n)
 # bottom-up dp (hard to implement but faster)
 class Solution3(object):
     def maximumANDSum(self, nums, numSlots):
-        
+        """
+        :type nums: List[int]
+        :type numSlots: int
+        :rtype: int
+        """
         def count(x):
             result = 0
             while x:
@@ -84,11 +100,16 @@ class Solution3(object):
 
 
 # Time:  O(n * 3^n)
+# Space: O(3^n)
 # memoization, top-down dp (easy to implement but slower)
 class Solution4(object):
     def maximumANDSum(self, nums, numSlots):
-        
-        def memoiztion(i, mask): 
+        """
+        :type nums: List[int]
+        :type numSlots: int
+        :rtype: int
+        """
+        def memoiztion(i, mask):  # i is metadata, which could be derived from mask, just for shorter implementation
             if lookup[mask] != -1:
                 return lookup[mask]
             x = nums[i] if i < len(nums) else 0

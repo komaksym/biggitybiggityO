@@ -1,8 +1,15 @@
 # Time:  O(n)
+# Space: O(1)
 
 class Solution(object):
     def sortTransformedArray(self, nums, a, b, c):
-        
+        """
+        :type nums: List[int]
+        :type a: int
+        :type b: int
+        :type c: int
+        :rtype: List[int]
+        """
         f = lambda x, a, b, c : a * x * x + b * x + c
 
         result = []

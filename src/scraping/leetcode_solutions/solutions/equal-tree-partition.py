@@ -1,11 +1,15 @@
 # Time:  O(n)
+# Space: O(n)
 
 import collections
 
 
 class Solution(object):
     def checkEqualTree(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
         def getSumHelper(node, lookup):
             if not node:
                 return 0

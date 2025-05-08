@@ -1,4 +1,5 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 import heapq
 
@@ -6,7 +7,11 @@ import heapq
 # simulation, heap
 class Solution(object):
     def minOperations(self, nums, k):
-        
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
         result = 0
         heapq.heapify(nums)
         while nums:

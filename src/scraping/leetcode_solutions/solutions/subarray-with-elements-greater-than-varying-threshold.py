@@ -1,9 +1,14 @@
 # Time:  O(n)
+# Space: O(n)
 
 # mono stack
 class Solution(object):
     def validSubarraySize(self, nums, threshold):
-        
+        """
+        :type nums: List[int]
+        :type threshold: int
+        :rtype: int
+        """
         stk = [-1]
         for i in range(len(nums)+1):
             while stk[-1] != -1 and (i == len(nums) or nums[stk[-1]] >= nums[i]):

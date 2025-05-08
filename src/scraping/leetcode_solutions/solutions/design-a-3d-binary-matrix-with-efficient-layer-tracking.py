@@ -2,6 +2,7 @@
 #        setCell:       O(logn)
 #        unsetCell:     O(logn)
 #        largestMatrix: O(logn)
+# Space: O(n^3)
 
 import collections
 from sortedcontainers import SortedList
@@ -11,7 +12,9 @@ from sortedcontainers import SortedList
 class Matrix3D(object):
 
     def __init__(self, n):
-        
+        """
+        :type n: int
+        """
         self.__n = n
         self.__matrix = set()
         self.__cnt = collections.defaultdict(int)
@@ -20,7 +23,12 @@ class Matrix3D(object):
         self.__lookup[0].add(n-1)
 
     def setCell(self, x, y, z):
-        
+        """
+        :type x: int
+        :type y: int
+        :type z: int
+        :rtype: None
+        """
         if (x, y, z) in self.__matrix:
             return
         self.__matrix.add((x, y, z))
@@ -35,7 +43,12 @@ class Matrix3D(object):
         self.__lookup[self.__cnt[x]].add(x)
 
     def unsetCell(self, x, y, z):
-        
+        """
+        :type x: int
+        :type y: int
+        :type z: int
+        :rtype: None
+        """
         if (x, y, z) not in self.__matrix:
             return
         self.__matrix.remove((x, y, z))
@@ -50,7 +63,9 @@ class Matrix3D(object):
             self.__lookup[self.__cnt[x]].add(x)
 
     def largestMatrix(self):
-        
+        """
+        :rtype: int
+        """
         return self.__lookup[self.__sl[-1]][-1]        
 
 
@@ -58,6 +73,7 @@ class Matrix3D(object):
 #        setCell:       O(logn)
 #        unsetCell:     O(logn)
 #        largestMatrix: O(logn) on average
+# Space: O(n^3)
 import collections
 import heapq
 
@@ -66,13 +82,20 @@ import heapq
 class Matrix3D_2(object):
 
     def __init__(self, n):
-        
+        """
+        :type n: int
+        """
         self.__matrix = {}
         self.__cnt = collections.defaultdict(int)
         self.__max_heap = [(0, -(n-1))]
 
     def setCell(self, x, y, z):
-        
+        """
+        :type x: int
+        :type y: int
+        :type z: int
+        :rtype: None
+        """
         if (x, y, z) in self.__matrix:
             return
         self.__matrix[x, y, z] = 1
@@ -80,7 +103,12 @@ class Matrix3D_2(object):
         heapq.heappush(self.__max_heap, (-self.__cnt[x], -x))
 
     def unsetCell(self, x, y, z):
-        
+        """
+        :type x: int
+        :type y: int
+        :type z: int
+        :rtype: None
+        """
         if (x, y, z) not in self.__matrix:
             return
         del self.__matrix[x, y, z]
@@ -88,7 +116,9 @@ class Matrix3D_2(object):
         heapq.heappush(self.__max_heap, (-self.__cnt[x], -x))
 
     def largestMatrix(self):
-        
+        """
+        :rtype: int
+        """
         while self.__max_heap and -self.__max_heap[0][0] != self.__cnt[-self.__max_heap[0][1]]:
             heapq.heappop(self.__max_heap)
         return -self.__max_heap[0][1]

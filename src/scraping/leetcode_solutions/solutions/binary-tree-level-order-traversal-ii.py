@@ -1,4 +1,5 @@
 # Time:  O(n)
+# Space: O(n)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -9,7 +10,10 @@ class TreeNode(object):
 
 class Solution(object):
     def levelOrderBottom(self, root):
-        
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
         if root is None:
             return []
 

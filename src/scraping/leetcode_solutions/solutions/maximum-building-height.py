@@ -1,8 +1,13 @@
 # Time:  O(nlogn)
+# Space: O(1)
 
 class Solution(object):
     def maxBuilding(self, n, restrictions):
-        
+        """
+        :type n: int
+        :type restrictions: List[List[int]]
+        :rtype: int
+        """
         restrictions.extend([[1, 0], [n, n-1]])
         restrictions.sort()
         for i in reversed(range(len(restrictions)-1)):

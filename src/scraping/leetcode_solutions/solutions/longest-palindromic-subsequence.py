@@ -1,9 +1,13 @@
 # Time:  O(n^2)
+# Space: O(n)
 
 class Solution(object):
     def longestPalindromeSubseq(self, s):
-        
-        if s == s[::-1]: 
+        """
+        :type s: str
+        :rtype: int
+        """
+        if s == s[::-1]:  # optional, to optimize special case
             return len(s)
 
         dp = [[1] * len(s) for _ in range(2)]

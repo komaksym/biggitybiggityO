@@ -1,8 +1,12 @@
 # Time:  O(nlogn)
+# Space: O(n)
 
 class Solution(object):
     def minimumAbsDifference(self, arr):
-        
+        """
+        :type arr: List[int]
+        :rtype: List[List[int]]
+        """
         result = []
         min_diff = float("inf")
         arr.sort()

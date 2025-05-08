@@ -1,5 +1,4 @@
 # Time:  O(n) on average
-# Space: O(n)
 
 import random
 
@@ -54,7 +53,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     dp = {}
 

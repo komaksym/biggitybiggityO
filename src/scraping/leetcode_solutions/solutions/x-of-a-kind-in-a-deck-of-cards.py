@@ -1,5 +1,4 @@
 # Time:  O(n * (logn)^2)
-# Space: O(n)
 
 import collections
 from functools import reduce

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def maxProfit(self, prices):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(k * n)
-# Space: O(k)
 class Solution2(object):
     def maxProfit(self, prices):
         """
@@ -38,7 +36,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution3(object):
     def maxProfit(self, prices):
         min_price, max_profit_from_left, max_profits_from_left = \

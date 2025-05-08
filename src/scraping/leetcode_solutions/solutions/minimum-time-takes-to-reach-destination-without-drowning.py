@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n)
 
 # simulation, bfs
 class Solution(object):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # simulation, bfs
 class Solution2(object):
     def minimumSeconds(self, land):

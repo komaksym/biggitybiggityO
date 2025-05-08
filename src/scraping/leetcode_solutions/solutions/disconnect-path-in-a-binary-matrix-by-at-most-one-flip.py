@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 # dp
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m + n)
 # iterative dfs
 class Solution2(object):
     def isPossibleToCutPath(self, grid):
@@ -54,7 +52,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n)
-# Space: O(m + n)
 # dfs
 class Solution3(object):
     def isPossibleToCutPath(self, grid):

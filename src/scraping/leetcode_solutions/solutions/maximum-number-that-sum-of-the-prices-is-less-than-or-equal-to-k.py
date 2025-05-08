@@ -1,5 +1,4 @@
 # Time:  O(max(logk, x) * log((logk) / x))
-# Space: O((logk) / x)
 
 # bit manipulation, binary search, combinatorics
 class Solution(object):
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(max(logk, x) * (max(logk, x) / x))
-# Space: O(1)
 # bit manipulation, combinatorics
 class Solution2(object):
     def findMaximumNumber(self, k, x):
@@ -71,7 +69,6 @@ class Solution2(object):
 
 
 # Time:  O(max(logk, x)^2)
-# Space: O(1)
 # bit manipulation, combinatorics
 class Solution3(object):
     def findMaximumNumber(self, k, x):
@@ -96,7 +93,6 @@ class Solution3(object):
 
 
 # Time:  O(max(logk, x) * (max(logk, x) / x))
-# Space: O(1)
 # bit manipulation, binary search, combinatorics
 class Solution4(object):
     def findMaximumNumber(self, k, x):

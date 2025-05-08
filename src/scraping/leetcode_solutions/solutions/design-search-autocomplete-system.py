@@ -1,5 +1,4 @@
 # Time:  O(p^2), p is the length of the prefix
-# Space: O(p * t + s), t is the number of nodes of trie
 #                    , s is the size of the sentences
 
 import collections

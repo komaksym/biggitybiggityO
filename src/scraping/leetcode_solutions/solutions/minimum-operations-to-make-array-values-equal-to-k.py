@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # hash table, constructive algorithms
 class Solution(object):

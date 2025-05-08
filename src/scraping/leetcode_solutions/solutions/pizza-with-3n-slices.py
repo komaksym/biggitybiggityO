@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # [observation]
 # 1. we can never take two adjacent slices
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution2(object):
     def maxSizeSlices(self, slices):
         """

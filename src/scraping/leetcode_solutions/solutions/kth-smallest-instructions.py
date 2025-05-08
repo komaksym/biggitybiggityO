@@ -1,5 +1,4 @@
 # Time:  O((m + n)^2)
-# Space: O(1)
 
 class Solution(object):
     def kthSmallestPath(self, destination, k):

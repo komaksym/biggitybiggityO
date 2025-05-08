@@ -1,5 +1,4 @@
 # Time:  O(n * 2^n), n is the size of the debt.
-# Space: O(2^n)
 
 import collections
 

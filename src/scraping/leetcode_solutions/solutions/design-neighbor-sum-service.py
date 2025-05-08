@@ -1,7 +1,6 @@
 # Time:  ctor:        O(n^2)
 #        adjacentSum: O(1)
 #.       diagonalSum: O(1)
-# Space: O(n^2)
 
 # hash table
 class neighborSum(object):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # greedy, sort
 class Solution(object):
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # greedy, sort
 class Solution2(object):
     def sortArray(self, nums):

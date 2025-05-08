@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # array
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # array
 class Solution2(object):
     def possibleStringCount(self, word):

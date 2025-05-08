@@ -1,5 +1,4 @@
 # Time:  O(n) ~ O(n^2), O(n) on average.
-# Space: O(1)
 
 import random
 
@@ -45,7 +44,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 class Solution2(object):
     def largestSumAfterKNegations(self, A, K):
         """

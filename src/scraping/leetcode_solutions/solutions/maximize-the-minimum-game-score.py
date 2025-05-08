@@ -1,5 +1,4 @@
 # Time:  O(n * log(m * r))
-# Space: O(1)
 
 # binary search, greedy
 class Solution(object):

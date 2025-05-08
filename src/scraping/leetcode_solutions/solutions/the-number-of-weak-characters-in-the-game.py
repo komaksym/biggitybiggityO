@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 class Solution(object):
     def numberOfWeakCharacters(self, properties):
@@ -15,7 +14,6 @@ class Solution(object):
             max_d = max(max_d, d)
         return result
 
-# Space: O(n)
 import collections
 
 

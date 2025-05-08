@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import collections
 
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import collections
 
 
@@ -68,7 +66,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class UnionFind(object): 
     def __init__(self, n):
         self.set = list(range(n))

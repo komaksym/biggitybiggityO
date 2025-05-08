@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(n)
 
 class Solution(object):
     def smallestCommonElement(self, mat):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(n)
 import collections
 
 

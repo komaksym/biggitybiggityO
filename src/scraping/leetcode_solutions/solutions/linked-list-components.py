@@ -1,5 +1,4 @@
 # Time:  O(m + n), m is the number of G, n is the number of nodes
-# Space: O(m)
 
 class ListNode(object):
     def __init__(self, x):

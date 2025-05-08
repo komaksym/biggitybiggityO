@@ -1,5 +1,4 @@
 # Time:  O(m + n + 26^2)
-# Space: O(26)
 
 import collections
 

@@ -1,5 +1,4 @@
 # Time:  O(nlogr + k * n * 2^n)
-# Space: O(logr + k * 2^n)
 
 # dp, backtracing
 class Solution(object):

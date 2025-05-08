@@ -1,5 +1,4 @@
 # Time:  O(m * n * log(min(m, n))
-# Space: O(m * n)
 
 import collections
 

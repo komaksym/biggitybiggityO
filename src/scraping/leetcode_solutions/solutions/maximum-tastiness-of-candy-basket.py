@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(price)-min(price)
-# Space: O(1)
 
 # binary search, greedy
 class Solution(object):

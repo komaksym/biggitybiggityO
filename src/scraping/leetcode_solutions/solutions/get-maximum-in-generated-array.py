@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 nums = [0, 1]
 dp = [0, 1]
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def getMaximumGenerated(self, n):
         """

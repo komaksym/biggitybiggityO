@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -31,7 +30,6 @@ class Solution(object):
                 stk.append((c, curr))
         return result
 
-# Space: O(n)
 # dfs solution with recursion
 class Solution2(object):
     def numOfMinutes(self, n, headID, manager, informTime):

@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(n + 26)
 
 # freq table, counting sort, two pointers
 class Solution(object):
@@ -48,7 +47,6 @@ class Solution(object):
 
 
 # Time:  O(n + 26 * log(26))
-# Space: O(26)
 # freq table, sort, two pointers
 class Solution2(object):
     def minimumDeletions(self, word, k):
@@ -78,7 +76,6 @@ class Solution2(object):
 
 
 # Time:  O(n + 26^2)
-# Space: O(26)
 # freq table
 class Solution3(object):
     def minimumDeletions(self, word, k):

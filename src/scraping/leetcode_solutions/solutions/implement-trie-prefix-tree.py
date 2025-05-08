@@ -1,5 +1,4 @@
 # Time:  O(n), per operation
-# Space: O(1)
 
 class TrieNode(object):
     def __init__(self):

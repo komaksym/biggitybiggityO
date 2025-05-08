@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def minOperationsToFlip(self, expression):
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def minOperationsToFlip(self, expression):
         """

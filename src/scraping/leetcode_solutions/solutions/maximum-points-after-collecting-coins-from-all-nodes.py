@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(coins)
-# Space: O(n)
 
 # dfs, bitmasks, pruning
 class Solution(object):
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(coins)
-# Space: O(nlogr)
 # tree dp, memoization
 class Solution2(object):
     def maximumPoints(self, edges, coins, k):

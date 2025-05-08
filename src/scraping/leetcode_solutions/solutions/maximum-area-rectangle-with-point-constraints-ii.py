@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort, fenwick tree, hash table
 class Solution(object):

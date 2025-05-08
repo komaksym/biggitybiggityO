@@ -2,7 +2,6 @@
 #                           , m is the total size of query string
 #                           , z is the number of all matched strings
 #                           , O(n) = O(m) = O(z) in this problem
-# Space: O(t), t is the total size of ac automata trie
 
 import collections
 
@@ -87,7 +86,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * l), n is the number of strings
-# Space: O(l)      , l is the max length of strings
 class Solution2(object):
     def stringMatching(self, words):
         """
@@ -131,7 +129,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * l^2), n is the number of strings
-# Space: O(1)        , l is the max length of strings
 class Solution3(object):
     def stringMatching(self, words):
         """

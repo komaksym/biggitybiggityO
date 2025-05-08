@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def longestPalindrome(self, s):
@@ -41,7 +40,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 class Solution2(object):
     def longestPalindrome(self, s):
         """

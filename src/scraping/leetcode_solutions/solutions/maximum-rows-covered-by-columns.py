@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(m * n + m * C(n, k))
-# Space: O(m)
 
 # bitmasks, hakmem-175
 class Solution(object):

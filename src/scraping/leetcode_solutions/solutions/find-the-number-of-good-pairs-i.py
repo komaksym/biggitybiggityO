@@ -1,5 +1,4 @@
 # Time:  O(rlogr + n + m)
-# Space: O(r)
 
 import collections
 
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n * m)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def numberOfPairs(self, nums1, nums2, k):

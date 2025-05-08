@@ -1,5 +1,4 @@
 # Time:  O(d), d is the number of digits
-# Space: O(d)
 
 # greedy, counting sort
 class Solution(object):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(dlogd), d is the number of digits
-# Space: O(d)
 # greedy
 class Solution2(object):
     def smallestNumber(self, num):

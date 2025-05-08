@@ -1,5 +1,4 @@
 # Time:  O(f * n), f is the max number of unique prime factors
-# Space: O(p + n), p is the total number of unique primes
 
 import collections
 
@@ -58,7 +57,6 @@ class Solution(object):
 
 
 # Time:  O(f * n), f is the max number of unique prime factors
-# Space: O(p + n), p is the total number of unique primes
 import collections
 
 

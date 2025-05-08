@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 class Solution2(object):
     def isValidBST(self, root):
         return self.isValidBSTRecu(root, float("-inf"), float("inf"))

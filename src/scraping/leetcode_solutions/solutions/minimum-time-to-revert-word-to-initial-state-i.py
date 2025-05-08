@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # z-function
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def minimumTimeToInitialState(self, word, k):

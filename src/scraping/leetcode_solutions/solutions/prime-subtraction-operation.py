@@ -1,5 +1,4 @@
 # Time:  O(p + nlogp)
-# Space: O(p)
 
 import bisect
 

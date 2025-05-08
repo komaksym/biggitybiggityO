@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n * k), k = max(cnt for _, cnt in requirements)
-# Space: O(n + k)
 
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution(object):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(n * k), k = max(cnt for _, cnt in requirements)
-# Space: O(n + k)
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution2(object):
     def numberOfPermutations(self, n, requirements):
@@ -64,7 +62,6 @@ class Solution2(object):
 
 
 # Time:  O(n * k), k = max(cnt for _, cnt in requirements)
-# Space: O(n + k)
 # knapsack dp, combinatorics, sliding window, two pointers
 class Solution3(object):
     def numberOfPermutations(self, n, requirements):
@@ -92,7 +89,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2 * k), k = max(cnt for _, cnt in requirements)
-# Space: O(n + k)
 # knapsack dp, combinatorics
 class Solution4(object):
     def numberOfPermutations(self, n, requirements):

@@ -1,5 +1,4 @@
 # Time:  ((9!)^9)
-# Space: (1)
 
 class Solution(object):
     def solveSudoku(self, board):

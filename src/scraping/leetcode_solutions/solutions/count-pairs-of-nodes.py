@@ -1,5 +1,4 @@
 # Time:  O(n + e + q)
-# Space: O(n + e)
 
 import collections
 import itertools
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + q * (n + e))
-# Space: O(n + e)
 import collections
 
 

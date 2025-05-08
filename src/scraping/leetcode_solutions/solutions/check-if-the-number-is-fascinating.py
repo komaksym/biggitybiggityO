@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # string, bitmasks
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(logn)
 # string
 class Solution2(object):
     def isFascinating(self, n):

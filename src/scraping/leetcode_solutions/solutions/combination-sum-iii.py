@@ -1,5 +1,4 @@
 # Time:  O(k * C(n, k))
-# Space: O(k)
 
 class Solution(object):
     def combinationSum3(self, k, n):

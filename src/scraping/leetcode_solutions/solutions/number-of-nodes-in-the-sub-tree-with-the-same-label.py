@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class Solution(object):
     def countSubTrees(self, n, edges, labels):
@@ -45,7 +44,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 import collections
 
 

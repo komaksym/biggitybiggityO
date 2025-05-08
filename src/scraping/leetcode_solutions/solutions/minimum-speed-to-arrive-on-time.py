@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r is the range of speed
-# Space: O(1)
 
 class Solution(object):
     def minSpeedOnTime(self, dist, hour):

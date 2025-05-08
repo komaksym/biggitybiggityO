@@ -1,5 +1,4 @@
 # Time:  O(nlogn + q)
-# Space: O(nlogn)
 
 # sparse table
 class Solution(object):

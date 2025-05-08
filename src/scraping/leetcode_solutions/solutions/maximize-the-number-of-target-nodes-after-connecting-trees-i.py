@@ -1,5 +1,4 @@
 # Time:  O(nlogn + mlogm)
-# Space: O(n + m)
 
 # dfs, centroid decomposition, prefix sum
 class Solution(object):
@@ -101,7 +100,6 @@ class Solution(object):
 
 
 # Time:  O((n + m) * k)
-# Space: O((n + m) * k)
 # dfs, tree dp
 class Solution2(object):
     def maxTargetNodes(self, edges1, edges2, k):
@@ -160,7 +158,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 + m^2)
-# Space: O(n + m)
 # brute force, bfs
 class Solution3(object):
     def maxTargetNodes(self, edges1, edges2, k):

@@ -1,5 +1,4 @@
 # Time:  O(n * k), n = len(s), k = len(sub)
-# Space: O(m), m = len(mappings)
 
 import collections
 
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n * k), n = len(s), k = len(sub)
-# Space: O(m), m = len(mappings)
 import collections
 
 

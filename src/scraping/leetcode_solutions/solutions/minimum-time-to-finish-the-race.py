@@ -1,5 +1,4 @@
 # Time:  O((n + l) * logc)
-# Space: O(n + l + logc)
 
 # greedy, dp
 class Solution(object):

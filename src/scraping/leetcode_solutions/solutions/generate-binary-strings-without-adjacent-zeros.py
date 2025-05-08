@@ -1,5 +1,4 @@
 # Time:  O(n * 2^n)
-# Space: O(n)
 
 # backtracking
 class Solution(object):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(n * 2^n)
-# Space: O(n * 2^n)
 # bfs
 class Solution2(object):
     def validStrings(self, n):

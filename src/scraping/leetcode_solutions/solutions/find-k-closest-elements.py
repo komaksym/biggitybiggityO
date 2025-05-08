@@ -1,5 +1,4 @@
 # Time:  O(logn + k)
-# Space: O(1)
 
 import bisect
 

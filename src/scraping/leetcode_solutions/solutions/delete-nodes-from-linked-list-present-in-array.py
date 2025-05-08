@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(m)
 
 # hash table, linked list
 class Solution(object):

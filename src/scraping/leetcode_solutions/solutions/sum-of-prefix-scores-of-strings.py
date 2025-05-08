@@ -1,5 +1,4 @@
 # Time:  O(n * l), n is the number of words, l is the max length of words
-# Space: O(t), t is the size of trie
     
 import collections
 

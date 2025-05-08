@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def countNumbersWithUniqueDigits(self, n):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def countNumbersWithUniqueDigits(self, n):
         """

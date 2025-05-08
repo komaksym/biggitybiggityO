@@ -1,5 +1,4 @@
 # Time:  O(klogn)
-# Space: O(1)
 
 class Solution(object):
     def superEggDrop(self, K, N):

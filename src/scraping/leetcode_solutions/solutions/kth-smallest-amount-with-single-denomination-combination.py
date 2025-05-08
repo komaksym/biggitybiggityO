@@ -1,5 +1,4 @@
 # Time:  O(n * 2^n * (log(mx) + log(k * mn))) = O(n * 2^n * logk), mn = min(coins), mx = max(coins)
-# Space: O(2^n)
 
 import itertools
 from functools import reduce
@@ -45,7 +44,6 @@ class Solution(object):
 
 
 # Time:  O(n * 2^n * (log(mx) + log(k * mn))) = O(n * 2^n * logk), mn = min(coins), mx = max(coins)
-# Space: O(2^n)
 # binary search, principle of inclusion and exclusion, number theory
 class Solution2(object):
     def findKthSmallest(self, coins, k):

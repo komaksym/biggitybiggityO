@@ -1,5 +1,4 @@
 # Time:  O(n^4)
-# Space: O(n^3)
 
 class Solution(object):
     def isScramble(self, s1, s2):

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import bisect
 
@@ -99,7 +98,6 @@ class SegmentTree(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # segment tree solution
 class Solution2_TLE(object):
     def longestObstacleCourseAtEachPosition(self, obstacles):

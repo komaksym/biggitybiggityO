@@ -1,5 +1,4 @@
 # Time:  O(n * h)
-# Space: O(h)
 
 class Solution(object):
     def binaryTreePaths(self, root):

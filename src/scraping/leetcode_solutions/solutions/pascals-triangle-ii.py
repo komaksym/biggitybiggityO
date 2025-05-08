@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 class Solution(object):
     def getRow(self, rowIndex):
@@ -42,7 +41,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 class Solution2(object):
     def getRow(self, rowIndex):
         result = [1]

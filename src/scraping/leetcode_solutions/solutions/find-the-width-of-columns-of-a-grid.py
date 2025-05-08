@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(1)
 
 # array
 class Solution(object):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(logr)
 # array
 class Solution2(object):
     def findColumnWidth(self, grid):
@@ -34,7 +32,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n)
-# Space: O(m + logr)
 import itertools
 
 

@@ -1,5 +1,4 @@
 # Time:  O(m + n), m is the number of queries, n is the length of s
-# Space: O(n)
 
 import itertools
 

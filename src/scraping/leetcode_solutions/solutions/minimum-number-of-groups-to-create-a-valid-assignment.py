@@ -1,5 +1,4 @@
 # Time:  O(min(cnt.values()) * n/min(cnt.values())) = O(n)
-# Space: O(n)
 
 import collections
 

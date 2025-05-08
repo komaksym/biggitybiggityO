@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def minimumRefill(self, plants, capacityA, capacityB):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -38,7 +37,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dfs solution with stack with better precision
 class Solution2(object):
     def frogPosition(self, n, edges, t, target):
@@ -70,7 +68,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dfs solution with recursion with better precision
 class Solution3(object):
     def frogPosition(self, n, edges, t, target):
@@ -102,7 +99,6 @@ class Solution3(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dfs solution with recursion
 class Solution4(object):
     def frogPosition(self, n, edges, t, target):

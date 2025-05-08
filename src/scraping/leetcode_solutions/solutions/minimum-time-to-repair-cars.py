@@ -1,5 +1,4 @@
 # Time:  O(mx * log(mn * c^2)) = O(mx * (logc + log(mn))), c = cars, mx = max(ranks), mn = min(ranks)
-# Space: O(mx)
 
 import collections
 
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(c * log(mx)), c = cars, mx = max(ranks)
-# Space: O(mx)
 import collections
 import heapq
 

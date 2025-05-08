@@ -1,5 +1,4 @@
 # Time:  O(n + e + q)
-# Space: O(n)
 
 # union find
 class Solution(object):

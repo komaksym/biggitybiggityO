@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import itertools
 
@@ -17,7 +16,6 @@ class Solution(object):
             curr += arr[i]-(arr[i-k] if i-k >= 0 else 0)
             result += int(curr >= threshold*k)
         return result
-# Space: O(n)
 class Solution2(object):
     def numOfSubarrays(self, arr, k, threshold):
         """

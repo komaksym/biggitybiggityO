@@ -1,5 +1,4 @@
 # Time:  O(qlogr)
-# Space: O(1)
 
 # greedy
 class Solution(object):

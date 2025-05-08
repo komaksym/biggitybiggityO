@@ -1,5 +1,4 @@
 # Time:  O(v * n)
-# Space: O(1)
 
 class Solution(object):
     def pourWater(self, heights, V, K):

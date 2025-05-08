@@ -1,5 +1,4 @@
 # Time:  O(logn) on average for each operation
-# Space: O(n)
 
 # see proof in references:
 # 1. https://kunigami.blog/2012/09/25/skip-lists-in-python/

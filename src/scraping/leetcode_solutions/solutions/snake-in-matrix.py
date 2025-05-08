@@ -1,5 +1,4 @@
 # Time:  O(c)
-# Space: O(1)
 
 # simulation
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(eloge + e * n), e = len(events)
-# Space: O(e + n)
 
 # simulation
 class Solution(object):

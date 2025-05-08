@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n^2)
 
 import collections
 
@@ -52,7 +51,6 @@ class Solution(object):
                     q.append((ni, nj, nt, c))
         return color[MOUSE_START, CAT_START, MOUSE]
 
-# Space: O(n^2)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # difference array
 class Solution(object):

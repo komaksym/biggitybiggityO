@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n)
 
 # topological sort, bottom-up dp
 class Solution(object):
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # top-down dp, memoization
 class Solution2(object):
     def countPaths(self, grid):

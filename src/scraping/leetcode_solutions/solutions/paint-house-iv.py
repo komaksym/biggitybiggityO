@@ -1,5 +1,4 @@
 # Time:  O(n * l^4)
-# Space: O(l^2)
 
 # dp
 class Solution(object):

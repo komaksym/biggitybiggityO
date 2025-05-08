@@ -1,5 +1,4 @@
 # Time:  O(m + n)
-# Space: O(1)
 
 class Solution(object):
     def gcdOfStrings(self, str1, str2):

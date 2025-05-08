@@ -3,7 +3,6 @@
 #                             = O(k*r*c + (k*(k*2^k))*(logk + k*log2))
 #                             = O(k*r*c + (k*(k*2^k))*k)
 #                             = O(k*r*c + k^3*2^k)
-# Space: O(|V|) = O(k*2^k)
 
 import collections
 import heapq

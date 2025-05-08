@@ -1,5 +1,4 @@
 # Time:  O(rlogn)
-# Space: O(r)
 
 # if r = O(1), this is better
 class Solution(object):
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(rlogn)
-# Space: O(n)
 # if r = O(n), this is better
 class Solution2(object):
     def maximumRemovals(self, s, p, removable):

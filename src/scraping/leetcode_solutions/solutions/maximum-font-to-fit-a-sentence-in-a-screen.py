@@ -1,5 +1,4 @@
 # Time:  O(n + logm), n is the length of text, m is the number of fonts
-# Space: O(1)
 
 import collections
 

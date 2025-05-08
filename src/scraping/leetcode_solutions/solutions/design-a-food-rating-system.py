@@ -1,7 +1,6 @@
 # Time:  ctor:         O(nlogn)
 #        changeRating: O(logn)
 #        highestRated: O(1)
-# Space: O(n)
 
 import collections
 import itertools

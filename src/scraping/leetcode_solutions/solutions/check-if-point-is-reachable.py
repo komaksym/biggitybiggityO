@@ -1,5 +1,4 @@
 # Time:  O(log(min(a, b)))
-# Space: O(1)
 
 # number theory
 class Solution(object):

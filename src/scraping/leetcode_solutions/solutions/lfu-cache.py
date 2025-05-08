@@ -1,5 +1,4 @@
 # Time:  O(1), per operation
-# Space: O(k), k is the capacity of cache
 
 import collections
 
@@ -63,7 +62,6 @@ class LFUCache(object):
 
 
 # Time:  O(1), per operation
-# Space: O(k), k is the capacity of cache
 import collections
 
 

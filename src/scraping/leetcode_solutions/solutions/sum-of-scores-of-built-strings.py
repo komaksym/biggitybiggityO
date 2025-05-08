@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # z-function
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # dp
 class Solution(object):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(n^3)
-# Space: O(n^2)
 # dp
 class Solution_TLE(object):
     def houseOfCards(self, n):

@@ -1,5 +1,4 @@
 # Time:  O(logn) = O(1) because n is 32-bit integer
-# Space: O(1)
 
 class Solution(object):
     def kthGrammar(self, N, K):

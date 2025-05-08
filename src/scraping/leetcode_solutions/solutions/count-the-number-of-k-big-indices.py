@@ -1,5 +1,4 @@
 # Time:  O(nlogk)
-# Space: O(n)
 
 import heapq
 
@@ -32,7 +31,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 from sortedcontainers import SortedList
 
 

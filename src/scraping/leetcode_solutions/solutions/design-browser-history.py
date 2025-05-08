@@ -2,7 +2,6 @@
 #        visit : O(n)
 #        back  : O(1)
 #        foward: O(1)
-# Space: O(n)
 
 class BrowserHistory(object):
 

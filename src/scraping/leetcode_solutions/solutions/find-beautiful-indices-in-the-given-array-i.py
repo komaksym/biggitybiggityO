@@ -1,5 +1,4 @@
 # Time:  O(n), x = len(KMP(s, a)), y = len(KMP(s, b))
-# Space: O(min(a + b + x + y, n))
 
 # kmp, two pointers
 class Solution(object):
@@ -48,7 +47,6 @@ class Solution(object):
 
 
 # Time:  O(n + xlogy), x = len(KMP(s, a)), y = len(KMP(s, b))
-# Space: O(n)
 import bisect
 
 

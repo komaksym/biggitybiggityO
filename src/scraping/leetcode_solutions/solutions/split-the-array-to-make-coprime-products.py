@@ -1,5 +1,4 @@
 # Time:  O(n * sqrt(r)), r = max(nums)
-# Space: O(sqrt(r))
 
 import collections
 

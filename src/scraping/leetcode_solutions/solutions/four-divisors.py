@@ -1,5 +1,4 @@
 # Time:  O(n * sqrt(n))
-# Space: O(1)
 
 class Solution(object):
     def sumFourDivisors(self, nums):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(n * sqrt(n))
-# Space: O(sqrt(n))
 import itertools
 
 

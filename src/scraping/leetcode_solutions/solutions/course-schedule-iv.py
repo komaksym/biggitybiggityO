@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n^2)
 
 class Solution(object):
     def checkIfPrerequisite(self, n, prerequisites, queries):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n * q)
-# Space: O(p + n)
 import collections
 
 

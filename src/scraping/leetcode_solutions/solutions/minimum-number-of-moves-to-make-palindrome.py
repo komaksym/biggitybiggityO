@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class BIT(object): 
     def __init__(self, n):
@@ -48,7 +47,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # greedy
 class Solution2(object):
     def minMovesToMakePalindrome(self, s):

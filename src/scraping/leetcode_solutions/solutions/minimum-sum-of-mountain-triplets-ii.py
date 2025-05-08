@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # prefix sum
 class Solution(object):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # prefix sum
 class Solution2(object):
     def minimumSum(self, nums):

@@ -1,5 +1,4 @@
 # Time:  O(n + q)
-# Space: O(n + q)
 
 import collections
 from functools import partial
@@ -98,7 +97,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + qlogn)
-# Space: O(nlogn)
 from functools import partial
 
 
@@ -169,7 +167,6 @@ class Solution2(object):
 
 
 # Time:  O(n + q * h)
-# Space: O(n)
 from functools import partial
 
 
@@ -224,7 +221,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2 + q * n)
-# Space: O(n^2)
 # bfs
 class Solution4(object):
     def closestNode(self, n, edges, query):
@@ -267,7 +263,6 @@ class Solution4(object):
 
 
 # Time:  O(n^2 + q * n)
-# Space: O(n^2)
 # bfs
 class Solution5(object):
     def closestNode(self, n, edges, query):

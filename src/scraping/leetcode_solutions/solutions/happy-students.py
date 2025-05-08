@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # codeforce, https://codeforces.com/contest/1782/problem/B
 # freq table
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # codeforce, https://codeforces.com/contest/1782/problem/B
 # sort, greedy
 class Solution2(object):

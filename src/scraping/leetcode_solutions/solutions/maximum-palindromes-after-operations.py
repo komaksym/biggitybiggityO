@@ -1,5 +1,4 @@
 # Time:  O(n * l + nlogn)
-# Space: O(n)
 
 # freq table, greedy, sort
 class Solution(object):

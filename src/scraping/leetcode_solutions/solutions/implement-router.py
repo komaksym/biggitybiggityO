@@ -2,7 +2,6 @@
 #        addPacket:     O(logn)
 #        forwardPacket: O(logn)
 #        getCount:      O(logn)
-# Space: O(n)
 
 import collections
 from sortedcontainers import SortedList

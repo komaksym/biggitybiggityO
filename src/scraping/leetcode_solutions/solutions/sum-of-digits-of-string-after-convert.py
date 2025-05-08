@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n + logn + log(logn) + ...) = O(n)
-# Space: O(1)
 
 class Solution(object):
     def getLucky(self, s, k):

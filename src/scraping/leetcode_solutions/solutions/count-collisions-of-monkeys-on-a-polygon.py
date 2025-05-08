@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # combinatorics, fast exponentiation
 class Solution(object):

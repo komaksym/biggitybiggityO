@@ -1,5 +1,4 @@
 # Time:  O(m + n), excluding ctor of result
-# Space: O(1)
 
 # optimized from Solution2 since we can find next i, j pair without nested loops
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(1)
 class Solution2(object):
     def restoreMatrix(self, rowSum, colSum):
         """

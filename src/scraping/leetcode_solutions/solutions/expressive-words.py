@@ -1,5 +1,4 @@
 # Time:  O(n + s), n is the sum of all word lengths, s is the length of S
-# Space: O(l + s), l is the max word length
 
 import itertools
 

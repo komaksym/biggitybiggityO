@@ -1,5 +1,4 @@
 # Time:  O(n * 2^n)
-# Space: O(n), longest possible path in tree, which is if all numbers are increasing.
 
 class Solution(object):
     def findSubsequences(self, nums):

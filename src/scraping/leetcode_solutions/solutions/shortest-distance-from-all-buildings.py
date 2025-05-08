@@ -1,5 +1,4 @@
 # Time:  O(k * m * n), k is the number of the buildings
-# Space: O(m * n)
 
 class Solution(object):
     def shortestDistance(self, grid):

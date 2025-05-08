@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 class Solution(object):
     def findBestValue(self, arr, target):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 class Solution2(object):
     def findBestValue(self, arr, target):
         """
@@ -35,7 +33,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogm), m is the max of arr, which may be larger than n
-# Space: O(1)
 class Solution3(object):
     def findBestValue(self, arr, target):
         """

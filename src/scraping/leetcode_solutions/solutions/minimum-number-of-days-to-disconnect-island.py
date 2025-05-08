@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n)
 
 # template: https://github.com/kamyu104/GoogleCodeJam-Farewell-Rounds/blob/main/Round%20B/railroad_maintenance.py3
 # Reference: https://en.wikipedia.org/wiki/Biconnected_componen
@@ -95,7 +94,6 @@ class Solution(object):
 
 
 # Time:  O((m * n) * log(m * n))
-# Space: O((m * n) * log(m * n))
 # Template: https://github.com/kamyu104/MetaHackerCup-2022/blob/main/Final%20Round/tile_transposing.py3
 class PersistentUnionFind(object): 
     def __init__(self, n):
@@ -220,7 +218,6 @@ class Solution2(object):
 
 
 # Time:  O(m^2 * n^2)
-# Space: O(m * n)
 # flood fill
 class Solution3(object):
     def minDays(self, grid):

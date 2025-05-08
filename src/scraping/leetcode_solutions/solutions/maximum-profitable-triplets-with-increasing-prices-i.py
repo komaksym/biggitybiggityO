@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import itertools
 from sortedcontainers import SortedList
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 from sortedcontainers import SortedList
 
 
@@ -82,7 +80,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 
 
@@ -126,7 +123,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 
 
@@ -192,7 +188,6 @@ class Solution4(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # prefix sum, segment tree
 class Solution5(object):
     def maxProfit(self, prices, profits):

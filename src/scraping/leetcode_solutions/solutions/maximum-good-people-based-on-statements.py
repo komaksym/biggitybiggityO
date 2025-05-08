@@ -1,5 +1,4 @@
 # Time:  O(n^2 * 2^n)
-# Space: O(1)
 
 # brute force, bitmask
 class Solution(object):

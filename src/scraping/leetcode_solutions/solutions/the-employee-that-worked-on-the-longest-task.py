@@ -1,5 +1,4 @@
 # Time:  O(l)
-# Space: O(1)
 
 # array
 class Solution(object):

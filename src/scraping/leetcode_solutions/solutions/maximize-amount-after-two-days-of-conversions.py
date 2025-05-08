@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 # Bellman-Ford Algorithm
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
         BellmanFord(dist, pairs1, rates1)
         BellmanFord(dist, pairs2, rates2)
         return dist[initialCurrency]
-# Space: O(n)
 import collections
 
 

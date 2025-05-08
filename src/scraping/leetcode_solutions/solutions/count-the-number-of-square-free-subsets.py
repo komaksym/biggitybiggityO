@@ -1,5 +1,4 @@
 # Time:  O(n + m * 2^p)
-# Space: O(m * 2^p)
 
 import collections
 
@@ -52,7 +51,6 @@ class Solution(object):
 
 
 # Time:  O(n + m * 2^p)
-# Space: O(m * 2^p)
 import collections
 
 

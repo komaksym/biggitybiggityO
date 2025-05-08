@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # graph, hash table
 class Solution2(object):
@@ -23,7 +22,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # graph, hash table
 class Solution2(object):
     def findChampion(self, n, edges):

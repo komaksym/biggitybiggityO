@@ -1,7 +1,6 @@
 # Time:  set: O((r * c)^2)
 #        get: O(1)
 #        sum: O((r * c)^2)
-# Space: O(r * c)
 
 import collections
 

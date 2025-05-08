@@ -1,5 +1,4 @@
 # Time:  O(n * sqrt(n))
-# Space: O(n * sqrt(n))
 
 class Solution(object):
     def solve(self, nums, queries):

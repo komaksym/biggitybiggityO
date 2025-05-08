@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def sortString(self, s):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 import collections
 
 

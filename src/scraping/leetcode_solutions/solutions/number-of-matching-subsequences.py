@@ -1,5 +1,4 @@
 # Time:  O(n + w), n is the size of S, w is the size of words
-# Space: O(k), k is the number of words
 
 import collections
 

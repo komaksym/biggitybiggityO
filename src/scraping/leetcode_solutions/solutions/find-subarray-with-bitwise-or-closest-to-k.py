@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r = max(nums)
-# Space: O(logr)
 
 # freq table, two pointers, sliding window, lc1521
 class BitCount(object):
@@ -57,7 +56,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r = max(nums)
-# Space: O(logr)
 # dp, lc1521
 class Solution2(object):
     def minimumDifference(self, nums, k):

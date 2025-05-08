@@ -1,10 +1,8 @@
 # Time:  O(E * sqrt(V)) = O(m * n * sqrt(m * n))
-# Space: O(V) = O(m * n)
 
 from functools import partial
 
 # Time:  O(E * sqrt(V))
-# Space: O(V)
 # Source code from http://code.activestate.com/recipes/123641-hopcroft-karp-bipartite-matching/
 # Hopcroft-Karp bipartite max-cardinality matching and max independent set
 # David Eppstein, UC Irvine, 27 Apr 2002

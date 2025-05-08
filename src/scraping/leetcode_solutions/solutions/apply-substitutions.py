@@ -1,5 +1,4 @@
 # Time:  O(r * 2^r)
-# Space: O(r * 2^r)
 
 import collections
 
@@ -64,7 +63,6 @@ class Solution(object):
 
 
 # Time:  O(r * 2^r)
-# Space: O(r * 2^r)
 # memoization
 class Solution2(object):
     def applySubstitutions(self, replacements, text):

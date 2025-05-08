@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Node(object):
     def __init__(self, x):
@@ -31,7 +30,6 @@ class Solution(object):
         return dummy.__next__
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def copyRandomList(self, head):
         dummy = Node(0)
@@ -52,7 +50,6 @@ class Solution2(object):
         return dummy.__next__
 
 # time: O(n)
-# space: O(n)
 from collections import defaultdict
 
 

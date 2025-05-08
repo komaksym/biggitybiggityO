@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 # bfs
 class Solution(object):
@@ -37,7 +36,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # dfs
 class Solution2(object):
     def findMaxFish(self, grid):

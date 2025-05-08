@@ -1,5 +1,4 @@
 # Time:  O(s + n * k), n is the number of the word_lens
-# Space: O(k)
 
 class Solution(object):
     def minimumCost(self, sentence, k):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(s + n * k), n is the number of the word_lens
-# Space: O(n)
 class Solution2(object):
     def minimumCost(self, sentence, k):
         """
@@ -68,7 +66,6 @@ class Solution2(object):
 
 
 # Time:  O(s + n * k), n is the number of the word_lens
-# Space: O(n)
 class Solution3(object):
     def minimumCost(self, sentence, k):
         """

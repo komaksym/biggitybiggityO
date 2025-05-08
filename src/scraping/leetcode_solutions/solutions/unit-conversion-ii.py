@@ -1,5 +1,4 @@
 # Time:  O(n + qlogm)
-# Space: O(n)
 
 # bfs, fast exponentiation
 class Solution(object):

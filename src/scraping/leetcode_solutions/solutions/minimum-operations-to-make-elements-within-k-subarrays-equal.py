@@ -1,5 +1,4 @@
 # Time:  O(nlogx + k * n)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 
@@ -72,7 +71,6 @@ class Solution(object):
 
 
 # Time:  O(nlogx + k * n)
-# Space: O(n)
 import heapq
 import collections
 

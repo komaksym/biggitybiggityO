@@ -1,5 +1,4 @@
 # Time:  O(nlogn + m + qlogn)
-# Space: O(n)
 
 # segment tree
 class Solution(object):

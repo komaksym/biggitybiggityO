@@ -1,5 +1,4 @@
 # Time:  O(nlogn + klogk + klogn)
-# Space: O(n + k)
 
 from sortedcontainers import SortedList
 
@@ -36,7 +35,6 @@ class Solution(object):
             result[idx] = find_closest(ids, r)
         return result
 
-# Space: O(n + k)
 from sortedcontainers import SortedList
 
 

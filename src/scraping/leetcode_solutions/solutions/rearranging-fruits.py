@@ -1,5 +1,4 @@
 # Time:  O(n) on average
-# Space: O(n)
 
 import random
 import collections

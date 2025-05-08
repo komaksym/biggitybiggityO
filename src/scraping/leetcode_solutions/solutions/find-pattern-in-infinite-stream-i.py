@@ -1,5 +1,4 @@
 # Time:  O(p + n)
-# Space: O(p)
 
 class InfiniteStream:
     def __next__(self):

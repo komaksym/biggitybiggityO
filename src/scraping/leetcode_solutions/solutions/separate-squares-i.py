@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort, line sweep
 class Solution(object):
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr)
-# Space: O(1)
 # binary search
 class Solution2(object):
     def separateSquares(self, squares):

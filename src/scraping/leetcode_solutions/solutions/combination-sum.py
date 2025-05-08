@@ -1,5 +1,4 @@
 # Time:  O(k * n^k)
-# Space: O(k)
 
 class Solution(object):
     def combinationSum(self, candidates, target):

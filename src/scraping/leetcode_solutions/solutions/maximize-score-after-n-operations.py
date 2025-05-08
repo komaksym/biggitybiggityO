@@ -1,5 +1,4 @@
 # Time:  O(n^2 * 2^n)
-# Space: O(2^n)
 
 import itertools
 from fractions import gcd

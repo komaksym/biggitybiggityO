@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(logn)
 
 class Solution(object):
     def rotatedDigits(self, N):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def rotatedDigits(self, N):
         """
@@ -50,7 +48,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn) = O(n), because O(logn) = O(32) by this input
-# Space: O(logn) = O(1)
 class Solution3(object):
     def rotatedDigits(self, N):
         """

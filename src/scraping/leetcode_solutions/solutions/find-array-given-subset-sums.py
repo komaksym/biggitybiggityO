@@ -1,5 +1,4 @@
 # Time:  O(n * 2^n), len(sums) = 2^n
-# Space: O(1)
 
 # [proof]
 # - let d = sorted_sums[0]-sorted_sums[1] and d != -d (d = 0 is trival), where one of +d/-d is the smallest positive or largest negative number of the original solution of [S1, ..., S(2^n)]
@@ -53,7 +52,6 @@ class Solution(object):
 
 # Time:  O(2^n + n * r), len(sums) = 2^n
 #                      , r = max(sums)-min(sums)
-# Space: O(2^n + r)
 import collections
 from functools import reduce
 
@@ -95,7 +93,6 @@ class Solution2(object):
 
 
 # Time:  O(n * 2^n), len(sums) = 2^n
-# Space: O(2^n)
 import collections
 import operator
 
@@ -139,7 +136,6 @@ class Solution3(object):
 
 
 # Time:  O(n * 2^n), len(sums) = 2^n
-# Space: O(2^n)
 import collections
 
 
@@ -177,7 +173,6 @@ class Solution4(object):
 
 
 # Time:  O(n * 2^n), len(sums) = 2^n
-# Space: O(2^n)
 import collections
 
 

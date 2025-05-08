@@ -1,5 +1,4 @@
 # Time:  O((m * n) * log(m * n))
-# Space: O(m * n)
 
 # sort, greedy
 class Solution(object):

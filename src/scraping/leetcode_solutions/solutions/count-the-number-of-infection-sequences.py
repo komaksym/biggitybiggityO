@@ -1,6 +1,5 @@
 # Time:  precompute: O(max_n)
 #        runtime:    O(s + logn)
-# Space: O(max_n)
 
 # combinatorics
 FACT, INV, INV_FACT = [[1]*2 for _ in range(3)]

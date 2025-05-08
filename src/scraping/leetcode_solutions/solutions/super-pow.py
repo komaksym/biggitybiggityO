@@ -1,5 +1,4 @@
 # Time:  O(n), n is the size of b.
-# Space: O(1)
 
 class Solution(object):
     def superPow(self, a, b):

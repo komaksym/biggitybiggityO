@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(2^10)
 
 class Solution(object):
     def wonderfulSubstrings(self, word):

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 class Solution(object):
     def eraseOverlapIntervals(self, intervals):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 class Solution2(object):
     def eraseOverlapIntervals(self, intervals):
         """

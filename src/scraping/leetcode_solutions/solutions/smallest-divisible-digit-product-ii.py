@@ -1,5 +1,4 @@
 # Time:  O(n + logt)
-# Space: O(1)
 
 # freq table, greedy, prefix sum, number theory
 class Solution(object):
@@ -63,7 +62,6 @@ class Solution(object):
 
 
 # Time:  O(nlogt)
-# Space: O(logt)
 # freq table, greedy, prefix sum, number theory
 class Solution2(object):
     def smallestNumber(self, num, t):

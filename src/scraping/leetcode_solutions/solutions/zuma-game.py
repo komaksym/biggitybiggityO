@@ -1,5 +1,4 @@
 # Time:  O((b+h)^2 * h!*(b+h-1)!/(b-1)!)
-# Space: O((b+h) * h!*(b+h-1)!/(b-1)!)
 
 import collections
 
@@ -46,7 +45,6 @@ class Solution(object):
 
 
 # Time:  O((b+h) * h!*(b+h-1)!/(b-1)!)
-# Space: O((b+h) * h!*(b+h-1)!/(b-1)!)
 import collections
 
 
@@ -96,7 +94,6 @@ class Solution_TLE(object):
 
 
 # Time:  O((b * h) * b * b! * h!)
-# Space: O(b * b! * h!)
 import collections
 
 
@@ -176,7 +173,6 @@ class Solution_GREEDY_ACCEPT_BUT_NOT_PROVED(object):
 
 
 # Time:  O(b * b! * h!)
-# Space: O(b * b! * h!)
 # if a ball can be only inserted beside a ball with same color,
 # we can do by this solution
 class Solution_WRONG_GREEDY_AND_NOT_ACCEPT_NOW(object):

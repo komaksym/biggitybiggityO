@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class SegmentTreeNode(object):
     def __init__(self, start, end):

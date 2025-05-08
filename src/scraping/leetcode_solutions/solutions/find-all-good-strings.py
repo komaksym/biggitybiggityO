@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m)
 
 class Solution(object):
     def findGoodStrings(self, n, s1, s2, evil):

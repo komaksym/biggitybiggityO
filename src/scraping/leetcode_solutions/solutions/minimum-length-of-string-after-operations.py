@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(26)
 
 # freq table
 class Solution(object):
@@ -15,7 +14,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(26)
 import collections
 
 

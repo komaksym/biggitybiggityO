@@ -1,5 +1,4 @@
 # Time:  O(l * n^2)
-# Space: O(1)
 
 class Solution(object):
     def findLUSlength(self, strs):

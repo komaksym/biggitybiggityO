@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(w)
 
 class Solution(object):
     def spellchecker(self, wordlist, queries):

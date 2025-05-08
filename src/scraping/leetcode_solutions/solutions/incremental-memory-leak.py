@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # Same problem from https://codingcompetitions.withgoogle.com/codejam/round/000000000019ffb9/00000000003384ea
 class Solution(object):

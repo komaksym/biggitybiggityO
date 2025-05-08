@@ -1,7 +1,6 @@
 # Time:  ctor:  O(1)
 #        add:   O(logn), amortized
 #        count: O(1)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 

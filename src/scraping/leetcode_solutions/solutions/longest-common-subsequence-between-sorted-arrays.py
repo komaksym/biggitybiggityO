@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(l), l is min(len(arr) for arr in arrays)
 
 class Solution(object):
     def longestCommomSubsequence(self, arrays):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(k), k is min(m * n, max(x for arr in arrays for x in arr))
 import collections
 
 

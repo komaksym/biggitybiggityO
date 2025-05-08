@@ -1,5 +1,4 @@
 # Time:  O(n), n is the total sum of the lengths of words
-# Space: O(t), t is the number of nodes in trie
 
 from collections import defaultdict
 from operator import getitem

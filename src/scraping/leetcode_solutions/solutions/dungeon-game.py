@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 class Solution(object):
     def calculateMinimumHP(self, dungeon):
@@ -15,7 +14,6 @@ class Solution(object):
         return DP[0]
 
 # Time:  O(m * n logk), where k is the possible maximum sum of loses
-# Space: O(m + n)
 class Solution2(object):
     def calculateMinimumHP(self, dungeon):
         maximum_loses = 0

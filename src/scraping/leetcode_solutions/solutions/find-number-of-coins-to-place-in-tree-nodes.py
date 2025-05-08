@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # iterative dfs
 class Solution(object):
@@ -48,7 +47,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dfs
 class Solution2(object):
     def placedCoins(self, edges, cost):

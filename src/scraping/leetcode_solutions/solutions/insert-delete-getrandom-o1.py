@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(n)
 
 from random import randint
 

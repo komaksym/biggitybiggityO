@@ -1,5 +1,4 @@
 # Time:  O(26n)
-# Space: O(26)
 
 class Solution(object):
     def minimumDistance(self, word):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(52n)
-# Space: O(52)
 class Solution2(object):
     def minimumDistance(self, word):
         """

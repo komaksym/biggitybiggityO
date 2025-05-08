@@ -1,6 +1,5 @@
 # Time:  O(nlogn), n is the number of total emails,
 #                  and the max length ofemail is 320, p.s. {64}@{255}
-# Space: O(n)
 
 import collections
 

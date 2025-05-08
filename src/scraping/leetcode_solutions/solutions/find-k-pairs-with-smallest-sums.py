@@ -1,5 +1,4 @@
 # Time:  O(k * log(min(n, m, k))), where n is the size of num1, and m is the size of num2.
-# Space: O(min(n, m, k))
 
 from heapq import heappush, heappop
 
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # time: O(mn * log k)
-# space: O(k)
 from heapq import nsmallest
 from itertools import product
 

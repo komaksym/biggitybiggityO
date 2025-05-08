@@ -1,5 +1,4 @@
 # Time:  O(n) ~ O(nlogn)
-# Space: O(n)
 
 import heapq
 
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution2(object):
     def minAvailableDuration(self, slots1, slots2, duration):
         """

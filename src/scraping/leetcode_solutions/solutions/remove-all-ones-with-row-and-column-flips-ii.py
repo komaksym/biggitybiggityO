@@ -1,5 +1,4 @@
 # Time:  O(m * n * 2^(m * n))
-# Space: O(2^(m * n))
 
 # dp, bitmasks
 class Solution(object):

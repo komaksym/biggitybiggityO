@@ -1,5 +1,4 @@
 # Time:  O(n * k), k is the length of the common prefix
-# Space: O(1)
 
 class Solution(object):
     def longestCommonPrefix(self, strs):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n * k), k is the length of the common prefix
-# Space: O(k)
 class Solution2(object):
     def longestCommonPrefix(self, strs):
         """

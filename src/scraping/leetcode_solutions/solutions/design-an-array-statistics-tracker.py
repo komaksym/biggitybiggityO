@@ -4,7 +4,6 @@
 #        getMean:                O(1)
 #        getMedian:              O(1)
 #        getMode:                O(1)
-# Space: O(n)
 
 # deque, freq table, sorted list
 from sortedcontainers import SortedList

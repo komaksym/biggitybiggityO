@@ -1,5 +1,4 @@
 # Time:  O(x)
-# Space: O(x)
 
 # memoization
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(x)
-# Space: O(x)
 # bfs
 class Solution2(object):
     def minimumOperationsToMakeEqual(self, x, y):

@@ -1,5 +1,4 @@
 # Time:  O(logn) ~ O(n)
-# Space: O(1)
 
 class Solution(object):
     def findMin(self, nums):

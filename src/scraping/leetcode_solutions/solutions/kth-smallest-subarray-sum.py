@@ -1,5 +1,4 @@
 # Time:  O(nlogr)
-# Space: O(1)
 
 class Solution(object):
     def kthSmallestSubarraySum(self, nums, k):

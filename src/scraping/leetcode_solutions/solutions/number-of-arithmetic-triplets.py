@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # hash table
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
         lookup = set(nums)
         return sum((x-diff in lookup) and (x-2*diff in lookup) for x in nums)
 
-# Space: O(n)
 import collections
 
 

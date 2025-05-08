@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # dp, greedy, prefix sum, mono stack, two pointers
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 
 
@@ -48,7 +46,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import bisect
 
 
@@ -72,7 +69,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import bisect
 
 

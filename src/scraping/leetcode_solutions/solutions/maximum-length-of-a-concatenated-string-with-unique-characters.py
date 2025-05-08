@@ -1,5 +1,4 @@
 # Time:  O(n) ~ O(2^n)
-# Space: O(1) ~ O(2^n)
 
 power = [1]
 log2 = {1:0}
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(2^n)
-# Space: O(1)
 class Solution2(object):
     def maxLength(self, arr):
         """

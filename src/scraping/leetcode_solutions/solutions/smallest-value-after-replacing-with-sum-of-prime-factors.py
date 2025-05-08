@@ -1,5 +1,4 @@
 # Time:  O(s * logn), s is the times of simulation
-# Space: O(max_n^0.5)
 
 # number theory, simulation
 def linear_sieve_of_eratosthenes(n): 

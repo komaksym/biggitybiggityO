@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n^2)
-# Space: O(n)
 
 # dp
 cnt = [0]*2
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dp, combinatorics
 cnt = [0]*2
 class Solution2(object):

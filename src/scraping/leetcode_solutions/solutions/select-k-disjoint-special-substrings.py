@@ -1,5 +1,4 @@
 # Time:  O(n + 26^3)
-# Space: O(26)
 
 # hash table, sort, greedy
 class Solution(object):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(26 * n + 26 * log(26))
-# Space: O(26)
 # hash table, sort, greedy
 class Solution2(object):
     def maxSubstringLength(self, s, k):

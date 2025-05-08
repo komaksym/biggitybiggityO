@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 import collections
 
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(w), w is the max number of nodes in the levels of the tree
 class Solution2(object):
     def getImportance(self, employees, id):
         """

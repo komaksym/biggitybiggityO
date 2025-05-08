@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(nlogr) = O(n * 30)
-# Space: O(logr) = O(30)
 
 # freq table, two pointers
 class Solution(object):

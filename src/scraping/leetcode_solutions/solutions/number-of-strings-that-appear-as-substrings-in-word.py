@@ -1,7 +1,6 @@
 # Time:  O(n * l + m), n is the number of patterns
 #                    , l is the max length of patterns
 #                    , m is the length of word     
-# Space: O(t)        , t is the total size of ac automata trie
 
 import collections
 
@@ -83,7 +82,6 @@ class Solution(object):
 # Time:  O(n * (l + m)), n is the number of patterns
 #                      , l is the max length of patterns
 #                      , m is the length of word
-# Space: O(l)
 # kmp solution
 class Solution2(object):
     def numOfStrings(self, patterns, word):
@@ -125,7 +123,6 @@ class Solution2(object):
 # Time:  O(n * m * l), n is the number of patterns
 #                    , l is the max length of patterns
 #                    , m is the length of word
-# Space: O(1)
 # built-in solution
 class Solution3(object):
     def numOfStrings(self, patterns, word):

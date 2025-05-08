@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # number theory, tree dp, iterative dfs
 class Solution(object):
@@ -65,7 +64,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # number theory, tree dp, dfs
 class Solution2(object):
     def countPaths(self, n, edges):
@@ -116,7 +114,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # number theory, union find
 class UnionFind(object): 
     def __init__(self, n):

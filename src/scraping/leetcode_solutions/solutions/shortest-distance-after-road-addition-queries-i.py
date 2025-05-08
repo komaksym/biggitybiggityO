@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2)
 
 # bfs
 class Solution(object):
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * logn)
-# Space: O(n^2)
 import heapq
 
 

@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # hash table
 class Solution(object):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # dp
 class Solution2(object):
     def longestSquareStreak(self, nums):

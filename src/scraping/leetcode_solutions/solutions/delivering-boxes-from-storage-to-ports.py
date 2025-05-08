@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def boxDelivering(self, boxes, portsCount, maxBoxes, maxWeight):

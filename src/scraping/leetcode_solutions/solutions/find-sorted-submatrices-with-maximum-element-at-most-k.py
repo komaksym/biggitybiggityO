@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m)
 
 # mono stack
 class Solution(object):
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(m)
 # mono stack, dp
 class Solution2(object):
     def countSubmatrices(self, grid, k):

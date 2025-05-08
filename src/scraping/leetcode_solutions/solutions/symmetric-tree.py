@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h), h is height of binary tree
 # Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
 class TreeNode(object):

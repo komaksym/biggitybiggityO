@@ -1,5 +1,4 @@
 # Time:  O(o + k * eloge + n), k = len(set(original)), e is the number of edges reachable from a given node u
-# Space: O(o + k * v), v is the number of nodes reachable from a given node u
 
 import heapq
 
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(o + 26^3 + n)
-# Space: O(o + 26^2)
 # Floyd-Warshall algorithm 
 class Solution2(object):
     def minimumCost(self, source, target, original, changed, cost):

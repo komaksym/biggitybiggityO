@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import heapq
 
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 import collections
 
 

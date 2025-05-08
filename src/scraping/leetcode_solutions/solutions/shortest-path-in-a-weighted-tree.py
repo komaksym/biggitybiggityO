@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 class BIT(object): 
     def __init__(self, n):
@@ -79,7 +78,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # dfs, fenwick tree
 class Solution2(object):
     def treeQueries(self, n, edges, queries):

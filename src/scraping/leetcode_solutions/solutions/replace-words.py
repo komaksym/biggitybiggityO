@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(t), t is the number of nodes in trie
 
 import collections
 

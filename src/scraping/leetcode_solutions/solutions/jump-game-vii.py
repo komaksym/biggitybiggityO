@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # dp with line sweep solution
 class Solution(object):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 import collections
 
 

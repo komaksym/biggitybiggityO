@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(1)
 
 class Solution(object):
     def getStrongest(self, arr, k):
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 class Solution2(object):
     def getStrongest(self, arr, k):
         """
@@ -38,7 +36,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 import random
 
 

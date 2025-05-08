@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(nlogn)
-# Space: O(1)
 
 # sort, math
 class Solution(object):

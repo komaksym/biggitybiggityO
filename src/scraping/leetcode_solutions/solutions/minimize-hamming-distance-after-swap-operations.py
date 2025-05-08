@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def minimumHammingDistance(self, source, target, allowedSwaps):
@@ -39,7 +38,6 @@ class Solution(object):
 
 
 # Time:  O(n * α(n)) ~= O(n)
-# Space: O(n)
 import collections
 
 

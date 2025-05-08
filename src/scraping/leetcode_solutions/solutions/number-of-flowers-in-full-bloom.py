@@ -1,5 +1,4 @@
 # Time:  O(nlogn + mlogn)
-# Space: O(n)
 
 import bisect
 
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + mlogn)
-# Space: O(n)
 import bisect
 
 

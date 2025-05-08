@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 import itertools
@@ -45,7 +44,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # mono stack + bottom-up dp
 class Solution2(object):
     def maxJumps(self, arr, d):
@@ -162,7 +160,6 @@ class SegmentTree(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # mono stack + bottom-up dp + segment tree
 class Solution3(object):
     def maxJumps(self, arr, d):

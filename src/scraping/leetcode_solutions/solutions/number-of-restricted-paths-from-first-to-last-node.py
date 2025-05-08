@@ -1,5 +1,4 @@
 # Time:  O(|E| * log|V|)
-# Space: O(|E| + |V|)
 
 import heapq
 

@@ -1,5 +1,4 @@
 # Time:  O(n^2 ~ 2^n)
-# Space: O(n^2)
 
 class Solution(object):
     def partition(self, s):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(2^n)
-# Space: O(n)
 # recursive solution
 class Solution2(object):
     def partition(self, s):

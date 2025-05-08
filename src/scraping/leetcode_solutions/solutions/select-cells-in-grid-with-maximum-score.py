@@ -1,5 +1,4 @@
 # Time:  O(n^2 * max(n, r)), r = max(x for row in grid for x in row)
-# Space: O(n * max(n, r))
 
 # hungarian algorithm, weighted bipartite matching
 class Solution(object):
@@ -55,7 +54,6 @@ class Solution(object):
 
 
 # Time:  O(r + (n * m) * 2^n), r = max(x for row in grid for x in row)
-# Space: O(r + n * m + 2^n)
 # dp, bitmasks
 class Solution2(object):
     def maxScore(self, grid):

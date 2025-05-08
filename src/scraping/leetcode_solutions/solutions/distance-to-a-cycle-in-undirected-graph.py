@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|)
-# Space: O(|V| + |E|)
 
 # graph, dfs, bfs
 class Solution(object):

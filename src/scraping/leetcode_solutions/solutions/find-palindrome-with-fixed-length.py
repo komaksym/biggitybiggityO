@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(1)
 
 # math
 class Solution(object):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(n * l)
-# Space: O(l)
 # math
 class Solution2(object):
     def kthPalindrome(self, queries, intLength):

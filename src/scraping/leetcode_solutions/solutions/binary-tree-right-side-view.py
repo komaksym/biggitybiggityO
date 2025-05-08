@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -27,7 +26,6 @@ class Solution(object):
 
 # BFS solution
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def rightSideView(self, root):
         if root is None:

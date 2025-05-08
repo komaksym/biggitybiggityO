@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 # sort, array
 class Solution(object):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n^3)
-# Space: O(1)
 # sort, array
 class Solution2(object):
     def numberOfPairs(self, points):

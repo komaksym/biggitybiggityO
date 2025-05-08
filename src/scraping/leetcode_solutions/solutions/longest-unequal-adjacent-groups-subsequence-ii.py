@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 import itertools
 
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 import itertools
 
 
@@ -61,7 +59,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 import itertools
 
 

@@ -1,5 +1,4 @@
 # Time:  O(26 * 3 + n * 3)
-# Space: O(26 * 3)
 
 # string, hash table
 class Solution(object):

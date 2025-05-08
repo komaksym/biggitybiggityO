@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(l)
 
 # string
 class Solution(object):

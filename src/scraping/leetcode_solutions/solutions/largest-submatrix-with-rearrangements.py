@@ -1,5 +1,4 @@
 # Time:  O(m * nlogn)
-# Space: O(1)
 
 class Solution(object):
     def largestSubmatrix(self, matrix):

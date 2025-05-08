@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 # brute force, math
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # brute force, math
 class Solution2(object):
     def largestSquareArea(self, bottomLeft, topRight):

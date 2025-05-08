@@ -1,5 +1,4 @@
 # Time:  O(n + qlogn)
-# Space: O(n)
 
 # bit, fenwick tree
 class Solution(object):
@@ -53,7 +52,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + qlogn)
-# Space: O(n)
 # bit, fenwick tree
 class Solution2(object):
     def countOfPeaks(self, nums, queries):

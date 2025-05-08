@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # prefix sum, math
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
             result = max(result, prefix, suffix)
         return result
 
-# Space: O(1)
 # prefix sum
 class Solution2(object):
     def maximumSumScore(self, nums):

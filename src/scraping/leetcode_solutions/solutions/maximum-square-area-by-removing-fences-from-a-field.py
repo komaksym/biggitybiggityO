@@ -1,5 +1,4 @@
 # Time:  O(h^2 + v^2)
-# Space: O(h^2 + v^2)
 
 # hash table
 class Solution(object):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(h^2 + v^2)
-# Space: O(min(h, v)^2)
 # hash table
 class Solution2(object):
     def maximizeSquareArea(self, m, n, hFences, vFences):

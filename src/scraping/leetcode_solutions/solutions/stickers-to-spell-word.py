@@ -1,5 +1,4 @@
 # Time:  O(T * S^T)
-# Space: O(T * S^T)
 
 import collections
 

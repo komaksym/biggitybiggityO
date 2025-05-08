@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(m * 2^n)
-# Space: O(2^n)
 
 # bitmasks, constructive algorithms, greedy
 class Solution(object):

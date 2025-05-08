@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 import collections
 
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 class Solution2(object):
     def smallestStringWithSwaps(self, s, pairs):

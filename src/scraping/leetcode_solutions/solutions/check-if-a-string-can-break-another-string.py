@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 import string
@@ -23,7 +22,6 @@ class Solution(object):
 
         count1, count2 = collections.Counter(s1), collections.Counter(s2)
         return is_break(count1, count2) or is_break(count2, count1)
-# Space: O(1)
 import itertools
 
 
@@ -38,7 +36,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 import itertools
 
 

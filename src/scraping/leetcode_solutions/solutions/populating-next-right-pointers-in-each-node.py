@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -27,7 +26,6 @@ class Solution(object):
             head = head.left
 
 # Time:  O(n)
-# Space: O(logn)
 # recusion
 class Solution2(object):
     def connect(self, root):

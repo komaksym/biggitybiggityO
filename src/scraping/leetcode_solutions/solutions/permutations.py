@@ -1,5 +1,4 @@
 # Time:  O(n * n!)
-# Space: O(n)
 
 class Solution(object):
     def permute(self, num):
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * n!)
-# Space: O(n^2)
 class Solution2(object):
     def permute(self, nums):
         """

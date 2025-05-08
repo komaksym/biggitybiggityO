@@ -1,5 +1,4 @@
 # Time:  O(nloga) = O(n), a is the size of alphabet
-# Space: O(a) = O(1)
 
 import collections
 import heapq

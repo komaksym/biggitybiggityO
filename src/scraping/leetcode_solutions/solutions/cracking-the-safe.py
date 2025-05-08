@@ -1,5 +1,4 @@
 # Time:  O(k^n)
-# Space: O(k^n)
 
 class Solution(object):
     def crackSafe(self, n, k):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # Time:  O(k^n)
-# Space: O(k^n)
 class Solution2(object):
     def crackSafe(self, n, k):
         """
@@ -45,7 +43,6 @@ class Solution2(object):
 
 
 # Time:  O(k^n)
-# Space: O(k^n)
 class Solution3(object):
     def crackSafe(self, n, k):
         """
@@ -71,7 +68,6 @@ class Solution3(object):
 
 
 # Time:  O(n * k^n)
-# Space: O(n * k^n)
 class Solution4(object):
     def crackSafe(self, n, k):
         """
@@ -94,7 +90,6 @@ class Solution4(object):
 
 
 # Time:  O(n * k^n)
-# Space: O(n * k^n)
 class Solution5(object):
     def crackSafe(self, n, k):
         """

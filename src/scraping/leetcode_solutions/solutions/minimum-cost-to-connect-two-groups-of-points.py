@@ -1,5 +1,4 @@
 # Time:  O(m * n * 2^n)
-# Space: O(2^n)
 
 # dp with rolling window
 class Solution(object):

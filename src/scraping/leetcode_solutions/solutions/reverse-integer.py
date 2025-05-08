@@ -1,5 +1,4 @@
 # Time:  O(logn) = O(1)
-# Space: O(1)
 
 class Solution(object):
     def reverse(self, x):

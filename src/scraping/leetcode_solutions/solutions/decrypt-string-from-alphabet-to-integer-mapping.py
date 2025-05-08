@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # forward solution
 class Solution(object):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # backward solution
 class Solution2(object):
     def freqAlphabets(self, s):
@@ -47,7 +45,6 @@ class Solution2(object):
         return "".join(reversed(result))
 
 # Time:  O(n)
-# Space: O(1)
 import re
 
 

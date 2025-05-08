@@ -1,5 +1,4 @@
 # Time:  O(m * n), m is the number of words, n is the length of each word
-# Space: O(1)
 
 import collections
 
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(m * n), m is the number of words, n is the length of each word
-# Space: O(n)
 import collections
 
 

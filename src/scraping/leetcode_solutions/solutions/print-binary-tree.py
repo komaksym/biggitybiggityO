@@ -1,5 +1,4 @@
 # Time:  O(h * 2^h)
-# Space: O(h * 2^h)
 
 class Solution(object):
     def printTree(self, root):

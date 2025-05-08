@@ -1,5 +1,4 @@
 # Time:  O(n * l), l is the average length of words
-# Space: O(1)
 
 class Solution(object):
     def isAlienSorted(self, words, order):

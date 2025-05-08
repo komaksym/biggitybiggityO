@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # number theory
 class Solution(object):

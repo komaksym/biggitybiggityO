@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(w)
 # bfs
 class Solution2(object):
     def heightOfTree(self, root):

@@ -1,5 +1,4 @@
 # Time:  O(m * n * logk + nCr((k-1)*(2*k-1)+1), k) * k) = O(m * n)
-# Space: O(k * (m + n)) = O(m + n)
 
 import heapq
 import itertools
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(m * n * logk + nCr((k-1)*(2*k-1)+1), k) * k) = O(m * n)
-# Space: O(k * (m + n)) = O(m + n)
 import heapq
 import itertools
 

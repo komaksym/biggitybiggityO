@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 import itertools
@@ -21,7 +20,6 @@ class Solution(object):
             sl.add(x-y)
         return result
 
-# Space: O(n)
 import itertools
 import bisect
 
@@ -65,7 +63,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import itertools
 
 

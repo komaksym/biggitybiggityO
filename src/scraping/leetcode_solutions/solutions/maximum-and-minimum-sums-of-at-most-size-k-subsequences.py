@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort, combinatorics, two pointers, sliding window
 MOD = 10**9+7
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + n * k)
-# Space: O(n)
 # sort, combinatorics
 class Solution2(object):
     def minMaxSums(self, nums, k):

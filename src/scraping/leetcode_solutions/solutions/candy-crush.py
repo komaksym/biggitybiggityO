@@ -1,5 +1,4 @@
 # Time:  O((R * C)^2)
-# Space: O(1)
 
 class Solution(object):
     def candyCrush(self, board):

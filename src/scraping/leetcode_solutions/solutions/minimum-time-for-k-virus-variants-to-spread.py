@@ -1,5 +1,4 @@
 # Time:  O(nlogn * logr), r is the sum of range x size and range y size
-# Space: O(n)
 
 # Range Maximum Query
 class SegmentTree(object): 
@@ -126,7 +125,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * logr), r is the sum of range x size and range y size
-# Space: O(n)
 import collections
 
 

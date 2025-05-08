@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 import collections
 
@@ -32,7 +31,6 @@ class Solution(object):
         dfs(root, 0, level_sums)
         return level_sums.index(max(level_sums))+1
 
-# Space: O(w)
 # bfs solution
 class Solution2(object):
     def maxLevelSum(self, root):

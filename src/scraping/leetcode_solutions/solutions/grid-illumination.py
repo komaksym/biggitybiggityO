@@ -1,5 +1,4 @@
 # Time:  O(l + q)
-# Space: O(l)
 
 import collections
 

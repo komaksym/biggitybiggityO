@@ -1,5 +1,4 @@
 # Time:  O(h)
-# Space: O(h)
 
 class Solution(object):
     def deleteNode(self, root, key):

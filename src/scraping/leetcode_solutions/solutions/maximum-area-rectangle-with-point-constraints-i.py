@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # sort, fenwick tree, hash table
 class Solution(object):
@@ -45,7 +44,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # sort, brute force
 class Solution2(object):
     def maxRectangleArea(self, points):

@@ -1,5 +1,4 @@
 # Time:  O(n^2 * logr), r = max(nums)
-# Space: O(n)
 
 # dp
 class Solution(object):

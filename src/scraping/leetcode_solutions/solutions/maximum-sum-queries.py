@@ -1,5 +1,4 @@
 # Time:  O(nlogn + mlogm + mlogn)
-# Space: O(n + m)
 
 import itertools
 import bisect

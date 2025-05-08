@@ -1,5 +1,4 @@
 # Time:  O(logr)
-# Space: O(1)
 
 # hash table, bit manipulations
 class Solution(object):

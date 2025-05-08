@@ -1,5 +1,4 @@
 # Time:  O(n^2 * k), n = len(str(high))
-# Space: O(n^2 * k)
 
 # memoization (faster but more space)
 class Solution(object):
@@ -35,7 +34,6 @@ class Solution(object):
 
 
 # Time:  O(n^2 * k), n = len(str(high))
-# Space: O(n * k)
 # dp (slower but less space)
 class Solution2(object):
     def numberOfBeautifulIntegers(self, low, high, k):
@@ -72,7 +70,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2 * k), n = len(str(high))
-# Space: O(n^2 * k)
 # memoization (faster but more space)
 class Solution3(object):
     def numberOfBeautifulIntegers(self, low, high, k):
@@ -105,7 +102,6 @@ class Solution3(object):
 
 
 # Time:  O(n^2 * k), n = len(str(high))
-# Space: O(n * k)
 # dp (slower but less space)
 class Solution4(object):
     def numberOfBeautifulIntegers(self, low, high, k):

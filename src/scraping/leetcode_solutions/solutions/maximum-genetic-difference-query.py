@@ -1,5 +1,4 @@
 # Time:  O(nlogk + mlogk), k is max(max(vals), n-1)
-# Space: O(n + logk)
 
 import collections
 
@@ -67,7 +66,6 @@ class Solution(object):
 
 
 # Time:  O(nlogk + mlogk), k is max(max(vals), n-1)
-# Space: O(n + logk)
 import collections
 
 

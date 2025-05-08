@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k), k is maxWidth.
 
 class Solution(object):
     def fullJustify(self, words, maxWidth):

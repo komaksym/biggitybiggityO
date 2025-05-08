@@ -1,5 +1,4 @@
 # Time:  O(n^3)
-# Space: O(n^2)
 class Solution(object):
     def getMoneyAmount(self, n):
         """
@@ -14,7 +13,6 @@ class Solution(object):
 
 
 # Time:  O(n^3)
-# Space: O(n^2)
 class Solution2(object):
     def getMoneyAmount(self, n):
         """

@@ -1,5 +1,4 @@
 # Time:  O(n^3) on average
-# Space: O(n^2)
 
 class Solution(object):
     def encode(self, s):

@@ -1,5 +1,4 @@
 # Time:  O(n + 26^3 * logn)
-# Space: O(n)
 
 import bisect
 
@@ -38,7 +37,6 @@ class Solution(object):
 
 
 # Time:  O(n + 26^3 * logn)
-# Space: O(n)
 import bisect
 
 
@@ -77,7 +75,6 @@ class Solution2(object):
 
 
 # Time:  O(26 * n)
-# Space: O(26)
 # freq table, two pointers
 class Solution3(object):
     def maxSubstringLength(self, s):
@@ -116,7 +113,6 @@ class Solution3(object):
 
 
 # Time:  O(26^2 * n)
-# Space: O(26)
 # hash table, brute force
 class Solution5(object):
     def maxSubstringLength(self, s):

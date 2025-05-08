@@ -1,5 +1,4 @@
 # Time:  O(n^2) = O(1), since n is at most 99
-# Space: O(n) = O(1)
 
 class Solution(object):
     def champagneTower(self, poured, query_row, query_glass):

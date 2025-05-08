@@ -1,7 +1,6 @@
 # Time:  ctor:   O(1)
 #        change: O(logn)
 #        find:   O(1)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 

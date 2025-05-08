@@ -1,5 +1,4 @@
 # Time:  O(nlogn)
-# Space: O(n)
 
 # bit, fenwick tree, combinatorics
 class Solution(object):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # bit, fenwick tree, combinatorics
 class Solution2(object):
     def getPermutationIndex(self, perm):

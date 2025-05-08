@@ -1,5 +1,4 @@
 # Time:  O(n + logr)
-# Space: O(logr)
 
 import random
 
@@ -56,7 +55,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + logr)
-# Space: O(logr)
 # lc0564
 # sort, math, string
 class Solution2(object):

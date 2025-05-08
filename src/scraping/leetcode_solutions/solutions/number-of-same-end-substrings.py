@@ -1,5 +1,4 @@
 # Time:  O(26 * (n + q))
-# Space: O(26 * n)
 
 # freq table, prefix sum
 class Solution(object):

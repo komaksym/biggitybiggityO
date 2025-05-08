@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(p)
 
 class Solution(object):
     def minSubarray(self, nums, p):

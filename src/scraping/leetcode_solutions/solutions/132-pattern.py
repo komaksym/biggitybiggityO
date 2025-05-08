@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def find132pattern(self, nums):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 class Solution_TLE(object):
     def find132pattern(self, nums):
         """

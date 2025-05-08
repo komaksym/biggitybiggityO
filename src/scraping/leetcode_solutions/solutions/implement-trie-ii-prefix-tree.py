@@ -3,7 +3,6 @@
 #        count_word:   O(n)
 #        count_prefix: O(n)
 #        erase:        O(n)
-# Space: O(t), t is the number of nodes in trie
 
 class Node:
     def __init__(self):

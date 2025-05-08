@@ -1,5 +1,4 @@
 # Time:  O(q * n)
-# Space: O(1)
 
 # tree, lca
 class Solution(object):

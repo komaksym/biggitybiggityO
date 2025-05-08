@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def maximumScore(self, nums, k):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 import bisect
 
 

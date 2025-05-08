@@ -1,5 +1,4 @@
 # Time:  O(n * logr + q), r = max(a^b for a, b in queries)
-# Space: O(min(n * logr, r))
 
 # hash table
 class Solution(object):

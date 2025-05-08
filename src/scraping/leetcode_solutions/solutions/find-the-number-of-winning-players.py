@@ -1,5 +1,4 @@
 # Time:  O(p), p = len(pick)
-# Space: O(min(n * c, p)), c = max(y)
 
 import collections
 

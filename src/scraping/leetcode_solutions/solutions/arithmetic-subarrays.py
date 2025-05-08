@@ -1,5 +1,4 @@
 # Time:  O(n * q)
-# Space: O(n)
 
 import itertools
 

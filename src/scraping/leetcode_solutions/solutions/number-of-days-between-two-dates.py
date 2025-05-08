@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def __init__(self):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 import datetime
 
 

@@ -1,5 +1,4 @@
 # Time:  O(d^3), d is the number of distinct nums
-# Space: O(d)
 
 import collections
 import itertools

@@ -1,5 +1,4 @@
 # Time:  O(n + e)
-# Space: O(n + e)
 
 import collections
 
@@ -56,7 +55,6 @@ class Solution(object):
 
 
 # Time:  O(n + e)
-# Space: O(h)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(k)
-# Space: O(k)
 
 # combinatorics
 class Solution(object):

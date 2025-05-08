@@ -1,5 +1,4 @@
 # Time:  O(|V| + |E|) = O(|E|) since graph is connected, O(|E|) >= O(|V|) 
-# Space: O(|V| + |E|) = O(|E|)
 
 class Solution(object):
     def secondMinimum(self, n, edges, time, change):
@@ -50,7 +49,6 @@ class Solution(object):
 
 
 # Time:  O(|V| + |E|) = O(|E|) since graph is connected, O(|E|) >= O(|V|) 
-# Space: O(|V| + |E|) = O(|E|)
 class Solution2(object):
     def secondMinimum(self, n, edges, time, change):
         """

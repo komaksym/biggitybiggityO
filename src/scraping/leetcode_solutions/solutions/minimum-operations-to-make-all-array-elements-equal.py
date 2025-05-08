@@ -1,5 +1,4 @@
 # Time:  O(nlogn + qlogn)
-# Space: O(n)
 
 # sort, binary search, prefix sum
 class Solution(object):

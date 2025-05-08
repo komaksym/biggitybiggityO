@@ -1,5 +1,4 @@
 # Time:  O(r * c)
-# Space: O(1)
 
 
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(nlogn + mlogm)
-# Space: O(n + m)
 
 # sort, two pointers
 class Solution(object):
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + mlogm)
-# Space: O(n + m)
 # sort, line sweep
 class Solution2(object):
     def countServers(self, n, logs, x, queries):

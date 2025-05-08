@@ -1,5 +1,4 @@
 # Time:  O(n + logm)
-# Space: O(n)
 
 # combinatorics, fast exponentiation
 MOD = 10**9+7

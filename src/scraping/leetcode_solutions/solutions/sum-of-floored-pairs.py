@@ -1,5 +1,4 @@
 # Time:  O(n/1+n/2+...+n/n) = O(nlogn), n is the max of nums
-# Space: O(n)
 
 import collections
 from functools import reduce

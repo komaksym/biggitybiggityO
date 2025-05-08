@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 class Solution(object):
     def maximalSquare(self, matrix):
@@ -33,7 +32,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # DP.
 class Solution2(object):
     def maximalSquare(self, matrix):
@@ -67,7 +65,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 # DP.
 class Solution3(object):
     def maximalSquare(self, matrix):

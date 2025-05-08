@@ -1,6 +1,5 @@
 # Time:  ctor:   O(w * l^2), w is the number of words, l is the word length on average
 #        search: O(p + s)  , p is the length of the prefix, s is the length of the suffix,
-# Space: O(t), t is the number of trie nodes
 
 import collections
 
@@ -40,7 +39,6 @@ class WordFilter(object):
 # Time:  ctor:   O(w * l), w is the number of words, l is the word length on average
 #        search: O(p + s + max(m, n)), p is the length of the prefix, s is the length of the suffix,
 #                                      m is the number of the prefix match, n is the number of the suffix match
-# Space: O(w * l)
 class Trie(object):
 
     def __init__(self):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # counting sort, greedy
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # prefix sum, greedy
 class Solution2(object):
     def minMoves(self, rooks):

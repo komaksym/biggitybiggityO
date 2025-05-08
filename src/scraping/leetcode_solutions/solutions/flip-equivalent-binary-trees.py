@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -37,7 +36,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # iterative dfs solution
 class Solution2(object):
     def flipEquiv(self, root1, root2):
@@ -63,7 +61,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # recursive dfs solution
 class Solution3(object):
     def flipEquiv(self, root1, root2):

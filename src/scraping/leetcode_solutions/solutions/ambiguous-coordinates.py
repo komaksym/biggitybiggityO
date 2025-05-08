@@ -1,5 +1,4 @@
 # Time:  O(n^4)
-# Space: O(n)
 
 import itertools
 

@@ -1,6 +1,5 @@
 # Time:  O(n * l), n is number of quries
 #                , l is length of query
-# Space: O(1)
 
 class Solution(object):
     def camelMatch(self, queries, pattern):

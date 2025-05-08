@@ -1,5 +1,4 @@
 # Time:  O(n^2), n is the number of steps
-# Space: O(n)
     
 class Solution(object):
     def numWays(self, steps, arrLen):

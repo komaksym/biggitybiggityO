@@ -1,5 +1,4 @@
 # Time:  O(m * n) on average
-# Space: O(m * n)
 
 import random
 

@@ -1,5 +1,4 @@
 # Time:  O(nlogn + n * k)
-# Space: O(n * k)
 
 import bisect
 
@@ -22,7 +21,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + n * k)
-# Space: O(n * k)
 import bisect
 
 

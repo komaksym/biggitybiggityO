@@ -1,5 +1,4 @@
 # Time:  O(mlogm)
-# Space: O(1)
 
 # sort
 class Solution(object):

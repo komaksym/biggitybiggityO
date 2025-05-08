@@ -1,7 +1,6 @@
 # Time:  ctor:     O(1)
 #        deposit:  O(1)
 #        withdraw: O(1)
-# Space: O(1)
 
 # greedy
 class ATM(object):

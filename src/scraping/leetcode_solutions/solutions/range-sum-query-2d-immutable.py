@@ -1,6 +1,5 @@
 # Time:  ctor:   O(m * n),
 #        lookup: O(1)
-# Space: O(m * n)
 
 class NumMatrix(object):
     def __init__(self, matrix):

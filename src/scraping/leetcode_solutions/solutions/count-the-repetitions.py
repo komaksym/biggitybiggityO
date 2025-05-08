@@ -1,5 +1,4 @@
 # Time:  O(s1 * min(s2, n1))
-# Space: O(s2)
 
 class Solution(object):
     def getMaxRepetitions(self, s1, n1, s2, n2):

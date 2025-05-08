@@ -1,5 +1,4 @@
 # Time:  O(1) per peek(), next(), hasNext()
-# Space: O(1)
 
 class PeekingIterator(object):
     def __init__(self, iterator):

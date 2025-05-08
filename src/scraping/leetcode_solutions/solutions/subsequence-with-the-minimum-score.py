@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # two pointers, dp
 class Solution(object):

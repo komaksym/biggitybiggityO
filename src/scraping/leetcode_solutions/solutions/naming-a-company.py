@@ -1,5 +1,4 @@
 # Time:  O(26 * n * l)
-# Space: O(n * l)
 
 # hash table, math
 class Solution(object):

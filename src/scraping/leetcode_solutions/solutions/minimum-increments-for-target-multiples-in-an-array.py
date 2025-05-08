@@ -1,5 +1,4 @@
 # Time:  O(logr * m * 2^m + n * 3^m)
-# Space: O(2^m)
 
 # bitmasks, number theory, dp, submask enumeration
 class Solution(object):

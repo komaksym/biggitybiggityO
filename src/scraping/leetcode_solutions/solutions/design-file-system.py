@@ -1,6 +1,5 @@
 # Time:  create: O(n)
 #        get:    O(n)
-# Space: O(n)
 
 class FileSystem(object):
 

@@ -1,7 +1,6 @@
 # Time:  ctor:     O(1)
 #        allocate: O(logn)
 #        free:     O(logn)
-# Space: O(n)
 
 from sortedcontainers import SortedList
 import collections

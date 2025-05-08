@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 import itertools
 
@@ -29,7 +28,6 @@ class Solution(object):
              [1, 0, 1],
              [1, 0, 0]]
         return matrix_mult([[1, 0, 0]], matrix_expo(T, n))[0][1] 
-# Space: O(1)
 class Solution2(object):
     def tribonacci(self, n):
         """

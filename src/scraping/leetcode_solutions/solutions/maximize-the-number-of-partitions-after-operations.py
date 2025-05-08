@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # prefix sum, greedy
 class Solution(object):

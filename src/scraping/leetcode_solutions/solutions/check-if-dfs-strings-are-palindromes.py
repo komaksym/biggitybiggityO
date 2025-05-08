@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # iterative dfs, manacher's algorithm
 class Solution(object):
@@ -51,7 +50,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # dfs, manacher's algorithm
 class Solution2(object):
     def findAnswer(self, parent, s):

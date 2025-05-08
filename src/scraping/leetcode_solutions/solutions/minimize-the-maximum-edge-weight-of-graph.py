@@ -1,5 +1,4 @@
 # Time:  O(nlogn + e)
-# Space: O(n + e)
 
 import collections
 import heapq
@@ -37,7 +36,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn + e)
-# Space: O(n + e)
 import collections
 import heapq
 
@@ -73,7 +71,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogw + e)
-# Space: O(n + e)
 import collections
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k), k is the number of different characters
 
 import collections
 
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(k), k is the number of different characters
 class Solution2(object):
     def minWindow(self, s, t):
         """

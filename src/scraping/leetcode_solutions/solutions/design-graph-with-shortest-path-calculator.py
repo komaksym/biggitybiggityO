@@ -1,7 +1,6 @@
 # Time:  ctor:         O(|V| + |E|)
 #        addEdge:      O(1)
 #        shortestPath: O((|E| + |V|) * log|V|) = O(|E| * log|V|)
-# Space: O(|E| + |V|) = O(|E|)
 
 import heapq
 

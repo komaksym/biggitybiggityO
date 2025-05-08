@@ -1,5 +1,4 @@
 # Time:  O(nlogm)
-# Space: O(1)
 
 import heapq
 
@@ -23,7 +22,6 @@ class Solution(object):
 
 
 # Time:  O(nlogr), r is the range of possible minutes
-# Space: O(1)
 # binary search
 class Solution2(object):
     def maxRunTime(self, n, batteries):

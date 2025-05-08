@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class UnionFind(object): 
     def __init__(self, nums):
@@ -55,7 +54,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 from sortedcontainers import SortedList
 
 

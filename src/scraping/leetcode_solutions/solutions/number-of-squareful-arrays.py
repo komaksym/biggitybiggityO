@@ -1,5 +1,4 @@
 # Time:  O(n!)
-# Space: O(n^2)
 
 import collections
 

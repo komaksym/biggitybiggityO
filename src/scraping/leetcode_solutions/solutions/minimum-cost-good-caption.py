@@ -1,5 +1,4 @@
 # Time:  O(26 * n)
-# Space: O(26 * n)
 
 # dp, backtracing
 class Solution(object):

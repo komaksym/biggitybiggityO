@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # math
 class Solution(object):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # brute force
 class Solution2(object):
     def countEven(self, num):
@@ -38,7 +36,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(logn)
 # brute force
 class Solution3(object):
     def countEven(self, num):

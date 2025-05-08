@@ -1,6 +1,5 @@
 # Time:  O(n^p) = O(1), n is the max number of possible moves for each piece, and n is at most 29
 #                     , p is the number of pieces, and p is at most 4
-# Space: O(1)
 
 class Solution(object):
     def countCombinations(self, pieces, positions):

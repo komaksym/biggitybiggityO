@@ -1,6 +1,5 @@
 # Time:  O(32), bit shift in python is not O(1), it's O(k), k is the number of bits shifted
 #             , see https://github.com/python/cpython/blob/2.7/Objects/longobject.
-# Space: O(1)
 
 class Solution(object):
     def hammingWeight(self, n):
@@ -13,7 +12,6 @@ class Solution(object):
 
 
 # Time:  O(logn/4) = O(32/4 + 8*4) = O(32)
-# Space: O(1) 
 # https://github.com/gcc-mirror/gcc/blob/master/libgcc/libgcc2.
 class Solution2(object):
     def __init__(self):
@@ -36,7 +34,6 @@ class Solution2(object):
             n >>= 8
         return result
 
-# Space: O(1)
 class Solution3(object):
     def hammingWeight(self, n):
         result = 0
@@ -46,7 +43,6 @@ class Solution3(object):
         return result
 
 # Time:  O(logn) = O(32)
-# Space: O(1)
 class Solution4(object):
     def hammingWeight(self, n: int) -> int:
         b="{0:b}".format(n)

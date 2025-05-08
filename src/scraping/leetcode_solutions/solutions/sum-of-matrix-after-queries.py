@@ -1,5 +1,4 @@
 # Time:  O(n + q)
-# Space: O(n)
 
 # hash table
 class Solution(object):

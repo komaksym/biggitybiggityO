@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(h)
 
 import collections
 
@@ -30,7 +29,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(h)
 class Solution2(object):
     def pathSum(self, root, sum):
         """

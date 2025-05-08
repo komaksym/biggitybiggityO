@@ -3,7 +3,6 @@
 #        deleteText:  O(k)
 #        cursorLeft:  O(k)
 #        cursorRight: O(k)
-# Space: O(n)
 
 # design, stack
 class TextEditor(object):

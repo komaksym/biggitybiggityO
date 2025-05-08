@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import random
 
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sort, greedy
 class Solution2(object):
     def minOperationsToMakeMedianK(self, nums, k):

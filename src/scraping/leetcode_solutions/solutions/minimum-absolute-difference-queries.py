@@ -1,5 +1,4 @@
 # Time:  O(r * (n + q)), r is the max of nums
-# Space: O(r * n)
 
 class Solution(object):
     def minDifference(self, nums, queries):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(r + n + q * r * logn), r is the max of nums
-# Space: O(r + n)
 import bisect
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # two pointers, sliding window, prefix sum, hash table
 class Solution(object):

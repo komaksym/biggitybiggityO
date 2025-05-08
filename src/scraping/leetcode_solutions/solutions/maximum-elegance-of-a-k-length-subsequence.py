@@ -1,5 +1,4 @@
 # Time:  O(nlogk)
-# Space: O(k)
 
 import heapq
 from sortedcontainers import SortedList
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(n + klogk)
-# Space: O(n)
 import random
 import collections
 
@@ -109,7 +107,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(k)
 # sort, greedy
 class Solution3(object):
     def findMaximumElegance(self, items, k):

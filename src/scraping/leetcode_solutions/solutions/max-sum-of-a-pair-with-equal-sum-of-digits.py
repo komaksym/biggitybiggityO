@@ -1,5 +1,4 @@
 # Time:  O(nlogr), r is max(nums)
-# Space: O(n)
 
 # greedy
 class Solution(object):

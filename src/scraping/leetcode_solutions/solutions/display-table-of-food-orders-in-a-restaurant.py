@@ -1,5 +1,4 @@
 # Time:  O(n + tlogt + flogf)
-# Space: O(n)
 
 import collections
 

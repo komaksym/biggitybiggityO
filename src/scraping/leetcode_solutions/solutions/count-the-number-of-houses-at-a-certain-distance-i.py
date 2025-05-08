@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # math, prefix sum, difference array
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(1)
 # math
 class Solution2(object):
     def countOfPairs(self, n, x, y):

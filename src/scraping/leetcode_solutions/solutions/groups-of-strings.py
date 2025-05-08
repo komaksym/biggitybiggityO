@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(26 * n)
-# Space: O(26 * n)
 
 class UnionFind(object): 
     def __init__(self, n):

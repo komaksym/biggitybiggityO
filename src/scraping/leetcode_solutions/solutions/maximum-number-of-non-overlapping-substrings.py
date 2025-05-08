@@ -1,5 +1,4 @@
 # Time:  O(n)
-# space: O(1)
 
 class Solution(object):
     def maxNumOfSubstrings(self, s):
@@ -36,7 +35,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# space: O(1)
 class Solution2(object):
     def maxNumOfSubstrings(self, s):
         """

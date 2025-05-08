@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2), used by Counter, this could be reduced to O(n) by skipping invalid input
 
 import collections
 import itertools

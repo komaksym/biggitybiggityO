@@ -1,5 +1,4 @@
 # Time:  O(m * n^2)
-# Space: O(n)
 
 class Solution(object):
     def minDistance(self, houses, k):

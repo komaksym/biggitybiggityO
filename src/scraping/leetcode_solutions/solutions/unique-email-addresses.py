@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(n * l)
 
 class Solution(object):
     def numUniqueEmails(self, emails):

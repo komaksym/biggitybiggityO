@@ -1,5 +1,4 @@
 # Time:  O(1), per move.
-# Space: O(n^2)
 
 
 class TicTacToe(object):

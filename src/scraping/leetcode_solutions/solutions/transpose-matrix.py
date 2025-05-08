@@ -1,5 +1,4 @@
 # Time:  O(r * c)
-# Space: O(1)
 
 
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(r * c)
-# Space: O(1)
 class Solution2(object):
     def transpose(self, A):
         """

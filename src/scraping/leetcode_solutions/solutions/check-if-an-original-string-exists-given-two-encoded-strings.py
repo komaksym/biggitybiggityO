@@ -1,5 +1,4 @@
 # Time:  O(m * n * k), k is the max number of consecutive digits in s1 and s2
-# Space: O(m * n * k)
 
 # top-down dp (faster since accessing less states)
 class Solution(object):
@@ -71,7 +70,6 @@ class Solution(object):
 
 
 # Time:  O(m * n * k), k is the max number of consecutive digits in s1 and s2
-# Space: O(m * n * k)
 # top-down dp (faster since accessing less states)
 class Solution2(object):
     def possiblyEquals(self, s1, s2):
@@ -112,7 +110,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n * k), k is the max number of consecutive digits in s1 and s2
-# Space: O(min(m, n) * k)
 # bottom-up dp
 class Solution3(object):
     def possiblyEquals(self, s1, s2):

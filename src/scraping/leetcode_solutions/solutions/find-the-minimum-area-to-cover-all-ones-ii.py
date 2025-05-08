@@ -1,5 +1,4 @@
 # Time:  O(max(n, m)^2)
-# Space: O(max(n, m)^2)
 
 # dp
 class Solution(object):
@@ -80,7 +79,6 @@ class Solution(object):
 
 
 # Time:  O(n * m * log(max(n, m)) + max(n, m)^2)
-# Space: O(n * m * log(max(n, m)))
 # sparse table
 class Solution2(object):
     def minimumSum(self, grid):
@@ -182,7 +180,6 @@ class Solution2(object):
 
 
 # Time:  O(n * m * log(max(n, m)) + max(n, m)^2)
-# Space: O(n * m * log(max(n, m)))
 # sparse table
 class Solution3(object):
     def minimumSum(self, grid):
@@ -262,7 +259,6 @@ class Solution3(object):
 
 
 # Time:  O(max(n, m)^2 * log(max(n, m)))
-# Space: O(1)
 # prefix sum, binary search
 class Solution4(object):
     def minimumSum(self, grid):
@@ -355,7 +351,6 @@ class Solution4(object):
 
 
 # Time:  O(max(n, m)^2 * log(max(n, m)))
-# Space: O(n * m)
 # prefix sum, binary search
 class Solution5(object):
     def minimumSum(self, grid):
@@ -427,7 +422,6 @@ class Solution5(object):
 
 
 # Time:  O((n^2 + m^2 + 4 * n * m) * n * m) = O(max(n, m)^3 * min(n, m))
-# Space: O(1)
 # brute force
 class Solution6(object):
     def minimumSum(self, grid):
@@ -485,7 +479,6 @@ class Solution6(object):
 
 
 # Time:  O((n^2 + m^2 + 4 * n * m) * n * m) = O(max(n, m)^3 * min(n, m))
-# Space: O(n * m)
 # brute force
 class Solution7(object):
     def minimumSum(self, grid):

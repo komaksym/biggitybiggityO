@@ -1,5 +1,4 @@
 # Time:  O(m + n)
-# Space: O(1)
 
 class PolyNode:
     def __init__(self, x=0, y=0, next=None):

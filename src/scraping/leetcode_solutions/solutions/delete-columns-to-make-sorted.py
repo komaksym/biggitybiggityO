@@ -1,5 +1,4 @@
 # Time:  O(n * l)
-# Space: O(1)
 
 class Solution(object):
     def minDeletionSize(self, A):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(n * l)
-# Space: O(n)
 import itertools
 
 

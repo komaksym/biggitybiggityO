@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(logn)
 
 # sliding window
 class Solution(object):

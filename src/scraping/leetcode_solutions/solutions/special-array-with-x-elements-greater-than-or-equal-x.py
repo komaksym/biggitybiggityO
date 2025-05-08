@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # counting sort solution
 class Solution(object):
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # counting sort + binary search solution
 class Solution2(object):
     def specialArray(self, nums):
@@ -58,7 +56,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # counting sort + binary search solution
 class Solution3(object):
     def specialArray(self, nums):
@@ -97,7 +94,6 @@ class Solution3(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # sort solution
 class Solution4(object):
     def specialArray(self, nums):

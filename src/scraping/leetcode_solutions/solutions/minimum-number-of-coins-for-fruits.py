@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 import collections
 
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 # dp, sorted list
 from sortedcontainers import SortedList
 
@@ -54,7 +52,6 @@ class Solution2(object):
 
 
 # Time:  O(n^2)
-# Space: O(n)
 # dp
 class Solution3(object):
     def minimumCoins(self, prices):

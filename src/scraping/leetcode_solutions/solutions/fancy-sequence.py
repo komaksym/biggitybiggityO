@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(n)
 
 MOD = 10**9+7
 
@@ -46,7 +45,6 @@ class Fancy(object):
 
 
 # Time:  O(1)
-# Space: O(n)
 class Fancy2(object):
 
     def __init__(self):

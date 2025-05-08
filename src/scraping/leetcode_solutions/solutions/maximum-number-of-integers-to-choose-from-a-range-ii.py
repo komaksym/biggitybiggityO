@@ -1,5 +1,4 @@
 # Time:  O(b)
-# Space: O(b)
 
 # math
 class Solution(object):
@@ -29,7 +28,6 @@ class Solution(object):
 
 
 # Time:  O(blogb + logn * logb)
-# Space: O(b)
 import bisect
 
 

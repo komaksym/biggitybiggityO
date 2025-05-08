@@ -1,5 +1,4 @@
 # Time:  O(5^(n/2))
-# Space: O(n)
 
 class Solution(object):
     lookup = {'0':'0', '1':'1', '6':'9', '8':'8', '9':'6'}

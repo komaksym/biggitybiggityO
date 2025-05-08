@@ -1,5 +1,4 @@
 # Time:  O(n + m)
-# Space: O(n + m)
 
 class Solution(object):
     def oddCells(self, n, m, indices):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n + m)
-# Space: O(n + m)
 import collections
 import itertools
 

@@ -1,7 +1,6 @@
 # Time:  ctor:    O(m + d), m is len(keys), d is sum(len(x) for x in dictionary)
 #        encrypt: O(n)
 #        decrypt: O(n)
-# Space: O(m + d)
 
 import collections
 import itertools

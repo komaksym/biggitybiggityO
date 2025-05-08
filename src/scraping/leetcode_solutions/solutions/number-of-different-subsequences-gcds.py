@@ -1,5 +1,4 @@
 # Time:  O(n + m * (1 + 1/2 + 1/3 + ... + 1/m)) = O(n + mlogm), m is max of nums
-# Space: O(n)
 
 import fractions
 

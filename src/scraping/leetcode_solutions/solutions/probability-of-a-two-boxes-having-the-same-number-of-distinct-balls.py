@@ -1,5 +1,4 @@
 # Time:  O(k^3 * n^2)
-# Space: O(k^2 * n)
 
 import collections
 

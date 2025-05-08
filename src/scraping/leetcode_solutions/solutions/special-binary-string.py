@@ -1,6 +1,5 @@
 # Time:  f(n) = k * f(n/k) + n/k * klogk <= O(logn * nlogk) <= O(n^2)
 #        n is the length of S, k is the max number of special strings in each depth
-# Space: O(n)
 
 class Solution(object):
     def makeLargestSpecial(self, S):

@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 # Definition for a binary tree node.
 class TreeNode(object):

@@ -1,5 +1,4 @@
 # Time:  O(n * 2^p), p is the number of primes in [1, n]
-# Space: O(2^p)
 
 import collections
 from functools import reduce

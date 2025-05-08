@@ -1,7 +1,6 @@
 # Time:  O(n * m * l + n^2 * m), n is favoriteCompanies.length
 #                              , m is the max of favoriteCompanies[i].length
 #                              , l is the max of favoriteCompanies[i][j].length
-# Space: O(n * m * l)
 
 class Solution(object):
     def peopleIndexes(self, favoriteCompanies):
@@ -21,7 +20,6 @@ class Solution(object):
                            for j, c2 in enumerate(comps))]
 #                                        , m is the max of favoriteCompanies[i].length
 #                                        , l is the max of favoriteCompanies[i][j].length
-# Space: O(n * m * l)
 class UnionFind(object):
     def __init__(self, data):
         self.data = [set(d) for d in data]

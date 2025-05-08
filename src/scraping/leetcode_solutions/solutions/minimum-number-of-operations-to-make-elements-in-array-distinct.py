@@ -1,5 +1,4 @@
 # Time:  O(n + r)
-# Space: O(r)
 
 # freq table
 class Solution(object):

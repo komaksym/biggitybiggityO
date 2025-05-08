@@ -1,6 +1,5 @@
 # Time:  O(n^1.5) on average
 #        O(n^2) on worst
-# Space: O(n)
 
 import collections
 
@@ -33,7 +32,6 @@ class Solution(object):
                         result = min(result, (x-lookup[y1, y2]) * (y2-y1))
                     lookup[y1, y2] = x
         return result if result != float("inf") else 0
-# Space: O(n)
 class Solution2(object):
     def minAreaRect(self, points):
         """

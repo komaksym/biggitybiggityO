@@ -1,7 +1,6 @@
 # Time:  O(min(t / c1, c2 / g)) = O(sqrt(t)), c1 = max(cost1, cost2)
 #                                           , c2 = min(cost1, cost2)
 #                                           ,  g = gcd(c1, c2)
-# Space: O(1)
 
 # math
 class Solution(object):
@@ -37,7 +36,6 @@ class Solution(object):
 
 # Time:  O(t / c1), c1 = max(cost1, cost2)
 #                 , c2 = min(cost1, cost2)
-# Space: O(1)
 # math
 class Solution2(object):
     def waysToBuyPensPencils(self, total, cost1, cost2):

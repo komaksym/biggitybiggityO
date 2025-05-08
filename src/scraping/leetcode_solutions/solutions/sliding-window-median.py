@@ -1,5 +1,4 @@
 # Time:  O(nlogk)
-# Space: O(k)
 
 from sortedcontainers import SortedList
 
@@ -21,7 +20,6 @@ class Solution(object):
 
 
 # Time:  O(nlogk)
-# Space: O(k)
 import collections
 import heapq
 
@@ -75,7 +73,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn) due to lazy delete
-# Space: O(n)
 import collections
 import heapq
 

@@ -1,5 +1,4 @@
 # Time:  O(nlogs), s is the sum of nums
-# Space: O(1)
 
 class Solution(object):
     def splitArray(self, nums, m):

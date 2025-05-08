@@ -1,5 +1,4 @@
 # Time:  O(logk)
-# Space: O(1)
 
 class Solution(object):
     def findMinFibonacciNumbers(self, k):

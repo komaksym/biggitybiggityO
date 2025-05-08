@@ -1,5 +1,4 @@
 # Time:  O((n + q) * l)
-# Space: O(t)
 
 # trie
 class Solution(object):

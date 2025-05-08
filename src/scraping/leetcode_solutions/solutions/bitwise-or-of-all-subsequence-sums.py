@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # bit manipulation
 class Solution(object):
@@ -16,7 +15,6 @@ class Solution(object):
 
 
 # Time:  O(nlogn)
-# Space: O(1)
 # bit manipulation
 class Solution2(object):
     def subsequenceSumOr(self, nums):

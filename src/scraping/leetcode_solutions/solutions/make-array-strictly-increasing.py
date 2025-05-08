@@ -1,5 +1,4 @@
 # Time:  O(n^2 * logn)
-# Space: O(n)
 
 import collections
 import bisect

@@ -1,5 +1,4 @@
 # Time:  O(8 * n) = O(1), grid is a n x n board and n = 8
-# Space: O(1)
 
 class Solution(object):
     def checkMove(self, board, rMove, cMove, color):

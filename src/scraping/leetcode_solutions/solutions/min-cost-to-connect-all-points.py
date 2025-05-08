@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n)
 
 class Solution(object):
     def minCostConnectPoints(self, points):
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(eloge) = O(n^2 * logn)
-# Space: O(e) = O(n^2)
 # kruskal's algorithm
 class UnionFind(object): 
     def __init__(self, n):

@@ -1,5 +1,4 @@
 # Time:  O(m * n + klogk)
-# Space: O(m * n)
 
 import random
 

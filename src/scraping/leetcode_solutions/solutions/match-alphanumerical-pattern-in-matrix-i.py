@@ -1,5 +1,4 @@
 # Time:  O(n * m * r * c)
-# Space: O(1)
 
 # brute force, hash table
 class Solution(object):

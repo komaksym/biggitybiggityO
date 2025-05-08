@@ -1,7 +1,6 @@
 # Time:  ctor: O(1)
 #        add : O(1)
 #        get : O(1)
-# Space: O(n)
 
 class ProductOfNumbers(object):
 

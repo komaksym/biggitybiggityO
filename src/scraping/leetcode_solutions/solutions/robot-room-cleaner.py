@@ -1,5 +1,4 @@
 # Time:  O(n), n is the number of cells
-# Space: O(n)
 
 class Solution(object):
     def cleanRoom(self, robot):

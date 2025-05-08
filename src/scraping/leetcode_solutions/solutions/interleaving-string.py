@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m + n)
 
 class Solution(object):
     def isInterleave(self, s1, s2, s3):
@@ -19,7 +18,6 @@ class Solution(object):
         return match[-1]
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # Dynamic Programming
 class Solution2(object):
     def isInterleave(self, s1, s2, s3):
@@ -38,7 +36,6 @@ class Solution2(object):
         return match[-1][-1]
 
 # Time:  O(m * n)
-# Space: O(m * n)
 # Recursive + Hash
 class Solution3(object):
     def isInterleave(self, s1, s2, s3):

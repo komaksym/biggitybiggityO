@@ -1,5 +1,4 @@
 # Time:  O(26 * n)
-# Space: O(26)
 
 # freq table, counting sort, greedy, combinatorics
 class Solution(object):

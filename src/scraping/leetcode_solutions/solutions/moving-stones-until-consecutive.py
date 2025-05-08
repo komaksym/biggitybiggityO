@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(1)
 
 class Solution(object):
     def numMovesStones(self, a, b, c):
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(1)
-# Space: O(1)
 class Solution2(object):
     def numMovesStones(self, a, b, c):
         """

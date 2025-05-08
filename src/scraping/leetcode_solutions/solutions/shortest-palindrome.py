@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 # optimized from Solution2
 class Solution(object):
@@ -27,7 +26,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def shortestPalindrome(self, s):
         """
@@ -57,7 +55,6 @@ class Solution2(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 # Manacher's Algorithm
 class Solution3(object):
     def shortestPalindrome(self, s):

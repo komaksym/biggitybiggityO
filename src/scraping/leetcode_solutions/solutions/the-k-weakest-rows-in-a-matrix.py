@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(k)
 
 class Solution(object):
     def kWeakestRows(self, mat, k):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(m * n)
-# Space: O(k)
 import collections
 
 
@@ -57,7 +55,6 @@ class Solution2(object):
 
 
 # Time:  O(m * n + klogk)
-# Space: O(m)
 import random
 
 

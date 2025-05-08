@@ -1,5 +1,4 @@
 # Time:  O(26^2)
-# Space: O(1)
 
 # enumeration
 class Solution(object):

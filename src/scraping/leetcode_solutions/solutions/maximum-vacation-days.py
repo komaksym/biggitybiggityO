@@ -1,5 +1,4 @@
 # Time:  O(n^2 * k)
-# Space: O(k)
 
 class Solution(object):
     def maxVacationDays(self, flights, days):

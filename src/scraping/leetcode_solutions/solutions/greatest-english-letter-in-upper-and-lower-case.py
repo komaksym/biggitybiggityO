@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # string, hash table
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 import itertools
 import string
 

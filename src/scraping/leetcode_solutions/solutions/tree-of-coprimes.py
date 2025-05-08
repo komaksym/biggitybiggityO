@@ -1,5 +1,4 @@
 # Time:  O(50 * n) = O(n)
-# Space: O(n)
 
 import collections
 import fractions
@@ -54,7 +53,6 @@ class Solution(object):
 
 
 # Time:  O(50 * n) = O(n)
-# Space: O(n)
 import collections
 import fractions
 

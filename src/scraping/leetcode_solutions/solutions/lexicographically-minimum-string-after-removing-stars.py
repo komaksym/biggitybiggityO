@@ -1,5 +1,4 @@
 # Time:  O(n + 26)
-# Space: O(n + 26)
 
 # greedy, hash table, stack
 class Solution(object):

@@ -1,5 +1,4 @@
 # Time:  O(k * nlogn)
-# Space: O(n)
 
 # sort, math
 class Solution(object):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(k * n * logr), r = min(stock)+budget
-# Space: O(1)
 # binary search
 class Solution2(object):
     def maxNumberOfAlloys(self, n, k, budget, composition, stock, cost):

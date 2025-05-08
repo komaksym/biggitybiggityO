@@ -1,5 +1,4 @@
 # Time:  O(nlogm), m is the max of nums
-# Space: O(1)
 
 # math, stack
 class Solution(object):

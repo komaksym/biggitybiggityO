@@ -1,5 +1,4 @@
 # Time:  O(nlogn + nlogr), r = max(nums)-min(nums)
-# Space: O(1)
 
 # sort, binary search, greedy
 class Solution(object):

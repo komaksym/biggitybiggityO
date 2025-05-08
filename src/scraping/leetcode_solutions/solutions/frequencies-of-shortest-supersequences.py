@@ -1,5 +1,4 @@
 # Time:  O(n + k^2 * 2^k), k = len(indegree) <= 16
-# Space: O(k^2)
 
 import collections
 

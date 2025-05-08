@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(m)
 
 class Solution(object):
     def change(self, amount, coins):

@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 class Solution(object):
     def integerReplacement(self, n):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(logn)
-# Space: O(logn)
 # Recursive solution.
 class Solution2(object):
     def integerReplacement(self, n):

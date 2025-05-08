@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 
@@ -27,7 +26,6 @@ class Solution(object):
                 left += 1
             result += right-left+1
         return result
-# Space: O(n)
 import collections
 
 
@@ -56,7 +54,6 @@ class Solution2(object):
 
 
 # Time:  O(nlogn)
-# Space: O(n)
 from sortedcontainers import SortedDict
 
 

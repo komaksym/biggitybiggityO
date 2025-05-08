@@ -1,5 +1,4 @@
 # Time:  O(n * logr * logn)
-# Space: O(nlogr)
 
 # sort
 class Solution(object):
@@ -12,7 +11,6 @@ class Solution(object):
 
 
 # Time:  O(n! * nlogr)
-# Space: O(nlogr)
 import itertools
 
 

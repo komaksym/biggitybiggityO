@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # Definition for a Node.
 class Node(object):

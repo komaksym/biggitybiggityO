@@ -1,5 +1,4 @@
 # Time:  O(n^2 + n*2^n) = O(n*2^n)
-# Space: O(n^2)
 
 import collections
 

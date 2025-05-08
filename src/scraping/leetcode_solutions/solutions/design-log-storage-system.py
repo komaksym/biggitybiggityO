@@ -1,7 +1,6 @@
 # Time:  put:      O(1)
 #        retrieve: O(n + dlogd), n is the size of the total logs
 #                              , d is the size of the found logs
-# Space: O(n)
 
 class LogSystem(object):
 

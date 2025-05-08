@@ -1,5 +1,4 @@
 # Time:  O(t)
-# Space: O(t)
 
 class Solution(object):
     def largestNumber(self, cost, target):
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(t)
-# Space: O(t)
 class Solution2(object):
     def largestNumber(self, cost, target):
         """
@@ -53,7 +51,6 @@ class Solution2(object):
 
 
 # Time:  O(t^2)
-# Space: O(t^2)
 class Solution3(object):
     def largestNumber(self, cost, target):
         """

@@ -1,5 +1,4 @@
 # Time:  O(logn * log(logn))
-# Space: O(1)
 
 import math
 

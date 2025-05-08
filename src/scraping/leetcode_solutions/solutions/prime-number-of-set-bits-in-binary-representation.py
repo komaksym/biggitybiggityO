@@ -1,5 +1,4 @@
 # Time:  O(log(R - L)) = O(1)
-# Space: O(1)
 
 class Solution(object):
     def countPrimeSetBits(self, L, R):

@@ -1,5 +1,4 @@
 # Time:  addNum: O(n), getIntervals: O(n), n is the number of disjoint intervals.
-# Space: O(n)
 
 class Interval(object):
     def __init__(self, s=0, e=0):

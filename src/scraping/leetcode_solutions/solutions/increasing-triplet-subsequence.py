@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import bisect
 
@@ -21,7 +20,6 @@ class Solution(object):
         return False
 
 # Time:  O(n * logk)
-# Space: O(k)
 # Generalization of k-uplet.
 class Solution_Generalization(object):
     def increasingTriplet(self, nums):

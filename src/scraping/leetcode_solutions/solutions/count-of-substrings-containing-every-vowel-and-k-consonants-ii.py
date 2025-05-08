@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # two pointers, sliding window, freq table
 class Solution(object):
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(1)
 # two pointers, sliding window, freq table
 class Solution2(object):
     def countOfSubstrings(self, word, k):

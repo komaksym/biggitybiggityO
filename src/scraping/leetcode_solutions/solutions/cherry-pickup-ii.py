@@ -1,5 +1,4 @@
 # Time:  O(m * n^2)
-# Space: O(n^2)
 
 class Solution(object):
     def cherryPickup(self, grid):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(m * n^2)
-# Space: O(n^2)
 
 class Solution2(object):
     def cherryPickup(self, grid):

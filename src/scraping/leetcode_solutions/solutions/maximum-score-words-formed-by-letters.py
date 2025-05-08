@@ -1,5 +1,4 @@
 # Time:  O(n * 2^n)
-# Space: O(n)
 
 import collections
 

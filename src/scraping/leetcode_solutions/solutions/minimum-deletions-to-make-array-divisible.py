@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n + m + logr), r is max(numsDivide)
-# Space: O(1)
 
 # gcd
 class Solution(object):

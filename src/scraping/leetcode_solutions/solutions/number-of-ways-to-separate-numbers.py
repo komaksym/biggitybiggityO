@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(n^2)
-# Space: O(n^2)
 
 class Solution(object):
     def numberOfCombinations(self, num):

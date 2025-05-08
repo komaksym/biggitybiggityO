@@ -1,5 +1,4 @@
 # Time:  O(1)
-# Space: O(w)
 
 from collections import deque
 

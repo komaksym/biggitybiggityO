@@ -1,5 +1,4 @@
 # Time:  O(mlogm + n + mlogn)
-# Space: O(n)
 
 import heapq
 
@@ -26,7 +25,6 @@ class Solution(object):
 
 
 # Time:  O(mlogm + n + mlogn)
-# Space: O(n)
 import heapq
 
 

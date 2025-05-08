@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(n)
 
 class Solution(object):
     def hIndex(self, citations):
@@ -23,7 +22,6 @@ class Solution(object):
         return h
 
 # Time:  O(nlogn)
-# Space: O(1)
 class Solution2(object):
     def hIndex(self, citations):
         """
@@ -40,7 +38,6 @@ class Solution2(object):
         return h
 
 # Time:  O(nlogn)
-# Space: O(n)
 class Solution3(object):
     def hIndex(self, citations):
         """

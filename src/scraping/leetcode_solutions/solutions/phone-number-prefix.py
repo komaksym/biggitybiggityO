@@ -1,5 +1,4 @@
 # Time:  O(l * nlogn)
-# Space: O(1)
 
 # sort
 class Solution(object):
@@ -13,7 +12,6 @@ class Solution(object):
 
 
 # Time:  O(n * l)
-# Space: O(t)
 # trie
 class Solution2(object):
     def phonePrefix(self, numbers):

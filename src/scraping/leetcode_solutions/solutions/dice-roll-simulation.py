@@ -1,6 +1,5 @@
 from functools import reduce
 # Time:  O(m * n), m is the max of rollMax
-# Space: O(m)
 
 class Solution(object):
     def dieSimulator(self, n, rollMax):

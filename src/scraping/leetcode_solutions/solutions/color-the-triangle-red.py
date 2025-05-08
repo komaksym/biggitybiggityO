@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(1)
 
 # constructive algorithms
 class Solution(object):

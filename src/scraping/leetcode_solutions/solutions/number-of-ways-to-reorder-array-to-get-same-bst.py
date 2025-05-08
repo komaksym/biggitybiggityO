@@ -1,5 +1,4 @@
 # Time:  O(n^2)
-# Space: O(n^2)
 
 MAX_N = 1000
 MOD = 10**9+7
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(n^2)
-# Space: O(n^2)
 class Solution(object):
     def numOfWays(self, nums):
         """

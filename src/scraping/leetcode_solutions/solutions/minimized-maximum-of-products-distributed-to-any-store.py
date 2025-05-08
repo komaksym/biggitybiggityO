@@ -1,5 +1,4 @@
 # Time:  O(nlogm), m is the max of quantities
-# Space: O(1)
 
 class Solution(object):
     def minimizedMaximum(self, n, quantities):

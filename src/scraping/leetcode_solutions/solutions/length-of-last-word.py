@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class Solution(object):
     def lengthOfLastWord(self, s):
@@ -13,7 +12,6 @@ class Solution(object):
         return length
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def lengthOfLastWord(self, s):
         return len(s.strip().split(" ")[-1])

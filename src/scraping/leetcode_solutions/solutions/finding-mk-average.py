@@ -1,7 +1,6 @@
 # Time:  ctor:           O(1)
 #        add_element:    O(logn)
 #        calc_mkaverage: O(1)
-# Space: O(m)
 
 import collections
 from sortedcontainers import SortedList

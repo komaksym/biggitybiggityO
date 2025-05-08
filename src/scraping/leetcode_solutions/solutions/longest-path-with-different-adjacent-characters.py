@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(w)
 
 import collections
 
@@ -43,7 +42,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(h)
 # tree, dfs
 class Solution2(object):
     def longestPath(self, parent, s):
@@ -88,7 +86,6 @@ class Solution2(object):
         for i in range(1, len(parent)):
             adj[parent[i]].append(i)
         return iter_dfs(s, adj)
-# Space: O(h)
 # tree, dfs
 class Solution3(object):
     def longestPath(self, parent, s):

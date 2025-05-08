@@ -1,5 +1,4 @@
 # Time:  O(nlogk)
-# Space: O(k)
 
 import itertools
 import heapq
@@ -37,7 +36,6 @@ class Solution(object):
 
 
 # Time:  O(nlogk)
-# Space: O(k)
 import sortedcontainers 
 import itertools
 import heapq

@@ -1,5 +1,4 @@
 # Time:  O(logf)
-# Space: O(1)
 
 # math, combinatorics
 class Solution(object):
@@ -40,7 +39,6 @@ class Solution(object):
 
 
 # Time:  O(logf)
-# Space: O(logf)
 # math, combinatorics
 class Solution2(object):
     def numberOfPowerfulInt(self, start, finish, limit, s):

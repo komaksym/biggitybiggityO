@@ -1,5 +1,4 @@
 # Time:  O(logc) = O(1)
-# Space: O(c) = O(1)
 
 import bisect
 
@@ -25,7 +24,6 @@ class Solution(object):
 
 
 # Time:  O(l * c) = O(1), c is the count of all balanced's permutations, l is the max length of permutations
-# Space: O(l * b) = O(1), b is the count of balanced
 class Solution2(object):
     def nextBeautifulNumber(self, n):
         """
@@ -80,7 +78,6 @@ class Solution2(object):
 
 
 # Time:  O(l * c) = O(1), c is the count of all balanced's permutations, l is the max length of permutations
-# Space: O(l * b) = O(1), b is the count of balanced
 import itertools
 
 

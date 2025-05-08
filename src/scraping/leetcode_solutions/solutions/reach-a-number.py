@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 import math
 
@@ -17,7 +16,6 @@ class Solution(object):
 
 
 # Time:  O(sqrt(n))
-# Space: O(1)
 class Solution2(object):
     def reachNumber(self, target):
         """

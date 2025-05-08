@@ -1,5 +1,4 @@
 # Time:  O(n + tlogt), t = threshold
-# Space: O(t)
 
 # union find, number theory
 class UnionFind(object): 
@@ -53,7 +52,6 @@ class Solution(object):
 
 
 # Time:  O(n + tlogt), t = threshold
-# Space: O(t)
 # union find, number theory
 class Solution2(object):
     def countComponents(self, nums, threshold):

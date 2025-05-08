@@ -1,5 +1,4 @@
 # Time:  O(n + m)
-# Space: O(n + m)
 
 # iterative dfs, tree diameter
 class Solution(object):
@@ -41,7 +40,6 @@ class Solution(object):
         d1 = tree_diameter(edges1)
         d2 = tree_diameter(edges2)
         return max(ceil_divide(d1, 2)+1+ceil_divide(d2, 2), d1, d2)
-# Space: O(n + m)
 # dfs, tree diameter
 class Solution2(object):
     def minimumDiameterAfterMerge(self, edges1, edges2):
@@ -78,7 +76,6 @@ class Solution2(object):
 
 
 # Time:  O(n + m)
-# Space: O(n + m)
 # bfs, tree dp, tree diameter
 class Solution3(object):
     def minimumDiameterAfterMerge(self, edges1, edges2):
@@ -125,7 +122,6 @@ class Solution3(object):
 
 
 # Time:  O(n + m)
-# Space: O(n + m)
 # bfs, tree diameter
 class Solution4(object):
     def minimumDiameterAfterMerge(self, edges1, edges2):

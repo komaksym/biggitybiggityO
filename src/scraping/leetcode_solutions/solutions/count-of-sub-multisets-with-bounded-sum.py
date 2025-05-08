@@ -1,5 +1,4 @@
 # Time:  O(n + d * r), d = len(set(nums))
-# Space: O(d + r)
 
 import collections
 from functools import reduce

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 from operator import xor
 from functools import reduce

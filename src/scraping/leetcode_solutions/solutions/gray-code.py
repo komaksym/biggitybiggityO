@@ -1,5 +1,4 @@
 # Time:  O(2^n)
-# Space: O(1)
 
 class Solution(object):
     def grayCode(self, n):

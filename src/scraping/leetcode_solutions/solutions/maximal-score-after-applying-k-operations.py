@@ -1,5 +1,4 @@
 # Time:  O(n + klogn)
-# Space: O(1)
 
 import heapq
 
@@ -29,7 +28,6 @@ class Solution(object):
                 continue
             heapq.heappush(nums, -nx)
         return result
-# Space: O(1)
 import heapq
 
 

@@ -1,5 +1,4 @@
 # Time:  O(n * m)
-# Space: O(n * m)
 
 # dp
 class Solution(object):
@@ -62,7 +61,6 @@ class Solution(object):
 
 
 # Time:  O(n * m)
-# Space: O(n * m)
 # memoization
 class Solution2(object):
     def lenOfVDiagonal(self, grid):

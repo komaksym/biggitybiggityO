@@ -1,5 +1,4 @@
 # Time:  O(l)
-# Space: O(l)
 
 class Solution(object):
     def nearestPalindromic(self, n):

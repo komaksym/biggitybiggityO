@@ -1,5 +1,4 @@
 # Time:  O(n * rlogn), r = len(roads)
-# Space: O(n)
 
 import itertools
 import heapq

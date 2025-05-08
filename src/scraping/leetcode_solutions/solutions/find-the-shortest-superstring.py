@@ -1,5 +1,4 @@
 # Time:  O(n^2 * (l^2 + 2^n))
-# Space: O(n^2)
 
 class Solution(object):
     def shortestSuperstring(self, A):

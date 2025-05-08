@@ -1,5 +1,4 @@
 # Time:  O(n^2), n = len(r)
-# Space: O(n)
 
 # math, stars and bars, combinatorics
 class Solution(object):
@@ -44,7 +43,6 @@ class Solution(object):
 
 
 # Time:  O(n^2), n = len(r)
-# Space: O(n)
 # math, stars and bars, combinatorics
 class Solution2(object):
     def countNumbers(self, l, r, b):

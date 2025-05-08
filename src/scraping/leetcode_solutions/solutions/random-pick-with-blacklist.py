@@ -1,6 +1,5 @@
 # Time:  ctor: O(b)
 #        pick: O(1)
-# Space: O(b)
 
 import random
 
@@ -30,7 +29,6 @@ class Solution(object):
 
 # Time:  ctor: O(blogb)
 #        pick: O(logb)
-# Space: O(b)
 import random
 
 class Solution2(object):

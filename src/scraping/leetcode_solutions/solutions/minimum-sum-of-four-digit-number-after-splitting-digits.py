@@ -1,5 +1,4 @@
 # Time:  O(d) = O(1), d is the number of digits
-# Space: O(d) = O(1)
 
 # greedy
 class Solution(object):
@@ -34,7 +33,6 @@ class Solution(object):
 
 
 # Time:  O(dlogd) = O(1), d is the number of digits
-# Space: O(d) = O(1)
 # greedy
 class Solution2(object):
     def minimumSum(self, num):

@@ -1,7 +1,6 @@
 # Time:  ctor:    O(1)
 #        upload:  O(1), amortized
 #        longest: O(1)
-# Space: O(n)
 
 # hash table
 class LUPrefix(object):

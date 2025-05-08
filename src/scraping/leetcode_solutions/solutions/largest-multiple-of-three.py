@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 import collections
 
@@ -22,7 +21,6 @@ class Solution(object):
                 break
         result = "".join(str(d)*count[d] for d in reversed(range(10)))
         return "0" if result and result[0] == '0' else result
-# Space: O(1)
 class Solution2(object):
     def largestMultipleOfThree(self, digits):
         """

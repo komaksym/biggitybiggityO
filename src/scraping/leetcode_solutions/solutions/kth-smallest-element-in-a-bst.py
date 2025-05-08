@@ -1,5 +1,4 @@
 # Time:  O(max(h, k))
-# Space: O(h)
 
 class Solution(object):
     def kthSmallest(self, root, k):
@@ -20,7 +19,6 @@ class Solution(object):
 
 
 # time: O(max(h, k))
-# space: O(h)
 
 from itertools import islice
 

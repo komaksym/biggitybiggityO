@@ -1,5 +1,4 @@
 # Time:  O(k * n)
-# Space: O(n)
 
 # dp, greedy, kadane's algorithm
 class Solution(object):
@@ -19,7 +18,6 @@ class Solution(object):
 
 
 # Time:  O(k * n)
-# Space: O(k * n)
 # dp, greedy, kadane's algorithm
 class Solution2(object):
     def maximumStrength(self, nums, k):

@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 class TreeNode(object):
     def __init__(self, x):
@@ -24,7 +23,6 @@ class Solution(object):
 
 
 # Time:  O(n)
-# Space: O(n)
 class Solution2(object):
     def upsideDownBinaryTree(self, root):
         return self.upsideDownBinaryTreeRecu(root, None)

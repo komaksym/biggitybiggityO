@@ -1,5 +1,4 @@
 # Time : O(nlogn), n is the value of the target
-# Space: O(n)
 
 
 class Solution(object):

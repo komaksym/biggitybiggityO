@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(k)
 
 class Solution(object):
     def checkSubarraySum(self, nums, k):

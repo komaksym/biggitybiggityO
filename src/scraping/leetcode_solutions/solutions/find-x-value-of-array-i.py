@@ -1,5 +1,4 @@
 # Time:  O(n * k)
-# Space: O(k)
 
 # dp
 class Solution(object):

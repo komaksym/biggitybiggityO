@@ -1,5 +1,4 @@
 # Time:  O(logn)
-# Space: O(1)
 
 # variant of "343. integer break"
 class Solution(object):

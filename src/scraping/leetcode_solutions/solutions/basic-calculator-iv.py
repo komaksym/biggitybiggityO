@@ -4,7 +4,6 @@
 #        *:        O(d * t^2)
 #        eval:     O(d * t)
 #        to_list:  O(d * tlogt)
-# Space: O(e + d * t), e is the number of evalvars
 
 import collections
 import itertools

@@ -1,7 +1,6 @@
 # Time:  O(n + n * (log10(9k)/k) + ... + k)
 #      = O((n - (log10(9k)/k)*k)/(1-log10(9k)/k))
 #      = O(n / (1-log10(9k)/k)) = O(n) for k >= 2
-# Space: O(n)
 
 # simulation
 class Solution(object):

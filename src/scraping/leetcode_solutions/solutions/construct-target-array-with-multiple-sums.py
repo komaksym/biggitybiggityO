@@ -1,5 +1,4 @@
 # Time:  O(log(max(t)) * logn)
-# Space: O(n)
 
 import heapq
 

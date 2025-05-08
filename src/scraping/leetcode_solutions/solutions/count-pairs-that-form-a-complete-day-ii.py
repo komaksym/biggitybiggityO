@@ -1,5 +1,4 @@
 # Time:  O(n + 24)
-# Space: O(24)
 
 # freq table
 class Solution(object):

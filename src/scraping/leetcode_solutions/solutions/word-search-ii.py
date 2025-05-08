@@ -1,5 +1,4 @@
 # Time:  O(m * n * 4 * 3^(h - 1)) ~= O(m * n * 3^h), h is the height of trie
-# Space: O(t), t is the number of nodes in trie
 
 class TrieNode(object):
     def __init__(self):

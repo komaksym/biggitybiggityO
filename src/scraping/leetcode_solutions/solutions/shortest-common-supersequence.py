@@ -1,5 +1,4 @@
 # Time:  O(m * n)
-# Space: O(m * n)
 
 class Solution(object):
     def shortestCommonSupersequence(self, str1, str2):

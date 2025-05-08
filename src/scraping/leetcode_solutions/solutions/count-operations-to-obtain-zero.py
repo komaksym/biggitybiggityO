@@ -1,5 +1,4 @@
 # Time:  O(log(min(m, n)))
-# Space: O(1)
 
 # gcd-like solution
 class Solution(object):

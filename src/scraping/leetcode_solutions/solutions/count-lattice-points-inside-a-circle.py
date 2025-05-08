@@ -1,5 +1,4 @@
 # Time:  O(n * r^2)
-# Space: O(min(n * r^2, max_x * max_y))
 
 # math, hash table
 class Solution(object):
@@ -18,7 +17,6 @@ class Solution(object):
 
 
 # Time:  O(n * max_x * max_y)
-# Space: O(1)
 # math
 class Solution2(object):
     def countLatticePoints(self, circles):

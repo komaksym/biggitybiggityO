@@ -1,5 +1,4 @@
 # Time:  O(nlogn + mlogm + nlogk + mlogk), k is max(max(nums), max(xi))
-# Space: O(nlogk)
 
 class Trie(object):
     def __init__(self, bit_length):

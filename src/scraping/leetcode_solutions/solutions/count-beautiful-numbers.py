@@ -1,5 +1,4 @@
 # Time:  O(logr * 2 * 10 * s)
-# Space: O(s) ~= O(2026), s = len(states)
 
 import collections
 

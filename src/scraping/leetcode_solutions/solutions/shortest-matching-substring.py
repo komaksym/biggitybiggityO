@@ -1,5 +1,4 @@
 # Time:  O(n + m)
-# Space: O(n + m)
 
 # kmp, two pointers (three pointers)
 class Solution(object):
@@ -55,7 +54,6 @@ class Solution(object):
                 break
             result = min(result, (k+lc)-i)
         return result if result != INF else -1 
-# Space: O(n + m)
 # kmp, two pointers (three pointers)
 class Solution2(object):
     def shortestMatchingSubstring(self, s, p):

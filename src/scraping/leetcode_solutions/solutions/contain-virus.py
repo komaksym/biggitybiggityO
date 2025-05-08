@@ -1,5 +1,4 @@
 # Time:  O((m * n)^(4/3)), days = O((m * n)^(1/3))
-# Space: O(m * n)
 
 class Solution(object):
     def containVirus(self, grid):

@@ -1,5 +1,4 @@
 # Time:  O(m + n) ~ O(m * n)
-# Space: O(1)
 
 # iterative solution with greedy
 class Solution(object):
@@ -38,7 +37,6 @@ class Solution(object):
 
 # dp with rolling window
 # Time:  O(m * n)
-# Space: O(n)
 class Solution2(object):
     def isMatch(self, s, p):
         k = 2
@@ -61,7 +59,6 @@ class Solution2(object):
 
 # dp
 # Time:  O(m * n)
-# Space: O(m * n)
 class Solution3(object):
     def isMatch(self, s, p):
         result = [[False for j in range(len(p) + 1)] for i in range(len(s) + 1)]

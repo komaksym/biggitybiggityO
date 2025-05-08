@@ -1,5 +1,4 @@
 # Time:  O(n + klogk)
-# Space: O(k)
 
 import collections
 

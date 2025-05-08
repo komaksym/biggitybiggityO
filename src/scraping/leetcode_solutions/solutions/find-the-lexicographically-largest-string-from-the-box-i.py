@@ -1,5 +1,4 @@
 # Time:  O(n)
-# Space: O(1)
 
 # greedy
 class Solution(object):
@@ -28,7 +27,6 @@ class Solution(object):
 
 
 # Time:  O(n * m)
-# Space: O(m)
 # greedy
 class Solution2(object):
     def answerString(self, word, numFriends):

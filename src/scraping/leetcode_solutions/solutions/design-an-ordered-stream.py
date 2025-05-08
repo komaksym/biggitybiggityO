@@ -1,5 +1,4 @@
 # Time:  O(1), amortized
-# Space: O(n)
 
 class OrderedStream(object):
 

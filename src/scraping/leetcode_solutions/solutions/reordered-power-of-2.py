@@ -1,5 +1,4 @@
 # Time:  O((logn)^2) = O(1) due to n is a 32-bit number
-# Space: O(logn) = O(1)
 
 import collections
 

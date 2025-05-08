@@ -1,5 +1,4 @@
 # Time:  O(m * klogk)
-# Space: O(k)
 
 import heapq
 
@@ -31,7 +30,6 @@ class Solution(object):
 
 
 # Time:  O((k + m) * log(m * MAX_NUM)) ~ O(k * m * log(m * MAX_NUM))
-# Space: O(m)
 class Solution2(object):
     def kthSmallest(self, mat, k):
         """

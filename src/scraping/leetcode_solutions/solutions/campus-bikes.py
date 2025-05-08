@@ -1,5 +1,4 @@
 # Time:  O((w * b) * log(w * b))
-# Space: O(w * b)
 
 import heapq
 

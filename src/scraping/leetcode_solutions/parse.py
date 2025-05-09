@@ -1,5 +1,6 @@
 import re
 from pathlib import Path
+import subprocess
 import pdb
 
 
@@ -69,6 +70,20 @@ def parse_data(files_path, files):
             parsed_data['code'].append(code)
 
 
+def open_corrupted_files(posix_paths):
+    # Subprocess command
+    command = 'open'
+    paths = [command]
+
+    # Populate the paths
+    for p in posix_paths:
+    # Get the str representation of PosixPath
+        paths.append(str(p))
+
+    # Run
+    subprocess.run(paths)
+
+
 CODES_PATTERN = set_regex_pattern(r"^(?:class|def).*?((?:\n#\s*?Time)|(?:\Z))", flags=re.DOTALL | re.MULTILINE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
@@ -77,7 +92,10 @@ parse_data(raw_data['file_paths'], raw_data['files'])
 
 print(f"Successfully parsed: {len(parsed_data['label'])} files")
 print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
-print(f"Unsuccessfully parsed file paths: {corrupted_data}")
+#print(f"Unsuccessfully parsed file paths: {corrupted_data}")
+
+open_corrupted_files(corrupted_data)
+
 
 
 

@@ -22,17 +22,47 @@ def search_files(folder_path):
     return raw_data
 
 
+def parse_labels(text):
+    """Parsing labels (Time complexity)"""
+    results = []
+
+    pattern = r'\sO\('
+    matches = re.finditer(pattern, text) 
+    for match in matches:
+        # Start position to begin searching from
+        start_pos = match.end()
+        # Index for searching parentheses
+        i = start_pos 
+        # Number of opened parentheses
+        depth = 1
+
+        while i < len(text) and depth > 0:
+            if text[i] == '(':
+                depth += 1
+            elif text[i] == ')':
+                depth -= 1
+
+            # Keep searching
+            i += 1
+
+        # Add to results if depth was exhausted
+        if depth == 0:
+            results.append(text[start_pos:i-1])
+           
+    return results
+
+
 def parse_data(files_path, files):
     for path, file in zip(files_path, files): 
         code_matches = re.findall(CODES_PATTERN, file)
-        label_matches = re.findall(LABELS_PATTERN, file)
+        label_matches = parse_labels(file)
 
         if len(code_matches) != len(label_matches):
             corrupted_data.append(path)
             continue
 
         for i, (code, label) in enumerate(zip(code_matches, label_matches)):
-        
+            # Remove comments
             code = re.sub(FILTER_PATTERN, "", code) 
 
             parsed_data['label'].append(label)
@@ -40,7 +70,6 @@ def parse_data(files_path, files):
 
 
 CODES_PATTERN = set_regex_pattern(r"^(?:class|def).*?((?:\n#\s*?Time)|(?:\Z))", flags=re.DOTALL | re.MULTILINE)
-LABELS_PATTERN = set_regex_pattern(r"O\s*\(([^()]+(?:\([^()]+[^()]*\)[^()]*)*[^()]*)\)", flags=re.IGNORECASE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
 raw_data = search_files(files_path)
@@ -49,14 +78,6 @@ parse_data(raw_data['file_paths'], raw_data['files'])
 print(f"Successfully parsed: {len(parsed_data['label'])} files")
 print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
 print(f"Unsuccessfully parsed file paths: {corrupted_data}")
-
-
-
-
-
-
-
-
 
 
 

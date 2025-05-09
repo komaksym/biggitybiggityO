@@ -1,77 +1,157 @@
 import re
+import pdb
 
 
-data = """
-# Time:  O(n)
+TEXT = """
+# Time:  'dsfdfO('(n * m)
+
+# Time:  ctor:    O(1)
+#        upload:  O(1), amortized
+#        longest: O(1)
+
+
+# Time:  "dsfdf O("(n * m)
+
+# Time:  O((logn)^2)
+
+# Time:  O (n * k), k = max(cnt for _, cnt in requirements)
+
+# Time:  O(n * sqrt(n)) = O(n^(3/2))
+
+# Time:  O   (s1 * min(s2, n1))
+
+# Time:  O  (n + (n + logr) + nlog(logr) + nlogn) = O(nlogn), assumed log(x) takes O(1) time
+
+# Time:  precompute: O(max_n^2 + max_y * min(max_n, max_x))
+#        runtime:    O(min(n, x))
+
+# Time:  O(logn)
+
+# Time:  O(n^2 * n!)
+
+
+--------------------------------------------------------------------------
+
+import math
+
 
 class Solution(object):
-    def isValid(self, code):
-        
-        def validText(s, i):
-            j = i
-            i = s.find("<", i)
-            return i != j, i
+    def arrangeCoins(self, n):
+        return int((math.sqrt(8*n+1)-1) / 2)  # sqrt is O(logn) time.
 
-        def validCData(s, i):
-            if s.find("<![CDATA[", i) != i:
-                return False, i
-            j = s.find("]]>", i)
-            if j == -1:
-                return False, i
-            return True, j+3
 
-        def parseTagName(s, i):
-            if s[i] != '<':
-                return "", i
-            j = s.find('>', i)
-            if j == -1 or not (1 <= (j-1-i) <= 9):
-                return "", i
-            tag = s[i+1:j]
-            for c in tag:
-                if not (ord('A') <= ord(c) <= ord('Z')):
-                    return "", i
-            return tag, j+1
+# Time:  ctor:         O(nlogn)
+#        changeRating: O(logn)
+#        highestRated: O(1)
 
-        def parseContent(s, i):
-            while i < len(s):
-                result, i = validText(s, i)
-                if result:
-                    continue
-                result, i = validCData(s, i)
-                if result:
-                    continue
-                result, i = validTag(s, i)
-                if result:
-                    continue
-                break
-            return i
+# Time:  ctor:         Oa(nlogn)
+#        changeRating: fO(logn)
+#        highestRated: do(1)
 
-        def validTag(s, i):
-            tag, j = parseTagName(s, i)
-            if not tag:
-                return False, i
-            j = parseContent(s, j)
-            k = j + len(tag) + 2
-            if k >= len(s) or s[j:k+1] != "</" + tag + ">":
-                return False, i
-            return True, k+1
+class Solution2(object):
+    def arrangeCoinsO(self, n):
+        def check(mid, n):
+            return mid*(mid+1) <= 2*n
 
-        result, i = validTag(code, 0)
-        return result and i == len(code)
-
+        left, right = 1, n
+        while left <= right:
+            mid = left + (right-left)//2
+            if not check(mid, n):
+                right = mid-1
+            else:
+                left = mid+1
+        return right
 """
 
-#pattern = r'(?m)^(\s*# Time:.*\n(?:\s*#.*\n)*)'
-#blocks = re.split(pattern, data)
 
-#print(f"BLOCK SIZE: {len(blocks)}")
-#for i, b in enumerate(blocks):
-    #print(f"Pair: {i}\n", b) 
+def extract_O_blocks(text):
+    results = []
 
-print(data.strip())
-#matches = re.findall(
-    #"",
-    #data,
-    #flags=re.IGNORECASE | re.DOTALL | re.MULTILINE,
-#)
-#print(matches)
+    pattern = r'\sO\('
+    matches = re.finditer(pattern, text) 
+    for match in matches:
+        # Start position to begin searching from
+        start_pos = match.end()
+        # Index for searching parentheses
+        i = start_pos 
+        # Number of opened parentheses
+        depth = 1
+
+        while i < len(text) and depth > 0:
+            if text[i] == '(':
+                depth += 1
+            elif text[i] == ')':
+                depth -= 1
+            # Keep searching
+            i += 1
+
+        # Add to results if depth was exhausted
+        if depth == 0:
+            results.append(text[start_pos:i-1])
+           
+    return results
+
+matches = extract_O_blocks(TEXT)
+print(matches)
+print(len(matches))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#import re
+#from pathlib import Path
+#import pdb
+#
+#
+#files_path = 'solutions/'
+#parsed_data = {'label': [], 'code': []}
+#corrupted_data = []
+#
+#
+#def set_regex_pattern(pattern, flags=0):
+#    return re.compile(rf"{pattern}", flags)
+#
+#
+#def search_files(folder_path):
+#    raw_data = {'file_paths': [], 'files': []}
+#
+#    for file_path in (Path('.').glob(f'{files_path}/*.py')):
+#         raw_data['file_paths'].append(file_path)
+#         raw_data['files'].append(file_path.read_text())
+#
+#    return raw_data
+#
+#
+#def parse_data(files_path, files, pattern):
+#    total_matches = 0
+#
+#    for path, file in zip(files_path, files): 
+#        matches = re.findall(pattern, file)
+#
+#        total_matches += len(matches)
+#
+#        for m in matches:
+#            print(m)
+#
+#    print(f"Num of total matches: {total_matches}")
+#
+#
+#pattern = set_regex_pattern(r"\bO\b\(")
+#
+#raw_data = search_files(files_path)
+#parse_data(raw_data['file_paths'], raw_data['files'], pattern)

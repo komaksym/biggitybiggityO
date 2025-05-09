@@ -46,11 +46,7 @@ def main():
 
 
     # Clean the data up
-<<<<<<< HEAD
-    clean_files(raw_data['files'], raw_data['file_paths'], docstrings_pttrn)
-=======
     clean_files(raw_data['files'], raw_data['file_paths'], inline_commnts_ptrn)
->>>>>>> test
 
 
 if __name__ == '__main__':

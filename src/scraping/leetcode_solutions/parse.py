@@ -8,7 +8,7 @@ parsed_data = {'label': [], 'code': []}
 corrupted_data = []
 
 
-def set_regex_pattern(pattern, flags=None):
+def set_regex_pattern(pattern, flags=0):
     return re.compile(rf"{pattern}", flags)
 
 

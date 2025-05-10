@@ -54,10 +54,11 @@ def parse_labels(text):
 
 
 def separate_annotated_labels(files_path, files):
+    annotations_pattern = set_regex_pattern(r"#.*?O\(.*\n(?:#.*O.*\n)+")
     annotated_data = []
 
     for path, file in zip(files_path, files): 
-        label_matches = re.findall(ANNOTATIONS_PATTERN, file)
+        label_matches = re.findall(annotations_pattern, file)
 
         for label in label_matches:
             annotated_data.append(path)
@@ -70,7 +71,6 @@ def separate_annotated_labels(files_path, files):
 def parse_data(files_path, files):
     for path, file in zip(files_path, files): 
         code_matches = re.findall(CODES_PATTERN, file)
-        label_annotations = re.findall(ANNOTATIONS_PATTERN, file)
         label_matches = parse_labels(file)
 
         if len(code_matches) != len(label_matches):
@@ -85,7 +85,7 @@ def parse_data(files_path, files):
             parsed_data['code'].append(code)
 
 
-def open_corrupted_files(command, posix_paths, destination_path):
+def open_corrupted_files(command, posix_paths, destination_path=None):
     # Subprocess command
     command = command
     paths = [command]
@@ -95,52 +95,23 @@ def open_corrupted_files(command, posix_paths, destination_path):
     # Get the str representation of PosixPath
         paths.append(str(p))
 
-    paths.append(destination_path)
+    # If moving files
+    if command == 'mv' and destination_path:
+        paths.append(destination_path)
+
     # Run
     subprocess.run(paths)
 
 
 CODES_PATTERN = set_regex_pattern(r"^(?:class|def).*?((?:\n#\s*?Time)|(?:\Z))", flags=re.DOTALL | re.MULTILINE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
-ANNOTATIONS_PATTERN = set_regex_pattern(r"#.*?O\(.*\n(?:#.*O.*\n)+")
 
 
 raw_data = search_files(files_path)
-separate_annotated_labels(raw_data['file_paths'], raw_data['files'])
-#parse_data(raw_data['file_paths'], raw_data['files'])
+parse_data(raw_data['file_paths'], raw_data['files'])
 
-#print(f"Successfully parsed: {len(parsed_data['label'])} files")
-#print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
-#print(f"Unsuccessfully parsed file paths: {corrupted_data}")
+print(f"Unsuccessfully parsed file paths: {corrupted_data}")
+print(f"Successfully parsed: {len(parsed_data['label'])} files")
+print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
 
-#open_corrupted_files("open", corrupted_data)
-
-
-
-
-
-
-
-    
-"""
-Regex pattern for parsing time complexity labels, 
-only what's inside of the brackets, e.g. 'O(n^2)' results in 'n^2'.
-
-We do that by using a non-capturing group and positive lookahead assertion,
-which are techniques that are very useful when you want to match your target substring
-by using some parts of a string as a guide but you do not want it to be parsed as a result
-and so you exclude it, a.k.a. 'not capture' or 'lookahead' (you just look, dont extract)
-"""
-
-"""
-Regex pattern for parsing codes
-
-We're matching the codes that start with 'class' continued by
-a non-greedy amount of arbitrary symbols, newlines included (hence flag DOTALL)
-until we meet a return clause, which is suffixed with a non-greedy amount of symbols
-in the same row
-"""
-
-
-
-
+open_corrupted_files("open", corrupted_data)

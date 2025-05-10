@@ -21,6 +21,8 @@ class Solution(object):
             if i >= target:
                 break
         return result
+    
+    
 class Solution2(object):
     def closestCost(self, baseCosts, toppingCosts, target):
         max_count = 2

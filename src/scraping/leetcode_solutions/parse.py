@@ -103,7 +103,7 @@ def open_corrupted_files(command, posix_paths, destination_path=None):
     subprocess.run(paths)
 
 
-CODES_PATTERN = set_regex_pattern(r"(?:#\sTime.*?\n)(.*?)((?=#\sTime)|(\Z))", flags=re.DOTALL | re.MULTILINE)
+CODES_PATTERN = set_regex_pattern(r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
 

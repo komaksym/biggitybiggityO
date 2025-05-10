@@ -53,9 +53,24 @@ def parse_labels(text):
     return results
 
 
+def separate_annotated_labels(files_path, files):
+    annotated_data = []
+
+    for path, file in zip(files_path, files): 
+        label_matches = re.findall(ANNOTATIONS_PATTERN, file)
+
+        for label in label_matches:
+            annotated_data.append(path)
+
+    # Move data to a separate folder
+    open_corrupted_files("mv", annotated_data, destination_path='solutions/annotated_solutions/')
+    print(f"Moved: {len(annotated_data)} files")
+
+
 def parse_data(files_path, files):
     for path, file in zip(files_path, files): 
         code_matches = re.findall(CODES_PATTERN, file)
+        label_annotations = re.findall(ANNOTATIONS_PATTERN, file)
         label_matches = parse_labels(file)
 
         if len(code_matches) != len(label_matches):
@@ -70,9 +85,9 @@ def parse_data(files_path, files):
             parsed_data['code'].append(code)
 
 
-def open_corrupted_files(posix_paths):
+def open_corrupted_files(command, posix_paths, destination_path):
     # Subprocess command
-    command = 'open'
+    command = command
     paths = [command]
 
     # Populate the paths
@@ -80,21 +95,25 @@ def open_corrupted_files(posix_paths):
     # Get the str representation of PosixPath
         paths.append(str(p))
 
+    paths.append(destination_path)
     # Run
     subprocess.run(paths)
 
 
 CODES_PATTERN = set_regex_pattern(r"^(?:class|def).*?((?:\n#\s*?Time)|(?:\Z))", flags=re.DOTALL | re.MULTILINE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
+ANNOTATIONS_PATTERN = set_regex_pattern(r"#.*?O\(.*\n(?:#.*O.*\n)+")
+
 
 raw_data = search_files(files_path)
-parse_data(raw_data['file_paths'], raw_data['files'])
+separate_annotated_labels(raw_data['file_paths'], raw_data['files'])
+#parse_data(raw_data['file_paths'], raw_data['files'])
 
-print(f"Successfully parsed: {len(parsed_data['label'])} files")
-print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
+#print(f"Successfully parsed: {len(parsed_data['label'])} files")
+#print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
 #print(f"Unsuccessfully parsed file paths: {corrupted_data}")
 
-open_corrupted_files(corrupted_data)
+#open_corrupted_files("open", corrupted_data)
 
 
 

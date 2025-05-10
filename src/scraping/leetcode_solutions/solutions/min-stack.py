@@ -56,7 +56,7 @@ class MinStack2(object):
     def getMin(self):
         return self.minStack[-1][0]
 
-# time: O(1)
+# Time: O(1)
 
 class MinStack3(object):
 

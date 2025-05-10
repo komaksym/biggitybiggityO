@@ -1,3 +1,5 @@
+# Time: O(1)
+
 class Solution(object):
     def minimumPossibleSum(self, n, target):
         def arithmetic_progression_sum(a, d, n):

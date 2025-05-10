@@ -8,7 +8,7 @@ class Solution(object):
                 nums[i - 1], nums[i] = nums[i], nums[i - 1]
 
 
-# time: O(nlogn)
+# Time: O(nlogn)
 class Solution2(object):
     def wiggleSort(self, nums):
         nums.sort()

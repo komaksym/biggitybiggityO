@@ -1,6 +1,5 @@
 # Time:  O(n)
 
-# inplace, array
 class Solution(object):
     def applyOperations(self, nums):
         for i in range(len(nums)-1):

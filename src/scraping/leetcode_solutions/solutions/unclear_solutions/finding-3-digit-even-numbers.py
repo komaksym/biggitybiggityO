@@ -54,6 +54,7 @@ class Node(object):
 class Solution3(object):
     def findEvenNumbers(self, digits):
         k = 3
+        
         def backtracking(curr, dummy, result):
             if len(curr) == k:
                 result.append(reduce(lambda x, y: x*10+y, curr))

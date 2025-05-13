@@ -4,11 +4,6 @@ import subprocess
 import pdb
 
 
-files_path = 'solutions/'
-parsed_data = {'label': [], 'code': []}
-corrupted_data = []
-
-
 def set_regex_pattern(pattern, flags=0):
     return re.compile(rf"{pattern}", flags)
 
@@ -103,9 +98,12 @@ def open_corrupted_files(command, posix_paths, destination_path=None):
     subprocess.run(paths)
 
 
-CODES_PATTERN = set_regex_pattern(r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE)
+CODES_PATTERN = set_regex_pattern(r"(?:class|def)\sSolution")
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
+files_path = 'solutions/'
+parsed_data = {'label': [], 'code': []}
+corrupted_data = []
 
 raw_data = search_files(files_path)
 parse_data(raw_data['file_paths'], raw_data['files'])
@@ -114,4 +112,8 @@ print(f"Unsuccessfully parsed file paths: {corrupted_data}")
 print(f"Successfully parsed: {len(parsed_data['label'])} files")
 print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
 
-open_corrupted_files("open", corrupted_data)
+#for idx, code in enumerate(parsed_data['code'][50:100]):
+    #print(f"CODE #{idx+1}:\n", code, end='\n\n')
+#open_corrupted_files("open", corrupted_data)
+#open_corrupted_files("mv", corrupted_data, "solutions/unclear_solutions/")
+#print(f"Number of moved files: {len(corrupted_data)}")

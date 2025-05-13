@@ -1,6 +1,6 @@
 # Time:  O(1)
 
-class ParkingSystem(object):
+class Solution(object):
 
     def __init__(self, big, medium, small):
         self.__space = [0, big, medium, small]

@@ -1,6 +1,6 @@
 # Time:  O(n^2)
 
-class MyCalendarTwo(object):
+class Solution(object):
 
     def __init__(self):
         self.__overlaps = []

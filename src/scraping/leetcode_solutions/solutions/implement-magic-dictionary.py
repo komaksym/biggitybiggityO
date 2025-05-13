@@ -3,7 +3,7 @@
 import collections
 
 
-class MagicDictionary(object):
+class Solution(object):
 
     def __init__(self):
         _trie = lambda: collections.defaultdict(_trie)

@@ -1,6 +1,6 @@
 # Time:  O(n)
 
-class MinStack(object):
+class Solution(object):
     def __init__(self):
         self.min = None
         self.stack = []
@@ -30,7 +30,7 @@ class MinStack(object):
         return self.min
 
 # Time:  O(n)
-class MinStack2(object):
+class Solution2(object):
     def __init__(self):
         self.stack, self.minStack = [], []
     def push(self, x):
@@ -58,7 +58,7 @@ class MinStack2(object):
 
 # Time: O(1)
 
-class MinStack3(object):
+class Solution3(object):
 
     def __init__(self):
         self.stack = []

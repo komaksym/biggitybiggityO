@@ -2,7 +2,7 @@
 
 from random import randint
 
-class RandomizedSet(object):
+class Solution(object):
 
     def __init__(self):
         self.__set = []

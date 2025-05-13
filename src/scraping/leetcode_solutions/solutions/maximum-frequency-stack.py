@@ -3,7 +3,7 @@
 import collections
 
 
-class FreqStack(object):
+class Solution(object):
 
     def __init__(self):
         self.__freq = collections.Counter()

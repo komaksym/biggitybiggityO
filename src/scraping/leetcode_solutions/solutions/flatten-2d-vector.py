@@ -3,7 +3,7 @@
 from collections import deque
 
 
-class Vector2D(object):
+class Solution(object):
 
     def __init__(self, vec2d):
         self.stack = deque((len(v), iter(v)) for v in vec2d if v)

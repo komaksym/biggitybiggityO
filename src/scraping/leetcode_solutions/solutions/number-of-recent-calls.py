@@ -3,7 +3,7 @@
 import collections
 
 
-class RecentCounter(object):
+class Solution(object):
 
     def __init__(self):
         self.__q = collections.deque()

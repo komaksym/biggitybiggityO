@@ -1,6 +1,6 @@
 # Time:  O(n)
 
-class RLEIterator(object):
+class Solution(object):
 
     def __init__(self, A):
         self.__A = A

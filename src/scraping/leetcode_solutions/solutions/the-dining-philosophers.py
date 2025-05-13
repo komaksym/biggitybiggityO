@@ -3,7 +3,7 @@
 import threading
 
 
-class DiningPhilosophers(object):
+class Solution(object):
     def __init__(self):
         self._l = [threading.Lock() for _ in range(5)]
 

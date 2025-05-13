@@ -2,7 +2,7 @@
 
 # see proof in references:
 # 1. https://kunigami.blog/2012/09/25/skip-lists-in-python/
-# 2. https://opendatastructures.org/ods-cpp/4_4_Analysis_Skiplists.html
+# 2. https://opendatastructures.org/ods-cpp/4_4_Analysis_Solutions.html
 # 3. https://brilliant.org/wiki/skip-lists/
 import random
 
@@ -13,7 +13,7 @@ class SkipNode(object):
         self.nexts = [None]*level
 
 
-class Skiplist(object):
+class Solution(object):
     P_NUMERATOR, P_DENOMINATOR = 1, 2 
     MAX_LEVEL = 32 
 
@@ -64,8 +64,8 @@ class Skiplist(object):
 
     def __random_level(self):
         level = 1
-        while random.randint(1, Skiplist.P_DENOMINATOR) <= Skiplist.P_NUMERATOR and \
-              level < Skiplist.MAX_LEVEL:
+        while random.randint(1, Solution.P_DENOMINATOR) <= Solution.P_NUMERATOR and \
+              level < Solution.MAX_LEVEL:
             level += 1
         return level
 

@@ -3,7 +3,7 @@
 import re
 
 
-class StringIterator(object):
+class Solution(object):
 
     def __init__(self, compressedString):
         self.__result = re.findall(r"([a-zA-Z])(\d+)", compressedString)

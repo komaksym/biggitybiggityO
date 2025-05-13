@@ -6,7 +6,7 @@ class TrieNode(object):
         self.leaves = {}
 
 
-class Trie(object):
+class Solution(object):
 
     def __init__(self):
         self.root = TrieNode()

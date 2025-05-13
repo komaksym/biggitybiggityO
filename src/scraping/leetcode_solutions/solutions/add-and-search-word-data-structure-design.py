@@ -6,7 +6,7 @@ class TrieNode(object):
         self.leaves = {}
 
 
-class WordDictionary(object):
+class Solution(object):
     def __init__(self):
         self.root = TrieNode()
 

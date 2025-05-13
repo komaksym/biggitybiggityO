@@ -4,6 +4,6 @@ import pandas as pd
 
 
 # pandas
-def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
+def Solution(products: pd.DataFrame) -> pd.DataFrame:
     products["quantity"].fillna(0, inplace=True)
     return products

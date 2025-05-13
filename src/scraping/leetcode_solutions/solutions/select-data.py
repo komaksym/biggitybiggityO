@@ -4,5 +4,5 @@ import pandas as pd
 
 
 # pandas
-def selectData(students: pd.DataFrame) -> pd.DataFrame:
+def Solution(students: pd.DataFrame) -> pd.DataFrame:
     return students[students["student_id"] == 101][["name", "age"]]

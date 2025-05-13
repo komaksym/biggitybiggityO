@@ -6,7 +6,7 @@ class Node(object):
         self.children = children
 
 
-class Codec(object):
+class Solution(object):
 
     def serialize(self, root):
         def dfs(node, vals):

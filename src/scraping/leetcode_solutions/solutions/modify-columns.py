@@ -4,5 +4,5 @@ import pandas as pd
 
 
 # pandas
-def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+def Solution(employees: pd.DataFrame) -> pd.DataFrame:
     return employees.assign(salary=2*employees["salary"])

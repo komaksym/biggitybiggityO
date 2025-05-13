@@ -3,7 +3,7 @@
 import collections
 
 
-class MapSum(object):
+class Solution(object):
 
     def __init__(self):
         _trie = lambda: collections.defaultdict(_trie)

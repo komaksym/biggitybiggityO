@@ -6,7 +6,7 @@ class Node(object):
         self.next = self.prev = None
 
 
-class MyLinkedList(object):
+class Solution(object):
 
     def __init__(self):
         self.__head = self.__tail = Node(-1)

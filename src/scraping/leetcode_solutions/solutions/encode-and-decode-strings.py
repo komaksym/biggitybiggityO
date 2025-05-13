@@ -1,6 +1,6 @@
 # Time:  O(n)
 
-class Codec(object):
+class Solution(object):
 
     def encode(self, strs):
         encoded_str = ""

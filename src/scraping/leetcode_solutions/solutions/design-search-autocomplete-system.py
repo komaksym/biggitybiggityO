@@ -34,7 +34,7 @@ class TrieNode(object):
             self.infos.pop()
 
 
-class AutocompleteSystem(object):
+class Solution(object):
 
     def __init__(self, sentences, times):
         self.__trie = TrieNode()

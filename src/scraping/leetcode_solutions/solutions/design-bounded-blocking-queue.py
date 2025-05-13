@@ -4,7 +4,7 @@ import threading
 import collections
 
 
-class BoundedBlockingQueue(object):
+class Solution(object):
     def __init__(self, capacity):
         self.__cv = threading.Condition()
         self.__q = collections.deque()

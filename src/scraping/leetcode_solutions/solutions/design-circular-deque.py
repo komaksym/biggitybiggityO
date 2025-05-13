@@ -1,6 +1,6 @@
 # Time:  O(1)
 
-class MyCircularDeque(object):
+class Solution(object):
 
     def __init__(self, k):
         self.__start = 0

@@ -3,7 +3,7 @@
 import itertools
 
 
-class CombinationIterator(object):
+class Solution(object):
 
     def __init__(self, characters, combinationLength):
         self.__it = itertools.combinations(characters, combinationLength)
@@ -22,7 +22,7 @@ class CombinationIterator(object):
 import functools
 
 
-class CombinationIterator2(object):
+class Solution2(object):
 
     def __init__(self, characters, combinationLength):
         self.__characters = characters

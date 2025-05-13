@@ -4,5 +4,5 @@ import pandas as pd
 
 
 # pandas
-def getDataframeSize(players: pd.DataFrame) -> List[int]:
+def Solution(players: pd.DataFrame) -> List[int]:
     return list(players.shape)

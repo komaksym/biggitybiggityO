@@ -8,7 +8,7 @@ class TreeNode(object):
         self.right = None
 
 
-class FindElements(object):
+class Solution(object):
 
     def __init__(self, root):
         def dfs(node, v, lookup):

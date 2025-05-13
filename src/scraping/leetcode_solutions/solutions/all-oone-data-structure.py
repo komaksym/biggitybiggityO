@@ -38,7 +38,7 @@ class LinkedList(object):
         return self.tail.prev
 
 
-class AllOne(object):
+class Solution(object):
 
     def __init__(self):
         self.bucket_of_key = {}

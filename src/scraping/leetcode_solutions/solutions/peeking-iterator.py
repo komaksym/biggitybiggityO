@@ -1,6 +1,6 @@
 # Time:  O(1) per peek(), next(), hasNext()
 
-class PeekingIterator(object):
+class Solution(object):
     def __init__(self, iterator):
         self.iterator = iterator
         self.val_ = None

@@ -4,7 +4,7 @@ from sortedcontainers import SortedList
 
 
 # balanced bst solution
-class MRUQueue(object):
+class Solution(object):
 
     def __init__(self, n):
         self.__sl = SortedList((i-1, i) for i in range(1, n+1))  
@@ -17,7 +17,7 @@ class MRUQueue(object):
 
 
 # Time:  ctor:  O(n + m), m is the max number of calls
-class BIT(object): 
+class Solution2(object): 
     def __init__(self, n):
         MAX_CALLS = 2000
         self.__bit = [0]*(n+MAX_CALLS+1) 
@@ -54,7 +54,7 @@ class BIT(object):
 
 
 # fenwick / bit solution
-class MRUQueue2(object):
+class Solution3(object):
 
     def __init__(self, n):
         self.__bit = BIT(n)
@@ -77,7 +77,7 @@ import math
 
 
 # sqrt decomposition solution
-class MRUQueue3(object):
+class Solution4(object):
 
     def __init__(self, n):
         self.__buckets = [collections.deque() for _ in range(int(math.ceil(n**0.5)))]

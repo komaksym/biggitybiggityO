@@ -3,7 +3,7 @@
 import collections
 
 
-class Logger(object):
+class Solution(object):
 
     def __init__(self):
         self.__dq = collections.deque()

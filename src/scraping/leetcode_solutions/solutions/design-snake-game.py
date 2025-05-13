@@ -2,7 +2,7 @@
 
 from collections import deque
 
-class SnakeGame(object):
+class Solution(object):
 
     def __init__(self, width,height,food):
         self.__width = width

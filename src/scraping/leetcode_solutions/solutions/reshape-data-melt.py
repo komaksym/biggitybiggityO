@@ -4,7 +4,7 @@ import pandas as pd
 
 
 # pandas
-def meltTable(report: pd.DataFrame) -> pd.DataFrame:
+def Solution(report: pd.DataFrame) -> pd.DataFrame:
     return report.melt(
         id_vars=["product"],
         value_vars=[f"quarter_{i}" for i in range(1, 4+1)],

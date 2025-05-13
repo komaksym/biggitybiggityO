@@ -3,7 +3,7 @@
 import threading
 
 
-class TrafficLight(object):
+class Solution(object):
     
     def __init__(self):
         self.__l = threading.Lock()

@@ -3,7 +3,7 @@
 import collections
 
 
-class FrontMiddleBackQueue(object):
+class Solution(object):
 
     def __init__(self):
         self.__left, self.__right = collections.deque(), collections.deque()   

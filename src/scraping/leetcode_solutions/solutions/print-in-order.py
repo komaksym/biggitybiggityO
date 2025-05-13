@@ -3,7 +3,7 @@
 import threading
 
 
-class Foo(object):
+class Solution(object):
     def __init__(self):
         self.__cv = threading.Condition()
         self.__has_first = False

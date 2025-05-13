@@ -2,7 +2,7 @@
 
 from collections import defaultdict
 
-class TwoSum(object):
+class Solution(object):
 
     def __init__(self):
         self.lookup = defaultdict(int)

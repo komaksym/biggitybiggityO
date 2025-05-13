@@ -3,7 +3,7 @@
 import threading
 
 
-class FooBar(object):
+class Solution(object):
     def __init__(self, n):
         self.__n = n
         self.__curr = False

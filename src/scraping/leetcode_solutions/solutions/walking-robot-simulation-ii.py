@@ -1,6 +1,6 @@
 # Time:  O(1)
 
-class Robot(object):
+class Solution(object):
 
     def __init__(self, width, height):
         self.__w = width
@@ -38,7 +38,7 @@ class Robot(object):
 
 
 # Time:  O(1)
-class Robot2(object):
+class Solution2(object):
 
     def __init__(self, width, height):
         self.__w = width

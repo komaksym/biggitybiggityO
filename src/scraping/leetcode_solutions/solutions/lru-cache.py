@@ -4,7 +4,7 @@ import collections
 
 
 # using OrderedDict
-class LRUCache(object):
+class Solution(object):
     def __init__(self, capacity):
         self.cache = collections.OrderedDict()
         self.capacity = capacity
@@ -62,7 +62,7 @@ class LinkedList(object):
             self.tail = node.prev
         node.next, node.prev = None, None 
 
-class LRUCache2(object):
+class Solution2(object):
 
     def __init__(self, capacity):
         self.list = LinkedList()

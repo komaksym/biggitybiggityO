@@ -14,7 +14,7 @@ class TreeNode(object):
         self.right = None
 
 
-class Codec(object):
+class Solution(object):
 
     def encode(self, root):
         def encodeHelper(root, parent, index):

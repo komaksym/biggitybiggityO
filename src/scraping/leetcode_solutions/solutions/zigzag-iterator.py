@@ -3,7 +3,7 @@
 import collections
 
 
-class ZigzagIterator(object):
+class Solution(object):
 
     def __init__(self, v1, v2):
         self.q = collections.deque([(len(v), iter(v)) for v in (v1, v2) if v])

@@ -10,7 +10,7 @@ class TreeNode(object):
         self.right = None
 
 
-class Codec(object):
+class Solution(object):
 
     def serialize(self, root):
         def serializeHelper(node, vals):

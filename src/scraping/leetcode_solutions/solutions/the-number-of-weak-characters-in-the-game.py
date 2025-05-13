@@ -14,7 +14,7 @@ import collections
 
 
 # faster in sort by using more space
-class Solution(object):
+class Solution2(object):
     def numberOfWeakCharacters(self, properties):
         lookup = collections.defaultdict(list)
         for a, d in properties:

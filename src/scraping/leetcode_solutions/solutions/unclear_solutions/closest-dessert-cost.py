@@ -31,7 +31,7 @@ class Solution2(object):
                 return
             lookup.add((i, cost))
             if cost >= target or i == len(toppingCosts):
-                if (abs(cost-tearget), cost) < (abs(result[0]-target), result[0]):
+                if (abs(cost-target), cost) < (abs(result[0]-target), result[0]):
                     result[0] = cost
                 return
             for j in range(max_count+1):

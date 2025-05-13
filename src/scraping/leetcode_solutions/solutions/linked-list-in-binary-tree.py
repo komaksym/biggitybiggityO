@@ -48,6 +48,9 @@ class Solution(object):
             return True
         pattern, prefix = getPrefix(head)
         return dfs(pattern, prefix, root, -1)
+    
+
+    
 # dfs solution
 class Solution2(object):
     def isSubPath(self, head, root):

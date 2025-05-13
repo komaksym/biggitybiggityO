@@ -4,7 +4,7 @@ import collections
 
 
 # using OrderedDict
-class LFUCache(object):
+class Solution(object):
 
     def __init__(self, capacity):
         self.__capa = capacity
@@ -88,7 +88,7 @@ class LinkedList(object):
         node.next, node.prev = None, None 
 
 
-class LFUCache2(object):
+class Solution2(object):
 
     def __init__(self, capacity):
         self.__capa = capacity

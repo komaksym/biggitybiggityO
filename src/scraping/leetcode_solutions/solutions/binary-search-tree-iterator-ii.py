@@ -8,7 +8,7 @@ class TreeNode(object):
         self.right = right
 
 
-class BSTIterator(object):
+class Solution(object):
 
     def __init__(self, root):
         self.__stk = []

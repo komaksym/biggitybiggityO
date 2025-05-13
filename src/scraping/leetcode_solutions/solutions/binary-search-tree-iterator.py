@@ -7,7 +7,7 @@ class TreeNode(object):
         self.right = None
 
 
-class BSTIterator(object):
+class Solution(object):
     def __init__(self, root):
         self.__stk = []
         self.__traversalLeft(root)

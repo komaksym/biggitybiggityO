@@ -1,6 +1,6 @@
 # Time:  O(1), amortized
 
-class OrderedStream(object):
+class Solution(object):
 
     def __init__(self, n):
         self.__i = 0      

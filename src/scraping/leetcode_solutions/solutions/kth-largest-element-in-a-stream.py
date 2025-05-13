@@ -3,7 +3,7 @@
 import heapq
 
 
-class KthLargest(object):
+class Solution(object):
 
     def __init__(self, k, nums):
         self.__k = k

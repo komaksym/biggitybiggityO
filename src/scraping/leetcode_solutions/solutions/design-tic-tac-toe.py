@@ -1,7 +1,7 @@
 # Time:  O(1), per move.
 
 
-class TicTacToe(object):
+class Solution(object):
 
     def __init__(self, n):
         self.__size = n

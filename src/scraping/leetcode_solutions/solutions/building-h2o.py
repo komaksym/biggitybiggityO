@@ -3,7 +3,7 @@
 import threading
 
 
-class H2O(object):
+class Solution(object):
     def __init__(self):
         self.__l = threading.Lock()
         self.__nH = 0
@@ -35,7 +35,7 @@ class H2O(object):
 
 # Time:  O(n)
 # TLE
-class H2O2(object):
+class Solution2(object):
     def __init__(self):
         self.__nH = 0
         self.__nO = 0

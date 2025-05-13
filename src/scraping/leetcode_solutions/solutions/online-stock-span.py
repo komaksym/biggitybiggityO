@@ -1,6 +1,6 @@
 # Time:  O(n)
 
-class StockSpanner(object):
+class Solution(object):
 
     def __init__(self):
         self.__s = []

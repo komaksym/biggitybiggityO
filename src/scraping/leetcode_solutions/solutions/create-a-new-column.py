@@ -4,5 +4,5 @@ import pandas as pd
 
 
 # pandas
-def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+def Solution(employees: pd.DataFrame) -> pd.DataFrame:
     return employees.assign(bonus=2*employees["salary"])

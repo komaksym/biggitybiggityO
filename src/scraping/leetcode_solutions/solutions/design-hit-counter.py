@@ -2,7 +2,7 @@
 
 from collections import deque
 
-class HitCounter(object):
+class Solution(object):
 
     def __init__(self):
         self.__k = 300

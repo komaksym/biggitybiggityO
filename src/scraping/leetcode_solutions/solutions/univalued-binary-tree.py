@@ -20,6 +20,7 @@ class Solution(object):
             s.append(node.left)
             s.append(node.right)
         return True
+    
 class Solution2(object):
     def isUnivalTree(self, root):
         return (not root.left or (root.left.val == root.val and self.isUnivalTree(root.left))) and \

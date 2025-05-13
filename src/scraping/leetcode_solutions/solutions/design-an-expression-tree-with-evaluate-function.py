@@ -13,7 +13,7 @@ class Node(metaclass=ABCMeta):
 import operator
 
 
-class NodeIter(Node):
+class Solution(Node):
     ops = {'+':operator.add, '-':operator.sub, '*':operator.mul, '/':operator.div}
     
     def __init__(self, val):
@@ -37,7 +37,7 @@ class NodeIter(Node):
                 stk.append((1, (node.left, ret1)))
             elif step == 2:
                 node, ret1, ret2, ret = args
-                ret[0] = NodeIter.ops[node.val](ret1[0], ret2[0])
+                ret[0] = Solution.ops[node.val](ret1[0], ret2[0])
         return result[0]
 
 
@@ -46,9 +46,9 @@ class TreeBuilder(object):
         stk = []
         for c in postfix:
             if c.isdigit():
-                stk.append(NodeIter(c))
+                stk.append(Solution(c))
             else:
-                node = NodeIter(c)
+                node = Solution(c)
                 node.right = stk.pop()
                 node.left = stk.pop()
                 stk.append(node)                
@@ -56,7 +56,7 @@ class TreeBuilder(object):
 
 
 # Time:  O(n)
-class NodeRecu(Node):
+class Solution2(Node):
     ops = {'+':operator.add, '-':operator.sub, '*':operator.mul, '/':operator.div}
     
     def __init__(self, val):
@@ -67,7 +67,7 @@ class NodeRecu(Node):
     def evaluate(self):
         if self.val.isdigit():
             return int(self.val)
-        return NodeRecu.ops[self.val](self.left.evaluate(), self.right.evaluate())
+        return Solution2.ops[self.val](self.left.evaluate(), self.right.evaluate())
         
 
 class TreeBuilder2(object):
@@ -75,9 +75,9 @@ class TreeBuilder2(object):
         stk = []
         for c in postfix:
             if c.isdigit():
-                stk.append(NodeRecu(c))
+                stk.append(Solution2(c))
             else:
-                node = NodeRecu(c)
+                node = Solution2(c)
                 node.right = stk.pop()
                 node.left = stk.pop()
                 stk.append(node)

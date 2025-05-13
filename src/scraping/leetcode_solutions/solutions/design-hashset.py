@@ -42,7 +42,7 @@ class LinkedList(object):
         return curr
 
 
-class MyHashSet(object):
+class Solution(object):
 
     def __init__(self):
         self.__data = [LinkedList() for _ in range(10000)]

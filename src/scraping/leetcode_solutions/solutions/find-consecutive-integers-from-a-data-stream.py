@@ -1,7 +1,7 @@
 # Time:  O(1)
 
 # array
-class DataStream(object):
+class Solution(object):
 
     def __init__(self, value, k):
         self.__value = value

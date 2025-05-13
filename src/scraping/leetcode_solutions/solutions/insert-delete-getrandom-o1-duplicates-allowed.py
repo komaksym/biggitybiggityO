@@ -3,7 +3,7 @@
 from random import randint
 from collections import defaultdict
 
-class RandomizedCollection(object):
+class Solution(object):
 
     def __init__(self):
         self.__list = []

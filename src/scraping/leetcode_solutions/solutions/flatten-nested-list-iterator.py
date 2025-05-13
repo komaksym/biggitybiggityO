@@ -1,6 +1,6 @@
 # Time:  O(n), n is the number of the integers.
 
-class NestedIterator(object):
+class Solution(object):
 
     def __init__(self, nestedList):
         self.__depth = [[nestedList, 0]]

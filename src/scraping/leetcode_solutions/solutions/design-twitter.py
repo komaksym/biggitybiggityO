@@ -7,7 +7,7 @@ import heapq
 import random
 
 
-class Twitter(object):
+class Solution(object):
 
     def __init__(self):
         self.__number_of_most_recent_tweets = 10

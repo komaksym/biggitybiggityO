@@ -2,7 +2,7 @@
 
 MOD = 10**9+7
 
-class Fancy(object):
+class Solution(object):
 
     def __init__(self):
         self.__arr = []
@@ -29,7 +29,7 @@ class Fancy(object):
 
 
 # Time:  O(1)
-class Fancy2(object):
+class Solution2(object):
 
     def __init__(self):
         self.__arr = []

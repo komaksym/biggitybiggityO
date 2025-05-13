@@ -3,7 +3,7 @@
 # check:    Time: O(1), Space: O(1)
 # release:  Time: O(1), Space: O(1)
 
-class PhoneDirectory(object):
+class Solution(object):
 
     def __init__(self, maxNumbers):
         self.__curr = 0

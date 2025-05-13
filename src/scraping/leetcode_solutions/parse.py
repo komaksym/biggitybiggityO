@@ -12,7 +12,7 @@ def set_regex_pattern(pattern, flags=0):
 def search_files(folder_path):
     raw_data = {'file_paths': [], 'files': []}
 
-    for file_path in (Path('.').glob(f'{files_path}/*.py')):
+    for file_path in (Path('.').glob(f'{files_path}**/*.py')):
          raw_data['file_paths'].append(file_path)
          raw_data['files'].append(file_path.read_text())
 
@@ -103,7 +103,7 @@ def open_corrupted_files(command, posix_paths, destination_path=None):
 CODES_PATTERN = set_regex_pattern(r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
-files_path = 'raw_files/'
+files_path = 'raw_files/messy_files/'
 parsed_data = {'code': [], 'label': []}
 corrupted_data = []
 

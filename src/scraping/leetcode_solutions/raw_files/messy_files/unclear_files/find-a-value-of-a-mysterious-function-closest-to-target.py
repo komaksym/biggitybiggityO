@@ -47,6 +47,8 @@ class Solution(object):
                 count -= arr[left]
                 left += 1
         return result
+    
+    
 class Solution2(object):
     def closestToTarget(self, arr, target):
         result, dp = float("inf"), set() 

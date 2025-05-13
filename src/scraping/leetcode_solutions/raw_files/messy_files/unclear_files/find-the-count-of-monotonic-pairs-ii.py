@@ -1,5 +1,5 @@
-from functools import reduce
 # Time:  O(n + r), r = max(nums)
+from functools import reduce
 
 # combinatorics, stars and bars
 class Solution(object):

@@ -103,7 +103,7 @@ def open_corrupted_files(command, posix_paths, destination_path=None):
 CODES_PATTERN = set_regex_pattern(r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE)
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
-files_path = 'solutions/'
+files_path = 'raw_files/'
 parsed_data = {'code': [], 'label': []}
 corrupted_data = []
 
@@ -111,9 +111,7 @@ raw_data = search_files(files_path)
 parse_data(raw_data['file_paths'], raw_data['files'])
 print("The data was successfully parsed.")
 
-df = pd.DataFrame(parsed_data)
-df.to_csv("clean_data.csv", index=False)
-print("The data was successfully saved.")
+
 
 #print(f"Unsuccessfully parsed file paths: {corrupted_data}")
 #print(f"Successfully parsed: {len(parsed_data['label'])} files")

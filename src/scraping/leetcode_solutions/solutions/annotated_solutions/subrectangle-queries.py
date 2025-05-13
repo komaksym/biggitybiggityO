@@ -2,7 +2,7 @@
 #        update: O(1)
 #        get:    O(u), u is the number of updates
 
-class SubrectangleQueries(object):
+class Solution(object):
 
     def __init__(self, rectangle):
         self.__rectangle = rectangle
@@ -22,7 +22,7 @@ class SubrectangleQueries(object):
 # Time:  ctor:   O(1)
 #        update: O(m * n)
 #        get:    O(1)
-class SubrectangleQueries2(object):
+class Solution2(object):
 
     def __init__(self, rectangle):
         self.__rectangle = rectangle

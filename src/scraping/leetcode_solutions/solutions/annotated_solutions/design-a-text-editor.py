@@ -5,7 +5,7 @@
 #        cursorRight: O(k)
 
 # design, stack
-class TextEditor(object):
+class Solution(object):
 
     def __init__(self):
         self.__LAST_COUNT = 10

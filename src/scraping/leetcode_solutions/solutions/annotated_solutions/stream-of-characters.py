@@ -71,7 +71,7 @@ class AhoTrie(object):
         return result
 
 
-class StreamChecker(object):
+class Solution(object):
 
     def __init__(self, words):
         self.__trie = AhoTrie(words)

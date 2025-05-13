@@ -3,7 +3,7 @@
 #        deposit:  O(1)
 #        withdraw: O(1)
 
-class Bank(object):
+class Solution(object):
 
     def __init__(self, balance):
         self.__balance = balance

@@ -2,7 +2,7 @@
 #        add : O(1)
 #        get : O(1)
 
-class ProductOfNumbers(object):
+class Solution(object):
 
     def __init__(self):
         self.__accu = [1]

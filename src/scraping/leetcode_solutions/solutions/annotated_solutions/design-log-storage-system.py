@@ -2,7 +2,7 @@
 #        retrieve: O(n + dlogd), n is the size of the total logs
 #                              , d is the size of the found logs
 
-class LogSystem(object):
+class Solution(object):
 
     def __init__(self):
         self.__logs = []

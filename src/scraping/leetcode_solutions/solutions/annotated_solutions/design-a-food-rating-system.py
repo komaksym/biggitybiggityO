@@ -8,7 +8,7 @@ from sortedcontainers import SortedList
 
 
 # sorted list
-class FoodRatings(object):
+class Solution(object):
 
     def __init__(self, foods, cuisines, ratings):
         self.__food_to_cuisine = {}

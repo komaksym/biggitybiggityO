@@ -12,6 +12,8 @@ class Solution(object):
         
         cnt = list(map(count, (a, b, c)))
         return sum(cnt[0][0 if i == 0 or i == 1 else 1]*cnt[1][0 if i == 0 or i == 2 else 1]*cnt[2][0 if i == 0 or i == 3 else 1] for i in range(4))
+    
+    
 # bit manipulation, parity
 class Solution2(object):
     def tripletCount(self, a, b, c):

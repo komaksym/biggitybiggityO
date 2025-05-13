@@ -23,7 +23,7 @@ class Queue(object):
         return len(self.data) == 0
 
 
-class Stack(object):
+class Solution(object):
     def __init__(self):
         self.q_ = Queue()
 
@@ -43,7 +43,7 @@ class Stack(object):
 
 
 # Time: push: O(1), pop: O(n), top: O(1)
-class Stack2(object):
+class Solution2(object):
     def __init__(self):
         self.q_ = Queue()
         self.top_ = None

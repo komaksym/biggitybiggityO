@@ -1,7 +1,7 @@
 # Time:  ctor:    O(m), m is the number of all products
 #        getBill: O(p), p is the number of products to bill
 
-class Cashier(object):
+class Solution(object):
 
     def __init__(self, n, discount, products, prices):
         self.__n = n

@@ -8,7 +8,7 @@ from sortedcontainers import SortedList
 
 
 # sorted list
-class TaskManager(object):
+class Solution(object):
 
     def __init__(self, tasks):
         self.__lookup = {}

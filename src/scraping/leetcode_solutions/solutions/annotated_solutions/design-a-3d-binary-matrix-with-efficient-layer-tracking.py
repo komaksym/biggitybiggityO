@@ -8,7 +8,7 @@ from sortedcontainers import SortedList
 
 
 # sorted list
-class Matrix3D(object):
+class Solution(object):
 
     def __init__(self, n):
         self.__n = n
@@ -59,7 +59,7 @@ import heapq
 
 
 # heap
-class Matrix3D_2(object):
+class Solution2(object):
 
     def __init__(self, n):
         self.__matrix = {}

@@ -42,7 +42,7 @@ class SegmentTree(object):
 
 
 # design, segment tree, binary search
-class BookMyShow(object):
+class Solution(object):
 
     def __init__(self, n, m):
         self.__st = SegmentTree(n,

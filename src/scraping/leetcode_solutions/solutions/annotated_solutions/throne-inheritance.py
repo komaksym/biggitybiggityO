@@ -6,7 +6,7 @@
 import collections
 
 
-class ThroneInheritance(object):
+class Solution(object):
 
     def __init__(self, kingName):
         self.__king = kingName

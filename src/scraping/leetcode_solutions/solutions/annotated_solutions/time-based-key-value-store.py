@@ -5,7 +5,7 @@ import collections
 import bisect
 
 
-class TimeMap(object):
+class Solution(object):
 
     def __init__(self):
         self.lookup = collections.defaultdict(list)

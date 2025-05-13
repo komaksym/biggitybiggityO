@@ -6,7 +6,7 @@
 import collections
 
 
-class UndergroundSystem(object):
+class Solution(object):
 
     def __init__(self):
         self.__live = {}

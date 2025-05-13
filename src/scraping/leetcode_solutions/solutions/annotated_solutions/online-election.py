@@ -6,7 +6,7 @@ import itertools
 import bisect
 
 
-class TopVotedCandidate(object):
+class Solution(object):
 
     def __init__(self, persons, times):
         lead = -1

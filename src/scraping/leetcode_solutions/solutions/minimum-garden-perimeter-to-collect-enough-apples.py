@@ -12,6 +12,8 @@ class Solution(object):
         x = (-q/2 + ((q/2)**2+(p/3)**3)**0.5)**(1.0/3) + \
             (-q/2 - ((q/2)**2+(p/3)**3)**0.5)**(1.0/3)
         return 8*int(math.ceil(x - b/(3*a)))
+    
+    
 class Solution2(object):
     def minimumPerimeter(self, neededApples):
         x = int((2*neededApples)**(1.0/3))

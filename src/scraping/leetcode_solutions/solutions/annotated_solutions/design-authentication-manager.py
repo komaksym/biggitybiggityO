@@ -6,7 +6,7 @@
 import collections
 
 
-class AuthenticationManager(object):
+class Solution(object):
 
     def __init__(self, timeToLive):
         self.__time = timeToLive

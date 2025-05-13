@@ -2,7 +2,7 @@
 
 from heapq import heappush, heappop
 
-class MedianFinder(object):
+class Solution(object):
     def __init__(self):
         self.__max_heap = []
         self.__min_heap = []

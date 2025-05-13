@@ -6,6 +6,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 class Solution(object):
     def flatten(self, root):
         self.flattenRecu(root, None)
@@ -19,6 +20,7 @@ class Solution(object):
             return root
         else:
             return list_head
+
 
 class Solution2(object):
     list_head = None

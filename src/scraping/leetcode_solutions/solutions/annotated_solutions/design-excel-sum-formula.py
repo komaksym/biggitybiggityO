@@ -5,7 +5,7 @@
 import collections
 
 
-class Excel(object):
+class Solution(object):
 
     def __init__(self, H, W):
         self.__exl = [[0 for _ in range(ord(W)-ord('A')+1)] \

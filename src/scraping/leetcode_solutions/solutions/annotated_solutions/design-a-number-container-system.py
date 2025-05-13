@@ -6,7 +6,7 @@ from sortedcontainers import SortedList
 
 
 # sorted list
-class NumberContainers(object):
+class Solution(object):
 
     def __init__(self):
         self.__idx_to_num = {}

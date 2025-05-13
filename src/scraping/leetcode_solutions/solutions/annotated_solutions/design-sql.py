@@ -7,7 +7,7 @@ import itertools
 
 
 # hash table
-class SQL(object):
+class Solution(object):
 
     def __init__(self, names, columns):
         self.__table = {name:[column] for name, column in zip(names, columns)}

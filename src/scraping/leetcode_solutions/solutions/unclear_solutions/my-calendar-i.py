@@ -23,7 +23,7 @@ class Node(object):
             return False
 
 
-class MyCalendar(object):
+class Solution(object):
     def __init__(self):
         self.__root = None
 
@@ -36,7 +36,7 @@ class MyCalendar(object):
 
 
 # Time:  O(n^2)
-class MyCalendar2(object):
+class Solution2(object):
 
     def __init__(self):
         self.__calendar = []

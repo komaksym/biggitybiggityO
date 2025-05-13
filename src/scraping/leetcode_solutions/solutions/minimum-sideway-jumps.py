@@ -12,6 +12,7 @@ class Solution(object):
             lanes = set(j for j in range(1, 4) if j not in [obstacles[i], obstacles[i+1]])
         return result
 
+
 # dp solution
 class Solution2(object):
     def minSideJumps(self, obstacles):

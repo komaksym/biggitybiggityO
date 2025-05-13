@@ -6,7 +6,7 @@ class Interval(object):
         self.end = e
 
 
-class SummaryRanges(object):
+class Solution(object):
 
     def __init__(self):
         self.__intervals = []

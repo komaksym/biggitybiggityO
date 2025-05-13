@@ -1,7 +1,7 @@
 # Time:  create: O(n)
 #        get:    O(n)
 
-class FileSystem(object):
+class Solution(object):
 
     def __init__(self):
         self.__lookup = {"": -1}

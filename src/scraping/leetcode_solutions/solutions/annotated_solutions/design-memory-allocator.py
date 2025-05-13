@@ -6,7 +6,7 @@ from sortedcontainers import SortedList
 import collections
 
 # sorted list
-class Allocator(object):
+class Solution(object):
 
     def __init__(self, n):
         self.__avails = SortedList([[0, n]])

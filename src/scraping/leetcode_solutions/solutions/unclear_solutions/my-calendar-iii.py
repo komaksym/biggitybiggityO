@@ -3,7 +3,7 @@
 import bisect
 
 
-class MyCalendarThree(object):
+class Solution(object):
 
     def __init__(self):
         self.__books = [[-1, 0]]
@@ -27,7 +27,7 @@ class MyCalendarThree(object):
 
 
 # Time:  O(n^2)
-class MyCalendarThree2(object):
+class Solution2(object):
 
     def __init__(self):
         self.__books = []

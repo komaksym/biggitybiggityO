@@ -15,6 +15,8 @@ class Solution(object):
                 if all(c == 0 for c in change):
                     return k 
         return 0
+    
+    
 # full search solution (much slower)
 class Solution2(object):
     def maximumRequests(self, n, requests):

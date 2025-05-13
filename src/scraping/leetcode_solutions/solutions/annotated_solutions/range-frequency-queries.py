@@ -5,7 +5,7 @@ import collections
 import bisect
 
 
-class RangeFreqQuery(object):
+class Solution(object):
 
     def __init__(self, arr):
         self.__idxs = collections.defaultdict(list)

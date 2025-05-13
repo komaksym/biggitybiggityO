@@ -4,5 +4,5 @@ import pandas as pd
 
 
 # pandas
-def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+def Solution(students: pd.DataFrame) -> pd.DataFrame:
     return students.astype({"grade" : int})

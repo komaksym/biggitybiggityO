@@ -10,7 +10,7 @@ class TrieNode(object):
         self.children = {}
         self.content = ""
 
-class FileSystem(object):
+class Solution(object):
 
     def __init__(self):
         self.__root = TrieNode()

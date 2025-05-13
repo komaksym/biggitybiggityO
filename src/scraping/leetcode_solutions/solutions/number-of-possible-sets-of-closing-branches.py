@@ -28,6 +28,7 @@ class Solution(object):
         result = [0]
         backtracking(0, 0, [d[:] for d in dist])
         return result[0]
+    
 # bitmasks, Floyd-Warshall algorithm
 class Solution2(object):
     def numberOfSets(self, n, maxDistance, roads):

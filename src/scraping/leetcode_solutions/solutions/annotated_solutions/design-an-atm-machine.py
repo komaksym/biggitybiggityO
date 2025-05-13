@@ -3,7 +3,7 @@
 #        withdraw: O(1)
 
 # greedy
-class ATM(object):
+class Solution(object):
 
     def __init__(self):
         self.__vals = [20, 50, 100, 200, 500]

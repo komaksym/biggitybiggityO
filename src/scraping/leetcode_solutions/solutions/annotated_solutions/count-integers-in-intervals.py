@@ -6,7 +6,7 @@ from sortedcontainers import SortedList
 
 
 # design, sortedlist
-class CountIntervals(object):
+class Solution(object):
 
     def __init__(self):
         self.__sl = SortedList()

@@ -7,7 +7,7 @@ import itertools
 
 
 # freq table
-class Encrypter(object):
+class Solution(object):
 
     def __init__(self, keys, values, dictionary):
         self.__lookup = {k: v for k, v in zip(keys, values)}

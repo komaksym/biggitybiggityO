@@ -7,7 +7,7 @@ import heapq
 
 
 # "u ~= n" solution, n is the average number of users who own the chunk
-class FileSharing(object):
+class Solution(object):
 
     def __init__(self, m):
         self.__users = []
@@ -52,7 +52,7 @@ import heapq
 
 
 # "u >> n" solution
-class FileSharing2(object):
+class Solution2(object):
 
     def __init__(self, m):
         self.__users = []

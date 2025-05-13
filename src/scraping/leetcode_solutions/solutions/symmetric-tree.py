@@ -33,6 +33,7 @@ class Solution(object):
 
         return True
 
+
 # Recursive solution
 class Solution2(object):
     def isSymmetric(self, root):

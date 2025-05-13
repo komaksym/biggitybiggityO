@@ -5,7 +5,7 @@
 import heapq
 
 
-class SeatManager(object):
+class Solution(object):
 
     def __init__(self, n):
         self.__min_heap = list(range(1, n+1))

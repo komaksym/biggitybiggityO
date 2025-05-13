@@ -22,6 +22,8 @@ class Solution(object):
                 right[int(s[k])][i] += cnt[i]
             cnt[int(s[k])] += 1
         return result
+    
+    
 # dp
 class Solution2(object):
     def countPalindromes(self, s):

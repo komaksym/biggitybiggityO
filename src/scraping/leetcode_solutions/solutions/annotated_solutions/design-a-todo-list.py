@@ -8,7 +8,7 @@ from sortedcontainers import SortedList
 
 
 # sortedlist
-class TodoList(object):
+class Solution(object):
 
     def __init__(self):
         self.__tasks = []
@@ -44,7 +44,7 @@ from sortedcontainers import SortedList
 
 
 # sortedlist
-class TodoList2(object):
+class Solution2(object):
 
     def __init__(self):
         self.__tasks = []

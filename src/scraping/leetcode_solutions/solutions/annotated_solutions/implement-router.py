@@ -8,7 +8,7 @@ from sortedcontainers import SortedList
 
 
 # queue, sorted list
-class Router(object):
+class Solution(object):
 
     def __init__(self, memoryLimit):
         self.__size = memoryLimit

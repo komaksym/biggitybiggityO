@@ -4,7 +4,7 @@
 import collections
 
 
-class WordFilter(object):
+class Solution(object):
 
     def __init__(self, words):
         _trie = lambda: collections.defaultdict(_trie)
@@ -58,7 +58,7 @@ class Trie(object):
         return cur["_words"]
 
 
-class WordFilter2(object):
+class Solution2(object):
 
     def __init__(self, words):
         self.__prefix_trie = Trie()

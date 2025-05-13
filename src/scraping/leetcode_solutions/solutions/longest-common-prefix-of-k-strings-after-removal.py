@@ -31,6 +31,8 @@ class Solution(object):
             mx2 = suffix[i+1] if i+1 < len(words) else 0
             result[idx] = max(mx, mx1, mx2)
         return result
+    
+    
 # trie
 class Solution2(object):
     def longestCommonPrefix(self, words, k):
@@ -58,7 +60,6 @@ class Solution2(object):
 
             def query(self):
                 return self.__root["max"]
-        
 
         trie = Trie()
         for w in words:
@@ -73,7 +74,7 @@ class Solution2(object):
 
 # Time:  O(n * l)
 # trie
-class Solution_TLE(object):
+class Solution3(object):
     def longestCommonPrefix(self, words, k):
         class Trie(object):
             def __init__(self):

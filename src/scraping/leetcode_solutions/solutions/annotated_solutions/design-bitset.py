@@ -8,7 +8,7 @@
 #        toString: O(n)
 
 # design
-class Bitset(object):
+class Solution(object):
 
     def __init__(self, size):
         self.__lookup = [False]*size

@@ -5,7 +5,7 @@
 import bisect
 
 
-class RangeModule(object):
+class Solution(object):
 
     def __init__(self):
         self.__intervals = []

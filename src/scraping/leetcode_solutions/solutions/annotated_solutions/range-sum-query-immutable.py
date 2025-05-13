@@ -1,7 +1,7 @@
 # Time:  ctor:   O(n),
 #        lookup: O(1)
 
-class NumArray(object):
+class Solution(object):
     def __init__(self, nums):
         self.accu = [0]
         for num in nums:

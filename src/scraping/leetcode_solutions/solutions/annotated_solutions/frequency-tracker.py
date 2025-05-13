@@ -4,7 +4,7 @@
 #        hasFrequency: O(1)
 
 # freq table
-class FrequencyTracker(object):
+class Solution(object):
 
     def __init__(self):
         self.__cnt = collections.Counter()

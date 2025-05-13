@@ -1,7 +1,7 @@
 # Time:  ctor:   O(m * n),
 #        lookup: O(1)
 
-class NumMatrix(object):
+class Solution(object):
     def __init__(self, matrix):
         if not matrix:
             return

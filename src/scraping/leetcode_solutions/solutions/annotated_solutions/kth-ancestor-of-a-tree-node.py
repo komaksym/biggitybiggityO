@@ -4,7 +4,7 @@
 # binary jump solution (frequently used in competitive programming)
 # Template:
 # https://github.com/kamyu104/FacebookHackerCup-2019/blob/master/Final%20Round/little_boat_on_the_sea.py
-class TreeAncestor(object):
+class Solution(object):
 
     def __init__(self, n, parent):
         par = [[p] if p != -1 else [] for p in parent]

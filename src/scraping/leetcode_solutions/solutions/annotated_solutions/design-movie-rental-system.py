@@ -8,7 +8,7 @@ import collections
 from sortedcontainers import SortedList
 
 
-class MovieRentingSystem(object):
+class Solution(object):
 
     def __init__(self, n, entries):
         self.__movie_to_ordered_price_shop = collections.defaultdict(SortedList) 

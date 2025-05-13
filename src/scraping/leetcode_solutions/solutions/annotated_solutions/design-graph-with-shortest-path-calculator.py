@@ -6,7 +6,7 @@ import heapq
 
 
 # dijkstra's algorithm
-class Graph(object):
+class Solution(object):
 
     def __init__(self, n, edges):
         self.__adj = [[] for _ in range(n)]

@@ -3,7 +3,7 @@
 #        back  : O(1)
 #        foward: O(1)
 
-class BrowserHistory(object):
+class Solution(object):
 
     def __init__(self, homepage):
         self.__history = [homepage]

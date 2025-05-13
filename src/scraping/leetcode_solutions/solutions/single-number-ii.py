@@ -34,7 +34,7 @@ class Solution4(object):
 
 
 #  every element appears 4 times except for one with 2 times
-class SolutionEX(object):
+class Solution5(object):
     def singleNumber(self, A):
         one, two, three = 0, 0, 0
         for x in A:

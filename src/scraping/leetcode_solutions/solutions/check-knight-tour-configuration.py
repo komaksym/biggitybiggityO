@@ -11,6 +11,7 @@ class Solution(object):
                 lookup[grid[i][j]] = (i, j)
         return all(sorted([abs(lookup[i+1][0]-lookup[i][0]), abs(lookup[i+1][1]-lookup[i][1])]) == [1, 2] for i in range(len(lookup)-1))
 
+
 # hash table, simulation
 class Solution2(object):
     def checkValidGrid(self, grid):

@@ -2,7 +2,7 @@
 #        update: O(logm * logn)
 #        query:  O(logm * logn)
 
-class NumMatrix(object):
+class Solution(object):
     def __init__(self, matrix):
         if not matrix:
             return

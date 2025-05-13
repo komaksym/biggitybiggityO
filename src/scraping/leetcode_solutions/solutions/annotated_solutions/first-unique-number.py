@@ -5,7 +5,7 @@
 import collections
 
 
-class FirstUnique(object):
+class Solution(object):
 
     def __init__(self, nums):
         self.__q = collections.OrderedDict()

@@ -15,6 +15,7 @@ class Solution(object):
                     dp[j] += cnt
         return result
 
+
 # prefix sum
 class Solution2(object):
     def countQuadruplets(self, nums):

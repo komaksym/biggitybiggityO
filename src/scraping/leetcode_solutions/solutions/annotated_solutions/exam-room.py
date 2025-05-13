@@ -4,7 +4,7 @@
 import heapq
 
 
-class ExamRoom(object):
+class Solution(object):
 
     def __init__(self, N):
         self.__num = N

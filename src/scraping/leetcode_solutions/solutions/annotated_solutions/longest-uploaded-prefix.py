@@ -3,7 +3,7 @@
 #        longest: O(1)
 
 # hash table
-class LUPrefix(object):
+class Solution(object):
 
     def __init__(self, n):
         self.__lookup = set()

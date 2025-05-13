@@ -7,7 +7,7 @@
 import collections
 
 
-class MaxStack(object):
+class Solution(object):
 
     def __init__(self):
         self.__idx_to_val = collections.defaultdict(int)

@@ -5,7 +5,7 @@ import collections
 import bisect
 
 
-class SnapshotArray(object):
+class Solution(object):
 
     def __init__(self, length):
         self.__A = collections.defaultdict(lambda: [[0, 0]])

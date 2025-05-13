@@ -5,7 +5,7 @@
 import heapq
 
 
-class DinnerPlates(object):
+class Solution(object):
 
     def __init__(self, capacity):
         self.__stks = []

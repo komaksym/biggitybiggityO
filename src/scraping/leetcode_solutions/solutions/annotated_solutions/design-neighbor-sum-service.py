@@ -3,7 +3,7 @@
 #.       diagonalSum: O(1)
 
 # hash table
-class neighborSum(object):
+class Solution(object):
     ADJACENTS = ((1, 0), (0, 1), (-1, 0), (0, -1))
     DIAGONALS = ((1, 1), (1, -1), (-1, 1), (-1, -1))
 

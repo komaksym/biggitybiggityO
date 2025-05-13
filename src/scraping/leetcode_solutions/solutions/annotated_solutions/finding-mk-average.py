@@ -6,7 +6,7 @@ import collections
 from sortedcontainers import SortedList
 
 
-class MKAverage(object):
+class Solution(object):
 
     def __init__(self, m, k):
         self.__m = m

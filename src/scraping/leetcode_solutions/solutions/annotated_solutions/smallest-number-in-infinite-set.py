@@ -6,7 +6,7 @@ import heapq
 
 
 # heap
-class SmallestInfiniteSet(object):
+class Solution(object):
 
     def __init__(self):
         self.__n = 1

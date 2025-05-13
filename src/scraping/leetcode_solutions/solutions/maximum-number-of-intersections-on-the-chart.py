@@ -16,6 +16,8 @@ class Solution(object):
             cnt += c
             result = max(result, cnt)
         return result
+    
+    
 # sort, line sweep
 class Solution2(object):
     def maxIntersectionCount(self, y):

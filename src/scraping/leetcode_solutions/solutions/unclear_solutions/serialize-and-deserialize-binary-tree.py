@@ -7,7 +7,7 @@ class TreeNode(object):
         self.right = None
 
 
-class Codec(object):
+class Solution(object):
 
     def serialize(self, root):
         def serializeHelper(node):
@@ -47,8 +47,7 @@ class Codec(object):
 
 # time: O(n)
 
-class Codec2(object):
-
+class Solution2(object):
     def serialize(self, root):
         def gen_preorder(node):
             if not node:

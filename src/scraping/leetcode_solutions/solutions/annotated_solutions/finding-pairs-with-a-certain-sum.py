@@ -5,7 +5,7 @@
 import collections
 
 
-class FindSumPairs(object):
+class Solution(object):
 
     def __init__(self, nums1, nums2):
         self.__nums2 = nums2

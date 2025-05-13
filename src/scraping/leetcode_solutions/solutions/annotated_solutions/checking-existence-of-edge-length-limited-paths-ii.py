@@ -89,7 +89,7 @@ class UnionFind(object):
         return True
 
 
-class DistanceLimitedPathsExist(object):
+class Solution(object):
 
     def __init__(self, n, edgeList):
         edgeList.sort(key = lambda x:x[2])
@@ -167,7 +167,7 @@ class VersionedUnionFind(object):
         self.snap_id += 1
 
 
-class DistanceLimitedPathsExist2(object):
+class Solution2(object):
 
     def __init__(self, n, edgeList):
         edgeList.sort(key = lambda x:x[2])

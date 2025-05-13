@@ -10,7 +10,7 @@ class Node:
         self.pcnt = 0
         self.cnt = 0
 
-class Trie(object):
+class Solution(object):
 
     def __init__(self):
         self.__trie = Node()

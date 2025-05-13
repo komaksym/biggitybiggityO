@@ -9,6 +9,7 @@ class Solution(object):
                 result += 1
         return result
 
+
 # mono stack solution
 class Solution2(object):
     def maxChunksToSorted(self, arr):

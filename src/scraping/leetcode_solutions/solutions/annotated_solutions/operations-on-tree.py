@@ -3,7 +3,7 @@
 #        unlock:  O(1)
 #        upgrade: O(n)
 
-class LockingTree(object):
+class Solution(object):
 
     def __init__(self, parent):
         self.__parent = parent

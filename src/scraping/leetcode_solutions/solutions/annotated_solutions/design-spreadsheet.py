@@ -7,7 +7,7 @@ import collections
 
 
 # hash table
-class Spreadsheet(object):
+class Solution(object):
 
     def __init__(self, rows):
         self.__lookup = collections.defaultdict(int)

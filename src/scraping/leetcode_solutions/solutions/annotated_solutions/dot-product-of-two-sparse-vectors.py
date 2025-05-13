@@ -1,7 +1,7 @@
 # Time:  ctor: O(n)
 #        dot_product: O(min(n, m))
 
-class SparseVector:
+class Solution:
     def __init__(self, nums):
         self.lookup = {i:v for i, v in enumerate(nums) if v}
 

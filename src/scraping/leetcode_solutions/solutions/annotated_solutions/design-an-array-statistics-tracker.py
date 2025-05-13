@@ -10,7 +10,7 @@ from sortedcontainers import SortedList
 import collections
 
 
-class StatisticsTracker(object):
+class Solution(object):
 
     def __init__(self):
         self.__total = 0

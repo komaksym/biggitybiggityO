@@ -6,7 +6,7 @@ import random
 import bisect
 
 
-class MajorityChecker(object):
+class Solution(object):
 
     def __init__(self, arr):
         Q, ERROR_RATE = 10000, 0.001
@@ -34,7 +34,7 @@ import collections
 import bisect
 
 
-class MajorityChecker2(object):
+class Solution2(object):
 
     def __init__(self, arr):
         self.__arr = arr
@@ -126,7 +126,7 @@ class SegmentTreeRecu(object):
         return (-1, -1)
 
 
-class MajorityChecker3(object):
+class Solution3(object):
 
     def __init__(self, arr):
         def count(inv_idx, m, left, right):
@@ -152,7 +152,7 @@ import collections
 import bisect
 
 
-class MajorityChecker4(object):
+class Solution4(object):
 
     def __init__(self, arr):
         self.__arr = arr

@@ -4,7 +4,7 @@
 from sortedcontainers import SortedList
 
 
-class SORTracker(object):
+class Solution(object):
 
     def __init__(self):
         self.__sl = SortedList()

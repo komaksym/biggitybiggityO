@@ -4,7 +4,7 @@
 import collections
 
 
-class ValidWordAbbr(object):
+class Solution(object):
     def __init__(self, dictionary):
         self.lookup_ = collections.defaultdict(set)
         for word in dictionary:

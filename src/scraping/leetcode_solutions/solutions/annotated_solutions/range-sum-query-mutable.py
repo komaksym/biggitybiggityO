@@ -2,7 +2,7 @@
 #        update: O(logn),
 #        query:  O(logn)
 
-class NumArray(object):
+class Solution(object):
     def __init__(self, nums):
         if not nums:
             return
@@ -42,7 +42,7 @@ class NumArray(object):
 #        update: O(logn),
 #        query:  O(logn)
 # Segment Tree solution.
-class NumArray2(object):
+class Solution2(object):
     def __init__(self, nums,
                  query_fn=lambda x, y: x+y,
                  update_fn=lambda x, y: y,

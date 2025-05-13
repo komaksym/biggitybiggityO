@@ -3,7 +3,7 @@
 #        pop:       O(1)
 #        increment: O(1)
 
-class CustomStack(object):
+class Solution(object):
 
     def __init__(self, maxSize):
         self.__max_size = maxSize

@@ -3,7 +3,7 @@
 import collections
 
 
-class WordDistance(object):
+class Solution(object):
     def __init__(self, words):
         self.wordIndex = collections.defaultdict(list)
         for i in range(len(words)):

@@ -18,6 +18,8 @@ class Solution(object):
         MOD = 10**9+7
         cnt = nums[-1]-sum(max(nums[i]-nums[i-1], 0) for i in range(1, len(nums)))
         return nHr(len(nums)+1, cnt) if cnt >= 0 else 0
+    
+    
 # dp, prefix sum
 class Solution2(object):
     def countOfPairs(self, nums):
@@ -30,6 +32,8 @@ class Solution2(object):
                 new_dp[j] = (new_dp[j-1]+dp[j-diff])%MOD
             dp = new_dp
         return reduce(lambda accu, x: (accu+x)%MOD, dp, 0)
+    
+
 # dp
 class Solution3(object):
     def countOfPairs(self, nums):

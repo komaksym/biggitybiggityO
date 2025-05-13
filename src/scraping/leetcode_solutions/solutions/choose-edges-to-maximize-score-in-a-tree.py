@@ -26,6 +26,7 @@ class Solution(object):
                 continue
             adj[p].append((i, w))
         return iter_dfs()
+    
 
 # dfs, tree dp
 class Solution2(object):

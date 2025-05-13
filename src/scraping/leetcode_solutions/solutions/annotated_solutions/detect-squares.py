@@ -5,7 +5,7 @@
 import collections
 
 
-class DetectSquares(object):
+class Solution(object):
 
     def __init__(self):
         self.__x_to_ys = collections.defaultdict(set)
@@ -33,7 +33,7 @@ class DetectSquares(object):
 import collections
 
 
-class DetectSquares2(object):
+class Solution2(object):
 
     def __init__(self):
         self.__points = []

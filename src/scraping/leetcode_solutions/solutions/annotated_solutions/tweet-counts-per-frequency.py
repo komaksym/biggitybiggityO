@@ -103,7 +103,7 @@ class SkipList(object):
         return "\n".join(["->".join(x) for x in result])
 
     
-class TweetCounts(object):
+class Solution(object):
 
     def __init__(self):
         self.__records = collections.defaultdict(lambda: SkipList(can_duplicated=True))
@@ -125,7 +125,7 @@ class TweetCounts(object):
 # Time:  add:   O(n),
 #        query: O(rlogn), r is the size of result
 import bisect
-class TweetCounts2(object):
+class Solution2(object):
 
     def __init__(self):
         self.__records = collections.defaultdict(list)
@@ -146,7 +146,7 @@ class TweetCounts2(object):
         return result
 
 #        query: O(n)
-class TweetCounts3(object):
+class Solution3(object):
 
     def __init__(self):
         self.__records = collections.defaultdict(list)

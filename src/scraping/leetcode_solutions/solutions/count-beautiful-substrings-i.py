@@ -26,6 +26,7 @@ class Solution(object):
             result += cnt[p, i%new_k]
             cnt[p, i%new_k] += 1
         return result
+    
 # brute force
 class Solution2(object):
     def beautifulSubstrings(self, s, k):

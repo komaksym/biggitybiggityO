@@ -60,7 +60,7 @@ class AhoTrie(object):
         return root
 
 
-class StreamChecker(object):
+class Solution(object):
 
     def __init__(self, words):
         self.__trie = AhoTrie(words)

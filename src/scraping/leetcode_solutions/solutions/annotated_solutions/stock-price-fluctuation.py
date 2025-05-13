@@ -7,7 +7,7 @@
 from sortedcontainers import SortedList
 
 
-class StockPrice(object):
+class Solution(object):
 
     def __init__(self):
         self.__curr = 0
@@ -40,7 +40,7 @@ class StockPrice(object):
 import heapq
 
 
-class StockPrice2(object):
+class Solution2(object):
 
     def __init__(self):
         self.__curr = 0

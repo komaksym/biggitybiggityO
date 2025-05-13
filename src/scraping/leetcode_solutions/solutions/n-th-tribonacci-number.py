@@ -24,6 +24,8 @@ class Solution(object):
              [1, 0, 1],
              [1, 0, 0]]
         return matrix_mult([[1, 0, 0]], matrix_expo(T, n))[0][1] 
+    
+    
 class Solution2(object):
     def tribonacci(self, n):
         a, b, c = 0, 1, 1

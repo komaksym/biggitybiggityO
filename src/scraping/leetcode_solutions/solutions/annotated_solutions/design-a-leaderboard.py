@@ -7,7 +7,7 @@ import collections
 import random
 
 
-class Leaderboard(object):
+class Solution(object):
 
     def __init__(self):
         self.__lookup = collections.Counter()

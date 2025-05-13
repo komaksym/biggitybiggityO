@@ -4,6 +4,8 @@
 class Solution(object):
     def maximizeGreatness(self, nums):
         return len(nums)-max(collections.Counter(nums).values())
+    
+    
 # sort, greedy, two pointers
 class Solution2(object):
     def maximizeGreatness(self, nums):

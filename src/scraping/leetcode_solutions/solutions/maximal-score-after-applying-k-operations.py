@@ -23,10 +23,11 @@ class Solution(object):
                 continue
             heapq.heappush(nums, -nx)
         return result
-import heapq
-
+    
 
 # heap
+import heapq
+
 class Solution2(object):
     def maxKelements(self, nums, k):
         def ceil_divide(a, b):

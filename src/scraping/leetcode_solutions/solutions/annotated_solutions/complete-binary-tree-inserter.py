@@ -8,7 +8,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-class CBTInserter(object):
+class Solution(object):
 
     def __init__(self, root):
         self.__tree = [root]

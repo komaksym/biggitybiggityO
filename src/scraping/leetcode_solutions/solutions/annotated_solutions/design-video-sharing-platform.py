@@ -11,7 +11,7 @@ import heapq
 
 
 # design, heap
-class VideoSharingPlatform(object):
+class Solution(object):
 
     def __init__(self):
         self.__avails = []

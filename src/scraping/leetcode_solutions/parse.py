@@ -12,7 +12,7 @@ def set_regex_pattern(pattern, flags=0):
 def search_files(folder_path):
     raw_data = {'file_paths': [], 'files': []}
 
-    for file_path in (Path('.').glob(f'{files_path}**/*.py')):
+    for file_path in (Path('.').glob(f'{folder_path}**/*.py')):
          raw_data['file_paths'].append(file_path)
          raw_data['files'].append(file_path.read_text())
 
@@ -56,7 +56,7 @@ def separate_annotated_labels(files_path, files):
     for path, file in zip(files_path, files): 
         label_matches = re.findall(annotations_pattern, file)
 
-        for label in label_matches:
+        for _ in label_matches:
             annotated_data.append(path)
 
     # Move data to a separate folder
@@ -99,8 +99,8 @@ def open_corrupted_files(command, posix_paths, destination_path=None):
     subprocess.run(paths)
 
 
-#CODES_PATTERN = set_regex_pattern(r"(?:class|def)\sSolution")
-CODES_PATTERN = set_regex_pattern(r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE)
+#CODES_PATTERN = set_regex_pattern(r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE)
+CODES_PATTERN = set_regex_pattern(r"(?:class|def)\sSolution")
 FILTER_PATTERN = set_regex_pattern(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
 files_path = 'raw_files/messy_files/'
@@ -112,14 +112,13 @@ parse_data(raw_data['file_paths'], raw_data['files'])
 print("The data was successfully parsed.")
 
 
-
-#print(f"Unsuccessfully parsed file paths: {corrupted_data}")
-#print(f"Successfully parsed: {len(parsed_data['label'])} files")
-#print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
+print(f"Unsuccessfully parsed file paths: {corrupted_data}")
+print(f"Successfully parsed: {len(parsed_data['label'])} files")
+print(f"Unsuccessfully parsed: {len(corrupted_data)} files")
 
 #for idx, code in enumerate(parsed_data['code'][50:100]):
     #print(f"CODE #{idx+1}:\n", code, end='\n\n')
 
-#open_corrupted_files("open", corrupted_data)
+open_corrupted_files("open", corrupted_data)
 #open_corrupted_files("mv", corrupted_data, "solutions/unclear_solutions/")
 #print(f"Number of moved files: {len(corrupted_data)}")

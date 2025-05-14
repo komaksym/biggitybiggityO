@@ -1,4 +1,4 @@
-# Time:  O(m * n * sqrt(m * n))
+# Time:  O(m * n * sqrt(m * n)) = O(E * sqrt(V))
 
 # the problem is the same as google codejam 2008 round 3 problem C
 # https://github.com/kamyu104/GoogleCodeJam-2008/blob/master/Round%203/no_cheating.py
@@ -8,7 +8,6 @@ import collections
 
 from functools import partial
 
-# Time:  O(E * sqrt(V))
 # Source code from http://code.activestate.com/recipes/123641-hopcroft-karp-bipartite-matching/
 # Hopcroft-Karp bipartite max-cardinality matching and max independent set
 # David Eppstein, UC Irvine, 27 Apr 2002

@@ -36,7 +36,6 @@ class UnionFind(object):
         return xr/yr if xp == yp else -1.0
 
 
-# Time:  O(e + q)
 import itertools
 
 

@@ -1,5 +1,4 @@
 import re
-import pdb
 
 
 text = """
@@ -7,7 +6,7 @@ text = """
 """
 
 
-def propagate_time_complexity(file):
+def duplicate_labels(file):
 	FILTER_PATTERN = re.compile(r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})", flags=re.DOTALL | re.IGNORECASE | re.MULTILINE)
 
 	lines = file.splitlines()
@@ -71,7 +70,7 @@ def propagate_time_complexity(file):
 
 
 if __name__ == "__main__":
-	parsed_data = propagate_time_complexity(text)
+	parsed_data = duplicate_labels(text)
 	print(parsed_data)
 
 	# Inspect

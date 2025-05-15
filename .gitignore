@@ -11,3 +11,7 @@ pyvenv.cfg
 __pycache__/
 
 .ipynb_checkpoints/
+
+.python-version
+
+

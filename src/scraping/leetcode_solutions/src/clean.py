@@ -1,5 +1,5 @@
 import re
-from pathlib import Path
+from .parse import search_files
 import subprocess
 import pandas as pd
 
@@ -7,17 +7,6 @@ import pandas as pd
 # Defie a cleaning pattern
 def set_regex_pattern(pattern, flags=0):
     return re.compile(rf"{pattern}", flags)
-
-
-# Read raw data
-def search_files(folder_path):
-    raw_data = {'file_paths': [], 'files': []}
-
-    for file_path in (Path('.').glob(f'{folder_path}**/*.py')):
-         raw_data['files'].append(file_path.read_text())
-         raw_data['file_paths'].append(file_path)
-
-    return raw_data
 
 
 # Clean raw data and write

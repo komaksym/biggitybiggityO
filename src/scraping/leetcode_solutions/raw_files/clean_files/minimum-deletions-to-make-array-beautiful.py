@@ -1,9 +1,0 @@
-# Time:  O(n)
-
-# greedy
-class Solution(object):
-    def minDeletion(self, nums):
-        result = 0
-        for i in range(len(nums)-1):
-            result += int(i%2 == result%2 and nums[i] == nums[i+1])
-        return result+(len(nums)-result)%2

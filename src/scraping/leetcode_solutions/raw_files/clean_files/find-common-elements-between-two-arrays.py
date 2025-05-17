@@ -1,7 +1,0 @@
-# Time:  O(n + m)
-
-# hash table
-class Solution(object):
-    def findIntersectionValues(self, nums1, nums2):
-        lookup1, lookup2 = set(nums1), set(nums2)
-        return [sum(x in lookup2 for x in nums1), sum(x in lookup1 for x in nums2)]

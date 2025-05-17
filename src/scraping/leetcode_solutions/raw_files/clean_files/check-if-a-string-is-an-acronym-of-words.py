@@ -1,9 +1,0 @@
-# Time:  O(n)
-
-import itertools
-
-
-# string
-class Solution(object):
-    def isAcronym(self, words, s):
-        return len(words) == len(s) and all(w[0] == c for w, c in zip(words, s))

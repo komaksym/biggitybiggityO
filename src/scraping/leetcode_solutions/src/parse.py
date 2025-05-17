@@ -1,6 +1,7 @@
 import re
 from pathlib import Path
 import subprocess
+import pdb
 
 
 def set_regex_pattern(pattern, flags=0):
@@ -10,7 +11,7 @@ def set_regex_pattern(pattern, flags=0):
 def search_files(folder_path):
     raw_data = {'file_paths': [], 'files': []}
 
-    for file_path in (Path('.').glob(f'{folder_path}**/*.py')):
+    for file_path in folder_path.glob('*.py'):
          raw_data['file_paths'].append(file_path)
          raw_data['files'].append(file_path.read_text())
 
@@ -107,7 +108,8 @@ def open_corrupted_files(command, posix_paths, destination_path=None):
 
 
 if __name__ == '__main__':
-    files_path = 'raw_files/messy_files/'
+    BASE_LOCATION = Path(__file__).parent
+    files_path =  BASE_LOCATION.parent / 'data/raw_files/messy_files'
 
     raw_data = search_files(files_path)
     parsed_data, corrupted_data = parse_data(raw_data['file_paths'], raw_data['files'])

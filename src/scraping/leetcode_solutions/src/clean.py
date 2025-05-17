@@ -2,6 +2,7 @@ import re
 from .parse import search_files
 import subprocess
 import pandas as pd
+from pathlib import Path
 
 
 # Defie a cleaning pattern
@@ -99,9 +100,9 @@ def open_corrupted_files(command, posix_paths, destination_path=None):
 
 
 if __name__ == '__main__':
-    # Path to files
-    files_path = 'raw_files/messy_files/'
-
+    # Absolute path to script's directory
+    BASE_LOCATION = Path(__file__).parent
+    files_path =  BASE_LOCATION.parent / 'data/raw_files/messy_files/unclear_files'
     print("Searching files...")
     # Read raw data
     raw_data = search_files(files_path)

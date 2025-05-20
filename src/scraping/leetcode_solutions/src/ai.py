@@ -42,8 +42,9 @@ if __name__ == "__main__":
     API_KEY = os.environ["DEEPSEEK_API_KEY"]
     CLIENT = OpenAI(api_key=API_KEY, base_url="https://api.deepseek.com")
 
-    INSTRUCTIONS = """You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.
-    I will provide you with Python codes that are labeled with big O time complexities. Your task is to evaluate the provided code sample and the mapped time complexity label, and output whether the label is correct or not. Answer with no only if the difference between the specified time complexity label and the real label is big, for example, if the time complexity might be O(1), and in some cases O(n), and the provided label is in one of the possible labels, answer with yes. 
+    INSTRUCTIONS = """
+    You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.
+    I will provide you with Python codes that are labeled with WORST-CASE big O time complexities. Your task is to evaluate the provided code sample and the mapped time complexity label, and output whether the label is correct or not. Answer with no only if the difference between the specified time complexity label and the real label is big, for example, if the time complexity might be O(1), and in some cases O(n), and the provided label is in one of the possible labels, answer with yes. 
 
     You should respond only with yes or no.
 

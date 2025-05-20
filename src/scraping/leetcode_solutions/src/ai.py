@@ -2,39 +2,62 @@ import os
 from pathlib import Path
 import pandas as pd
 from openai import OpenAI
+import pdb
 
 
 def send_requests(files_path):
+    data_to_review = {'code': [], 'label': []}
+
     data = pd.read_csv(files_path)
+    num_rows = data.shape[0]
+    num_rows = 500
 
     # Read the data
-    content = data["code"][125] + "\n\nLabel: " + data["label"][125]
+    for i in range(num_rows):
+        # Index the data row
+        code = data.iloc[i]['code']
+        label = data.iloc[i]['label']
 
-    # Send a request
-    print(f"SENDING A REQUEST:\n {content}")
+        # Collect
+        content = code + "\n\nLabel: " + label
 
-    # Generate
-    generate(content, INSTRUCTIONS, CLIENT)
+        # Send a request
+        print(f"SENDING A REQUEST ({i+1}/{num_rows}):\n {content}")
+
+        # Generate
+        print("\nRESPONSE:")
+        response = generate(content, INSTRUCTIONS, CLIENT)
+        print(response, end='\n\n')
+
+        # Add data under question to a separate dataset for further review
+        if response == 'no':
+            data_to_review['code'].append(code)
+            data_to_review['label'].append(label)
+
+    # Save
+    df = pd.DataFrame(data_to_review)
+
+    # Path
+    BASE_PATH = Path(__file__).parent
+    save_path = BASE_PATH / "../data/parsed_files/ai_preprocessed/data_to_review.csv"
+
+    df.to_csv(save_path, index=False)
 
 
 def generate(content, instructions, client):
-    stream = client.chat.completions.create(
+    request = client.chat.completions.create(
         model="deepseek-chat",
         messages=[
             {"role": "system", "content": instructions},
-            {
-                "role": "user",
-                "content": content,
-            },
+            {"role": "user", "content": content},
         ],
-        stream=True,
+        stream=False
     )
 
     # Response
-    print("\nRESPONSE:\n")
-    for chunk in stream:
-        if chunk.choices[0].delta.content is not None:
-            print(chunk.choices[0].delta.content, end="")
+    response = request.choices[0].message.content
+    return response
+    
 
 
 if __name__ == "__main__":
@@ -73,8 +96,6 @@ if __name__ == "__main__":
     """
 
     BASE_PATH = Path(__file__).parent
-
-    print(BASE_PATH)
     files_path = BASE_PATH / "../data/parsed_files/original/clean_data.csv"
 
     send_requests(files_path)

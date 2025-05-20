@@ -1,15 +1,14 @@
 import os
-import pandas as pd
 from pathlib import Path
+import pandas as pd
 from openai import OpenAI
-import pdb
 
 
 def send_requests(files_path):
     data = pd.read_csv(files_path)
 
     # Read the data
-    content = data['code'][125] + '\n\nLabel: ' + data['label'][125]
+    content = data["code"][125] + "\n\nLabel: " + data["label"][125]
 
     # Send a request
     print(f"SENDING A REQUEST:\n {content}")
@@ -30,7 +29,7 @@ def generate(content, instructions, client):
         ],
         stream=True,
     )
-    
+
     # Response
     print("\nRESPONSE:\n")
     for chunk in stream:
@@ -44,7 +43,7 @@ if __name__ == "__main__":
 
     INSTRUCTIONS = """
     You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.
-    I will provide you with Python codes that are labeled with WORST-CASE big O time complexities. Your task is to evaluate the provided code sample and the mapped time complexity label, and output whether the label is correct or not. Answer with no only if the difference between the specified time complexity label and the real label is big, for example, if the time complexity might be O(1), and in some cases O(n), and the provided label is in one of the possible labels, answer with yes. 
+    I will provide you with Python codes that are labeled with WORST-CASE big O time complexities. Your task is to evaluate the provided code sample and the mapped time complexity label, and output whether the label is correct or not. Answer with no only if the difference between the specified time complexity label and the real label is big, for example, if the time complexity might be O(1), and in some cases O(n), and the provided label is in one of the possible labels, answer with yes, or if the specified time complexity label is correct but doesn't include a constant, omit it and answer yes as the difference is insignificant compared to if the specified label was n, but the actual label was logn or nlogn or n^2.
 
     You should respond only with yes or no.
 

@@ -2,4 +2,6 @@
     autostage = true
     remote = myremote
 ['remote "myremote"']
-    url = /tmp/dvcstore
+    url = gdrive://1CSQ9vq1gbsRpxUGKGEXICKR1hGleMgdo
+    gdrive_acknowledge_abuse = true
+    gdrive_use_service_account = true

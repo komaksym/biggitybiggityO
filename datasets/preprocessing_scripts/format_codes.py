@@ -1,16 +1,18 @@
 import pandas as pd
 import re
+from pathlib import Path
 
 
 class CodeFormatter:
-    def __init__(self) -> None:
-        self.data = pd.read_csv("../processed_dataset.csv", sep=";")
+    def __init__(self, source_path, save_path) -> None:
+        self.data = pd.read_json(source_path, lines=True)
 
         # Applying filtering
-        self.data["code"] = self.run_filtering(self.data["code"])
+        self.data["src"] = self.run_filtering(self.data["src"])
 
         # Saving the results
-        self.data.to_csv("../processed_dataset.csv", index=False)
+        self.data.to_json(save_path, orient="records", lines=True)
+
 
     def remove_comments(self, code_sample):
         return re.sub(
@@ -43,4 +45,10 @@ class CodeFormatter:
         return data
 
 
-cf = CodeFormatter()
+if __name__ == '__main__':
+    BASE_PATH = Path(__file__).parent
+
+    source_path = BASE_PATH / "../data/codecomplex_data.jsonl"
+    save_path = BASE_PATH / "../data/codecomplex_data.jsonl"
+
+    cf = CodeFormatter(source_path, save_path)

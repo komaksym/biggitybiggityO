@@ -8,7 +8,7 @@ class CodeFormatter:
         self.data = pd.read_json(source_path, lines=True)
 
         # Applying filtering
-        self.data["src"] = self.run_filtering(self.data["src"])
+        self.data["code"] = self.run_filtering(self.data["code"])
 
         # Saving the results
         self.data.to_json(save_path, orient="records", lines=True)
@@ -48,7 +48,7 @@ class CodeFormatter:
 if __name__ == '__main__':
     BASE_PATH = Path(__file__).parent
 
-    source_path = BASE_PATH / "../data/codecomplex_data.jsonl"
-    save_path = BASE_PATH / "../data/codecomplex_data.jsonl"
+    source_path = BASE_PATH / "../data/neetcode_data.jsonl"
+    save_path = BASE_PATH / "../data/neetcode_data.jsonl"
 
     cf = CodeFormatter(source_path, save_path)

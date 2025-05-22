@@ -17,37 +17,34 @@ class LabelFormatter:
 
     def format_time_complexity(self, complexity):
         match complexity:
-            case "O(1)":
+            case "constant":
                 return "O(1)"
 
-            case "O(\\log n)":
+            case "logn":
                 return "O(logn)"
 
-            case "O(n)":
+            case "linear":
                 return "O(n)"
 
-            case "O(n \\log n)":
+            case "nlogn":
                 return "O(nlogn)"
 
-            case "O(n ^ 2)":
+            case "quadratic":
                 return "O(n ^ 2)"
 
-            case "O(n ^ 3)":
+            case "cubic":
                 return "O(n ^ 3)"
 
-            case "O(2 ^ n)":
-                return "O(2 ^ n)"
-            
-            case "O(n!)":
-                return "O(n!)"
+            case "np":
+                return "np"
 
             case _:
                 return "other"
 
     def format(self):
         for sample in self.data:
-            sample["time_complexity"] = self.format_time_complexity(
-                sample["time_complexity"]
+            sample["complexity"] = self.format_time_complexity(
+                sample["complexity"]
             )
 
     def save_formatted_json(self):
@@ -59,8 +56,8 @@ class LabelFormatter:
 if __name__ == '__main__':
     BASE_PATH = Path(__file__).parent
 
-    source_path = BASE_PATH / "../data/neetcode_data.jsonl"
-    save_path = BASE_PATH / "../data/neetcode_data.jsonl"
+    source_path = BASE_PATH / "../data/codecomplex_data.jsonl"
+    save_path = BASE_PATH / "../data/codecomplex_data.jsonl"
 
     # Call
     foo = LabelFormatter(source_path, save_path)

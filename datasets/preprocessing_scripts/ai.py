@@ -1,73 +1,80 @@
 import os
 from pathlib import Path
 import pandas as pd
-from openai import OpenAI
-import pdb
+from openai import AsyncOpenAI
+import asyncio
+from asyncio import Semaphore
 
 
 class LLM:
     def __init__(self, client, model):
         self.client = client
         self.model = model
+        self.counter = 1
 
-    def generate(self, instructions, content, *args, **kwargs):
-        request = self.client.chat.completions.create(
-            model=self.model,
-            *args,
-            **kwargs,
-            messages=[
-                {"role": "system", "content": instructions},
-                {"role": "user", "content": content},
-            ],
-            stream=False,
-        )
+    async def send_requests(self, sem, instructions, request, num_requests, **kwargs):
+        async with sem:
+            response = await self.client.chat.completions.create(
+                model=self.model,
+                **kwargs,
+                messages=[
+                    {"role": "system", "content": instructions},
+                    {"role": "user", "content": request},
+                ],
+                stream=False,
+            )
+            # Response
+            response = response.choices[0].message.content
 
-        # Response
-        response = request.choices[0].message.content
-        return response
+            # Log 
+            print(f"\nREQUEST (#{self.counter}/{num_requests}): {request}")
+            print("\nRESPONSE:\n", response, end='\n\n')
+
+            self.counter += 1
+
+            return response
 
 
 class Audit:
-    def __init__(self, source_path, llm1, llm2):
-        self.data_to_review = {"code": [], "complexity": [], 'model': []}
+    def __init__(self, source_path, llm, sem):
+        self.data_to_review = {"code": [], "complexity": []}
         self.data = pd.read_csv(source_path, sep=";")
 
-        self.gemini = llm1
-        self.grok = llm2
+        self.llm = llm
+        self.sem = sem
 
-    def send_requests(self, instructions):
-        num_rows = self.data.shape[0]
-        num_rows = 100
+    async def process_requests(self, instructions):
+        # Collect requests
+        requests = [
+            code + "\n\nComplexity: " + complexity
+            for code, complexity in zip(self.data["code"], self.data["complexity"])
+        ]
 
-        # Read the data
-        for i in range(num_rows):
-            # Index the data row
-            code = self.data.iloc[i]["code"]
-            complexity = self.data.iloc[i]["complexity"]
+        # Total # of data samples
+        num_requests = len(requests)
 
-            # Collect
-            content = code + "\n\nComplexity: " + complexity
+        # Create tasks in the form of coroutine objects
+        tasks = [
+            self.llm.send_requests(
+                self.sem, instructions, request, num_requests,
+            )
+            for request in requests
+        ]
 
-            # Send a request
-            print(f"SENDING A REQUEST ({i + 1}/{num_rows}):\n {content}")
+        # Run coroutines concurrently
+        responses = await asyncio.gather(*tasks)
 
-            gemini_response = self.gemini.generate(instructions, content, reasoning_effort='medium')
-            grok_response = self.grok.generate(instructions, content)
+        # Process responses
+        self.process_responses(responses)
 
-            # Generate
-            print("\nRESPONSE from Gemini:\n", gemini_response, end='\n\n')
-            print("\nRESPONSE from Grok:\n", grok_response, end='\n\n')
-
+    def process_responses(self, responses):
+        for i, response in enumerate(responses):
             # Add data under question to a separate dataset for further review
-            if gemini_response == "no":
-                self.data_to_review["code"].append(code)
-                self.data_to_review["complexity"].append(complexity)
-                self.data_to_review['model'].append('gemini')
+            if response == "no":
+                self.data_to_review["code"].append(self.data['code'].iloc[i])
+                self.data_to_review["complexity"].append(self.data['complexity'].iloc[i])
 
-            elif grok_response == "no":
-                self.data_to_review["code"].append(code)
-                self.data_to_review["complexity"].append(complexity)
-                self.data_to_review['model'].append('grok')
+        print(f"Number of labels under question: {len(self.data_to_review)}")
 
 
     def save_data_to_review(self, save_path):
@@ -76,26 +83,13 @@ class Audit:
         df.to_csv(save_path, index=False)
 
 
-if __name__ == "__main__":
-    # Keys
-    GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
-    XAI_API_KEY = os.environ["XAI_API_KEY"]
-    
-    # Clients
-    GEMINI_CLIENT = OpenAI(
-        api_key=GEMINI_API_KEY,
-        base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
-    )
-    XAI_CLIENT = OpenAI(
-        api_key=XAI_API_KEY,
+async def main():
+    # Client
+    client = AsyncOpenAI(
+        api_key=os.environ["XAI_API_KEY"],
         base_url="https://api.x.ai/v1",
     )
-
-    # LLMs
-    llms = {
-        'gemini': {'client': GEMINI_CLIENT, 'model': 'gemini-2.5-pro-preview-05-06'}, 
-        'xai': {'client': XAI_CLIENT, 'model': 'grok-3'},
-        }
+    model = 'grok-3'
 
     INSTRUCTIONS = """
     You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.
@@ -132,14 +126,17 @@ if __name__ == "__main__":
     source_path = BASE_PATH / "../data/clean_leetcode_data.csv"
     save_path = BASE_PATH / "../data/ai_audited/clean_leetcode_data.csv"
 
-
     # LLMs to use
-    gemini = LLM(**llms['gemini'])
-    grok = LLM(**llms['xai'])
+    grok = LLM(client, model)
+    semaphore = Semaphore(5)
 
     # Initiate audit
-    audit = Audit(source_path, gemini, grok)
+    audit = Audit(source_path, grok, semaphore)
     # Send requests
-    audit.send_requests(INSTRUCTIONS)
+    await audit.process_requests(INSTRUCTIONS)
     # Save data for review
     audit.save_data_to_review(save_path)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

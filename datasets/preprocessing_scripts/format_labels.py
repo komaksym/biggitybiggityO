@@ -27,33 +27,36 @@ class LabelFormatter:
 
         # If data in .csv
         elif self.source_dtype == 'csv':
-            self.data = pd.read_csv(source_path)
+            self.data = pd.read_csv(source_path, sep=';')
 
     def format_time_complexity(self, complexity):
         match complexity:
-            case "1":
+            case "1" | "O(1)":
                 return "O(1)"
 
-            case "logn":
+            case "logn" | "O(logn)":
                 return "O(logn)"
 
-            case "n":
+            case "n" | "O(n)":
                 return "O(n)"
 
-            case "nlogn":
+            case "nlogn" | "O(nlogn)":
                 return "O(nlogn)"
 
-            case "n^2":
+            case "n^2" | "O(n ^ 2)" | "O(n^2)":
                 return "O(n ^ 2)"
 
-            case "n^3":
+            case "n^3" | "O(n ^ 3)":
                 return "O(n ^ 3)"
-            
-            case "n!":
-                return "n!"
 
-            case "np":
-                return "np"
+            case "n!" | "O(n!)":
+                return "O(n!)"
+
+            case "2^n" | "O(2 ^ n)":
+                return "O(2 ^ n)"
+
+            case "np" | "O(np)":
+                return "O(np)"
 
             case _:
                 return "other"
@@ -61,12 +64,12 @@ class LabelFormatter:
     def format(self):
         if self.source_dtype == 'json' or self.source_dtype == 'jsonl':
             for sample in self.data:
-                sample["label"] = self.format_time_complexity(
-                    sample["label"]
+                sample["complexity"] = self.format_time_complexity(
+                    sample["complexity"]
                 )
         
         elif self.source_dtype == 'csv':
-            self.data['label'] = self.data['label'].apply(self.format_time_complexity)
+            self.data['complexity'] = self.data['complexity'].apply(self.format_time_complexity)
 
     def save_formatted_json(self):
         match self.save_dtype:
@@ -100,8 +103,8 @@ class LabelFormatter:
 if __name__ == '__main__':
     BASE_PATH = Path(__file__).parent
 
-    source_path = BASE_PATH / "../data/clean_leetcode_data.csv"
-    save_path = BASE_PATH / "../data/clean_leetcode_data.csv"
+    source_path = BASE_PATH / "../data/label_updated_clean_leetcode_data.csv"
+    save_path = BASE_PATH / "../data/label_updated_clean_leetcode_data.csv"
 
     # Call
     foo = LabelFormatter(source_path, save_path)

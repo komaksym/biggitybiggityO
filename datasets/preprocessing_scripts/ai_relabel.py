@@ -27,7 +27,7 @@ class LLM:
             response = response.choices[0].message.content
 
             # Log 
-            print(f"\nREQUEST (#{self.counter}/{num_requests}): {request}")
+            print(f"\nREQUEST: (#{self.counter}/{num_requests}):\n{request}")
             print("\nRESPONSE:\n", response, end='\n\n')
 
             self.counter += 1
@@ -37,7 +37,7 @@ class LLM:
 
 class Audit:
     def __init__(self, source_path, llm, sem):
-        self.data_to_review = {"code": [], "complexity": [], "LLM_decision": []}
+        self.llm_decisions = {'grok_decision2': []}
         self.data = pd.read_csv(source_path, sep=",")
 
         self.llm = llm
@@ -45,10 +45,7 @@ class Audit:
 
     async def process_requests(self, instructions):
         # Collect requests
-        requests = [
-            code + "\n\nComplexity: " + complexity
-            for code, complexity in zip(self.data["code"], self.data["complexity"])
-        ]
+        requests = [code for code in self.data["code"]]
 
         # Total # of data samples
         num_requests = len(requests)
@@ -68,16 +65,16 @@ class Audit:
         self.process_responses(responses)
 
     def process_responses(self, responses):
-        for i, response in enumerate(responses):
-            # Add data under question to a separate dataset for further review
-            self.data_to_review["code"].append(self.data['code'].iloc[i])
-            self.data_to_review["complexity"].append(self.data['complexity'].iloc[i])
-            self.data_to_review['LLM_decision'].append(response)
+        for response in responses:
+            # Add LLM's decision
+            self.llm_decisions['grok_decision2'].append(response)
 
     def save_data_to_review(self, save_path):
+        # Join the original df with LLM decisions
+        joined = self.data.join(pd.DataFrame(self.llm_decisions))
+
         # Save
-        df = pd.DataFrame(self.data_to_review)
-        df.to_csv(save_path, index=False)
+        joined.to_csv(save_path, index=False)
 
 
 async def main():
@@ -88,10 +85,16 @@ async def main():
     )
     model = 'grok-3'
 
+    # Test
+    #client = AsyncOpenAI(
+    #    api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com"
+    #)
+    #model = "deepseek-chat"
+
     eval_instruction = """
     You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.  
-    I will provide you with Python codes that are labeled with WORST-CASE big O time complexities. Your task is to evaluate the provided code sample and the mapped time complexity label, and output your own, evaluated, correct time complexity label.  
-    Change the original label only if it is incorrect, and the difference between the specified time complexity label and the real label is big, for example, if the time complexity might be O(1), and in some cases O(n), and the provided label is in one of the possible labels, then do NOT change it, or if the specified time complexity label is correct but doesn't include a constant, omit it and do NOT change it as the difference is insignificant compared to if the specified label was n, but the actual label was logn or nlogn or n^2.  
+    I will provide you with Python codes. Your task is to evaluate the provided code sample, and output evaluated, correct WORST-CASE time complexity label.  
+    You should drop constants when evaluating a time complexity label, for example: instead of O(2n^2) you should drop 2 and just output O(n^2).
 
     Your response shouldn't contain anything but a label. One word. 
 
@@ -114,15 +117,14 @@ async def main():
                         result += 1
                 return result"	
 
-                Complexity: O(nlogn)
-
     Example response:  
         O(nlogn)
 """
 
     BASE_PATH = Path(__file__).parent
     source_path = BASE_PATH / "../data/ai_audited/audited_clean_leetcode_data.csv"
-    save_path = BASE_PATH / "../data/ai_audited/relabeled_audited_clean_leetcode_data.csv"
+    save_path = BASE_PATH / "../data/relabeled_audited_clean_leetcode_data.csv"
+    save_path = source_path
 
     # LLMs to use
     grok = LLM(client, model)

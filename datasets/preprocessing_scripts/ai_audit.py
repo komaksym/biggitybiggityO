@@ -91,7 +91,7 @@ async def main():
     )
     model = 'grok-3'
 
-    INSTRUCTIONS = """
+    instruction = """
     You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.
     I will provide you with Python codes that are labeled with WORST-CASE big O time complexities. Your task is to evaluate the provided code sample and the mapped time complexity label, and output whether the label is correct or not. Answer with no only if the difference between the specified time complexity label and the real label is big, for example, if the time complexity might be O(1), and in some cases O(n), and the provided label is in one of the possible labels, answer with yes, or if the specified time complexity label is correct but doesn't include a constant, omit it and answer yes as the difference is insignificant compared to if the specified label was n, but the actual label was logn or nlogn or n^2.
 
@@ -133,7 +133,7 @@ async def main():
     # Initiate audit
     audit = Audit(source_path, grok, semaphore)
     # Send requests
-    await audit.process_requests(INSTRUCTIONS)
+    await audit.process_requests(instruction)
     # Save data for review
     audit.save_data_to_review(save_path)
 

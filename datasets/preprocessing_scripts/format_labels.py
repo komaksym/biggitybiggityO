@@ -58,8 +58,8 @@ class LabelFormatter:
             case "np" | "O(np)" | "# Time:  O(np)":
                 return "other"
 
-            #case _:
-                #return "other"
+            case _:
+                return complexity
 
     def format(self, label_col_name):
         if self.source_dtype == 'json' or self.source_dtype == 'jsonl':
@@ -104,7 +104,8 @@ if __name__ == '__main__':
     BASE_PATH = Path(__file__).parent
 
     source_path = BASE_PATH / "../data/leetcode-parsed/messy_leetcode_data.csv"
-    save_path = BASE_PATH / "../data/leetcode-parsed/unclear_labels_messy_leetcode_data.csv"
+    save_path = BASE_PATH / "../data/leetcode-parsed/test.csv"
+    save_path = source_path
 
     # Call
     foo = LabelFormatter(source_path, save_path, "label")

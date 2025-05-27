@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 class LabelFormatter:
-    def __init__(self, source_path, save_path=None):
+    def __init__(self, source_path, save_path=None, label_col_name="complexity"):
         self.save_path = source_path if save_path is None else save_path
 
         self.source_dtype = str(source_path).split('.')[-1]
@@ -14,7 +14,7 @@ class LabelFormatter:
         self.read_data(source_path)
 
         # Start formatting
-        self.format()
+        self.format(label_col_name)
 
         # Write changes
         self.save_formatted_json()
@@ -27,49 +27,49 @@ class LabelFormatter:
 
         # If data in .csv
         elif self.source_dtype == 'csv':
-            self.data = pd.read_csv(source_path, sep=';')
+            self.data = pd.read_csv(source_path, sep=',')
 
     def format_time_complexity(self, complexity):
         match complexity:
-            case "1" | "O(1)":
-                return "O(1)"
-
-            case "logn" | "O(logn)":
-                return "O(logn)"
-
-            case "n" | "O(n)":
-                return "O(n)"
-
-            case "nlogn" | "O(nlogn)":
-                return "O(nlogn)"
-
-            case "n^2" | "O(n ^ 2)" | "O(n^2)":
-                return "O(n ^ 2)"
-
-            case "n^3" | "O(n ^ 3)":
-                return "O(n ^ 3)"
-
-            case "n!" | "O(n!)":
-                return "O(n!)"
-
-            case "2^n" | "O(2 ^ n)":
-                return "O(2 ^ n)"
-
-            case "np" | "O(np)":
-                return "O(np)"
-
-            case _:
+            case "1" | "O(1)" | "# Time:  O(1)":
                 return "other"
 
-    def format(self):
+            case "logn" | "O(logn)" | "# Time:  O(logn)":
+                return "other"
+
+            case "n" | "O(n)" | "# Time:  O(n)":
+                return "other"
+
+            case "nlogn" | "O(nlogn)" | "# Time:  O(nlogn)":
+                return "other"
+
+            case "n^2" | "O(n ^ 2)" | "O(n^2)" | "# Time:  O(n^2)" | "# Time:  O(n ^ 2)":
+                return "other"
+
+            case "n^3" | "O(n ^ 3)" | "# Time:  O(n^3)" | "# Time:  O(n ^ 3)":
+                return "other"
+
+            case "n!" | "O(n!)" | "# Time:  O(n!)":
+                return "other"
+
+            case "2^n" | "O(2 ^ n)" | "# Time:  O(2^n)" | "# Time:  O(2 ^ n)":
+                return "other"
+
+            case "np" | "O(np)" | "# Time:  O(np)":
+                return "other"
+
+            #case _:
+                #return "other"
+
+    def format(self, label_col_name):
         if self.source_dtype == 'json' or self.source_dtype == 'jsonl':
             for sample in self.data:
-                sample["complexity"] = self.format_time_complexity(
-                    sample["complexity"]
+                sample[label_col_name] = self.format_time_complexity(
+                    sample[label_col_name]
                 )
         
         elif self.source_dtype == 'csv':
-            self.data['complexity'] = self.data['complexity'].apply(self.format_time_complexity)
+            self.data[label_col_name] = self.data[label_col_name].apply(self.format_time_complexity)
 
     def save_formatted_json(self):
         match self.save_dtype:
@@ -103,9 +103,9 @@ class LabelFormatter:
 if __name__ == '__main__':
     BASE_PATH = Path(__file__).parent
 
-    source_path = BASE_PATH / "../data/label_updated_clean_leetcode_data.csv"
-    save_path = BASE_PATH / "../data/label_updated_clean_leetcode_data.csv"
+    source_path = BASE_PATH / "../data/leetcode-parsed/messy_leetcode_data.csv"
+    save_path = BASE_PATH / "../data/leetcode-parsed/unclear_labels_messy_leetcode_data.csv"
 
     # Call
-    foo = LabelFormatter(source_path, save_path)
-    foo.format()
+    foo = LabelFormatter(source_path, save_path, "label")
+    

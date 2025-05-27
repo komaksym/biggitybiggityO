@@ -37,7 +37,7 @@ class LLM:
 
 class Audit:
     def __init__(self, source_path, llm, sem):
-        self.llm_decisions = {'grok_decision2': []}
+        self.llm_decisions = {'deepseek_decision': []}
         self.data = pd.read_csv(source_path, sep=",")
 
         self.llm = llm
@@ -67,7 +67,7 @@ class Audit:
     def process_responses(self, responses):
         for response in responses:
             # Add LLM's decision
-            self.llm_decisions['grok_decision2'].append(response)
+            self.llm_decisions['deepseek_decision'].append(response)
 
     def save_data_to_review(self, save_path):
         # Join the original df with LLM decisions
@@ -86,10 +86,10 @@ async def main():
     model = 'grok-3'
 
     # Test
-    #client = AsyncOpenAI(
-    #    api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com"
-    #)
-    #model = "deepseek-chat"
+    client = AsyncOpenAI(
+        api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com"
+    )
+    model = "deepseek-chat"
 
     eval_instruction = """
     You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.  
@@ -122,13 +122,13 @@ async def main():
 """
 
     BASE_PATH = Path(__file__).parent
-    source_path = BASE_PATH / "../data/ai_audited/audited_clean_leetcode_data.csv"
-    save_path = BASE_PATH / "../data/relabeled_audited_clean_leetcode_data.csv"
+    source_path = BASE_PATH / "../data/leetcode-parsed/messy_leetcode_data.csv"
+    save_path = BASE_PATH / "../data/leetcode-parsed/ai_audited/relabeled_messy_leetcode_data.csv"
     save_path = source_path
 
     # LLMs to use
     grok = LLM(client, model)
-    semaphore = Semaphore(5)
+    semaphore = Semaphore(10)
 
     # Initiate audit
     audit = Audit(source_path, grok, semaphore)

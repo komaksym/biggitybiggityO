@@ -3,34 +3,39 @@ from pathlib import Path
 
 import pandas as pd
 
-from utils import open_corrupted_files, search_files, set_regex_pattern
+from utils import MyDict, open_corrupted_files, search_files, set_regex_pattern
 
-BASE_LOCATION = Path(__file__).parent
+BASE_LOCATION: Path = Path(__file__).parent
 
 
 class FileCleaner:
-    def __init__(self):
-        self.parsed_data = {"code": [], "label": []}
-        self.corrupted_data = []
+    def __init__(self) -> None:
+        self.parsed_data: dict[str, list[str]] = {"code": [], "label": []}
+        self.corrupted_data: list[str | Path] = []
         self.num_of_duplicates = 0
 
-    def clean(self, files, file_paths, regex_pattern):
-        """Iterate files line by line and duplicate labels for solutions 
-           that do not have its own label by taking the predecessor.
+    def clean(
+        self,
+        files: list[str],
+        file_paths: list[str | Path],
+        regex_pattern: re.Pattern[str],
+    ) -> tuple[dict[str, list[str]], list[Path | str]]:
+        """Iterate files line by line and duplicate labels for solutions
+        that do not have its own label by taking the predecessor.
 
-           The idea is for every solution to have its own label which will get
-           the files into a common format that we can then parse.
+        The idea is for every solution to have its own label which will get
+        the files into a common format that we can then parse.
 
-           We also save 'corrupted' data, where there was not even a single label
-           to borrow for solutions.
-           """
+        We also save 'corrupted' data, where there was not even a single label
+        to borrow for solutions.
+        """
         for file, file_path in zip(files, file_paths):
-            lines = file.splitlines()
-
-            label = []
-            code = []
+            label: list[str] = []
+            code: list[str] = []
             i = 0
             next_label_exists = True
+
+            lines: list[str] = file.splitlines()
 
             while i < len(lines):
                 # Keep capturing while complexity comments are present
@@ -66,7 +71,7 @@ class FileCleaner:
                             break
 
                     # Add the code snippet
-                    solution = re.sub(regex_pattern, "", "\n".join(code))
+                    solution: str = re.sub(regex_pattern, "", "\n".join(code))
                     self.parsed_data["code"].append(solution)
 
                     # If there was no label at the beginning, add a placeholder
@@ -94,7 +99,7 @@ class FileCleaner:
 
         return self.parsed_data, self.corrupted_data
 
-    def save(self, data_to_save, path):
+    def save(self, data_to_save, path) -> None:
         if not str(path).endswith(".csv"):
             raise ValueError("Make sure the type of the file to save is '.csv'")
 
@@ -106,18 +111,23 @@ class FileCleaner:
 
 if __name__ == "__main__":
     # Absolute path to script's directory
-    fp_source = BASE_LOCATION.parent / "data/raw_files/messy_files/annotated_files"
+    fp_source: Path = (
+        BASE_LOCATION.parent / "data/raw_files/messy_files/annotated_files"
+    )
 
     # Read raw data
-    raw_data = search_files(fp_source)
+    raw_data: MyDict = search_files(fp_source)
 
     # Regex pattern
-    filter_pattern = set_regex_pattern(
-        "(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})",
+    filter_pattern: re.Pattern[str] = set_regex_pattern(
+        r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})",
         flags=re.DOTALL | re.IGNORECASE | re.MULTILINE,
     )
 
     # Clean the data up
+    parsed_data: dict[str, list[str]]
+    corruped_data: list[Path | str]
+
     cleaner = FileCleaner()
     parsed_data, corrupted_data = cleaner.clean(
         **raw_data, regex_pattern=filter_pattern
@@ -127,5 +137,5 @@ if __name__ == "__main__":
     open_corrupted_files("open", corrupted_data)
 
     # Save parsed data
-    save_path = BASE_LOCATION.parent / "test.csv"
+    save_path: Path = BASE_LOCATION.parent / "test.csv"
     cleaner.save(parsed_data, save_path)

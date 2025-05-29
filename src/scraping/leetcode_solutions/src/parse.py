@@ -1,30 +1,30 @@
 import re
 from pathlib import Path
+from re import Pattern
+from typing import Any, Iterator, Match
 
-from utils import open_corrupted_files, search_files, set_regex_pattern
+from utils import open_corrupted_files, search_files, set_regex_pattern, MyDict
 
-BASE_LOCATION = Path(__file__).parent
+BASE_LOCATION: Path = Path(__file__).parent
 
 
 class FileParser:
-    def __init__(self):
+    def __init__(self) -> None:
         pass
 
-    def parse_labels(self, text, regex_pattern=r"\sO\("):
+    def parse_labels(self, text: str, regex_pattern: str = r"\sO\(") -> list[str]:
         """
         Parsing labels (Time complexity) until the number
         of closing parentheses matches the number of open parantheses.
         """
-        results = []
-
-        regex_pattern = regex_pattern
-        matches = re.finditer(regex_pattern, text)
+        results: list[str] = []
+        matches: Iterator[Match[str]] = re.finditer(regex_pattern, text)
 
         for match in matches:
             # Start position to begin searching from
-            start_pos = match.end()
+            start_pos: int = match.end()
             # Index for searching parentheses
-            i = start_pos
+            i: int = start_pos
             # Number of opened parentheses
             depth = 1
 
@@ -44,18 +44,21 @@ class FileParser:
         return results
 
     def separate_annotated_labels(
-        self, files_path, files, regex_pattern=r"#.*?O\(.*\n(?:#.*O.*\n)+"
-    ):
+        self,
+        files_path: list[Path],
+        files: list[str],
+        regex_pattern: str = r"#.*?O\(.*\n(?:#.*O.*\n)+",
+    ) -> None:
         """
         Separate files with annotated labels e.g. where there's
         a separate time complexity label for every operation in a single solution.
         """
-        annotations_pattern = set_regex_pattern(regex_pattern)
-        annotated_data = []
+        annotations_pattern: Pattern[str] = set_regex_pattern(regex_pattern)
+        annotated_data: list = []
 
         # Check every file
         for path, file in zip(files_path, files):
-            label_matches = re.findall(annotations_pattern, file)
+            label_matches: list[Any] = re.findall(annotations_pattern, file)
 
             # Save paths
             for _ in label_matches:
@@ -67,23 +70,25 @@ class FileParser:
         )
         print(f"Moved: {len(annotated_data)} files")
 
-    def parse_files(self, file_paths, files, code_pattern):
+    def parse_files(
+        self, file_paths: list[str | Path], files: list[str], code_pattern: Pattern
+    ) -> tuple[dict[str, list[str]], list[Any]]:
         """
         Parse data and gather separatelly based on
         whether the number of labels in a file matches the number of solutions.
         """
-        parsed_data = {"code": [], "label": []}
-        corrupted_data = []
+        parsed_data: dict[str, list[str]] = {"code": [], "label": []}
+        corrupted_data: list[Any] = []
 
         # Regex pattern to remove in-code comments
-        filter_pattern = set_regex_pattern(
+        filter_pattern: Pattern[str] = set_regex_pattern(
             r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})",
             flags=re.DOTALL | re.IGNORECASE | re.MULTILINE,
         )
 
         for path, file in zip(file_paths, files):
-            code_matches = re.findall(code_pattern, file)
-            label_matches = self.parse_labels(file)
+            code_matches: list[Any] = re.findall(code_pattern, file)
+            label_matches: list[str] = self.parse_labels(file)
 
             # Number of samples doesn't equal num of labels
             if len(code_matches) != len(label_matches):
@@ -92,7 +97,7 @@ class FileParser:
 
             for code, label in zip(code_matches, label_matches):
                 # Remove in-code comments
-                code = re.sub(filter_pattern, "", code)
+                code: str = re.sub(filter_pattern, "", code)
 
                 parsed_data["label"].append(label)
                 parsed_data["code"].append(code)
@@ -101,19 +106,25 @@ class FileParser:
 
 
 if __name__ == "__main__":
-    src_files_path = BASE_LOCATION.parent / "data/raw_files/messy_files/unclear_files"
+    src_files_path: Path = (
+        BASE_LOCATION.parent / "data/raw_files/messy_files/unclear_files"
+    )
 
     # Get the data into Python objects
-    raw_data = search_files(src_files_path)
+    raw_data: MyDict = search_files(src_files_path)
 
     # Regex patterns
-    code_pattern = set_regex_pattern(
+    code_pattern: Pattern[str] = set_regex_pattern(
         r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE
     )
     # code_pattern = set_regex_pattern(r"(?:class|def)\sSolution")
 
     # Start parsing
-    parser = FileParser()
+    parser: FileParser = FileParser()
+
+    parsed_data: dict[str, list[str]]
+    corruped_data: list[Any]
+
     parsed_data, corrupted_data = parser.parse_files(
         **raw_data, code_pattern=code_pattern
     )

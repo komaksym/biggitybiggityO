@@ -1,14 +1,21 @@
 import re
 import subprocess
+from pathlib import Path
+from typing import Any, TypedDict
 
 
-def set_regex_pattern(pattern, flags=0):
+class MyDict(TypedDict):
+    file_paths: list[Path | str]
+    files: list[str]
+
+
+def set_regex_pattern(pattern: str, flags: Any = 0) -> re.Pattern[str]:
     return re.compile(rf"{pattern}", flags)
 
 
-def search_files(folder_path):
+def search_files(folder_path: Path) -> MyDict:
     """Search files locally and parse them and their paths into python objects"""
-    raw_data = {"file_paths": [], "files": []}
+    raw_data: MyDict = {"file_paths": [], "files": []}
 
     for file_path in folder_path.glob("*.py"):
         raw_data["file_paths"].append(file_path)
@@ -17,10 +24,11 @@ def search_files(folder_path):
     return raw_data
 
 
-def open_corrupted_files(command, posix_paths, destination_path=None):
+def open_corrupted_files(
+    command: str, posix_paths: list[Path | str], destination_path=None
+) -> None:
     # Subprocess command
-    command = command
-    paths = [command]
+    paths: list[Any] = [command]
 
     # Populate the paths
     for p in posix_paths:

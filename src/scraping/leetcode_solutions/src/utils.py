@@ -7,6 +7,7 @@ def set_regex_pattern(pattern, flags=0):
 
 
 def search_files(folder_path):
+    """Search files locally and parse them and their paths into python objects"""
     raw_data = {"file_paths": [], "files": []}
 
     for file_path in folder_path.glob("*.py"):

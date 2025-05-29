@@ -8,7 +8,7 @@ from utils import open_corrupted_files, search_files, set_regex_pattern
 BASE_LOCATION = Path(__file__).parent
 
 
-class FilesCleaner:
+class FileCleaner:
     def __init__(self):
         self.parsed_data = {"code": [], "label": []}
         self.corrupted_data = []
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     )
 
     # Clean the data up
-    cleaner = FilesCleaner()
+    cleaner = FileCleaner()
     parsed_data, corrupted_data = cleaner.clean(
         **raw_data, regex_pattern=filter_pattern
     )

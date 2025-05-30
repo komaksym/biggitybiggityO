@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from utils import MyDict, open_corrupted_files, search_files, set_regex_pattern
+from .utils import MyDict, open_corrupted_files, search_files, set_regex_pattern
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -112,7 +112,7 @@ class FileCleaner:
 if __name__ == "__main__":
     # Absolute path to script's directory
     fp_source: Path = (
-        BASE_LOCATION.parent / "data/raw_files/messy_files/annotated_files"
+        BASE_LOCATION.parent / "data/messy_files/annotated_files"
     )
 
     # Read raw data

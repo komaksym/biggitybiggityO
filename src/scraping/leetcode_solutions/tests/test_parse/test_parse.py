@@ -1,19 +1,24 @@
+from pathlib import Path
+from typing import Any
+
 import pytest
-from ...src.parse import parse_labels, search_files, parse_data
-from pathlib import Path, PosixPath
+
+from ...src.parse import FileParser
+from ...src.utils import MyDict, search_files
+
+BASE_DIR: Path = Path(__file__).parent
 
 
 @pytest.fixture
-def mock_labels_txt():
-    BASE_DIR = Path(__file__).resolve().parent
-    fp = BASE_DIR / "mock_files/mock_labels.txt"
+def mock_labels_txt() -> str:
+    fp: Path = BASE_DIR / "mock_files/mock_labels.txt"
 
     with open(fp, "r") as f:
         return f.read()
 
 
 @pytest.fixture
-def expected_parsed_labels():
+def expected_parsed_labels() -> list[str]:
     return [
         "n * m",
         "(logn)^2",
@@ -31,32 +36,32 @@ def expected_parsed_labels():
     ]
 
 
-def test_parse_labels(mock_labels_txt, expected_parsed_labels):
-    got = parse_labels(mock_labels_txt)
+def test_parse_labels(mock_labels_txt, expected_parsed_labels) -> None:
+    got: list[str] = FileParser().parse_labels(mock_labels_txt)
 
     assert got == expected_parsed_labels
 
 
 @pytest.fixture
-def folder_path():
-    return "leetcode_solutions/tests/test_parse/mock_files/"
+def folder_path() -> Path:
+    return BASE_DIR / "mock_files/"
 
 
 @pytest.fixture
-def expected_raw_data():
+def expected_raw_data() -> MyDict:
     return {
         "file_paths": [
-            PosixPath(
-                "leetcode_solutions/tests/test_parse/mock_files/mock_files2/distant-barcodes.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files2/distant-barcodes.py"
             ),
-            PosixPath(
-                "leetcode_solutions/tests/test_parse/mock_files/mock_files2/my-calendar-i.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files2/my-calendar-i.py"
             ),
-            PosixPath(
-                "leetcode_solutions/tests/test_parse/mock_files/mock_files1/split-concatenated-strings.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files1/split-concatenated-strings.py"
             ),
-            PosixPath(
-                "leetcode_solutions/tests/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
             ),
         ],
         "files": [
@@ -68,14 +73,14 @@ def expected_raw_data():
     }
 
 
-def test_search_files(folder_path, expected_raw_data):
-    got = search_files(folder_path)
+def test_search_files(folder_path, expected_raw_data) -> None:
+    got: MyDict = search_files(folder_path)
 
     assert got == expected_raw_data
 
 
 @pytest.fixture
-def expected_parsed_data():
+def expected_parsed_data() -> tuple[dict[str, list[str]], list[Path]]:
     return (
         {
             "code": [
@@ -85,18 +90,18 @@ def expected_parsed_data():
             "label": ["n", "n^2"],
         },
         [
-            PosixPath(
-                "leetcode_solutions/tests/test_parse/mock_files/mock_files2/my-calendar-i.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files2/my-calendar-i.py"
             ),
-            PosixPath(
-                "leetcode_solutions/tests/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
             ),
         ],
     )
 
 
-def test_parse_data(folder_path, expected_parsed_data):
-    raw_data = search_files(folder_path)
-    got = parse_data(raw_data["file_paths"], raw_data["files"])
+def test_parse_data(folder_path, expected_parsed_data) -> None:
+    raw_data: MyDict = search_files(folder_path)
 
+    got: tuple[dict[str, list[str]], list[Any]] = FileParser().parse_files(**raw_data)
     assert got == expected_parsed_data

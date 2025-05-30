@@ -1,20 +1,20 @@
 import pytest
 from ...src.clean import FileCleaner
-from ...src.utils import search_files
+from ...src.utils import search_files, MyDict
 from pathlib import Path
+from typing import Any
 import re
 
 BASE_LOCATION: Path = Path(__file__).parent
 
 
 @pytest.fixture
-def folder_path():
-    # return Path("leetcode_solutions/tests/test_clean/mock_files")
+def folder_path() -> Path:
     return BASE_LOCATION / "mock_files/"
 
 
 @pytest.fixture
-def expected_raw_data():
+def expected_raw_data() -> MyDict:
     return {
         "file_paths": [
             Path(
@@ -39,14 +39,14 @@ def expected_raw_data():
     }
 
 
-def test_search_files(folder_path, expected_raw_data):
-    got = search_files(folder_path)
+def test_search_files(folder_path, expected_raw_data) -> None:
+    got: MyDict = search_files(folder_path)
 
     assert got == expected_raw_data
 
 
 @pytest.fixture
-def filter_pattern():
+def filter_pattern() -> re.Pattern[str]:
     return re.compile(
         r"(#.*?$)|(\"{3}.*?\"{3})|('{3}.*?'{3})",
         flags=re.DOTALL | re.IGNORECASE | re.MULTILINE,
@@ -54,7 +54,7 @@ def filter_pattern():
 
 
 @pytest.fixture
-def expected_parsed_data():
+def expected_parsed_data() -> dict[str, list[str]]:
     return {
         "code": [
             "class Solution(object):\n\n    def __init__(self, nums):\n        self.__lookup = collections.defaultdict(list)\n        for i, x in enumerate(nums):\n            self.__lookup[x].append(i)\n\n    def pick(self, target):\n        return self.__lookup[target][randint(0, len(self.__lookup[target])-1)]\n\n",
@@ -80,12 +80,14 @@ def expected_parsed_data():
 
 
 @pytest.fixture
-def expected_corrupted_data():
+def expected_corrupted_data() -> list[Any]:
     return []
 
 
 def test_clean_files(expected_raw_data, expected_parsed_data, expected_corrupted_data, filter_pattern):
-    cleaner = FileCleaner()
-    parsed_data, corrupted_data = cleaner.clean(**expected_raw_data, regex_pattern=filter_pattern)
+    parsed_data: dict[str, list[str]]
+    corrupted_data: list[Path | str]
+
+    parsed_data, corrupted_data = FileCleaner().clean(**expected_raw_data, regex_pattern=filter_pattern)
 
     assert (parsed_data == expected_parsed_data) and (corrupted_data == expected_corrupted_data)

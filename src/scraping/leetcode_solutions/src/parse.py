@@ -3,9 +3,9 @@ from pathlib import Path
 from re import Pattern
 from typing import Any, Iterator, Match
 
-from utils import open_corrupted_files, search_files, set_regex_pattern, MyDict
+from .utils import open_corrupted_files, search_files, set_regex_pattern, MyDict
 
-BASE_LOCATION: Path = Path(__file__).parent
+BASE_DIR: Path = Path(__file__).parent
 
 
 class FileParser:
@@ -65,13 +65,16 @@ class FileParser:
                 annotated_data.append(path)
 
         # Move data to a separate folder
-        open_corrupted_files(
-            "mv", annotated_data, destination_path="solutions/annotated_solutions/"
-        )
+        open_corrupted_files("mv", annotated_data, destination_path="solutions/annotated_solutions/")
         print(f"Moved: {len(annotated_data)} files")
 
     def parse_files(
-        self, file_paths: list[str | Path], files: list[str], code_pattern: Pattern
+        self,
+        file_paths: list[str | Path],
+        files: list[str],
+        code_pattern: Pattern = set_regex_pattern(
+            r"(?:#\sTime.*?\n)(.*?)(?=#\sTime|\Z)", flags=re.DOTALL | re.MULTILINE
+        ),
     ) -> tuple[dict[str, list[str]], list[Any]]:
         """
         Parse data and gather separatelly based on
@@ -106,9 +109,7 @@ class FileParser:
 
 
 if __name__ == "__main__":
-    src_files_path: Path = (
-        BASE_LOCATION.parent / "data/raw_files/messy_files/unclear_files"
-    )
+    src_files_path: Path = BASE_DIR.parent / "data/raw_files/messy_files/unclear_files"
 
     # Get the data into Python objects
     raw_data: MyDict = search_files(src_files_path)
@@ -123,11 +124,9 @@ if __name__ == "__main__":
     parser: FileParser = FileParser()
 
     parsed_data: dict[str, list[str]]
-    corruped_data: list[Any]
+    corrupted_data: list[Any]
 
-    parsed_data, corrupted_data = parser.parse_files(
-        **raw_data, code_pattern=code_pattern
-    )
+    parsed_data, corrupted_data = parser.parse_files(**raw_data, code_pattern=code_pattern)
 
     print(f"Successfully parsed: {len(parsed_data['label'])} files")
     print(f"Unsuccessfully parsed: {len(corrupted_data)} files")

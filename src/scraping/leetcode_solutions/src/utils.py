@@ -17,7 +17,7 @@ def search_files(folder_path: Path) -> MyDict:
     """Search files locally and parse them and their paths into python objects"""
     raw_data: MyDict = {"file_paths": [], "files": []}
 
-    for file_path in folder_path.glob("*.py"):
+    for file_path in folder_path.glob("**/*.py"):
         raw_data["file_paths"].append(file_path)
         raw_data["files"].append(file_path.read_text())
 

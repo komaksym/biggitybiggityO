@@ -1,29 +1,33 @@
 import pytest
-from ...src.clean import search_files, clean_files
-from pathlib import PosixPath
+from ...src.clean import FileCleaner
+from ...src.utils import search_files
+from pathlib import Path
 import re
+
+BASE_LOCATION: Path = Path(__file__).parent
 
 
 @pytest.fixture
 def folder_path():
-    return "leetcode_solutions/tests/test_clean/mock_files/"
+    # return Path("leetcode_solutions/tests/test_clean/mock_files")
+    return BASE_LOCATION / "mock_files/"
 
 
 @pytest.fixture
 def expected_raw_data():
     return {
         "file_paths": [
-            PosixPath(
-                "leetcode_solutions/tests/test_clean/mock_files/mock_subfolder2/random-pick-index.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_clean/mock_files/mock_subfolder2/random-pick-index.py"
             ),
-            PosixPath(
-                "leetcode_solutions/tests/test_clean/mock_files/mock_subfolder2/empty_file.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_clean/mock_files/mock_subfolder2/empty_file.py"
             ),
-            PosixPath(
-                "leetcode_solutions/tests/test_clean/mock_files/mock_subfolder1/bitwise-and-of-numbers-range.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_clean/mock_files/mock_subfolder1/bitwise-and-of-numbers-range.py"
             ),
-            PosixPath(
-                "leetcode_solutions/tests/test_clean/mock_files/mock_subfolder1/closest-dessert-cost.py"
+            Path(
+                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_clean/mock_files/mock_subfolder1/closest-dessert-cost.py"
             ),
         ],
         "files": [
@@ -80,12 +84,8 @@ def expected_corrupted_data():
     return []
 
 
-def test_clean_files(
-    expected_raw_data, expected_parsed_data, expected_corrupted_data, filter_pattern
-):
-    files, file_paths = expected_raw_data["files"], expected_raw_data["file_paths"]
-    parsed_data, corrupted_data = clean_files(files, file_paths, filter_pattern)
+def test_clean_files(expected_raw_data, expected_parsed_data, expected_corrupted_data, filter_pattern):
+    cleaner = FileCleaner()
+    parsed_data, corrupted_data = cleaner.clean(**expected_raw_data, regex_pattern=filter_pattern)
 
-    assert (parsed_data == expected_parsed_data) and (
-        corrupted_data == expected_corrupted_data
-    )
+    assert (parsed_data == expected_parsed_data) and (corrupted_data == expected_corrupted_data)

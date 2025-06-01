@@ -1,5 +1,6 @@
 import pytest
 from ..split import DatasetSplitter
+from ..utils import read_data
 from pathlib import Path
 import pandas as pd
 
@@ -58,8 +59,8 @@ def test_DatasetSplitter(
     # Test whether files were successfully created. 
     assert dummy_train_set_path.exists() and dummy_test_set_path.exists()
 
-    got_train_set: pd.DataFrame = pd.read_csv(dummy_train_set_path)
-    got_test_set: pd.DataFrame = pd.read_csv(dummy_test_set_path)
+    got_train_set: pd.DataFrame = read_data(dummy_train_set_path)
+    got_test_set: pd.DataFrame = read_data(dummy_test_set_path)
 
     expected_train_set, expected_test_set = expected_split_datasets
 

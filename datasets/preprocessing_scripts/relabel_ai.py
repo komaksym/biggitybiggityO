@@ -16,35 +16,38 @@ class LLM:
     def __init__(self, client: AsyncOpenAI, model: str) -> None:
         self.client: AsyncOpenAI = client
         self.model: str = model
-        self.request_counter = 1
 
     async def send_requests(
-        self, sem: Semaphore, instructions: str, request: str, num_requests: int, **kwargs
+        self, sem: Semaphore, instructions: str, request: str, num_requests: int, request_id: int = 0, **kwargs
     ) -> str | None:
         """
         Send async requests to a LLM,
         where the num of concurrent requests is capped by a semaphore.
         """
-        async with sem:
-            response: ChatCompletion = await self.client.chat.completions.create(
-                model=self.model,
-                **kwargs,
-                messages=[
-                    {"role": "system", "content": instructions},
-                    {"role": "user", "content": request},
-                ],
-                stream=False,
-            )
-            # Response
-            response_content: str | None = response.choices[0].message.content
+        try:
+            async with sem:
+                response: ChatCompletion = await self.client.chat.completions.create(
+                    model=self.model,
+                    **kwargs,
+                    messages=[
+                        {"role": "system", "content": instructions},
+                        {"role": "user", "content": request},
+                    ],
+                    stream=False,
+                )
+                # Response
+                response_content: str | None = response.choices[0].message.content
 
-            # Log
-            print(f"\nREQUEST: (#{self.request_counter}/{num_requests}):\n{request}")
-            print("\nRESPONSE:\n", response, end="\n\n")
+                # Log
+                print(f"\nREQUEST: (#{request_id}/{num_requests}):\n{request}")
+                print("\nRESPONSE:\n", response, end="\n\n")
 
-            self.request_counter += 1
 
-            return response_content
+                return response_content
+
+        except Exception as e:
+            print(f"Request #{request_id} failed. {e}")
+            return None
 
 
 class Audit:
@@ -58,6 +61,12 @@ class Audit:
 
         # Load the data
         self.data: pd.DataFrame = pd.read_csv(source_path, sep=",")
+
+        # Handle potential absence of the column, or an empty dataframe
+        if "code" not in self.data.columns:
+            raise ValueError("Dataset must contain a 'code' column")
+        if self.data.empty:
+            raise ValueError("Dataset is empty")
 
     async def process_requests(self, instructions: str) -> None:
         """
@@ -77,8 +86,9 @@ class Audit:
                 instructions,
                 request,
                 num_requests,
+                request_id = i+1
             )
-            for request in requests
+            for i, request in enumerate(requests)
         ]
 
         # Run coroutines concurrently
@@ -99,9 +109,11 @@ class Audit:
         """
         Join responses with the original data and save.
         """
+        # Create a directory in case one doesn't exist yet
+        save_path.parent.mkdir(parents=True, exist_ok=True)
+
         # Join the original df with LLM decisions
         joined: pd.DataFrame = self.data.join(pd.DataFrame(self.llm_decisions))
-
         # Save
         joined.to_csv(save_path, index=False)
 
@@ -151,8 +163,8 @@ async def main() -> None:
         O(nlogn)
     """
 
-    source_path: Path = BASE_PATH / "../data/leetcode-parsed/messy_leetcode_data.csv"
-    save_path: Path = BASE_PATH / "../data/leetcode-parsed/ai_audited/relabeled_messy_leetcode_data.csv"
+    source_path: Path = BASE_PATH.parent / "data/leetcode-parsed/messy_leetcode_data.csv"
+    save_path: Path = BASE_PATH.parent / "data/leetcode-parsed/ai_audited/relabeled_messy_leetcode_data.csv"
 
     # LLM to use
     grok = LLM(client, model)
@@ -167,4 +179,14 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyError as e:
+        print(f"Missing environmental variable: {e}")
+        exit(1)
+    except FileNotFoundError as e:
+        print(f"File not found: {e}")
+        exit(1)
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        exit(1)

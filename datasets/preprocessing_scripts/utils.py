@@ -5,7 +5,7 @@ import pandas as pd
 
 def get_file_extension(path: Path) -> str:
     """Extract the file extension without a dot."""
-    return Path(path).suffix.lstrip('.')
+    return Path(path).suffix.lstrip(".")
 
 
 def read_data(source_path: Path) -> pd.DataFrame:
@@ -44,6 +44,6 @@ def save_data(data: pd.DataFrame, target_path: Path) -> None:
 
         case "csv":
             data.to_csv(target_path, index=False)
-        
+
         case _:
             raise ValueError(f"Unsupported file format. .{extension}. Use .csv, .json, .jsonl instead.")

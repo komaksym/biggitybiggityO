@@ -1,19 +1,22 @@
 import re
 from pathlib import Path
 
-from pandas import DataFrame, Series
+import pandas as pd
 
 from .utils import read_data, save_data
 
 BASE_PATH: Path = Path(__file__).parent
 
 
-def format_labels(series: Series) -> Series:
+def format_labels(series: pd.Series) -> pd.Series:
+    """Main format labels function."""
+
     def normalize_complexity(label: str) -> str:
         """Normalize labels"""
+
         label = label.replace(" ", "").lower()
 
-        mapping = {
+        mapping: dict[str, str] = {
             "1": "O(1)",
             "o(1)": "O(1)",
             "logn": "O(logn)",
@@ -36,22 +39,24 @@ def format_labels(series: Series) -> Series:
 
         return mapping.get(label, "other")
 
-    def drop_labeled_x(data: Series, value: str) -> Series:
+    def drop_labeled_x(data: pd.Series, value: str) -> pd.Series:
         """Drop samples where the value equals the argument"""
-        index = data.apply(lambda row: row == value).index
-        data.drop(index, inplace=True)
 
-        return data
+        return data[data != value]
 
     # Normalize labels
-    series = series.apply(normalize_complexity)
+    normalized = series.apply(normalize_complexity)
 
     # Drop samples with "other" label
-    return drop_labeled_x(series, value="other")
+    return drop_labeled_x(normalized, value="other")
 
 
-def format_codes(data: Series) -> Series:
+def format_codes(data: pd.Series) -> pd.Series:
+    """Main format codes function."""
+
     def remove_comments(code_sample: str) -> str:
+        """Remove in-code comments."""
+
         return re.sub(
             r"(#.+?$)|([\"']{3,}.+?[\"']{3,})",
             "",
@@ -63,6 +68,7 @@ def format_codes(data: Series) -> Series:
         """
         Remove consecutive empty lines and keep only 1 between code lines.
         """
+
         filtered_code: list[str] = []
 
         for line in code_sample.split("\n"):
@@ -79,10 +85,29 @@ def format_codes(data: Series) -> Series:
 
         return "\n".join(filtered_code)
 
-    return data.apply(remove_comments).apply(strip_empty_lines)
+    def process_code(code_sample: str) -> str:
+        """Wrapper code processor."""
+
+        if pd.isna(code_sample):
+            return code_sample
+
+        formatted_sample: str = remove_comments(str(code_sample))
+        formatted_sample = strip_empty_lines(formatted_sample)
+
+        return formatted_sample
+
+    return data.apply(process_code)
 
 
-def format_data(data: DataFrame) -> DataFrame:
+def format_data(data: pd.DataFrame) -> pd.DataFrame:
+    """Format data in the specified columns. (Main wrapper)"""
+
+    required_columns: set[str] = {"code", "complexity"}
+    missing_columns: list[str] = [col for col in required_columns if col not in data.columns]
+
+    if missing_columns:
+        raise ValueError(f"Missing required columns: {missing_columns}")
+
     data["code"] = data["code"].apply(format_codes)
     data["complexity"] = data["complexity"].apply(format_labels)
 
@@ -93,15 +118,15 @@ def format_data(data: DataFrame) -> DataFrame:
 
 
 if __name__ == "__main__":
-    # Paths
-    source_path: Path = BASE_PATH / "../data/leetcode-parsed/clean_leetcode_data.csv"
-    out_path: Path = BASE_PATH / "../data/leetcode-parsed/clean_leetcode_data.csv"
+    # Specify paths
+    source_path: Path = BASE_PATH.parent / "data/leetcode-parsed/clean_leetcode_data.csv"
+    out_path: Path = BASE_PATH.parent / "data/leetcode-parsed/clean_leetcode_data.csv"
 
-    # Data
-    data: DataFrame = read_data(source_path)
+    # Read data
+    data: pd.DataFrame = read_data(source_path)
 
-    # Format
-    formatted_data = format_data(data)
+    # Format data
+    formatted_data: pd.DataFrame = format_data(data)
 
     # Write changes
-    save_data(data, out_path)
+    save_data(formatted_data, out_path)

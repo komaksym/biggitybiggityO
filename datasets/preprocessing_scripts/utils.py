@@ -31,7 +31,7 @@ def read_data(source_path: Path) -> pd.DataFrame:
 
 def save_data(data: pd.DataFrame, target_path: Path) -> None:
     """Save data to CSV, JSON, or JSONL file."""
-    target_path.mkdir(parents=True, exist_ok=True)
+    target_path.parent.mkdir(parents=True, exist_ok=True)
 
     extension: str = get_file_extension(target_path)
 

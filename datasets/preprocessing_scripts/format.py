@@ -1,73 +1,57 @@
 import re
 from pathlib import Path
-from typing import Any
 
-import pandas as pd
-from pandas import DataFrame
+from pandas import DataFrame, Series
 
 from .utils import read_data, save_data
 
 BASE_PATH: Path = Path(__file__).parent
 
 
-class LabelFormatter:
-    def __init__(self, source_path: Path, out_path: Path) -> None:
-        # Read data
-        data: DataFrame = read_data(source_path)
+def format_labels(series: Series) -> Series:
+    def normalize_complexity(label: str) -> str:
+        """Normalize labels"""
+        label = label.replace(" ", "").lower()
 
-        # Start formatting
-        data["complexity"] = self.format(data["complexity"])
+        mapping = {
+            "1": "O(1)",
+            "o(1)": "O(1)",
+            "logn": "O(logn)",
+            "o(logn)": "O(logn)",
+            "n": "O(n)",
+            "o(n)": "O(n)",
+            "nlogn": "O(nlogn)",
+            "o(nlogn)": "O(nlogn)",
+            "n^2": "O(n^2)",
+            "o(n^2)": "O(n^2)",
+            "o(n^3)": "O(n^3)",
+            "n^3": "O(n^3)",
+            "n!": "O(n!)",
+            "o(n!)": "O(n!)",
+            "2^n": "O(2^n)",
+            "o(2^n)": "O(2^n)",
+            "np": "O(np)",
+            "o(np)": "O(np)",
+        }
 
-        # Write changes
-        save_data(data, out_path)
+        return mapping.get(label, "other")
 
-    def rename_labels(self, complexity: str) -> str:
-        match complexity:
-            case "1" | "O(1)":
-                return "O(1)"
+    def drop_labeled_x(data: Series, value: str) -> Series:
+        """Drop samples where the value equals the argument"""
+        index = data.apply(lambda row: row == value).index
+        data.drop(index, inplace=True)
 
-            case "logn" | "O(logn)":
-                return "O(logn)"
+        return data
 
-            case "n" | "O(n)":
-                return "O(n)"
+    # Normalize labels
+    series = series.apply(normalize_complexity)
 
-            case "nlogn" | "O(nlogn)":
-                return "O(nlogn)"
-
-            case "n^2" | "O(n ^ 2)" | "O(n^2)":
-                return "O(n ^ 2)"
-
-            case "n^3" | "O(n ^ 3)":
-                return "O(n ^ 3)"
-
-            case "n!" | "O(n!)":
-                return "O(n!)"
-
-            case "2^n" | "O(2 ^ n)":
-                return "O(2 ^ n)"
-
-            case "np" | "O(np)":
-                return "O(np)"
-
-            case _:
-                return "other"
-
-    def format(self, data: pd.Series) -> Any:
-        return data.apply(self.rename_labels)
+    # Drop samples with "other" label
+    return drop_labeled_x(series, value="other")
 
 
-class CodeFormatter:
-    def __init__(self, source_path: Path, out_path: Path) -> None:
-        data: DataFrame = read_data(source_path)
-
-        # Start formatting
-        data["code"] = self.format(data["code"])
-
-        # Write changes
-        save_data(data, out_path)
-
-    def remove_comments(self, code_sample: str) -> str:
+def format_codes(data: Series) -> Series:
+    def remove_comments(code_sample: str) -> str:
         return re.sub(
             r"(#.+?$)|([\"']{3,}.+?[\"']{3,})",
             "",
@@ -75,7 +59,7 @@ class CodeFormatter:
             flags=re.MULTILINE | re.DOTALL,
         )
 
-    def strip_empty_lines(self, code_sample: str) -> str:
+    def strip_empty_lines(code_sample: str) -> str:
         """
         Remove consecutive empty lines and keep only 1 between code lines.
         """
@@ -95,13 +79,29 @@ class CodeFormatter:
 
         return "\n".join(filtered_code)
 
-    def format(self, data: pd.Series) -> pd.Series:
-        return data.apply(self.remove_comments).apply(self.strip_empty_lines)
+    return data.apply(remove_comments).apply(strip_empty_lines)
+
+
+def format_data(data: DataFrame) -> DataFrame:
+    data["code"] = data["code"].apply(format_codes)
+    data["complexity"] = data["complexity"].apply(format_labels)
+
+    data.drop_duplicates(inplace=True)
+    data.dropna(inplace=True)
+
+    return data
 
 
 if __name__ == "__main__":
+    # Paths
     source_path: Path = BASE_PATH / "../data/leetcode-parsed/clean_leetcode_data.csv"
     out_path: Path = BASE_PATH / "../data/leetcode-parsed/clean_leetcode_data.csv"
 
-    LabelFormatter(source_path, out_path)
-    CodeFormatter(source_path, out_path)
+    # Data
+    data: DataFrame = read_data(source_path)
+
+    # Format
+    formatted_data = format_data(data)
+
+    # Write changes
+    save_data(data, out_path)

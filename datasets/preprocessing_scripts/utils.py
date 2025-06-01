@@ -1,37 +1,41 @@
 from pathlib import Path
 
 import pandas as pd
-from pandas import DataFrame
 
 
-def get_file_dtype(path: Path | str) -> str:
-    """Extract the .xyz extension of a file"""
-    return str(path).split(".")[-1]
+def get_file_extension(path: Path) -> str:
+    """Extract the file extension without a dot."""
+    return Path(path).suffix.lstrip('.')
 
 
-def read_data(source_path: Path) -> DataFrame:
-    source_dtype: str = get_file_dtype(source_path)
+def read_data(source_path: Path) -> pd.DataFrame:
+    """Read data from CSV, JSON, or JSONL file."""
+    if not source_path.exists():
+        raise FileNotFoundError(f"Source file not found: {source_path}")
 
-    match source_dtype:
+    extension: str = get_file_extension(source_path)
+
+    match extension:
         case "json":
-            data = pd.read_json(source_path)
+            return pd.read_json(source_path)
 
         case "jsonl":
-            data = pd.read_json(source_path, lines=True)
+            return pd.read_json(source_path, lines=True)
 
         case "csv":
-            data: DataFrame = pd.read_csv(source_path)
+            return pd.read_csv(source_path)
 
         case _:
-            raise ValueError("The source file must be in .csv / .json or .jsonl format.")
-
-    return data
+            raise ValueError(f"Unsupported file format. .{extension}. Use .csv, .json, .jsonl instead.")
 
 
-def save_data(data: DataFrame, target_path: Path | str) -> None:
-    target_dtype: str = get_file_dtype(target_path)
+def save_data(data: pd.DataFrame, target_path: Path) -> None:
+    """Save data to CSV, JSON, or JSONL file."""
+    target_path.mkdir(parents=True, exist_ok=True)
 
-    match target_dtype:
+    extension: str = get_file_extension(target_path)
+
+    match extension:
         case "json":
             data.to_json(target_path, index=False, orient="records")
 
@@ -42,4 +46,4 @@ def save_data(data: DataFrame, target_path: Path | str) -> None:
             data.to_csv(target_path, index=False)
         
         case _:
-            raise ValueError("The save file must be in .csv / .json or .jsonl format.")
+            raise ValueError(f"Unsupported file format. .{extension}. Use .csv, .json, .jsonl instead.")

@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from ...utils import get_file_extension, read_data, save_data
+from ..utils import get_file_extension, read_data, save_data
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -47,6 +47,7 @@ def expected_read_data() -> pd.DataFrame:
 
 
 def test_read_data(dummy_source_path: Path, expected_read_data: pd.DataFrame) -> None:
+    """Test if read data works correctly."""
     got: pd.DataFrame = read_data(dummy_source_path)
 
     assert got.equals(expected_read_data)
@@ -58,6 +59,7 @@ def dummy_target_path() -> Path:
 
 
 def test_save_data(dummy_source_path, dummy_target_path) -> None:
+    """Test if save_data works correctly and saves a file."""
     data: pd.DataFrame = read_data(dummy_source_path)
 
     save_data(data, dummy_target_path)

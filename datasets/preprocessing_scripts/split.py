@@ -4,6 +4,7 @@ import pandas as pd
 from pandas import DataFrame
 from sklearn.model_selection import train_test_split
 from typing import Any
+from .utils import read_data
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -20,7 +21,7 @@ class DatasetSplitter:
         if not self.source_path.exists():
             raise FileNotFoundError(f"Source file not found: {self.source_path}")
 
-        data: DataFrame = pd.read_csv(self.source_path, sep=",", on_bad_lines="warn")
+        data: DataFrame = read_data(self.source_path)
 
         if data.empty:
             raise ValueError("Dataset is empty")

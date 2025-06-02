@@ -2,7 +2,9 @@ code,complexity
 "class Solution(object):
     def findEvenNumbers(self, digits):
         k = 3
-        def backtracking(curr, cnt, result):
+        def backtracking(curr, cnt, result): 
+# Testing testing 123
+
             if len(curr) == k:
                 result.append(reduce(lambda x, y: x*10+y, curr))
                 return
@@ -20,6 +22,4 @@ code,complexity
             cnt[d] += 1
         result = []
         backtracking([], cnt, result)
-        return result
-
-","# Time:  O(1) ~ O(n), n is 10^3"
+        return result",O(n)

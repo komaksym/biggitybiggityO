@@ -56,7 +56,7 @@ def test_DatasetSplitter(
     splitter = DatasetSplitter(dummy_source_path, dummy_train_set_path, dummy_test_set_path)
     splitter.run()
 
-    # Test whether files were successfully created. 
+    # Test whether files were successfully created.
     assert dummy_train_set_path.exists() and dummy_test_set_path.exists()
 
     got_train_set: pd.DataFrame = read_data(dummy_train_set_path)

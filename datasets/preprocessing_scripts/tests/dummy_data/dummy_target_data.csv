@@ -2,7 +2,9 @@ code,complexity
 "class Solution(object):
     def findEvenNumbers(self, digits):
         k = 3
-        def backtracking(curr, cnt, result):
+        def backtracking(curr, cnt, result): 
+# Testing testing 123
+
             if len(curr) == k:
                 result.append(reduce(lambda x, y: x*10+y, curr))
                 return
@@ -20,20 +22,23 @@ code,complexity
             cnt[d] += 1
         result = []
         backtracking([], cnt, result)
-        return result
-
-","# Time:  O(1) ~ O(n), n is 10^3"
+        return result",O(n)
 "class Solution2(object):
     def findEvenNumbers(self, digits):
+
+
+
+
+
+
+
         result, cnt = [], collections.Counter(digits)
         for i in range(1, 10):
             for j in range(10):
                 for k in range(0, 10, 2):
                     if cnt[i] > 0 and cnt[j] > (j == i) and cnt[k] > (k == i) + (k == j):
                         result.append(i*100 + j*10 + k)
-        return result
-
-","# Time:  O(n), n is 10^3"
+        return result","# Time:  O(n), n is 10^3"
 "class Solution3(object):
     def findEvenNumbers(self, digits):
         k = 3
@@ -70,6 +75,4 @@ code,complexity
             prev = prev.right
         result = []
         backtracking([], dummy, result)
-        return result
-
-","# Time:  O(1) ~ O(n), n is 10^3"
+        return result","# Time:  O(1) ~ O(n), n is 10^3"

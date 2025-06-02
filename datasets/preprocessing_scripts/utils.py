@@ -23,7 +23,12 @@ def read_data(source_path: Path) -> pd.DataFrame:
             return pd.read_json(source_path, lines=True)
 
         case "csv":
-            return pd.read_csv(source_path)
+            # Handle both separator cases
+            try:
+                return pd.read_csv(source_path, sep=',')
+
+            except pd.errors.ParserError:
+               return pd.read_csv(source_path, sep=';') 
 
         case _:
             raise ValueError(f"Unsupported file format. .{extension}. Use .csv, .json, .jsonl instead.")

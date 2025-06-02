@@ -5,7 +5,7 @@ import pandas as pd
 
 from .utils import read_data, save_data
 
-BASE_PATH: Path = Path(__file__).parent
+BASE_LOCATION: Path = Path(__file__).parent
 
 
 def format_labels(series: pd.Series) -> pd.Series:
@@ -108,8 +108,8 @@ def format_data(data: pd.DataFrame) -> pd.DataFrame:
     if missing_columns:
         raise ValueError(f"Missing required columns: {missing_columns}")
 
-    data["code"] = data["code"].apply(format_codes)
-    data["complexity"] = data["complexity"].apply(format_labels)
+    data["code"] = format_codes(data["code"])
+    data["complexity"] = format_labels(data["complexity"])
 
     data.drop_duplicates(inplace=True)
     data.dropna(inplace=True)
@@ -119,8 +119,8 @@ def format_data(data: pd.DataFrame) -> pd.DataFrame:
 
 if __name__ == "__main__":
     # Specify paths
-    source_path: Path = BASE_PATH.parent / "data/leetcode-parsed/clean_leetcode_data.csv"
-    out_path: Path = BASE_PATH.parent / "data/leetcode-parsed/clean_leetcode_data.csv"
+    source_path: Path = BASE_LOCATION.parent / "data/leetcode-parsed/clean_leetcode_data.csv"
+    out_path: Path = BASE_LOCATION.parent / "data/leetcode-parsed/clean_leetcode_data.csv"
 
     # Read data
     data: pd.DataFrame = read_data(source_path)

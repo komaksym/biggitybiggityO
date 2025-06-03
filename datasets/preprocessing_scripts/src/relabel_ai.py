@@ -4,7 +4,7 @@ import types
 from asyncio import Semaphore
 from pathlib import Path
 from typing import Any
-from .utils import read_data
+from .utils import read_data, save_data
 
 import pandas as pd
 from openai import AsyncOpenAI
@@ -113,7 +113,7 @@ class Audit:
         # Join the original df with LLM decisions
         joined: pd.DataFrame = self.data.join(pd.DataFrame(self.llm_decisions))
         # Save
-        joined.to_csv(save_path, index=False)
+        save_data(joined, save_path)
 
 
 async def main() -> None:

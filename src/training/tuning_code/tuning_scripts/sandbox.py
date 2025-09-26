@@ -1,9 +1,16 @@
 import torch
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, Trainer, \
-     TrainingArguments, DataCollatorWithPadding, BitsAndBytesConfig
-from datasets import load_dataset
-from peft import get_peft_model, LoraConfig
 from accelerate import PartialState
+from peft import LoraConfig, get_peft_model
+from transformers import (
+    AutoModelForSequenceClassification,
+    AutoTokenizer,
+    BitsAndBytesConfig,
+    DataCollatorWithPadding,
+    Trainer,
+    TrainingArguments,
+)
+
+from datasets import load_dataset
 
 # Quantization configuration (unchanged)
 quant_config = BitsAndBytesConfig(
@@ -20,17 +27,12 @@ model = AutoModelForSequenceClassification.from_pretrained(
     quantization_config=quant_config,
     device_map=PartialState().process_index,
     torch_dtype=torch.bfloat16,
-    num_labels=2  # Binary classification (e.g., positive/negative for imdb)
+    num_labels=2,  # Binary classification (e.g., positive/negative for imdb)
 )
 
 # Apply LoRA for QLoRA (unchanged)
 lora_config = LoraConfig(
-    r=16,
-    lora_alpha=32,
-    target_modules="all-linear",    
-    lora_dropout=0.1,
-    bias="none",
-    task_type = "SEQ_CLS"
+    r=16, lora_alpha=32, target_modules="all-linear", lora_dropout=0.1, bias="none", task_type="SEQ_CLS"
 )
 model = get_peft_model(model, lora_config)
 
@@ -38,11 +40,13 @@ model = get_peft_model(model, lora_config)
 dataset = load_dataset("imdb")  # imdb has 'train' and 'test' splits with text and labels
 tokenizer = AutoTokenizer.from_pretrained("facebook/opt-125m")
 
+
 def tokenize_function(examples):
     # Tokenize text and include labels
     tokenized = tokenizer(examples["text"], truncation=True, max_length=512)
     tokenized["labels"] = examples["label"]
     return tokenized
+
 
 # Map tokenization, removing original columns
 tokenized_dataset = dataset.map(tokenize_function, batched=True, remove_columns=["text", "label"])
@@ -58,8 +62,8 @@ data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 training_args = TrainingArguments(
     output_dir="./results",
     num_train_epochs=1,
-    eval_strategy='steps',
-    save_strategy='steps',
+    eval_strategy="steps",
+    save_strategy="steps",
     per_device_train_batch_size=16,
     per_device_eval_batch_size=16,
     gradient_accumulation_steps=1,
@@ -73,7 +77,6 @@ training_args = TrainingArguments(
     logging_steps=200,
     report_to="none",
     label_names=["labels"],  # Specify labels for classification loss
-
 )
 
 # Create the Trainer with explicit label_names

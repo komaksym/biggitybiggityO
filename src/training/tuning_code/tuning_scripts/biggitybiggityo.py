@@ -50,14 +50,10 @@ DATASET_PATHS = {
 
 def upload_datasets(dataset_paths=DATASET_PATHS):
     for path in dataset_paths:
-        if os.path.exists(dataset_paths[path]["train"]) and os.path.exists(
-            dataset_paths[path]["test"]
-        ):
+        if os.path.exists(dataset_paths[path]["train"]) and os.path.exists(dataset_paths[path]["test"]):
             return dataset_paths[path]["train"], dataset_paths[path]["test"]
 
-    return FileNotFoundError(
-        f"Datasets do not exist in the current paths: {dataset_paths}"
-    )
+    return FileNotFoundError(f"Datasets do not exist in the current paths: {dataset_paths}")
 
 
 train_set_path, test_set_path = upload_datasets()
@@ -94,11 +90,7 @@ def hc_score(y_true, y_pred, n_classes=N_CLASSES):
 
 def compute_metrics(eval_preds):
     logits, labels = eval_preds
-    preds = (
-        np.argmax(logits[0], axis=-1)
-        if isinstance(logits, tuple)
-        else np.argmax(logits, axis=-1)
-    )
+    preds = np.argmax(logits[0], axis=-1) if isinstance(logits, tuple) else np.argmax(logits, axis=-1)
 
     # Calculate accuracy
     accuracy = accuracy_score(labels, preds)
@@ -202,9 +194,7 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
         self.num_labels = config.num_labels
         self.model = base_model
 
-        self.dense = nn.Linear(
-            config.n_embd, config.num_labels, bias=False, dtype=self.model.dtype
-        )
+        self.dense = nn.Linear(config.n_embd, config.num_labels, bias=False, dtype=self.model.dtype)
 
         # Initialize weights and apply final processing
         self.post_init()
@@ -212,9 +202,7 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
     def get_input_embeddings(self):
         return self.model.config.n_embd
 
-    def forward(
-        self, input_ids=None, attention_mask=None, labels=None, *args, **kwargs
-    ):
+    def forward(self, input_ids=None, attention_mask=None, labels=None, *args, **kwargs):
         outputs = self.model(input_ids, attention_mask)
 
         hidden_states = outputs.last_hidden_state
@@ -226,26 +214,18 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
 
         # If padding token id is not configured and the batch size is > 1
         if self.config.pad_token_id is None and batch_size != 1:
-            raise ValueError(
-                "Cannot handle batch sizes > 1 if no padding token is defined."
-            )
+            raise ValueError("Cannot handle batch sizes > 1 if no padding token is defined.")
         # If padding token id is not configured
         if self.config.pad_token_id is None:
             last_non_pad_token = -1
         # if encoded inputs exist => find the last non padded token to pool data from
         elif input_ids is not None:
-            non_pad_mask = (input_ids != self.config.pad_token_id).to(
-                logits.device, dtype=torch.int32
-            )
-            token_indices = torch.arange(
-                input_ids.shape[-1], device=logits.device, dtype=torch.int32
-            )
+            non_pad_mask = (input_ids != self.config.pad_token_id).to(logits.device, dtype=torch.int32)
+            token_indices = torch.arange(input_ids.shape[-1], device=logits.device, dtype=torch.int32)
             last_non_pad_token = (token_indices * non_pad_mask).argmax(-1)
 
         # Pooling logits from the last non padded token across the batches
-        pooled_logits = logits[
-            torch.arange(batch_size, device=logits.device), last_non_pad_token
-        ]
+        pooled_logits = logits[torch.arange(batch_size, device=logits.device), last_non_pad_token]
 
         # Calculating loss if labels are provided
         loss = None

@@ -24,9 +24,7 @@ def search_files(folder_path: Path) -> MyDict:
     return raw_data
 
 
-def open_corrupted_files(
-    command: str, posix_paths: list[Path | str], destination_path=None
-) -> None:
+def open_corrupted_files(command: str, posix_paths: list[Path | str], destination_path=None) -> None:
     # Subprocess command
     paths: list[Any] = [command]
 

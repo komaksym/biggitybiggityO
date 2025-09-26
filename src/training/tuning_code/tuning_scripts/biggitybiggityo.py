@@ -12,7 +12,7 @@ import torch
 import torch.nn as nn
 from accelerate import PartialState
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-from sklearn.metrics import accuracy_score, f1_score, make_scorer, recall_score
+from sklearn.metrics import accuracy_score, f1_score, make_scorer, recall_score, confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from transformers import (
     AutoConfig,
@@ -100,15 +100,15 @@ def compute_metrics(eval_preds):
     recall_score_ = recall_score(labels, preds, average=None)
 
     # Calculate confusion matrix
-    #confusion_matrix = 
+    confusion_matrix_ = confusion_matrix(labels, preds)
 
     # Calculate Hierarchy Score
     hierarchy_score = hc_score(labels, preds)
 
     return {
         "f1_macro": f1_macro_score,
-        
         "recall_score": recall_score_,
+        "confusion_matrix": confusion_matrix_,
         "hierarchy_score": hierarchy_score,
     }
 

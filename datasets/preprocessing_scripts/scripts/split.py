@@ -4,7 +4,7 @@ import pandas as pd
 from pandas import DataFrame
 from sklearn.model_selection import train_test_split
 from typing import Any
-from .utils import read_data
+from utils import read_data
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -59,7 +59,8 @@ class DatasetSplitter:
 if __name__ == "__main__":
     try:
         # Define paths
-        source_path: Path = BASE_LOCATION.parent / "processed_merged_dataset.csv"
+        source_path: Path = BASE_LOCATION.parents[1] /  \
+        "data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial.csv"
         output_path_train: Path = BASE_LOCATION.parent / "train_set.csv"
         output_path_test: Path = BASE_LOCATION.parent / "test_set.csv"
 

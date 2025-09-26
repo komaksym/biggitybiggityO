@@ -92,15 +92,12 @@ def compute_metrics(eval_preds):
     logits, labels = eval_preds
     preds = np.argmax(logits[0], axis=-1) if isinstance(logits, tuple) else np.argmax(logits, axis=-1)
 
-    # Calculate accuracy
-    accuracy = accuracy_score(labels, preds)
     # Calculate F-1 Macro
     f1_macro_score = f1_score(labels, preds, average="macro")
     # Calculate Hierarchy Score
     hierarchy_score = hc_score(labels, preds)
 
     return {
-        "accuracy": accuracy,
         "f1_macro": f1_macro_score,
         "hierarchy_score": hierarchy_score,
     }

@@ -1,0 +1,88 @@
+import os
+from pathlib import Path
+
+from configs.config import checkpoint
+from sklearn.preprocessing import LabelEncoder
+from transformers import AutoTokenizer, DataCollatorWithPadding
+
+from datasets import load_dataset
+
+BASE_LOCATION: Path = Path(__file__).parent
+
+# Datasets
+DATASET_PATHS = {
+    "local": {
+        "train": BASE_LOCATION.parents[3] / "datasets/data/train_set.csv",
+        "eval": BASE_LOCATION.parents[3] / "datasets/data/eval_set.csv",
+    },
+    "local_two": {"train": "train_set.csv", "eval": "eval_set.csv"},
+    "local_three": {
+        "train": "drive/MyDrive/fine_tuning/train_set.csv",
+        "eval": "drive/MyDrive/fine_tuning/eval_set.csv",
+    },
+    "kaggle": {
+        "train": "/kaggle/input/python-codes-time-complexity/train_set.csv",
+        "eval": "/kaggle/input/python-codes-time-complexity/eval_set.csv",
+    },
+}
+
+
+def upload_datasets(dataset_paths=DATASET_PATHS):
+    for path in dataset_paths:
+        if os.path.exists(dataset_paths[path]["train"]) and os.path.exists(dataset_paths[path]["eval"]):
+            print("Data found!")
+            return dataset_paths[path]["train"], dataset_paths[path]["eval"]
+
+    return FileNotFoundError(f"Datasets do not exist in the current paths: {dataset_paths}")
+
+
+train_set_path, eval_set_path = upload_datasets()
+
+train_set = load_dataset("csv", data_files=train_set_path)["train"]
+eval_set = load_dataset("csv", data_files=eval_set_path)["train"]
+
+# Tokenization
+# Setting up Label Encoder
+labelEncoder = LabelEncoder()
+labelEncoder.fit(train_set["complexity"])
+
+
+def tokenize_data(data, tokenizer):
+    # Tokenizing
+    tokenized = tokenizer(
+        data["code"],
+        truncation=True,
+        max_length=512,
+    )
+    tokenized["labels"] = labelEncoder.transform(data["complexity"])
+    return tokenized
+
+
+def set_tokenizer(checkpoint):
+    try:
+        tokenizer = AutoTokenizer.from_pretrained(checkpoint, pad_token="<pad>")
+    except Exception as e:
+        print(f"Failed to load {checkpoint}: {e}")
+        checkpoint = "-".join(checkpoint.split("-")[:2])
+        tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+        print(f"Falling back to {checkpoint}")
+
+    X_train = train_set.map(
+        lambda x: tokenize_data(x, tokenizer),
+        batched=True,
+        remove_columns=train_set.column_names,
+    )
+    X_eval = eval_set.map(
+        lambda x: tokenize_data(x, tokenizer),
+        batched=True,
+        remove_columns=eval_set.column_names,
+    )
+
+    # Data Collator
+    tokenizer.padding_side = "left"
+    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
+    return tokenizer, data_collator, X_train, X_eval
+
+
+# Set up tokenizer, datasets, and model (as before)
+tokenizer, data_collator, train_set, eval_set = set_tokenizer(checkpoint)

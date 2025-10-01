@@ -18,3 +18,4 @@ __pycache__/
 
 experiments/ngrok_config/policy.yml
 
+.env

@@ -3,7 +3,15 @@ from configs.config import checkpoint
 from data import tokenizer
 
 import torch
-from transformers import AutoModel, AutoModelForSequenceClassification, BitsAndBytesConfig
+import torch.nn as nn
+from transformers import (
+    AutoModel,
+    AutoModelForSequenceClassification,
+    BitsAndBytesConfig,
+    PreTrainedModel,
+    AutoConfig,
+)
+from transformers.modeling_outputs import SequenceClassifierOutput
 from accelerate import PartialState
 from peft import LoraConfig, get_peft_model
 
@@ -16,13 +24,11 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
     # Load a pretrained model
     model = ModelType.from_pretrained(
         checkpoint,
-        torch_dtype=torch.bfloat16,
         num_labels=N_CLASSES,
         trust_remote_code=True,
-        #device_map="auto",
         device_map=PartialState().process_index,
-        # quantization_config=quant_config,
-        # attn_implementation="flash_attention_2", Only for newer models
+        quantization_config=quant_config,
+        attn_implementation="flash_attention_2",  # Only for newer models
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token
@@ -34,7 +40,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
 
 
 # Custom classifier head
-"""class DeepseekV2ForSequenceClassification(PreTrainedModel):
+class DeepseekV2ForSequenceClassification(PreTrainedModel):
     config_class = AutoConfig
 
     def __init__(self, base_model, config):
@@ -86,7 +92,6 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
             )
 
         return SequenceClassifierOutput(loss=loss, logits=pooled_logits)
-"""
 
 
 # Bitsandbytes (Quantization)
@@ -116,7 +121,7 @@ peft_config = LoraConfig(
 model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
 
 # model = DeepseekV2ForSequenceClassification(model, model.config)
-# model = get_peft_model(model=model, peft_config=peft_config)
+model = get_peft_model(model=model, peft_config=peft_config)
 
-# print(f"Model: {model}")
+print(f"Model: {model}")
 # print(f"Model config: {model.config}")

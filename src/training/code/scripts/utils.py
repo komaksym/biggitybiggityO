@@ -1,11 +1,34 @@
 import matplotlib.pyplot as plt
-import mlflow
 import numpy as np
 import seaborn as sns
 from data import eval_set, train_set
 from sklearn.metrics import ConfusionMatrixDisplay, accuracy_score, f1_score, recall_score
 from sklearn.preprocessing import LabelEncoder
 from transformers import AutoTokenizer, DataCollatorWithPadding, TrainerCallback
+from dotenv import load_dotenv
+import os
+import mlflow
+
+
+def setup_mlflow():
+    # To not hang for an hour if no connection could be established
+    mlflow.environment_variables.MLFLOW_HTTP_REQUEST_TIMEOUT = 10
+
+    # Fetch secrets from .env
+    load_dotenv()
+
+    username = os.getenv("MLFLOW_NGROK_USERNAME")
+    password = os.getenv("MLFLOW_NGROK_PASSWORD")
+    uri = os.getenv("MLFLOW_NGROK_URI")
+
+    # Connect
+    mlflow.set_tracking_uri(f"https://{username}:{password}@{uri}")
+
+    # Name the experiment
+    mlflow.set_experiment("Dry runs /w default hyperparams & loss function")
+
+
+setup_mlflow()
 
 LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "np": 7}
 
@@ -86,7 +109,7 @@ class ConfusionMatrixCallback(TrainerCallback):
                     "np",
                 ],
             )
-            # Get fig 
+            # Get fig
             fig = disp.figure_
 
             # Make slightly wider to fit xtick labels

@@ -2,7 +2,7 @@ import torch
 from transformers import TrainingArguments
 
 
-checkpoint = "Salesforce/codet5p-220m-py"
+checkpoint = "Qwen/Qwen2.5-Coder-1.5B-Instruct"
 batch_size = 16
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

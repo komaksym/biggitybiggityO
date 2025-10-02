@@ -5,4 +5,4 @@ bitsandbytes
 datasets
 torch
 mlflow
-flash-attn --no-build-isolation
+flash-attn

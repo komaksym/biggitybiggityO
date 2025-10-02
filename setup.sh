@@ -1,0 +1,3 @@
+source bin/activate
+pip install -r requirements.txt
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

@@ -24,7 +24,7 @@ training_args = TrainingArguments(
     gradient_accumulation_steps=1,
     load_best_model_at_end=True,
     run_name="full data 3 epochs",
-    fsdp_config="configs/fsdp_config.yaml"
+    #fsdp_config="configs/fsdp_config.yaml"
 )
 
 # Building

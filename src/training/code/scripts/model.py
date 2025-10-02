@@ -28,7 +28,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
         trust_remote_code=True,
         device_map=PartialState().process_index,
         quantization_config=quant_config,
-        attn_implementation="flash_attention_2",  # Only for newer models
+        #attn_implementation="flash_attention_2",  # Only for newer models
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token
@@ -123,5 +123,5 @@ model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
 # model = DeepseekV2ForSequenceClassification(model, model.config)
 model = get_peft_model(model=model, peft_config=peft_config)
 
-print(f"Model: {model}")
+#print(f"Model: {model}")
 # print(f"Model config: {model.config}")

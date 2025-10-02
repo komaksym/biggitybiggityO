@@ -12,8 +12,8 @@ BASE_LOCATION: Path = Path(__file__).parent
 # Datasets
 DATASET_PATHS = {
     "local": {
-        "train": BASE_LOCATION.parents[3] / "datasets/data/train_set.csv",
-        "eval": BASE_LOCATION.parents[3] / "datasets/data/eval_set.csv",
+        "train": BASE_LOCATION.parents[3] / "train_set.csv",
+        "eval": BASE_LOCATION.parents[3] / "eval_set.csv",
     },
     "local_two": {"train": "train_set.csv", "eval": "eval_set.csv"},
     "local_three": {
@@ -38,8 +38,8 @@ def upload_datasets(dataset_paths=DATASET_PATHS):
 
 train_set_path, eval_set_path = upload_datasets()
 
-train_set = load_dataset("csv", data_files=train_set_path)["train"]
-eval_set = load_dataset("csv", data_files=eval_set_path)["train"]
+train_set = load_dataset("csv", data_files=str(train_set_path))["train"]
+eval_set = load_dataset("csv", data_files=str(eval_set_path))["train"]
 
 # Tokenization
 # Setting up Label Encoder

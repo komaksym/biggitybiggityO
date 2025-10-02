@@ -144,12 +144,6 @@ class RecallScoreCallback(TrainerCallback):
         mlflow.log_artifact("recall_per_score.png")
 
 
-# Tokenization
-# Setting up Label Encoder
-labelEncoder = LabelEncoder()
-labelEncoder.fit(train_set["complexity"])
-
-
 def tokenize_data(data, tokenizer):
     # Tokenizing
     tokenized = tokenizer(

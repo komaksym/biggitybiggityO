@@ -1,3 +1,4 @@
 source bin/activate
 pip install -r requirements.txt
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+git remote set-url origin  git@github.com:komaksym/biggitybiggityO.git

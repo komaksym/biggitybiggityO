@@ -6,3 +6,4 @@ datasets
 torch
 mlflow
 flash-attn
+seaborn

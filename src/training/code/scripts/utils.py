@@ -28,7 +28,6 @@ def setup_mlflow():
     mlflow.set_experiment("Dry runs /w default hyperparams & loss function")
 
 
-setup_mlflow()
 
 LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "np": 7}
 

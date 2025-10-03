@@ -1,31 +1,10 @@
-from configs.config import checkpoint, batch_size
+from configs.config import training_args
 from data import data_collator, eval_set, tokenizer, train_set
 from model import model
 from utils import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics, setup_mlflow
 
-from transformers import Trainer, TrainingArguments
+from transformers import Trainer
 
-# Training args
-training_args = TrainingArguments(
-    output_dir=f"training_results/{checkpoint}/",
-    eval_strategy="epoch",
-    save_strategy="epoch",
-    logging_strategy="epoch",
-    # eval_steps=5,
-    # learning_rate=2e-4, # Testing
-    bf16=True,
-    # gradient_checkpointing=True,
-    report_to="mlflow",
-    num_train_epochs=3,
-    # warmup_steps=100,  # Testing
-    label_names=["labels"],
-    per_device_train_batch_size=batch_size,
-    per_device_eval_batch_size=batch_size,
-    gradient_accumulation_steps=1,
-    load_best_model_at_end=True,
-    run_name="full data 3 epochs",
-    #fsdp_config="configs/fsdp_config.yaml"
-)
 
 # Building
 trainer = Trainer(
@@ -42,7 +21,7 @@ trainer = Trainer(
 
 def main():
     # Setup experiment tracking
-    setup_mlflow()
+    #setup_mlflow()
 
     # Train
     trainer.train()

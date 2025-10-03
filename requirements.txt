@@ -5,5 +5,7 @@ bitsandbytes
 datasets
 torch
 mlflow
+packaging
+wheel
 flash-attn
 seaborn

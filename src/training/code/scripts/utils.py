@@ -15,11 +15,15 @@ def setup_mlflow():
     mlflow.environment_variables.MLFLOW_HTTP_REQUEST_TIMEOUT = 10
 
     # Fetch secrets from .env
-    load_dotenv()
+    #load_dotenv()
 
-    username = os.getenv("MLFLOW_NGROK_USERNAME")
-    password = os.getenv("MLFLOW_NGROK_PASSWORD")
-    uri = os.getenv("MLFLOW_NGROK_URI")
+    #username = os.getenv("MLFLOW_NGROK_USERNAME")
+    #password = os.getenv("MLFLOW_NGROK_PASSWORD")
+    #uri = os.getenv("MLFLOW_NGROK_URI")
+
+    username = os.environ["MLFLOW_NGROK_USERNAME"]
+    password = os.environ["MLFLOW_NGROK_PASSWORD"]
+    uri = os.environ["MLFLOW_NGROK_URI"]
 
     # Connect
     mlflow.set_tracking_uri(f"https://{username}:{password}@{uri}")

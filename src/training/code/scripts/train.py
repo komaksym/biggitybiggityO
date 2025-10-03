@@ -1,4 +1,4 @@
-from configs.config import training_args
+from configs.config import training_args, checkpoint
 from data import data_collator, eval_set, tokenizer, train_set
 from model import model
 from utils import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics, setup_mlflow
@@ -21,7 +21,7 @@ trainer = Trainer(
 
 def main():
     # Setup experiment tracking
-    #setup_mlflow()
+    setup_mlflow()
 
     # Train
     trainer.train()

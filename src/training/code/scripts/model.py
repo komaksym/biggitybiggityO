@@ -24,7 +24,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
     # Load a pretrained model
     model = ModelType.from_pretrained(
         checkpoint,
-        torch_dtype=torch.bfloat16,
+        torch_dtype='auto',
         num_labels=N_CLASSES,
         trust_remote_code=True,
         device_map=PartialState().process_index,

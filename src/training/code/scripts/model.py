@@ -15,21 +15,30 @@ from transformers.modeling_outputs import SequenceClassifierOutput
 from accelerate import PartialState
 from peft import LoraConfig, get_peft_model
 
+# Bitsandbytes (Quantization)
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.bfloat16,
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_quant_storage=torch.bfloat16,
+)
+
 
 # Model loading
 def set_model(checkpoint, tokenizer, ModelType=AutoModel):
     # Setup bitsandbytes quantization config
-    quant_config = setup_bnb_config()
+    quant_config = bnb_config
 
     # Load a pretrained model
     model = ModelType.from_pretrained(
         checkpoint,
-        torch_dtype='auto',
+        torch_dtype="auto",
         num_labels=N_CLASSES,
         trust_remote_code=True,
         device_map=PartialState().process_index,
         quantization_config=quant_config,
-        #attn_implementation="flash_attention_2",  # Only for newer models
+        # attn_implementation="flash_attention_2",  # Only for newer models
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token
@@ -95,18 +104,6 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
         return SequenceClassifierOutput(loss=loss, logits=pooled_logits)
 
 
-# Bitsandbytes (Quantization)
-def setup_bnb_config():
-    quant_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_storage=torch.bfloat16,
-    )
-    return quant_config
-
-
 # LoRA config
 peft_config = LoraConfig(
     r=16,
@@ -124,5 +121,5 @@ model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
 # model = DeepseekV2ForSequenceClassification(model, model.config)
 model = get_peft_model(model=model, peft_config=peft_config)
 
-#print(f"Model: {model}")
+# print(f"Model: {model}")
 # print(f"Model config: {model.config}")

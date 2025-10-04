@@ -1,19 +1,18 @@
-from utils import N_CLASSES
-from configs.config import checkpoint
-from data import tokenizer
-
 import torch
 import torch.nn as nn
+from accelerate import PartialState
+from configs.config import checkpoint
+from data import tokenizer
+from peft import LoraConfig, get_peft_model
 from transformers import (
+    AutoConfig,
     AutoModel,
     AutoModelForSequenceClassification,
     BitsAndBytesConfig,
     PreTrainedModel,
-    AutoConfig,
 )
 from transformers.modeling_outputs import SequenceClassifierOutput
-from accelerate import PartialState
-from peft import LoraConfig, get_peft_model
+from utils import N_CLASSES
 
 # Bitsandbytes (Quantization)
 bnb_config = BitsAndBytesConfig(

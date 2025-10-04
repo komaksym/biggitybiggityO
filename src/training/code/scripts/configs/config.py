@@ -2,7 +2,7 @@ import torch
 from transformers import TrainingArguments
 
 checkpoint = "Qwen/Qwen2.5-Coder-1.5B"
-batch_size = 8
+batch_size = 4
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Training args
@@ -21,7 +21,7 @@ training_args = TrainingArguments(
     label_names=["labels"],
     per_device_train_batch_size=batch_size,
     per_device_eval_batch_size=batch_size,
-    gradient_accumulation_steps=2,
+    gradient_accumulation_steps=4,
     load_best_model_at_end=True,
     run_name=f"{checkpoint}",
     # deepspeed="configs/ds_config.json",

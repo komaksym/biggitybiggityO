@@ -1,10 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
-from data import eval_set, train_set
 from sklearn.metrics import ConfusionMatrixDisplay, accuracy_score, f1_score, recall_score
-from sklearn.preprocessing import LabelEncoder
-from transformers import AutoTokenizer, DataCollatorWithPadding, TrainerCallback
+from transformers import TrainerCallback
 from dotenv import load_dotenv
 import os
 import mlflow
@@ -142,40 +140,3 @@ class RecallScoreCallback(TrainerCallback):
         # Close and unregister, so that it doesn't print
         plt.close(fig)
         mlflow.log_artifact("recall_per_score.png")
-
-
-def tokenize_data(data, tokenizer):
-    # Tokenizing
-    tokenized = tokenizer(
-        data["code"],
-        truncation=True,
-        max_length=512,
-    )
-    tokenized["labels"] = labelEncoder.transform(data["complexity"])
-    return tokenized
-
-
-def set_tokenizer(checkpoint):
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(checkpoint, pad_token="<pad>")
-    except Exception as e:
-        print(f"Failed to load {checkpoint}: {e}")
-        checkpoint = "-".join(checkpoint.split("-")[:2])
-        tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-        print(f"Falling back to {checkpoint}")
-
-    X_train = train_set.map(
-        lambda x: tokenize_data(x, tokenizer),
-        batched=True,
-        remove_columns=train_set.column_names,
-    )
-    X_eval = eval_set.map(
-        lambda x: tokenize_data(x, tokenizer),
-        batched=True,
-        remove_columns=eval_set.column_names,
-    )
-
-    # Data Collator
-    tokenizer.padding_side = "left"
-    data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-    return tokenizer, data_collator, X_train, X_eval

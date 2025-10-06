@@ -1,7 +1,8 @@
 from configs.config import training_args, checkpoint
 from data import data_collator, eval_set, tokenizer, train_set
 from model import model
-from utils import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics, setup_mlflow
+from evaluate import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics
+from utils import setup_mlflow
 
 from transformers import Trainer
 

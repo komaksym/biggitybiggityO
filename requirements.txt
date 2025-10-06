@@ -1,5 +1,9 @@
 transformers
 accelerate
+trl
+scikit-learn
+pandas
+numpy
 peft
 bitsandbytes
 datasets

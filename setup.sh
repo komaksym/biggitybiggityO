@@ -11,6 +11,3 @@ git config --global user.name "komaksym"
 
 # Install oh-my-bash for ga gc gd commands
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
-
-# Training script
-accelerate launch --config_file src/training/code/scripts/configs/fsdp_config.yaml src/training/code/scripts/train.py

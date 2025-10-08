@@ -22,7 +22,7 @@ trainer = Trainer(
 
 def main():
     # Setup experiment tracking
-    #setup_mlflow()
+    setup_mlflow()
 
     # Train
     trainer.train()

@@ -18,4 +18,4 @@ def setup_mlflow():
     mlflow.set_tracking_uri(f"https://{username}:{password}@{uri}")
 
     # Name the experiment
-    mlflow.set_experiment("Dry runs /w default hyperparams & loss function")
+    mlflow.set_experiment("QLoRA Base vs QLoRA it vs prompt tuning")

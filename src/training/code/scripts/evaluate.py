@@ -22,36 +22,15 @@ def hc_score(y_true, y_pred, n_classes=N_CLASSES):
 
     return (np.sum(np.abs(y_pred - y_true)) / n_classes) / n_samples
 
-def parse_output(responses):
-    labels = ["O(1)", "O(logn)", "O(n)", "O(nlogn)", "O(n ^ 2)", "O(n ^ 3)", "np"]
-    parsed_labels = []
-
-    for i in tqdm(range(len(responses))):
-        response = responses[i]
-        
-        for label in labels:
-            if label in response:
-                parsed_labels.append(label)
-            parsed_labels.append("none")
-
-    return parsed_labels
-
 
 def compute_metrics(eval_preds):
     # Make preds & labels global for access in callbacks
     global last_preds, last_labels
 
-    import pdb; pdb.set_trace()
+    #import pdb; pdb.set_trace()
 
     logits, labels = eval_preds
     preds = np.argmax(logits[0], axis=-1) if isinstance(logits, tuple) else np.argmax(logits, axis=-1)
-
-    # Parse labels from other words
-    parsed_preds = parse_output(preds)
-
-    # Encode labels and preds
-    preds = labelEncoder.transform(parsed_preds)
-    labels = labelEncoder.transform(labels)
 
     # Save for callbacking
     last_preds, last_labels = preds, labels

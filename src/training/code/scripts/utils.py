@@ -18,4 +18,4 @@ def setup_mlflow():
     mlflow.set_tracking_uri(f"https://{username}:{password}@{uri}")
 
     # Name the experiment
-    mlflow.set_experiment("QLoRA Base vs QLoRA it vs prompt tuning")
+    mlflow.set_experiment("QLoRA Base vs QLoRA it vs prompt tuning 3 EPOCHS")

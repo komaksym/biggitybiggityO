@@ -12,7 +12,7 @@ from transformers import (
     PreTrainedModel,
 )
 from transformers.modeling_outputs import SequenceClassifierOutput
-from utils import N_CLASSES
+from evaluate import N_CLASSES
 
 # Bitsandbytes (Quantization)
 bnb_config = BitsAndBytesConfig(

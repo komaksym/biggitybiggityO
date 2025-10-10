@@ -109,7 +109,7 @@ peft_config = LoraConfig(
     lora_alpha=64,
     # target_modules = ['q_proj', 'v_proj'], # Qwen
     target_modules="all-linear",  # Heavy, universal
-    lora_dropout=0.1,
+    lora_dropout=0.05,
     bias="none",
     task_type="SEQ_CLS",  # might not work with this on
 )

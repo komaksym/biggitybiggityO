@@ -19,6 +19,7 @@ training_args = TrainingArguments(
     num_train_epochs=5,
     max_grad_norm=0.3, # Per QLoRA paper recommendation
     warmup_ratio=0.03, # Per QLoRA paper recommendation
+    weight_decay=0.001,
     lr_scheduler_type="cosine",
     label_names=["labels"],
     per_device_train_batch_size=batch_size,

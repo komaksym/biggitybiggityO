@@ -4,8 +4,9 @@ from pathlib import Path
 from configs.config import checkpoint
 from sklearn.preprocessing import LabelEncoder
 from transformers import AutoTokenizer, DataCollatorWithPadding
+import pandas as pd
 
-from datasets import load_dataset
+from datasets import Dataset
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -38,8 +39,16 @@ def upload_datasets(dataset_paths=DATASET_PATHS):
 
 train_set_path, eval_set_path = upload_datasets()
 
-train_set = load_dataset("csv", data_files=str(train_set_path))["train"]
-eval_set = load_dataset("csv", data_files=str(eval_set_path))["train"]
+# Load as df
+#train_set = pd.read_csv(train_set_path)
+#eval_set = pd.read_csv(eval_set_path)
+
+# 1 % of dataset for quick testing
+train_set = pd.read_csv(train_set_path).sample(frac=0.001)
+eval_set = pd.read_csv(eval_set_path).sample(frac=0.001)
+
+train_set = Dataset.from_pandas(train_set)
+eval_set = Dataset.from_pandas(eval_set)
 
 # Tokenization
 # Setting up Label Encoder

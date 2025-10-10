@@ -57,13 +57,13 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
         self.num_labels = config.num_labels
         self.model = base_model
 
-        self.dense = nn.Linear(config.n_embd, config.num_labels, bias=False, dtype=self.model.dtype)
+        self.dense = nn.Linear(config.hidden_size, config.num_labels, bias=False, dtype=self.model.dtype)
 
         # Initialize weights and apply final processing
         self.post_init()
 
     def get_input_embeddings(self):
-        return self.model.config.n_embd
+        return self.model.embed_tokens
 
     def forward(self, input_ids=None, attention_mask=None, labels=None, *args, **kwargs):
         outputs = self.model(input_ids, attention_mask)
@@ -115,9 +115,9 @@ peft_config = LoraConfig(
 )
 
 
-model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
+model = set_model(checkpoint, tokenizer, AutoModel)
 
-# model = DeepseekV2ForSequenceClassification(model, model.config)
+model = DeepseekV2ForSequenceClassification(model, model.config)
 model = get_peft_model(model=model, peft_config=peft_config)
 
 # print(f"Model: {model}")

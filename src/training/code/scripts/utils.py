@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+from configs.config import run_name
 import mlflow
 
 
@@ -18,4 +19,5 @@ def setup_mlflow():
     mlflow.set_tracking_uri(f"https://{username}:{password}@{uri}")
 
     # Name the experiment
-    mlflow.set_experiment("Big boy models")
+    mlflow.set_experiment(run_name)
+

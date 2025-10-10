@@ -1,8 +1,9 @@
 import torch
 from transformers import TrainingArguments
 
-checkpoint = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
-batch_size = 1
+checkpoint = "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct"
+run_name = "Deepseek vs Qwen 17/33B vs 30B"
+batch_size = 2
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Training args
@@ -21,7 +22,7 @@ training_args = TrainingArguments(
     label_names=["labels"],
     per_device_train_batch_size=batch_size,
     per_device_eval_batch_size=batch_size,
-    gradient_accumulation_steps=16,
+    gradient_accumulation_steps=8,
     load_best_model_at_end=True,
     run_name=f"{checkpoint}".split("/")[-1],
     # deepspeed="configs/ds_config.json",

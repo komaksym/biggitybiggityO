@@ -1,0 +1,22 @@
+[project]
+name = "biggitybiggityo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10.15"
+dependencies = [
+    "accelerate>=1.10.1",
+    "datasets>=4.1.1",
+    "mlflow>=3.4.0",
+    "numpy>=2.2.6",
+    "openai>=2.3.0",
+    "pandas>=2.3.3",
+    "peft>=0.17.1",
+    "python-dotenv>=1.1.1",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
+    "sft>=0.1.1",
+    "torch>=2.8.0",
+    "transformers>=4.57.0",
+    "trl>=0.23.1",
+]

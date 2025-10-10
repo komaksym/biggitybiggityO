@@ -37,7 +37,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
         trust_remote_code=True,
         device_map=PartialState().process_index,
         quantization_config=quant_config,
-        # attn_implementation="flash_attention_2",  # Only for newer models
+        attn_implementation="flash_attention_2",  # Only for newer models
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token
@@ -105,8 +105,8 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
 
 # LoRA config
 peft_config = LoraConfig(
-    r=16,
-    lora_alpha=32,
+    r=32,
+    lora_alpha=64,
     # target_modules = ['q_proj', 'v_proj'], # Qwen
     target_modules="all-linear",  # Heavy, universal
     lora_dropout=0.1,

@@ -61,19 +61,19 @@ if __name__ == "__main__":
     try:
         # Split full => into main/test sets first
         source_path: Path = BASE_LOCATION.parents[1] /  \
-        "data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial.csv"
-        output_path_train: Path = BASE_LOCATION.parent / "main_set.csv"
-        output_path_test: Path = BASE_LOCATION.parent / "test_set.csv"
+        "data/merges/codecomplex+neetcode+leetcode_clean/full/full.csv"
+        output_path_train: Path = BASE_LOCATION.parents[1] / "data" / "main_set.csv"
+        output_path_test: Path = BASE_LOCATION.parents[1] / "data" / "test_set.csv"
 
         # Split dataset
         full_splitter = DatasetSplitter(source_path, output_path_train, output_path_test)
         full_splitter.run()
 
         # And now split main => into train/eval sets
-        source_path: Path = BASE_LOCATION.parents[1] /  \
+        source_path: Path = BASE_LOCATION.parents[1]  /  \
         "data/main_set.csv"
-        output_path_train: Path = BASE_LOCATION.parent / "train_set.csv"
-        output_path_test: Path = BASE_LOCATION.parent / "eval_set.csv"
+        output_path_train: Path = BASE_LOCATION.parents[1] / "data" / "train_set.csv"
+        output_path_test: Path = BASE_LOCATION.parents[1]  / "data" / "eval_set.csv"
 
         # Split dataset
         main_splitter = DatasetSplitter(source_path, output_path_train, output_path_test)

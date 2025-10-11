@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 import mlflow
+from configs.config import experiment_name
 
 
 def setup_mlflow():
@@ -18,4 +19,4 @@ def setup_mlflow():
     mlflow.set_tracking_uri(f"https://{username}:{password}@{uri}")
 
     # Name the experiment
-    mlflow.set_experiment("Hyperparam 5 epoch 1b model run")
+    mlflow.set_experiment(experiment_name)

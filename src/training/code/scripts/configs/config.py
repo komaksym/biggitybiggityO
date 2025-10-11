@@ -2,6 +2,7 @@ import torch
 from transformers import TrainingArguments
 
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
+experiment_name = "Full dataset focal loss testing"
 batch_size = 4
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

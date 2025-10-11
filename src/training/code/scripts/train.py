@@ -15,7 +15,7 @@ class CustomLossTrainer(Trainer):
         # Should take (logits, labels) as args
         self.loss_fn = loss_fn
 
-    def compute_loss(self, model, inputs, return_outputs=False):
+    def compute_loss(self, model, inputs, return_outputs=False, num_items_in_batch=None):
         # Assume labels is the name of the y ground truth
         labels = inputs.get("labels")
         outputs = model(**inputs)
@@ -30,7 +30,7 @@ class CustomLossTrainer(Trainer):
 # Implement Focal Loss
 def focal_loss(logits, labels, gamma=2.0, alpha=0.25):
     # Compute cross entropy loss first
-    ce_loss = F.cross_entropy(logits, labels, reduction=None)
+    ce_loss = F.cross_entropy(logits, labels, reduction='none')
     # Get probs
     probs = torch.exp(-ce_loss)
     # Compute focal loss

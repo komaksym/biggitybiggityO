@@ -30,11 +30,11 @@ class CustomLossTrainer(Trainer):
 # Implement Focal Loss
 def focal_loss(logits, labels, gamma=2.0, alpha=0.25):
     # Compute cross entropy loss first
-    ce_loss = F.cross_entropy(logits, labels, reduction='none')
+    ce_loss = F.cross_entropy(logits, labels, reduction='none') # if catching grad error, try reduction as default, i.e. = "mean" 
     # Get probs
     probs = torch.exp(-ce_loss)
     # Compute focal loss
-    focal_loss = alpha * (1 - probs) ** gamma * ce_loss
+    focal_loss = (alpha * (1 - probs) ** gamma * ce_loss).mean()
 
     return focal_loss
 

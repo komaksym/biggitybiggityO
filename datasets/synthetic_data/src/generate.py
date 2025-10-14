@@ -129,8 +129,8 @@ class Generate:
 
 async def main() -> None:
     # Client
-    client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
-    model = "deepseek-chat"
+    client = AsyncOpenAI(api_key=os.environ["OPENAI_API"], base_url="https://api.openai.com/v1")
+    model = "gpt-5"
 
     # Path for examples which we are randomly going to provide to the model
     examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
@@ -142,14 +142,13 @@ async def main() -> None:
 
     # LLM to use
     llm = LLM(client, model)
-    semaphore = Semaphore(2)
+    semaphore = Semaphore(10)
 
     # Initiate audit
     generate = Generate(llm, semaphore, num_of_samples=NUM_OF_REQUESTS, examples_path=examples_path)
     # Send requests
     responses = await generate.process_requests(user_prompt, sys_prompt)
     # Process responses
-    print(responses)
     #audit.process_responses(responses)
 
 

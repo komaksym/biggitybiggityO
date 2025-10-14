@@ -5,7 +5,7 @@ from asyncio import Semaphore
 from pathlib import Path
 from typing import Any
 
-from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL
+from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL, NUM_OF_EXAMPLES
 
 import pandas as pd
 from openai import AsyncOpenAI
@@ -53,30 +53,62 @@ class LLM:
 
 
 class Generate:
-    def __init__(self, source_path: Path, llm: LLM, sem: Semaphore) -> None:
+    def __init__(self, llm: LLM, sem: Semaphore, num_of_samples: int, examples_path: Path) -> None:
         self.llm: LLM = llm
         self.sem: Semaphore = sem
+
+        # Num of samples to generate
+        self.num_of_requests = num_of_samples
+
+        # Source path of human data
+        self.examples_path = examples_path
 
         # Prep the output data
         self.feature_name: str = f"{self.llm.model}_decision"
         self.llm_decisions: dict[str, list[str | None]] = {self.feature_name: []}
-
-        # Load the data
-        self.data: pd.DataFrame = read_data(source_path)
 
         # Handle potential absence of the column, or an empty dataframe
         if "code" not in self.data.columns:
             raise ValueError("Dataset must contain a 'code' column")
         if self.data.empty:
             raise ValueError("Dataset is empty")
+    
+    def pick_random_example(self, num_of_examples):
+        # Read the real data
+        examples = pd.read_csv(self.examples_path)
 
-    async def process_requests(self, instructions: str) -> list[str | None]:
+        # Sample k number of data points
+        k_samples = examples.sample(n=num_of_examples, random_state=42)
+        return k_samples.code, k_samples.complexity
+    
+    def build_requests(self, base_user_instruction):
+        # Starting prompt for each prompt
+        starting_prompt = f"{base_user_instruction}\n EXAMPLES:\n"
+        
+        # Prompts that we are building
+        prompts = [starting_prompt] * self.num_of_requests
+
+        # Build specified number of requests
+        for i in range(self.num_of_requests):
+            # Pick random K number of real data examples
+            codes, complexities = self.pick_random_example(NUM_OF_EXAMPLES)
+
+            # Add Input => Output schema that maps label => code snippet to our prompts
+            for code, complexity in zip(codes, complexities):
+                # Add multiple examples to a single prompt
+                prompts[i] += f"Input:{complexity}\nOutput:{code}\n"
+
+            
+
+
+
+    async def process_requests(self, user_instructions, system_instructions: str) -> list[str | None]:
         """
         Collect all requests at once, send them all at once,
         gather responses, and then send respones for processing.
         """
         # Collect requests
-        requests: list[str] = [code for code in self.data["code"]]
+        requests = self.build_requests(user_instructions)
 
         # Total # of requests
         num_requests: int = len(requests)
@@ -85,7 +117,7 @@ class Generate:
         tasks: list[types.CoroutineType[Any, Any, str | None]] = [
             self.llm.send_requests(
                 self.sem,
-                instructions,
+                system_instructions,
                 request,
                 num_requests,
                 request_id = i+1
@@ -104,79 +136,31 @@ class Generate:
             # Add LLM's decision
             self.llm_decisions[f"{self.llm.model}_decision"].append(response)
 
-    def save_data_to_review(self, save_path: Path) -> None:
-        """
-        Join responses with the original data and save.
-        """
-        # Create a directory in case one doesn't exist yet
-        save_path.parent.mkdir(parents=True, exist_ok=True)
-
-        # Join the original df with LLM decisions
-        joined: pd.DataFrame = self.data.join(pd.DataFrame(self.llm_decisions))
-        # Save
-        save_data(joined, save_path)
-
 
 async def main() -> None:
     # Client
     client = AsyncOpenAI(
-        api_key=os.environ["XAI_API_KEY"],
-        base_url="https://api.x.ai/v1",
-    )
-    model = "grok-3"
-
-    # Test client
-    """client = AsyncOpenAI(
         api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com"
     )
     model = "deepseek-chat"
-    """
+    
 
-    eval_instruction = """
-    You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.  
-    I will provide you with Python codes. Your task is to evaluate the provided code sample, and output evaluated, correct WORST-CASE time complexity label.  
-    You should drop constants when evaluating a time complexity label, for example: instead of O(2n^2) you should drop 2 and just output O(n^2).
+    # System prompt
+    sys_prompt = SYS_PROMPT_EXPONENTIAL
 
-    Your response shouldn't contain anything but a label. One word. 
-
-    Example input:
-        "class Solution(object):
-            def minimumLines(self, stockPrices):
-                def gcd(a, b):
-                    while b:
-                        a, b = b, a%b
-                    return a
-            
-                stockPrices.sort()
-                result = 0
-                prev = None
-                for i in range(1, len(stockPrices)):
-                    dy, dx = stockPrices[i][1]-stockPrices[i-1][1], stockPrices[i][0]-stockPrices[i-1][0]
-                    g = gcd(dy, dx)
-                    if not prev or prev != (dy//g, dx//g):
-                        prev = (dy//g, dx//g)
-                        result += 1
-                return result"	
-
-    Example response:  
-        O(nlogn)
-    """
-
-    source_path: Path = BASE_PATH.parent / "data/leetcode-parsed/messy_leetcode_data.csv"
-    save_path: Path = BASE_PATH.parent / "data/leetcode-parsed/ai_audited/relabeled_messy_leetcode_data.csv"
+    # Path for examples which we are randomly going to provide to the model
+    examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
 
     # LLM to use
-    grok = LLM(client, model)
+    llm = LLM(client, model)
     semaphore = Semaphore(10)
 
     # Initiate audit
-    audit = Audit(source_path, grok, semaphore)
+    audit = Generate(examples_path, llm, semaphore, num_of_samples=2)
     # Send requests
-    responses = await audit.process_requests(eval_instruction)
+    responses = await audit.process_requests(sys_prompt)
     # Process responses
     audit.process_responses(responses)
-    # Save data for review
-    audit.save_data_to_review(save_path)
 
 
 if __name__ == "__main__":

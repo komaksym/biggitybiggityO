@@ -1,0 +1,142 @@
+code,complexity
+"class Solution2(object):
+    def grayCode(self, n):
+        return [i >> 1 ^ i for i in range(1 << n)]",O(2 ^ n)
+"class Solution:
+    def climbStairs(self, n: int) -> int:
+
+        def dfs(i):
+            if i >= n:
+                return i == n
+            return dfs(i + 1) + dfs(i + 2)
+
+        return dfs(0)
+",O(2 ^ n)
+"class Solution2(object):
+    def maxLength(self, arr):
+        def bitset(s):
+            result = 0
+            for c in s:
+                if result & power[ord(c)-ord('a')]:
+                    return 0
+                result |= power[ord(c)-ord('a')]
+            return result
+    
+        bitsets = [bitset(x) for x in arr]
+        result = 0
+        for i in range(power[len(arr)]):
+            curr_bitset, curr_len = 0, 0
+            while i:
+                j = i & -i 
+                i ^= j
+                j = log2[j] 
+                if not bitsets[j] or (curr_bitset & bitsets[j]):
+                    break
+                curr_bitset |= bitsets[j]
+                curr_len += len(arr[j])
+            else:
+                result = max(result, curr_len)
+        return result",O(2 ^ n)
+"class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        if sum(nums) % 2:
+            return False
+
+        def dfs(i, target):
+            if i >= len(nums):
+                return target == 0
+            if target < 0:
+                return False
+
+            return dfs(i + 1, target) or dfs(i + 1, target - nums[i])
+
+        return dfs(0, sum(nums) // 2)
+",O(2 ^ n)
+"class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        def dfs(i, flag):
+            if i == len(nums):
+                return 0 if flag else -1e6
+            if flag:
+                return max(0, nums[i] + dfs(i + 1, True))
+            return max(dfs(i + 1, False), nums[i] + dfs(i + 1, True))
+        return dfs(0, False)
+",O(2 ^ n)
+"class Solution:
+    def numDecodings(self, s: str) -> int:
+
+        def dfs(i):
+            if i == len(s):
+                return 1
+            if s[i] == '0':
+                return 0
+
+            res = dfs(i + 1)
+            if i < len(s) - 1:
+                if (s[i] == '1' or
+                   (s[i] == '2' and s[i + 1] < '7')):
+                    res += dfs(i + 2)
+
+            return res
+
+        return dfs(0)
+",O(2 ^ n)
+"class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+        def dfs(i, flag):
+            if i >= len(nums) or (flag and i == len(nums) - 1):
+                return 0
+
+            return max(dfs(i + 1, flag),
+                       nums[i] + dfs(i + 2, flag or i == 0))
+        return max(dfs(0, True), dfs(1, False))
+",O(2 ^ n)
+"class Solution:
+    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+        intervals.sort()
+
+        def dfs(i, prev):
+            if i == len(intervals):
+                return 0
+            res = dfs(i + 1, prev)
+            if prev == -1 or intervals[prev][1] <= intervals[i][0]:
+                res = max(res, 1 + dfs(i + 1, i))
+            return res
+
+        return len(intervals) - dfs(0, -1)
+",O(2 ^ n)
+"class Solution:
+    def minCostClimbingStairs(self, cost: List[int]) -> int:
+
+        def dfs(i):
+            if i >= len(cost):
+                return 0
+            return cost[i] + min(dfs(i + 1), dfs(i + 2))
+
+        return min(dfs(0), dfs(1))
+",O(2 ^ n)
+"class Solution:
+    def rob(self, nums: List[int]) -> int:
+
+        def dfs(i):
+            if i >= len(nums):
+                return 0
+            return max(dfs(i + 1),
+                       nums[i] + dfs(i + 2))
+
+        return dfs(0)
+",O(2 ^ n)
+"class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+
+        def backtrack(i, total):
+            if i ==len(nums):
+                return  total == target
+
+            return (backtrack(i + 1, total + nums[i]) +
+                    backtrack(i + 1, total - nums[i]))
+
+        return backtrack(0, 0)
+",O(2 ^ n)

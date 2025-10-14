@@ -5,7 +5,7 @@ from asyncio import Semaphore
 from pathlib import Path
 from typing import Any
 
-from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL, NUM_OF_EXAMPLES
+from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL, NUM_OF_EXAMPLES, NUM_OF_REQUESTS
 
 import pandas as pd
 from openai import AsyncOpenAI
@@ -59,16 +59,15 @@ class Generate:
         # Num of samples to generate
         self.num_of_requests = num_of_samples
 
-        # Source path of human data
-        self.examples_path = examples_path
+        # Human data with examples to built prompts 
+        try:
+            self.examples = pd.read_csv(examples_path)
+        except ValueError:
+            print("The data was not loaded.")
 
         # Prep the output data
         self.feature_name: str = f"{self.llm.model}_decision"
         self.llm_decisions: dict[str, list[str | None]] = {self.feature_name: []}
-
-    def pick_random_example(self, num_of_examples):
-        # Read the real data
-        examples = pd.read_csv(self.examples_path)
 
         # Handle potential absence of the column, or an empty dataframe
         if "code" not in self.examples.columns:
@@ -76,26 +75,30 @@ class Generate:
         if self.examples.empty:
             raise ValueError("Dataset is empty")
 
+    def pick_random_example(self, num_of_examples):
         # Sample k number of data points
-        k_samples = examples.sample(n=num_of_examples, random_state=42)
+        k_samples = self.examples.sample(n=num_of_examples, random_state=42)
         return k_samples.code, k_samples.complexity
 
     def build_requests(self, base_user_instruction):
         # Starting prompt for each prompt
-        starting_prompt = f"{base_user_instruction}\n EXAMPLES:\n"
+        starting_prompt = f"{base_user_instruction}\nEXAMPLES:\n\n"
 
         # Prompts that we are building
         prompts = [starting_prompt] * self.num_of_requests
 
         # Build specified number of requests
         for i in range(self.num_of_requests):
+        # Read the real data
             # Pick random K number of real data examples
             codes, complexities = self.pick_random_example(NUM_OF_EXAMPLES)
 
             # Add Input => Output schema that maps label => code snippet to our prompts
             for code, complexity in zip(codes, complexities):
                 # Add multiple examples to a single prompt
-                prompts[i] += f"Input:{complexity}\nOutput:{code}\n"
+                prompts[i] += f"Input:\n{complexity}\nOutput:\n{code}\n"
+        
+        return prompts
 
     async def process_requests(self, user_instructions, system_instructions: str) -> list[str | None]:
         """
@@ -139,14 +142,15 @@ async def main() -> None:
 
     # LLM to use
     llm = LLM(client, model)
-    semaphore = Semaphore(10)
+    semaphore = Semaphore(2)
 
     # Initiate audit
-    audit = Generate(llm, semaphore, num_of_samples=2, examples_path=examples_path)
+    generate = Generate(llm, semaphore, num_of_samples=NUM_OF_REQUESTS, examples_path=examples_path)
     # Send requests
-    responses = await audit.process_requests(sys_prompt, user_prompt)
+    responses = await generate.process_requests(user_prompt, sys_prompt)
     # Process responses
-    audit.process_responses(responses)
+    print(responses)
+    #audit.process_responses(responses)
 
 
 if __name__ == "__main__":

@@ -325,6 +325,7 @@ dependencies = [
     { name = "accelerate" },
     { name = "datasets" },
     { name = "jupyter" },
+    { name = "jupyterlab-vim" },
     { name = "lab" },
     { name = "mlflow" },
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
@@ -346,6 +347,7 @@ requires-dist = [
     { name = "accelerate", specifier = ">=1.10.1" },
     { name = "datasets", specifier = ">=4.1.1" },
     { name = "jupyter", specifier = ">=1.1.1" },
+    { name = "jupyterlab-vim", specifier = ">=4.1.4" },
     { name = "lab", specifier = ">=8.5" },
     { name = "mlflow", specifier = ">=3.4.0" },
     { name = "numpy", specifier = ">=2.2.6" },
@@ -1998,6 +2000,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0a/c9/a883ce65eb27905ce77ace410d83587c82ea64dc85a48d1f7ed52bcfa68d/jupyterlab_server-2.27.3.tar.gz", hash = "sha256:eb36caca59e74471988f0ae25c77945610b887f777255aa21f8065def9e51ed4", size = 76173, upload-time = "2024-07-16T17:02:04.149Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/54/09/2032e7d15c544a0e3cd831c51d77a8ca57f7555b2e1b2922142eddb02a84/jupyterlab_server-2.27.3-py3-none-any.whl", hash = "sha256:e697488f66c3db49df675158a77b3b017520d772c6e1548c7d9bcc5df7944ee4", size = 59700, upload-time = "2024-07-16T17:02:01.115Z" },
+]
+
+[[package]]
+name = "jupyterlab-vim"
+version = "4.1.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "jupyterlab" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/17/d8/3ff5da56fc66a7b751925810c4e4b6a888c8b1e7a7c53b38e5492d1357fd/jupyterlab_vim-4.1.4.tar.gz", hash = "sha256:abf2891aafb32f0cb94ad98321ae7ebcbe0cabe523d38d80d569c0a50b85225a", size = 153262, upload-time = "2024-09-16T09:17:23.986Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a6/2f/65805236702729ebaa19ba34bd977a4582df2a020a365f8cc49445de2a8d/jupyterlab_vim-4.1.4-py3-none-any.whl", hash = "sha256:13c29ff1fd385fddf33eb85a8b16441be69c62032870bb97a3054b2cf00ab135", size = 67065, upload-time = "2024-09-16T09:17:21.928Z" },
 ]
 
 [[package]]

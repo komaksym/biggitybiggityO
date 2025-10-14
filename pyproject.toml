@@ -8,6 +8,7 @@ dependencies = [
     "accelerate>=1.10.1",
     "datasets>=4.1.1",
     "jupyter>=1.1.1",
+    "jupyterlab-vim>=4.1.4",
     "lab>=8.5",
     "mlflow>=3.4.0",
     "numpy>=2.2.6",

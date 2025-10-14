@@ -44,7 +44,6 @@ class LLM:
                 print(f"\nREQUEST: (#{request_id}/{num_requests}):\n{request}")
                 print("\nRESPONSE:\n", response_content, end="\n\n")
 
-
                 return response_content
 
         except Exception as e:
@@ -67,24 +66,24 @@ class Generate:
         self.feature_name: str = f"{self.llm.model}_decision"
         self.llm_decisions: dict[str, list[str | None]] = {self.feature_name: []}
 
-        # Handle potential absence of the column, or an empty dataframe
-        if "code" not in self.data.columns:
-            raise ValueError("Dataset must contain a 'code' column")
-        if self.data.empty:
-            raise ValueError("Dataset is empty")
-    
     def pick_random_example(self, num_of_examples):
         # Read the real data
         examples = pd.read_csv(self.examples_path)
 
+        # Handle potential absence of the column, or an empty dataframe
+        if "code" not in self.examples.columns:
+            raise ValueError("Dataset must contain a 'code' column")
+        if self.examples.empty:
+            raise ValueError("Dataset is empty")
+
         # Sample k number of data points
         k_samples = examples.sample(n=num_of_examples, random_state=42)
         return k_samples.code, k_samples.complexity
-    
+
     def build_requests(self, base_user_instruction):
         # Starting prompt for each prompt
         starting_prompt = f"{base_user_instruction}\n EXAMPLES:\n"
-        
+
         # Prompts that we are building
         prompts = [starting_prompt] * self.num_of_requests
 
@@ -97,10 +96,6 @@ class Generate:
             for code, complexity in zip(codes, complexities):
                 # Add multiple examples to a single prompt
                 prompts[i] += f"Input:{complexity}\nOutput:{code}\n"
-
-            
-
-
 
     async def process_requests(self, user_instructions, system_instructions: str) -> list[str | None]:
         """
@@ -115,50 +110,39 @@ class Generate:
 
         # Create tasks in the form of coroutine objects
         tasks: list[types.CoroutineType[Any, Any, str | None]] = [
-            self.llm.send_requests(
-                self.sem,
-                system_instructions,
-                request,
-                num_requests,
-                request_id = i+1
-            )
+            self.llm.send_requests(self.sem, system_instructions, request, num_requests, request_id=i + 1)
             for i, request in enumerate(requests)
         ]
 
         # Run coroutines concurrently
         return await asyncio.gather(*tasks)
-        
+
     def process_responses(self, responses: list[str | None]) -> None:
         """
         Just pour all responses into a df.
         """
-        for response in responses:
-            # Add LLM's decision
-            self.llm_decisions[f"{self.llm.model}_decision"].append(response)
+        pass
 
 
 async def main() -> None:
     # Client
-    client = AsyncOpenAI(
-        api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com"
-    )
+    client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
     model = "deepseek-chat"
-    
+
+    # Path for examples which we are randomly going to provide to the model
+    examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
 
     # System prompt
     sys_prompt = SYS_PROMPT_EXPONENTIAL
     label = "O(2 ^ n)"
     user_prompt = f"Generate a python code snippet that has big O time complexity of {label}"
 
-    # Path for examples which we are randomly going to provide to the model
-    examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
-
     # LLM to use
     llm = LLM(client, model)
     semaphore = Semaphore(10)
 
     # Initiate audit
-    audit = Generate(examples_path, llm, semaphore, num_of_samples=2)
+    audit = Generate(llm, semaphore, num_of_samples=2, examples_path=examples_path)
     # Send requests
     responses = await audit.process_requests(sys_prompt, user_prompt)
     # Process responses

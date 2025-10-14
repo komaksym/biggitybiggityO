@@ -37,9 +37,6 @@ OUTPUT FORMAT:
 - No explanations, no text, no comments.
 
 INSTRUCTIONS:
-When given the input:
-`Generate a Python code snippet with big O time complexity O(n!)`
-→ Design a new algorithm from scratch that exhibits factorial growth and output only the code.
 """
 
 SYS_PROMPT_EXPONENTIAL = """
@@ -81,9 +78,6 @@ OUTPUT FORMAT:
 - No explanations, no text, no comments.
 
 INSTRUCTIONS:
-When given the input:
-`Generate a Python code snippet with big O time complexity O(2^n)`
-→ Design a new algorithm from scratch that exhibits exponential growth and output only the code.
 """
 
 VERIFIER_PROMPT = """
@@ -108,3 +102,4 @@ Code:
 """
 
 NUM_OF_EXAMPLES = 2
+NUM_OF_REQUESTS = 10

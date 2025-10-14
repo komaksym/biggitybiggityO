@@ -42,7 +42,7 @@ class LLM:
 
                 # Log
                 print(f"\nREQUEST: (#{request_id}/{num_requests}):\n{request}")
-                print("\nRESPONSE:\n", response, end="\n\n")
+                print("\nRESPONSE:\n", response_content, end="\n\n")
 
 
                 return response_content
@@ -147,6 +147,8 @@ async def main() -> None:
 
     # System prompt
     sys_prompt = SYS_PROMPT_EXPONENTIAL
+    label = "O(2 ^ n)"
+    user_prompt = f"Generate a python code snippet that has big O time complexity of {label}"
 
     # Path for examples which we are randomly going to provide to the model
     examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
@@ -158,7 +160,7 @@ async def main() -> None:
     # Initiate audit
     audit = Generate(examples_path, llm, semaphore, num_of_samples=2)
     # Send requests
-    responses = await audit.process_requests(sys_prompt)
+    responses = await audit.process_requests(sys_prompt, user_prompt)
     # Process responses
     audit.process_responses(responses)
 

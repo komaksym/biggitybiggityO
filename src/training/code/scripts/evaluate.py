@@ -4,6 +4,8 @@ import seaborn as sns
 from sklearn.metrics import ConfusionMatrixDisplay, accuracy_score, f1_score, recall_score
 from transformers import TrainerCallback
 import mlflow
+from tqdm import tqdm
+from data import labelEncoder
 
 LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "np": 7}
 
@@ -24,6 +26,8 @@ def hc_score(y_true, y_pred, n_classes=N_CLASSES):
 def compute_metrics(eval_preds):
     # Make preds & labels global for access in callbacks
     global last_preds, last_labels
+
+    #import pdb; pdb.set_trace()
 
     logits, labels = eval_preds
     preds = np.argmax(logits[0], axis=-1) if isinstance(logits, tuple) else np.argmax(logits, axis=-1)

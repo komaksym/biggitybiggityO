@@ -7,6 +7,7 @@ from transformers import AutoTokenizer, DataCollatorWithPadding
 import pandas as pd
 
 from datasets import Dataset
+import pandas as pd
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -63,7 +64,7 @@ def tokenize_data(data, tokenizer):
         truncation=True,
         max_length=512,
     )
-    tokenized["labels"] = labelEncoder.transform(data["complexity"])
+    tokenized["labels"] = labelEncoder.transform(data["complexity"]) # Not sure if needed for the prompt schema
     return tokenized
 
 

@@ -52,21 +52,21 @@ class LLM:
 
 
 class Evaluate:
-    def __init__(self, llm: LLM, sem: Semaphore, source_path: Path) -> None:
-        self.llm: LLM = llm
+    def __init__(self, llms: list[LLM], sem: Semaphore, source_path: Path) -> None:
+        self.llms = llms
         self.sem: Semaphore = sem
 
-        # Human data with examples to built prompts 
+        # Human data with examples to built prompts
         try:
             self.data_to_eval = pd.read_csv(source_path)
         except ValueError:
             print("The data could not be loaded.")
 
-        self.feature_name: str = f"{self.llm.model}_decision"
+        self.feature_names: list[str] = [f"{llm.model}_decision" for llm in self.llms]
         # Add new column to DF. LLM's decision (if doesn't exist yet)
-        if self.feature_name not in self.data_to_eval:
+        if self.feature_names not in self.data_to_eval: # (not sure if this syntax works)
             self.data_to_eval[self.feature_name] = ""
-        
+
         # Handle potential absence of the column, or an empty dataframe
         if "code" not in self.data_to_eval.columns or "label" not in self.data_to_eval.columns:
             raise ValueError("Dataset must contain a 'code' column")
@@ -90,7 +90,7 @@ class Evaluate:
 
             # Build a prompt
             prompts[i] += f"Code: {code}\n\nLabel: {label}"
-        
+
         return prompts
 
     async def process_requests(self, user_instructions, system_instructions: str) -> list[str | None]:
@@ -120,6 +120,7 @@ class Evaluate:
         self.data_to_eval[self.feature_name] = responses
         return self.data_to_eval
 
+
 def approve_samples(source_path, output_path):
     # Read the data
     data_to_approve = pd.read_csv(source_path)
@@ -136,34 +137,45 @@ def approve_samples(source_path, output_path):
 
 
 async def main() -> None:
-    # Client
+    # Clients
     deepseek_client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
     deepseek_model = "deepseek-chat"
 
     grok_client = AsyncOpenAI(api_key=os.environ["XAI_API_KEY"], base_url="https://api.x.ai/v1")
     grok_model = "grok-code-fast-1"
 
-    gemini_client = AsyncOpenAI(api_key=os.environ["GEMINI_API_KEY"], base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+    gemini_client = AsyncOpenAI(
+        api_key=os.environ["GEMINI_API_KEY"],
+        base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
+    )
     gemini_model = "gemini-2.5-flash"
 
     # Path for examples which we are randomly going to provide to the model
-    examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
+    source_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval.csv"
+    # Output path
+    output_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data.csv"
 
     # System prompt
-    sys_prompt = SYS_PROMPT_EXPONENTIAL
-    label = "O(2 ^ n)"
-    user_prompt = f"Generate a python code snippet that has big O time complexity of {label}"
+    sys_prompt = EVAL_SYS_PROMPT
 
-    # LLM to use
-    llm = LLM(client, model)
+    # LLMs to use for evaluation
+    deepseek_llm = LLM(deepseek_client, deepseek_model)
+    grok_llm = LLM(grok_client, grok_model)
+    gemini_llm = LLM(gemini_client, gemini_model)
+
+    # Gather LLMs
+    LLMs = [deepseek_llm, grok_llm, gemini_llm]
+
+    # Number of concurrent requests
     semaphore = Semaphore(10)
 
-    # Initiate audit
-    generate = Generate(llm, semaphore, num_of_samples=NUM_OF_REQUESTS, examples_path=examples_path)
+    # Initiate audits
+    generate = Evaluate(LLMs, semaphore, source_path=source_path)
+
     # Send requests
     responses = await generate.process_requests(user_prompt, sys_prompt)
     # Process responses
-    #audit.process_responses(responses)
+    # audit.process_responses(responses)
 
 
 if __name__ == "__main__":

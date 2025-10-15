@@ -1,12 +1,13 @@
 import asyncio
 import os
+from io import StringIO
 import types
 from asyncio import Semaphore
 from pathlib import Path
 from typing import Any
 
 from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL, \
-                   NUM_OF_EXAMPLES, NUM_OF_REQUESTS, DATA_LABEL, USER_GENERATE_PROMPT
+                   NUM_OF_EXAMPLES, NUM_OF_REQUESTS, USER_GENERATE_PROMPT
 
 import pandas as pd
 from openai import AsyncOpenAI
@@ -76,11 +77,11 @@ class Generate:
         if self.examples.empty:
             raise ValueError("Dataset is empty")
 
-    def pick_random_example(self, num_of_examples):
+    def pick_random_example(self, num_of_examples=1):
         # Sample k number of data points
         k_samples = self.examples.sample(n=num_of_examples, random_state=42)
-        breakpoint()
-        return k_samples.code, k_samples.complexity
+        # Return in jsonl format to show LLM how we want our output to be
+        return k_samples.to_json(orient='records', lines=True)
 
     def build_requests(self, base_user_instruction):
         # Starting prompt for each prompt
@@ -93,12 +94,8 @@ class Generate:
         for i in range(self.num_of_requests):
         # Read the real data
             # Pick random K number of real data examples
-            codes, complexities = self.pick_random_example(NUM_OF_EXAMPLES)
-
-            # Add Input => Output schema that maps label => code snippet to our prompts
-            for code, complexity in zip(codes, complexities):
-                # Add multiple examples to a single prompt
-                prompts[i] += f"Input:\n{complexity}\nOutput:\n{code}\n"
+            example = self.pick_random_example()
+            prompts[i] += f"{example}"
         
         return prompts
 
@@ -126,7 +123,8 @@ class Generate:
         """
         Just pour all responses into a df.
         """
-        pass
+        data = pd.read_json(StringIO(responses[0]), orient="rows", lines=True)
+        return data
 
 
 async def main() -> None:
@@ -139,7 +137,8 @@ async def main() -> None:
     model = "deepseek-chat"
 
     # Path for examples which we are randomly going to provide to the model
-    examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
+    examples_path: Path = BASE_PATH.parent / "data/real_examples/exponential_data.csv"
+    output_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval.csv"
 
     # System prompt
     sys_prompt = SYS_PROMPT_EXPONENTIAL
@@ -154,7 +153,9 @@ async def main() -> None:
     # Send requests
     responses = await generate.process_requests(user_prompt, sys_prompt)
     # Process responses
-    #audit.process_responses(responses)
+    data = generate.process_responses(responses)
+    # Save data for verification
+    data.to_csv(output_path, index=False)
 
 
 if __name__ == "__main__":

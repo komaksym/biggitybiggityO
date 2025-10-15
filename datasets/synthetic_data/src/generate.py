@@ -129,12 +129,12 @@ class Generate:
 
 async def main() -> None:
     # Main Client
-    #client = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url="https://api.openai.com/v1")
-    #model = "gpt-5"
+    client = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url="https://api.openai.com/v1")
+    model = "gpt-5"
 
     # Cheap testing client
-    client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
-    model = "deepseek-chat"
+    #client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
+    #model = "deepseek-chat"
 
     # Path for examples which we are randomly going to provide to the model
     examples_path: Path = BASE_PATH.parent / "data/real_examples/exponential_data.csv"
@@ -155,7 +155,7 @@ async def main() -> None:
     # Process responses
     data = generate.process_responses(responses)
     # If some data already exists
-    if output_path.exists:
+    if output_path.exists():
         # Read the already existing data
         main = pd.read_csv(output_path)
         # Concatenate the new one to the existing data

@@ -176,6 +176,3 @@ if __name__ == "__main__":
     except FileNotFoundError as e:
         print(f"File not found: {e}")
         exit(1)
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-        exit(1)

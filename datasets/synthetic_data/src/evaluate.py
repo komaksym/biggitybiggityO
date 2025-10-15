@@ -56,6 +56,9 @@ class Evaluate:
         self.LLMs = LLMs
         self.sem: Semaphore = sem
 
+        # Model names
+        self.models = [f"{LLM.model}" for LLM in self.LLMs]
+
         # Human data with examples to built prompts
         try:
             self.data_to_eval = pd.read_csv(source_path)
@@ -63,13 +66,13 @@ class Evaluate:
             print("The data could not be loaded.")
 
         # Create feature names based on llm names
-        self.feature_names: list[str] = [f"{LLM.model}_decision" for LLM in self.LLMs]
+        self.feature_names: list[str] = [f"{model}_decision" for model in self.models]
         # Add new column to DF. LLM's decision (if doesn't exist yet)
-        if all(self.feature_names) not in self.data_to_eval.columns.to_list(): # (not sure if this syntax works)
+        if self.feature_names not in self.data_to_eval.columns.to_list(): # (not sure if this syntax works)
             self.data_to_eval[self.feature_names] = ""
 
         # Handle potential absence of the column, or an empty dataframe
-        if "code" not in self.data_to_eval.columns or "label" not in self.data_to_eval.columns:
+        if "code" not in self.data_to_eval.columns or "complexity" not in self.data_to_eval.columns:
             raise ValueError("Dataset must contain a 'code' column")
         if self.data_to_eval.empty:
             raise ValueError("Dataset is empty")
@@ -102,6 +105,9 @@ class Evaluate:
         # Collect requests
         requests = self.build_requests(user_instructions)
 
+        # Prep responses
+        responses = {f"{feature}": [] for feature in self.feature_names}
+
         # Total # of requests
         num_requests: int = len(requests)
 
@@ -111,13 +117,18 @@ class Evaluate:
             for i, request in enumerate(requests)] for LLM in self.LLMs
         ]
 
-        # Run coroutines concurrently
-        return await asyncio.gather(*tasks)
+        # Run coroutines concurrently for all models
+        for task, model in zip(tasks, self.models):
+            responses[model] = await asyncio.gather(*task)
+        
+        return responses
 
-    def process_responses(self, responses: list[str | None]) -> None:
+    def process_responses(self, responses) -> None:
         """
         Just pour all responses into a df.
         """
+        responses = pd.DataFrame(responses)
+        breakpoint()
         self.data_to_eval[self.feature_name] = responses
         return self.data_to_eval
 
@@ -143,7 +154,7 @@ async def main() -> None:
     deepseek_model = "deepseek-chat"
 
     grok_client = AsyncOpenAI(api_key=os.environ["XAI_API_KEY"], base_url="https://api.x.ai/v1")
-    grok_model = "grok-code-fast-1"
+    grok_model = "grok-4-fast-reasoning"
 
     gemini_client = AsyncOpenAI(
         api_key=os.environ["GEMINI_API_KEY"],
@@ -168,12 +179,13 @@ async def main() -> None:
     semaphore = Semaphore(10)
 
     # Initiate audits
-    generate = Evaluate(LLMs, semaphore, source_path=source_path)
+    evaluate = Evaluate(LLMs, semaphore, source_path=source_path)
 
     # Send requests
-    responses = await generate.process_requests(USER_EVALUATE_PROMPT, EVAL_SYS_PROMPT)
-    breakpoint()
-# audit.process_responses(responses)
+    responses = await evaluate.process_requests(USER_EVALUATE_PROMPT, EVAL_SYS_PROMPT)
+    # Process responses
+    evaluate.process_responses(responses)
+    
 
 
 if __name__ == "__main__":

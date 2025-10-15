@@ -5,7 +5,7 @@ from asyncio import Semaphore
 from pathlib import Path
 from typing import Any
 
-from config import EVAL_SYS_PROMPT
+from config import EVAL_SYS_PROMPT, USER_EVALUATE_PROMPT
 
 import pandas as pd
 from openai import AsyncOpenAI
@@ -52,8 +52,8 @@ class LLM:
 
 
 class Evaluate:
-    def __init__(self, llms: list[LLM], sem: Semaphore, source_path: Path) -> None:
-        self.llms = llms
+    def __init__(self, LLMs: list[LLM], sem: Semaphore, source_path: Path) -> None:
+        self.LLMs = LLMs
         self.sem: Semaphore = sem
 
         # Human data with examples to built prompts
@@ -62,10 +62,11 @@ class Evaluate:
         except ValueError:
             print("The data could not be loaded.")
 
-        self.feature_names: list[str] = [f"{llm.model}_decision" for llm in self.llms]
+        # Create feature names based on llm names
+        self.feature_names: list[str] = [f"{LLM.model}_decision" for LLM in self.LLMs]
         # Add new column to DF. LLM's decision (if doesn't exist yet)
-        if self.feature_names not in self.data_to_eval: # (not sure if this syntax works)
-            self.data_to_eval[self.feature_name] = ""
+        if all(self.feature_names) not in self.data_to_eval.columns.to_list(): # (not sure if this syntax works)
+            self.data_to_eval[self.feature_names] = ""
 
         # Handle potential absence of the column, or an empty dataframe
         if "code" not in self.data_to_eval.columns or "label" not in self.data_to_eval.columns:
@@ -106,8 +107,8 @@ class Evaluate:
 
         # Create tasks in the form of coroutine objects
         tasks: list[types.CoroutineType[Any, Any, str | None]] = [
-            self.llm.send_requests(self.sem, system_instructions, request, num_requests, request_id=i + 1)
-            for i, request in enumerate(requests)
+            [LLM.send_requests(self.sem, system_instructions, request, num_requests, request_id=i + 1)
+            for i, request in enumerate(requests)] for LLM in self.LLMs
         ]
 
         # Run coroutines concurrently
@@ -155,9 +156,6 @@ async def main() -> None:
     # Output path
     output_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data.csv"
 
-    # System prompt
-    sys_prompt = EVAL_SYS_PROMPT
-
     # LLMs to use for evaluation
     deepseek_llm = LLM(deepseek_client, deepseek_model)
     grok_llm = LLM(grok_client, grok_model)
@@ -173,9 +171,9 @@ async def main() -> None:
     generate = Evaluate(LLMs, semaphore, source_path=source_path)
 
     # Send requests
-    responses = await generate.process_requests(user_prompt, sys_prompt)
-    # Process responses
-    # audit.process_responses(responses)
+    responses = await generate.process_requests(USER_EVALUATE_PROMPT, EVAL_SYS_PROMPT)
+    breakpoint()
+# audit.process_responses(responses)
 
 
 if __name__ == "__main__":
@@ -186,7 +184,4 @@ if __name__ == "__main__":
         exit(1)
     except FileNotFoundError as e:
         print(f"File not found: {e}")
-        exit(1)
-    except Exception as e:
-        print(f"Unexpected error: {e}")
         exit(1)

@@ -68,7 +68,7 @@ class Evaluate:
         # Create feature names based on llm names
         self.feature_names: list[str] = [f"{model}_decision" for model in self.models]
         # Add new column to DF. LLM's decision (if doesn't exist yet)
-        if self.feature_names not in self.data_to_eval.columns.to_list(): # (not sure if this syntax works)
+        if self.feature_names not in self.data_to_eval.columns.to_list():  # (not sure if this syntax works)
             self.data_to_eval[self.feature_names] = ""
 
         # Handle potential absence of the column, or an empty dataframe
@@ -113,24 +113,29 @@ class Evaluate:
 
         # Create tasks in the form of coroutine objects
         tasks: list[types.CoroutineType[Any, Any, str | None]] = [
-            [LLM.send_requests(self.sem, system_instructions, request, num_requests, request_id=i + 1)
-            for i, request in enumerate(requests)] for LLM in self.LLMs
+            [
+                LLM.send_requests(self.sem, system_instructions, request, num_requests, request_id=i + 1)
+                for i, request in enumerate(requests)
+            ]
+            for LLM in self.LLMs
         ]
 
         # Run coroutines concurrently for all models
-        for task, model in zip(tasks, self.models):
-            responses[model] = await asyncio.gather(*task)
-        
+        for task, feature in zip(tasks, self.feature_names):
+            responses[feature] = await asyncio.gather(*task)
+
         return responses
 
-    def process_responses(self, responses) -> None:
+    def process_responses(self, responses, save_path) -> None:
         """
         Just pour all responses into a df.
         """
+        # Convert to DF
         responses = pd.DataFrame(responses)
-        breakpoint()
-        self.data_to_eval[self.feature_name] = responses
-        return self.data_to_eval
+        # Merge to base DF
+        responses_added = pd.concat([self.data_to_eval, responses], axis=1)
+        # Save
+        responses_added.to_csv(save_path, index=False)
 
 
 def approve_samples(source_path, output_path):
@@ -185,7 +190,6 @@ async def main() -> None:
     responses = await evaluate.process_requests(USER_EVALUATE_PROMPT, EVAL_SYS_PROMPT)
     # Process responses
     evaluate.process_responses(responses)
-    
 
 
 if __name__ == "__main__":

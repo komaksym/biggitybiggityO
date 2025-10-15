@@ -1,3 +1,21 @@
+DATA_LABEL = "O(2 ^ n)"
+NUM_OF_EXAMPLES = 2
+NUM_OF_REQUESTS = 1
+
+USER_GENERATE_PROMPT = f"""
+Generate as many python code snippets as you can that have big O time complexity of {DATA_LABEL}.
+
+For each code snippet:
+- Output exactly ONE line of valid JSON.
+- Each JSON object must have two keys:
+    - "label": the big O time complexity (e.g. "O(2 ^ n)")
+    - "snippet: the Python code snippet as a single string (use \n for newlines).
+- Do NOT include any extra explanations or text.
+- Do NOT format the response as a JSON array. Each snippet must be on its own line.
+
+Examples:\n\n
+"""
+
 SYS_PROMPT_FACTORIAL = """
 You are a world-class competitive Python programmer and algorithm designer with deep knowledge of Big O complexities. 
 You are also a professional synthetic dataset generator. 
@@ -92,14 +110,6 @@ Steps to follow:
    - NO — if the code does not exhibit the claimed time complexity.
 3. Do **not** provide any explanations, comments, or additional text. Only output YES or NO.
 
-Input format:
-
-Claimed complexity: <INSERT CLAIMED COMPLEXITY HERE>
-
-Code:
-<INSERT CODE SNIPPET HERE>
-
+INSTRUCTIONS:
 """
 
-NUM_OF_EXAMPLES = 2
-NUM_OF_REQUESTS = 10

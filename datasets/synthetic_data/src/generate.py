@@ -5,7 +5,8 @@ from asyncio import Semaphore
 from pathlib import Path
 from typing import Any
 
-from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL, NUM_OF_EXAMPLES, NUM_OF_REQUESTS
+from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL, \
+                   NUM_OF_EXAMPLES, NUM_OF_REQUESTS, DATA_LABEL, USER_GENERATE_PROMPT
 
 import pandas as pd
 from openai import AsyncOpenAI
@@ -78,11 +79,12 @@ class Generate:
     def pick_random_example(self, num_of_examples):
         # Sample k number of data points
         k_samples = self.examples.sample(n=num_of_examples, random_state=42)
+        breakpoint()
         return k_samples.code, k_samples.complexity
 
     def build_requests(self, base_user_instruction):
         # Starting prompt for each prompt
-        starting_prompt = f"{base_user_instruction}\nEXAMPLES:\n\n"
+        starting_prompt = f"{base_user_instruction}"
 
         # Prompts that we are building
         prompts = [starting_prompt] * self.num_of_requests
@@ -129,8 +131,8 @@ class Generate:
 
 async def main() -> None:
     # Main Client
-    client = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url="https://api.openai.com/v1")
-    model = "gpt-5"
+    #client = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url="https://api.openai.com/v1")
+    #model = "gpt-5"
 
     # Cheap testing client
     client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
@@ -141,11 +143,7 @@ async def main() -> None:
 
     # System prompt
     sys_prompt = SYS_PROMPT_EXPONENTIAL
-    label = "O(2 ^ n)"
-    user_prompt = f"""
-    Generate as many python code snippets as you can that have big O time complexity of {label}.
-    Code snippets should be separated with <SEP> token with newline before it and after it.
-    """
+    user_prompt = USER_GENERATE_PROMPT
 
     # LLM to use
     llm = LLM(client, model)

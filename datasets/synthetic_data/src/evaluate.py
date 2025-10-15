@@ -69,7 +69,7 @@ class Evaluate:
         self.feature_names: list[str] = [f"{model}_decision" for model in self.models]
         # Add new column to DF. LLM's decision (if doesn't exist yet)
         if self.feature_names not in self.data_to_eval.columns.to_list():  # (not sure if this syntax works)
-            self.data_to_eval[self.feature_names] = ""
+            self.data_to_eval[self.feature_names] = None
 
         # Handle potential absence of the column, or an empty dataframe
         if "code" not in self.data_to_eval.columns or "complexity" not in self.data_to_eval.columns:
@@ -133,7 +133,10 @@ class Evaluate:
         # Convert to DF
         responses = pd.DataFrame(responses)
         # Merge to base DF
-        self.data_to_eval = pd.concat([self.data_to_eval, responses], axis=1, ignore_index=True)
+        self.data_to_eval = self.data_to_eval.combine_first(responses)
+        #self.data_to_eval = pd.merge(self.data_to_eval, responses, on=self.feature_names)
+        #self.data_to_eval = pd.concat([self.data_to_eval, responses], axis=1)
+
         # Save
         self.data_to_eval.to_csv(save_path, index=False)
 
@@ -142,12 +145,12 @@ class Evaluate:
         approved_rows = []
 
         # Iterate over all rows
-        for row in len(self.data_to_eval):
+        for row in range(len(self.data_to_eval)):
             votes = 0
             # Over specified cols
             for col in self.feature_names:
                 # If answer from an LLM is YES
-                if self.data_to_eval.iloc[row][col] == "YES":
+                if self.data_to_eval.loc[row, col] == "YES":
                     # Add a vote
                     votes += 1
                     # If 2 votes gained = APPROVED, may not go further
@@ -189,7 +192,8 @@ async def main() -> None:
     # Path for examples which we are randomly going to provide to the model
     source_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval.csv"
     # Output path
-    output_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data.csv"
+    final_synthetic_data_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data.csv"
+    voted_data_path: Path = BASE_PATH.parent / "data/voted_data/voted_data.csv"
 
     # LLMs to use for evaluation
     deepseek_llm = LLM(deepseek_client, deepseek_model)
@@ -208,9 +212,9 @@ async def main() -> None:
     # Send requests
     responses = await evaluate.process_requests(USER_EVALUATE_PROMPT, EVAL_SYS_PROMPT)
     # Process responses
-    evaluate.process_responses(responses, output_path=source_path)
-    # Select rows in major voting way
-    evaluate.approve_samples(output_path)
+    evaluate.process_responses(responses, save_path=voted_data_path)
+    # Select final synthetic data samples
+    evaluate.approve_samples(final_synthetic_data_path)
 
 
 if __name__ == "__main__":

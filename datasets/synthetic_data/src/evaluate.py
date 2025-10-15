@@ -133,7 +133,7 @@ class Evaluate:
         # Convert to DF
         responses = pd.DataFrame(responses)
         # Merge to base DF
-        self.data_to_eval = pd.concat([self.data_to_eval, responses], axis=1)
+        self.data_to_eval = pd.concat([self.data_to_eval, responses], axis=1, ignore_index=True)
         # Save
         self.data_to_eval.to_csv(save_path, index=False)
 
@@ -157,7 +157,19 @@ class Evaluate:
 
         # Save chosen data
         synthetic_data = self.data_to_eval.loc[approved_rows, ["code", "complexity"]]
-        synthetic_data.to_csv(output_path, index=False)
+
+        # If some data already exists
+        if output_path.exists():
+            # Read the already existing data
+            main = pd.read_csv(output_path)
+            # Concatenate the new one to the existing data
+            combined = pd.concat([main, synthetic_data], ignore_index=True)
+            # Save the combined version
+            combined.to_csv(output_path, index=False)
+        else:
+            # Save data for verification
+            synthetic_data.to_csv(output_path, index=False)
+
 
 
 async def main() -> None:

@@ -80,7 +80,7 @@ OUTPUT FORMAT:
 INSTRUCTIONS:
 """
 
-VERIFIER_PROMPT = """
+VERIFIER_SYS_PROMPT = """
 You are an expert in Python programming and algorithm analysis with deep knowledge of Big O time complexity. 
 
 Your task: You will be given a Python code snippet and a claimed time complexity (e.g., O(n!), O(2^n)). 

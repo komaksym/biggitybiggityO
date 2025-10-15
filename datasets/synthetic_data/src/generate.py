@@ -154,8 +154,17 @@ async def main() -> None:
     responses = await generate.process_requests(user_prompt, sys_prompt)
     # Process responses
     data = generate.process_responses(responses)
-    # Save data for verification
-    data.to_csv(output_path, index=False)
+    # If some data already exists
+    if output_path.exists:
+        # Read the already existing data
+        main = pd.read_csv(output_path)
+        # Concatenate the new one to the existing data
+        combined = pd.concat([main, data], ignore_index=True)
+        # Save the combined version
+        combined.to_csv(output_path, index=False)
+    else:
+        # Save data for verification
+        data.to_csv(output_path, index=False)
 
 
 if __name__ == "__main__":

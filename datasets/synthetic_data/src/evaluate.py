@@ -83,7 +83,6 @@ class Evaluate:
         # Prompts that we are building
         prompts = [starting_prompt] * num_of_rows
 
-        # Build specified number of requests
         for i in range(num_of_rows):
             # Extract code and label from dataframe
             code = self.data_to_eval.iloc[i].code
@@ -125,18 +124,27 @@ def approve_samples(source_path, output_path):
     # Read the data
     data_to_approve = pd.read_csv(source_path)
 
+    # Prep synthetic data
+    synthetic_data = pd.DataFrame({"code": [], "complexity": []})
+
     # Extract decision columns
     decision_cols = [col for col in data_to_approve.columns if col.endswith("decision")]
 
-    
-
-
+    def vote(row, column_voters):
+        num_of_yeses_to_approve = 2
+        pass
 
 
 async def main() -> None:
     # Client
-    client = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url="https://api.openai.com/v1")
-    model = "gpt-5"
+    deepseek_client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
+    deepseek_model = "deepseek-chat"
+
+    grok_client = AsyncOpenAI(api_key=os.environ["XAI_API_KEY"], base_url="https://api.x.ai/v1")
+    grok_model = "grok-code-fast-1"
+
+    gemini_client = AsyncOpenAI(api_key=os.environ["GEMINI_API_KEY"], base_url="https://generativelanguage.googleapis.com/v1beta/openai/")
+    gemini_model = "gemini-2.5-flash"
 
     # Path for examples which we are randomly going to provide to the model
     examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"

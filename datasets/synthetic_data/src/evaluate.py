@@ -133,24 +133,31 @@ class Evaluate:
         # Convert to DF
         responses = pd.DataFrame(responses)
         # Merge to base DF
-        responses_added = pd.concat([self.data_to_eval, responses], axis=1)
+        self.data_to_eval = pd.concat([self.data_to_eval, responses], axis=1)
         # Save
-        responses_added.to_csv(save_path, index=False)
+        self.data_to_eval.to_csv(save_path, index=False)
 
+    def approve_samples(self, output_path):
+        majority_vote = 2
+        approved_rows = []
 
-def approve_samples(source_path, output_path):
-    # Read the data
-    data_to_approve = pd.read_csv(source_path)
+        # Iterate over all rows
+        for row in len(self.data_to_eval):
+            votes = 0
+            # Over specified cols
+            for col in self.feature_names:
+                # If answer from an LLM is YES
+                if self.data_to_eval.iloc[row][col] == "YES":
+                    # Add a vote
+                    votes += 1
+                    # If 2 votes gained = APPROVED, may not go further
+                    if votes == majority_vote:
+                        approved_rows.append(row)
+                        break
 
-    # Prep synthetic data
-    synthetic_data = pd.DataFrame({"code": [], "complexity": []})
-
-    # Extract decision columns
-    decision_cols = [col for col in data_to_approve.columns if col.endswith("decision")]
-
-    def vote(row, column_voters):
-        num_of_yeses_to_approve = 2
-        pass
+        # Save chosen data
+        synthetic_data = self.data_to_eval.loc[approved_rows, ["code", "complexity"]]
+        synthetic_data.to_csv(output_path, index=False)
 
 
 async def main() -> None:
@@ -189,7 +196,9 @@ async def main() -> None:
     # Send requests
     responses = await evaluate.process_requests(USER_EVALUATE_PROMPT, EVAL_SYS_PROMPT)
     # Process responses
-    evaluate.process_responses(responses)
+    evaluate.process_responses(responses, output_path=source_path)
+    # Select rows in major voting way
+    evaluate.approve_samples(output_path)
 
 
 if __name__ == "__main__":

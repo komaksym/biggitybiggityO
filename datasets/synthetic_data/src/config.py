@@ -1,6 +1,6 @@
 DATA_LABEL = "O(2 ^ n)"
 NUM_OF_EXAMPLES = 1
-NUM_OF_REQUESTS = 1
+NUM_OF_REQUESTS = 2
 
 USER_GENERATE_PROMPT = f"""
 Generate as many python code snippets as you can that have big O time complexity of {DATA_LABEL}.
@@ -14,6 +14,43 @@ For each code snippet:
 - Do NOT format the response as a JSON array. Each snippet must be on its own line.
 
 Example of a single code snippet:\n
+"""
+
+USER_EVALUATE_PROMPT = """
+    You will be provided with python code snippets and their respective big O time complexities.
+    
+    If you think that the specified time complexity label for a code snippet is correct - answer with YES. (Ignore constants)
+    On the other hand, if you think that the complexity label is off - answer with NO.
+
+    Your answer should be no longer than 1 word, and it's either YES or NO.
+
+    FOR EXAMPLE:
+    
+    Input:
+    Code: 
+    def build_expressions(nums, target):
+        out = []
+        n = len(nums)
+        if n == 0:
+            return out
+        def dfs(i, total, expr):
+            if i == n:
+                if total == target:
+                    out.append(expr)
+                return
+            v = nums[i]
+            dfs(i + 1, total + v, expr + f"+{v}")
+            dfs(i + 1, total - v, expr + f"-{v}")
+        first = nums[0]
+        dfs(1, first, f"{first}")
+        dfs(1, -first, f"-{first}")
+        return out
+
+    Label: O(2 ^ n)
+
+    Output: YES
+
+    
 """
 
 SYS_PROMPT_FACTORIAL = """

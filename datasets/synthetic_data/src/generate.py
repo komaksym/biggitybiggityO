@@ -128,9 +128,13 @@ class Generate:
 
 
 async def main() -> None:
-    # Client
-    client = AsyncOpenAI(api_key=os.environ["OPENAI_API"], base_url="https://api.openai.com/v1")
+    # Main Client
+    client = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"], base_url="https://api.openai.com/v1")
     model = "gpt-5"
+
+    # Cheap testing client
+    client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
+    model = "deepseek-chat"
 
     # Path for examples which we are randomly going to provide to the model
     examples_path: Path = BASE_PATH.parent / "data/real_data/exponential_data.csv"
@@ -138,7 +142,10 @@ async def main() -> None:
     # System prompt
     sys_prompt = SYS_PROMPT_EXPONENTIAL
     label = "O(2 ^ n)"
-    user_prompt = f"Generate a python code snippet that has big O time complexity of {label}"
+    user_prompt = f"""
+    Generate as many python code snippets as you can that have big O time complexity of {label}.
+    Code snippets should be separated with <SEP> token with newline before it and after it.
+    """
 
     # LLM to use
     llm = LLM(client, model)

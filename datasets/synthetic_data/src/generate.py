@@ -6,8 +6,7 @@ from asyncio import Semaphore
 from pathlib import Path
 from typing import Any
 
-from config import SYS_PROMPT_EXPONENTIAL, SYS_PROMPT_FACTORIAL, \
-                   NUM_OF_EXAMPLES, NUM_OF_REQUESTS, USER_GENERATE_PROMPT
+from config import GENERATE_SYS_PROMPT, NUM_OF_REQUESTS, USER_GENERATE_PROMPT
 
 import pandas as pd
 from openai import AsyncOpenAI
@@ -123,7 +122,9 @@ class Generate:
         """
         Just pour all responses into a df.
         """
-        data = pd.read_json(StringIO(responses[0]), orient="rows", lines=True)
+        jsonl_file = "\n".join(responses)
+
+        data = pd.read_json(StringIO(jsonl_file), orient="rows", lines=True)
         return data
 
 
@@ -138,10 +139,10 @@ async def main() -> None:
 
     # Path for examples which we are randomly going to provide to the model
     examples_path: Path = BASE_PATH.parent / "data/real_examples/exponential_data.csv"
-    output_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval.csv"
+    output_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval_EXP.csv"
 
     # System prompt
-    sys_prompt = SYS_PROMPT_EXPONENTIAL
+    sys_prompt = GENERATE_SYS_PROMPT
     user_prompt = USER_GENERATE_PROMPT
 
     # LLM to use

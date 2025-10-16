@@ -186,10 +186,10 @@ async def main() -> None:
     gemini_model = "gemini-2.5-flash"
 
     # Path for examples which we are randomly going to provide to the model
-    source_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval_FAC.csv"
+    source_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval_EXP.csv"
     # Output path
-    final_synthetic_data_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data_FAC.csv"
-    voted_data_path: Path = BASE_PATH.parent / "data/voted_data/voted_data_FAC.csv"
+    final_synthetic_data_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data_EXP.csv"
+    voted_data_path: Path = BASE_PATH.parent / "data/voted_data/voted_data_EXP.csv"
 
     # LLMs to use for evaluation
     deepseek_llm = LLM(deepseek_client, deepseek_model)

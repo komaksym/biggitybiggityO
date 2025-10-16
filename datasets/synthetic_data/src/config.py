@@ -1,17 +1,19 @@
 DATA_LABEL = "O(2 ^ n)"
 NUM_OF_EXAMPLES = 1
-NUM_OF_REQUESTS = 2
+NUM_OF_REQUESTS = 10
 
 USER_GENERATE_PROMPT = f"""
 Generate as many python code snippets as you can that have big O time complexity of {DATA_LABEL}.
 
 For each code snippet:
-- Output exactly ONE line of valid JSON.
+- Output exactly ONE line of VALID JSON.
 - Each JSON object must have two keys:
     - "code": the Python code snippet as a single string (use \n for newlines).
-    - "label: the big O time complexity (e.g. "O(2 ^ n)")
+    - "complexity: the big O time complexity (e.g. "O(2 ^ n)")
 - Do NOT include any extra explanations or text.
 - Do NOT format the response as a JSON array. Each snippet must be on its own line.
+
+A single outputted sample should be a VALID JSON.
 
 Example of a single code snippet:\n
 """
@@ -46,20 +48,20 @@ USER_EVALUATE_PROMPT = """
         dfs(1, -first, f"-{first}")
         return out
 
-    Label: O(2 ^ n)
+    Complexity: O(2 ^ n)
 
     Output: YES
 
     
 """
 
-SYS_PROMPT_FACTORIAL = """
+GENERATE_SYS_PROMPT = f"""
 You are a world-class competitive Python programmer and algorithm designer with deep knowledge of Big O complexities. 
 You are also a professional synthetic dataset generator. 
 Your goal is to generate valid, diverse, and structurally varied Python code snippets with the requested time complexity.
 
 TASK:
-Generate a Python code snippet whose core algorithm runs in O(n!) time complexity.
+Generate a Python code snippet whose core algorithm runs in {DATA_LABEL} time complexity.
 
 STATIC REQUIREMENTS (always apply):
 - Output valid Python code only.
@@ -94,46 +96,6 @@ OUTPUT FORMAT:
 INSTRUCTIONS:
 """
 
-SYS_PROMPT_EXPONENTIAL = """
-You are a world-class competitive Python programmer and algorithm designer with deep knowledge of Big O complexities. 
-You are also a professional synthetic dataset generator. 
-Your goal is to generate valid, diverse, and structurally varied Python code snippets with the requested time complexity.
-
-TASK:
-Generate a Python code snippet whose core algorithm runs in O(2^n) time complexity.
-
-STATIC REQUIREMENTS (always apply):
-- Output valid Python code only.
-- Do NOT include comments or explanations.
-- Do NOT reuse, modify, or paraphrase previous examples.
-
-DYNAMIC DIVERSITY REQUIREMENTS (vary across generations):
-- Vary algorithmic patterns: subset generation, binary choice recursion, power set construction, bitmask enumeration, DFS with two branching choices per step.
-- Vary code length (short / medium / large).
-- Vary style: old Python formatting vs f-strings, different variable names, class/function/top-level code, iterative or recursive patterns, list comprehensions vs loops.
-- Vary input/output structure: function signatures, helper functions, global vs local state.
-- Vary control flow: recursion order, branching structure, loop placement.
-- Avoid repeating the same algorithmic skeleton in consecutive generations.
-
-TIME COMPLEXITY ACCURACY REQUIREMENTS:
-- The O(2^n) time must come from binary branching or an equivalent exponential structure.
-- Examples of valid structures:
-  - Subset generation recursion
-  - Include/exclude recursion
-  - Bitmask enumeration
-- Do not simulate O(2^n) with arbitrary nested loops or irrelevant operations.
-
-QUALITY CONTROL RULES:
-- The exponential growth must come from the algorithm’s branching structure.
-- Do not include artificial complexity inflation or irrelevant computation.
-- Ensure the snippet is runnable and self-contained.
-
-OUTPUT FORMAT:
-- Only output the Python code snippet.
-- No explanations, no text, no comments.
-
-INSTRUCTIONS:
-"""
 
 EVAL_SYS_PROMPT = """
 You are an expert in Python programming and algorithm analysis with deep knowledge of Big O time complexity. 

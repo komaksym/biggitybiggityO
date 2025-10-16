@@ -134,9 +134,6 @@ class Evaluate:
         responses = pd.DataFrame(responses)
         # Merge to base DF
         self.data_to_eval = self.data_to_eval.combine_first(responses)
-        #self.data_to_eval = pd.merge(self.data_to_eval, responses, on=self.feature_names)
-        #self.data_to_eval = pd.concat([self.data_to_eval, responses], axis=1)
-
         # Save
         self.data_to_eval.to_csv(save_path, index=False)
 
@@ -174,7 +171,6 @@ class Evaluate:
             synthetic_data.to_csv(output_path, index=False)
 
 
-
 async def main() -> None:
     # Clients
     deepseek_client = AsyncOpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
@@ -190,10 +186,10 @@ async def main() -> None:
     gemini_model = "gemini-2.5-flash"
 
     # Path for examples which we are randomly going to provide to the model
-    source_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval.csv"
+    source_path: Path = BASE_PATH.parent / "data/data_for_evaluation/data_for_eval_FAC.csv"
     # Output path
-    final_synthetic_data_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data.csv"
-    voted_data_path: Path = BASE_PATH.parent / "data/voted_data/voted_data.csv"
+    final_synthetic_data_path: Path = BASE_PATH.parent / "data/synthetic_data/synthetic_data_FAC.csv"
+    voted_data_path: Path = BASE_PATH.parent / "data/voted_data/voted_data_FAC.csv"
 
     # LLMs to use for evaluation
     deepseek_llm = LLM(deepseek_client, deepseek_model)

@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 import os
-from configs.config import run_name
 import mlflow
 from configs.config import experiment_name
 

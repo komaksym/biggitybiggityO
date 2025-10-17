@@ -115,9 +115,9 @@ peft_config = LoraConfig(
 )
 
 
-model = set_model(checkpoint, tokenizer, AutoModel)
+model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
 
-model = DeepseekV2ForSequenceClassification(model, model.config)
+#model = DeepseekV2ForSequenceClassification(model, model.config)
 model = get_peft_model(model=model, peft_config=peft_config)
 
 # print(f"Model: {model}")

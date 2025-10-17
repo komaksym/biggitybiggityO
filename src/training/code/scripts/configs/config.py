@@ -2,7 +2,7 @@ import torch
 from transformers import TrainingArguments
 
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
-experiment_name = "Full dataset focal loss testing"
+experiment_name = "Synthetic data testing"
 batch_size = 8
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -17,7 +17,7 @@ training_args = TrainingArguments(
     bf16=True,
     # gradient_checkpointing=True,
     #report_to="mlflow",
-    num_train_epochs=1,
+    num_train_epochs=3,
     max_grad_norm=0.3, # Per QLoRA paper recommendation
     warmup_ratio=0.03, # Per QLoRA paper recommendation
     weight_decay=0.001,

@@ -27,8 +27,6 @@ def compute_metrics(eval_preds):
     # Make preds & labels global for access in callbacks
     global last_preds, last_labels
 
-    #import pdb; pdb.set_trace()
-
     logits, labels = eval_preds
     preds = np.argmax(logits[0], axis=-1) if isinstance(logits, tuple) else np.argmax(logits, axis=-1)
 
@@ -43,7 +41,7 @@ def compute_metrics(eval_preds):
 
     # Calculate per-class recall
     recall_scores = recall_score(
-        y_true=labels, y_pred=preds, average=None, labels=[0, 1, 4, 5, 2, 3, 6]
+        y_true=labels, y_pred=preds, average=None, labels=[0, 2, 6, 7, 3, 4, 1, 5, 8]
     )  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
     recall_per_class = {}
 
@@ -69,15 +67,7 @@ class ConfusionMatrixCallback(TrainerCallback):
             disp = ConfusionMatrixDisplay.from_predictions(
                 y_true=last_labels,
                 y_pred=last_preds,
-                labels=[
-                    0,
-                    1,
-                    4,
-                    5,
-                    2,
-                    3,
-                    6,
-                ],  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
+                labels=[0, 2, 6, 7, 3, 4, 1, 5, 8],  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
                 display_labels=[
                     "O(1)",
                     "O(logn)",
@@ -85,6 +75,8 @@ class ConfusionMatrixCallback(TrainerCallback):
                     "O(nlogn)",
                     "O(n^2)",
                     "O(n^3)",
+                    "O(2^n)",
+                    "O(n!)",
                     "np",
                 ],
             )

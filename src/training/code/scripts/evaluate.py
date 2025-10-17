@@ -7,7 +7,7 @@ import mlflow
 from tqdm import tqdm
 from data import labelEncoder
 
-LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "np": 7}
+LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "exponential": 7, "factorial": 8, "np": 9}
 
 N_CLASSES = len(LABELS_HIERARCHY)
 

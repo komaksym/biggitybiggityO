@@ -40,7 +40,7 @@ def focal_loss(logits, labels, gamma=2.0, alpha=0.25):
 
 
 # Building
-trainer = CustomLossTrainer(
+trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=train_set,
@@ -48,7 +48,7 @@ trainer = CustomLossTrainer(
     data_collator=data_collator,
     processing_class=tokenizer,
     compute_metrics=compute_metrics,
-    loss_fn=focal_loss,
+    #loss_fn=focal_loss,
     callbacks=[ConfusionMatrixCallback(), RecallScoreCallback()],
 )
 

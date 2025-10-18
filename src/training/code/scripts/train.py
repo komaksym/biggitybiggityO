@@ -3,7 +3,7 @@ import torch.nn.functional as F
 from configs.config import checkpoint, training_args
 from data import data_collator, eval_set, tokenizer, train_set
 from evaluate import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics
-from model import model
+from model import peft_model
 from transformers import Trainer
 from utils import setup_mlflow
 
@@ -41,7 +41,7 @@ def focal_loss(logits, labels, gamma=2.0, alpha=0.25):
 
 # Building
 trainer = Trainer(
-    model=model,
+    model=peft_model,
     args=training_args,
     train_dataset=train_set,
     eval_dataset=eval_set,

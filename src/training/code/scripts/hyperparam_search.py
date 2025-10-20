@@ -2,7 +2,9 @@ from model import peft_model
 import wandb
 import optuna
 from optuna.storages import RDBStorage
-from train import trainer
+from transformers import Trainer
+from data import train_set, eval_set, tokenizer, data_collator
+from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback
 
 def model_init():
     return peft_model
@@ -25,6 +27,40 @@ def compute_objective(metrics):
 
 # Init wandb
 wandb.init(project="HPS-optuna", name="hyperparameter_search_optuna")
+
+# Training args
+training_args = TrainingArguments(
+    output_dir=f"hps_results/{checkpoint}/",
+    eval_strategy="epoch",
+    save_strategy="epoch",
+    logging_strategy="epoch",
+    learning_rate=2e-4, # Testing
+    bf16=True,
+    report_to="wandb",
+    num_train_epochs=3,
+    max_grad_norm=0.3, # Per QLoRA paper recommendation
+    warmup_ratio=0.03, # Per QLoRA paper recommendation
+    weight_decay=0.001,
+    lr_scheduler_type="cosine",
+    label_names=["labels"],
+    per_device_train_batch_size=batch_size,
+    per_device_eval_batch_size=batch_size,
+    gradient_accumulation_steps=1,
+    load_best_model_at_end=True,
+    run_name=f"{checkpoint}".split("/")[-1],
+)
+
+# Trainer
+trainer = Trainer(
+    args=training_args,
+    train_dataset=train_set,
+    eval_dataset=eval_set,
+    data_collator=data_collator,
+    processing_class=tokenizer,
+    compute_metrics=compute_metrics,
+    model_init=model_init,
+    callbacks=[ConfusionMatrixCallback(), RecallScoreCallback()],
+)
 
 # Define search space
 def optuna_hp_space(trial):

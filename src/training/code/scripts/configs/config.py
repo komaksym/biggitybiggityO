@@ -3,7 +3,7 @@ from transformers import TrainingArguments
 
 checkpoint = "Salesforce/codet5p-220m-py"
 experiment_name = "Hyperparam search testing"
-batch_size = 16
+batch_size = 8
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Training args

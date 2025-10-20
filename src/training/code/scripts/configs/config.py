@@ -1,9 +1,9 @@
 import torch
 from transformers import TrainingArguments
 
-checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
-experiment_name = "Oversampled underrepresented classes testing"
-batch_size = 8
+checkpoint = "Salesforce/codet5p-220m-py"
+experiment_name = "Hyperparam search testing"
+batch_size = 16
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Training args
@@ -25,7 +25,7 @@ training_args = TrainingArguments(
     label_names=["labels"],
     per_device_train_batch_size=batch_size,
     per_device_eval_batch_size=batch_size,
-    gradient_accumulation_steps=2,
+    gradient_accumulation_steps=1,
     load_best_model_at_end=True,
     run_name=f"{checkpoint}".split("/")[-1],
     # deepspeed="configs/ds_config.json",

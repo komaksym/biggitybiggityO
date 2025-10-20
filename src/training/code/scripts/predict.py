@@ -1,12 +1,10 @@
 import torch
-from datasets import Dataset
 from data import labelEncoder
 import numpy as np
 from model import base_model
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoTokenizer
 from pathlib import Path
 from peft import PeftModel
-from configs.config import device
 
 BASE_LOCATION: Path = Path(__file__).parent
 

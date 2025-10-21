@@ -62,7 +62,7 @@ study = optuna.create_study(
 
 # Init compute objective
 def compute_objective(metrics):
-    return metrics["f1_macro"]
+    return metrics["eval_f1_macro"]
 
 
 # Init wandb

@@ -9,4 +9,4 @@ packaging
 wheel
 flash-attn
 seaborn
-weightsandbiases
+wandb

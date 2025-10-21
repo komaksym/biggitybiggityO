@@ -3,7 +3,7 @@ import torch.nn as nn
 from accelerate import PartialState
 from configs.config import checkpoint
 from data import tokenizer
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import (
     AutoConfig,
     AutoModel,
@@ -118,6 +118,7 @@ peft_config = LoraConfig(
 base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
 
 #model = DeepseekV2ForSequenceClassification(model, model.config)
+base_model = prepare_model_for_kbit_training(base_model)
 peft_model = get_peft_model(model=base_model, peft_config=peft_config)
 
 # print(f"Model: {model}")

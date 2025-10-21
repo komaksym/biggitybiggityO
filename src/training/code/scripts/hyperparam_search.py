@@ -7,7 +7,7 @@ from transformers import Trainer, TrainingArguments, BitsAndBytesConfig, AutoMod
 from data import train_set, eval_set, tokenizer, data_collator
 from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
 from configs.config import checkpoint
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from model import set_model
 
 # Bitsandbytes (Quantization)
@@ -42,11 +42,12 @@ def model_init():
         #attn_implementation="flash_attention_2",  # Only for newer models
     )
 
+    # Prep for LoRA
+    base_model = prepare_model_for_kbit_training(base_model)
+    # LoRA
+    peft_model = get_peft_model(model=base_model, peft_config=peft_config)
 
-base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
-
-#model = DeepseekV2ForSequenceClassification(model, model.config)
-peft_model = get_peft_model(model=base_model, peft_config=peft_config)
+    return peft_model
 
 # Define persistent storage
 storage = RDBStorage("sqlite:///optuna_trials.db")
@@ -103,7 +104,7 @@ def optuna_hp_space(trial):
     return {
         "learning_rate": trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True),
         "per_device_train_batch_size": trial.suggest_int(
-            "per_device_train_batch_size", 1, 16,
+            "per_device_train_batch_size", 1, 2,
         ),
         #"r": trial.suggest_int( # Lora rank
             #"r", 8, 128

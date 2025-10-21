@@ -1,4 +1,3 @@
-from model import peft_model
 import wandb
 import optuna
 import torch
@@ -8,7 +7,6 @@ from data import train_set, eval_set, tokenizer, data_collator
 from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
 from configs.config import checkpoint
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-from model import set_model
 
 # Bitsandbytes (Quantization)
 bnb_config = BitsAndBytesConfig(
@@ -46,6 +44,7 @@ def model_init():
     base_model = prepare_model_for_kbit_training(base_model)
     # LoRA
     peft_model = get_peft_model(model=base_model, peft_config=peft_config)
+    #peft_model = base_model
 
     return peft_model
 

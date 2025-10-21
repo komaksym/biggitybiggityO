@@ -41,12 +41,12 @@ def upload_datasets(dataset_paths=DATASET_PATHS):
 train_set_path, eval_set_path = upload_datasets()
 
 # Load as df
-train_set = pd.read_csv(train_set_path)
-eval_set = pd.read_csv(eval_set_path)
+#train_set = pd.read_csv(train_set_path)
+#eval_set = pd.read_csv(eval_set_path)
 
 # 1 % of dataset for quick testing
-#train_set = pd.read_csv(train_set_path).sample(frac=0.001)
-#eval_set = pd.read_csv(eval_set_path).sample(frac=0.001)
+train_set = pd.read_csv(train_set_path).sample(frac=0.1)
+eval_set = pd.read_csv(eval_set_path).sample(frac=0.1)
 
 train_set = Dataset.from_pandas(train_set)
 eval_set = Dataset.from_pandas(eval_set)

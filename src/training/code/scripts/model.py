@@ -107,7 +107,7 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
 peft_config = LoraConfig(
     r=32,
     lora_alpha=64,
-    # target_modules = ['q_proj', 'v_proj'], # Qwen
+    # target_modules = ['q_proj', 'v_proj'], # Qwen 
     target_modules="all-linear",  # Heavy, universal
     lora_dropout=0.05,
     bias="none",

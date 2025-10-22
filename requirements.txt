@@ -1,4 +1,4 @@
-transformers==4.50.0
+transformers
 accelerate
 peft
 bitsandbytes
@@ -9,5 +9,4 @@ packaging
 wheel
 flash-attn
 seaborn
-wandb
 optuna

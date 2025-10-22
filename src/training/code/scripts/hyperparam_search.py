@@ -22,11 +22,11 @@ def objective(trial):
     hps_learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True)
     hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16, 32, 64])
     hps_lora_rank = trial.suggest_categorical("r", [8, 16, 32, 64, 128])
-    hps_lora_alpha = trial.suggest_int("lora_alpha", [8, 16, 32, 64, 128, 256])
+    hps_lora_alpha = trial.suggest_categorical("lora_alpha", [8, 16, 32, 64, 128, 256])
 
     # Augmenting big batch size with gradient accum
     batch_size = 4
-    gradient_accumulation_steps_ = hps_batch_size / batch_size
+    gradient_accumulation_steps_ = int(hps_batch_size / batch_size)
 
     base_model = AutoModelForSequenceClassification.from_pretrained(
         checkpoint,
@@ -101,5 +101,5 @@ study = optuna.create_study(
     study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
 )
 
-study.optimize(objective, n_trials=10)
+study.optimize(objective, n_trials=30)
 breakpoint()

@@ -40,14 +40,34 @@ def upload_datasets(dataset_paths=DATASET_PATHS):
 
 train_set_path, eval_set_path = upload_datasets()
 
-# Load as df
-#train_set = pd.read_csv(train_set_path)
-#eval_set = pd.read_csv(eval_set_path)
+# Read into pandas dataframes
+train_set = pd.read_csv(train_set_path)
+eval_set = pd.read_csv(eval_set_path)
 
-# 1 % of dataset for quick testing
-train_set = pd.read_csv(train_set_path).sample(frac=0.1)
-eval_set = pd.read_csv(eval_set_path).sample(frac=0.1)
 
+def generate_prompt(data_sample):
+    """Defines prompt schema for instruction tuning"""
+
+    data_sample["code"] = f"""
+            Classify the code snippet into: O(1), O(logn), O(n), O(nlogn),
+              O(n ^ 2), O(n ^ 3), np. And return the answer as the corresponding
+                big O time complexity label.
+            Code: {data_sample["code"]}"""
+
+    # data_sample["complexity"] = f"""
+    # Label: {data_sample["complexity"]}""".strip()
+
+    return data_sample
+
+# Apply instruction schema
+train_set = train_set.apply(generate_prompt, axis=1)
+eval_set = eval_set.apply(generate_prompt, axis=1)
+
+# Fractionize for faster testing iterations
+train_set = train_set.sample(frac=0.1)
+eval_set = eval_set.sample(frac=0.1)
+
+# Load as huggingface Datasets
 train_set = Dataset.from_pandas(train_set)
 eval_set = Dataset.from_pandas(eval_set)
 
@@ -64,7 +84,9 @@ def tokenize_data(data, tokenizer):
         truncation=True,
         max_length=512,
     )
-    tokenized["labels"] = labelEncoder.transform(data["complexity"]) # Not sure if needed for the prompt schema
+    tokenized["labels"] = labelEncoder.transform(
+        data["complexity"]
+    )  # Not sure if needed for the prompt schema
     return tokenized
 
 

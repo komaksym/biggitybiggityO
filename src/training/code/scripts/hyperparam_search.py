@@ -6,7 +6,7 @@ from data import train_set, eval_set, tokenizer, data_collator
 from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
 from configs.config import checkpoint
 from peft import LoraConfig, get_peft_model
-from joblib import parallel_backend
+from joblib import parallel_config
 
 
 # Define persistent storage
@@ -102,7 +102,7 @@ def objective(trial):
     return results["eval_f1_macro"]
 
 if __name__ == "__main__":
-    with parallel_backend("multiprocessing"):
+    with parallel_config("multiprocessing"):
         # Create study
         study = optuna.create_study(
             study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True

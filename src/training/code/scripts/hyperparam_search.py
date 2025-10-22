@@ -1,12 +1,11 @@
 import wandb
 import optuna
-import torch
 from optuna.storages import RDBStorage
 from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification
 from data import train_set, eval_set, tokenizer, data_collator
 from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
 from configs.config import checkpoint
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, get_peft_model
 
 
 # Define persistent storage
@@ -17,13 +16,13 @@ wandb.init(project="HPS-optuna", name="hyperparameter_search_optuna")
 
 
 def objective(trial):
-    """Optuna objective""""
+    """Optuna objective"""
 
     # Hyperparams to search
     learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True),
-    batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16, 32])
-    #lora_rank = trial.suggest_categorical("r", [8, 16, 32, 64, 128])
-    #lora_alpha = trial.suggest_categorical("lora_alpha", [2, 32, 4, 64, 8, 128, 16, 256, 32, 512])
+    batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16])
+    lora_rank = trial.suggest_categorical("r", [8, 16, 32, 64, 128])
+    lora_alpha = trial.suggest_categorical("lora_alpha", [8, 16, 32, 64, 128])
 
     base_model = AutoModelForSequenceClassification.from_pretrained(
         checkpoint,
@@ -31,14 +30,13 @@ def objective(trial):
         num_labels=N_CLASSES,
         trust_remote_code=True,
         device_map="auto",
-        quantization_config=bnb_config,
         attn_implementation="flash_attention_2",  # Only for newer models
     )
 
     # LoRA config
     peft_config = LoraConfig(
-        r=32,
-        lora_alpha=64,
+        r=lora_rank,
+        lora_alpha=lora_alpha,
         # target_modules = ['q_proj', 'v_proj'], # Qwen
         target_modules="all-linear",  # Heavy, universal
         lora_dropout=0.05,
@@ -73,15 +71,18 @@ def objective(trial):
 
     # Trainer
     trainer = Trainer(
+        model = peft_model,
         args=training_args,
         train_dataset=train_set,
         eval_dataset=eval_set,
         data_collator=data_collator,
         processing_class=tokenizer,
         compute_metrics=compute_metrics,
-        model_init=model_init,
         callbacks=[ConfusionMatrixCallback(), RecallScoreCallback()],
     )
+
+    results = trainer.evaluate()
+    return results["eval_f1_macro"]
 
 # Create study
 study = optuna.create_study(
@@ -91,7 +92,6 @@ study = optuna.create_study(
     load_if_exists=True
 )
 
-
 study.optimize(objective)
+breakpoint()
 
-print(best_run)

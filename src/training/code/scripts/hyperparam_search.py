@@ -61,12 +61,12 @@ def objective(trial):
     training_args = TrainingArguments(
         output_dir=f"hps_results/{checkpoint}/",
         save_strategy="no",
-        learning_rate=hps_learning_rate, # Testing
+        learning_rate=hps_learning_rate,  # Testing
         bf16=True,
         report_to="wandb",
         num_train_epochs=3,
-        max_grad_norm=0.3, # Per QLoRA paper recommendation
-        warmup_ratio=0.03, # Per QLoRA paper recommendation
+        max_grad_norm=0.3,  # Per QLoRA paper recommendation
+        warmup_ratio=0.03,  # Per QLoRA paper recommendation
         weight_decay=0.001,
         lr_scheduler_type="cosine",
         per_device_train_batch_size=batch_size,
@@ -79,7 +79,7 @@ def objective(trial):
 
     # Trainer
     trainer = Trainer(
-        model = peft_model,
+        model=peft_model,
         args=training_args,
         train_dataset=train_set,
         eval_dataset=eval_set,
@@ -89,21 +89,17 @@ def objective(trial):
         callbacks=[ConfusionMatrixCallback(), RecallScoreCallback()],
     )
 
-
     # Train
     trainer.train()
 
     results = trainer.evaluate()
     return results["eval_f1_macro"]
 
+
 # Create study
 study = optuna.create_study(
-    study_name="hyperparam_search",
-    direction="maximize",
-    storage=storage,
-    load_if_exists=True
+    study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
 )
 
 study.optimize(objective, n_trials=10)
 breakpoint()
-

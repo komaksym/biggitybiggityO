@@ -19,7 +19,7 @@ def objective(trial):
     """Optuna objective"""
 
     # Hyperparams to search
-    learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True),
+    learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True)
     batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16])
     lora_rank = trial.suggest_categorical("r", [8, 16, 32, 64, 128])
     lora_alpha = trial.suggest_categorical("lora_alpha", [8, 16, 32, 64, 128])
@@ -32,6 +32,12 @@ def objective(trial):
         device_map="auto",
         attn_implementation="flash_attention_2",  # Only for newer models
     )
+
+    # Accomodating the size of the token embeddings for the potential missing <pad> token
+    base_model.resize_token_embeddings(len(tokenizer), mean_resizing=False)
+
+    # Passing the pad token id to the model config
+    base_model.config.pad_token_id = tokenizer.pad_token_id
 
     # LoRA config
     peft_config = LoraConfig(
@@ -81,6 +87,10 @@ def objective(trial):
         callbacks=[ConfusionMatrixCallback(), RecallScoreCallback()],
     )
 
+
+    # Train
+    trainer.train()
+
     results = trainer.evaluate()
     return results["eval_f1_macro"]
 
@@ -92,6 +102,6 @@ study = optuna.create_study(
     load_if_exists=True
 )
 
-study.optimize(objective)
+study.optimize(objective, n_trials=10)
 breakpoint()
 

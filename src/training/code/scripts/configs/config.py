@@ -1,7 +1,7 @@
 import torch
 from transformers import TrainingArguments
 
-checkpoint = "Salesforce/codet5p-220m-py"
+checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 experiment_name = "Hyperparam search testing"
 batch_size = 8
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

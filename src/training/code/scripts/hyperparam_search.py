@@ -17,7 +17,7 @@ def objective(trial):
 
     # Hyperparams to search
     hps_learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True)
-    hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16, 32, 64])
+    hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16, 32])
     hps_lora_rank = trial.suggest_categorical("r", [8, 16, 32, 64, 128])
     hps_lora_alpha = trial.suggest_categorical("lora_alpha", [8, 16, 32, 64, 128, 256])
 
@@ -108,4 +108,4 @@ if __name__ == "__main__":
             study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
         )
 
-        study.optimize(objective, n_trials=20)
+        study.optimize(objective, n_trials=10)

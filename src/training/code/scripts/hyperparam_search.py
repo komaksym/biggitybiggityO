@@ -1,4 +1,3 @@
-import wandb
 import optuna
 from optuna.storages import RDBStorage
 from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification
@@ -10,10 +9,6 @@ from peft import LoraConfig, get_peft_model
 
 # Define persistent storage
 storage = RDBStorage("sqlite:///optuna_trials.db")
-
-# Init wandb
-wandb.init(project="HPS-optuna", name="hyperparameter_search_optuna")
-
 
 def objective(trial):
     """Optuna objective"""
@@ -63,7 +58,6 @@ def objective(trial):
         save_strategy="no",
         learning_rate=hps_learning_rate,  # Testing
         bf16=True,
-        report_to="wandb",
         num_train_epochs=3,
         max_grad_norm=0.3,  # Per QLoRA paper recommendation
         warmup_ratio=0.03,  # Per QLoRA paper recommendation
@@ -101,5 +95,4 @@ study = optuna.create_study(
     study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
 )
 
-study.optimize(objective, n_trials=30)
-breakpoint()
+study.optimize(objective, n_trials=20)

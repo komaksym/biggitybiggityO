@@ -1,6 +1,7 @@
+import torch
 import optuna
 from optuna.storages import RDBStorage
-from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification
+from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification, BitsAndBytesConfig
 from data import train_set, eval_set, tokenizer, data_collator
 from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
 from configs.config import checkpoint
@@ -23,6 +24,15 @@ def objective(trial):
     batch_size = 4
     gradient_accumulation_steps_ = int(hps_batch_size / batch_size)
 
+    # Bitsandbytes (Quantization)
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_storage=torch.bfloat16,
+    )
+
     base_model = AutoModelForSequenceClassification.from_pretrained(
         checkpoint,
         torch_dtype="auto",
@@ -30,6 +40,7 @@ def objective(trial):
         trust_remote_code=True,
         device_map="auto",
         attn_implementation="flash_attention_2",  # Only for newer models
+        quantization_config=bnb_config
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token
@@ -89,10 +100,10 @@ def objective(trial):
     results = trainer.evaluate()
     return results["eval_f1_macro"]
 
+if __name__ == "__main__":
+    # Create study
+    study = optuna.create_study(
+        study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
+    )
 
-# Create study
-study = optuna.create_study(
-    study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
-)
-
-study.optimize(objective, n_trials=20)
+    study.optimize(objective, n_trials=20)

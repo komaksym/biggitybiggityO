@@ -4,10 +4,11 @@ from optuna.storages import RDBStorage
 from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification, BitsAndBytesConfig
 from data import train_set, eval_set, tokenizer, data_collator
 from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
-from configs.config import checkpoint
 from peft import LoraConfig, get_peft_model
 from joblib import parallel_config
 
+# Model
+checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 
 # Define persistent storage
 storage = RDBStorage("sqlite:///optuna_trials.db")
@@ -102,6 +103,7 @@ def objective(trial):
     return results["eval_f1_macro"]
 
 if __name__ == "__main__":
+    # Run each study in it's own python subprocess to avoid segfaults with bitsandbytes
     with parallel_config("multiprocessing"):
         # Create study
         study = optuna.create_study(

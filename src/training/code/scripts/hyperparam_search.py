@@ -19,10 +19,14 @@ def objective(trial):
     """Optuna objective"""
 
     # Hyperparams to search
-    learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True)
-    batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16])
-    lora_rank = trial.suggest_categorical("r", [8, 16, 32, 64, 128])
-    lora_alpha = trial.suggest_categorical("lora_alpha", [8, 16, 32, 64, 128])
+    hps_learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4, log=True)
+    hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16, 32, 64])
+    hps_lora_rank = trial.suggest_categorical("r", [8, 16, 32, 64, 128])
+    hps_lora_alpha = trial.suggest_int("lora_alpha", [8, 16, 32, 64, 128, 256])
+
+    # Augmenting big batch size with gradient accum
+    batch_size = 4
+    gradient_accumulation_steps_ = hps_batch_size / batch_size
 
     base_model = AutoModelForSequenceClassification.from_pretrained(
         checkpoint,
@@ -41,8 +45,8 @@ def objective(trial):
 
     # LoRA config
     peft_config = LoraConfig(
-        r=lora_rank,
-        lora_alpha=lora_alpha,
+        r=hps_lora_rank,
+        lora_alpha=hps_lora_alpha,
         # target_modules = ['q_proj', 'v_proj'], # Qwen
         target_modules="all-linear",  # Heavy, universal
         lora_dropout=0.05,
@@ -56,10 +60,8 @@ def objective(trial):
     # Training args
     training_args = TrainingArguments(
         output_dir=f"hps_results/{checkpoint}/",
-        eval_strategy="epoch",
-        save_strategy="epoch",
-        logging_strategy="epoch",
-        learning_rate=learning_rate, # Testing
+        save_strategy="no",
+        learning_rate=hps_learning_rate, # Testing
         bf16=True,
         report_to="wandb",
         num_train_epochs=3,
@@ -69,7 +71,7 @@ def objective(trial):
         lr_scheduler_type="cosine",
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
-        gradient_accumulation_steps=1,
+        gradient_accumulation_steps=gradient_accumulation_steps_,
         label_names=["labels"],
         load_best_model_at_end=True,
         run_name=f"{checkpoint}".split("/")[-1],

@@ -11,20 +11,20 @@ from joblib import parallel_config
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 
 # Define persistent storage
-storage = RDBStorage("sqlite:///optuna_trials_run2.db")
+storage = RDBStorage("sqlite:///optuna_trials_run3.db")
 
 def objective(trial):
     """Optuna objective"""
 
     # Hyperparams to search
-    hps_learning_rate = trial.suggest_float("learning_rate", 2e-4, 2e-3, log=True)
-    hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 16, 32])
+    hps_learning_rate = trial.suggest_float("learning_rate", 1e-4, 2e-3, log=True)
+    hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [4, 8, 16])
     hps_lora_rank = trial.suggest_categorical("r", [32, 64, 128])
     hps_lora_alpha = trial.suggest_categorical("lora_alpha", [32, 64, 128, 256])
 
     # Augmenting big batch size with gradient accum
     batch_size = 4
-    gradient_accumulation_steps_ = int(hps_batch_size / batch_size)
+    gradient_accumulation_steps_ = hps_batch_size // batch_size
 
     # Bitsandbytes (Quantization)
     bnb_config = BitsAndBytesConfig(
@@ -110,4 +110,4 @@ if __name__ == "__main__":
             study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
         )
 
-        study.optimize(objective, n_trials=10)
+        study.optimize(objective, n_trials=20)

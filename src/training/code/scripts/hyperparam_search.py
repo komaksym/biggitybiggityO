@@ -11,7 +11,7 @@ from joblib import parallel_config
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 
 # Define persistent storage
-storage = RDBStorage("sqlite:///optuna_trials_run3.db")
+storage = RDBStorage("sqlite:///optuna_trials_FULL_DATA.db")
 
 def objective(trial):
     """Optuna objective"""

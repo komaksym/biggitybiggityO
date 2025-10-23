@@ -17,7 +17,6 @@ def objective(trial):
     """Optuna objective"""
 
     # Hyperparams to search
-    hps_learning_rate = trial.suggest_float("learning_rate", 1e-4, 2e-3, log=True)
     hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [8, 16, 32])
     hps_lora_rank = trial.suggest_categorical("r", [32, 64, 128])
     hps_lora_alpha = trial.suggest_categorical("lora_alpha", [32, 64, 128, 256])
@@ -69,7 +68,7 @@ def objective(trial):
     training_args = TrainingArguments(
         output_dir=f"hps_results/{checkpoint}/",
         save_strategy="no",
-        learning_rate=hps_learning_rate,  # Testing
+        learning_rate=2e-4,  # Testing
         bf16=True,
         num_train_epochs=3,
         max_grad_norm=0.3,  # Per QLoRA paper recommendation
@@ -110,4 +109,4 @@ if __name__ == "__main__":
             study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
         )
 
-        study.optimize(objective, n_trials=20)
+        study.optimize(objective, n_trials=10)

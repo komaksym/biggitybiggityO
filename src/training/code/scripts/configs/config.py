@@ -1,13 +1,13 @@
 import torch
 from transformers import TrainingArguments
 
-checkpoint = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 experiment_name = "Finetuning post HPS"
 
 # Batch size
-effective_batch_size = 16 # Batch size that we want
-batch_size = 8 # Batch size that we can fit in memory
-grad_accum_steps = effective_batch_size // batch_size # Use grad accum to mimic big batch size
+effective_batch_size = 16
+batch_size = 8
+grad_accum_steps = effective_batch_size // batch_size
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

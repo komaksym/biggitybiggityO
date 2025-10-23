@@ -64,8 +64,8 @@ train_set = train_set.apply(generate_prompt, axis=1)
 eval_set = eval_set.apply(generate_prompt, axis=1)
 
 # Fractionize for faster testing iterations
-train_set = train_set.sample(frac=0.1)
-eval_set = eval_set.sample(frac=0.1)
+#train_set = train_set.sample(frac=0.1)
+#eval_set = eval_set.sample(frac=0.1)
 
 # Load as huggingface Datasets
 train_set = Dataset.from_pandas(train_set)

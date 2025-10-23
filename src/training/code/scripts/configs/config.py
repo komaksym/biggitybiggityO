@@ -2,7 +2,7 @@ import torch
 from transformers import TrainingArguments
 
 checkpoint = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
-experiment_name = "Hyperparam search"
+experiment_name = "Finetuning post HPS"
 
 # Batch size
 effective_batch_size = 16

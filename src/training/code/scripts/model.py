@@ -3,7 +3,7 @@ import torch.nn as nn
 from accelerate import PartialState
 from configs.config import checkpoint
 from data import tokenizer
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, get_peft_model
 from transformers import (
     AutoConfig,
     AutoModel,
@@ -37,7 +37,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
         trust_remote_code=True,
         device_map=PartialState().process_index,
         quantization_config=quant_config,
-        #attn_implementation="flash_attention_2",  # Only for newer models
+        attn_implementation="flash_attention_2",  # Only for newer models
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token
@@ -118,7 +118,6 @@ peft_config = LoraConfig(
 base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
 
 #model = DeepseekV2ForSequenceClassification(model, model.config)
-base_model = prepare_model_for_kbit_training(base_model)
 peft_model = get_peft_model(model=base_model, peft_config=peft_config)
 
 # print(f"Model: {model}")

@@ -5,8 +5,8 @@ checkpoint = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
 experiment_name = "Finetuning post HPS"
 
 # Batch size
-effective_batch_size = 16
-batch_size = 2
+effective_batch_size = 32
+batch_size = 8
 grad_accum_steps = effective_batch_size / batch_size
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -22,7 +22,7 @@ training_args = TrainingArguments(
     bf16=True,
     # gradient_checkpointing=True,
     report_to="mlflow",
-    num_train_epochs=3,
+    num_train_epochs=7,
     max_grad_norm=0.3, # Per QLoRA paper recommendation
     warmup_ratio=0.03, # Per QLoRA paper recommendation
     weight_decay=0.001,

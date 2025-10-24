@@ -4,10 +4,8 @@ import seaborn as sns
 from sklearn.metrics import ConfusionMatrixDisplay, accuracy_score, f1_score, recall_score
 from transformers import TrainerCallback
 import mlflow
-from tqdm import tqdm
-from data import labelEncoder
 
-LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "exponential": 7, "factorial": 8, "np": 9}
+LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "np": 7}
 
 N_CLASSES = len(LABELS_HIERARCHY)
 
@@ -41,7 +39,7 @@ def compute_metrics(eval_preds):
 
     # Calculate per-class recall
     recall_scores = recall_score(
-        y_true=labels, y_pred=preds, average=None, labels=[0, 2, 6, 7, 3, 4, 1, 5, 8]
+        y_true=labels, y_pred=preds, average=None, labels=[1, 2, 3, 4, 5, 6, 7]
     )  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
     recall_per_class = {}
 
@@ -67,7 +65,7 @@ class ConfusionMatrixCallback(TrainerCallback):
             disp = ConfusionMatrixDisplay.from_predictions(
                 y_true=last_labels,
                 y_pred=last_preds,
-                labels=[0, 2, 6, 7, 3, 4, 1, 5, 8],  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
+                labels=[1, 2, 3, 4, 5, 6, 7],  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
                 display_labels=[
                     "O(1)",
                     "O(logn)",

@@ -18,6 +18,9 @@ def objective(trial):
 
     # Hyperparams to search
     hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [8, 16, 32])
+    hps_lora_dropout = trial.suggest_float("lora_dropout", 0, 0.1)
+    hps_weight_decay = trial.suggest_float("weight_decay", 0.01, 0.1)
+    hps_warmup_ratio = trial.suggest_float("warmup_ratio", 0.01, 0.1)
     hps_lora_rank = trial.suggest_categorical("r", [32, 64, 128])
     hps_lora_alpha = trial.suggest_categorical("lora_alpha", [32, 64, 128])
 
@@ -56,7 +59,7 @@ def objective(trial):
         lora_alpha=hps_lora_alpha,
         # target_modules = ['q_proj', 'v_proj'], # Qwen
         target_modules="all-linear",  # Heavy, universal
-        lora_dropout=0.05,
+        lora_dropout=hps_lora_dropout,
         bias="none",
         task_type="SEQ_CLS",  # might not work with this on
     )
@@ -72,8 +75,8 @@ def objective(trial):
         bf16=True,
         num_train_epochs=3,
         max_grad_norm=0.3,  # Per QLoRA paper recommendation
-        warmup_ratio=0.03,  # Per QLoRA paper recommendation
-        weight_decay=0.001,
+        warmup_ratio=hps_warmup_ratio,  # Per QLoRA paper recommendation
+        weight_decay=hps_weight_decay,
         lr_scheduler_type="cosine",
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,

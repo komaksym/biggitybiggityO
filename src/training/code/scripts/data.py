@@ -71,22 +71,23 @@ eval_set = eval_set.sample(frac=0.1)
 train_set = Dataset.from_pandas(train_set)
 eval_set = Dataset.from_pandas(eval_set)
 
+# Encoding labels
+# Specifying the order of the labels
+label2id = {'O(1)': 1, 'O(logn)': 2, 'O(n)': 3, 'O(nlogn)': 4, 'O(n ^ 2)': 5, 'O(n ^ 3)': 6, 'np': 7}
+id2label = {label2id[k]: k for k in label2id.keys()}
+
+def encode_labels(val):
+    """Applier function for encoding labels"""
+    return label2id[val]
+
 # Tokenization
-# Setting up Label Encoder
-labelEncoder = LabelEncoder()
-labelEncoder.fit(train_set["complexity"])
-
-
 def tokenize_data(data, tokenizer):
-    # Tokenizing
     tokenized = tokenizer(
         data["code"],
         truncation=True,
         max_length=512,
     )
-    tokenized["labels"] = labelEncoder.transform(
-        data["complexity"]
-    )  # Not sure if needed for the prompt schema
+    tokenized["labels"] = data["complexity"].apply(encode_labels) # Not sure if needed for the prompt schema
     return tokenized
 
 

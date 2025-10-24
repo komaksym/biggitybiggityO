@@ -1,5 +1,5 @@
 import torch
-from data import labelEncoder
+from data import id2label
 import numpy as np
 from model import base_model
 from transformers import AutoTokenizer
@@ -15,7 +15,7 @@ def predict(inputs, model, tokenizer):
     # Predicting & decoding inputs
     preds = model(**inputs)
     logits = preds.logits[0].to(dtype=torch.float32).cpu().detach().numpy()
-    preds = labelEncoder.inverse_transform(y=np.ravel(np.argmax(logits, axis=-1)))
+    preds = labelEncoder.inverse_transform(y=np.ravel(np.argmax(logits, axis=-1))) # Rewrite the encoder since i left labelEncoder behind
 
     return preds[0]
 

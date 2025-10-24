@@ -112,4 +112,4 @@ if __name__ == "__main__":
             study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
         )
 
-        study.optimize(objective, n_trials=10)
+        study.optimize(objective, n_trials=20)

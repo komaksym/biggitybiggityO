@@ -1,3 +1,4 @@
+import wandb
 import torch
 import optuna
 from optuna.storages import RDBStorage
@@ -9,6 +10,9 @@ from joblib import parallel_config
 
 # Model
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
+
+# Init wandb
+wandb.init(project="HPS-optuna", name="hyperparameter_search_optuna")
 
 # Define persistent storage
 storage = RDBStorage("sqlite:///optuna_trials_FULL_DATA.db")
@@ -78,6 +82,7 @@ def objective(trial):
         warmup_ratio=hps_warmup_ratio,  # Per QLoRA paper recommendation
         weight_decay=hps_weight_decay,
         lr_scheduler_type="cosine",
+        report_to="wandb",
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         gradient_accumulation_steps=gradient_accumulation_steps_,

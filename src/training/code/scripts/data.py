@@ -2,14 +2,11 @@ import os
 from pathlib import Path
 
 import numpy as np
-import torch
-from configs.config import checkpoint, device
-from sklearn.preprocessing import LabelEncoder
+from configs.config import checkpoint
 from transformers import AutoTokenizer, DataCollatorWithPadding
 import pandas as pd
 
 from datasets import Dataset
-import pandas as pd
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -62,8 +59,8 @@ def generate_prompt(data_sample):
     return data_sample
 
 # Apply instruction schema
-train_set = train_set.apply(generate_prompt, axis=1)
-eval_set = eval_set.apply(generate_prompt, axis=1)
+#train_set = train_set.apply(generate_prompt, axis=1)
+#eval_set = eval_set.apply(generate_prompt, axis=1)
 
 # Fractionize for faster testing iterations
 train_set = train_set.sample(frac=0.1)

@@ -59,12 +59,12 @@ def generate_prompt(data_sample):
     return data_sample
 
 # Apply instruction schema
-#train_set = train_set.apply(generate_prompt, axis=1)
-#eval_set = eval_set.apply(generate_prompt, axis=1)
+train_set = train_set.apply(generate_prompt, axis=1)
+eval_set = eval_set.apply(generate_prompt, axis=1)
 
 # Fractionize for faster testing iterations
-train_set = train_set.sample(frac=0.1)
-eval_set = eval_set.sample(frac=0.1)
+#train_set = train_set.sample(frac=0.1)
+#eval_set = eval_set.sample(frac=0.1)
 
 # Load as huggingface Datasets
 train_set = Dataset.from_pandas(train_set)
@@ -96,22 +96,24 @@ def set_tokenizer(checkpoint):
         tokenizer = AutoTokenizer.from_pretrained(checkpoint)
         print(f"Falling back to {checkpoint}")
 
-    X_train = train_set.map(
-        lambda x: tokenize_data(x, tokenizer),
-        batched=True,
-        remove_columns=train_set.column_names,
-    )
-    X_eval = eval_set.map(
-        lambda x: tokenize_data(x, tokenizer),
-        batched=True,
-        remove_columns=eval_set.column_names,
-    )
-
     # Data Collator
     tokenizer.padding_side = "left"
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-    return tokenizer, data_collator, X_train, X_eval
+    return tokenizer, data_collator 
 
 
-# Set up tokenizer, datasets, and model (as before)
-tokenizer, data_collator, train_set, eval_set = set_tokenizer(checkpoint)
+# Set up tokenizer
+tokenizer, data_collator = set_tokenizer(checkpoint)
+
+# Tokenize train/eval sets
+train_set = train_set.map(
+    lambda x: tokenize_data(x, tokenizer),
+    batched=True,
+    remove_columns=train_set.column_names,
+    )
+
+eval_set = eval_set.map(
+    lambda x: tokenize_data(x, tokenizer),
+    batched=True,
+    remove_columns=eval_set.column_names,
+)

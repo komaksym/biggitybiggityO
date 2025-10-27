@@ -5,7 +5,7 @@ from sklearn.metrics import ConfusionMatrixDisplay, accuracy_score, f1_score, re
 from transformers import TrainerCallback
 import mlflow
 
-LABELS_HIERARCHY = {"constant": 1, "logn": 2, "linear": 3, "nlogn": 4, "quadratic": 5, "cubic": 6, "np": 7}
+LABELS_HIERARCHY = {"constant": 0, "logn": 1, "linear": 2, "nlogn": 3, "quadratic": 4, "cubic": 5, "np": 6}
 
 N_CLASSES = len(LABELS_HIERARCHY)
 
@@ -39,7 +39,7 @@ def compute_metrics(eval_preds):
 
     # Calculate per-class recall
     recall_scores = recall_score(
-        y_true=labels, y_pred=preds, average=None, labels=[1, 2, 3, 4, 5, 6, 7]
+        y_true=labels, y_pred=preds, average=None, labels=[0, 1, 2, 3, 4, 5, 6]
     )  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
     recall_per_class = {}
 
@@ -65,7 +65,7 @@ class ConfusionMatrixCallback(TrainerCallback):
             disp = ConfusionMatrixDisplay.from_predictions(
                 y_true=last_labels,
                 y_pred=last_preds,
-                labels=[1, 2, 3, 4, 5, 6, 7],  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
+                labels=[0, 1, 2, 3, 4, 5, 6],  # reorder labels here because of how labelEncoder encodes the labels in not complexity-wise ascending order
                 display_labels=[
                     "O(1)",
                     "O(logn)",

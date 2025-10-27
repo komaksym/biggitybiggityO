@@ -1,19 +1,19 @@
 import torch
-from data import id2label
+from data import id2label, generate_prompt, tokenize_data
+from evaluate import compute_metrics
 import numpy as np
 from model import base_model
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, Trainer
 from pathlib import Path
 from peft import PeftModel
+import pandas as pd
+from datasets import Dataset
 
 BASE_LOCATION: Path = Path(__file__).parent
 
-def predict(inputs, model, tokenizer):
-    # Tokenizing inputs
-    inputs = tokenizer(inputs, return_tensors="pt", padding=True, truncation=True).to(device=model.device)
-
+def predict(inputs, model):
     # Predicting & decoding inputs
-    preds = model(**inputs)
+    preds = model(**torch.tensor(inputs.to_dict()))
     logits = preds.logits[0].to(dtype=torch.float32).cpu().detach().numpy()
     prediction = np.ravel(np.argmax(logits, axis=-1))[0]
     preds = id2label[prediction]
@@ -22,45 +22,33 @@ def predict(inputs, model, tokenizer):
 
 
 def main():
-    prompt = """
-    Classify the code snippet into: O(1), O(logn), O(n), O(nlogn),
-              O(n ^ 2), O(n ^ 3), np. And return the answer as the corresponding
-                big O time complexity label.
-            Code: 
-    """
-
-    test_sample = """
- def Onlogn_merge_sort(sequence):
-    if len(sequence) < 2:
-        return sequence
-    
-    m = len(sequence) // 2
-    return Onlogn_merge(Onlogn_merge_sort(sequence[:m]), Onlogn_merge_sort(sequence[m:]))
-
-
-def Onlogn_merge(left, right):
-    result = []
-    i = j = 0
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
-    result += left[i:]
-    result += right[j:]
-
-    return result
-            """
-    
     pretrained_path = BASE_LOCATION.parents[3] / "best_model/deepseek-ai/deepseek-coder-1.3b-base/"
 
     tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
     model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
+    # Read the test set
+    test_set = pd.read_csv("test_set.csv")
+    # Apply the prompt schema
+    #test_set = test_set.apply(generate_prompt, axis=1)
+    test_set = Dataset.from_pandas(test_set)
 
-    response = predict(prompt + test_sample, model, tokenizer)
-    print(f"LABEL: {response}")
+    # Tokenize
+    test_set = test_set.map(
+        lambda x: tokenize_data(x, tokenizer),
+        batched=True,
+        remove_columns=test_set.column_names
+    )
+    
+    trainer = Trainer(
+        model=model, 
+        processing_class=tokenizer,
+        eval_dataset=test_set,
+        compute_metrics=compute_metrics
+    )
+
+    results = trainer.evaluate()
+
+    print(results)
 
 
 

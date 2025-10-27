@@ -15,12 +15,20 @@ def predict(inputs, model, tokenizer):
     # Predicting & decoding inputs
     preds = model(**inputs)
     logits = preds.logits[0].to(dtype=torch.float32).cpu().detach().numpy()
-    preds = labelEncoder.inverse_transform(y=np.ravel(np.argmax(logits, axis=-1))) # Rewrite the encoder since i left labelEncoder behind
+    prediction = np.ravel(np.argmax(logits, axis=-1))[0]
+    preds = id2label[prediction]
 
-    return preds[0]
+    return preds
 
 
 def main():
+    prompt = """
+    Classify the code snippet into: O(1), O(logn), O(n), O(nlogn),
+              O(n ^ 2), O(n ^ 3), np. And return the answer as the corresponding
+                big O time complexity label.
+            Code: 
+    """
+
     test_sample = """
  def Onlogn_merge_sort(sequence):
     if len(sequence) < 2:
@@ -51,7 +59,7 @@ def Onlogn_merge(left, right):
     tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
     model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
 
-    response = predict(test_sample, model, tokenizer)
+    response = predict(prompt + test_sample, model, tokenizer)
     print(f"LABEL: {response}")
 
 

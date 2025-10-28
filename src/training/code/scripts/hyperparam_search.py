@@ -2,10 +2,11 @@ import wandb
 import torch
 import optuna
 from optuna.storages import RDBStorage
-from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification, BitsAndBytesConfig
+from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification, BitsAndBytesConfig, AutoModel
 from data import train_set, eval_set, tokenizer, data_collator
 from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
 from peft import LoraConfig, get_peft_model
+from model import DeepseekV2ForSequenceClassification
 from joblib import parallel_config
 
 # Model
@@ -42,7 +43,7 @@ def objective(trial):
         bnb_4bit_quant_storage=torch.bfloat16,
     )
 
-    base_model = AutoModelForSequenceClassification.from_pretrained(
+    base_model = AutoModel.from_pretrained(
         checkpoint,
         torch_dtype="auto",
         num_labels=N_CLASSES,
@@ -68,6 +69,8 @@ def objective(trial):
         bias="none",
         task_type="SEQ_CLS",  # might not work with this on
     )
+
+    base_model = DeepseekV2ForSequenceClassification(base_model, base_model.config)
 
     # LoRA
     peft_model = get_peft_model(model=base_model, peft_config=peft_config)

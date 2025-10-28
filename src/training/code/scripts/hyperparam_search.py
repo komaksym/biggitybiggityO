@@ -30,7 +30,7 @@ def objective(trial):
     hps_lora_alpha = trial.suggest_categorical("lora_alpha", [32, 64, 128])
 
     # Augmenting big batch size with gradient accum
-    batch_size = 8
+    batch_size = 4
     gradient_accumulation_steps_ = hps_batch_size // batch_size
 
     # Bitsandbytes (Quantization)

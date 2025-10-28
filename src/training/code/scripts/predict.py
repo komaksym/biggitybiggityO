@@ -22,7 +22,7 @@ def predict(inputs, model):
 
 
 def main():
-    pretrained_path = BASE_LOCATION.parents[3] / "best_model/deepseek-ai/deepseek-coder-1.3b-base/"
+    pretrained_path = BASE_LOCATION.parents[1] / "models/best_model/deepseek-ai/deepseek-coder-1.3b-base/"
 
     tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
     model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")

@@ -9,18 +9,19 @@ from peft import LoraConfig, get_peft_model
 from joblib import parallel_config
 
 # Model
-checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
+checkpoint = "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct"
 
 # Init wandb
 wandb.init(project="HPS-optuna", name="hyperparameter_search_optuna")
 
 # Define persistent storage
-storage = RDBStorage("sqlite:///optuna_trials_FULL_DATA.db")
+storage = RDBStorage("sqlite:///optuna_trials_deepseek-coder-v2.db")
 
 def objective(trial):
     """Optuna objective"""
 
     # Hyperparams to search
+    hps_learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4)
     hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [8, 16, 32])
     hps_lora_dropout = trial.suggest_float("lora_dropout", 0, 0.1)
     hps_weight_decay = trial.suggest_float("weight_decay", 0.01, 0.1)
@@ -75,7 +76,7 @@ def objective(trial):
     training_args = TrainingArguments(
         output_dir=f"hps_results/{checkpoint}/",
         save_strategy="no",
-        learning_rate=2e-4,  # Testing
+        learning_rate=hps_learning_rate,  # Testing
         bf16=True,
         num_train_epochs=3,
         max_grad_norm=0.3,  # Per QLoRA paper recommendation

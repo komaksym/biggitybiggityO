@@ -61,8 +61,7 @@ class Evaluate:
         self.llm_preds: dict[str, list[str | None]] = {}
 
         # Load the data
-        self.data: pd.DataFrame = pd.read_csv(source_path).sample(frac=0.1)
-        #self.data: pd.DataFrame = pd.read_csv(source_path)
+        self.data: pd.DataFrame = pd.read_csv(source_path)
         self.labels = self.data["complexity"].str.replace(" ", "")
 
         # Handle potential absence of the column, or an empty dataframe
@@ -126,28 +125,44 @@ class Evaluate:
         # Result
         f1_score_ = f1_score(self.labels, preds, average="macro")
         return f1_score_
+    
+    def save_results(self, model_name, result, output_path):
+        new_data = pd.DataFrame({'model_name': [model_name], 'f1-macro': [result]})
+
+        # If some data already exists
+        if output_path.exists():
+            # Read the already existing data
+            main = pd.read_csv(output_path)
+            # Concatenate the new one to the existing data
+            combined = pd.concat([main, new_data], ignore_index=True)
+            # Save the combined version
+            combined.to_csv(output_path, index=False)
+        else:
+            # Save data for verification
+            new_data.to_csv(output_path, index=False)
+
         
 
 
 async def main() -> None:
     # Client
-    #client = AsyncOpenAI(
-        #api_key=os.environ["XAI_API_KEY"],
-        #base_url="https://api.x.ai/v1",
-    #)
-    #model = "grok-3"
+    client = AsyncOpenAI(
+        api_key=os.environ["XAI_API_KEY"],
+        base_url="https://api.x.ai/v1",
+    )
+    model = "grok-3"
 
     # Test client
     #client = AsyncOpenAI(
         #api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com"
     #)
-    #model = "deepseek-reasoner"
+    #model = "deepseek-chat"
     
-    client = AsyncOpenAI(
-        api_key=os.environ["OPENAI_API_KEY"],
-        base_url="https://api.openai.com/v1",
-    )
-    model = "gpt-5"
+    #client = AsyncOpenAI(
+        #api_key=os.environ["OPENAI_API_KEY"],
+        #base_url="https://api.openai.com/v1",
+    #)
+    #model = "gpt-5"
 
     eval_instruction = """
     You are a Python algorithms expert, specializing in mapping Python code to time complexity Big O labels.  
@@ -181,8 +196,8 @@ async def main() -> None:
         O(nlogn)
     """
 
-    source_path: Path = BASE_PATH.parents[1] / "eval_set.csv"
-    save_path: Path = BASE_PATH.parent / "results.csv"
+    source_path: Path = BASE_PATH.parents[1] / "test_set.csv"
+    save_path: Path = BASE_PATH / "results.csv"
 
     # LLM to use
     llm = LLM(client, model)
@@ -195,9 +210,9 @@ async def main() -> None:
     # Process responses
     preds = eval.process_responses(responses)
     # Evaluate
-    print(f"FINAL F1-score: {eval.evaluate(preds)}")
-    # Save data for review
-    #audit.save_data_to_review(save_path)
+    result = eval.evaluate(preds)
+    # Add result
+    eval.save_results(model_name=model, result=result, output_path=save_path)
 
 
 if __name__ == "__main__":

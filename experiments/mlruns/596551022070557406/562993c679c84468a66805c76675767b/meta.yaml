@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/596551022070557406/562993c679c84468a66805c76675767b/artifacts
+end_time: 1760005635265
+entry_point_name: ''
+experiment_id: '596551022070557406'
+lifecycle_stage: active
+run_id: 562993c679c84468a66805c76675767b
+run_name: DeepSeek-Coder-V2-Lite-Instruct
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760005633660
+status: 3
+tags: []
+user_id: root

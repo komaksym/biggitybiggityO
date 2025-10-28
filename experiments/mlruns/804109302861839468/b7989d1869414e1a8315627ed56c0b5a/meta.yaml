@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/804109302861839468/b7989d1869414e1a8315627ed56c0b5a/artifacts
+end_time: 1760696012124
+entry_point_name: ''
+experiment_id: '804109302861839468'
+lifecycle_stage: active
+run_id: b7989d1869414e1a8315627ed56c0b5a
+run_name: flawless-wasp-154
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760696010255
+status: 3
+tags: []
+user_id: root

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/804109302861839468/d62411c1ba9e445e9626390d55a59a86/artifacts
+end_time: 1760695960333
+entry_point_name: ''
+experiment_id: '804109302861839468'
+lifecycle_stage: active
+run_id: d62411c1ba9e445e9626390d55a59a86
+run_name: serious-cod-860
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760695958204
+status: 3
+tags: []
+user_id: root

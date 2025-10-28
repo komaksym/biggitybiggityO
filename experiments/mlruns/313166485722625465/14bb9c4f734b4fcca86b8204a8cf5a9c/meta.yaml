@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/313166485722625465/14bb9c4f734b4fcca86b8204a8cf5a9c/artifacts
+end_time: 1760038499584
+entry_point_name: ''
+experiment_id: '313166485722625465'
+lifecycle_stage: active
+run_id: 14bb9c4f734b4fcca86b8204a8cf5a9c
+run_name: hilarious-auk-590
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760038495004
+status: 3
+tags: []
+user_id: root

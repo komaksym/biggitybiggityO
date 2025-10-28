@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/569163784289158647/67366e7795594ba695226377cf2a8383/artifacts
+end_time: 1759919246150
+entry_point_name: ''
+experiment_id: '569163784289158647'
+lifecycle_stage: active
+run_id: 67366e7795594ba695226377cf2a8383
+run_name: Qwen2.5-Coder-1.5B-Instruct
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759918763756
+status: 3
+tags: []
+user_id: root

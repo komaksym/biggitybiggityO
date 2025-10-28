@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/651548034438940076
+creation_time: 1759924328140
+experiment_id: '651548034438940076'
+last_update_time: 1759924328140
+lifecycle_stage: active
+name: QLoRA Base vs QLoRA it vs prompt tuning 3 EPOCHS

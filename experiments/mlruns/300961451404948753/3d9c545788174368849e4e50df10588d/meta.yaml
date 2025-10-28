@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/300961451404948753/3d9c545788174368849e4e50df10588d/artifacts
+end_time: 1760122486842
+entry_point_name: ''
+experiment_id: '300961451404948753'
+lifecycle_stage: active
+run_id: 3d9c545788174368849e4e50df10588d
+run_name: adaptable-jay-99
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760122483357
+status: 3
+tags: []
+user_id: root

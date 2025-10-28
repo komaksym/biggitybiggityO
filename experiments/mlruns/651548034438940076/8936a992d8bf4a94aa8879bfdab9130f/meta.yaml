@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/651548034438940076/8936a992d8bf4a94aa8879bfdab9130f/artifacts
+end_time: 1759927328963
+entry_point_name: ''
+experiment_id: '651548034438940076'
+lifecycle_stage: active
+run_id: 8936a992d8bf4a94aa8879bfdab9130f
+run_name: overjoyed-mink-90
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759927322740
+status: 3
+tags: []
+user_id: root

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/651548034438940076/5433c863abf147f69c834314c3ac80ef/artifacts
+end_time: 1759958935930
+entry_point_name: ''
+experiment_id: '651548034438940076'
+lifecycle_stage: active
+run_id: 5433c863abf147f69c834314c3ac80ef
+run_name: colorful-cow-506
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759958932427
+status: 3
+tags: []
+user_id: root

@@ -1,0 +1,7 @@
+artifact_location: mlflow-artifacts:/693740972227611888
+creation_time: 1759919655724
+experiment_id: '693740972227611888'
+last_update_time: 1759924785418
+lifecycle_stage: deleted
+name: Dry runs /w default hyperparams & loss function
+tags: {}

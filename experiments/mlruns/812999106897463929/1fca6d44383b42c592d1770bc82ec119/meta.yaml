@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/812999106897463929/1fca6d44383b42c592d1770bc82ec119/artifacts
+end_time: 1761334085567
+entry_point_name: ''
+experiment_id: '812999106897463929'
+lifecycle_stage: active
+run_id: 1fca6d44383b42c592d1770bc82ec119
+run_name: bittersweet-asp-686
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761334083212
+status: 3
+tags: []
+user_id: root

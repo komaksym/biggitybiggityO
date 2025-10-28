@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/651548034438940076/8af248ee9a8e44099adf83955c524b43/artifacts
+deleted_time: 1759928994521
+end_time: 1759927957000
+entry_point_name: ''
+experiment_id: '651548034438940076'
+lifecycle_stage: deleted
+run_id: 8af248ee9a8e44099adf83955c524b43
+run_name: beautiful-sow-891
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759927952279
+status: 3
+tags: []
+user_id: root

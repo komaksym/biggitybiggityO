@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/812999106897463929/b7354440f9bc49d8b3ffdcf3b8219af1/artifacts
+end_time: 1761568422941
+entry_point_name: ''
+experiment_id: '812999106897463929'
+lifecycle_stage: active
+run_id: b7354440f9bc49d8b3ffdcf3b8219af1
+run_name: respected-gull-445
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761568420599
+status: 3
+tags: []
+user_id: root

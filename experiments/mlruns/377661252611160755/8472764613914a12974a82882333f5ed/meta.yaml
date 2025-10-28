@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/377661252611160755/8472764613914a12974a82882333f5ed/artifacts
+end_time: 1760358569638
+entry_point_name: ''
+experiment_id: '377661252611160755'
+lifecycle_stage: active
+run_id: 8472764613914a12974a82882333f5ed
+run_name: righteous-loon-463
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760358566292
+status: 3
+tags: []
+user_id: root

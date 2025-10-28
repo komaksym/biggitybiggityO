@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/812999106897463929/35a9224bd9964d25933a6c24ba797212/artifacts
+end_time: 1761561299561
+entry_point_name: ''
+experiment_id: '812999106897463929'
+lifecycle_stage: active
+run_id: 35a9224bd9964d25933a6c24ba797212
+run_name: industrious-deer-28
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761561297453
+status: 3
+tags: []
+user_id: root

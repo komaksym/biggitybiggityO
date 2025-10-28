@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/149331221872614946/a151842759d346a1b127490c8fe42d70/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '149331221872614946'
+lifecycle_stage: active
+run_id: a151842759d346a1b127490c8fe42d70
+run_name: codet5p-220m-py
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761048857339
+status: 1
+tags: []
+user_id: root

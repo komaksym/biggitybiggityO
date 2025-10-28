@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/651548034438940076/b2fce23690b9473cb039924646fc1914/artifacts
+end_time: 1759932273180
+entry_point_name: ''
+experiment_id: '651548034438940076'
+lifecycle_stage: active
+run_id: b2fce23690b9473cb039924646fc1914
+run_name: bright-ray-45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759932267857
+status: 3
+tags: []
+user_id: root

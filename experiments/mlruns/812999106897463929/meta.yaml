@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/812999106897463929
+creation_time: 1761216228492
+experiment_id: '812999106897463929'
+last_update_time: 1761216228492
+lifecycle_stage: active
+name: Finetuning post HPS

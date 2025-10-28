@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/596551022070557406
+creation_time: 1760005329184
+experiment_id: '596551022070557406'
+last_update_time: 1760005329184
+lifecycle_stage: active
+name: 'Qwen 3 30b vs Deepseek v2 15b vs Deepseek v1 33b '

@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/377661252611160755/140d6ebb164741e1aa7f6c8df919ba90/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '377661252611160755'
+lifecycle_stage: active
+run_id: 140d6ebb164741e1aa7f6c8df919ba90
+run_name: smiling-elk-577
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760377882394
+status: 1
+tags: []
+user_id: root

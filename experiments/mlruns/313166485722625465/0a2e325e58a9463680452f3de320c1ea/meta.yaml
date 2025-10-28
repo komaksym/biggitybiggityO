@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/313166485722625465/0a2e325e58a9463680452f3de320c1ea/artifacts
+end_time: 1760029424718
+entry_point_name: ''
+experiment_id: '313166485722625465'
+lifecycle_stage: active
+run_id: 0a2e325e58a9463680452f3de320c1ea
+run_name: Qwen3-Coder-30B-A3B-Instruct
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760029091050
+status: 3
+tags: []
+user_id: root

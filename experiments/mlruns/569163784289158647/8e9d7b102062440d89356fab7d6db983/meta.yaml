@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/569163784289158647/8e9d7b102062440d89356fab7d6db983/artifacts
+end_time: 1759920867292
+entry_point_name: ''
+experiment_id: '569163784289158647'
+lifecycle_stage: active
+run_id: 8e9d7b102062440d89356fab7d6db983
+run_name: luxuriant-foal-822
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759920862543
+status: 3
+tags: []
+user_id: root

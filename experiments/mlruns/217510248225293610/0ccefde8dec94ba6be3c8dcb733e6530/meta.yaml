@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/217510248225293610/0ccefde8dec94ba6be3c8dcb733e6530/artifacts
+end_time: 1760783397832
+entry_point_name: ''
+experiment_id: '217510248225293610'
+lifecycle_stage: active
+run_id: 0ccefde8dec94ba6be3c8dcb733e6530
+run_name: unruly-donkey-315
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760783394358
+status: 3
+tags: []
+user_id: root

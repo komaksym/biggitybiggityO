@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/377661252611160755/b6649da65a9d4a4b9d5c750c1c18c9f7/artifacts
+end_time: 1760361031239
+entry_point_name: ''
+experiment_id: '377661252611160755'
+lifecycle_stage: active
+run_id: b6649da65a9d4a4b9d5c750c1c18c9f7
+run_name: invincible-shad-741
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760361027745
+status: 3
+tags: []
+user_id: root

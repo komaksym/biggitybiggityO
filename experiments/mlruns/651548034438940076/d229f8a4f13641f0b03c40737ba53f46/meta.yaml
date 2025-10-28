@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/651548034438940076/d229f8a4f13641f0b03c40737ba53f46/artifacts
+end_time: 1759928530496
+entry_point_name: ''
+experiment_id: '651548034438940076'
+lifecycle_stage: active
+run_id: d229f8a4f13641f0b03c40737ba53f46
+run_name: worried-bee-546
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759928524565
+status: 3
+tags: []
+user_id: root

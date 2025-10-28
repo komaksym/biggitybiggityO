@@ -1,0 +1,1 @@
+{'AutoConfig': 'deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct--configuration_deepseek.DeepseekV2Config', 'AutoModel': 'deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct--modeling_deepseek.DeepseekV2Model', 'AutoModelForCausalLM': 'deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct--modeling_deepseek.DeepseekV2ForCausalLM'}

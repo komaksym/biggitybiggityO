@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/377661252611160755/5c1ea306e0234173b532941459e70fd5/artifacts
+end_time: 1760355116136
+entry_point_name: ''
+experiment_id: '377661252611160755'
+lifecycle_stage: active
+run_id: 5c1ea306e0234173b532941459e70fd5
+run_name: deepseek-coder-1.3b-base
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760354899280
+status: 3
+tags: []
+user_id: root

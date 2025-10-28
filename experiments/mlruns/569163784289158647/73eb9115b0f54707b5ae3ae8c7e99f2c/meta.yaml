@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/569163784289158647/73eb9115b0f54707b5ae3ae8c7e99f2c/artifacts
+end_time: 1759924134873
+entry_point_name: ''
+experiment_id: '569163784289158647'
+lifecycle_stage: active
+run_id: 73eb9115b0f54707b5ae3ae8c7e99f2c
+run_name: industrious-lark-881
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1759924130056
+status: 3
+tags: []
+user_id: root

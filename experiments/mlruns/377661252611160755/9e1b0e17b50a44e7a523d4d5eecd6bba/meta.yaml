@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/377661252611160755/9e1b0e17b50a44e7a523d4d5eecd6bba/artifacts
+end_time: 1760357487483
+entry_point_name: ''
+experiment_id: '377661252611160755'
+lifecycle_stage: active
+run_id: 9e1b0e17b50a44e7a523d4d5eecd6bba
+run_name: capable-horse-695
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1760357484172
+status: 3
+tags: []
+user_id: root

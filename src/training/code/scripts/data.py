@@ -34,7 +34,7 @@ def upload_datasets(dataset_paths=DATASET_PATHS):
             print("Data found!")
             return dataset_paths[path]["train"], dataset_paths[path]["eval"]
 
-    return FileNotFoundError(f"Datasets do not exist in the current paths: {dataset_paths}")
+    raise FileNotFoundError(f"Datasets do not exist in the current paths: {dataset_paths}")
 
 
 train_set_path, eval_set_path = upload_datasets()

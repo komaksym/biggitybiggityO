@@ -19,8 +19,7 @@ def main():
     model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
 
     # Specify the test set path
-    test_set_path = BASE_LOCATION.parents[4] / "datasets/data/merges/codecomplex+" \
-    "neetcode+leetcode_clean/full_no_exponential+factorial/test_set.csv",
+    test_set_path = BASE_LOCATION.parents[4] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial/test_set.csv",
 
     # Read the test set
     test_set = pd.read_csv(test_set_path)

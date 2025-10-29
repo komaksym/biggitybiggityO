@@ -2,33 +2,15 @@ import os
 from pathlib import Path
 
 import numpy as np
-from configs.config import checkpoint
+from configs.config import checkpoint, DATASET_PATHS
 from transformers import AutoTokenizer, DataCollatorWithPadding
 import pandas as pd
 
 from datasets import Dataset
 
-BASE_LOCATION: Path = Path(__file__).parent
-
-# Datasets
-DATASET_PATHS = {
-    "local": {
-        "train": BASE_LOCATION.parents[3] / "train_set.csv",
-        "eval": BASE_LOCATION.parents[3] / "eval_set.csv",
-    },
-    "local_two": {"train": "train_set.csv", "eval": "eval_set.csv"},
-    "local_three": {
-        "train": "drive/MyDrive/fine_tuning/train_set.csv",
-        "eval": "drive/MyDrive/fine_tuning/eval_set.csv",
-    },
-    "kaggle": {
-        "train": "/kaggle/input/python-codes-time-complexity/train_set.csv",
-        "eval": "/kaggle/input/python-codes-time-complexity/eval_set.csv",
-    },
-}
-
 
 def find_paths(dataset_paths=DATASET_PATHS):
+    """Searches for paths and returns the train and eval set paths, raises error if none was"""
     for path in dataset_paths:
         if os.path.exists(dataset_paths[path]["train"]) and os.path.exists(dataset_paths[path]["eval"]):
             print("Data found!")

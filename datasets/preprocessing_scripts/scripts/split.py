@@ -4,7 +4,7 @@ import pandas as pd
 from pandas import DataFrame
 from sklearn.model_selection import train_test_split
 from typing import Any
-from utils import read_data
+from .utils import read_data
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -29,7 +29,7 @@ class DatasetSplitter:
         return data
 
     def split_data(
-        self, data: DataFrame, test_size: float = 0.1, random_state: int = 42
+        self, data: DataFrame, test_size: float = 0.1, random_state: int = 42, stratify=None
     ) -> list[Any]: 
         """Split data into train and test sets."""
 
@@ -37,7 +37,7 @@ class DatasetSplitter:
             raise ValueError(f"Test size must be between 0 and 1, got: {test_size}")
 
         return train_test_split(data, test_size=test_size,
-         random_state=random_state, stratify=data.complexity)
+         random_state=random_state, stratify=stratify)
 
     def save_data(self, train_set: DataFrame, test_set: DataFrame) -> None:
         """Save the data to CSV files."""

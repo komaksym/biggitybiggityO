@@ -15,11 +15,11 @@ grad_accum_steps = effective_batch_size // batch_size
 # File base location
 BASE_LOCATION: Path = Path(__file__).parent
 
-# Datasets
+# Dataset paths
 DATASET_PATHS = {
     "local": {
-        "train": BASE_LOCATION.parents[3] / "train_set.csv",
-        "eval": BASE_LOCATION.parents[3] / "eval_set.csv",
+        "train": BASE_LOCATION.parents[4] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial" / "train_set.csv",
+        "eval": BASE_LOCATION.parents[4] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial" / "eval_set.csv",
     },
     "local_two": {"train": "train_set.csv", "eval": "eval_set.csv"},
     "local_three": {

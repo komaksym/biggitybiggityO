@@ -2,8 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
-
-from src.utils import get_file_extension, read_data, save_data
+from datasets.preprocessing_scripts.scripts.utils import get_file_extension, read_data, save_data
 
 
 @pytest.fixture

@@ -1,5 +1,5 @@
-from src.format import format_data
-from src.utils import save_data
+from datasets.preprocessing_scripts.scripts.format import format_data
+from datasets.preprocessing_scripts.scripts.utils import save_data
 import pytest
 import pandas as pd
 

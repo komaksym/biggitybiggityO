@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
-from src.relabel_ai import LLM, Audit
-from src.utils import read_data, save_data
+from datasets.preprocessing_scripts.scripts.relabel_ai import LLM, Audit
+from datasets.preprocessing_scripts.scripts.relabel_ai import read_data, save_data
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -85,7 +85,7 @@ def responses() -> list[str]:
     return ["O(n)", "O(nlogn)", "O(1)"]
 
 
-def test_process_responses(mocker, responses, local_df_path, semaphore) -> None:
+def test_process_responses(mocker, responses, dummy_source_file_path, semaphore) -> None:
     """Test request processing functionality"""
     # Create mocks since the classes are dependant upon external APIs
     mock_llm = mocker.Mock(LLM)
@@ -93,7 +93,7 @@ def test_process_responses(mocker, responses, local_df_path, semaphore) -> None:
     mock_llm.model = "test_name"
 
     # Define audit
-    audit = Audit(local_df_path, mock_llm, semaphore)
+    audit = Audit(dummy_source_file_path, mock_llm, semaphore)
 
     # Test
     audit.process_responses(responses)
@@ -121,7 +121,7 @@ def expected_saved_data() -> pd.DataFrame:
 
 
 def test_save_data_to_review(
-    mocker, local_df_path, dummy_target_file_path, expected_saved_data, semaphore
+    mocker, dummy_source_file_path, dummy_target_file_path, expected_saved_data, semaphore
 ) -> None:
     """Test save_data method that joins the 'LLM_decision' column with the original data"""
     # Mock class params and model for reproduction
@@ -129,7 +129,7 @@ def test_save_data_to_review(
     mock_llm.model = "test_name"
 
     # Test the joining logic
-    audit = Audit(local_df_path, mock_llm, semaphore)
+    audit = Audit(dummy_source_file_path, mock_llm, semaphore)
     # Dummy responses
     audit.llm_decisions = {"test_name_decision": ["O(n)", "O(nlogn)", "O(1)"]}
 

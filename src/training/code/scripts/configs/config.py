@@ -1,17 +1,41 @@
 import torch
 from transformers import TrainingArguments
+from pathlib import Path
 
+# Checkpoint
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
+# Experiment name for MLFlow
 experiment_name = "Finetuning post HPS"
 
-# Batch size
+# Batch size & grad accumulation steps
 effective_batch_size = 16
 batch_size = 8
 grad_accum_steps = effective_batch_size // batch_size
 
+# File base location
+BASE_LOCATION: Path = Path(__file__).parent
+
+# Datasets
+DATASET_PATHS = {
+    "local": {
+        "train": BASE_LOCATION.parents[3] / "train_set.csv",
+        "eval": BASE_LOCATION.parents[3] / "eval_set.csv",
+    },
+    "local_two": {"train": "train_set.csv", "eval": "eval_set.csv"},
+    "local_three": {
+        "train": "drive/MyDrive/fine_tuning/train_set.csv",
+        "eval": "drive/MyDrive/fine_tuning/eval_set.csv",
+    },
+    "kaggle": {
+        "train": "/kaggle/input/python-codes-time-complexity/train_set.csv",
+        "eval": "/kaggle/input/python-codes-time-complexity/eval_set.csv",
+    },
+}
+
+# Device (cpu/gpu)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Training args
+# Training args for transformers.Trainer
 training_args = TrainingArguments(
     output_dir=f"training_results/{checkpoint}/",
     eval_strategy="epoch",

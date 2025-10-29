@@ -28,6 +28,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Install uv and dependencies
+      run: |
+        pip install uv
+        if [ -f uv.lock ]; then 
+          uv sync
+        else
+          uv add flake8 pytest
+          uv lock
+          uv sync
+        fi
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names

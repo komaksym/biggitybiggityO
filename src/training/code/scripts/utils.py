@@ -11,6 +11,7 @@ def setup_mlflow():
     # Fetch secrets from .env
     load_dotenv()
 
+    # Environment vars
     username = os.getenv("MLFLOW_NGROK_USERNAME")
     password = os.getenv("MLFLOW_NGROK_PASSWORD")
     uri = os.getenv("MLFLOW_NGROK_URI")

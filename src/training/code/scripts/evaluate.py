@@ -12,16 +12,18 @@ N_CLASSES = len(LABELS_HIERARCHY)
 
 # Hierarchy score
 def hc_score(y_true, y_pred, n_classes=N_CLASSES):
+    """Implement custom score. Hierarchy score"""
+
     assert len(y_true) == len(y_pred), (
         f"The amount of y_true labels: {len(y_true)} does not equal to the amount of y_pred: {len(y_pred)}."
     )
-
     n_samples = len(y_true)
-
     return (np.sum(np.abs(y_pred - y_true)) / n_classes) / n_samples
 
 
 def compute_metrics(eval_preds):
+    """Computes accuracy, f1 macro score, recall per class and hierarchy score"""
+
     # Make preds & labels global for access in callbacks
     global last_preds, last_labels
 
@@ -59,7 +61,11 @@ def compute_metrics(eval_preds):
 
 
 class ConfusionMatrixCallback(TrainerCallback):
+    """Callback for saving confusion matrix and saving as an artifact with MLFlow"""
+
     def on_evaluate(self, args, state, control, **kwargs):
+        """Callback is called on evaluate in Trainer"""
+
         if last_preds is not None:
             # Calculate confusion matrix
             disp = ConfusionMatrixDisplay.from_predictions(
@@ -76,7 +82,7 @@ class ConfusionMatrixCallback(TrainerCallback):
                     "np",
                 ],
             )
-            # Get fig
+            # Get figure
             fig = disp.figure_
 
             # Make slightly wider to fit xtick labels
@@ -91,6 +97,9 @@ class ConfusionMatrixCallback(TrainerCallback):
 
 
 class RecallScoreCallback(TrainerCallback):
+    """Callback for custom artifact with MLFlow 
+    since it's not parsed in raw format in compute_metrics"""
+
     def on_evaluate(self, args, state, control, **kwargs):
         # Parse recall scores
         recall_scores = kwargs["metrics"]["eval_recall_score"]

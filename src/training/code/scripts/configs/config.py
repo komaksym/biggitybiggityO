@@ -2,24 +2,18 @@ import torch
 from transformers import TrainingArguments
 from pathlib import Path
 
-# Checkpoint
-checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
-# Experiment name for MLFlow
-experiment_name = "Finetuning post HPS"
-
-# Batch size & grad accumulation steps
-effective_batch_size = 16
-batch_size = 8
-grad_accum_steps = effective_batch_size // batch_size
-
 # File base location
 BASE_LOCATION: Path = Path(__file__).parent
 
 # Dataset paths
 DATASET_PATHS = {
     "local": {
-        "train": BASE_LOCATION.parents[4] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial" / "train_set.csv",
-        "eval": BASE_LOCATION.parents[4] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial" / "eval_set.csv",
+        "train": BASE_LOCATION.parents[4]
+        / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial"
+        / "train_set.csv",
+        "eval": BASE_LOCATION.parents[4]
+        / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial"
+        / "eval_set.csv",
     },
     "local_two": {"train": "train_set.csv", "eval": "eval_set.csv"},
     "local_three": {
@@ -32,6 +26,16 @@ DATASET_PATHS = {
     },
 }
 
+# Checkpoint
+checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
+# Experiment name for MLFlow
+experiment_name = "Finetuning post HPS"
+
+# Batch size & grad accumulation steps
+effective_batch_size = 16
+batch_size = 8
+grad_accum_steps = effective_batch_size // batch_size
+
 # Device (cpu/gpu)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -41,17 +45,17 @@ training_args = TrainingArguments(
     eval_strategy="epoch",
     save_strategy="epoch",
     logging_strategy="epoch",
-    learning_rate=2e-4, # Testing
+    learning_rate=2e-4,  # Testing
     bf16=True,
     # gradient_checkpointing=True,
     report_to="mlflow",
     num_train_epochs=5,
-    max_grad_norm=0.3, # Per QLoRA paper recommendation
-    warmup_ratio=0.03, # Per QLoRA paper recommendation
+    max_grad_norm=0.3,  # Per QLoRA paper recommendation
+    warmup_ratio=0.03,  # Per QLoRA paper recommendation
     weight_decay=0.001,
     lr_scheduler_type="cosine",
     label_names=["labels"],
-    per_device_train_batch_size=batch_size, # should be 16
+    per_device_train_batch_size=batch_size,  # should be 16
     per_device_eval_batch_size=batch_size,
     gradient_accumulation_steps=grad_accum_steps,
     load_best_model_at_end=True,

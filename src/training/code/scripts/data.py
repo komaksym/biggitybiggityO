@@ -26,8 +26,8 @@ def find_paths(dataset_paths):
 train_set_path, eval_set_path = find_paths(DATASET_PATHS)
 
 # Read into pandas dataframes
-train_set = pd.read_csv(train_set_path)
-eval_set = pd.read_csv(eval_set_path)
+train_set = pd.read_csv(train_set_path).sample(frac=0.01)
+eval_set = pd.read_csv(eval_set_path).sample(frac=0.01)
 
 
 def generate_prompt(data_sample):

@@ -29,7 +29,7 @@ DATASET_PATHS = {
 # Checkpoint
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 # Experiment name for MLFlow
-experiment_name = "Finetuning post HPS"
+experiment_name = "Test training post minor refactoring"
 
 # Batch size & grad accumulation steps
 effective_batch_size = 16
@@ -49,7 +49,7 @@ training_args = TrainingArguments(
     bf16=True,
     # gradient_checkpointing=True,
     report_to="mlflow",
-    num_train_epochs=5,
+    num_train_epochs=3,
     max_grad_norm=0.3,  # Per QLoRA paper recommendation
     warmup_ratio=0.03,  # Per QLoRA paper recommendation
     weight_decay=0.001,

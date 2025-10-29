@@ -12,7 +12,7 @@ from joblib import parallel_config
 # Model
 checkpoint = "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct"
 
-# Init wandb
+# Init wandb for tracking
 wandb.init(project="HPS-optuna", name="hyperparameter_search_optuna")
 
 # Define persistent storage
@@ -21,7 +21,7 @@ storage = RDBStorage("sqlite:///optuna_trials_deepseek-coder-v2.db")
 def objective(trial):
     """Optuna objective"""
 
-    # Hyperparams to search
+    # Hyperparameters grid to search
     hps_learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4)
     hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [8, 16, 32])
     hps_lora_dropout = trial.suggest_float("lora_dropout", 0, 0.1)
@@ -43,6 +43,7 @@ def objective(trial):
         bnb_4bit_quant_storage=torch.bfloat16,
     )
 
+    # Load the pretrained model
     base_model = AutoModel.from_pretrained(
         checkpoint,
         torch_dtype="auto",
@@ -70,6 +71,7 @@ def objective(trial):
         task_type="SEQ_CLS",  # might not work with this on
     )
 
+    # Apply custom classification head for Deepseek v2 architecture
     base_model = DeepseekV2ForSequenceClassification(base_model, base_model.config)
 
     # LoRA
@@ -110,6 +112,7 @@ def objective(trial):
     # Train
     trainer.train()
 
+    # Run eval and save
     results = trainer.evaluate()
     return results["eval_f1_macro"]
 

@@ -19,7 +19,10 @@ def main():
     model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
 
     # Specify the test set path
-    test_set_path = BASE_LOCATION.parents[4] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial/test_set.csv"
+    try:
+        test_set_path = BASE_LOCATION.parents[3] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial/test_set.csv"
+    except:
+        raise ValueError(f"Such path doesn't exist: {test_set_path}")
 
     # Read the test set
     test_set = pd.read_csv(test_set_path)
@@ -35,7 +38,10 @@ def main():
 
     # Init Trainer
     trainer = Trainer(
-        model=model, processing_class=tokenizer, eval_dataset=test_set, compute_metrics=compute_metrics
+        model=model,
+        processing_class=tokenizer,
+        eval_dataset=test_set,
+        compute_metrics=compute_metrics,
     )
 
     # Evaluate and save results

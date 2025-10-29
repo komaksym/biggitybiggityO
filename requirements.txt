@@ -7,7 +7,6 @@ torch
 mlflow
 packaging
 wheel
-flash-attn
 seaborn
 optuna
 wandb

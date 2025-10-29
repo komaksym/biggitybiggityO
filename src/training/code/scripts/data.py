@@ -9,17 +9,21 @@ import pandas as pd
 from datasets import Dataset
 
 
-def find_paths(dataset_paths=DATASET_PATHS):
+def find_paths(dataset_paths):
     """Searches for paths and returns the train and eval set paths, raises error if none was"""
+
     for path in dataset_paths:
-        if os.path.exists(dataset_paths[path]["train"]) and os.path.exists(dataset_paths[path]["eval"]):
+        if os.path.exists(Path(dataset_paths[path]["train"]).exists()) and os.path.exists(
+            Path(dataset_paths[path]["eval"])
+        ):
             print("Data found!")
             return dataset_paths[path]["train"], dataset_paths[path]["eval"]
 
     raise FileNotFoundError(f"Datasets do not exist in the current paths: {dataset_paths}")
 
 
-train_set_path, eval_set_path = find_paths()
+# Load paths up
+train_set_path, eval_set_path = find_paths(DATASET_PATHS)
 
 # Read into pandas dataframes
 train_set = pd.read_csv(train_set_path)
@@ -37,6 +41,7 @@ def generate_prompt(data_sample):
 
     return data_sample
 
+
 # Apply instruction schema
 train_set = train_set.apply(generate_prompt, axis=1)
 eval_set = eval_set.apply(generate_prompt, axis=1)
@@ -47,22 +52,14 @@ eval_set = Dataset.from_pandas(eval_set)
 
 # Encoding labels
 # Specifying the order of the labels
-label2id = {'O(1)': 0, 'O(logn)': 1, 'O(n)': 2, 'O(nlogn)': 3, 'O(n ^ 2)': 4, 'O(n ^ 3)': 5, 'np': 6}
+label2id = {"O(1)": 0, "O(logn)": 1, "O(n)": 2, "O(nlogn)": 3, "O(n ^ 2)": 4, "O(n ^ 3)": 5, "np": 6}
 id2label = {label2id[k]: k for k in label2id.keys()}
 
 
-# Tokenization
-def tokenize_data(data, tokenizer):
-    tokenized = tokenizer(
-        data["code"],
-        truncation=True,
-        max_length=512,
-    )
-    tokenized["labels"] = np.array([label2id[label] for label in data["complexity"]]) # Not sure if needed for the prompt schema
-    return tokenized
-
-
 def set_tokenizer(checkpoint):
+    """Loads tokenizer from checkpoint, if tokenizer
+    from checkpoint doesn't exist, it loads a base version of it"""
+
     try:
         tokenizer = AutoTokenizer.from_pretrained(checkpoint, pad_token="<pad>")
     except Exception as e:
@@ -74,18 +71,31 @@ def set_tokenizer(checkpoint):
     # Data Collator
     tokenizer.padding_side = "left"
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
-    return tokenizer, data_collator 
+    return tokenizer, data_collator
 
 
 # Set up tokenizer
 tokenizer, data_collator = set_tokenizer(checkpoint)
+
+
+# Tokenization
+def tokenize_data(data, tokenizer):
+    """Tokenizes data and labels with the specified tokenizer"""
+    tokenized = tokenizer(
+        data["code"],
+        truncation=True,
+        max_length=512,
+    )
+    tokenized["labels"] = np.array([label2id[label] for label in data["complexity"]])
+    return tokenized
+
 
 # Tokenize train/eval sets
 train_set = train_set.map(
     lambda x: tokenize_data(x, tokenizer),
     batched=True,
     remove_columns=train_set.column_names,
-    )
+)
 
 eval_set = eval_set.map(
     lambda x: tokenize_data(x, tokenizer),

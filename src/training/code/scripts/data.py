@@ -28,7 +28,7 @@ DATASET_PATHS = {
 }
 
 
-def upload_datasets(dataset_paths=DATASET_PATHS):
+def find_paths(dataset_paths=DATASET_PATHS):
     for path in dataset_paths:
         if os.path.exists(dataset_paths[path]["train"]) and os.path.exists(dataset_paths[path]["eval"]):
             print("Data found!")
@@ -37,7 +37,7 @@ def upload_datasets(dataset_paths=DATASET_PATHS):
     raise FileNotFoundError(f"Datasets do not exist in the current paths: {dataset_paths}")
 
 
-train_set_path, eval_set_path = upload_datasets()
+train_set_path, eval_set_path = find_paths()
 
 # Read into pandas dataframes
 train_set = pd.read_csv(train_set_path)
@@ -53,18 +53,11 @@ def generate_prompt(data_sample):
                 big O time complexity label.
             Code: {data_sample["code"]}"""
 
-    # data_sample["complexity"] = f"""
-    # Label: {data_sample["complexity"]}""".strip()
-
     return data_sample
 
 # Apply instruction schema
 train_set = train_set.apply(generate_prompt, axis=1)
 eval_set = eval_set.apply(generate_prompt, axis=1)
-
-# Fractionize for faster testing iterations
-#train_set = train_set.sample(frac=0.1)
-#eval_set = eval_set.sample(frac=0.1)
 
 # Load as huggingface Datasets
 train_set = Dataset.from_pandas(train_set)

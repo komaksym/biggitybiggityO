@@ -25,10 +25,7 @@ bnb_config = BitsAndBytesConfig(
 
 
 # Model loading
-def set_model(checkpoint, tokenizer, ModelType=AutoModel):
-    # Setup bitsandbytes quantization config
-    quant_config = bnb_config
-
+def set_model(checkpoint, tokenizer, ModelType=AutoModel, quant_config=None):
     # Load a pretrained model
     model = ModelType.from_pretrained(
         checkpoint,
@@ -50,6 +47,9 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel):
 
 # Custom classifier head
 class DeepseekV2ForSequenceClassification(PreTrainedModel):
+    """Custom sequence classification head 
+    for DeepseekV2 architecture since it's not implemented"""
+
     config_class = AutoConfig
 
     def __init__(self, base_model, config):
@@ -57,6 +57,7 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
         self.num_labels = config.num_labels
         self.model = base_model
 
+        # Linear head
         self.dense = nn.Linear(config.hidden_size, config.num_labels, bias=False, dtype=self.model.dtype)
 
         # Initialize weights and apply final processing
@@ -115,9 +116,12 @@ peft_config = LoraConfig(
 )
 
 
-base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
+# Load the model
+base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification, bnb_config)
 
+# Wrap custom sequence classification head on top for deepseek v2 architecture
 #model = DeepseekV2ForSequenceClassification(model, model.config)
+# Apply LoRA
 peft_model = get_peft_model(model=base_model, peft_config=peft_config)
 
 # print(f"Model: {model}")

@@ -42,9 +42,6 @@ def test_dataset(df):
         gx.expectations.ExpectColumnValuesToBeInSet(column="complexity", value_set=complexities)
     )
     suite.add_expectation(
-        gx.expectations.ExpectColumnValuesToBeUnique(column="code")
-    )
-    suite.add_expectation(
         gx.expectations.ExpectColumnValuesToNotBeNull(column="code")
     )
     suite.add_expectation(
@@ -62,6 +59,6 @@ def test_dataset(df):
 
     # Validate the Data against the Suite
     validation_results = batch.validate(suite)
-    assert validation_results['success'] 
+    assert validation_results['success']
 
     

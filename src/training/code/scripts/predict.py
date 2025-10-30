@@ -9,6 +9,19 @@ from data import Dataset
 
 BASE_LOCATION: Path = Path(__file__).parent
 
+def prep_data(data_path, tokenizer):
+    # Load the data
+    test_set = pd.read_csv(data_path)
+
+    # Apply the prompt schema
+    test_set = test_set.apply(generate_prompt, axis=1)
+    # Convert to Dataset
+    test_set = Dataset.from_pandas(test_set)
+
+    # Tokenize
+    test_set = test_set.map(
+        lambda x: tokenize_data(x, tokenizer), batched=True, remove_columns=test_set.column_names
+    )
 
 def main():
     # Path for the pretrained model

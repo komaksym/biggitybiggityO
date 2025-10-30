@@ -1,13 +1,27 @@
-import wandb
-import torch
 import optuna
-from optuna.storages import RDBStorage
-from transformers import Trainer, TrainingArguments, AutoModelForSequenceClassification, BitsAndBytesConfig, AutoModel
-from data import train_set, eval_set, tokenizer, data_collator
-from evaluate import compute_metrics, ConfusionMatrixCallback, RecallScoreCallback, N_CLASSES
-from peft import LoraConfig, get_peft_model
-from model import DeepseekV2ForSequenceClassification
+import torch
+import wandb
+from evaluate import (
+    N_CLASSES,
+    ConfusionMatrixCallback,
+    RecallScoreCallback,
+    compute_metrics,
+)
 from joblib import parallel_config
+from optuna.storages import RDBStorage
+from peft import LoraConfig, get_peft_model
+from transformers import (
+    AutoModel,
+    AutoModelForSequenceClassification,
+    BitsAndBytesConfig,
+    Trainer,
+    TrainingArguments,
+)
+
+from .configs.config import DATASET_PATHS
+from .data import label2id, set_tokenizer
+from .model import DeepseekV2ForSequenceClassification
+from .train import load_data, preprocess_data, setup_model
 
 # Model
 checkpoint = "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct"
@@ -17,6 +31,7 @@ wandb.init(project="HPS-optuna", name="hyperparameter_search_optuna")
 
 # Define persistent storage
 storage = RDBStorage("sqlite:///optuna_trials_deepseek-coder-v2.db")
+
 
 def objective(trial):
     """Optuna objective"""
@@ -51,7 +66,7 @@ def objective(trial):
         trust_remote_code=True,
         device_map="auto",
         attn_implementation="flash_attention_2",  # Only for newer models
-        quantization_config=bnb_config
+        quantization_config=bnb_config,
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token
@@ -116,12 +131,25 @@ def objective(trial):
     results = trainer.evaluate()
     return results["eval_f1_macro"]
 
+
 if __name__ == "__main__":
+    # Set up tokenizer
+    tokenizer, data_collator = set_tokenizer(checkpoint)
+
+    # Prep the data
+    train_set, eval_set = preprocess_data(load_data(DATASET_PATHS), tokenizer, label2id)
+
+    # Setup model
+    model = setup_model(tokenizer, checkpoint)
+
     # Run each study in it's own python subprocess to avoid segfaults with bitsandbytes
     with parallel_config("multiprocessing"):
         # Create study
         study = optuna.create_study(
-            study_name="hyperparam_search", direction="maximize", storage=storage, load_if_exists=True
+            study_name="hyperparam_search",
+            direction="maximize",
+            storage=storage,
+            load_if_exists=True,
         )
 
         study.optimize(objective, n_trials=20)

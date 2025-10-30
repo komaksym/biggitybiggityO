@@ -6,13 +6,22 @@ from transformers import (
     AutoModel,
     AutoModelForSequenceClassification,
     PreTrainedModel,
+    BitsAndBytesConfig
 )
 from transformers.modeling_outputs import SequenceClassifierOutput
 from evaluate import N_CLASSES
 
 
 # Model loading
-def set_model(checkpoint, tokenizer, ModelType=AutoModel, quant_config=None):
+def set_model(checkpoint, tokenizer, ModelType=AutoModelForSequenceClassification):
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_storage=torch.bfloat16,
+    )
+
     # Load a pretrained model
     model = ModelType.from_pretrained(
         checkpoint,
@@ -20,7 +29,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel, quant_config=None):
         num_labels=N_CLASSES,
         trust_remote_code=True,
         device_map=PartialState().process_index,
-        quantization_config=quant_config,
+        quantization_config=bnb_config,
         attn_implementation="flash_attention_2",  # Only for newer models
     )
 

@@ -50,15 +50,6 @@ def preprocess_data(train_set, eval_set, tokenizer, label2id):
     return train_set, eval_set
 
 def setup_model(tokenizer, checkpoint):
-    # Bitsandbytes (Quantization)
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_storage=torch.bfloat16,
-    )
-
     # LoRA config
     peft_config = LoraConfig(
         r=32,
@@ -71,7 +62,7 @@ def setup_model(tokenizer, checkpoint):
     )
 
     # Load the model
-    base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification, bnb_config)
+    base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
 
     # Wrap custom sequence classification head on top for deepseek v2 architecture (if using deepseek v2)
     #model = DeepseekV2ForSequenceClassification(model, model.config)

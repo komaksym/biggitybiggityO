@@ -1,11 +1,12 @@
-from data import tokenize_data, generate_prompt
+from data import tokenize_data, generate_prompt, label2id
 from evaluate import compute_metrics
-from model import base_model
 from transformers import AutoTokenizer, Trainer
 from pathlib import Path
 from peft import PeftModel
+from model import set_model
 import pandas as pd
-from data import Dataset
+from datasets import Dataset
+from configs.config import checkpoint
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -29,11 +30,14 @@ def main():
 
     # Loading pretrained tokenizer and model
     tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
+    # Base model
+    base_model = set_model(checkpoint, tokenizer)    
+    # Load pretrained LoRA adapters on top
     model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
 
     # Specify the test set path
     try:
-        test_set_path = BASE_LOCATION.parents[3] / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial/test_set.csv"
+        test_set_path = BASE_LOCATION.parents[3] / "data/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial/test_set.csv"
     except:
         raise ValueError(f"Such path doesn't exist: {test_set_path}")
 
@@ -46,7 +50,7 @@ def main():
 
     # Tokenize
     test_set = test_set.map(
-        lambda x: tokenize_data(x, tokenizer), batched=True, remove_columns=test_set.column_names
+        lambda x: tokenize_data(x, tokenizer, label2id), batched=True, remove_columns=test_set.column_names
     )
 
     # Init Trainer

@@ -2,6 +2,7 @@ import great_expectations as gx
 import pandas as pd
 import pytest
 from pathlib import Path
+from pprint import pprint
 
 BASE_PATH = Path(__file__).parent
 
@@ -42,6 +43,9 @@ def test_dataset(df):
         gx.expectations.ExpectColumnValuesToBeInSet(column="complexity", value_set=complexities)
     )
     suite.add_expectation(
+        gx.expectations.ExpectColumnValuesToBeUnique(column="code")
+    )
+    suite.add_expectation(
         gx.expectations.ExpectColumnValuesToNotBeNull(column="code")
     )
     suite.add_expectation(
@@ -59,6 +63,7 @@ def test_dataset(df):
 
     # Validate the Data against the Suite
     validation_results = batch.validate(suite)
+    # Validate
     assert validation_results['success']
 
     

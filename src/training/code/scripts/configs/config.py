@@ -9,10 +9,10 @@ BASE_LOCATION: Path = Path(__file__).parent
 DATASET_PATHS = {
     "local": {
         "train": BASE_LOCATION.parents[4]
-        / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial"
+        / "data/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial"
         / "train_set.csv",
         "eval": BASE_LOCATION.parents[4]
-        / "datasets/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial"
+        / "data/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial"
         / "eval_set.csv",
     },
     "local_two": {"train": "train_set.csv", "eval": "eval_set.csv"},

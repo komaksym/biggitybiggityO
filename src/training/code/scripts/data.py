@@ -2,15 +2,15 @@ import os
 from pathlib import Path
 
 import numpy as np
-from configs.config import checkpoint, DATASET_PATHS
 from transformers import AutoTokenizer, DataCollatorWithPadding
-import pandas as pd
 
-from datasets import Dataset
+
+label2id = {"O(1)": 0, "O(logn)": 1, "O(n)": 2, "O(nlogn)": 3, "O(n ^ 2)": 4, "O(n ^ 3)": 5, "np": 6}
+id2label = {label2id[k]: k for k in label2id.keys()}
 
 
 def find_paths(dataset_paths):
-    """Searches for paths and returns the train and eval set paths, raises error if none was"""
+    """Searches for paths and returns the train and eval set paths, raises error if none was found"""
 
     for path in dataset_paths:
         if os.path.exists(Path(dataset_paths[path]["train"]).exists()) and os.path.exists(
@@ -20,14 +20,6 @@ def find_paths(dataset_paths):
             return dataset_paths[path]["train"], dataset_paths[path]["eval"]
 
     raise FileNotFoundError(f"Datasets do not exist in the current paths: {dataset_paths}")
-
-
-# Load paths up
-train_set_path, eval_set_path = find_paths(DATASET_PATHS)
-
-# Read into pandas dataframes
-train_set = pd.read_csv(train_set_path)
-eval_set = pd.read_csv(eval_set_path)
 
 
 def generate_prompt(data_sample):
@@ -40,20 +32,6 @@ def generate_prompt(data_sample):
             Code: {data_sample["code"]}"""
 
     return data_sample
-
-
-# Apply instruction schema
-train_set = train_set.apply(generate_prompt, axis=1)
-eval_set = eval_set.apply(generate_prompt, axis=1)
-
-# Load as huggingface Datasets
-train_set = Dataset.from_pandas(train_set)
-eval_set = Dataset.from_pandas(eval_set)
-
-# Encoding labels
-# Specifying the order of the labels
-label2id = {"O(1)": 0, "O(logn)": 1, "O(n)": 2, "O(nlogn)": 3, "O(n ^ 2)": 4, "O(n ^ 3)": 5, "np": 6}
-id2label = {label2id[k]: k for k in label2id.keys()}
 
 
 def set_tokenizer(checkpoint):
@@ -74,12 +52,8 @@ def set_tokenizer(checkpoint):
     return tokenizer, data_collator
 
 
-# Set up tokenizer
-tokenizer, data_collator = set_tokenizer(checkpoint)
-
-
 # Tokenization
-def tokenize_data(data, tokenizer):
+def tokenize_data(data, tokenizer, label2id):
     """Tokenizes data and labels with the specified tokenizer"""
     tokenized = tokenizer(
         data["code"],
@@ -88,17 +62,3 @@ def tokenize_data(data, tokenizer):
     )
     tokenized["labels"] = np.array([label2id[label] for label in data["complexity"]])
     return tokenized
-
-
-# Tokenize train/eval sets
-train_set = train_set.map(
-    lambda x: tokenize_data(x, tokenizer),
-    batched=True,
-    remove_columns=train_set.column_names,
-)
-
-eval_set = eval_set.map(
-    lambda x: tokenize_data(x, tokenizer),
-    batched=True,
-    remove_columns=eval_set.column_names,
-)

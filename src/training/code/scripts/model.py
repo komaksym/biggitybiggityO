@@ -1,27 +1,14 @@
 import torch
 import torch.nn as nn
 from accelerate import PartialState
-from configs.config import checkpoint
-from data import tokenizer
-from peft import LoraConfig, get_peft_model
 from transformers import (
     AutoConfig,
     AutoModel,
     AutoModelForSequenceClassification,
-    BitsAndBytesConfig,
     PreTrainedModel,
 )
 from transformers.modeling_outputs import SequenceClassifierOutput
 from evaluate import N_CLASSES
-
-# Bitsandbytes (Quantization)
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.bfloat16,
-    bnb_4bit_use_double_quant=True,
-    bnb_4bit_quant_storage=torch.bfloat16,
-)
 
 
 # Model loading
@@ -47,7 +34,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModel, quant_config=None):
 
 # Custom classifier head
 class DeepseekV2ForSequenceClassification(PreTrainedModel):
-    """Custom sequence classification head 
+    """Custom sequence classification head
     for DeepseekV2 architecture since it's not implemented"""
 
     config_class = AutoConfig
@@ -102,27 +89,3 @@ class DeepseekV2ForSequenceClassification(PreTrainedModel):
             )
 
         return SequenceClassifierOutput(loss=loss, logits=pooled_logits)
-
-
-# LoRA config
-peft_config = LoraConfig(
-    r=32,
-    lora_alpha=64,
-    # target_modules = ['q_proj', 'v_proj'], # Qwen 
-    target_modules="all-linear",  # Heavy, universal
-    lora_dropout=0.05,
-    bias="none",
-    task_type="SEQ_CLS",  # might not work with this on
-)
-
-
-# Load the model
-base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification, bnb_config)
-
-# Wrap custom sequence classification head on top for deepseek v2 architecture
-#model = DeepseekV2ForSequenceClassification(model, model.config)
-# Apply LoRA
-peft_model = get_peft_model(model=base_model, peft_config=peft_config)
-
-# print(f"Model: {model}")
-# print(f"Model config: {model.config}")

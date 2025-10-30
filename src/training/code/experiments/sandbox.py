@@ -23,7 +23,7 @@ from transformers import (
 )
 from transformers.modeling_outputs import SequenceClassifierOutput
 
-from datasets import Dataset, load_dataset
+from data import Dataset, load_dataset
 
 # Quantization configuration (unchanged)
 quant_config = BitsAndBytesConfig(

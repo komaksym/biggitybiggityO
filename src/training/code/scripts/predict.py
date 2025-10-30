@@ -5,7 +5,7 @@ from transformers import AutoTokenizer, Trainer
 from pathlib import Path
 from peft import PeftModel
 import pandas as pd
-from datasets import Dataset
+from data import Dataset
 
 BASE_LOCATION: Path = Path(__file__).parent
 

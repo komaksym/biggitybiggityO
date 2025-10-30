@@ -1,0 +1,233 @@
+code,complexity
+"class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        col = set()
+        posDiag = set()
+        negDiag = set()
+
+        res = []
+        board = [["".""] * n for i in range(n)]
+
+        def backtrack(r):
+            if r == n:
+                copy = ["""".join(row) for row in board]
+                res.append(copy)
+                return
+
+            for c in range(n):
+                if c in col or (r + c) in posDiag or (r - c) in negDiag:
+                    continue
+
+                col.add(c)
+                posDiag.add(r + c)
+                negDiag.add(r - c)
+                board[r][c] = ""Q""
+
+                backtrack(r + 1)
+
+                col.remove(c)
+                posDiag.remove(r + c)
+                negDiag.remove(r - c)
+                board[r][c] = "".""
+
+        backtrack(0)
+        return res
+",O(n!)
+"class Solution:
+    def jump(self, nums: List[int]) -> int:
+        def dfs(i):
+            if i == len(nums) - 1:
+                return 0
+            if nums[i] == 0:
+                return float('inf')
+
+            end = min(len(nums) - 1, i + nums[i])
+            res = float('inf')
+            for j in range(i + 1, end + 1):
+                res = min(res, 1 + dfs(j))
+            return res
+
+        return dfs(0)
+",O(n!)
+"class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        res = []
+        board = [["".""] * n for i in range(n)]
+
+        def backtrack(r):
+            if r == n:
+                copy = ["""".join(row) for row in board]
+                res.append(copy)
+                return
+            for c in range(n):
+                if self.isSafe(r, c, board):
+                    board[r][c] = ""Q""
+                    backtrack(r + 1)
+                    board[r][c] = "".""
+
+        backtrack(0)
+        return res
+
+    def isSafe(self, r: int, c: int, board):
+        row = r - 1
+        while row >= 0:
+            if board[row][c] == ""Q"":
+                return False
+            row -= 1
+
+        row, col = r - 1, c - 1
+        while row >= 0 and col >= 0:
+            if board[row][col] == ""Q"":
+                return False
+            row -= 1
+            col -= 1
+
+        row, col = r - 1, c + 1
+        while row >= 0 and col < len(board):
+            if board[row][col] == ""Q"":
+                return False
+            row -= 1
+            col += 1
+        return True
+",O(n!)
+"class Solution(object):
+    def countArrangement(self, N):
+        def countArrangementHelper(n, arr):
+            if n <= 0:
+                return 1
+            count = 0
+            for i in range(n):
+                if arr[i] % n == 0 or n % arr[i] == 0:
+                    arr[i], arr[n-1] = arr[n-1], arr[i]
+                    count += countArrangementHelper(n - 1, arr)
+                    arr[i], arr[n-1] = arr[n-1], arr[i]
+            return count
+
+        return countArrangementHelper(N, list(range(1, N+1)))",O(n!)
+"import collections
+
+
+class Solution(object):
+    def numSquarefulPerms(self, A):
+        def dfs(candidate, x, left, count, result):
+            count[x] -= 1
+            if left == 0:
+                result[0] += 1
+            for y in candidate[x]:
+                if count[y]:
+                    dfs(candidate, y, left-1, count, result)
+            count[x] += 1
+
+        count = collections.Counter(A)
+        candidate = {i: {j for j in count if int((i+j)**0.5) ** 2 == i+j} 
+                           for i in count}
+
+        result = [0]
+        for x in count:
+            dfs(candidate, x, len(A)-1, count, result)
+        return result[0]",O(n!)
+"class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        col = 0
+        posDiag = 0
+        negDiag = 0
+        res = []
+        board = [["".""] * n for i in range(n)]
+
+        def backtrack(r):
+            nonlocal col, posDiag, negDiag
+            if r == n:
+                copy = ["""".join(row) for row in board]
+                res.append(copy)
+                return
+            for c in range(n):
+                if ((col & (1 << c)) or (posDiag & (1 << (r + c)))
+                    or (negDiag & (1 << (r - c + n)))):
+                    continue
+                col ^= (1 << c)
+                posDiag ^= (1 << (r + c))
+                negDiag ^= (1 << (r - c + n))
+                board[r][c] = ""Q""
+
+                backtrack(r + 1)
+
+                col ^= (1 << c)
+                posDiag ^= (1 << (r + c))
+                negDiag ^= (1 << (r - c + n))
+                board[r][c] = "".""
+
+        backtrack(0)
+        return res
+",O(n!)
+"class Solution(object):
+    def canIWin(self, maxChoosableInteger, desiredTotal):
+        def canIWinHelper(maxChoosableInteger, desiredTotal, visited, lookup):
+            if visited in lookup:
+                return lookup[visited]
+
+            mask = 1
+            for i in range(maxChoosableInteger):
+                if visited & mask == 0:
+                    if i + 1 >= desiredTotal or \
+                       not canIWinHelper(maxChoosableInteger, desiredTotal - (i + 1), visited | mask, lookup):
+                        lookup[visited] = True
+                        return True
+                mask <<= 1
+            lookup[visited] = False
+            return False
+
+        if (1 + maxChoosableInteger) * (maxChoosableInteger / 2) < desiredTotal:
+            return False
+
+        return canIWinHelper(maxChoosableInteger, desiredTotal, 0, {})",O(n!)
+"class Solution:
+    def solveNQueens(self, n: int) -> List[List[str]]:
+        col = [False] * n
+        posDiag = [False] * (n * 2)
+        negDiag = [False] * (n * 2)
+        res = []
+        board = [["".""] * n for i in range(n)]
+
+        def backtrack(r):
+            if r == n:
+                copy = ["""".join(row) for row in board]
+                res.append(copy)
+                return
+            for c in range(n):
+                if col[c] or posDiag[r + c] or negDiag[r - c + n]:
+                    continue
+                col[c] = True
+                posDiag[r + c] = True
+                negDiag[r - c + n] = True
+                board[r][c] = ""Q""
+
+                backtrack(r + 1)
+
+                col[c] = False
+                posDiag[r + c] = False
+                negDiag[r - c + n] = False
+                board[r][c] = "".""
+
+        backtrack(0)
+        return res
+",O(n!)
+"class Solution(object):
+    def constructDistancedSequence(self, n):
+        def backtracking(n, i, result, lookup):
+            if i == len(result):
+                return True
+            if result[i]:
+                return backtracking(n, i+1, result, lookup)
+            for x in reversed(range(1, n+1)):
+                j = i if x == 1 else i+x
+                if lookup[x] or j >= len(result) or result[j]:
+                    continue
+                result[i], result[j], lookup[x] = x, x, True
+                if backtracking(n, i+1, result, lookup):
+                    return True
+                result[i], result[j], lookup[x] = 0, 0, False
+            return False
+
+        result, lookup = [0]*(2*n-1), [False]*(n+1)
+        backtracking(n, 0, result, lookup)
+        return result",O(n!)

@@ -1,0 +1,2456 @@
+code;complexity
+"class Solution(object):
+    def toHexspeak(self, num):
+        lookup = {0:'O', 1:'I'}
+        for i in range(6):
+            lookup[10+i] = chr(ord('A')+i)
+        result = []
+        n = int(num)
+        while n:
+            n, r = divmod(n, 16)
+            if r not in lookup:
+                return ""ERROR""
+            result.append(lookup[r])
+        return """".join(reversed(result))";O(logn)
+"class Solution(object):
+    def numOfWays(self, nums):
+        def dfs(nums):
+            if len(nums) <= 2:
+                return 1
+            left = [v for v in nums if v < nums[0]]
+            right = [v for v in nums if v > nums[0]]
+            result = dp[len(left)+len(right)][len(left)]
+            result = result*dfs(left) % MOD
+            result = result*dfs(right) % MOD
+            return result
+
+        return (dfs(nums)-1)%MOD";O(n^2)
+"class Node(object):
+    def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):
+        self.val = val
+        self.isLeaf = isLeaf
+        self.topLeft = topLeft
+        self.topRight = topRight
+        self.bottomLeft = bottomLeft
+        self.bottomRight = bottomRight
+
+
+class Solution(object):
+    def construct(self, grid):
+        def dfs(grid, x, y, l):
+            if l == 1:
+                return Node(grid[x][y] == 1, True, None, None, None, None)
+            half = l // 2
+            topLeftNode = dfs(grid, x, y, half)
+            topRightNode = dfs(grid, x, y+half, half)
+            bottomLeftNode = dfs(grid, x+half, y, half)
+            bottomRightNode = dfs(grid, x+half, y+half, half)
+            if topLeftNode.isLeaf and topRightNode.isLeaf and \
+               bottomLeftNode.isLeaf and bottomRightNode.isLeaf and \
+               topLeftNode.val == topRightNode.val == bottomLeftNode.val == bottomRightNode.val:
+                return Node(topLeftNode.val, True, None, None, None, None)
+            return Node(True, False, topLeftNode, topRightNode, bottomLeftNode, bottomRightNode)
+        
+        if not grid:
+            return None
+        return dfs(grid, 0, 0, len(grid))";O(n^2)
+"class Solution(object):
+    def queryString(self, S, N):
+        return all(bin(i)[2:] in S for i in reversed(range(N//2, N+1)))";O(n^2)
+"class Solution(object):
+    def maxFreeTime(self, eventTime, startTime, endTime):
+        def topk(a, k): 
+            result = [[float(""-inf"")]*2 for _ in range(k)]
+            for x in a:
+                for i in range(len(result)):
+                    if x > result[i]:
+                        result[i], x = x, result[i]
+            return result
+
+        result = 0
+        startTime.append(eventTime)
+        endTime.insert(0, 0)
+        diffs = ([startTime[i]-endTime[i], endTime[i]] for i in range(len(startTime)))
+        top3 = topk(diffs, 3)
+        for i in range(len(startTime)-1):
+            for mx, e in top3:
+                if e not in (endTime[i], endTime[i+1]) and endTime[i+1]-startTime[i] <= mx:
+                    result = max(result, (startTime[i]-endTime[i])+(startTime[i+1]-endTime[i+1])+(endTime[i+1]-startTime[i]))
+                    break
+            else:
+                result = max(result, (startTime[i]-endTime[i])+(startTime[i+1]-endTime[i+1]))
+        return result";O(n)
+"class Solution2(object):
+    def getNoZeroIntegers(self, n):
+        return next([a, n-a] for a in range(1, n) if '0' not in '{}{}'.format(a, n-a))";O(nlogn)
+"class Solution2(object):
+    def __init__(self):
+        self.__nH = 0
+        self.__nO = 0
+        self.__cv = threading.Condition()
+
+    def hydrogen(self, releaseHydrogen):
+        with self.__cv:
+            while (self.__nH+1) - 2*self.__nO > 2:
+                self.__cv.wait()
+            self.__nH += 1
+            releaseHydrogen()
+            self.__cv.notifyAll()
+
+    def oxygen(self, releaseOxygen):
+        with self.__cv:
+            while 2*(self.__nO+1) - self.__nH > 2:
+                self.__cv.wait()
+            self.__nO += 1
+            releaseOxygen()
+            self.__cv.notifyAll()";O(1)
+"class Solution2(object):
+    def divisorGame(self, n):
+        def factors(n):
+            result = [[] for _ in range(n+1)]
+            for i in range(1, n+1):
+                for j in range(i, n+1, i):
+                    result[j].append(i)
+            return result
+
+        FACTORS = factors(n)
+        dp = [False]*(n+1)
+        for i in range(2, n+1):
+            dp[i] = any(not dp[i-j] for j in FACTORS[i] if j != i)
+        return dp[-1]";O(n^2)
+"class Solution3(object):
+    def divisorGame(self, n):
+        def factors(n):
+            result = [[] for _ in range(n+1)]
+            for i in range(1, n+1):
+                for j in range(i, n+1, i):
+                    result[j].append(i)
+            return result
+    
+        def memoization(n):
+            if lookup[n] is None:
+                lookup[n] = any(not memoization(n-i) for i in FACTORS[n] if i != n)
+            return lookup[n]
+
+        FACTORS = factors(n)
+        lookup = [None]*(n+1)
+        return memoization(n)";O(n^2)
+"class Solution(object):
+    def appendCharacters(self, s, t):
+        i = -1
+        for j, c in enumerate(t):
+            for i in range(i+1, len(s)):
+                if s[i] == c:
+                    break
+            else:
+                return len(t)-j
+        return 0";O(nm)
+"class Solution(object):
+    def findTheLongestBalancedSubstring(self, s):
+        result = 0
+        for i in range(len(s)):
+            left, right = i+1, i
+            while left-1 >= 0 and right+1 < len(s) and s[left-1] == '0' and s[right+1] == '1':
+                left -= 1
+                right += 1
+            result = max(result, right-left+1)
+        return result";O(n^2)
+"class Solution2(object):
+    def resultsArray(self, nums, k):
+        return [nums[i+k-1] if all(nums[j]+1 == nums[j+1] for j in range(i, i+k-1)) else -1 for i in range(len(nums)-k+1)]";O(nk)
+"
+class Solution(object):
+    def minPartitions(self, n):
+        return int(max(n))
+";O(n)
+"import collections
+
+
+
+class Solution(object):
+    def canBeEqual(self, s1, s2):
+        return all(collections.Counter(s1[j] for j in range(i, len(s1), 2)) == collections.Counter(s2[j] for j in range(i, len(s2), 2)) for i in range(2))";O(n)
+"import collections
+import operator
+from functools import reduce
+
+
+
+class Solution(object):
+    def beautifulSubsets(self, nums, k):
+        def count(x):
+            y = x
+            while y-k in cnt:
+                y -= k
+            dp = [1, 0] 
+            for i in range(y, x+1, k):
+                dp = [dp[0]+dp[1], dp[0]*((1<<cnt[i])-1)]
+            return sum(dp)
+
+        cnt = collections.Counter(nums)
+        return reduce(operator.mul, (count(i) for i in cnt.keys() if i+k not in cnt))-1";O(n)
+"class Solution2(object):
+    def minimumCost(self, nums):
+        def topk(a, k):
+            result = [float(""inf"")]*k
+            for x in a:
+                for i in range(len(result)):
+                    if x < result[i]:
+                        result[i], x = x, result[i]
+            return result
+
+        return nums[0]+sum(topk((nums[i] for i in range(1, len(nums))), 2))";O(n)
+"import collections
+
+
+class Solution(object):
+    def groupStrings(self, strings):
+        groups = collections.defaultdict(list)
+        for s in strings: 
+            groups[self.hashStr(s)].append(s)
+
+        result = []
+        for key, val in groups.items():
+            result.append(sorted(val))
+
+        return result
+
+    def hashStr(self, s):
+        base = ord(s[0])
+        hashcode = """"
+        for i in range(len(s)):
+            if ord(s[i]) - base >= 0:
+                hashcode += chr(ord('a') + ord(s[i]) - base)
+            else:
+                hashcode += chr(ord('a') + ord(s[i]) - base + 26)
+        return hashcode";O(n * k + n log n)
+"class Solution(object):
+    def uniqueXorTriplets(self, nums):
+        return 1<<len(nums).bit_length() if len(nums) >= 3 else len(nums)";O(1)
+"class Solution(object):
+    def isPalindrome(self, x):
+        if x < 0:
+            return False
+        copy, reverse = x, 0
+
+        while copy:
+            reverse *= 10
+            reverse += copy % 10
+            copy //= 10
+
+        return x == reverse";O(logn)
+"class Solution(object):
+    def countCompleteComponents(self, n, edges):
+        def bfs(u):
+            if lookup[u]:
+                return False
+            v_cnt = e_cnt = 0
+            lookup[u] = True
+            q = [u]
+            while q:
+                new_q = []
+                v_cnt += len(q)
+                for u in q:
+                    e_cnt += len(adj[u])
+                    for v in adj[u]:
+                        if lookup[v]:
+                            continue
+                        lookup[v] = True
+                        new_q.append(v)
+                q = new_q
+            return v_cnt*(v_cnt-1) == e_cnt
+
+        adj = [[] for _ in range(n)]
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+        lookup = [False]*n
+        return sum(bfs(u) for u in range(n) if not lookup[u])";O(n^2)
+"class Solution(object):
+    def waysToBuildRooms(self, prevRoom):
+        MOD = 10**9+7
+        fact = [1, 1]
+        inv = [0, 1]
+        inv_fact = [1, 1]
+        def nCr(n, k):
+            while len(inv) <= n: 
+                fact.append(fact[-1]*len(inv) % MOD)
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
+                inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
+            return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
+
+        def dfs(adj, curr):
+            total_ways, total_cnt = 1, 0
+            for child in adj[curr]:
+                ways, cnt = dfs(adj, child)
+                total_cnt += cnt
+                total_ways = (((total_ways*ways) % MOD)*nCr(total_cnt, cnt)) % MOD
+            return total_ways, total_cnt+1
+
+        adj = [[] for _ in range(len(prevRoom))]
+        for i in range(1, len(prevRoom)):
+            adj[prevRoom[i]].append(i)
+        return dfs(adj, 0)[0]";O(n)
+"class Solution(object):
+    def maskPII(self, S):
+        if '@' in S:
+            first, after = S.split('@')
+            return ""{}*****{}@{}"".format(first[0], first[-1], after).lower()
+
+        digits = [x for x in S if x.isdigit()]
+        local = ""***-***-{}"".format(digits[-4:])
+        if len(digits) == 10:
+            return local
+        return ""+{}-{}"".format('*' * (len(digits) - 10), local)";O(n)
+"class Solution(object):
+    def wordCount(self, startWords, targetWords):
+        def bitmask(w):
+            return reduce(lambda x, y: x|y, (1 << (ord(c)-ord('a')) for i, c in enumerate(w)))
+
+        lookup = set(bitmask(w) for w in startWords)
+        result = 0 
+        for w in targetWords: 
+            mask = bitmask(w)
+            result += any(mask ^ (1 << ord(c)-ord('a')) in lookup for c in w)
+        return result";O(n*m)
+"import collections
+
+
+class Solution(object):
+    def leastBricks(self, wall):
+        widths = collections.defaultdict(int)
+        result = len(wall)
+        for row in wall:
+            width = 0
+            for i in range(len(row)-1):
+                width += row[i]
+                widths[width] += 1
+                result = min(result, len(wall) - widths[width])
+        return result";O(n)
+"import itertools
+
+
+class Solution(object):
+    def sortSentence(self, s):
+        words = s.split()
+        for i in range(len(words)):
+            while int(words[i][-1])-1 != i:
+                words[int(words[i][-1])-1], words[i] = words[i], words[int(words[i][-1])-1]
+        return "" "".join(map(lambda x: x[:-1], words))";O(n)
+"class Solution(object):
+    def countOdds(self, low, high):
+        return (high+1)//2 - ((low-1)+1)//2";O(1)
+"import collections
+
+
+
+class Solution(object):
+    def getMaxFunctionValue(self, receiver, k):
+        def find_cycles(adj):
+            result = []
+            lookup = [0]*len(adj)
+            idx = 0
+            for u in range(len(adj)):
+                prev = idx
+                while not lookup[u]:
+                    idx += 1
+                    lookup[u] = idx
+                    u = adj[u]
+                if lookup[u] > prev:
+                    result.append((u, idx-lookup[u]+1))
+            return result
+
+        def find_prefixes():
+            lookup = [(-1, -1)]*len(receiver)
+            prefixes = [[0] for _ in range(len(cycles))]
+            for idx, (u, l) in enumerate(cycles):
+                for i in range(l):
+                    lookup[u] = (idx, i)
+                    prefixes[idx].append(prefixes[idx][i]+u)
+                    u = receiver[u]
+            return lookup, prefixes
+        
+        def get_sum(prefix, i, cnt):
+            l = len(prefix)-1
+            q, r = divmod(cnt, l)
+            return (q*prefix[-1]+
+                    (prefix[min(i+r, l)]-prefix[i])+
+                    (prefix[max(((i+r)-l, 0))]-prefix[0]))
+        
+        def start_inside_cycle():
+            result = 0
+            for u, l in cycles:
+                for _ in range(l):
+                    idx, i = lookup[u]
+                    result = max(result, get_sum(prefixes[idx], i, k+1))
+                    u = receiver[u]
+            return result
+    
+        def start_outside_cycle():
+            result = 0
+            degree = [0]*len(receiver)
+            for x in receiver:
+                degree[x] += 1
+            for u in range(len(receiver)):
+                if degree[u]:
+                    continue
+                curr = 0
+                dq = collections.deque()
+                while lookup[u][0] == -1:
+                    curr += u
+                    dq.append(u)
+                    if len(dq) == k+1:
+                        result = max(result, curr)
+                        curr -= dq.popleft()
+                    u = receiver[u]
+                idx, i = lookup[u]
+                while dq:
+                    result = max(result, curr+get_sum(prefixes[idx], i, (k+1)-len(dq)))
+                    curr -= dq.popleft()
+            return result
+            
+        cycles = find_cycles(receiver)
+        lookup, prefixes = find_prefixes()
+        return max(start_inside_cycle(), start_outside_cycle())";O(n)
+"class Solution(object):
+    def soupServings(self, N):
+        def dp(a, b, lookup):
+            if (a, b) in lookup:
+                return lookup[a, b]
+            if a <= 0 and b <= 0:
+                return 0.5
+            if a <= 0:
+                return 1.0
+            if b <= 0:
+                return 0.0
+            lookup[a, b] = 0.25 * (dp(a-4, b, lookup) +
+                                   dp(a-3, b-1, lookup) +
+                                   dp(a-2, b-2, lookup) +
+                                   dp(a-1, b-3, lookup))
+            return lookup[a, b]
+
+        if N >= 4800:
+            return 1.0
+        lookup = {}
+        N = (N+24)//25
+        return dp(N, N, lookup)";O(n^2)
+"class Solution(object):
+    def shortestDistanceAfterQueries(self, n, queries):
+        def bfs(u, v):
+            adj[u].append(v)
+            q = [u]
+            while q:
+                new_q = []
+                for u in q:
+                    for v in adj[u]:
+                        if dist[u]+1 >= dist[v]:
+                            continue
+                        dist[v] = dist[u]+1
+                        new_q.append(v)
+                q = new_q
+            return dist[-1]
+
+        adj = [[] for _ in range(n)]
+        for u in range(n-1):
+            adj[u].append(u+1)
+        dist = list(range(n))
+        return [bfs(u, v) for u, v in queries]";O(nq)
+"import collections
+
+
+
+class Solution2(object):
+    def convertArray(self, nums):
+        vals = sorted(set(nums))
+        def f(nums):
+            dp = collections.defaultdict(int) 
+            for x in nums:
+                prev = -1
+                for i in vals:
+                    dp[i] = min(dp[i]+abs(i-x), dp[prev]) if prev != -1 else dp[i]+abs(i-x)
+                    prev = i
+            return dp[vals[-1]]
+
+        return min(f(nums), f((x for x in reversed(nums))))";O(nm)
+"class Solution(object):
+    def canVisitAllRooms(self, rooms):
+        lookup = set([0])
+        stack = [0]
+        while stack:
+            node = stack.pop()
+            for nei in rooms[node]:
+                if nei not in lookup:
+                    lookup.add(nei)
+                    if len(lookup) == len(rooms):
+                        return True
+                    stack.append(nei)
+        return len(lookup) == len(rooms)";O(n)
+"class Solution2(object):
+    def distributeCandies(self, n, limit):
+        return sum(min(limit, n-i)-max((n-i)-limit, 0)+1 for i in range(max(n-2*limit, 0), min(limit, n)+1))";O(n)
+"class Solution_TLE(object):
+    def houseOfCards(self, n):
+        dp = [[0]*(n+1) for _ in range((n+1)//3+1)] 
+        dp[0][0] = 1
+        for t in range(1, (n+1)//3+1):
+            for i in range(3*t-1, n+1):
+                dp[t][i] = sum(dp[j][i-(3*t-1)] for j in range(t))
+        return sum(dp[t][n] for t in range((n+1)//3+1))";O(n^2)
+"import collections
+
+
+class Solution2(object):
+    def countPairs(self, root, distance):
+        def dfs(distance, node):
+            if not node:
+                return 0, collections.Counter()
+            if not node.left and not node.right:
+                return 0, collections.Counter([0])
+            left, right = dfs(distance, node.left), dfs(distance, node.right)
+            result = left[0]+right[0]
+            for left_d, left_c in left[1].items():
+                for right_d,right_c in right[1].items():
+                    if left_d+right_d+2 <= distance:
+                        result += left_c*right_c
+            return result, collections.Counter({k+1:v for k,v in (left[1]+right[1]).items()})
+        
+        return dfs(distance, root)[0]";O(n)
+"class Solution2(object):
+    def distributeCandies(self, n, limit):
+        return sum(min(limit, n-i)-max((n-i)-limit, 0)+1 for i in range(max(n-2*limit, 0), min(limit, n)+1))";O(n)
+"class Solution(object):
+    def findMaxAverage(self, nums, k):
+        def getDelta(avg, nums, k):
+            accu = [0.0] * (len(nums) + 1)
+            minval_pos = None
+            delta = 0.0
+            for i in range(len(nums)):
+                accu[i+1] = nums[i] + accu[i] - avg
+                if i >= (k-1):
+                    if minval_pos == None or accu[i-k+1] < accu[minval_pos]:
+                        minval_pos = i-k+1
+                    if accu[i+1] - accu[minval_pos] >= 0:
+                        delta = max(delta, (accu[i+1] - accu[minval_pos]) / (i+1 - minval_pos))
+            return delta
+
+        left, delta = min(nums), float(""inf"")
+        while delta > 1e-5:
+            delta = getDelta(left, nums, k)
+            left += delta
+        return left";O(n logW)
+"class Solution(object):
+    def countPairsOfConnectableServers(self, edges, signalSpeed):
+        def iter_dfs(u, p, dist):
+            result = 0
+            stk = [(u, p, dist)]
+            while stk:
+                u, p, dist = stk.pop()
+                if dist%signalSpeed == 0:
+                    result += 1
+                for v, w in reversed(adj[u]):
+                    if v == p:
+                        continue
+                    stk.append((v, u, dist+w))
+            return result
+        
+        adj = [[] for _ in range(len(edges)+1)]
+        for u, v, w in edges:
+            adj[u].append((v, w))
+            adj[v].append((u, w))
+        result = [0]*(len(edges)+1)
+        for u in range(len(result)):
+            curr = 0
+            for v, w in adj[u]:
+                cnt = iter_dfs(v, u, w)
+                result[u] += curr*cnt
+                curr += cnt
+        return result";O(n ^ 2)
+"class Solution3(object):
+    def countPairsOfConnectableServers(self, edges, signalSpeed):
+        def bfs(u, p, dist):
+            result = 0
+            q = [(u, p, dist)]
+            while q:
+                new_q = []
+                for u, p, dist in q:
+                    if dist%signalSpeed == 0:
+                        result += 1
+                    for v, w in adj[u]:
+                        if v == p:
+                            continue
+                        new_q.append((v, u, dist+w))
+                q = new_q
+            return result
+        
+        adj = [[] for _ in range(len(edges)+1)]
+        for u, v, w in edges:
+            adj[u].append((v, w))
+            adj[v].append((u, w))
+        result = [0]*(len(edges)+1)
+        for u in range(len(result)):
+            curr = 0
+            for v, w in adj[u]:
+                cnt = bfs(v, u, w)
+                result[u] += curr*cnt
+                curr += cnt
+        return result";O(n ^ 2)
+"
+import threading
+import collections
+
+
+class Solution(object):
+    def __init__(self, capacity):
+        self.__cv = threading.Condition()
+        self.__q = collections.deque()
+        self.__cap = capacity
+
+    def enqueue(self, element):
+        with self.__cv:
+            while len(self.__q) == self.__cap:
+                self.__cv.wait()
+            self.__q.append(element)
+            self.__cv.notifyAll()
+
+    def dequeue(self):
+        with self.__cv:
+            while not self.__q:
+                self.__cv.wait()
+            self.__cv.notifyAll()
+            return self.__q.popleft()
+
+    def size(self):
+        with self.__cv:
+            return len(self.__q)
+";O(1)
+"import threading
+
+
+class Solution(object):
+    
+    def __init__(self):
+        self.__l = threading.Lock()
+        self.__light = 1
+
+    def carArrived(self, carId, roadId, direction, turnGreen, crossCar):
+        with self.__l:
+            if self.__light != roadId:
+                self.__light = roadId
+                turnGreen()
+            crossCar()";O(1)
+"import collections
+
+
+
+class Solution2(object):
+    def maxFrequencyScore(self, nums, k):
+        MOD = 10**9+7
+        result = curr = 0
+        cnt = collections.Counter()
+        for i in range(len(nums)):
+            if i >= k:
+                curr = (curr-pow(nums[i-k], cnt[nums[i-k]], MOD))%MOD
+                cnt[nums[i-k]] -= 1
+                if cnt[nums[i-k]]:
+                    curr = (curr+pow(nums[i-k], cnt[nums[i-k]], MOD))%MOD
+            if cnt[nums[i]]:
+               curr = (curr-pow(nums[i], cnt[nums[i]], MOD))%MOD
+            cnt[nums[i]] += 1
+            curr = (curr+pow(nums[i], cnt[nums[i]], MOD))%MOD
+            if i >= k-1:
+                result = max(result, curr)
+        return result";O(n)
+"import collections
+
+
+class Solution(object):
+
+    def __init__(self, v1, v2):
+        self.q = collections.deque([(len(v), iter(v)) for v in (v1, v2) if v])
+
+    def __next__(self):
+        len, iter = self.q.popleft()
+        if len > 1:
+            self.q.append((len-1, iter))
+        return next(iter)
+
+    def hasNext(self):
+        return bool(self.q)";O(1)
+"class Solution(object):
+    def smallestBeautifulString(self, s, k):
+        def check(i):
+            return (i-1 < 0 or arr[i-1] != arr[i]) and (i-2 < 0 or arr[i-2] != arr[i])
+
+        arr = [ord(x)-ord('a') for x in s]
+        for i in reversed(range(len(arr))):
+            arr[i] += 1
+            while not check(i):
+                arr[i] += 1
+            if arr[i] < k:
+                break
+        else:
+            return """"
+        for j in range(i+1, len(arr)):
+            arr[j] = 0
+            while not check(j):
+                arr[j] += 1
+        return """".join([chr(ord('a')+x) for x in arr])";O(n)
+"class Solution(object):
+    def findKDistantIndices(self, nums, key, k):
+        result = []
+        prev = -1
+        for i, x in enumerate(nums):
+            if x != key:
+                continue
+            for j in range(max(i-k, prev+1), min(i+k+1, len(nums))):
+                result.append(j)
+            prev = min(i+k, len(nums)-1)
+        return result";O(nk)
+"class Solution(object):
+    def maximumInvitations(self, favorite):
+        def find_cycles(adj):
+            result = []
+            lookup = [False]*len(adj)
+            for u in range(len(adj)):
+                cnt = {}
+                while not lookup[u]:
+                    lookup[u] = True
+                    cnt[u] = len(cnt)
+                    u = adj[u]
+                if u in cnt:
+                    result.append((u, len(cnt)-cnt[u]))
+            return result
+
+        def bfs(adj, u, exclude):
+            result = 0
+            q = [u]
+            while q:
+                result += 1
+                new_q = []
+                for u in q:
+                    for v in adj[u]:
+                        if v == exclude:
+                            continue
+                        new_q.append(v)
+                q = new_q
+            return result
+            
+        inv_adj = [[] for _ in range(len(favorite))]  
+        for u, v in enumerate(favorite):
+            inv_adj[v].append(u)
+        cycles = find_cycles(favorite)
+        return max(max([l for _, l in cycles if l > 2] or [0]),
+                   sum(bfs(inv_adj, u, favorite[u]) + bfs(inv_adj, favorite[u], u) for u, l in cycles if l == 2))";O(n)
+"class Solution(object):
+    def countCoveredBuildings(self, n, buildings):
+        left = [n]*n
+        right = [-1]*n
+        up = [-1]*n
+        down = [n]*n
+        for x, y in buildings:
+            x -= 1
+            y -= 1
+            left[y] = min(left[y], x)
+            right[y] = max(right[y], x)
+            up[x] = max(up[x], y)
+            down[x] = min(down[x], y) 
+        return sum(left[y-1] < x-1 < right[y-1] and down[x-1] < y-1 < up[x-1] for x, y in buildings)";O(n)
+"class Solution(object):
+    def bestCoordinate(self, towers, radius):
+        min_x = min(towers, key=lambda x:x[0])[0]
+        max_x = max(towers, key=lambda x:x[0])[0]
+        min_y = min(towers, key=lambda x:x[1])[1]
+        max_y = max(towers, key=lambda x:x[1])[1]
+        max_quality = 0
+        for x in range(min_x, max_x+1):
+            for y in range(min_y, max_y+1):
+                q = 0
+                for nx, ny, nq in towers:
+                    d = ((nx-x)**2+(ny-y)**2)**0.5
+                    if d <= radius:
+                        q += int(nq/(1+d))
+                if q > max_quality:
+                    max_quality = q
+                    result = x, y
+        return result";O(nm^2)
+"class Solution(object):
+    def countPaths(self, n, edges):
+        def linear_sieve_of_eratosthenes(n): 
+            primes = []
+            spf = [-1]*(n+1) 
+            for i in range(2, n+1):
+                if spf[i] == -1:
+                    spf[i] = i
+                    primes.append(i)
+                for p in primes:
+                    if i*p > n or p > spf[i]:
+                        break
+                    spf[i*p] = p
+            return spf
+        
+        def is_prime(u):
+            return spf[u] == u
+
+        def iter_dfs():
+            result = 0
+            stk = [(1, (0, -1, [0]*2))]
+            while stk:
+                step, args = stk.pop()
+                if step == 1:
+                    u, p, ret = args
+                    ret[:] = [1-is_prime(u+1), is_prime(u+1)]
+                    stk.append((2, (u, p, ret, 0)))
+                elif step == 2:
+                    u, p, ret, i = args
+                    if i == len(adj[u]):
+                        continue
+                    v = adj[u][i]
+                    stk.append((2, (u, p, ret, i+1)))
+                    if v == p:
+                        continue
+                    new_ret = [0]*2
+                    stk.append((3, (u, p, new_ret, ret, i)))
+                    stk.append((1, (v, u, new_ret)))
+                elif step == 3:
+                    u, p, new_ret, ret, i = args
+                    result += ret[0]*new_ret[1]+ret[1]*new_ret[0]
+                    if is_prime(u+1):
+                        ret[1] += new_ret[0]
+                    else:
+                        ret[0] += new_ret[0]
+                        ret[1] += new_ret[1]
+            return result
+
+        spf = linear_sieve_of_eratosthenes(n)
+        adj = [[] for _ in range(n)]
+        for u, v in edges:
+            u, v = u-1, v-1
+            adj[u].append(v)
+            adj[v].append(u)
+        return iter_dfs()";O(n)
+"class UnionFind(object): 
+    def __init__(self, n):
+        self.set = list(range(n))
+        self.rank = [0]*n
+        self.size = [1]*n
+
+    def find_set(self, x):
+        stk = []
+        while self.set[x] != x: 
+            stk.append(x)
+            x = self.set[x]
+        while stk:
+            self.set[stk.pop()] = x
+        return x
+
+    def union_set(self, x, y):
+        x, y = self.find_set(x), self.find_set(y)
+        if x == y:
+            return False
+        if self.rank[x] > self.rank[y]: 
+            x, y = y, x
+        self.set[x] = self.set[y]
+        if self.rank[x] == self.rank[y]:
+            self.rank[y] += 1
+        self.size[y] += self.size[x]
+        return True
+
+    def total(self, x):
+        return self.size[self.find_set(x)]
+
+
+class Solution3(object):
+    def countPaths(self, n, edges):
+        def linear_sieve_of_eratosthenes(n): 
+            primes = []
+            spf = [-1]*(n+1) 
+            for i in range(2, n+1):
+                if spf[i] == -1:
+                    spf[i] = i
+                    primes.append(i)
+                for p in primes:
+                    if i*p > n or p > spf[i]:
+                        break
+                    spf[i*p] = p
+            return spf
+        
+        def is_prime(u):
+            return spf[u] == u
+
+        spf = linear_sieve_of_eratosthenes(n)
+        uf = UnionFind(n)
+        for u, v in edges:
+            u, v = u-1, v-1
+            if is_prime(u+1) == is_prime(v+1) == False:
+                uf.union_set(u, v) 
+        result = 0
+        cnt = [1]*n
+        for u, v in edges:
+            u, v = u-1, v-1
+            if is_prime(u+1) == is_prime(v+1):
+                continue
+            if not is_prime(u+1):
+                u, v = v, u
+            result += cnt[u]*uf.total(v)
+            cnt[u] += uf.total(v)
+        return result";O(N + M)
+"class Solution(object):
+    def reformatDate(self, date):
+        lookup = {""Jan"":1, ""Feb"":2, ""Mar"":3, ""Apr"":4,
+                  ""May"":5, ""Jun"":6, ""Jul"":7, ""Aug"":8,
+                  ""Sep"":9, ""Oct"":10, ""Nov"":11, ""Dec"":12}
+        return ""{:04d}-{:02d}-{:02d}"".format(int(date[-4:]), lookup[date[-8:-5]], int(date[:date.index(' ')-2]))";O(1)
+"class Solution(object):
+    def kConcatenationMaxSum(self, arr, k):
+        def max_sub_k_array(arr, k):
+            result, curr = float(""-inf""), float(""-inf"")
+            for _ in range(k):
+                for x in arr:
+                    curr = max(curr+x, x)
+                    result = max(result, curr)
+            return result
+        
+        MOD = 10**9+7
+        if k == 1:
+            return max(max_sub_k_array(arr, 1), 0) % MOD
+        return (max(max_sub_k_array(arr, 2), 0) + (k-2)*max(sum(arr), 0)) % MOD";O(nk)
+"LOOKUP = [[-1]*(5+1) for _ in range(5+1)]
+
+
+
+class Solution2(object):
+    def hasSameDigits(self, s):
+        def nCr(n, r):
+            if n-r < r:
+                r = n-r
+            if LOOKUP[n][r] == -1:
+                c = 1
+                for k in range(1, r+1):
+                    c *= n-k+1
+                    c //= k
+                LOOKUP[n][r] = c
+            return LOOKUP[n][r]
+
+        def nCr_mod(n, r, mod):
+            result = 1
+            while n > 0 or r > 0:
+                n, ni = divmod(n, mod)
+                r, ri = divmod(r, mod)
+                if ni < ri:
+                    return 0
+                result = (result*nCr(ni, ri))%mod
+            return result
+
+        def nC10(n, k):
+            return lookup[nCr_mod(n, k, 2)][nCr_mod(n, k, 5)]
+
+        lookup = [[0]*5 for _ in range(2)]
+        for i in range(10):
+            lookup[i%2][i%5] = i
+        total = 0
+        for i in range(len(s)-1):
+            total = (total+nC10(len(s)-2, i)*(ord(s[i])-ord(s[i+1])))%10
+        return total == 0";O(L)
+"class Solution(object):
+    def evaluate(self, expression):
+        def getval(lookup, x):
+            return lookup.get(x, x)
+
+        def evaluate(tokens, lookup):
+            if tokens[0] in ('add', 'mult'):
+                a, b = list(map(int, [getval(lookup, x) for x in tokens[1:]]))
+                return str(a+b if tokens[0] == 'add' else a*b)
+            for i in range(1, len(tokens)-1, 2):
+                if tokens[i+1]:
+                    lookup[tokens[i]] = getval(lookup, tokens[i+1])
+            return getval(lookup, tokens[-1])
+
+        tokens, lookup, stk = [''], {}, []
+        for c in expression:
+            if c == '(':
+                if tokens[0] == 'let':
+                    evaluate(tokens, lookup)
+                stk.append((tokens, dict(lookup)))
+                tokens =  ['']
+            elif c == ' ':
+                tokens.append('')
+            elif c == ')':
+                val = evaluate(tokens, lookup)
+                tokens, lookup = stk.pop()
+                tokens[-1] += val
+            else:
+                tokens[-1] += c
+        return int(tokens[0])";O(n)??
+"class Solution(object):
+    def uniqueXorTriplets(self, nums):
+        def fst(a, inverse):
+            n = len(a)
+            step = 1
+            while step < n:
+                for i in range(0, n, step<<1):
+                    for j in range(i, i+step):
+                        u, v = a[j], a[j+step]
+                        a[j], a[j+step] = u+v, u-v
+                step <<= 1
+            if inverse:
+                for i in range(n):
+                    a[i] //= n
+        
+        a = [0]*(1<<max(nums).bit_length())
+        for x in nums:
+            a[x] += 1
+        fst(a, False)
+        for i in range(len(a)):
+            a[i] = a[i]**3
+        fst(a, True)
+        return sum(x != 0 for x in a)";O(nlogn)
+"class ListNode(object):
+    def __init__(self, key, val):
+        self.val = val
+        self.key = key
+        self.next = None
+        self.prev = None
+
+
+class LinkedList(object):
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insert(self, node):
+        node.next, node.prev = None, None 
+        if self.head is None:
+            self.head = node
+        else:
+            self.tail.next = node
+            node.prev = self.tail
+        self.tail = node
+
+    def delete(self, node):
+        if node.prev:
+            node.prev.next = node.__next__
+        else:
+            self.head = node.__next__
+        if node.__next__:
+            node.next.prev = node.prev
+        else:
+            self.tail = node.prev
+        node.next, node.prev = None, None 
+
+    def find(self, key):
+        curr = self.head
+        while curr:
+            if curr.key == key:
+                break
+            curr = curr.__next__
+        return curr
+
+
+class Solution(object):
+
+    def __init__(self):
+        self.__data = [LinkedList() for _ in range(10000)]
+
+    def add(self, key):
+        l = self.__data[key % len(self.__data)]
+        node = l.find(key)
+        if not node:
+            l.insert(ListNode(key, 0))
+
+    def remove(self, key):
+        l = self.__data[key % len(self.__data)]
+        node = l.find(key)
+        if node:
+            l.delete(node)
+
+    def contains(self, key):
+        l = self.__data[key % len(self.__data)]
+        node = l.find(key)
+        return node is not None";O(n)
+"class Solution(object):
+    def fractionToDecimal(self, numerator, denominator):
+        result = """"
+        if (numerator > 0 and denominator < 0) or (numerator < 0 and denominator > 0):
+            result = ""-""
+
+        dvd, dvs = abs(numerator), abs(denominator)
+        result += str(dvd / dvs)
+        dvd %= dvs
+
+        if dvd > 0:
+            result += "".""
+
+        lookup = {}
+        while dvd and dvd not in lookup:
+            lookup[dvd] = len(result)
+            dvd *= 10
+            result += str(dvd / dvs)
+            dvd %= dvs
+
+        if dvd in lookup:
+            result = result[:lookup[dvd]] + ""("" + result[lookup[dvd]:] + "")""
+
+        return result";O(n)
+"import collections
+
+
+
+class Solution(object):
+    def distinctSubarraysWithAtMostKOddIntegers(self, A, K):
+        def countDistinct(A, left, right, trie): 
+            result = 0
+            for i in reversed(range(left, right+1)):
+                if A[i] not in trie:
+                    result += 1
+                trie = trie[A[i]]
+            return result
+
+        _trie = lambda: collections.defaultdict(_trie)
+        trie = _trie()
+        result, left, count = 0, 0, 0
+        for right in range(len(A)):
+            count += A[right]%2
+            while count > K:
+                count -= A[left]%2
+                left += 1
+            result += countDistinct(A, left, right, trie)
+        return result";O(n ^ 2)
+"import threading
+
+
+class Solution(object):
+    def __init__(self):
+        self._l = [threading.Lock() for _ in range(5)]
+
+    def wantsToEat(self, philosopher, pickLeftFork, pickRightFork, eat, putLeftFork, putRightFork):
+        left, right = philosopher, (philosopher+4)%5
+        first, second = left, right
+        if  philosopher%2 == 0:
+            first, second = left, right
+        else:
+            first, second = right, left
+
+        with self._l[first]:
+            with self._l[second]:
+                pickLeftFork()
+                pickRightFork()
+                eat()
+                putLeftFork()
+                putRightFork()";O(1)
+"import collections
+
+
+
+class Solution2(object):
+    def minimumAddedInteger(self, nums1, nums2):
+        def check(cnt2, cnt1):
+            return all(cnt1.get(k, 0)-v >= 0 for k, v in cnt2.items()) 
+        
+        def topk(a, k): 
+            result = [float(""-inf"")]*k
+            for x in a:
+                for i in range(len(result)):
+                    if x > result[i]:
+                        result[i], x = x, result[i]
+            return result
+    
+        mx = max(nums2)
+        cnt2 = collections.Counter(nums2)
+        return next(d for d in [mx-x for x in topk(nums1, 3)] if check(cnt2, collections.Counter(x+d for x in nums1)))";O(n)
+"class Solution2(object):
+    def numberOfPairs(self, points):
+        points.sort(key=lambda x: (x[0], -x[1]))
+        return sum(all(not points[i][1] >= points[k][1] >= points[j][1] for k in range(i+1, j))
+                   for i in range(len(points))
+                   for j in range(i+1, len(points)) if points[i][1] >= points[j][1])";O(n ^ 3)
+"class Solution3(object):
+    def reinitializePermutation(self, n):
+        result, i = 0, 1
+        while not result or i != 1: 
+            i = (i//2 if not i%2 else n//2+(i-1)//2)
+            result += 1
+        return result";O(n)
+"class Solution(object):
+    def countPairs(self, n, edges):
+        def bfs(adj, u, lookup):
+            q = [u]
+            lookup[u] = 1
+            result = 1
+            while q:
+                new_q = []
+                for u in q:
+                    for v in adj[u]:
+                        if lookup[v]:
+                            continue
+                        lookup[v] = 1
+                        result += 1
+                        new_q.append(v)
+                q = new_q
+            return result
+        
+        adj = [[] for _ in range(n)]
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+        lookup = [0]*n
+        result = 0
+        for u in range(n):
+            if lookup[u]:
+                continue
+            cnt = bfs(adj, u, lookup)
+            result += cnt*(n-cnt)
+            n -= cnt
+        return result";O(n + E)
+"class Solution2(object):
+    def placedCoins(self, edges, cost):
+        def dfs(u, p):
+            arr = [cost[u]]
+            for v in adj[u]:
+                if v == p:
+                    continue
+                arr.extend(dfs(v, u))
+                arr.sort()
+                if len(arr) > 5:
+                    arr = arr[:2]+arr[-3:]
+            result[u] = 1 if len(arr) < 3 else max(arr[0]*arr[1]*arr[-1], arr[-3]*arr[-2]*arr[-1], 0)
+            return arr
+                
+        adj = [[] for _ in range(len(cost))]
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+        result = [0]*len(cost)
+        dfs(0, -1)
+        return result";O(nlogn)
+"import random
+import itertools
+import math
+
+
+
+
+random.seed(0)
+class Solution(object):
+    def beautifulPair(self, nums1, nums2):
+        INF = float(""inf"")
+        def dist(a, b):
+            if a[2] > b[2]:
+                a, b = b, a
+            return [abs(a[0]-b[0])+abs(a[1]-b[1]), a[2], b[2]]
+
+        def cell(point, size):
+            x, y, _ = point
+            return math.floor(x/size), math.floor(y/size)
+
+        def improve():
+            lookup = {}
+            for p in points:
+                i, j = list(map(int, cell(p, result[0]/2.0)))
+                for ni in range(i-2, (i+2)+1):
+                    for nj in range(j-2, (j+2)+1):
+                        if (ni, nj) not in lookup:
+                            continue
+                        d = dist(p, lookup[ni, nj])
+                        if d < result:
+                            result[:] = d
+                            return True
+                lookup[i, j] = p
+            return False
+
+        points = [(i, j, idx) for idx, (i, j) in enumerate(zip(nums1, nums2))]
+        result = [INF]*3
+        lookup = {}
+        for i in reversed(range(len(points))):
+            if points[i][:2] in lookup:
+                result = [0, i, lookup[points[i][:2]]]
+            lookup[points[i][:2]] = i
+        if result[0] == 0:
+            return result[1:]
+        random.shuffle(points)
+        result = dist(points[0], points[1])
+        while improve():
+            pass
+        return result[1:]";???
+"import collections
+
+
+class Solution(object):
+    def countPairs(self, deliciousness):
+        def floor_log2_x(x):
+            return x.bit_length()-1
+
+        MOD = 10**9+7
+        max_pow = floor_log2_x(max(deliciousness))+1
+        cnt = collections.Counter()
+        result = 0
+        for d in deliciousness:
+            p = 1
+            for i in range(max_pow+1):
+                result = (result+cnt[p-d])%MOD
+                p <<= 1
+            cnt[d] += 1    
+        return result";O(nlogm)
+"import collections
+
+
+class Solution(object):
+    def recoverArray(self, nums):
+        def check(k, cnt, result):
+            for x in nums:
+                if cnt[x] == 0:
+                    continue
+                if cnt[x+2*k] == 0:
+                    return False
+                cnt[x] -= 1
+                cnt[x+2*k] -= 1
+                result.append(x+k)
+            return True
+            
+        nums.sort()
+        cnt = collections.Counter(nums)
+        for i in range(1, len(nums)//2+1):
+            k = nums[i]-nums[0]
+            if k == 0 or k%2:
+                continue
+            k //= 2
+            result = []
+            if check(k, collections.Counter(cnt), result):
+                return result
+        return []";O(n ^ 2)
+"LOOKUP = [[-1]*(5+1) for _ in range(5+1)]
+
+
+
+class Solution2(object):
+    def hasSameDigits(self, s):
+        def nCr(n, r):
+            if n-r < r:
+                r = n-r
+            if LOOKUP[n][r] == -1:
+                c = 1
+                for k in range(1, r+1):
+                    c *= n-k+1
+                    c //= k
+                LOOKUP[n][r] = c
+            return LOOKUP[n][r]
+
+        def nCr_mod(n, r, mod):
+            result = 1
+            while n > 0 or r > 0:
+                n, ni = divmod(n, mod)
+                r, ri = divmod(r, mod)
+                if ni < ri:
+                    return 0
+                result = (result*nCr(ni, ri))%mod
+            return result
+
+        def nC10(n, k):
+            return lookup[nCr_mod(n, k, 2)][nCr_mod(n, k, 5)]
+
+        lookup = [[0]*5 for _ in range(2)]
+        for i in range(10):
+            lookup[i%2][i%5] = i
+        total = 0
+        for i in range(len(s)-1):
+            total = (total+nC10(len(s)-2, i)*(ord(s[i])-ord(s[i+1])))%10
+        return total == 0";O(LlogL)
+"class Solution(object):
+    def orderlyQueue(self, S, K):
+        if K == 1:
+            return min(S[i:] + S[:i] for i in range(len(S)))
+        return """".join(sorted(S))";O(n ^ 2)
+"import heapq
+
+
+
+class Solution(object):
+    def minOperations(self, n, m):
+        def linear_sieve_of_eratosthenes(n): 
+            primes = []
+            spf = [-1]*(n+1) 
+            for i in range(2, n+1):
+                if spf[i] == -1:
+                    spf[i] = i
+                    primes.append(i)
+                for p in primes:
+                    if i*p > n or p > spf[i]:
+                        break
+                    spf[i*p] = p
+            return spf
+            
+        def dijkstra(start, target):
+            if spf[start] == start:
+                return -1
+            lookup = set()
+            min_heap = [(start, start)]
+            while min_heap:
+                curr, i = heapq.heappop(min_heap)
+                if i in lookup:
+                    continue
+                lookup.add(i)
+                if i == target:
+                    return curr
+                base = 1
+                while base <= i:
+                    x = i//base
+                    for d in (-1, 1):
+                        if (1 if x <= 9 else 0) <= x%10+d <= 9 and spf[i+d*base] != i+d*base and i+d*base not in lookup:
+                            heapq.heappush(min_heap, (curr+(i+d*base), i+d*base))
+                    base *= 10
+            return -1
+        
+        base = 1
+        while base < max(n, m):
+            base *= 10
+        spf = linear_sieve_of_eratosthenes(base)
+        return dijkstra(n, m)";O(B(logB) 
+"class Solution(object):
+    def findGameWinner(self, n):
+        return n%6 != 1";O(1)
+"class Solution2(object):
+    def countNumbersWithUniqueDigits(self, n):
+        fact = [1]*2
+        def nPr(n, k):
+            while len(fact) <= n: 
+                fact.append(fact[-1]*len(fact))
+            return fact[n]//fact[n-k]
+
+        return 1+9*sum(nPr(9, i) for i in range(n))";O(n)
+"class Solution(object):
+    def maxHeightOfTriangle(self, red, blue):
+        def f(x, y):
+            a, b = int(2*x**0.5)-1, int((4*y+1)**0.5)-1
+            return min(a, b)+int(a != b)
+        
+        return max(f(red, blue), f(blue, red))";O(1)
+"import collections
+
+
+
+class Solution(object):
+    def countOfArrays(self, n, m, k):
+        MOD = 10**9+7
+        fact, inv, inv_fact = [[1]*2 for _ in range(3)]
+        def nCr(n, k):
+            while len(inv) <= n: 
+                fact.append(fact[-1]*len(inv) % MOD)
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
+                inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
+            return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
+
+        def nHr(n, k):
+            return nCr(n+k-1, k)
+
+        lookup = collections.defaultdict(list)
+        def pow(a, b):
+            while len(lookup[a]) <= b:
+                lookup[a].append((lookup[a][-1]*a)%MOD if lookup[a] else 1)
+            return lookup[a][b]
+
+        MOD = 10**9+7
+        even, odd = m//2, (m+1)//2
+        result = 0
+        if k == 0:
+            result = (result+pow(odd, n))%MOD
+        for x in range(1, (n+1-k)//2+1): 
+            result = (result+(nHr(x, (k+x)-x)*nHr(x+1, (n-(k+x))-((x+1)-2))*pow(even, k+x)*pow(odd, n-(k+x))%MOD))%MOD
+        return result";???
+"class Solution(object):
+    def smallestNumber(self, n, t):
+        def check(x):
+            result = 1
+            while x:
+                result = (result*(x%10))%t
+                x //= 10
+            return result == 0
+    
+        while not check(n):
+            n += 1
+        return n";???
+"import collections
+import string
+
+
+class Solution(object):
+    def longestWord(self, words):
+        def iter_dfs(words, node):
+            result = -1
+            stk = [node]
+            while stk:
+                node = stk.pop()
+                if result == -1 or len(words[node[""_end""]]) > len(words[result]):
+                    result = node[""_end""]
+                for c in reversed(string.ascii_lowercase):
+                    if c not in node or ""_end"" not in node[c]:
+                        continue
+                    stk.append(node[c])
+            return result       
+    
+        _trie = lambda: collections.defaultdict(_trie)
+        trie = _trie()
+        trie[""_end""] = -1
+        for i, word in enumerate(words):
+            reduce(dict.__getitem__, word, trie)[""_end""] = i
+        result = iter_dfs(words, trie)
+        return words[result] if result != -1 else """"";O(n)
+"import collections
+import string
+
+
+class Solution2(object):
+    def longestWord(self, words):
+        def dfs(words, node, result):
+            if result[0] == -1 or len(words[node[""_end""]]) > len(words[result[0]]):
+                result[0] = node[""_end""]
+            for c in string.ascii_lowercase:
+                if c not in node or ""_end"" not in node[c]:
+                    continue
+                dfs(words, node[c], result)
+    
+        _trie = lambda: collections.defaultdict(_trie)
+        trie = _trie()
+        trie[""_end""] = -1
+        for i, word in enumerate(words):
+            reduce(dict.__getitem__, word, trie)[""_end""] = i
+        result = [-1]
+        dfs(words, trie, result)
+        return words[result[0]] if result[0] != -1 else """"";???
+"class Solution(object):
+
+    def __init__(self):
+        self.A, self.B = [], []
+
+    def push(self, x):
+        self.A.append(x)
+
+    def pop(self):
+        self.peek()
+        return self.B.pop()
+
+    def peek(self):
+        if not self.B:
+            while self.A:
+                self.B.append(self.A.pop())
+        return self.B[-1]
+
+    def empty(self):
+        return not self.A and not self.B";O(1)
+"class Solution(object):
+    def smallestDivisor(self, nums, threshold):
+        def check(A, d, threshold):
+            return sum((i-1)//d+1 for i in nums) <= threshold
+
+        left, right = 1, max(nums)
+        while left <= right:
+            mid = left + (right-left)//2
+            if check(nums, mid, threshold):
+                right = mid-1
+            else:
+                left = mid+1
+        return left";O(nlogm)
+"import collections
+import operator
+from functools import reduce
+
+
+
+class Solution(object):
+    def countTheNumOfKFreeSubsets(self, nums, k):
+        def count(x):
+            y = x
+            while y-k in cnt:
+                y -= k
+            dp = [1, 0] 
+            for i in range(y, x+1, k):
+                dp = [dp[0]+dp[1], dp[0]*((1<<cnt[i])-1)]
+            return sum(dp)
+
+        cnt = collections.Counter(nums)
+        return reduce(operator.mul, (count(i) for i in cnt.keys() if i+k not in cnt))";O(n)
+"import collections
+
+
+
+class Solution(object):
+    def minCost(self, nums):
+        dp = collections.defaultdict(lambda: float(""inf""))
+        dp[nums[0]] = 0
+        for i in range(1, len(nums)-1, 2):
+            new_dp = collections.defaultdict(lambda: float(""inf""))
+            x, y = nums[i], nums[i+1]
+            for z, c in dp.items():
+                v = sorted([x, y, z])
+                new_dp[v[0]] = min(new_dp[v[0]], c+v[2])
+                new_dp[v[2]] = min(new_dp[v[2]], c+v[1])
+            dp = new_dp
+        last = nums[-1] if len(nums)%2 == 0 else 0
+        return min(c+max(x, last) for x, c in dp.items())";???
+"class Solution3(object):
+    def numberOfWays(self, n):
+        MOD = 10**9+7
+        def count_1_2(n):
+            return n//2+1
+    
+        def count_1_2_6(n):
+            return sum(count_1_2(n-6*i) for i in range((n//6)+1))
+
+        return reduce(lambda x, y: (x+count_1_2_6(n-4*y))%MOD, (i for i in range(min(n//4, 2)+1)), 0)";???
+"import collections
+
+
+
+class Solution(object):
+    def countPalindromePaths(self, parent, s):
+        def iter_dfs():
+            result = 0
+            cnt = collections.defaultdict(int)
+            cnt[0] = 1
+            stk = [(0, 0)]
+            while stk:
+                u, mask = stk.pop()
+                if u:
+                    mask ^= 1<<(ord(s[u])-ord('a'))
+                    result += cnt[mask]+sum(cnt[mask^(1<<i)] if mask^(1<<i) in cnt else 0 for i in range(26))
+                    cnt[mask] += 1
+                for v in reversed(adj[u]):
+                    stk.append((v, mask))
+            return result
+
+        adj = [[] for _ in range(len(parent))]
+        for u, p in enumerate(parent):
+            if p != -1:
+                adj[p].append(u)
+        return iter_dfs()";O(n)
+"import collections
+
+
+
+class Solution2(object):
+    def countPalindromePaths(self, parent, s):
+        def dfs(u, mask):
+            result = 0
+            if u:
+                mask ^= 1<<(ord(s[u])-ord('a'))
+                result += cnt[mask]+sum(cnt[mask^(1<<i)] if mask^(1<<i) in cnt else 0 for i in range(26))
+                cnt[mask] += 1
+            return result+sum(dfs(v, mask) for v in adj[u])
+
+        adj = [[] for _ in range(len(parent))]
+        for u, p in enumerate(parent):
+            if p != -1:
+                adj[p].append(u)
+        cnt = collections.defaultdict(int)
+        cnt[0] = 1
+        return dfs(0, 0)";O(n)
+"
+import threading
+
+
+class Solution(object):
+    def __init__(self):
+        self.__cv = threading.Condition()
+        self.__has_first = False
+        self.__has_second = False
+
+    def first(self, printFirst):
+        with self.__cv:
+            printFirst()            
+            self.__has_first = True
+            self.__cv.notifyAll()
+
+    def second(self, printSecond):
+        with self.__cv:
+            while not self.__has_first:
+                self.__cv.wait()
+            printSecond()
+            self.__has_second = True
+            self.__cv.notifyAll()
+              
+    def third(self, printThird):
+        with self.__cv:
+            while not self.__has_second:
+                self.__cv.wait()
+            printThird()
+            self.__cv.notifyAll()
+        
+";O(1)
+"class Solution(object):
+    def maxScore(self, a, b):
+        dp = [float(""-inf"")]*(len(a)+1)
+        dp[0] = 0
+        for x in b:
+            for i in reversed(range(1, len(dp))):
+                dp[i] = max(dp[i], dp[i-1]+x*a[i-1])
+        return dp[-1]";O(nm)
+"import collections
+import itertools
+
+
+class Solution(object):
+    def findSecretWord(self, wordlist, master):
+        possible = list(range(len(wordlist)))
+        n = 0
+        while n < 6:
+            count = [collections.Counter(w[i] for w in wordlist) for i in range(6)]
+            guess = max(possible, key=lambda x: sum(count[i][c] for i, c in enumerate(wordlist[x])))
+            n = master.guess(wordlist[guess])
+            possible = [j for j in possible if sum(a == b for a, b in zip(wordlist[guess], wordlist[j])) == n]";???
+"
+import fractions
+
+
+class Solution(object):
+    def findGCD(self, nums):
+        return fractions.gcd(min(nums), max(nums))
+";???
+"class Solution(object):
+    def countNumbers(self, l, r, b):
+        MOD = 10**9+7
+        fact, inv, inv_fact = [[1]*2 for _ in range(3)]
+        def nCr(n, k):
+            while len(inv) <= n: 
+                fact.append(fact[-1]*len(inv) % MOD)
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
+                inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
+            return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
+
+        def nHr(n, k):
+            return nCr(n+k-1, k)
+
+        def count(x):
+            digits_base = []
+            while x:
+                x, r = divmod(x, b)
+                digits_base.append(r)
+            digits_base.reverse()
+            if not digits_base:
+                digits_base.append(0)
+            result = 0
+            for i in range(len(digits_base)):
+                if i-1 >= 0 and digits_base[i-1] > digits_base[i]:
+                    break
+                for j in range(digits_base[i-1] if i-1 >= 0 else 0, digits_base[i]):
+                    result = (result + nHr((b-1)-j+1, len(digits_base)-(i+1))) % MOD
+            else:
+                result = (result+1)%MOD
+            return result
+
+        return (count(int(r)) - count(int(l)-1)) % MOD";????
+"class Solution2(object):
+    def countNumbers(self, l, r, b):
+        MOD = 10**9+7
+        fact, inv, inv_fact = [[1]*2 for _ in range(3)]
+        def nCr(n, k):
+            while len(inv) <= n: 
+                fact.append(fact[-1]*len(inv) % MOD)
+                inv.append(inv[MOD%len(inv)]*(MOD-MOD//len(inv)) % MOD) 
+                inv_fact.append(inv_fact[-1]*inv[-1] % MOD)
+            return (fact[n]*inv_fact[n-k] % MOD) * inv_fact[k] % MOD
+
+        def nHr(n, k):
+            return nCr(n+k-1, k)
+
+        def decrease(digits):
+            for i in reversed(range(len(digits))):
+                if digits[i]:
+                    digits[i] -= 1
+                    break
+                digits[i] = 9
+
+        def divide(digits, base):
+            result = []
+            r = 0
+            for d in digits:
+                q, r = divmod(r*10+d, base)
+                if result or q:
+                    result.append(q)
+            return result, r
+
+        def to_base(digits, base):
+            result = []
+            while digits:
+                digits, r = divide(digits, base)
+                result.append(r)
+            result.reverse()
+            return result
+
+        def count(digits):
+            digits_base = to_base(digits, b)
+            result = 0
+            for i in range(len(digits_base)):
+                if i-1 >= 0 and digits_base[i-1] > digits_base[i]:
+                    break
+                for j in range(digits_base[i-1] if i-1 >= 0 else 0, digits_base[i]):
+                    result = (result + nHr((b-1)-j+1, len(digits_base)-(i+1))) % MOD
+            else:
+                result = (result+1)%MOD
+            return result
+
+        digits_l = list(map(int, l))
+        decrease(digits_l)
+        digits_r = list(map(int, r))
+        return (count(digits_r) - count(digits_l)) % MOD";???
+"import collections
+import itertools
+
+
+class Solution(object):
+    def threeSumMulti(self, A, target):
+        count = collections.Counter(A)
+        result = 0
+        for i, j in itertools.combinations_with_replacement(count, 2):
+            k = target - i - j
+            if i == j == k:
+                result += count[i] * (count[i]-1) * (count[i]-2) // 6
+            elif i == j != k:
+                result += count[i] * (count[i]-1) // 2 * count[k]
+            elif max(i, j) < k:
+                result += count[i] * count[j] * count[k]
+        return result % (10**9 + 7)";O(n ^ 2)
+"class Solution(object):
+    def findShortestCycle(self, n, edges):
+        INF = float(""inf"")
+        def bfs(u):
+            result = INF
+            dist = [float(""inf"")]*len(adj)
+            dist[u] = 0
+            q = [u]
+            while q:
+                new_q = []
+                for u in q:
+                    for v in adj[u]:
+                        if dist[v] != INF:
+                            assert(abs(dist[v]-dist[u]) <= 1)
+                            if dist[v] != dist[u]-1:
+                                result = min(result, 1+dist[u]+dist[v]) 
+                            continue
+                        dist[v] = dist[u]+1
+                        new_q.append(v)
+                if result != INF: 
+                    break
+                q = new_q
+            return result
+
+        adj = [[] for _ in range(n)]
+        for u, v in edges:
+            adj[u].append(v)
+            adj[v].append(u)
+        result = min(bfs(u) for u in range(n))
+        return result if result != INF else -1";???
+"class Solution(object):
+    def twoSum(self, nums, target):
+        start, end = 0, len(nums) - 1
+
+        while start != end:
+            sum = nums[start] + nums[end]
+            if sum > target:
+                end -= 1
+            elif sum < target:
+                start += 1
+            else:
+                return [start + 1, end + 1]";O(n)
+"class Solution(object):
+    def findSolution(self, customfunction, z):
+        result = []
+        x, y = 1, 1
+        while customfunction.f(x, y) < z:
+            y += 1
+        while y > 0:
+            while y > 0 and customfunction.f(x, y) > z:
+                y -= 1
+            if y > 0 and customfunction.f(x, y) == z:
+                result.append([x, y])
+            x += 1
+        return result";O(n)
+"class Solution2(object):
+    def arraysIntersection(self, arr1, arr2, arr3):
+        intersect = reduce(set.intersection, list(map(set, [arr2, arr3])))
+        return [x for x in arr1 if x in intersect]";O(n)
+"class Solution2(object):
+    def longestDiverseString(self, a, b, c):
+        choices = [[a, 'a'], [b, 'b'], [c, 'c']]
+        result = []
+        for _ in range(a+b+c):
+            choices.sort(reverse=True)
+            for i, (x, c) in enumerate(choices):
+                if x and result[-2:] != [c, c]:
+                    result.append(c)
+                    choices[i][0] -= 1
+                    break
+            else:
+                break
+        return """".join(result)";???
+"class UnionFind(object):
+    def __init__(self, n):
+        self.set = list(range(n))
+        self.count = n
+
+    def find_set(self, x):
+        if self.set[x] != x:
+            self.set[x] = self.find_set(self.set[x]) 
+        return self.set[x]
+
+    def union_set(self, x, y):
+        x_root, y_root = list(map(self.find_set, (x, y)))
+        if x_root == y_root:
+            return False
+        self.set[max(x_root, y_root)] = min(x_root, y_root)
+        self.count -= 1
+        return True
+
+
+class Solution(object):
+    def findCriticalAndPseudoCriticalEdges(self, n, edges):
+        def MST(n, edges, unused=None, used=None):
+            union_find = UnionFind(n)
+            weight = 0
+            if used is not None:
+                u, v, w, _ = edges[used]
+                if union_find.union_set(u, v):
+                    weight += w
+            for i, (u, v, w, _) in enumerate(edges):
+                if i == unused:
+                    continue
+                if union_find.union_set(u, v):
+                    weight += w
+            return weight if union_find.count == 1 else float(""inf"")
+        
+        for i, edge in enumerate(edges):
+            edge.append(i)
+        edges.sort(key=lambda x: x[2])
+        mst = MST(n, edges)
+        result = [[], []]
+        for i, edge in enumerate(edges):
+            if mst < MST(n, edges, unused=i):
+                result[0].append(edge[3])
+            elif mst == MST(n, edges, used=i):
+                result[1].append(edge[3])
+        return result";???
+"class Solution(object):
+    def __init__(self):
+        self.min = None
+        self.stack = []
+
+    def push(self, x):
+        if not self.stack:
+            self.stack.append(0)
+            self.min = x
+        else:
+            self.stack.append(x - self.min)
+            if x < self.min:
+                self.min = x
+
+    def pop(self):
+        x = self.stack.pop()
+        if x < 0:
+            self.min = self.min - x
+
+    def top(self):
+        x = self.stack[-1]
+        if x > 0:
+            return x + self.min
+        else:
+            return self.min
+
+    def getMin(self):
+        return self.min";O(1)
+"class Solution2(object):
+    def __init__(self):
+        self.stack, self.minStack = [], []
+    def push(self, x):
+        self.stack.append(x)
+        if len(self.minStack):
+            if x < self.minStack[-1][0]:
+                self.minStack.append([x, 1])
+            elif x == self.minStack[-1][0]:
+                self.minStack[-1][1] += 1
+        else:
+            self.minStack.append([x, 1])
+
+    def pop(self):
+        x = self.stack.pop()
+        if x == self.minStack[-1][0]:
+            self.minStack[-1][1] -= 1
+            if self.minStack[-1][1] == 0:
+                self.minStack.pop()
+
+    def top(self):
+        return self.stack[-1]
+
+    def getMin(self):
+        return self.minStack[-1][0]";O(1)
+"from collections import defaultdict
+
+class Solution(object):
+
+    def __init__(self):
+        self.lookup = defaultdict(int)
+
+
+
+    def add(self, number):
+        self.lookup[number] += 1
+
+
+    def find(self, value):
+        for key in self.lookup:
+            num = value - key
+            if num in self.lookup and (num != key or self.lookup[key] > 1):
+                return True
+        return False";O(n)
+"
+from collections import defaultdict
+from operator import getitem
+
+
+class Solution(object):
+    def longestWord(self, words):
+        _trie = lambda: defaultdict(_trie)
+        trie = _trie()
+        for i, word in enumerate(words):
+            reduce(getitem, word, trie)[""_end""] = i
+
+        stack = list(trie.values())
+        result = """"
+        while stack:
+            curr = stack.pop()
+            if ""_end"" in curr:
+                word = words[curr[""_end""]]
+                if len(word) > len(result) or (len(word) == len(result) and word < result):
+                    result = word
+                stack += [curr[letter] for letter in curr if letter != ""_end""]
+        return result
+
+";O(n)
+"import collections
+from functools import reduce
+
+
+
+class Solution(object):
+    def countWinningSequences(self, s):
+        MOD = 10**9+7
+        lookup = {x:i for i, x in enumerate(""FWE"")}
+        dp = [collections.defaultdict(int) for _ in range(3)]
+        for i, c in enumerate(s):
+            new_dp = [collections.defaultdict(int) for _ in range(3)]
+            x = lookup[c]
+            for j in range(3):
+                diff = (j-x+1)%3-1
+                if i == 0:
+                    new_dp[j][diff] = 1
+                    continue
+                for k in range(3):
+                    if k == j:
+                        continue
+                    for v, c in dp[k].items():
+                        new_dp[j][v+diff] = (new_dp[j][v+diff]+c)%MOD
+            dp = new_dp
+        return reduce(lambda accu, x: (accu+x)%MOD, (c for j in range(3) for v, c in dp[j].items() if v >= 1), 0)";O(n)
+"class Solution2(object):
+    def shortestPalindrome(self, s):
+        def getPrefix(pattern):
+            prefix = [-1] * len(pattern)
+            j = -1
+            for i in range(1, len(pattern)):
+                while j > -1 and pattern[j+1] != pattern[i]:
+                    j = prefix[j]
+                if pattern[j+1] == pattern[i]:
+                    j += 1
+                prefix[i] = j
+            return prefix
+
+        if not s:
+            return s
+
+        A = s + s[::-1]
+        prefix = getPrefix(A)
+        i = prefix[-1]
+        while i >= len(s):
+            i = prefix[i]
+        return s[i+1:][::-1] + s";O(n)
+"class Solution(object):
+    def intersectionSizeTwo(self, intervals):
+        intervals.sort(key = lambda s_e: (s_e[0], -s_e[1]))
+        cnts = [2] * len(intervals)
+        result = 0
+        while intervals:
+            (start, _), cnt = intervals.pop(), cnts.pop()
+            for s in range(start, start+cnt):
+                for i in range(len(intervals)):
+                    if cnts[i] and s <= intervals[i][1]:
+                        cnts[i] -= 1
+            result += cnt
+        return result";O(n^2)
+"import collections
+
+
+class Solution2(object):
+    def sortString(self, s):
+        result, count, desc = [], collections.Counter(s), False
+        while count:
+            for c in sorted(list(count.keys()), reverse=desc):
+                result.append(c)
+                count[c] -= 1
+                if not count[c]:
+                    del count[c]
+            desc = not desc
+        return """".join(result)";???
+"class Solution(object):
+    def numberOfWays(self, n, x):
+        MOD = 10**9+7
+
+        dp = [0]*(n+1)
+        dp[0] = 1
+        for i in range(1, n+1):
+            i_pow_x = i**x
+            if i_pow_x > n:
+                break
+            for j in reversed(range(i_pow_x, n+1)):
+                dp[j] = (dp[j]+dp[j-i_pow_x])%MOD
+        return dp[-1]";O(n^2)
+"class Solution(object):
+    def baseUnitConversions(self, conversions):
+        MOD = 10**9+7
+        adj = [[] for _ in range(len(conversions)+1)]
+        for u, v, w in conversions:
+            adj[u].append((v, w))
+        result = [0]*len(adj)
+        result[0] = 1
+        q = [0]
+        while q:
+            new_q = []
+            for u in q:
+                for v, w in adj[u]:
+                    result[v] = (result[u]*w)%MOD
+                    new_q.append(v)
+            q = new_q
+        return result";???
+"class Solution(object):
+    def minimumMoves(self, grid):
+        level, q, lookup = 0, [(0, 0, False)], set()
+        while q:
+            next_q = []
+            for r, c, is_vertical in q:
+                if (r, c, is_vertical) in lookup:
+                    continue
+                if (r, c, is_vertical) == (len(grid)-1, len(grid)-2, False):
+                    return level
+                lookup.add((r, c, is_vertical))
+                if not is_vertical:
+                    if c+2 != len(grid[0]) and grid[r][c+2] == 0:
+                        next_q.append((r, c+1, is_vertical))
+                    if r+1 != len(grid) and grid[r+1][c] == 0 and grid[r+1][c+1] == 0:
+                        next_q.append((r+1, c, is_vertical))
+                        next_q.append((r, c, not is_vertical))
+                else:
+                    if r+2 != len(grid) and grid[r+2][c] == 0:
+                        next_q.append((r+1, c, is_vertical))
+                    if c+1 != len(grid) and grid[r][c+1] == 0 and grid[r+1][c+1] == 0:
+                        next_q.append((r, c+1, is_vertical))
+                        next_q.append((r, c, not is_vertical))
+            q = next_q
+            level += 1
+        return -1";O(n^2)
+"class Solution(object):
+    def minimumMoves(self, nums, k, maxChanges):
+        idxs = [i for i, x in enumerate(nums) if x]
+        prefix = [0]*(len(idxs)+1)
+        for i in range(len(idxs)):
+            prefix[i+1] = prefix[i]+idxs[i]
+        result = float(""inf"")
+        cnt = max(k-maxChanges, 0)
+        for l in range(cnt, min(cnt+3, k, len(idxs))+1):
+            cnt1 = (k-l)*2
+            for i in range(len(idxs)-l+1):
+                cnt2 = (prefix[(i+l-1)+1]-prefix[(i+l-1)-(l//2-1)])-(prefix[(i+(l//2-1))+1]-prefix[i])
+                result = min(result, cnt2+cnt1)
+        return result";???
+"import collections
+
+
+
+class Solution(object):
+    def countPairs(self, nums, low, high):
+        def count(nums, x):
+            result = 0
+            dp = collections.Counter(nums)
+            while x:
+                if x&1:
+                    result += sum(dp[(x^1)^k]*dp[k] for k in dp.keys())//2 
+                dp = collections.Counter({k>>1: dp[k]+dp[k^1] for k in dp.keys()})
+                x >>= 1
+            return result
+    
+        return count(nums, high+1)-count(nums, low)";???
+"class Trie(object):
+    def __init__(self):
+        self.__root = {}
+        
+    def insert(self, num):
+        node = self.__root
+        for i in reversed(range(32)):
+            curr = (num>>i) & 1
+            if curr not in node:
+                node[curr] = {""_count"":0}
+            node = node[curr]
+            node[""_count""] += 1
+                
+    def query(self, num, limit):
+        node, result = self.__root, 0
+        for i in reversed(range(32)):
+            curr = (num>>i) & 1
+            bit = (limit>>i) & 1
+            if bit:
+                if curr in node:
+                    result += node[0^curr][""_count""] 
+            if bit^curr not in node:
+                break
+            node = node[bit^curr]
+        return result
+
+
+class Solution2(object):
+    def countPairs(self, nums, low, high):
+        result = 0
+        trie = Trie()
+        for x in nums:
+            result += trie.query(x, high+1)-trie.query(x, low)
+            trie.insert(x)
+        return result";O(n)
+"class Solution2(object):
+    def numberOfWays(self, n, m, k, source, dest):
+        MOD = 10**9+7
+        both_same = row_same = col_same = no_same = 0
+        if source == dest:
+            both_same = 1
+        elif source[0] == dest[0]:
+            row_same = 1
+        elif source[1] == dest[1]:
+            col_same = 1
+        else:
+            no_same = 1
+        for _ in range(k):
+            both_same, row_same, col_same, no_same = (row_same+col_same)%MOD, (both_same*(m-1)+row_same*(m-2)+no_same)%MOD, (both_same*(n-1)+col_same*(n-2)+no_same)%MOD, (row_same*(n-1)+col_same*(m-1)+no_same*((n-2)+(m-2)))%MOD
+        return both_same";O(k)
+"class Solution(object):
+    def getLastMoment(self, n, left, right):
+        return max(max(left or [0]), n-min(right or [n]))";O(n)
+"class Solution(object):
+    def splitString(self, s):
+        def backtracking(s, i, num, cnt):
+            if i == len(s):
+                return cnt >= 2
+            new_num = 0
+            for j in range(i, len(s)):
+                new_num = new_num*10 + int(s[j])
+                if new_num >= num >= 0:
+                    break
+                if (num == -1 or num-1 == new_num) and backtracking(s, j+1, new_num, cnt+1):
+                    return True
+            return False
+            
+        return backtracking(s, 0, -1, 0)";O(2^n)
+"class Solution(object):
+
+    def __init__(self):
+        self.__s = []
+
+    def next(self, price):
+        result = 1
+        while self.__s and self.__s[-1][0] <= price:
+            result += self.__s.pop()[1]
+        self.__s.append([price, result])
+        return result";O(1)
+"class Solution(object):
+    def magnificentSets(self, n, edges):
+        def iter_dfs(u):
+            group = []
+            stk = [u]
+            lookup[u] = 0
+            while stk:
+                u = stk.pop()
+                group.append(u)
+                for v in adj[u]:
+                    if lookup[v] != -1:
+                        if lookup[v] == lookup[u]: 
+                            return []
+                        continue
+                    lookup[v] = lookup[u]^1
+                    stk.append(v)
+            return group
+
+        def bfs(u):
+            result = 0
+            lookup = [False]*n
+            q = [u]
+            lookup[u] = True
+            while q:
+                new_q = []
+                for u in q:
+                    for v in adj[u]:
+                        if lookup[v]:
+                            continue
+                        lookup[v] = True
+                        new_q.append(v)
+                q = new_q
+                result += 1
+            return result
+    
+        adj = [[] for _ in range(n)]
+        for u, v in edges:
+            adj[u-1].append(v-1)
+            adj[v-1].append(u-1)
+        result = 0
+        lookup = [-1]*n
+        for u in range(n):
+            if lookup[u] != -1:
+                continue
+            group = iter_dfs(u)
+            if not group:
+                return -1
+            result += max(bfs(u) for u in group)
+        return result";???
+"import math
+
+
+class Solution(object):
+    def reachNumber(self, target):
+        target = abs(target)
+        k = int(math.ceil((-1+math.sqrt(1+8*target))/2))
+        target -= k*(k+1)/2
+        return k if target%2 == 0 else k+1+k%2";O(1)
+"import collections
+
+
+class Solution(object):
+
+    def __init__(self):
+        _trie = lambda: collections.defaultdict(_trie)
+        self.trie = _trie()
+
+
+    def buildDict(self, dictionary):
+        for word in dictionary:
+            reduce(dict.__getitem__, word, self.trie).setdefault(""_end"")
+
+
+    def search(self, word):
+        def find(word, curr, i, mistakeAllowed):
+            if i == len(word):
+                return ""_end"" in curr and not mistakeAllowed
+
+            if word[i] not in curr:
+                return any(find(word, curr[c], i+1, False) for c in curr if c != ""_end"") \
+                           if mistakeAllowed else False
+
+            if mistakeAllowed:
+                return find(word, curr[word[i]], i+1, True) or \
+                       any(find(word, curr[c], i+1, False) \
+                           for c in curr if c not in (""_end"", word[i]))
+            return find(word, curr[word[i]], i+1, False)
+
+        return find(word, self.trie, 0, True)";???
+"class Solution(object):
+    def intToRoman(self, num):
+        numeral_map = {1: ""I"", 4: ""IV"", 5: ""V"", 9: ""IX"", \
+                       10: ""X"", 40: ""XL"", 50: ""L"", 90: ""XC"", \
+                       100: ""C"", 400: ""CD"", 500: ""D"", 900: ""CM"", \
+                       1000: ""M""}
+        keyset, result = sorted(numeral_map.keys()), []
+
+        while num > 0:
+            for key in reversed(keyset):
+                while num / key > 0:
+                    num -= key
+                    result += numeral_map[key]
+
+        return """".join(result)";O(1)
+"import math
+
+
+class Solution(object):
+    def constructRectangle(self, area):
+        w = int(math.sqrt(area))
+        while area % w:
+            w -= 1
+        return [area // w, w]";O(sqrt(n))
+"class Solution2(object):
+    def sortArray(self, nums):
+        def min_moves(d):
+            def index(x):
+                return d*(len(nums)-1) if x == 0 else x-d
+
+            a = nums[:]
+            result = 0
+            for i in range(len(a)):
+                l, has_zero = 1, (a[i] == 0)
+                while index(a[i]) != i:
+                    j = index(a[i])
+                    a[i], a[j] = a[j], a[i]
+                    l += 1
+                    has_zero |= (a[i] == 0)
+                if l >= 2:
+                    result += l-1 if has_zero else l+1
+            return result
+
+        return min(min_moves(0), min_moves(1))";???
+"import collections
+
+
+class Solution2(object):
+    def countTriplets(self, A):
+        count = collections.defaultdict(int)
+        for i in range(len(A)):
+            for j in range(len(A)):
+                count[A[i]&A[j]] += 1
+        result = 0
+        for k in range(len(A)):
+            for v in count:
+                if A[k]&v == 0:
+                    result += count[v]
+        return result";O(n ^ 3)
+"class Solution(object):
+    def getFactors(self, n):
+        result = []
+        factors = []
+        self.getResult(n, result, factors)
+        return result
+
+    def getResult(self, n, result, factors):
+        i = 2 if not factors else factors[-1]
+        while i <= n / i:
+            if n % i == 0:
+                factors.append(i)
+                factors.append(n / i)
+                result.append(list(factors))
+                factors.pop()
+                self.getResult(n / i, result, factors)
+                factors.pop()
+            i += 1";???
+"import math
+
+
+class Solution(object):
+    def arrangeCoins(self, n):
+        return int((math.sqrt(8*n+1)-1) / 2)";O(1)
+"class Solution(object):
+    def countSteppingNumbers(self, low, high):
+        MOD = 10**9+7
+        def f(s):
+            dp = [[0]*10 for _ in range(2)]
+            for j in range(1, ord(s[0])-ord('0')+1):
+                dp[0][j] = 1
+            prefix = True
+            for i in range(1, len(s)):
+                for j in range(10):
+                    dp[i%2][j] = int(j != 0)
+                    if j-1 >= 0:
+                        dp[i%2][j] = (dp[i%2][j]+(dp[(i-1)%2][j-1]-int(prefix and (ord(s[i-1])-ord('0')) == j-1 and j > (ord(s[i])-ord('0')))))%MOD
+                    if j+1 < 10:
+                        dp[i%2][j] = (dp[i%2][j]+(dp[(i-1)%2][j+1]-int(prefix and (ord(s[i-1])-ord('0')) == j+1 and j > (ord(s[i])-ord('0')))))%MOD
+                if abs(ord(s[i])-ord(s[i-1])) != 1:
+                    prefix = False
+            return reduce(lambda x, y: (x+y)%MOD, dp[(len(s)-1)%2])
+
+        return (f(high)-f(str(int(low)-1)))%MOD";O(n)

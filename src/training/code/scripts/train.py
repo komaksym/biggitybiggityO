@@ -1,4 +1,4 @@
-from configs.config import checkpoint, training_args
+from .configs.config import checkpoint, training_args
 from evaluate import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics
 from .model import set_model
 from transformers import Trainer, BitsAndBytesConfig, AutoModelForSequenceClassification
@@ -50,7 +50,7 @@ def preprocess_data(train_set, eval_set, tokenizer, label2id):
 
     return train_set, eval_set
 
-def setup_model(tokenizer):
+def setup_model(tokenizer, checkpoint):
     # Bitsandbytes (Quantization)
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
@@ -91,7 +91,7 @@ def main():
     train_set, eval_set = preprocess_data(load_data(DATASET_PATHS), tokenizer, label2id)
 
     # Setup model
-    model = setup_model(tokenizer)
+    model = setup_model(tokenizer, checkpoint)
 
     # Trainer
     trainer = Trainer(

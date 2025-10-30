@@ -1,0 +1,6001 @@
+code,complexity
+"def subsets(nums):
+    out=[]
+    cur=[]
+    def rec(i):
+        if i==len(nums):
+            out.append(cur[:]); return
+        cur.append(nums[i]); rec(i+1); cur.pop(); rec(i+1)
+    rec(0)
+    return out
+print(subsets([1,2,3,4]))
+",O(2 ^ n)
+"def fib(n):
+    if n<2:
+        return n
+    return fib(n-1)+fib(n-2)
+print(fib(25))
+",O(2 ^ n)
+"def count_subset_sum(arr, tgt):
+    def dfs(i, s):
+        if i==len(arr): return 1 if s==tgt else 0
+        return dfs(i+1, s) + dfs(i+1, s+arr[i])
+    return dfs(0,0)
+print(count_subset_sum([2,3,5,6,8,10],10))
+",O(2 ^ n)
+"def binaries(n):
+    res=[]
+    def go(p):
+        if len(p)==n:
+            res.append(''.join(p)); return
+        p.append('0'); go(p); p.pop()
+        p.append('1'); go(p); p.pop()
+    go([])
+    return res
+print(len(binaries(6)))
+",O(2 ^ n)
+"def min_diff(arr):
+    total=sum(arr)
+    best=[float('inf')]
+    n=len(arr)
+    def rec(i,s):
+        if i==n:
+            d=abs(total-2*s)
+            if d<best[0]:
+                best[0]=d
+            return
+        rec(i+1,s)
+        rec(i+1,s+arr[i])
+    rec(0,0)
+    return best[0]
+print(min_diff([1,2,7,1,5]))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev] + ['1'+x for x in reversed(prev)]
+print(' '.join(gray(3)))
+",O(2 ^ n)
+"def sat(clauses, n):
+    for m in range(1<<n):
+        ok=True
+        for clause in clauses:
+            if not any(((m>>(abs(l)-1))&1)==(l>0) for l in clause):
+                ok=False
+                break
+        if ok:
+            return True
+    return False
+print(sat([[1,-2],[2,3],[-1,-3]],3))
+",O(2 ^ n)
+"def bipartitions(items):
+    res=[]
+    A=[]
+    B=[]
+    def dfs(i):
+        if i==len(items):
+            res.append((A[:],B[:])); return
+        A.append(items[i]); dfs(i+1); A.pop()
+        B.append(items[i]); dfs(i+1); B.pop()
+    dfs(0)
+    return res
+p=bipartitions(list('abcd'))
+print(sum(len(x[0])+len(x[1]) for x in p))
+",O(2 ^ n)
+"def target_sum(nums, S):
+    ans=0
+    def rec(i,total):
+        nonlocal ans
+        if i==len(nums):
+            if total==S:
+                ans+=1
+            return
+        rec(i+1,total+nums[i])
+        rec(i+1,total-nums[i])
+    rec(0,0)
+    return ans
+print(target_sum([1,1,1,1,1],3))
+",O(2 ^ n)
+"def subsequences(s):
+    res=[]
+    def dfs(i, path):
+        if i==len(s):
+            res.append(path); return
+        dfs(i+1, path)
+        dfs(i+1, path+s[i])
+    dfs(0,'')
+    return res
+print(len(subsequences('abcdef')))
+",O(2 ^ n)
+"class PowerSet:
+    def __init__(self, data):
+        self.data=data
+    def build(self):
+        res=[]
+        cur=[]
+        def rec(i):
+            if i==len(self.data):
+                res.append(tuple(cur)); return
+            cur.append(self.data[i]); rec(i+1); cur.pop(); rec(i+1)
+        rec(0)
+        return res
+ps=PowerSet([1,2,3])
+print(len(ps.build()))
+",O(2 ^ n)
+"import itertools
+
+def all_sums(nums):
+    totals=[]
+    for signs in itertools.product((-1,1), repeat=len(nums)):
+        s=0
+        for a,b in zip(nums,signs):
+            s+=a*b
+        totals.append(s)
+    return totals
+v=all_sums([2,4,6,8])
+print(min(v), max(v))
+",O(2 ^ n)
+"def truth_table(n):
+    rows=[]
+    def rec(i, bits):
+        if i==n:
+            rows.append(bits[:]); return
+        bits.append(0); rec(i+1,bits); bits[-1]=1; rec(i+1,bits); bits.pop()
+    rec(0,[])
+    return rows
+t=truth_table(4)
+print('\n'.join(''.join(str(b) for b in r) for r in t))
+",O(2 ^ n)
+"def binaries(n):
+    out=[]
+    def rec(s, i):
+        if i==n:
+            out.append(s)
+            return
+        rec(s+'0', i+1)
+        rec(s+'1', i+1)
+    rec('',0)
+    return out
+
+print(len(binaries(12))//1)
+",O(2 ^ n)
+"def hanoi(n, a, b, c, out):
+    if n==0:
+        return
+    hanoi(n-1, a, c, b, out)
+    out.append((a,b))
+    hanoi(n-1, c, b, a, out)
+
+moves=[]
+hanoi(15,'A','C','B',moves)
+print(len(moves))
+",O(2 ^ n)
+"def subsets(arr):
+    n=len(arr)
+    res=[]
+    for mask in range(1<<n):
+        cur=[]
+        for i in range(n):
+            if mask>>i & 1:
+                cur.append(arr[i])
+        res.append(cur)
+    return res
+
+print(len(subsets(list(range(20)))))
+",O(2 ^ n)
+"def knap(w,v,cap):
+    n=len(w)
+    def dfs(i, rem):
+        if i==n:
+            return 0
+        best=dfs(i+1, rem)
+        if w[i]<=rem:
+            val=v[i]+dfs(i+1, rem-w[i])
+            if val>best:
+                best=val
+        return best
+    return dfs(0,cap)
+
+print(knap([2,3,4,5],[3,4,5,8],8))
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    n=len(nums)
+    def dfs(i, s):
+        if i==n:
+            return 1 if s==target else 0
+        return dfs(i+1, s)+dfs(i+1, s+nums[i])
+    return dfs(0,0)
+
+print(count_subsets([1,2,3,4,5],7))
+",O(2 ^ n)
+"def subsequences(s):
+    res=[]
+    def go(i, cur):
+        if i==len(s):
+            res.append(cur)
+            return
+        go(i+1, cur)
+        go(i+1, cur+s[i])
+    go(0,'')
+    return res
+
+print(len(subsequences('abcdefghijkl')))
+",O(2 ^ n)
+"def find_ways(nums, target):
+    n=len(nums)
+    def dfs(i, s):
+        if i==n:
+            return 1 if s==target else 0
+        return dfs(i+1, s+nums[i])+dfs(i+1, s-nums[i])
+    return dfs(0,0)
+
+print(find_ways([1,1,1,1,1],3))
+",O(2 ^ n)
+"def max_subset_xor(nums):
+    best=0
+    n=len(nums)
+    def dfs(i, x):
+        nonlocal best
+        if i==n:
+            if x>best:
+                best=x
+            return
+        dfs(i+1, x)
+        dfs(i+1, x^nums[i])
+    dfs(0,0)
+    return best
+
+print(max_subset_xor([3,10,5,25,2,8]))
+",O(2 ^ n)
+"def min_partition_diff(arr):
+    n=len(arr)
+    total=sum(arr)
+    best=total
+    def dfs(i, s):
+        nonlocal best
+        if i==n:
+            diff=abs(total-2*s)
+            if diff<best:
+                best=diff
+            return
+        dfs(i+1, s)
+        dfs(i+1, s+arr[i])
+    dfs(0,0)
+    return best
+
+print(min_partition_diff([1,6,11,5]))
+",O(2 ^ n)
+"def min_cover(sets, universe):
+    n=len(sets)
+    best=[float('inf')]
+    def dfs(i, chosen):
+        if chosen>=1<<n:
+            return
+        if i==n:
+            covered=set()
+            for j in range(n):
+                if chosen>>j & 1:
+                    covered|=sets[j]
+            if covered>=universe:
+                bits=bin(chosen).count('1')
+                if bits<best[0]:
+                    best[0]=bits
+            return
+        dfs(i+1, chosen)
+        dfs(i+1, chosen | (1<<i))
+    dfs(0,0)
+    return best[0]
+
+print(min_cover([set([1,2]),set([2,3]),set([1,3])], set([1,2,3])))
+",O(2 ^ n)
+"def subset_sums(nums):
+    res=[]
+    n=len(nums)
+    def dfs(i, s):
+        if i==n:
+            res.append(s)
+            return
+        dfs(i+1, s)
+        dfs(i+1, s+nums[i])
+    dfs(0,0)
+    return res
+
+print(len(subset_sums(list(range(18)))))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return [0]
+    prev=gray(n-1)
+    add=1<<(n-1)
+    return prev+[x|add for x in reversed(prev)]
+
+g=gray(15)
+print(len(g))
+",O(2 ^ n)
+"def sat_count(n, expr):
+    def dfs(i, assign):
+        if i==n:
+            return 1 if expr(assign) else 0
+        return dfs(i+1, assign+[False])+dfs(i+1, assign+[True])
+    return dfs(0, [])
+
+print(sat_count(10, lambda a: sum(a)%3==0))
+",O(2 ^ n)
+"def longest_pal_subseq_bruteforce(s):
+    best=0
+    n=len(s)
+    cur=[]
+    def dfs(i):
+        nonlocal best
+        if i==n:
+            t=''.join(cur)
+            if t==t[::-1] and len(t)>best:
+                best=len(t)
+            return
+        dfs(i+1)
+        cur.append(s[i])
+        dfs(i+1)
+        cur.pop()
+    dfs(0)
+    return best
+
+print(longest_pal_subseq_bruteforce('character'))
+",O(2 ^ n)
+"def power_set(lst):
+    res=[[]]
+    for x in lst:
+        res += [r+[x] for r in res]
+    return res
+
+print(len(power_set(list(range(16)))))
+",O(2 ^ n)
+"class Splitter:
+    def __init__(self, items):
+        self.items=items
+        self.n=len(items)
+        self.best=None
+    def search(self):
+        a=[]
+        b=[]
+        self.best=[]
+        def dfs(i):
+            if i==self.n:
+                self.best.append((tuple(a),tuple(b)))
+                return
+            a.append(self.items[i]); dfs(i+1); a.pop()
+            b.append(self.items[i]); dfs(i+1); b.pop()
+        dfs(0)
+        return self.best
+
+s=Splitter([1,2,3,4,5,6])
+print(len(s.search()))
+",O(2 ^ n)
+"def letter_case_permutations(s):
+    res=[]
+    def dfs(i, cur):
+        if i==len(s):
+            res.append(''.join(cur))
+            return
+        if s[i].isalpha():
+            cur.append(s[i].lower()); dfs(i+1, cur); cur.pop()
+            cur.append(s[i].upper()); dfs(i+1, cur); cur.pop()
+        else:
+            cur.append(s[i]); dfs(i+1, cur); cur.pop()
+    dfs(0, [])
+    return res
+
+print(len(letter_case_permutations('a1b2c3d4e5')))
+",O(2 ^ n)
+"def coin_outcomes(n):
+    out=[]
+    def dfs(i, cur):
+        if i==n:
+            out.append(''.join(cur))
+            return
+        cur.append('H'); dfs(i+1, cur); cur.pop()
+        cur.append('T'); dfs(i+1, cur); cur.pop()
+    dfs(0, [])
+    return out
+
+print(len(coin_outcomes(18)))
+",O(2 ^ n)
+"def can_sum(nums, target):
+    n = len(nums)
+    def dfs(i, s):
+        if i == n:
+            return s == target
+        return dfs(i + 1, s) or dfs(i + 1, s + nums[i])
+    return dfs(0, 0)
+",O(2 ^ n)
+"def power_set(arr):
+    res = []
+    cur = []
+    def backtrack(i):
+        if i == len(arr):
+            res.append(cur[:])
+            return
+        backtrack(i + 1)
+        cur.append(arr[i])
+        backtrack(i + 1)
+        cur.pop()
+    backtrack(0)
+    return res
+",O(2 ^ n)
+"def fib(n):
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+",O(2 ^ n)
+"def subseqs(s):
+    out = []
+    buf = []
+    def go(i):
+        if i == len(s):
+            out.append(''.join(buf))
+            return
+        go(i + 1)
+        buf.append(s[i])
+        go(i + 1)
+        buf.pop()
+    go(0)
+    return out
+",O(2 ^ n)
+"def brute_max_xor(nums):
+    best = 0
+    n = len(nums)
+    def dfs(i, x):
+        nonlocal best
+        if i == n:
+            if x > best:
+                best = x
+            return
+        dfs(i + 1, x)
+        dfs(i + 1, x ^ nums[i])
+    dfs(0, 0)
+    return best
+",O(2 ^ n)
+"def count_truth(clauses, variables):
+    m = len(variables)
+    cnt = 0
+    def dfs(i, env):
+        nonlocal cnt
+        if i == m:
+            ok = True
+            for cl in clauses:
+                satisfied = False
+                for lit in cl:
+                    if lit[0] == '!':
+                        if not env[lit[1:]]:
+                            satisfied = True
+                            break
+                    else:
+                        if env[lit]:
+                            satisfied = True
+                            break
+                if not satisfied:
+                    ok = False
+                    break
+            if ok:
+                cnt += 1
+            return
+        v = variables[i]
+        env[v] = False
+        dfs(i + 1, env)
+        env[v] = True
+        dfs(i + 1, env)
+        env.pop(v)
+    dfs(0, {})
+    return cnt
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    g = gray(n - 1)
+    return ['0' + x for x in g] + ['1' + x for x in reversed(g)]
+",O(2 ^ n)
+"def count_divisible(arr, k):
+    cnt = 0
+    n = len(arr)
+    def dfs(i, mod):
+        nonlocal cnt
+        if i == n:
+            if mod % k == 0:
+                cnt += 1
+            return
+        dfs(i + 1, mod)
+        dfs(i + 1, (mod + arr[i]) % k)
+    dfs(0, 0)
+    return cnt
+",O(2 ^ n)
+"def min_diff(nums):
+    n = len(nums)
+    total = sum(nums)
+    best = [float('inf')]
+    def dfs(i, s):
+        if i == n:
+            d = abs(total - 2 * s)
+            if d < best[0]:
+                best[0] = d
+            return
+        dfs(i + 1, s)
+        dfs(i + 1, s + nums[i])
+    dfs(0, 0)
+    return best[0]
+",O(2 ^ n)
+"def has_product(nums, target):
+    n = len(nums)
+    def dfs(i, p):
+        if i == n:
+            return p == target
+        return dfs(i + 1, p) or dfs(i + 1, p * nums[i])
+    return dfs(0, 1)
+",O(2 ^ n)
+"def bit_subsets(arr):
+    n = len(arr)
+    res = []
+    for mask in range(1 << n):
+        tmp = []
+        for i in range(n):
+            if (mask >> i) & 1:
+                tmp.append(arr[i])
+        res.append(tmp)
+    return res
+",O(2 ^ n)
+"class BoolVectors:
+    def gen(self, n):
+        res = []
+        cur = [False] * n
+        def rec(i):
+            if i == n:
+                res.append(cur[:])
+                return
+            cur[i] = False
+            rec(i + 1)
+            cur[i] = True
+            rec(i + 1)
+        rec(0)
+        return res
+",O(2 ^ n)
+"def target_sum_ways(nums, target):
+    cnt = 0
+    n = len(nums)
+    def dfs(i, s):
+        nonlocal cnt
+        if i == n:
+            if s == target:
+                cnt += 1
+            return
+        dfs(i + 1, s + nums[i])
+        dfs(i + 1, s - nums[i])
+    dfs(0, 0)
+    return cnt
+",O(2 ^ n)
+"def pal_subseq_count(s):
+    n = len(s)
+    total = 0
+    def dfs(i, t):
+        nonlocal total
+        if i == n:
+            if t and t == t[::-1]:
+                total += 1
+            return
+        dfs(i + 1, t)
+        dfs(i + 1, t + s[i])
+    dfs(0, '')
+    return total
+",O(2 ^ n)
+"def subset_or(nums):
+    ans = 0
+    n = len(nums)
+    def rec(i, val):
+        nonlocal ans
+        if i == n:
+            if val > ans:
+                ans = val
+            return
+        rec(i + 1, val)
+        rec(i + 1, val | nums[i])
+    rec(0, 0)
+    return ans
+",O(2 ^ n)
+"def count_subsets(arr):
+    n = len(arr)
+    stack = [(0, 0)]
+    cnt = 0
+    while stack:
+        i, s = stack.pop()
+        if i == n:
+            cnt += 1
+        else:
+            stack.append((i + 1, s))
+            stack.append((i + 1, s + arr[i]))
+    return cnt
+",O(2 ^ n)
+"def all_bits(n):
+    out = []
+    def gen(k, pref):
+        if k == n:
+            out.append(pref)
+            return
+        gen(k + 1, pref + '0')
+        gen(k + 1, pref + '1')
+    gen(0, '')
+    return out
+",O(2 ^ n)
+"def powerset(a):
+    res=[]
+    def dfs(i,path):
+        if i==len(a):
+            res.append(path[:])
+            return
+        path.append(a[i]); dfs(i+1,path); path.pop(); dfs(i+1,path)
+    dfs(0,[])
+    return res
+x=powerset([1,2,3,4,5])
+len(x)
+",O(2 ^ n)
+"def f(n):
+    if n<2:
+        return n
+    return f(n-1)+f(n-2)
+print(f(20))
+",O(2 ^ n)
+"def sat(clauses,m):
+    assign=[None]*(m+1)
+    ans=[False]
+    def dfs(i):
+        if ans[0]:
+            return
+        if i>m:
+            for cl in clauses:
+                ok=False
+                for lit in cl:
+                    v=abs(lit); val=assign[v]
+                    if (lit>0 and val==True) or (lit<0 and val==False):
+                        ok=True; break
+                if not ok:
+                    return
+            ans[0]=True
+            return
+        assign[i]=False; dfs(i+1)
+        assign[i]=True; dfs(i+1)
+        assign[i]=None
+    dfs(1)
+    return ans[0]
+print(sat([[1,-2],[2,3],[-1,-3]],3))
+",O(2 ^ n)
+"def min_diff(nums):
+    best=[float('inf')]
+    def dfs(i,total):
+        if i==len(nums):
+            if abs(total)<best[0]:
+                best[0]=abs(total)
+            return
+        dfs(i+1,total+nums[i])
+        dfs(i+1,total-nums[i])
+    dfs(0,0)
+    return best[0]
+print(min_diff([7,3,2,5,8]))
+",O(2 ^ n)
+"def subseqs(s):
+    out=[]
+    def go(i,buf):
+        if i==len(s):
+            out.append(buf)
+            return
+        go(i+1,buf+s[i])
+        go(i+1,buf)
+    go(0,'')
+    return out
+r=subseqs('abcd')
+len(r)
+",O(2 ^ n)
+"def all_partitions(s):
+    if not s:
+        return [[]]
+    res=[]
+    n=len(s)
+    def dfs(i,cur,parts):
+        if i==n:
+            res.append(parts+[cur])
+            return
+        dfs(i+1,cur+s[i],parts)
+        dfs(i+1,s[i],parts+[cur])
+    dfs(1,s[0],[])
+    return res
+print(len(all_partitions('abcd')))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    g=gray(n-1)
+    return ['0'+x for x in g]+['1'+x for x in reversed(g)]
+print(len(gray(6)))
+",O(2 ^ n)
+"def cnt_xor(a,t):
+    c=[0]
+    def dfs(i,x):
+        if i==len(a):
+            if x==t:
+                c[0]+=1
+            return
+        dfs(i+1,x^a[i])
+        dfs(i+1,x)
+    dfs(0,0)
+    return c[0]
+print(cnt_xor([1,2,3,4],6))
+",O(2 ^ n)
+"def all_sums(nums):
+    res=set()
+    def go(i,total):
+        if i==len(nums):
+            res.add(total)
+            return
+        go(i+1,total+nums[i])
+        go(i+1,total-nums[i])
+    go(0,0)
+    return sorted(res)
+print(all_sums([1,2,3,4]))
+",O(2 ^ n)
+"def knap(w,v,cap):
+    n=len(w)
+    best=[0]
+    def dfs(i,curW,curV):
+        if curW>cap:
+            return
+        if i==n:
+            if curV>best[0]:
+                best[0]=curV
+            return
+        dfs(i+1,curW+w[i],curV+v[i])
+        dfs(i+1,curW,curV)
+    dfs(0,0,0)
+    return best[0]
+print(knap([2,3,4,5],[3,4,5,6],5))
+",O(2 ^ n)
+"def sums(a):
+    cur={0}
+    for x in a:
+        nxt=set()
+        for y in cur:
+            nxt.add(y+x)
+            nxt.add(y-x)
+        cur=nxt
+    return cur
+print(len(sums([1,3,5,7,9])))
+",O(2 ^ n)
+"def gen(n):
+    out=[]
+    def dfs(i,buf):
+        if i==n:
+            out.append(buf)
+            return
+        dfs(i+1,buf+'0')
+        dfs(i+1,buf+'1')
+    dfs(0,'')
+    return out
+print(len(gen(12)))
+",O(2 ^ n)
+"def count_prod(nums,k):
+    cnt=[0]
+    def dfs(i,p):
+        if i==len(nums):
+            if p<k:
+                cnt[0]+=1
+            return
+        dfs(i+1,p*nums[i])
+        dfs(i+1,p)
+    dfs(0,1)
+    return cnt[0]
+print(count_prod([2,3,5,7],50))
+",O(2 ^ n)
+"def subset_sum(nums, target):
+    res = []
+    path = []
+    def dfs(i, s):
+        if s == target:
+            res.append(path[:])
+        if i == len(nums):
+            return
+        path.append(nums[i])
+        dfs(i+1, s + nums[i])
+        path.pop()
+        dfs(i+1, s)
+    dfs(0, 0)
+    return res
+
+print(len(subset_sum([1,2,3,4,5,6], 6)))
+",O(2 ^ n)
+"def power_set(items):
+    out = []
+    cur = []
+    def back(k):
+        if k == len(items):
+            out.append(cur[:])
+            return
+        cur.append(items[k])
+        back(k+1)
+        cur.pop()
+        back(k+1)
+    back(0)
+    return out
+
+print(len(power_set([1,2,3,4,5,6,7])))
+",O(2 ^ n)
+"def max_subset_xor(arr):
+    n = len(arr)
+    best = 0
+    for mask in range(1<<n):
+        x = 0
+        for i in range(n):
+            if mask>>i & 1:
+                x ^= arr[i]
+        if x > best:
+            best = x
+    return best
+
+print(max_subset_xor([3,5,6,9,10]))
+",O(2 ^ n)
+"def min_diff_partition(a):
+    best = [float('inf')]
+    def dfs(i, s1, s2):
+        if i == len(a):
+            d = abs(s1 - s2)
+            if d < best[0]:
+                best[0] = d
+            return
+        dfs(i+1, s1 + a[i], s2)
+        dfs(i+1, s1, s2 + a[i])
+    dfs(0, 0, 0)
+    return best[0]
+
+print(min_diff_partition([7,3,2,5,8]))
+",O(2 ^ n)
+"def hanoi(n, a, b, c):
+    if n == 0:
+        return
+    hanoi(n-1, a, c, b)
+    print(a, '->', c)
+    hanoi(n-1, b, a, c)
+
+hanoi(4, 'A', 'B', 'C')
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    prev = gray(n-1)
+    return ['0'+x for x in prev] + ['1'+x for x in reversed(prev)]
+
+print(len(gray(10)))
+",O(2 ^ n)
+"def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print(fib(25))
+",O(2 ^ n)
+"def binaries(n):
+    res = []
+    cur = []
+    def rec(k):
+        if k == n:
+            res.append(''.join(cur))
+            return
+        cur.append('0')
+        rec(k+1)
+        cur.pop()
+        cur.append('1')
+        rec(k+1)
+        cur.pop()
+    rec(0)
+    return res
+
+print(binaries(12)[-1])
+",O(2 ^ n)
+"def count_subseq(s, t):
+    cnt = 0
+    def dfs(i, j):
+        nonlocal cnt
+        if j == len(t):
+            cnt += 1
+            return
+        if i == len(s):
+            return
+        dfs(i+1, j)
+        if s[i] == t[j]:
+            dfs(i+1, j+1)
+    dfs(0, 0)
+    return cnt
+
+print(count_subseq('abracadabra', 'aba'))
+",O(2 ^ n)
+"def has_subset_sum(nums, target):
+    n = len(nums)
+    for mask in range(1<<n):
+        s = 0
+        for i in range(n):
+            if mask>>i & 1:
+                s += nums[i]
+        if s == target:
+            return True
+    return False
+
+print(has_subset_sum([2,4,6,10], 16))
+",O(2 ^ n)
+"def target_sum_ways(nums, target):
+    ways = 0
+    def dfs(i, s):
+        nonlocal ways
+        if i == len(nums):
+            if s == target:
+                ways += 1
+            return
+        dfs(i+1, s + nums[i])
+        dfs(i+1, s - nums[i])
+    dfs(0, 0)
+    return ways
+
+print(target_sum_ways([1,1,1,1,1], 3))
+",O(2 ^ n)
+"def max_subset_product(arr):
+    best = None
+    def dfs(i, prod):
+        nonlocal best
+        if i == len(arr):
+            if best is None or prod > best:
+                best = prod
+            return
+        dfs(i+1, prod*arr[i])
+        dfs(i+1, prod)
+    dfs(0, 1)
+    return best
+
+print(max_subset_product([1, -2, 3, 4, -1]))
+",O(2 ^ n)
+"class SubsetEnumerator:
+    def __init__(self, n):
+        self.n = n
+        self.acc = []
+        self.ans = []
+    def run(self):
+        def go(i):
+            if i == self.n:
+                self.ans.append(tuple(self.acc))
+                return
+            self.acc.append(i)
+            go(i+1)
+            self.acc.pop()
+            go(i+1)
+        go(0)
+        return self.ans
+
+e = SubsetEnumerator(16)
+print(len(e.run()))
+",O(2 ^ n)
+"def sat_exists(clauses, n):
+    for mask in range(1<<n):
+        ok = True
+        for clause in clauses:
+            satisfied = False
+            for var, sign in clause:
+                val = (mask >> var) & 1
+                if (val == 1) if sign else (val == 0):
+                    satisfied = True
+                    break
+            if not satisfied:
+                ok = False
+                break
+        if ok:
+            return True
+    return False
+
+cls = [
+    [(0, True), (1, False)],
+    [(1, True), (2, True)],
+    [(0, False), (2, True)]
+]
+print(sat_exists(cls, 3))
+",O(2 ^ n)
+"def subset_sums(a):
+    out = []
+    def rec(i, s):
+        if i == len(a):
+            out.append(s)
+            return
+        rec(i+1, s + a[i])
+        rec(i+1, s)
+    rec(0, 0)
+    return out
+
+print(len(subset_sums(list(range(18)))))
+",O(2 ^ n)
+"def split_equal(nums):
+    n = len(nums)
+    total = sum(nums)
+    if total % 2:
+        return []
+    target = total//2
+    ans = []
+    cur = []
+    def dfs(i, s):
+        if s == target:
+            ans.append(cur[:])
+        if i == n:
+            return
+        cur.append(nums[i])
+        dfs(i+1, s + nums[i])
+        cur.pop()
+        dfs(i+1, s)
+    dfs(0, 0)
+    return ans
+
+for p in split_equal([1,5,11,5,2,4,6]):
+    print(f'{p}')
+",O(2 ^ n)
+"def unique_subset_ors(a):
+    seen = set()
+    def dfs(i, cur):
+        if i == len(a):
+            seen.add(cur)
+            return
+        dfs(i+1, cur | a[i])
+        dfs(i+1, cur)
+    dfs(0, 0)
+    return seen
+
+print(len(unique_subset_ors([1,2,4,8,16,3])))
+",O(2 ^ n)
+"def count_assignments(n):
+    s = 0
+    for mask in range(1<<n):
+        a = [(mask>>i)&1 for i in range(n)]
+        if (a[0] or a[1]) and (not a[-1] or a[0]):
+            s += 1
+    return s
+
+print(count_assignments(20))
+",O(2 ^ n)
+"def power_set(nums):
+    res=[]
+    path=[]
+    def dfs(i):
+        if i==len(nums):
+            res.append(path[:])
+            return
+        path.append(nums[i])
+        dfs(i+1)
+        path.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+print(len(power_set([1,2,3,4,5])))
+",O(2 ^ n)
+"def fib(n):
+    if n<=1:
+        return n
+    return fib(n-1)+fib(n-2)
+print(fib(30))
+",O(2 ^ n)
+"def count_subsets(nums,target):
+    n=len(nums)
+    def rec(i,s):
+        if i==n:
+            return 1 if s==target else 0
+        return rec(i+1,s+nums[i])+rec(i+1,s)
+    return rec(0,0)
+print(count_subsets([1,2,3,4,5,6],10))
+",O(2 ^ n)
+"def binaries(n):
+    out=[]
+    def rec(prefix,k):
+        if k==n:
+            out.append(prefix)
+            return
+        rec(prefix+'0',k+1)
+        rec(prefix+'1',k+1)
+    rec('',0)
+    return out
+b=binaries(5)
+print(b[:3]+b[-3:])
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev]+['1'+x for x in reversed(prev)]
+print(gray(3))
+",O(2 ^ n)
+"def sat(clauses,vars):
+    n=len(vars)
+    def eval_assignment(assign):
+        for clause in clauses:
+            ok=False
+            for lit in clause:
+                if lit.startswith('!'):
+                    ok=ok or (not assign[lit[1:]])
+                else:
+                    ok=ok or assign[lit]
+            if not ok:
+                return False
+        return True
+    ans={}
+    sols=[]
+    def dfs(i):
+        if i==n:
+            if eval_assignment(ans):
+                sols.append(ans.copy())
+            return
+        ans[vars[i]]=False
+        dfs(i+1)
+        ans[vars[i]]=True
+        dfs(i+1)
+    dfs(0)
+    return sols
+print(len(sat([['a','b'],['!a','c'],['!b','!c']],['a','b','c'])))
+",O(2 ^ n)
+"def target_sum(nums,goal):
+    cnt=0
+    def dfs(i,acc):
+        nonlocal cnt
+        if i==len(nums):
+            if acc==goal:
+                cnt+=1
+            return
+        dfs(i+1,acc+nums[i])
+        dfs(i+1,acc-nums[i])
+    dfs(0,0)
+    return cnt
+print(target_sum([1,1,2,3],3))
+",O(2 ^ n)
+"def max_subset_xor(arr):
+    best=0
+    def dfs(i,x):
+        nonlocal best
+        if i==len(arr):
+            if x>best:
+                best=x
+            return
+        dfs(i+1,x)
+        dfs(i+1,x^arr[i])
+    dfs(0,0)
+    return best
+print(max_subset_xor([3,10,5,25,2,8]))
+",O(2 ^ n)
+"def subsequences(s):
+    out=[]
+    def rec(i,t):
+        if i==len(s):
+            out.append(t)
+            return
+        rec(i+1,t)
+        rec(i+1,t+s[i])
+    rec(0,'')
+    return out
+print(len(subsequences('abcdefg')))
+",O(2 ^ n)
+"def min_partition_diff(a):
+    n=len(a)
+    total=sum(a)
+    best=[abs(total)]
+    def dfs(i,acc):
+        d=abs(total-2*acc)
+        if d<best[0]:
+            best[0]=d
+        if i==n:
+            return
+        dfs(i+1,acc+a[i])
+        dfs(i+1,acc)
+    dfs(0,0)
+    return best[0]
+print(min_partition_diff([2,7,4,1,8,1]))
+",O(2 ^ n)
+"def count_subsets_under(nums,limit):
+    c=0
+    def dfs(i,prod):
+        nonlocal c
+        if i==len(nums):
+            if prod<limit:
+                c+=1
+            return
+        dfs(i+1,prod)
+        dfs(i+1,prod*nums[i])
+    dfs(0,1)
+    return c-1
+print(count_subsets_under([1,2,3,4],25))
+",O(2 ^ n)
+"def letter_case_permutations(s):
+    res=[]
+    chars=list(s)
+    def dfs(i,t):
+        if i==len(chars):
+            res.append(''.join(t))
+            return
+        if chars[i].isalpha():
+            dfs(i+1,t+[chars[i].lower()])
+            dfs(i+1,t+[chars[i].upper()])
+        else:
+            dfs(i+1,t+[chars[i]])
+    dfs(0,[])
+    return res
+print(len(letter_case_permutations('a1b2c3')))
+",O(2 ^ n)
+"def subset_sums(a):
+    sums=set()
+    def rec(i,s):
+        if i==len(a):
+            sums.add(s)
+            return
+        rec(i+1,s)
+        rec(i+1,s+a[i])
+    rec(0,0)
+    return sums
+print(len(subset_sums([1,3,3,5,7])))
+",O(2 ^ n)
+"def knap(values,weights,W):
+    n=len(values)
+    def rec(i,cap):
+        if i==n or cap<=0:
+            return 0
+        take=0
+        if weights[i]<=cap:
+            take=values[i]+rec(i+1,cap-weights[i])
+        skip=rec(i+1,cap)
+        return take if take>skip else skip
+    return rec(0,W)
+print(knap([6,10,12],[1,2,3],5))
+",O(2 ^ n)
+"def bipartitions(lst):
+    res=[]
+    n=len(lst)
+    part=[False]*n
+    def dfs(i):
+        if i==n:
+            A=[lst[j] for j in range(n) if part[j]]
+            B=[lst[j] for j in range(n) if not part[j]]
+            res.append((A,B))
+            return
+        part[i]=False
+        dfs(i+1)
+        part[i]=True
+        dfs(i+1)
+    dfs(0)
+    return res
+print(len(bipartitions([1,2,3,4])))
+",O(2 ^ n)
+"class Expr:
+    def addOperators(self, digits, target):
+        res=[]
+        def dfs(i,cur,expr):
+            if i==len(digits):
+                if cur==target:
+                    res.append(expr)
+                return
+            dfs(i+1,cur+digits[i],expr+'+'+str(digits[i]))
+            dfs(i+1,cur-digits[i],expr+'-'+str(digits[i]))
+        if digits:
+            dfs(1,digits[0],str(digits[0]))
+        return res
+print(len(Expr().addOperators([1,2,3,4,5],3)))
+",O(2 ^ n)
+"def all_signings(nums):
+    out=[]
+    def dfs(i,cur):
+        if i==len(nums):
+            out.append(tuple(cur))
+            return
+        cur.append(nums[i])
+        dfs(i+1,cur)
+        cur[-1]=-nums[i]
+        dfs(i+1,cur)
+        cur.pop()
+    dfs(0,[])
+    return out
+print(all_signings([2,4,6])[:4])
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    n = len(nums)
+    def dfs(i, total):
+        if i == n:
+            return 1 if total == target else 0
+        return dfs(i + 1, total) + dfs(i + 1, total + nums[i])
+    return dfs(0, 0)
+
+count_subsets([1,2,3,4], 5)
+",O(2 ^ n)
+"class PowerSet:
+    def __init__(self, a):
+        self.a = a
+        self.res = []
+        self.cur = []
+    def run(self, i=0):
+        if i == len(self.a):
+            self.res.append(self.cur[:])
+            return
+        self.cur.append(self.a[i])
+        self.run(i + 1)
+        self.cur.pop()
+        self.run(i + 1)
+    def result(self):
+        self.run()
+        return self.res
+
+PowerSet([1,2,3]).result()
+",O(2 ^ n)
+"def binaries(n):
+    out = []
+    s = ['0'] * n
+    def rec(i):
+        if i == n:
+            out.append(''.join(s))
+            return
+        s[i] = '0'
+        rec(i + 1)
+        s[i] = '1'
+        rec(i + 1)
+    rec(0)
+    return out
+
+binaries(4)
+",O(2 ^ n)
+"def fib(n):
+    if n <= 1:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+fib(30)
+",O(2 ^ n)
+"def knap(weights, values, cap):
+    n = len(weights)
+    def dfs(i, c):
+        if i == n or c == 0:
+            return 0
+        best = dfs(i + 1, c)
+        if weights[i] <= c:
+            take = values[i] + dfs(i + 1, c - weights[i])
+            if take > best:
+                best = take
+        return best
+    return dfs(0, cap)
+
+knap([2,3,4], [4,5,6], 5)
+",O(2 ^ n)
+"def ways(nums, target):
+    n = len(nums)
+    def dfs(i, s):
+        if i == n:
+            return 1 if s == target else 0
+        return dfs(i + 1, s + nums[i]) + dfs(i + 1, s - nums[i])
+    return dfs(0, 0)
+
+ways([1,1,1,1,1], 3)
+",O(2 ^ n)
+"def min_diff(nums):
+    total = sum(nums)
+    n = len(nums)
+    best = [float('inf')]
+    def dfs(i, s):
+        if i == n:
+            d = abs(total - 2 * s)
+            if d < best[0]:
+                best[0] = d
+            return
+        dfs(i + 1, s)
+        dfs(i + 1, s + nums[i])
+    dfs(0, 0)
+    return best[0]
+
+min_diff([3,1,4,2,2])
+",O(2 ^ n)
+"def can_break(s, words):
+    n = len(s)
+    def dfs(i):
+        if i == n:
+            return True
+        j = i + 1
+        while j <= n:
+            if s[i:j] in words and dfs(j):
+                return True
+            j += 1
+        return False
+    return dfs(0)
+
+can_break('leetcode', {'leet','code'})
+",O(2 ^ n)
+"def sat(vars_count, clauses):
+    sol = []
+    cur = [False] * vars_count
+    def ok():
+        for clause in clauses:
+            good = False
+            for var, sign in clause:
+                val = cur[var]
+                if (val if sign else not val):
+                    good = True
+                    break
+            if not good:
+                return False
+        return True
+    def dfs(i):
+        if i == vars_count:
+            if ok():
+                sol.append(cur[:])
+            return
+        cur[i] = False
+        dfs(i + 1)
+        cur[i] = True
+        dfs(i + 1)
+    dfs(0)
+    return sol
+
+sat(3, [[(0, True), (1, False)], [(2, True)]])
+",O(2 ^ n)
+"def subsequences(s):
+    out = []
+    path = []
+    n = len(s)
+    def dfs(i):
+        if i == n:
+            out.append(''.join(path))
+            return
+        dfs(i + 1)
+        path.append(s[i])
+        dfs(i + 1)
+        path.pop()
+    dfs(0)
+    return out
+
+subsequences('abcd')
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    g = gray(n - 1)
+    return ['0' + x for x in g] + ['1' + x for x in reversed(g)]
+
+gray(3)
+",O(2 ^ n)
+"def letter_case(s):
+    res = []
+    arr = list(s)
+    n = len(arr)
+    def dfs(i):
+        if i == n:
+            res.append(''.join(arr))
+            return
+        c = arr[i]
+        if c.isalpha():
+            arr[i] = c.lower()
+            dfs(i + 1)
+            arr[i] = c.upper()
+            dfs(i + 1)
+        else:
+            dfs(i + 1)
+    dfs(0)
+    return res
+
+letter_case('a1b2')
+",O(2 ^ n)
+"def subset_products(nums):
+    prods = []
+    n = len(nums)
+    def dfs(i, acc):
+        if i == n:
+            prods.append(acc)
+            return
+        dfs(i + 1, acc)
+        dfs(i + 1, acc * nums[i])
+    dfs(0, 1)
+    return prods
+
+subset_products([2,3,5])
+",O(2 ^ n)
+"def powerset(nums):
+    res=[]
+    path=[]
+    def dfs(i):
+        if i==len(nums):
+            res.append(path[:])
+            return
+        path.append(nums[i])
+        dfs(i+1)
+        path.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+
+print(powerset([1,2,3,4]))
+",O(2 ^ n)
+"def fib(n):
+    return n if n<2 else fib(n-1)+fib(n-2)
+
+print(fib(30))
+",O(2 ^ n)
+"def count_subsets(arr,target):
+    def go(i,s):
+        if i==len(arr):
+            return 1 if s==target else 0
+        return go(i+1,s)+go(i+1,s+arr[i])
+    return go(0,0)
+
+print(count_subsets([2,3,5,6,8,10],10))
+",O(2 ^ n)
+"def all_substrings_from_subset(s):
+    n=len(s)
+    return [''.join(s[j] for j in range(n) if (mask>>j)&1) for mask in range(1<<n)]
+
+print(all_substrings_from_subset('wxyz'))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev]+['1'+x for x in reversed(prev)]
+
+print(gray(3))
+",O(2 ^ n)
+"def ways(nums,target):
+    cnt=0
+    def dfs(i,s):
+        nonlocal cnt
+        if i==len(nums):
+            if s==target:
+                cnt+=1
+            return
+        dfs(i+1,s+nums[i])
+        dfs(i+1,s-nums[i])
+    dfs(0,0)
+    return cnt
+
+print(ways([1,1,2,3],1))
+",O(2 ^ n)
+"def bin_strings(n):
+    ans=[]
+    def build(pref,k):
+        if k==n:
+            ans.append(''.join(pref))
+            return
+        pref.append('0')
+        build(pref,k+1)
+        pref.pop()
+        pref.append('1')
+        build(pref,k+1)
+        pref.pop()
+    build([],0)
+    return ans
+
+print(len(bin_strings(12)))
+",O(2 ^ n)
+"def sat(vars_list, func):
+    n=len(vars_list)
+    count=0
+    for mask in range(1<<n):
+        vals={vars_list[i]: bool((mask>>i)&1) for i in range(n)}
+        if func(vals):
+            count+=1
+    return count
+
+print(sat(['a','b','c','d'], lambda v: (v['a'] and not v['b']) or (v['c'] and v['d'])))
+",O(2 ^ n)
+"def min_diff(nums):
+    best=[float('inf')]
+    def dfs(i,s):
+        if i==len(nums):
+            if abs(s)<best[0]:
+                best[0]=abs(s)
+            return
+        dfs(i+1,s+nums[i])
+        dfs(i+1,s-nums[i])
+    dfs(0,0)
+    return best[0]
+
+print(min_diff([1,6,11,5]))
+",O(2 ^ n)
+"def pal_subsets(s):
+    res=[]
+    n=len(s)
+    for mask in range(1<<n):
+        t=''.join(s[i] for i in range(n) if (mask>>i)&1)
+        if t==t[::-1]:
+            res.append(t)
+    return res
+
+print(len(pal_subsets('aabbaa')))
+",O(2 ^ n)
+"def subset_sums(nums):
+    sums=set()
+    def dfs(i,s):
+        if i==len(nums):
+            sums.add(s)
+            return
+        dfs(i+1,s)
+        dfs(i+1,s+nums[i])
+    dfs(0,0)
+    return sorted(sums)
+
+print(subset_sums([3,1,2,4]))
+",O(2 ^ n)
+"def subsets_iter(seq):
+    def rec(i,cur):
+        if i==len(seq):
+            yield tuple(cur)
+            return
+        yield from rec(i+1,cur)
+        cur.append(seq[i])
+        yield from rec(i+1,cur)
+        cur.pop()
+    return list(rec(0,[]))
+
+print(subsets_iter([0,1,2,3]))
+",O(2 ^ n)
+"def ps(lst):
+    res=[[]]
+    for x in lst:
+        res+=[r+[x] for r in res]
+    return res
+
+print(ps([1,2,3,4]))
+",O(2 ^ n)
+"def inclusion_exclusion(sets):
+    n=len(sets)
+    total=0
+    for mask in range(1<<n):
+        if mask==0:
+            continue
+        inter=None
+        bits=0
+        for i in range(n):
+            if (mask>>i)&1:
+                bits+=1
+                inter=sets[i] if inter is None else inter & sets[i]
+        total+=((-1)**(bits+1))*len(inter)
+    return total
+
+a=set(range(1,51))
+b=set(range(1,101,2))
+c=set(range(1,101,3))
+print(inclusion_exclusion([a,b,c]))
+",O(2 ^ n)
+"def knap(w,v,W):
+    n=len(w)
+    def dfs(i,cap):
+        if i==n:
+            return 0
+        best=dfs(i+1,cap)
+        if w[i]<=cap:
+            t=v[i]+dfs(i+1,cap-w[i])
+            if t>best:
+                best=t
+        return best
+    return dfs(0,W)
+
+print(knap([2,3,4,5],[3,4,5,8],5))
+",O(2 ^ n)
+"class Assign:
+    def __init__(self, arr):
+        self.arr=arr
+    def count_even_sum_assignments(self):
+        self.count=0
+        def rec(i,s):
+            if i==len(self.arr):
+                if s%2==0:
+                    self.count+=1
+                return
+            rec(i+1,s+self.arr[i])
+            rec(i+1,s-self.arr[i])
+        rec(0,0)
+        return self.count
+
+print(Assign([3,5,7,9]).count_even_sum_assignments())
+",O(2 ^ n)
+"def letter_case_permutations(s):
+    res=['']
+    for ch in s:
+        if ch.isalpha():
+            res=[r+ch.lower() for r in res]+[r+ch.upper() for r in res]
+        else:
+            res=[r+ch for r in res]
+    return res
+
+print(letter_case_permutations('a1b2'))
+",O(2 ^ n)
+"def count_bitstrings(n,k):
+    c=0
+    def dfs(i,ones):
+        nonlocal c
+        if i==n:
+            if ones<=k:
+                c+=1
+            return
+        dfs(i+1,ones)
+        dfs(i+1,ones+1)
+    dfs(0,0)
+    return c
+
+print(count_bitstrings(16,5))
+",O(2 ^ n)
+"def fib(n):
+    if n < 2:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print(fib(25))
+",O(2 ^ n)
+"vals=[3,4,5,6]
+wt=[2,3,4,5]
+W=8
+
+def kn(i,w):
+    if i==len(vals):
+        return 0
+    r=kn(i+1,w)
+    if wt[i]<=w:
+        t=vals[i]+kn(i+1,w-wt[i])
+        if t>r:
+            r=t
+    return r
+
+print(kn(0,W))
+",O(2 ^ n)
+"arr=[-1,1,2,-2,3]
+
+def cnt(i,s):
+    if i==len(arr):
+        return 1 if s==0 else 0
+    return cnt(i+1,s)+cnt(i+1,s+arr[i])
+
+print(cnt(0,0))
+",O(2 ^ n)
+"nums=[1,1,1,1,1]
+T=3
+
+def ways(i,total):
+    if i==len(nums):
+        return 1 if total==T else 0
+    return ways(i+1,total+nums[i])+ways(i+1,total-nums[i])
+
+print(ways(0,0))
+",O(2 ^ n)
+"class X:
+    def __init__(self,a,k):
+        self.a=a
+        self.k=k
+        self.ans=0
+    def dfs(self,i,x):
+        if i==len(self.a):
+            if x==self.k:
+                self.ans+=1
+            return
+        self.dfs(i+1,x)
+        self.dfs(i+1,x^self.a[i])
+
+s=X([1,2,3,4],6)
+s.dfs(0,0)
+print(s.ans)
+",O(2 ^ n)
+"n=10
+k=4
+
+def rec(i,c):
+    if i==n:
+        return 1 if c==k else 0
+    return rec(i+1,c)+rec(i+1,c+1)
+
+print(rec(0,0))
+",O(2 ^ n)
+"arr=[2,3,5]
+target=30
+
+def prod(i,p):
+    if i==len(arr):
+        return 1 if p==target else 0
+    return prod(i+1,p)+prod(i+1,p*arr[i])
+
+print(prod(0,1))
+",O(2 ^ n)
+"def f(n):
+    if n==0:
+        return 1
+    return f(n-1)+f(n-1)
+
+print(f(20))
+",O(2 ^ n)
+"arr=[1,2,7,1]
+target=5
+
+def rec(i,s):
+    if i==len(arr):
+        return 1 if s==target else 0
+    return rec(i+1,s+arr[i]) + rec(i+1,s-arr[i])
+
+print(rec(0,0))
+",O(2 ^ n)
+"n=18
+
+def c(i,p):
+    if i==n:
+        return 1 if p==0 else 0
+    return c(i+1,p) + c(i+1,1-p)
+
+print(c(0,0))
+",O(2 ^ n)
+"def solve():
+    nums=[2,4,6,10]
+    S=16
+    def dfs(i,s):
+        if i==len(nums):
+            return 1 if s==S else 0
+        return dfs(i+1,s)+dfs(i+1,s+nums[i])
+    return dfs(0,0)
+
+print(solve())
+",O(2 ^ n)
+"a=[1,3,5,7,9]
+T=10
+ans=0
+
+def dfs(i,s):
+    global ans
+    if i==len(a):
+        if s==T:
+            ans+=1
+        return
+    dfs(i+1,s)
+    dfs(i+1,s+a[i])
+
+dfs(0,0)
+print(ans)
+",O(2 ^ n)
+"coefs=[1,2,3,4,5]
+
+def count(i,v):
+    if i==len(coefs):
+        return 1 if v==0 else 0
+    return count(i+1,v+coefs[i]) + count(i+1,v-coefs[i])
+
+res=count(0,0)
+print(f""{res}"")
+",O(2 ^ n)
+"nums=[1,2,3,4]
+
+def sums(i,acc):
+    if i==len(nums):
+        yield acc
+        return
+    yield from sums(i+1,acc)
+    yield from sums(i+1,acc+nums[i])
+
+print(sum(1 for _ in sums(0,0)))
+",O(2 ^ n)
+"class Sign:
+    def __init__(self, arr, target):
+        self.arr=arr
+        self.t=target
+        self.best=None
+    def go(self,i,s):
+        if i==len(self.arr):
+            d=abs(s-self.t)
+            if self.best is None or d<self.best:
+                self.best=d
+            return
+        self.go(i+1,s+self.arr[i])
+        self.go(i+1,s-self.arr[i])
+
+x=Sign([7,1,3,9],5)
+x.go(0,0)
+print(f""{x.best}"")
+",O(2 ^ n)
+"def powerset(a):
+    res=[]
+    cur=[]
+    def go(i):
+        if i==len(a):
+            res.append(cur[:])
+            return
+        go(i+1)
+        cur.append(a[i])
+        go(i+1)
+        cur.pop()
+    go(0)
+    return res
+",O(2 ^ n)
+"def subset_sum(nums,target):
+    ans=False
+    def dfs(i,s):
+        nonlocal ans
+        if i==len(nums):
+            if s==target:
+                ans=True
+            return
+        if ans:
+            return
+        dfs(i+1,s)
+        dfs(i+1,s+nums[i])
+    dfs(0,0)
+    return ans
+",O(2 ^ n)
+"def best_under(nums,limit):
+    best=0
+    n=len(nums)
+    for mask in range(1<<n):
+        s=0
+        for i in range(n):
+            if mask>>i & 1:
+                s+=nums[i]
+        if s<=limit and s>best:
+            best=s
+    return best
+",O(2 ^ n)
+"def count_target(nums,target):
+    c=0
+    def dfs(i,s):
+        nonlocal c
+        if i==len(nums):
+            if s==target:
+                c+=1
+            return
+        dfs(i+1,s+nums[i])
+        dfs(i+1,s-nums[i])
+    dfs(0,0)
+    return c
+",O(2 ^ n)
+"def fib(n):
+    if n<=1:
+        return n
+    return fib(n-1)+fib(n-2)
+",O(2 ^ n)
+"def binaries(n):
+    out=[]
+    s=['0']*n
+    def rec(i):
+        if i==n:
+            out.append(''.join(s))
+            return
+        s[i]='0'
+        rec(i+1)
+        s[i]='1'
+        rec(i+1)
+    rec(0)
+    return out
+",O(2 ^ n)
+"def letter_case_permutations(s):
+    res=[]
+    arr=list(s)
+    def dfs(i):
+        if i==len(arr):
+            res.append(''.join(arr))
+            return
+        if arr[i].isalpha():
+            original=arr[i]
+            arr[i]=original.lower()
+            dfs(i+1)
+            arr[i]=original.upper()
+            dfs(i+1)
+            arr[i]=original
+        else:
+            dfs(i+1)
+    dfs(0)
+    return res
+",O(2 ^ n)
+"def knapsack(weights,values,cap):
+    n=len(weights)
+    def dfs(i,w):
+        if i==n:
+            return 0
+        best=dfs(i+1,w)
+        if w+weights[i]<=cap:
+            v=values[i]+dfs(i+1,w+weights[i])
+            if v>best:
+                best=v
+        return best
+    return dfs(0,0)
+",O(2 ^ n)
+"def max_independent_set(n,edges):
+    g=[set() for _ in range(n)]
+    for u,v in edges:
+        g[u].add(v); g[v].add(u)
+    best=0
+    chosen=[False]*n
+    def dfs(i,c):
+        nonlocal best
+        if i==n:
+            if c>best:
+                best=c
+            return
+        ok=True
+        for j in range(n):
+            if chosen[j] and j in g[i]:
+                ok=False
+                break
+        if ok:
+            chosen[i]=True
+            dfs(i+1,c+1)
+            chosen[i]=False
+        dfs(i+1,c)
+    dfs(0,0)
+    return best
+",O(2 ^ n)
+"def count_subset_xor(nums,target):
+    cnt=0
+    def dfs(i,x):
+        nonlocal cnt
+        if i==len(nums):
+            if x==target:
+                cnt+=1
+            return
+        dfs(i+1,x)
+        dfs(i+1,x^nums[i])
+    dfs(0,0)
+    return cnt
+",O(2 ^ n)
+"def all_subsets(items):
+    cur=[]
+    def back(i):
+        if i==len(items):
+            yield tuple(cur)
+            return
+        yield from back(i+1)
+        cur.append(items[i])
+        yield from back(i+1)
+        cur.pop()
+    return list(back(0))
+",O(2 ^ n)
+"n=5
+sol=[]
+arr=list(range(n))
+choose=[False]*n
+def go(i):
+    if i==n:
+        a=[arr[j] for j in range(n) if choose[j]]
+        b=[arr[j] for j in range(n) if not choose[j]]
+        sol.append((tuple(a),tuple(b)))
+        return
+    choose[i]=False
+    go(i+1)
+    choose[i]=True
+    go(i+1)
+    choose[i]=False
+
+go(0)
+",O(2 ^ n)
+"def satisfy(c):
+    n=len(c)
+    best=None
+    def dfs(i,cur):
+        nonlocal best
+        if i==n:
+            v=0
+            for j,x in enumerate(cur):
+                v+= (1 if x else -1)*c[j]
+            if best is None or abs(v)<abs(best):
+                best=v
+            return
+        dfs(i+1,cur+[False])
+        dfs(i+1,cur+[True])
+    dfs(0,[])
+    return best
+",O(2 ^ n)
+"class Explorer:
+    def __init__(self, nums):
+        self.nums=nums
+        self.paths=0
+    def run(self):
+        self._dfs(0,0)
+        return self.paths
+    def _dfs(self,i,s):
+        if i==len(self.nums):
+            if s%2==0:
+                self.paths+=1
+            return
+        self._dfs(i+1,s)
+        self._dfs(i+1,s+self.nums[i])
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    ans = 0
+    def dfs(i, s):
+        nonlocal ans
+        if i == len(nums):
+            if s == target:
+                ans += 1
+            return
+        dfs(i + 1, s)
+        dfs(i + 1, s + nums[i])
+    dfs(0, 0)
+    return ans
+
+print(count_subsets([1, 2, 3, 4, 5], 5))
+",O(2 ^ n)
+"def power_set(s):
+    n = len(s)
+    res = []
+    for mask in range(1 << n):
+        subset = [s[i] for i in range(n) if (mask >> i) & 1]
+        res.append(tuple(subset))
+    return res
+
+ps = power_set(['a','b','c','d','e','f'])
+print(f'Total subsets: {len(ps)}')
+",O(2 ^ n)
+"def fib(n):
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+print(fib(20))
+",O(2 ^ n)
+"def hanoi(n, src, aux, dst, moves):
+    if n == 0:
+        return
+    hanoi(n - 1, src, dst, aux, moves)
+    moves.append((src, dst))
+    hanoi(n - 1, aux, src, dst, moves)
+
+moves = []
+hanoi(5, 'A', 'B', 'C', moves)
+print(len(moves))
+",O(2 ^ n)
+"def target_sum(nums, t):
+    count = 0
+    def dfs(i, total):
+        nonlocal count
+        if i == len(nums):
+            if total == t:
+                count += 1
+            return
+        dfs(i + 1, total + nums[i])
+        dfs(i + 1, total - nums[i])
+    dfs(0, 0)
+    return count
+
+print(target_sum([1, 1, 1, 1, 1], 3))
+",O(2 ^ n)
+"def sat(clauses, vars_count):
+    def eval_clause(cl, assignment):
+        for lit in cl:
+            v = abs(lit) - 1
+            val = assignment[v]
+            if lit > 0 and val:
+                return True
+            if lit < 0 and not val:
+                return True
+        return False
+    n = vars_count
+    found = False
+    def dfs(i, assign):
+        nonlocal found
+        if i == n:
+            if all(eval_clause(c, assign) for c in clauses):
+                found = True
+            return
+        if found:
+            return
+        assign.append(False)
+        dfs(i + 1, assign)
+        assign.pop()
+        assign.append(True)
+        dfs(i + 1, assign)
+        assign.pop()
+    dfs(0, [])
+    return found
+
+print(sat([[1, -2], [-1, 3], [-3, 2]], 3))
+",O(2 ^ n)
+"class Partition:
+    def __init__(self, arr):
+        self.arr = arr
+        self.total = sum(arr)
+        self.best = float('inf')
+    def solve(self):
+        def go(i, cur):
+            if i == len(self.arr):
+                d = abs(self.total - 2 * cur)
+                if d < self.best:
+                    self.best = d
+                return
+            go(i + 1, cur)
+            go(i + 1, cur + self.arr[i])
+        go(0, 0)
+        return self.best
+
+print(Partition([3, 1, 4, 2, 2, 1]).solve())
+",O(2 ^ n)
+"def count_xor(nums, k):
+    ans = 0
+    def dfs(i, x):
+        nonlocal ans
+        if i == len(nums):
+            if x == k:
+                ans += 1
+            return
+        dfs(i + 1, x)
+        dfs(i + 1, x ^ nums[i])
+    dfs(0, 0)
+    return ans
+
+print(count_xor([1, 2, 3, 4], 6))
+",O(2 ^ n)
+"def gen(n):
+    out = []
+    def rec(prefix, k):
+        if k == 0:
+            out.append(prefix)
+            return
+        rec(prefix + '0', k - 1)
+        rec(prefix + '1', k - 1)
+    rec('', n)
+    return out
+
+print(len(gen(12)))
+",O(2 ^ n)
+"def subset_product_exists(nums, k):
+    found = [False]
+    def dfs(i, prod):
+        if i == len(nums):
+            if prod == k:
+                found[0] = True
+            return
+        if found[0]:
+            return
+        dfs(i + 1, prod)
+        dfs(i + 1, prod * nums[i])
+    dfs(0, 1)
+    return found[0]
+
+print(subset_product_exists([2, 3, 5], 30))
+",O(2 ^ n)
+"def count_subsets(arr, target):
+    n = len(arr)
+    def dfs(i, s):
+        if i == n:
+            return 1 if s == target else 0
+        return dfs(i + 1, s) + dfs(i + 1, s + arr[i])
+    return dfs(0, 0)
+
+print(count_subsets([1,2,3,4,5], 5))
+",O(2 ^ n)
+"def power_set(xs):
+    res = []
+    n = len(xs)
+    def rec(i, cur):
+        if i == n:
+            res.append(cur[:])
+            return
+        rec(i + 1, cur)
+        cur.append(xs[i])
+        rec(i + 1, cur)
+        cur.pop()
+    rec(0, [])
+    return res
+
+print(len(power_set([1,2,3,4,5,6])))
+",O(2 ^ n)
+"def fib(n):
+    if n <= 1:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+print(fib(20))
+",O(2 ^ n)
+"def subseqs(s):
+    out = []
+    def go(i, cur):
+        if i == len(s):
+            out.append(cur)
+            return
+        go(i + 1, cur)
+        go(i + 1, cur + s[i])
+    go(0, '')
+    return out
+
+print(len(subseqs('abcdefg')))
+",O(2 ^ n)
+"def sat(clauses, n):
+    for mask in range(1 << n):
+        ok = True
+        for clause in clauses:
+            clause_ok = False
+            for var, is_pos in clause:
+                val = (mask >> var) & 1
+                if (val == 1) == is_pos:
+                    clause_ok = True
+                    break
+            if not clause_ok:
+                ok = False
+                break
+        if ok:
+            return mask
+    return None
+
+print(sat([[(0, True), (1, False)], [(1, True)]], 2))
+",O(2 ^ n)
+"def min_diff(nums):
+    best = [float('inf')]
+    n = len(nums)
+    def rec(i, s):
+        if i == n:
+            if abs(s) < best[0]:
+                best[0] = abs(s)
+            return
+        rec(i + 1, s + nums[i])
+        rec(i + 1, s - nums[i])
+    rec(0, 0)
+    return best[0]
+
+print(min_diff([3,1,4,2,2,1]))
+",O(2 ^ n)
+"def bitstrings(n):
+    res = []
+    def build(i, cur):
+        if i == n:
+            res.append(''.join(cur))
+            return
+        cur.append('0')
+        build(i + 1, cur)
+        cur.pop()
+        cur.append('1')
+        build(i + 1, cur)
+        cur.pop()
+    build(0, [])
+    return res
+
+print(len(bitstrings(12)))
+",O(2 ^ n)
+"arr = [2,3,5,7,11]
+prods = []
+
+def dfs(i, p):
+    if i == len(arr):
+        prods.append(p)
+        return
+    dfs(i + 1, p)
+    dfs(i + 1, p * arr[i])
+
+dfs(0, 1)
+print(len(prods))
+",O(2 ^ n)
+"class Solver:
+    def solve(self, nums):
+        ans = []
+        def back(k, path):
+            if k == len(nums):
+                ans.append(path[:])
+                return
+            back(k + 1, path)
+            path.append(nums[k])
+            back(k + 1, path)
+            path.pop()
+        back(0, [])
+        return ans
+
+s = Solver()
+print(len(s.solve([1,2,3,4,5,6,7,8])))
+",O(2 ^ n)
+"def exists(arr, target):
+    n = len(arr)
+    def dfs(i, s):
+        if s == target:
+            return True
+        if i == n:
+            return False
+        return dfs(i + 1, s) or dfs(i + 1, s + arr[i])
+    return dfs(0, 0)
+
+print(exists([3,34,4,12,5,2], 9))
+",O(2 ^ n)
+"def knapsack01(values, weights, W):
+    n = len(values)
+    best = 0
+    def dfs(i, sv, sw):
+        nonlocal best
+        if sw > W:
+            return
+        if i == n:
+            if sv > best:
+                best = sv
+            return
+        dfs(i + 1, sv, sw)
+        dfs(i + 1, sv + values[i], sw + weights[i])
+    dfs(0, 0, 0)
+    return best
+
+print(knapsack01([6,3,4,2], [5,3,2,1], 5))
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    prev = gray(n - 1)
+    return ['0' + x for x in prev] + ['1' + x for x in reversed(prev)]
+
+print(len(gray(12)))
+",O(2 ^ n)
+"def subsets(nums):
+    res = []
+    cur = []
+    def dfs(i):
+        if i == len(nums):
+            res.append(cur[:])
+            return
+        cur.append(nums[i])
+        dfs(i + 1)
+        cur.pop()
+        dfs(i + 1)
+    dfs(0)
+    return res
+
+print(len(subsets([1,2,3,4,5,6,7,8,9])))
+",O(2 ^ n)
+"def fib(k):
+    if k < 2:
+        return k
+    return fib(k - 1) + fib(k - 2)
+
+print(fib(28))
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    def dfs(i, s):
+        if i == len(nums):
+            return 1 if s == target else 0
+        return dfs(i + 1, s + nums[i]) + dfs(i + 1, s)
+    return dfs(0, 0)
+
+print(count_subsets([2, 3, 5, 6, 8, 10], 10))
+",O(2 ^ n)
+"def binaries(n):
+    out = []
+    def go(prefix, k):
+        if k == n:
+            out.append(prefix)
+            return
+        go(prefix + '0', k + 1)
+        go(prefix + '1', k + 1)
+    go('', 0)
+    return out
+
+print(len(binaries(15)))
+",O(2 ^ n)
+"def ways(nums, target):
+    cnt = 0
+    def dfs(i, acc):
+        nonlocal cnt
+        if i == len(nums):
+            if acc == target:
+                cnt += 1
+            return
+        dfs(i + 1, acc + nums[i])
+        dfs(i + 1, acc - nums[i])
+    dfs(0, 0)
+    return cnt
+
+print(ways([1,1,1,1,1,1,1,1], 0))
+",O(2 ^ n)
+"def power_set(items):
+    res = [[]]
+    for x in items:
+        res += [p + [x] for p in res]
+    return res
+
+print(len(power_set(list(range(12)))))
+",O(2 ^ n)
+"def knap(values, weights, cap):
+    def dfs(i, c):
+        if i == len(values):
+            return 0
+        best = dfs(i + 1, c)
+        if weights[i] <= c:
+            take = values[i] + dfs(i + 1, c - weights[i])
+            if take > best:
+                best = take
+        return best
+    return dfs(0, cap)
+
+print(knap([9, 6, 7, 12, 8], [2, 3, 4, 6, 5], 10))
+",O(2 ^ n)
+"def subsequences(s):
+    res = []
+    def dfs(i, buf):
+        if i == len(s):
+            res.append(''.join(buf))
+            return
+        buf.append(s[i])
+        dfs(i + 1, buf)
+        buf.pop()
+        dfs(i + 1, buf)
+    dfs(0, [])
+    return res
+
+print(len(subsequences('abcdefghijkl')))
+",O(2 ^ n)
+"def max_xor(arr):
+    best = 0
+    def dfs(i, cur):
+        nonlocal best
+        if i == len(arr):
+            if cur > best:
+                best = cur
+            return
+        dfs(i + 1, cur ^ arr[i])
+        dfs(i + 1, cur)
+    dfs(0, 0)
+    return best
+
+print(max_xor([3, 10, 5, 25, 2, 8]))
+",O(2 ^ n)
+"class ParityCounter:
+    def __init__(self, n):
+        self.n = n
+    def brute(self):
+        ans = 0
+        def rec(i, bits):
+            nonlocal ans
+            if i == self.n:
+                if sum(bits) % 2 == 0:
+                    ans += 1
+                return
+            bits.append(0)
+            rec(i + 1, bits)
+            bits.pop()
+            bits.append(1)
+            rec(i + 1, bits)
+            bits.pop()
+        rec(0, [])
+        return ans
+
+pc = ParityCounter(18)
+print(pc.brute())
+",O(2 ^ n)
+"def min_diff(arr):
+    total = sum(arr)
+    best = [float('inf')]
+    n = len(arr)
+    def dfs(i, s):
+        if i == n:
+            d = abs(total - 2 * s)
+            if d < best[0]:
+                best[0] = d
+            return
+        dfs(i + 1, s + arr[i])
+        dfs(i + 1, s)
+    dfs(0, 0)
+    return best[0]
+
+print(min_diff([3, 1, 4, 2, 2, 1]))
+",O(2 ^ n)
+"def all_masks(n):
+    res = []
+    def rec(mask, i):
+        if i == n:
+            res.append(mask)
+            return
+        rec(mask, i + 1)
+        rec(mask | (1 << i), i + 1)
+    rec(0, 0)
+    return res
+
+print(len(all_masks(17)))
+",O(2 ^ n)
+"def subsets(arr):
+    res=[]
+    path=[]
+    def dfs(i):
+        if i==len(arr):
+            res.append(path[:])
+            return
+        path.append(arr[i])
+        dfs(i+1)
+        path.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+
+print(subsets([1,2,3]))
+",O(2 ^ n)
+"def fib(n):
+    if n<=1:
+        return n
+    return fib(n-1)+fib(n-2)
+
+print(fib(20))
+",O(2 ^ n)
+"def knap(w, v, cap, i=0):
+    if i==len(w) or cap<=0:
+        return 0
+    take=0
+    if w[i]<=cap:
+        take=v[i]+knap(w, v, cap-w[i], i+1)
+    skip=knap(w, v, cap, i+1)
+    return max(take, skip)
+
+print(knap([2,3,4,5],[3,4,5,8],5))
+",O(2 ^ n)
+"def hanoi(n, a, b, c, moves):
+    if n==0:
+        return
+    hanoi(n-1, a, c, b, moves)
+    moves.append((a,b))
+    hanoi(n-1, c, b, a, moves)
+
+m=[]
+hanoi(4, 'A', 'C', 'B', m)
+print(len(m))
+",O(2 ^ n)
+"def gen(n):
+    out=[]
+    def go(prefix, k):
+        if k==0:
+            out.append(prefix)
+            return
+        go(prefix+'0', k-1)
+        go(prefix+'1', k-1)
+    go('', n)
+    return out
+
+print(gen(4))
+",O(2 ^ n)
+"def count_ways(nums, target):
+    ans=0
+    def dfs(i, total):
+        nonlocal ans
+        if i==len(nums):
+            if total==target:
+                ans+=1
+            return
+        dfs(i+1, total+nums[i])
+        dfs(i+1, total-nums[i])
+    dfs(0,0)
+    return ans
+
+print(count_ways([1,1,2,3],1))
+",O(2 ^ n)
+"def best_sum(nums, limit):
+    best=-10**9
+    def dfs(i, s):
+        nonlocal best
+        if s>limit:
+            return
+        if i==len(nums):
+            if s>best:
+                best=s
+            return
+        dfs(i+1, s+nums[i])
+        dfs(i+1, s)
+    dfs(0,0)
+    return best
+
+print(best_sum([7,2,9,3],10))
+",O(2 ^ n)
+"def count_even_sum(nums):
+    count=0
+    def dfs(i, s):
+        nonlocal count
+        if i==len(nums):
+            if s%2==0:
+                count+=1
+            return
+        dfs(i+1, s+nums[i])
+        dfs(i+1, s)
+    dfs(0,0)
+    return count
+
+print(count_even_sum([1,2,3,4]))
+",O(2 ^ n)
+"def expressions(digits, target):
+    res=[]
+    def dfs(i, expr, total):
+        if i==len(digits):
+            if total==target:
+                res.append(expr)
+            return
+        d=digits[i]
+        dfs(i+1, expr+'+'+str(d), total+d)
+        dfs(i+1, expr+'-'+str(d), total-d)
+    if digits:
+        dfs(1, str(digits[0]), digits[0])
+    return res
+
+print(expressions([1,2,3,4],2))
+",O(2 ^ n)
+"def count_above(nums, t):
+    n=len(nums)
+    c=0
+    for mask in range(1<<n):
+        s=0
+        for i in range(n):
+            if (mask>>i)&1:
+                s+=nums[i]
+        if s>t:
+            c+=1
+    return c
+
+print(count_above([1,3,5,7],6))
+",O(2 ^ n)
+"class P:
+    def run(self, s):
+        res=[]
+        cur=[]
+        def rec(i):
+            if i==len(s):
+                res.append(''.join(cur))
+                return
+            cur.append(s[i])
+            rec(i+1)
+            cur.pop()
+            rec(i+1)
+        rec(0)
+        return res
+
+print(P().run('abca'))
+",O(2 ^ n)
+"def choose_signs(arr):
+    best=float('inf')
+    best_repr=''
+    def dfs(i, val, reprs):
+        nonlocal best, best_repr
+        if i==len(arr):
+            if abs(val)<abs(best):
+                best=val
+                best_repr=reprs
+            return
+        dfs(i+1, val+arr[i], f'{reprs}+{arr[i]}')
+        dfs(i+1, val-arr[i], f'{reprs}-{arr[i]}')
+    if arr:
+        dfs(1, arr[0], f'{arr[0]}')
+    return best_repr, best
+
+print(choose_signs([10,3,4,8,2]))
+",O(2 ^ n)
+"n=4
+state=[0]*n
+res=[]
+
+def go(i):
+    if i==n:
+        res.append(tuple(state))
+        return
+    state[i]=0
+    go(i+1)
+    state[i]=1
+    go(i+1)
+
+go(0)
+print(len(res))
+",O(2 ^ n)
+"def unique_subsets(s):
+    out=set()
+    cur=[]
+    def dfs(i):
+        if i==len(s):
+            out.add(''.join(cur))
+            return
+        cur.append(s[i])
+        dfs(i+1)
+        cur.pop()
+        dfs(i+1)
+    dfs(0)
+    return sorted(out)
+
+print(unique_subsets('aab'))
+",O(2 ^ n)
+"def partition_min_diff(nums):
+    total=sum(nums)
+    best=total
+    def dfs(i, s):
+        nonlocal best
+        if i==len(nums):
+            diff=abs(total-2*s)
+            if diff<best:
+                best=diff
+            return
+        dfs(i+1, s+nums[i])
+        dfs(i+1, s)
+    dfs(0,0)
+    return best
+
+print(partition_min_diff([5,10,15,20,25]))
+",O(2 ^ n)
+"def sat(clauses, n):
+    sol=[]
+    assign=[False]*n
+    def ok():
+        for clause in clauses:
+            if not any((lit>0 and assign[lit-1]) or (lit<0 and not assign[-lit-1]) for lit in clause):
+                return False
+        return True
+    def dfs(i):
+        if i==n:
+            if ok():
+                sol.append(assign[:])
+            return
+        assign[i]=False
+        dfs(i+1)
+        assign[i]=True
+        dfs(i+1)
+    dfs(0)
+    return sol
+
+print(len(sat([[1,-2,3],[-1,2],[-3]],3)))
+",O(2 ^ n)
+"def count_ind_sets(n, edges):
+    adj=[set() for _ in range(n)]
+    for u,v in edges:
+        adj[u].add(v)
+        adj[v].add(u)
+    count=0
+    used=[False]*n
+    def dfs(i):
+        nonlocal count
+        if i==n:
+            count+=1
+            return
+        ok=True
+        for j in range(n):
+            if used[j] and j in adj[i]:
+                ok=False
+                break
+        if ok:
+            used[i]=True
+            dfs(i+1)
+            used[i]=False
+        dfs(i+1)
+    dfs(0)
+    return count
+
+print(count_ind_sets(4, [(0,1),(1,2),(2,3)]))
+",O(2 ^ n)
+"def all_partitions(n):
+    parts=[]
+    for mask in range(1<<n):
+        a=[i for i in range(n) if (mask>>i)&1]
+        b=[i for i in range(n) if not ((mask>>i)&1)]
+        parts.append((a,b))
+    return parts
+
+print(len(all_partitions(5)))
+",O(2 ^ n)
+"def toggle_case(s):
+    res=[]
+    def dfs(i, path):
+        if i==len(s):
+            res.append(path)
+            return
+        c=s[i]
+        dfs(i+1, path+c.lower())
+        dfs(i+1, path+c.upper())
+    dfs(0, '')
+    return res
+
+print(toggle_case('ab3'))
+",O(2 ^ n)
+"def subseqs(s):
+    n=len(s)
+    return [''.join(s[i] for i in range(n) if (m>>i)&1) for m in range(1<<n)]
+
+print(subseqs('wxyz'))
+",O(2 ^ n)
+"def subsets(arr):
+    res=[]
+    def dfs(i, path):
+        if i==len(arr):
+            res.append(path[:])
+            return
+        path.append(arr[i])
+        dfs(i+1, path)
+        path.pop()
+        dfs(i+1, path)
+    dfs(0, [])
+    return res
+
+print(len(subsets([1,2,3,4,5])))
+",O(2 ^ n)
+"def fib(n):
+    if n<2:
+        return n
+    return fib(n-1)+fib(n-2)
+
+print(fib(20))
+",O(2 ^ n)
+"def binaries(n):
+    ans=[]
+    def rec(p,i):
+        if i==n:
+            ans.append(''.join(p))
+            return
+        p.append('0'); rec(p,i+1); p[-1]='1'; rec(p,i+1); p.pop()
+    rec([],0)
+    return ans
+
+print(binaries(5)[-1])
+",O(2 ^ n)
+"def ways(nums, target):
+    c=0
+    def dfs(i, s):
+        nonlocal c
+        if i==len(nums):
+            if s==target:
+                c+=1
+            return
+        dfs(i+1, s+nums[i])
+        dfs(i+1, s-nums[i])
+    dfs(0,0)
+    return c
+
+print(ways([1,1,1,1,1],3))
+",O(2 ^ n)
+"def power_set(x):
+    n=len(x)
+    res=[]
+    for m in range(1<<n):
+        subset=[]
+        for i in range(n):
+            if m>>i&1:
+                subset.append(x[i])
+        res.append(subset)
+    return res
+
+print(len(power_set(list('abcd'))))
+",O(2 ^ n)
+"def hanoi(n, a, b, c, moves):
+    if n==0:
+        return
+    hanoi(n-1, a, c, b, moves)
+    moves.append((a,c))
+    hanoi(n-1, b, a, c, moves)
+
+moves=[]
+hanoi(4,'A','B','C',moves)
+print(len(moves))
+",O(2 ^ n)
+"def subseqs(s):
+    out=[]
+    def go(i, cur):
+        if i==len(s):
+            out.append(cur)
+            return
+        go(i+1, cur)
+        go(i+1, cur+s[i])
+    go(0,'')
+    return out
+
+print(subseqs('abcde')[3])
+",O(2 ^ n)
+"def sat(vars, expr):
+    n=len(vars)
+    def dfs(i, env):
+        if i==n:
+            return expr(env)
+        env[vars[i]]=False
+        if dfs(i+1, env):
+            return True
+        env[vars[i]]=True
+        if dfs(i+1, env):
+            return True
+        return False
+    return dfs(0, {})
+
+vars=['p','q','r','s']
+expr=lambda e: (e['p'] or e['q']) and (not e['r'] or e['s'])
+print(sat(vars, expr))
+",O(2 ^ n)
+"def can_partition(nums):
+    total=sum(nums)
+    if total%2:
+        return False
+    target=total//2
+    found=False
+    def dfs(i, s):
+        nonlocal found
+        if found:
+            return
+        if s==target:
+            found=True
+            return
+        if i==len(nums) or s>target:
+            return
+        dfs(i+1, s+nums[i])
+        dfs(i+1, s)
+    dfs(0,0)
+    return found
+
+print(can_partition([1,5,11,5]))
+",O(2 ^ n)
+"def max_subset_xor(arr):
+    n=len(arr)
+    best=0
+    def dfs(i, x):
+        nonlocal best
+        if i==n:
+            if x>best:
+                best=x
+            return
+        dfs(i+1, x)
+        dfs(i+1, x^arr[i])
+    dfs(0,0)
+    return best
+
+print(max_subset_xor([3,10,5,25,2,8]))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev]+['1'+x for x in reversed(prev)]
+
+print(gray(4)[-1])
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    count=0
+    def dfs(i, s):
+        nonlocal count
+        if i==len(nums):
+            if s==target:
+                count+=1
+            return
+        dfs(i+1, s)
+        dfs(i+1, s+nums[i])
+    dfs(0,0)
+    return count
+
+print(count_subsets([2,3,5,6,8,10],10))
+",O(2 ^ n)
+"def k_subsets(arr, k):
+    res=[]
+    def dfs(i, curr):
+        if len(curr)==k:
+            res.append(curr[:])
+            return
+        if i==len(arr):
+            return
+        curr.append(arr[i])
+        dfs(i+1, curr)
+        curr.pop()
+        dfs(i+1, curr)
+    dfs(0, [])
+    return res
+
+print(len(k_subsets([1,2,3,4,5],3)))
+",O(2 ^ n)
+"def insert_ops(s):
+    res=[]
+    def dfs(i, path):
+        if i==len(s):
+            res.append(''.join(path))
+            return
+        path.append('+')
+        path.append(s[i])
+        dfs(i+1, path)
+        path.pop()
+        path.pop()
+        path.append(s[i])
+        dfs(i+1, path)
+        path.pop()
+    dfs(1, [s[0]])
+    return res
+
+print(len(insert_ops('12345')))
+",O(2 ^ n)
+"def max_independent_set(n, edges):
+    adj=[set() for _ in range(n)]
+    for u,v in edges:
+        adj[u].add(v)
+        adj[v].add(u)
+    best=0
+    def dfs(i, chosen):
+        nonlocal best
+        if i==n:
+            if len(chosen)>best:
+                best=len(chosen)
+            return
+        ok=True
+        for v in chosen:
+            if i in adj[v]:
+                ok=False
+                break
+        if ok:
+            chosen.add(i)
+            dfs(i+1, chosen)
+            chosen.remove(i)
+        dfs(i+1, chosen)
+    dfs(0, set())
+    return best
+
+print(max_independent_set(5, [(0,1),(1,2),(2,3),(3,4)]))
+",O(2 ^ n)
+"def toggle_all(n):
+    res=[0]
+    def dfs(i, s):
+        if i==n:
+            res[0]+=1
+            return
+        dfs(i+1, s)
+        dfs(i+1, s^1)
+    dfs(0,0)
+    return res[0]
+
+print(toggle_all(20))
+",O(2 ^ n)
+"class P:
+    def gen(self, a):
+        n=len(a)
+        res=[]
+        def f(i, cur):
+            if i==n:
+                res.append(tuple(cur))
+                return
+            f(i+1, cur)
+            cur.append(a[i])
+            f(i+1, cur)
+            cur.pop()
+        f(0, [])
+        return res
+
+print(len(P().gen([1,2,3,4,5,6])))
+",O(2 ^ n)
+"def letter_case_permutations(s):
+    res=[]
+    chars=list(s)
+    n=len(chars)
+    def dfs(i, cur):
+        if i==n:
+            res.append(''.join(cur))
+            return
+        ch=chars[i]
+        if ch.isalpha():
+            cur.append(ch.lower())
+            dfs(i+1, cur)
+            cur.pop()
+            cur.append(ch.upper())
+            dfs(i+1, cur)
+            cur.pop()
+        else:
+            cur.append(ch)
+            dfs(i+1, cur)
+            cur.pop()
+    dfs(0, [])
+    return res
+
+print(len(letter_case_permutations('a1b2c3d')))
+",O(2 ^ n)
+"from itertools import product
+
+def all_choices(n):
+    return [''.join(p) for p in product('01', repeat=n)]
+
+print(all_choices(5)[0])
+",O(2 ^ n)
+"def find_subset(nums, target):
+    path=[]
+    ans=[]
+    def dfs(i, s):
+        if ans:
+            return
+        if s==target:
+            ans.append(path[:])
+            return
+        if i==len(nums) or s>target:
+            return
+        path.append(nums[i])
+        dfs(i+1, s+nums[i])
+        path.pop()
+        dfs(i+1, s)
+    dfs(0,0)
+    return ans[0] if ans else None
+
+print(find_subset([2,4,6,10],16))
+",O(2 ^ n)
+"def subsets(a):
+    out=[]
+    cur=[]
+    def dfs(i):
+        if i==len(a):
+            out.append(tuple(cur))
+            return
+        dfs(i+1)
+        cur.append(a[i])
+        dfs(i+1)
+        cur.pop()
+    dfs(0)
+    return out
+
+x=subsets([1,2,3,4])
+",O(2 ^ n)
+"def fib(n):
+    if n<=1:
+        return n
+    return fib(n-1)+fib(n-2)
+
+v=fib(20)
+",O(2 ^ n)
+"def subsequences(s):
+    ans=[]
+    def go(i, acc):
+        if i==len(s):
+            ans.append(acc)
+            return
+        go(i+1, acc)
+        go(i+1, acc+s[i])
+    go(0, '')
+    return ans
+
+r=subsequences('abcd')
+",O(2 ^ n)
+"def count_subset_sum(nums, target):
+    cnt=0
+    def rec(i, s):
+        nonlocal cnt
+        if i==len(nums):
+            if s==target:
+                cnt+=1
+            return
+        rec(i+1, s)
+        rec(i+1, s+nums[i])
+    rec(0, 0)
+    return cnt
+
+c=count_subset_sum([2,3,5,7,11], 10)
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev]+['1'+x for x in reversed(prev)]
+
+g=gray(5)
+",O(2 ^ n)
+"def power_set(arr):
+    ps=[[]]
+    for x in arr:
+        ps=ps+[s+[x] for s in ps]
+    return ps
+
+p=power_set([1,2,3,4,5])
+",O(2 ^ n)
+"def count_solutions(clauses, n):
+    ans=0
+    def dfs(i, mask):
+        nonlocal ans
+        if i==n:
+            ok=True
+            for clause in clauses:
+                good=False
+                for lit in clause:
+                    idx=abs(lit)-1
+                    bit=(mask>>idx)&1
+                    val=bit==1
+                    if lit<0:
+                        val=not val
+                    if val:
+                        good=True
+                        break
+                if not good:
+                    ok=False
+                    break
+            if ok:
+                ans+=1
+            return
+        dfs(i+1, mask)
+        dfs(i+1, mask|(1<<i))
+    dfs(0,0)
+    return ans
+
+k=count_solutions([[1,-2],[2,3],[-1,-3]],3)
+",O(2 ^ n)
+"def min_partition_diff(nums):
+    total=sum(nums)
+    best=[float('inf')]
+    def dfs(i, s):
+        if i==len(nums):
+            d=abs(total-2*s)
+            if d<best[0]:
+                best[0]=d
+            return
+        dfs(i+1, s)
+        dfs(i+1, s+nums[i])
+    dfs(0,0)
+    return best[0]
+
+m=min_partition_diff([3,1,4,2,2,1])
+",O(2 ^ n)
+"def binaries(n):
+    if n==0:
+        return ['']
+    prev=binaries(n-1)
+    a=[s+'0' for s in prev]
+    b=[s+'1' for s in prev]
+    return a+b
+
+bs=binaries(6)
+",O(2 ^ n)
+"class Explorer:
+    def __init__(self, arr):
+        self.arr=arr
+        self.best=0
+    def run(self):
+        def go(i, x):
+            if i==len(self.arr):
+                if x>self.best:
+                    self.best=x
+                return
+            go(i+1, x)
+            go(i+1, x^self.arr[i])
+        go(0,0)
+        return self.best
+
+e=Explorer([5,1,7,3,9])
+w=e.run()
+",O(2 ^ n)
+"def count_even_subsets(a):
+    total=0
+    def dfs(i, s):
+        nonlocal total
+        if i==len(a):
+            if s%2==0:
+                total+=1
+            return
+        dfs(i+1, s)
+        dfs(i+1, s+a[i])
+    dfs(0,0)
+    return total
+
+q=count_even_subsets([1,2,3,4,5,6])
+",O(2 ^ n)
+"def assignments(n):
+    out=[]
+    cur=[]
+    def rec(i):
+        if i==n:
+            out.append(tuple(cur))
+            return
+        cur.append(0)
+        rec(i+1)
+        cur.pop()
+        cur.append(1)
+        rec(i+1)
+        cur.pop()
+    rec(0)
+    return out
+
+a=assignments(8)
+",O(2 ^ n)
+"def all_plus_minus(nums):
+    res=[]
+    def go(i, s):
+        if i==len(nums):
+            res.append(s)
+            return
+        if i==0:
+            go(i+1, str(nums[0]))
+        else:
+            go(i+1, s+'+'+str(nums[i]))
+            go(i+1, s+'-'+str(nums[i]))
+    go(0, '')
+    return res
+
+e=all_plus_minus([1,2,3,4,5])
+",O(2 ^ n)
+"def truth_table(n):
+    rows=[]
+    def rec(i, acc):
+        if i==n:
+            rows.append(tuple(acc))
+            return
+        acc.append(False)
+        rec(i+1, acc)
+        acc.pop()
+        acc.append(True)
+        rec(i+1, acc)
+        acc.pop()
+    rec(0, [])
+    return rows
+
+t=truth_table(7)
+",O(2 ^ n)
+"def subsets(lst):
+    res = []
+    def dfs(i, path):
+        if i == len(lst):
+            res.append(path[:])
+            return
+        dfs(i + 1, path)
+        path.append(lst[i])
+        dfs(i + 1, path)
+        path.pop()
+    dfs(0, [])
+    print(res)
+
+subsets([1, 2, 3, 4])
+",O(2 ^ n)
+"def f(n):
+    if n <= 1:
+        return n
+    return f(n - 1) + f(n - 2)
+
+print(f(25))
+",O(2 ^ n)
+"def power_set(a):
+    n = len(a)
+    ans = []
+    for m in range(1 << n):
+        subset = []
+        for i in range(n):
+            if (m >> i) & 1:
+                subset.append(a[i])
+        ans.append(subset)
+    return ans
+
+print(power_set(list(range(5))))
+",O(2 ^ n)
+"def count_target(nums, target):
+    cnt = 0
+    def go(i, s):
+        nonlocal cnt
+        if i == len(nums):
+            if s == target:
+                cnt += 1
+            return
+        go(i + 1, s + nums[i])
+        go(i + 1, s - nums[i])
+    go(0, 0)
+    return cnt
+
+print(count_target([1, 1, 1, 1, 1], 3))
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    prev = gray(n - 1)
+    return ['0' + x for x in prev] + ['1' + x for x in reversed(prev)]
+
+print(gray(4))
+",O(2 ^ n)
+"def gen(n, pref='', out=None):
+    if out is None:
+        out = []
+    if n == 0:
+        out.append(pref)
+    else:
+        gen(n - 1, pref + '0', out)
+        gen(n - 1, pref + '1', out)
+    return out
+
+print(gen(5))
+",O(2 ^ n)
+"def min_diff(a):
+    n = len(a)
+    best = [float('inf')]
+    def rec(i, s):
+        if i == n:
+            d = abs(s)
+            if d < best[0]:
+                best[0] = d
+            return
+        rec(i + 1, s + a[i])
+        rec(i + 1, s - a[i])
+    rec(0, 0)
+    return best[0]
+
+print(min_diff([3, 1, 4, 2, 2]))
+",O(2 ^ n)
+"def subset_sum_count(a, k):
+    n = len(a)
+    cnt = 0
+    for m in range(1 << n):
+        s = 0
+        for i in range(n):
+            if (m >> i) & 1:
+                s += a[i]
+        if s == k:
+            cnt += 1
+    return cnt
+
+print(subset_sum_count([2, 3, 5, 7, 11], 10))
+",O(2 ^ n)
+"def subseqs(s):
+    res = []
+    def rec(i, cur):
+        if i == len(s):
+            res.append(cur)
+            return
+        rec(i + 1, cur)
+        rec(i + 1, cur + s[i])
+    rec(0, '')
+    return res
+
+print(subseqs('abcd'))
+",O(2 ^ n)
+"def count_even_parity(n):
+    import itertools
+    c = 0
+    for bits in itertools.product([0, 1], repeat=n):
+        if sum(bits) % 2 == 0:
+            c += 1
+    return c
+
+print(count_even_parity(12))
+",O(2 ^ n)
+"def best_mod(a, m):
+    best = [0]
+    def dfs(i, prod):
+        if i == len(a):
+            v = prod % m
+            if v > best[0]:
+                best[0] = v
+            return
+        dfs(i + 1, prod)
+        dfs(i + 1, prod * a[i])
+    dfs(0, 1)
+    return best[0]
+
+print(best_mod([3, 5, 7, 11], 20))
+",O(2 ^ n)
+"def all_xors(a):
+    res = set()
+    def dfs(i, x):
+        if i == len(a):
+            res.add(x)
+            return
+        dfs(i + 1, x)
+        dfs(i + 1, x ^ a[i])
+    dfs(0, 0)
+    return sorted(res)
+
+print(all_xors([1, 2, 3, 4, 5]))
+",O(2 ^ n)
+"def choose_k(a, k):
+    res = []
+    n = len(a)
+    def dfs(i, cur):
+        if len(cur) == k:
+            res.append(cur[:])
+            return
+        if i == n:
+            return
+        dfs(i + 1, cur)
+        cur.append(a[i])
+        dfs(i + 1, cur)
+        cur.pop()
+    dfs(0, [])
+    return res
+
+print(choose_k([1, 2, 3, 4, 5, 6], 3)[:5])
+",O(2 ^ n)
+"class P:
+    def power(self, a):
+        out = []
+        def r(i, cur):
+            if i == len(a):
+                out.append(cur[:])
+                return
+            r(i + 1, cur)
+            cur.append(a[i])
+            r(i + 1, cur)
+            cur.pop()
+        r(0, [])
+        return out
+
+print(P().power([1, 2, 3]))
+",O(2 ^ n)
+"def ways(n):
+    if n <= 1:
+        return 1
+    return ways(n - 1) + ways(n - 2)
+
+print(ways(20))
+",O(2 ^ n)
+"def expand(s):
+    res = []
+    def dfs(i, cur):
+        if i == len(s):
+            res.append(cur)
+            return
+        ch = s[i]
+        if ch == '?':
+            dfs(i + 1, cur + '0')
+            dfs(i + 1, cur + '1')
+        else:
+            dfs(i + 1, cur + ch)
+    dfs(0, '')
+    return res
+
+print(expand('1?0??'))
+",O(2 ^ n)
+"def powerset(seq):
+    res = [[]]
+    for x in seq:
+        res = res + [s + [x] for s in res]
+    return res
+
+print(powerset(['a', 'b', 'c', 'd']))
+",O(2 ^ n)
+"def bits(n):
+    stack = ['']
+    out = []
+    while stack:
+        p = stack.pop()
+        if len(p) == n:
+            out.append(p)
+        else:
+            stack.append(p + '0')
+            stack.append(p + '1')
+    return out
+
+print(len(bits(10)))
+",O(2 ^ n)
+"def subset_sum(nums, target):
+    n = len(nums)
+    def dfs(i, s):
+        if i == n:
+            return 1 if s == target else 0
+        return dfs(i+1, s) + dfs(i+1, s + nums[i])
+    return dfs(0, 0)
+
+print(subset_sum([1,2,3,4], 5))
+",O(2 ^ n)
+"def power_set(arr):
+    res = []
+    path = []
+    n = len(arr)
+    def backtrack(i):
+        if i == n:
+            res.append(path.copy())
+            return
+        backtrack(i+1)
+        path.append(arr[i])
+        backtrack(i+1)
+        path.pop()
+    backtrack(0)
+    return res
+
+print(power_set([1,2,3]))
+",O(2 ^ n)
+"def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print([fib(i) for i in range(10)])
+",O(2 ^ n)
+"def count_target_signs(nums, target):
+    n = len(nums)
+    def dfs(i, total):
+        if i == n:
+            return 1 if total == target else 0
+        return dfs(i+1, total + nums[i]) + dfs(i+1, total - nums[i])
+    return dfs(0, 0)
+
+print(count_target_signs([1,1,2,3], 1))
+",O(2 ^ n)
+"def hanoi(n, a, b, c, moves):
+    if n == 0:
+        return
+    hanoi(n-1, a, c, b, moves)
+    moves.append((a, c))
+    hanoi(n-1, b, a, c, moves)
+
+moves = []
+hanoi(4, 'A', 'B', 'C', moves)
+print(len(moves), moves[:5])
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    prev = gray(n-1)
+    return ['0'+x for x in prev] + ['1'+x for x in reversed(prev)]
+
+print(gray(3))
+",O(2 ^ n)
+"def knapsack(w, v, W):
+    n = len(w)
+    def dfs(i, cap):
+        if i == n or cap == 0:
+            return 0
+        best = dfs(i+1, cap)
+        if w[i] <= cap:
+            val = v[i] + dfs(i+1, cap - w[i])
+            if val > best:
+                best = val
+        return best
+    return dfs(0, W)
+
+print(knapsack([2,3,4,5], [3,4,5,6], 5))
+",O(2 ^ n)
+"def binary_strings(n):
+    s = [''] * (1<<n)
+    def build(i, prefix):
+        if i == n:
+            s[build.idx] = prefix
+            build.idx += 1
+            return
+        build(i+1, prefix + '0')
+        build(i+1, prefix + '1')
+    build.idx = 0
+    build(0, '')
+    return s
+
+print(binary_strings(4)[:8])
+",O(2 ^ n)
+"def max_subset_xor(nums):
+    n = len(nums)
+    best = [0]
+    def dfs(i, x):
+        if i == n:
+            if x > best[0]:
+                best[0] = x
+            return
+        dfs(i+1, x)
+        dfs(i+1, x ^ nums[i])
+    dfs(0, 0)
+    return best[0]
+
+print(max_subset_xor([1,2,3,4,5]))
+",O(2 ^ n)
+"def min_diff(arr):
+    n = len(arr)
+    total = sum(arr)
+    best = [total]
+    def dfs(i, s):
+        if i == n:
+            d = abs((total - s) - s)
+            if d < best[0]:
+                best[0] = d
+            return
+        dfs(i+1, s)
+        dfs(i+1, s + arr[i])
+    dfs(0, 0)
+    return best[0]
+
+print(min_diff([3,1,4,2,2]))
+",O(2 ^ n)
+"import itertools
+
+def assignments(n):
+    res = []
+    for bits in itertools.product([0,1], repeat=n):
+        res.append(bits)
+    return res
+
+print(len(assignments(5)))
+",O(2 ^ n)
+"class SplitCounter:
+    def __init__(self, arr):
+        self.arr = arr
+        self.n = len(arr)
+    def ways(self):
+        return self._dfs(0, 0)
+    def _dfs(self, i, s):
+        if i == self.n:
+            return 1 if s % 2 == 0 else 0
+        return self._dfs(i+1, s) + self._dfs(i+1, s + self.arr[i])
+
+print(SplitCounter([1,3,5,7,9]).ways())
+",O(2 ^ n)
+"def expand_patterns(n):
+    res = ['']
+    for _ in range(n):
+        res = [x+'0' for x in res] + [x+'1' for x in res]
+    return res
+
+print(expand_patterns(3))
+",O(2 ^ n)
+"def tuple_subsets(t):
+    out = []
+    def rec(i, cur):
+        if i == len(t):
+            out.append(tuple(cur))
+            return
+        rec(i+1, cur)
+        cur.append(t[i])
+        rec(i+1, cur)
+        cur.pop()
+    rec(0, [])
+    return out
+
+print(tuple_subsets((1,2,3,4))[:4])
+",O(2 ^ n)
+"def mask_string(s):
+    n = len(s)
+    res = []
+    def dfs(i, cur):
+        if i == n:
+            res.append(''.join(cur))
+            return
+        cur.append(s[i])
+        dfs(i+1, cur)
+        cur.pop()
+        cur.append('*')
+        dfs(i+1, cur)
+        cur.pop()
+    dfs(0, [])
+    return res
+
+print(mask_string('abcd')[:6])
+",O(2 ^ n)
+"def any_subset_equals_k(nums, k):
+    n = len(nums)
+    def dfs(i, s):
+        if s == k:
+            return True
+        if i == n or s > k:
+            return False
+        return dfs(i+1, s) or dfs(i+1, s + nums[i])
+    return dfs(0, 0)
+
+print(any_subset_equals_k([2,4,6,10], 16))
+",O(2 ^ n)
+"def subsets(nums):
+    res=[]
+    path=[]
+    def dfs(i):
+        if i==len(nums):
+            res.append(path[:])
+            return
+        path.append(nums[i])
+        dfs(i+1)
+        path.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+print(subsets([1,2,3,4]))
+",O(2 ^ n)
+"def fib(n):
+    if n<2:
+        return n
+    return fib(n-1)+fib(n-2)
+print(fib(30))
+",O(2 ^ n)
+"def count_subsets(a, t):
+    n=len(a)
+    def go(i, s):
+        if i==n:
+            return 1 if s==t else 0
+        return go(i+1, s+a[i]) + go(i+1, s)
+    return go(0,0)
+print(count_subsets([3,1,2,4,5],6))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev] + ['1'+x for x in reversed(prev)]
+print(gray(4))
+",O(2 ^ n)
+"def all_bin(n):
+    ans=[]
+    cur=['']*n
+    def dfs(i):
+        if i==n:
+            ans.append(''.join(cur))
+            return
+        cur[i]='A'
+        dfs(i+1)
+        cur[i]='B'
+        dfs(i+1)
+    dfs(0)
+    return ans
+print(all_bin(5))
+",O(2 ^ n)
+"def subseqs(s):
+    res=[]
+    def go(i, pref):
+        if i==len(s):
+            res.append(pref)
+            return
+        go(i+1, pref+s[i])
+        go(i+1, pref)
+    go(0,'')
+    return res
+print(len(subseqs('abcdefg')))
+",O(2 ^ n)
+"def min_diff(nums):
+    best=[float('inf')]
+    n=len(nums)
+    def dfs(i, acc):
+        if i==n:
+            best[0]=min(best[0], abs(acc))
+            return
+        dfs(i+1, acc+nums[i])
+        dfs(i+1, acc-nums[i])
+    dfs(0,0)
+    return best[0]
+print(min_diff([7,3,2,5,8,10]))
+",O(2 ^ n)
+"def independent_sets(n, edges):
+    adj=[set() for _ in range(n)]
+    for u,v in edges:
+        adj[u].add(v)
+        adj[v].add(u)
+    res=[]
+    cur=[]
+    def ok(v):
+        for u in cur:
+            if v in adj[u]:
+                return False
+        return True
+    def dfs(i):
+        if i==n:
+            res.append(cur[:])
+            return
+        dfs(i+1)
+        if ok(i):
+            cur.append(i)
+            dfs(i+1)
+            cur.pop()
+    dfs(0)
+    return res
+print(len(independent_sets(8, [(0,1),(1,2),(2,3),(3,4),(4,5),(5,6),(6,7)])))
+",O(2 ^ n)
+"def sat(vars, expr):
+    from itertools import product
+    res=[]
+    for vals in product([False, True], repeat=len(vars)):
+        env=dict(zip(vars, vals))
+        if eval(expr, {}, env):
+            res.append(env)
+    return res
+print(len(sat(['x','y','z','w','u'], '(x or y) and (not w or z)')))
+",O(2 ^ n)
+"def best_xor(nums):
+    best=[0]
+    n=len(nums)
+    def dfs(i, acc):
+        if i==n:
+            if acc>best[0]:
+                best[0]=acc
+            return
+        dfs(i+1, acc^nums[i])
+        dfs(i+1, acc)
+    dfs(0,0)
+    return best[0]
+print(best_xor([3,8,2,6,4,7,1]))
+",O(2 ^ n)
+"class Gen:
+    def __init__(self,n):
+        self.n=n
+    def run(self):
+        out=[]
+        def rec(i, val):
+            if i==self.n:
+                out.append(val)
+                return
+            rec(i+1, val<<1)
+            rec(i+1, (val<<1)|1)
+        rec(0,0)
+        return out
+g=Gen(5)
+print(f'count={len(g.run())}')
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    def dfs(i, s):
+        if i==len(nums):
+            return 1 if s==target else 0
+        return dfs(i+1, s)+dfs(i+1, s+nums[i])
+    return dfs(0,0)
+print(count_subsets([2,3,5,6,8,10], 10))
+",O(2 ^ n)
+"def powerset(lst):
+    res=[[]]
+    for x in lst:
+        res += [r+[x] for r in res]
+    return res
+print(powerset([1,2,3,4]))
+",O(2 ^ n)
+"def fib(n):
+    if n<2:
+        return n
+    return fib(n-1)+fib(n-2)
+print(fib(20))
+",O(2 ^ n)
+"def ways(nums, S):
+    def go(i, total):
+        if i==len(nums):
+            return 1 if total==S else 0
+        return go(i+1,total+nums[i]) + go(i+1,total-nums[i])
+    return go(0,0)
+print(ways([1,1,1,1,1],3))
+",O(2 ^ n)
+"def count_true(expr, vars):
+    ans=0
+    def rec(i, env):
+        nonlocal ans
+        if i==len(vars):
+            if eval(expr, {}, env):
+                ans+=1
+            return
+        v=vars[i]
+        env[v]=False
+        rec(i+1, env)
+        env[v]=True
+        rec(i+1, env)
+    rec(0, {})
+    return ans
+print(count_true('(a or b) and (not c)', ['a','b','c','d']))
+",O(2 ^ n)
+"def max_subset_xor(arr):
+    best=0
+    def dfs(i, x):
+        nonlocal best
+        if i==len(arr):
+            if x>best:
+                best=x
+            return
+        dfs(i+1, x)
+        dfs(i+1, x^arr[i])
+    dfs(0,0)
+    return best
+print(max_subset_xor([3,10,5,25,2,8]))
+",O(2 ^ n)
+"def can_partition(nums):
+    s=sum(nums)
+    if s%2:
+        return False
+    target=s//2
+    def dfs(i, t):
+        if t==0:
+            return True
+        if i==len(nums):
+            return False
+        return dfs(i+1, t) or (t>=nums[i] and dfs(i+1, t-nums[i]))
+    return dfs(0, target)
+print(can_partition([1,5,11,5]))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    g=gray(n-1)
+    return ['0'+x for x in g] + ['1'+x for x in reversed(g)]
+print(gray(3))
+",O(2 ^ n)
+"def binaries(n):
+    out=[]
+    def dfs(i, s):
+        if i==n:
+            out.append(s)
+            return
+        dfs(i+1, s+'0')
+        dfs(i+1, s+'1')
+    dfs(0, '')
+    return out
+print(binaries(4))
+",O(2 ^ n)
+"def subsequences(s):
+    ans=[]
+    def rec(i, cur):
+        if i==len(s):
+            ans.append(cur)
+            return
+        rec(i+1, cur)
+        rec(i+1, cur+s[i])
+    rec(0, '')
+    return ans
+print(subsequences('abcd'))
+",O(2 ^ n)
+"def eval_expressions(digits, target):
+    nums=[int(ch) for ch in digits]
+    n=len(nums)
+    cnt=0
+    def dfs(i, total):
+        nonlocal cnt
+        if i==n:
+            if total==target:
+                cnt+=1
+            return
+        if i==0:
+            dfs(1, nums[0])
+        else:
+            dfs(i+1, total+nums[i])
+            dfs(i+1, total-nums[i])
+    dfs(0, 0)
+    return cnt
+print(eval_expressions('1234', 0))
+",O(2 ^ n)
+"def knapsack(w, v, C):
+    n=len(w)
+    best=0
+    def dfs(i, cap, val):
+        nonlocal best
+        if i==n:
+            if val>best:
+                best=val
+            return
+        dfs(i+1, cap, val)
+        if w[i]<=cap:
+            dfs(i+1, cap-w[i], val+v[i])
+    dfs(0, C, 0)
+    return best
+print(knapsack([2,3,4,5],[3,4,5,6],5))
+",O(2 ^ n)
+"def min_subset_diff(nums):
+    total=sum(nums)
+    best=abs(total)
+    n=len(nums)
+    def dfs(i, s):
+        nonlocal best
+        if i==n:
+            d=abs(total-2*s)
+            if d<best:
+                best=d
+            return
+        dfs(i+1, s)
+        dfs(i+1, s+nums[i])
+    dfs(0, 0)
+    return best
+print(min_subset_diff([1,6,11,5]))
+",O(2 ^ n)
+"def paths(n, target):
+    def dfs(i, pos):
+        if i==n:
+            return 1 if pos==target else 0
+        return dfs(i+1, pos+1) + dfs(i+1, pos-1)
+    return dfs(0, 0)
+print(paths(10, 0))
+",O(2 ^ n)
+"def even_parity_subsets(n):
+    ans=0
+    def dfs(i, ones):
+        nonlocal ans
+        if i==n:
+            if ones%2==0:
+                ans+=1
+            return
+        dfs(i+1, ones)
+        dfs(i+1, ones+1)
+    dfs(0, 0)
+    return ans
+print(even_parity_subsets(12))
+",O(2 ^ n)
+"def closest_sum(nums, target):
+    best=None
+    n=len(nums)
+    for mask in range(1<<n):
+        s=0
+        for i in range(n):
+            if (mask>>i) & 1:
+                s+=nums[i]
+        d=abs(s-target)
+        if best is None or d<best:
+            best=d
+    return best
+print(closest_sum([7,2,5,10,8], 14))
+",O(2 ^ n)
+"class Switcher:
+    def configs(self, n):
+        res=[]
+        def rec(i, cur):
+            if i==n:
+                res.append(cur[:])
+                return
+            cur.append(0)
+            rec(i+1, cur)
+            cur[-1]=1
+            rec(i+1, cur)
+            cur.pop()
+        rec(0, [])
+        return res
+s=Switcher()
+print(s.configs(5))
+",O(2 ^ n)
+"def list_subsets_with_sum(a, k):
+    out=[]
+    def dfs(i, cur, s):
+        if i==len(a):
+            if s==k:
+                out.append(cur[:])
+            return
+        dfs(i+1, cur, s)
+        cur.append(a[i])
+        dfs(i+1, cur, s+a[i])
+        cur.pop()
+    dfs(0, [], 0)
+    for idx, subset in enumerate(out):
+        print(f'{idx}:{subset}')
+    return out
+list_subsets_with_sum([1,2,3,4],5)
+",O(2 ^ n)
+"from itertools import product
+
+def all_sign_assignments(arr):
+    best=None
+    for signs in product([-1,1], repeat=len(arr)):
+        s=sum(a*sg for a,sg in zip(arr, signs))
+        if best is None or abs(s)<abs(best):
+            best=s
+    return best
+print(all_sign_assignments([3,1,4,2,2]))
+",O(2 ^ n)
+"def subsets(a):
+    res = []
+    cur = []
+    def dfs(i):
+        if i == len(a):
+            res.append(cur.copy())
+            return
+        cur.append(a[i]); dfs(i+1); cur.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+
+print(subsets([1,2,3,4]))
+",O(2 ^ n)
+"def count_subsets_sum(nums, target):
+    def go(i, s):
+        if i == len(nums):
+            return 1 if s == target else 0
+        return go(i+1, s+nums[i]) + go(i+1, s)
+    return go(0, 0)
+
+print(count_subsets_sum([1,2,3,4,5], 7))
+",O(2 ^ n)
+"def all_assignments(n):
+    out = []
+    cur = []
+    def dfs(i):
+        if i == n:
+            out.append(cur.copy())
+            return
+        cur.append(False); dfs(i+1); cur[-1] = True; dfs(i+1); cur.pop()
+    dfs(0)
+    return out
+
+print(len(all_assignments(4)))
+",O(2 ^ n)
+"def subsequences(s):
+    out = []
+    def dfs(i, path):
+        if i == len(s):
+            out.append(path)
+            return
+        dfs(i+1, path + s[i])
+        dfs(i+1, path)
+    dfs(0, '')
+    return out
+
+print(subsequences('abcd'))
+",O(2 ^ n)
+"def exists_or(nums, target):
+    def dfs(i, acc):
+        if i == len(nums):
+            return acc == target
+        return dfs(i+1, acc | nums[i]) or dfs(i+1, acc)
+    return dfs(0, 0)
+
+print(exists_or([1,2,4], 7))
+",O(2 ^ n)
+"def min_partition_diff(nums):
+    best = [float('inf')]
+    def dfs(i, total):
+        if i == len(nums):
+            if abs(total) < best[0]:
+                best[0] = abs(total)
+            return
+        dfs(i+1, total + nums[i])
+        dfs(i+1, total - nums[i])
+    dfs(0, 0)
+    return best[0]
+
+print(min_partition_diff([3,1,4,2,2]))
+",O(2 ^ n)
+"def best_under(nums, W):
+    best = [-10**9]
+    def dfs(i, s):
+        if i == len(nums):
+            if s <= W and s > best[0]:
+                best[0] = s
+            return
+        dfs(i+1, s + nums[i])
+        dfs(i+1, s)
+    dfs(0, 0)
+    return best[0]
+
+print(best_under([5,3,7,10], 14))
+",O(2 ^ n)
+"def can_make_target(nums, target):
+    def dfs(i, total):
+        if i == len(nums):
+            return total == target
+        return dfs(i+1, total + nums[i]) or dfs(i+1, total - nums[i])
+    if not nums:
+        return target == 0
+    first = nums[0]
+    return dfs(1, first) or dfs(1, -first)
+
+print(can_make_target([1,2,3,4], 0))
+",O(2 ^ n)
+"def subset_products(nums):
+    products = []
+    def dfs(i, p):
+        if i == len(nums):
+            products.append(p)
+            return
+        dfs(i+1, p * nums[i])
+        dfs(i+1, p)
+    dfs(0, 1)
+    return products
+
+print(len(subset_products([2,3,5,7])))
+",O(2 ^ n)
+"def ps(xs):
+    n = len(xs)
+    def rec(i):
+        if i == n:
+            yield []
+        else:
+            for tail in rec(i+1):
+                yield [xs[i]] + tail
+                yield tail
+    return list(rec(0))
+
+print(ps([1,2,3,4,5]))
+",O(2 ^ n)
+"def enumerate_masks(n):
+    res = []
+    def go(m, i):
+        if i == n:
+            res.append(m)
+            return
+        go(m, i+1)
+        go(m | (1 << i), i+1)
+    go(0, 0)
+    return res
+
+print(len(enumerate_masks(10)))
+",O(2 ^ n)
+"def subsets(arr):
+    res = []
+    def dfs(i, path):
+        if i == len(arr):
+            res.append(path[:])
+            return
+        path.append(arr[i])
+        dfs(i+1, path)
+        path.pop()
+        dfs(i+1, path)
+    dfs(0, [])
+    return res
+
+print(subsets([1,2,3,4]))
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    n = len(nums)
+    def dfs(i, s):
+        if i == n:
+            return 1 if s == target else 0
+        return dfs(i + 1, s) + dfs(i + 1, s + nums[i])
+    return dfs(0, 0)
+
+print(count_subsets([1,2,3,4,5], 5))
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    prev = gray(n - 1)
+    return ['0' + x for x in prev] + ['1' + x for x in reversed(prev)]
+
+print(gray(3))
+",O(2 ^ n)
+"def binaries(n):
+    out = []
+    def rec(k, s):
+        if k == n:
+            out.append(s)
+            return
+        rec(k + 1, s + '0')
+        rec(k + 1, s + '1')
+    rec(0, '')
+    return out
+
+print(binaries(4))
+",O(2 ^ n)
+"def subsequences(s):
+    res = []
+    def go(i, cur):
+        if i == len(s):
+            res.append(cur)
+            return
+        go(i + 1, cur)
+        go(i + 1, cur + s[i])
+    go(0, '')
+    return res
+
+print(subsequences('abc'))
+",O(2 ^ n)
+"def can_partition(nums):
+    total = sum(nums)
+    target = total // 2
+    if total % 2:
+        return False
+    n = len(nums)
+    def dfs(i, s):
+        if s == target:
+            return True
+        if i == n or s > target:
+            return False
+        return dfs(i + 1, s + nums[i]) or dfs(i + 1, s)
+    return dfs(0, 0)
+
+print(can_partition([1,5,11,5]))
+",O(2 ^ n)
+"def hanoi(n, a, b, c, moves):
+    if n == 0:
+        return
+    hanoi(n - 1, a, c, b, moves)
+    moves.append((a, c))
+    hanoi(n - 1, b, a, c, moves)
+
+moves = []
+hanoi(3, 'A', 'B', 'C', moves)
+print(moves)
+",O(2 ^ n)
+"def sat(vars_count, clauses):
+    def eval_assign(assign):
+        for clause in clauses:
+            ok = False
+            for var, pos in clause:
+                v = assign[var]
+                if (v and pos) or ((not v) and (not pos)):
+                    ok = True
+                    break
+            if not ok:
+                return False
+        return True
+    n = vars_count
+    sol = []
+    def dfs(i, assign):
+        if i == n:
+            if eval_assign(assign):
+                sol.append(assign[:])
+            return
+        assign[i] = False
+        dfs(i + 1, assign)
+        assign[i] = True
+        dfs(i + 1, assign)
+    dfs(0, [False] * n)
+    return sol
+
+print(sat(3, [[(0, True), (1, False)], [(2, True)]]))
+",O(2 ^ n)
+"def ways(nums, target):
+    count = 0
+    n = len(nums)
+    def dfs(i, s):
+        nonlocal count
+        if i == n:
+            if s == target:
+                count += 1
+            return
+        dfs(i + 1, s + nums[i])
+        dfs(i + 1, s - nums[i])
+    dfs(0, 0)
+    return count
+
+print(ways([1,1,2,3], 1))
+",O(2 ^ n)
+"def segmentations(s):
+    if not s:
+        return []
+    res = []
+    def dfs(i, cur, parts):
+        if i == len(s):
+            res.append(parts + [cur])
+            return
+        dfs(i + 1, cur + s[i], parts)
+        dfs(i + 1, s[i], parts + [cur])
+    dfs(1, s[0], [])
+    return ['|'.join(p) for p in res]
+
+print(segmentations('abcd'))
+",O(2 ^ n)
+"def max_subset_xor(a):
+    best = 0
+    n = len(a)
+    def dfs(i, x):
+        nonlocal best
+        if i == n:
+            if x > best:
+                best = x
+            return
+        dfs(i + 1, x)
+        dfs(i + 1, x ^ a[i])
+    dfs(0, 0)
+    return best
+
+print(max_subset_xor([5,1,7]))
+",O(2 ^ n)
+"def count_nodes(n):
+    if n == 0:
+        return 1
+    return 1 + count_nodes(n - 1) + count_nodes(n - 1)
+
+print(count_nodes(10))
+",O(2 ^ n)
+"def has_subset_product(nums, target):
+    n = len(nums)
+    def dfs(i, p):
+        if p == target:
+            return True
+        if i == n or p > target:
+            return False
+        return dfs(i + 1, p * nums[i]) or dfs(i + 1, p)
+    return dfs(0, 1)
+
+print(has_subset_product([2,3,5,7], 15))
+",O(2 ^ n)
+"import itertools
+
+def count_assignments(n, predicate):
+    c = 0
+    for bits in itertools.product([0,1], repeat=n):
+        if predicate(bits):
+            c += 1
+    return c
+
+print(count_assignments(4, lambda b: sum(b) == 2))
+",O(2 ^ n)
+"def powerset(xs):
+    res = []
+    n = len(xs)
+    def dfs(i, cur):
+        if i == n:
+            res.append(cur[:])
+            return
+        dfs(i + 1, cur)
+        cur.append(xs[i])
+        dfs(i + 1, cur)
+        cur.pop()
+    dfs(0, [])
+    return res
+
+print(powerset([1, 2, 3, 4]))
+",O(2 ^ n)
+"def fib(n):
+    if n < 2:
+        return n
+    return fib(n - 1) + fib(n - 2)
+
+print(fib(30))
+",O(2 ^ n)
+"def subset_sum(nums, target):
+    n = len(nums)
+    def rec(i, t):
+        if t == 0:
+            return True
+        if i == n:
+            return False
+        if rec(i + 1, t):
+            return True
+        return rec(i + 1, t - nums[i])
+    return rec(0, target)
+
+print(subset_sum([3, 34, 4, 12, 5, 2], 9))
+",O(2 ^ n)
+"def subseqs(s):
+    res = []
+    n = len(s)
+    def go(i, cur):
+        if i == n:
+            res.append(cur)
+            return
+        go(i + 1, cur)
+        go(i + 1, cur + s[i])
+    go(0, '')
+    return res
+
+print(len(subseqs('abcdefg')))
+",O(2 ^ n)
+"def knap(W, wt, val, i=0):
+    if i == len(wt) or W <= 0:
+        return 0
+    take = 0
+    if wt[i] <= W:
+        take = val[i] + knap(W - wt[i], wt, val, i + 1)
+    notake = knap(W, wt, val, i + 1)
+    return max(take, notake)
+
+print(knap(7, [2, 3, 4, 5], [1, 4, 5, 7]))
+",O(2 ^ n)
+"def sat_count(n, clauses):
+    count = 0
+    def rec(i, assign):
+        nonlocal count
+        if i == n:
+            for cl in clauses:
+                ok = False
+                for var, sign in cl:
+                    v = assign[var]
+                    ok = ok or (v if sign else (not v))
+                if not ok:
+                    return
+            count += 1
+            return
+        assign.append(False)
+        rec(i + 1, assign)
+        assign[-1] = True
+        rec(i + 1, assign)
+        assign.pop()
+    rec(0, [])
+    return count
+
+clauses = [[(0, True), (1, False)], [(1, True), (2, True)], [(0, False), (2, False)]]
+print(sat_count(3, clauses))
+",O(2 ^ n)
+"def max_independent_set(n, edges):
+    best = []
+    for m in range(1 << n):
+        ok = True
+        for u, v in edges:
+            if (m >> u) & 1 and (m >> v) & 1:
+                ok = False
+                break
+        if ok:
+            s = [i for i in range(n) if (m >> i) & 1]
+            if len(s) > len(best):
+                best = s
+    return best
+
+print(max_independent_set(5, [(0, 1), (1, 2), (2, 3), (3, 4)]))
+",O(2 ^ n)
+"import itertools
+
+def all_binary_vectors(n):
+    return list(itertools.product([0, 1], repeat=n))
+
+print(len(all_binary_vectors(12)))
+",O(2 ^ n)
+"def gen(n):
+    if n == 0:
+        yield ''
+    else:
+        for tail in gen(n - 1):
+            yield '0' + tail
+            yield '1' + tail
+
+print(sum(1 for _ in gen(16)))
+",O(2 ^ n)
+"def min_diff(a):
+    best = [float('inf')]
+    n = len(a)
+    def dfs(i, s):
+        if i == n:
+            d = abs(s)
+            if d < best[0]:
+                best[0] = d
+            return
+        dfs(i + 1, s + a[i])
+        dfs(i + 1, s - a[i])
+    dfs(0, 0)
+    return best[0]
+
+print(min_diff([10, 20, 15, 5, 25]))
+",O(2 ^ n)
+"def count_prod(nums, K):
+    n = len(nums)
+    def go(i, p):
+        if p > K:
+            return 0
+        if i == n:
+            return 1
+        return go(i + 1, p) + go(i + 1, p * nums[i])
+    return go(0, 1) - 1
+
+print(count_prod([2, 3, 5, 7, 11], 30))
+",O(2 ^ n)
+"def subset_xor_count(a, target):
+    n = len(a)
+    cnt = 0
+    def rec(i, x):
+        nonlocal cnt
+        if i == n:
+            if x == target:
+                cnt += 1
+            return
+        rec(i + 1, x)
+        rec(i + 1, x ^ a[i])
+    rec(0, 0)
+    return cnt
+
+print(subset_xor_count([1, 2, 3, 4, 5, 6], 7))
+",O(2 ^ n)
+"class Solver:
+    def has_zero_sum(self, arr):
+        n = len(arr)
+        def go(i, s):
+            if i == n:
+                return s == 0
+            return go(i + 1, s + arr[i]) or go(i + 1, s - arr[i])
+        return go(0, 0)
+
+print(Solver().has_zero_sum([3, 1, 4, 2, 2]))
+",O(2 ^ n)
+"def all_subsets_sum(a):
+    n = len(a)
+    res = []
+    stack = [(0, 0)]
+    while stack:
+        i, s = stack.pop()
+        if i == n:
+            res.append(s)
+        else:
+            stack.append((i + 1, s))
+            stack.append((i + 1, s + a[i]))
+    return res
+
+print(len(all_subsets_sum([5] * 20)))
+",O(2 ^ n)
+"from functools import reduce
+
+def powerset_strings(s):
+    return reduce(lambda acc, ch: acc + [x + ch for x in acc], s, [''])
+
+print(len(powerset_strings('abcdefghij')))
+",O(2 ^ n)
+"def assign(n):
+    cur = [False] * n
+    out = []
+    def rec(i):
+        if i == n:
+            out.append(tuple(cur))
+            return
+        cur[i] = False
+        rec(i + 1)
+        cur[i] = True
+        rec(i + 1)
+    rec(0)
+    return out
+
+print(len(assign(15)))
+",O(2 ^ n)
+"def bounded_subset_max_sum(nums, limit):
+    best = [-1]
+    def dfs(i, s):
+        if s > limit:
+            return
+        if i == len(nums):
+            if s > best[0]:
+                best[0] = s
+            return
+        dfs(i + 1, s)
+        dfs(i + 1, s + nums[i])
+    dfs(0, 0)
+    return best[0]
+
+print(bounded_subset_max_sum([6, 3, 5, 9, 7, 2], 15))
+",O(2 ^ n)
+"def fib(n):
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)
+
+print(fib(20))
+",O(2 ^ n)
+"def ways(n):
+    if n == 0:
+        return 1
+    return ways(n-1) + ways(n-1)
+
+print(22, ways(22))
+",O(2 ^ n)
+"def count_zero_xor(a,i=0,x=0):
+    if i==len(a):
+        return 1 if x==0 else 0
+    return count_zero_xor(a,i+1,x) + count_zero_xor(a,i+1,x^a[i])
+
+print(count_zero_xor([1,3,4,7,8]))
+",O(2 ^ n)
+"def subset_sum(nums,t,i=0,s=0):
+    if s==t:
+        return True
+    if i==len(nums):
+        return False
+    return subset_sum(nums,t,i+1,s+nums[i]) or subset_sum(nums,t,i+1,s)
+
+print(subset_sum([2,4,6,3,5,7],10))
+",O(2 ^ n)
+"def hanoi_moves(n):
+    if n==0:
+        return 0
+    return hanoi_moves(n-1)+1+hanoi_moves(n-1)
+
+print(hanoi_moves(18))
+",O(2 ^ n)
+"def count_assignments(n,i=0,a=None,b=None):
+    if i==n:
+        return 1 if a==1 and b==1 else 0
+    if i==0:
+        return count_assignments(n,i+1,0,b) + count_assignments(n,i+1,1,b)
+    if i==1:
+        return count_assignments(n,i+1,a,0) + count_assignments(n,i+1,a,1)
+    return count_assignments(n,i+1,a,b) + count_assignments(n,i+1,a,b)
+
+print(count_assignments(16))
+",O(2 ^ n)
+"def count_subseq(s,i=0,j=0):
+    if j==2:
+        return 1
+    if i==len(s):
+        return 0
+    take = 0
+    if (j==0 and s[i]=='a') or (j==1 and s[i]=='b'):
+        take = count_subseq(s,i+1,j+1)
+    skip = count_subseq(s,i+1,j)
+    return take + skip
+
+print(count_subseq('aaabbbababab'))
+",O(2 ^ n)
+"def target_sum(nums,i=0,total=0):
+    if i==len(nums):
+        return 1 if total==0 else 0
+    return target_sum(nums,i+1,total+nums[i]) + target_sum(nums,i+1,total-nums[i])
+
+print(target_sum([1,1,2,3,4]))
+",O(2 ^ n)
+"class Explorer:
+    def max_path(self, depth, acc=0):
+        if depth==0:
+            return acc
+        a = self.max_path(depth-1, acc+depth)
+        b = self.max_path(depth-1, acc-depth)
+        return a if a>b else b
+
+print(Explorer().max_path(22))
+",O(2 ^ n)
+"def gen(n,i=0):
+    if i==n:
+        yield 1
+    else:
+        yield from gen(n,i+1)
+        yield from gen(n,i+1)
+
+print(sum(1 for _ in gen(20)))
+",O(2 ^ n)
+"def count_states(n):
+    stack=[0]
+    c=0
+    while stack:
+        i=stack.pop()
+        if i==n:
+            c+=1
+        else:
+            stack.append(i+1)
+            stack.append(i+1)
+    return c
+
+print(count_states(24))
+",O(2 ^ n)
+"def f(m, i=0, mask=0):
+    if i==m:
+        return 1 if mask==0 else 0
+    return f(m,i+1,mask) + f(m,i+1,mask ^ (1<<i))
+
+print('%d' % f(21))
+",O(2 ^ n)
+"cnt=0
+
+def dfs(arr,i,s):
+    global cnt
+    if i==len(arr):
+        if s==0:
+            cnt+=1
+        return
+    dfs(arr,i+1,s+arr[i])
+    dfs(arr,i+1,s-arr[i])
+
+dfs([1,2,1,2,1,2],0,0)
+print(cnt)
+",O(2 ^ n)
+"def odd_product_count(a,i=0,odd=True):
+    if i==len(a):
+        return 1 if odd else 0
+    x = odd_product_count(a,i+1,odd and (a[i]%2==1))
+    y = odd_product_count(a,i+1,odd)
+    return x + y
+
+print(odd_product_count([2,3,5,6,7,9]))
+",O(2 ^ n)
+"def subsets(nums):
+    res=[]
+    cur=[]
+    def dfs(i):
+        if i==len(nums):
+            res.append(cur[:])
+            return
+        cur.append(nums[i])
+        dfs(i+1)
+        cur.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+print(f""total={len(subsets([1,2,3,4]))}"")
+",O(2 ^ n)
+"def count_sum(nums, target):
+    def dfs(i, s):
+        if i==len(nums):
+            return 1 if s==target else 0
+        return dfs(i+1, s) + dfs(i+1, s+nums[i])
+    return dfs(0, 0)
+print(count_sum([2,3,5,6,8,10], 10))
+",O(2 ^ n)
+"def max_even_subset(nums):
+    n=len(nums)
+    best=0
+    for mask in range(1<<n):
+        s=0
+        cnt=0
+        for i in range(n):
+            if (mask>>i)&1:
+                s+=nums[i]
+                cnt+=1
+        if s%2==0 and cnt>best:
+            best=cnt
+    return best
+print(max_even_subset([1,2,3,4,5,6]))
+",O(2 ^ n)
+"def split_spaces(s):
+    res=[]
+    def dfs(i, cur):
+        if i==len(s)-1:
+            res.append(cur+s[i])
+            return
+        dfs(i+1, cur+s[i]+' ')
+        dfs(i+1, cur+s[i])
+    if s:
+        dfs(0, '')
+    return res
+print(split_spaces('abcd'))
+",O(2 ^ n)
+"def letter_case_permutations(s):
+    out=[]
+    def dfs(i, cur):
+        if i==len(s):
+            out.append(''.join(cur))
+            return
+        c=s[i]
+        if c.isalpha():
+            cur.append(c.lower())
+            dfs(i+1, cur)
+            cur.pop()
+            cur.append(c.upper())
+            dfs(i+1, cur)
+            cur.pop()
+        else:
+            cur.append(c)
+            dfs(i+1, cur)
+            cur.pop()
+    dfs(0, [])
+    return out
+print(letter_case_permutations('a1b2'))
+",O(2 ^ n)
+"def binaries(n):
+    res=[]
+    a=['']*n
+    def rec(i):
+        if i==n:
+            res.append(''.join(a))
+            return
+        a[i]='0'
+        rec(i+1)
+        a[i]='1'
+        rec(i+1)
+    rec(0)
+    return res
+print('first=%s' % binaries(5)[:8])
+",O(2 ^ n)
+"def subset_product(nums, target):
+    ways=[]
+    def dfs(i, prod, path):
+        if i==len(nums):
+            if prod==target:
+                ways.append(path[:])
+            return
+        dfs(i+1, prod, path)
+        path.append(nums[i])
+        dfs(i+1, prod*nums[i], path)
+        path.pop()
+    dfs(0, 1, [])
+    return ways
+print(subset_product([1,2,3,4,6], 6))
+",O(2 ^ n)
+"def count_target_ways(nums, target):
+    def dfs(i, total):
+        if i==len(nums):
+            return 1 if total==target else 0
+        return dfs(i+1, total+nums[i]) + dfs(i+1, total-nums[i])
+    return dfs(0, 0)
+print(count_target_ways([1,1,1,1,1], 3))
+",O(2 ^ n)
+"def can_partition_equal(nums):
+    total=sum(nums)
+    if total%2:
+        print(False)
+    else:
+        target=total//2
+        found=False
+        def dfs(i, s):
+            nonlocal found
+            if s==target:
+                found=True
+                return
+            if i==len(nums) or found:
+                return
+            dfs(i+1, s+nums[i])
+            dfs(i+1, s)
+        dfs(0, 0)
+        print(found)
+can_partition_equal([1,5,11,5])
+",O(2 ^ n)
+"def all_subseq(s):
+    res=[]
+    def dfs(i, cur):
+        if i==len(s):
+            res.append(cur)
+            return
+        dfs(i+1, cur)
+        dfs(i+1, cur+s[i])
+    dfs(0, '')
+    return res
+print(all_subseq('xyz'))
+",O(2 ^ n)
+"def all_truth_assignments(n):
+    res=[]
+    def dfs(i, assign):
+        if i==n:
+            res.append(assign[:])
+            return
+        assign.append(False)
+        dfs(i+1, assign)
+        assign.pop()
+        assign.append(True)
+        dfs(i+1, assign)
+        assign.pop()
+    dfs(0, [])
+    return res
+print(len(all_truth_assignments(12)))
+",O(2 ^ n)
+"class SubsetGenerator:
+    def __init__(self, data):
+        self.data=data
+    def power(self):
+        res=[[]]
+        for x in self.data:
+            res += [r+[x] for r in res]
+        return res
+sg=SubsetGenerator([1,2,3,4])
+print(sg.power())
+",O(2 ^ n)
+"def power_set(nums):
+    ans = [[]]
+    for v in nums:
+        ans += [s + [v] for s in ans]
+    return ans
+
+print(power_set([1,2,3,4]))
+",O(2 ^ n)
+"def count_subsets(arr, target, i=0):
+    if i == len(arr):
+        return 1 if target == 0 else 0
+    return count_subsets(arr, target - arr[i], i+1) + count_subsets(arr, target, i+1)
+
+print(count_subsets([1,2,3,4,5], 5))
+",O(2 ^ n)
+"def ways(nums, target):
+    res = 0
+    def dfs(i, total):
+        nonlocal res
+        if i == len(nums):
+            if total == target:
+                res += 1
+            return
+        dfs(i+1, total + nums[i])
+        dfs(i+1, total - nums[i])
+    dfs(0, 0)
+    return res
+
+print(ways([1,1,1,1,1], 3))
+",O(2 ^ n)
+"def binaries(n):
+    out = []
+    def rec(prefix, k):
+        if k == n:
+            out.append(prefix)
+            return
+        rec(prefix + '0', k+1)
+        rec(prefix + '1', k+1)
+    rec('', 0)
+    return out
+
+print(binaries(5))
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return ['']
+    g = ['0', '1']
+    while len(g[0]) < n:
+        g = ['0'+x for x in g] + ['1'+x for x in g[::-1]]
+    return g
+
+print(gray(3))
+",O(2 ^ n)
+"def expressions(digits):
+    if not digits:
+        return []
+    res = []
+    def dfs(i, expr):
+        if i == len(digits):
+            res.append(expr)
+            return
+        dfs(i+1, expr + '+' + digits[i])
+        dfs(i+1, expr + '-' + digits[i])
+    dfs(1, digits[0])
+    return res
+
+print(expressions(list('1234')))
+",O(2 ^ n)
+"def best_sum(nums, limit):
+    best = -10**9
+    def dfs(i, s):
+        nonlocal best
+        if s <= limit and s > best:
+            best = s
+        if i == len(nums):
+            return
+        dfs(i+1, s + nums[i])
+        dfs(i+1, s)
+    dfs(0, 0)
+    return best
+
+print(best_sum([5,11,3,7], 20))
+",O(2 ^ n)
+"def letter_cases(s):
+    ans = []
+    def dfs(i, path):
+        if i == len(s):
+            ans.append(''.join(path))
+            return
+        c = s[i]
+        if c.isalpha():
+            path.append(c.lower())
+            dfs(i+1, path)
+            path.pop()
+            path.append(c.upper())
+            dfs(i+1, path)
+            path.pop()
+        else:
+            path.append(c)
+            dfs(i+1, path)
+            path.pop()
+    dfs(0, [])
+    return ans
+
+print(letter_cases('a1b2'))
+",O(2 ^ n)
+"def count_solutions(clauses, n):
+    count = 0
+    def dfs(i, assign):
+        nonlocal count
+        if i == n:
+            ok = True
+            for clause in clauses:
+                if not any((lit>0 and assign[abs(lit)-1]) or (lit<0 and not assign[abs(lit)-1]) for lit in clause):
+                    ok = False
+                    break
+            if ok:
+                count += 1
+            return
+        assign[i] = False
+        dfs(i+1, assign)
+        assign[i] = True
+        dfs(i+1, assign)
+    dfs(0, [False]*n)
+    return count
+
+print(count_solutions([[1,-2],[2,3]], 3))
+",O(2 ^ n)
+"def count_xor(arr, target):
+    def dfs(i, x):
+        if i == len(arr):
+            return 1 if x == target else 0
+        return dfs(i+1, x ^ arr[i]) + dfs(i+1, x)
+    return dfs(0, 0)
+
+print(count_xor([1,2,3,4], 6))
+",O(2 ^ n)
+"class Hanoi:
+    def __init__(self):
+        self.moves = []
+    def solve(self, n, a, b, c):
+        if n == 0:
+            return
+        self.solve(n-1, a, c, b)
+        self.moves.append((a, c))
+        self.solve(n-1, b, a, c)
+
+h = Hanoi()
+h.solve(4, 'A', 'B', 'C')
+print(len(h.moves))
+",O(2 ^ n)
+"def subset_products(nums):
+    prods = []
+    def dfs(i, p):
+        if i == len(nums):
+            prods.append(p)
+            return
+        dfs(i+1, p*nums[i])
+        dfs(i+1, p)
+    dfs(0, 1)
+    return prods
+
+print(subset_products([2,3,5]))
+",O(2 ^ n)
+"def subsets(a):
+    out = []
+    def go(i, cur):
+        if i == len(a):
+            out.append(cur[:])
+            return
+        go(i + 1, cur)
+        cur.append(a[i])
+        go(i + 1, cur)
+        cur.pop()
+    go(0, [])
+    return out
+
+print(subsets([1, 2, 3, 4]))
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    def dfs(i, s):
+        if i == len(nums):
+            return 1 if s == target else 0
+        return dfs(i + 1, s) + dfs(i + 1, s + nums[i])
+    return dfs(0, 0)
+
+print(count_subsets([2, 3, 5, 7, 11], 10))
+",O(2 ^ n)
+"n = 5
+arr = list(range(n))
+res = []
+for mask in range(1 << n):
+    subset = []
+    for i in range(n):
+        if (mask >> i) & 1:
+            subset.append(arr[i])
+    res.append(subset)
+print(len(res))
+",O(2 ^ n)
+"moves = []
+
+def h(n, a, b, c):
+    if n == 0:
+        return
+    h(n - 1, a, c, b)
+    moves.append((a, c))
+    h(n - 1, b, a, c)
+
+h(5, 'A', 'B', 'C')
+print(len(moves))
+",O(2 ^ n)
+"def ways(n):
+    if n <= 1:
+        return 1
+    return ways(n - 1) + ways(n - 2)
+
+print(ways(25))
+",O(2 ^ n)
+"def can_break(s, words):
+    w = set(words)
+    def dfs(i):
+        if i == len(s):
+            return True
+        for j in range(i + 1, len(s) + 1):
+            if s[i:j] in w and dfs(j):
+                return True
+        return False
+    return dfs(0)
+
+print(can_break(""applepenapple"", [""apple"", ""pen"", ""ap"", ""ple""]))
+",O(2 ^ n)
+"def gen(n):
+    if n == 0:
+        return [""""]
+    prev = gen(n - 1)
+    return [p + ""0"" for p in prev] + [p + ""1"" for p in prev]
+
+print(len(gen(15)))
+",O(2 ^ n)
+"def subseq(s):
+    res = []
+    def rec(i, t):
+        if i == len(s):
+            res.append(t)
+            return
+        rec(i + 1, t)
+        rec(i + 1, t + s[i])
+    rec(0, """")
+    return res
+
+print(len(subseq(""abcdefg"")))
+",O(2 ^ n)
+"vars = ['p', 'q', 'r', 's']
+
+def eval_expr(v):
+    return (v['p'] and not v['q']) or (v['r'] ^ v['s'])
+
+count = 0
+for mask in range(1 << len(vars)):
+    v = {}
+    for i, name in enumerate(vars):
+        v[name] = bool((mask >> i) & 1)
+    if eval_expr(v):
+        count += 1
+print(count)
+",O(2 ^ n)
+"def min_diff(a):
+    n = len(a)
+    best = [float('inf')]
+    def dfs(i, s):
+        if i == n:
+            if abs(s) < best[0]:
+                best[0] = abs(s)
+            return
+        dfs(i + 1, s + a[i])
+        dfs(i + 1, s - a[i])
+    dfs(0, 0)
+    return best[0]
+
+print(min_diff([3, 1, 4, 2, 2]))
+",O(2 ^ n)
+"def gray(n):
+    if n == 0:
+        return [""0""]
+    if n == 1:
+        return [""0"", ""1""]
+    prev = gray(n - 1)
+    return [""0"" + x for x in prev] + [""1"" + x for x in reversed(prev)]
+
+g = gray(5)
+print(len(g))
+",O(2 ^ n)
+"def ways(amount, coins, i=0):
+    if amount == 0:
+        return 1
+    if i == len(coins) or amount < 0:
+        return 0
+    return ways(amount - coins[i], coins, i) + ways(amount, coins, i + 1)
+
+print(ways(20, [1, 2, 5]))
+",O(2 ^ n)
+"class Solver:
+    def __init__(self, arr):
+        self.arr = arr
+        self.c = 0
+    def power_set_count(self):
+        def rec(i):
+            if i == len(self.arr):
+                self.c += 1
+                return
+            rec(i + 1)
+            rec(i + 1)
+        rec(0)
+        return self.c
+
+s = Solver(list(range(12)))
+print(f""{s.power_set_count()} subsets"")
+",O(2 ^ n)
+"def gen_bools(n):
+    if n == 0:
+        yield []
+    else:
+        for tail in gen_bools(n - 1):
+            yield [False] + tail
+            yield [True] + tail
+
+print(sum(1 for _ in gen_bools(12)))
+",O(2 ^ n)
+"def can_reach(nums, target):
+    def dfs(i, s):
+        if i == len(nums):
+            return s == target
+        return dfs(i + 1, s + nums[i]) or dfs(i + 1, s - nums[i])
+    return dfs(0, 0)
+
+print(can_reach([1, 3, 2, 7, 9, 4], 6))
+",O(2 ^ n)
+"n = 10
+subs = [[]]
+for x in range(n):
+    new = []
+    for s in subs:
+        new.append(s)
+        new.append(s + [x])
+    subs = new
+print(len(subs))
+",O(2 ^ n)
+"def power_set(arr):
+    res=[]
+    path=[]
+    def dfs(i):
+        if i==len(arr):
+            res.append(path[:])
+            return
+        path.append(arr[i])
+        dfs(i+1)
+        path.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+print(power_set([1,2,3,4]))
+",O(2 ^ n)
+"def sat(vars_count, clauses):
+    sol=[]
+    def ok(assign):
+        for clause in clauses:
+            if not any((lit>0 and assign[abs(lit)-1]) or (lit<0 and not assign[abs(lit)-1]) for lit in clause):
+                return False
+        return True
+    def dfs(i, assign):
+        if i==vars_count:
+            if ok(assign):
+                sol.append(assign[:])
+            return
+        assign.append(False)
+        dfs(i+1, assign)
+        assign[-1]=True
+        dfs(i+1, assign)
+        assign.pop()
+    dfs(0, [])
+    return sol
+print(len(sat(3, [[1,-2],[2,3],[-1,-3]])))
+",O(2 ^ n)
+"def fib(n):
+    if n<=1:
+        return n
+    return fib(n-1)+fib(n-2)
+print(fib(20))
+",O(2 ^ n)
+"def binaries(n):
+    out=[]
+    cur=[]
+    def rec(i):
+        if i==n:
+            out.append(''.join(cur))
+            return
+        cur.append('0')
+        rec(i+1)
+        cur[-1]='1'
+        rec(i+1)
+        cur.pop()
+    rec(0)
+    return out
+print(binaries(4))
+",O(2 ^ n)
+"def target_sum(nums, target):
+    ways=0
+    def dfs(i, total):
+        nonlocal ways
+        if i==len(nums):
+            if total==target:
+                ways+=1
+            return
+        dfs(i+1, total+nums[i])
+        dfs(i+1, total-nums[i])
+    dfs(0,0)
+    return ways
+print(target_sum([1,1,2,3],1))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev] + ['1'+x for x in reversed(prev)]
+print(gray(3))
+",O(2 ^ n)
+"class Subsets:
+    def __init__(self, s):
+        self.s=s
+        self.ans=[]
+    def run(self):
+        cur=[]
+        def go(i):
+            if i==len(self.s):
+                self.ans.append(tuple(cur))
+                return
+            go(i+1)
+            cur.append(self.s[i])
+            go(i+1)
+            cur.pop()
+        go(0)
+        return self.ans
+print(Subsets(['a','b','c']).run())
+",O(2 ^ n)
+"from itertools import product
+
+def max_subset_sum(weights):
+    n=len(weights)
+    best=-10**9
+    for bits in product([0,1], repeat=n):
+        s=sum(w if b else 0 for w,b in zip(weights,bits))
+        if s>best:
+            best=s
+    return best
+print(max_subset_sum([3,1,4,2]))
+",O(2 ^ n)
+"s='abcd'
+res=[]
+
+def rec(i, path):
+    if i==len(s):
+        res.append(path)
+        return
+    rec(i+1, path)
+    rec(i+1, path + s[i])
+
+rec(0, '')
+print(len(res))
+",O(2 ^ n)
+"def count_k_subsets(n,k):
+    cnt=0
+    def dfs(i, chosen):
+        nonlocal cnt
+        if i==n:
+            if chosen==k:
+                cnt+=1
+            return
+        dfs(i+1, chosen)
+        dfs(i+1, chosen+1)
+    dfs(0,0)
+    return cnt
+print(count_k_subsets(10,3))
+",O(2 ^ n)
+"def min_diff(arr):
+    best=[float('inf')]
+    def dfs(i, a, b):
+        if i==len(arr):
+            d=abs(a-b)
+            if d<best[0]:
+                best[0]=d
+            return
+        dfs(i+1, a+arr[i], b)
+        dfs(i+1, a, b+arr[i])
+    dfs(0,0,0)
+    return best[0]
+print(min_diff([5,6,7,8,9]))
+",O(2 ^ n)
+"def case_perms(s):
+    out=[]
+    def dfs(i, path):
+        if i==len(s):
+            out.append(''.join(path))
+            return
+        c=s[i]
+        if c.isalpha():
+            path.append(c.lower()); dfs(i+1, path); path.pop()
+            path.append(c.upper()); dfs(i+1, path); path.pop()
+        else:
+            path.append(c); dfs(i+1, path); path.pop()
+    dfs(0, [])
+    return out
+print(case_perms('ab1'))
+",O(2 ^ n)
+"def all_splits(s):
+    n=len(s)
+    res=[]
+    cuts=[0]*(n-1)
+    def dfs(i):
+        if i==n-1:
+            parts=[]
+            cur=s[0]
+            for j in range(n-1):
+                if cuts[j]:
+                    parts.append(cur)
+                    cur=s[j+1]
+                else:
+                    cur+=s[j+1]
+            parts.append(cur)
+            res.append(parts)
+            return
+        cuts[i]=0; dfs(i+1)
+        cuts[i]=1; dfs(i+1)
+    dfs(0)
+    return res
+print(all_splits('wxyz'))
+",O(2 ^ n)
+"def even_parity(n):
+    sols=[]
+    bits=[0]*n
+    def dfs(i, ones):
+        if i==n:
+            if ones%2==0:
+                sols.append(bits[:])
+            return
+        bits[i]=0; dfs(i+1, ones)
+        bits[i]=1; dfs(i+1, ones+1)
+    dfs(0,0)
+    return sols
+print(len(even_parity(8)))
+",O(2 ^ n)
+"def power_set(lst):
+    res=[]
+    cur=[]
+    def dfs(i):
+        if i==len(lst):
+            res.append(cur[:])
+            return
+        cur.append(lst[i])
+        dfs(i+1)
+        cur.pop()
+        dfs(i+1)
+    dfs(0)
+    return res
+
+print(power_set([1,2,3,4]))
+",O(2 ^ n)
+"def hanoi(n, a, b, c, moves):
+    if n==0:
+        return
+    hanoi(n-1,a,c,b,moves)
+    moves.append((a,c))
+    hanoi(n-1,b,a,c,moves)
+
+m=[]
+hanoi(4,'A','B','C',m)
+print(len(m))
+",O(2 ^ n)
+"def target_sum(nums, target):
+    count=0
+    def dfs(i, total):
+        nonlocal count
+        if i==len(nums):
+            if total==target:
+                count+=1
+            return
+        dfs(i+1, total+nums[i])
+        dfs(i+1, total-nums[i])
+    dfs(0,0)
+    return count
+
+print(target_sum([1,1,1,1,1],3))
+",O(2 ^ n)
+"def count_subsets(arr, s):
+    ans=0
+    def go(i, t):
+        nonlocal ans
+        if i==len(arr):
+            if t==s:
+                ans+=1
+            return
+        go(i+1, t)
+        go(i+1, t+arr[i])
+    go(0,0)
+    return ans
+
+print(count_subsets([2,3,5,6,8,10],10))
+",O(2 ^ n)
+"def binary_strings(n):
+    out=[]
+    def rec(k, path):
+        if k==n:
+            out.append(''.join(path))
+            return
+        path.append('0')
+        rec(k+1, path)
+        path.pop()
+        path.append('1')
+        rec(k+1, path)
+        path.pop()
+    rec(0, [])
+    return out
+
+print(len(binary_strings(12))>0)
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return ['']
+    prev=gray(n-1)
+    return ['0'+x for x in prev]+['1'+x for x in reversed(prev)]
+
+print(len(gray(5)))
+",O(2 ^ n)
+"def subsequences(s):
+    res=[]
+    def helper(i, buf):
+        if i==len(s):
+            res.append(''.join(buf))
+            return
+        helper(i+1, buf)
+        buf.append(s[i])
+        helper(i+1, buf)
+        buf.pop()
+    helper(0, [])
+    return res
+
+print(len(subsequences('abcd')))
+",O(2 ^ n)
+"def all_xor_vals(arr):
+    seen=set()
+    def dfs(i, x):
+        if i==len(arr):
+            seen.add(x)
+            return
+        dfs(i+1, x)
+        dfs(i+1, x^arr[i])
+    dfs(0,0)
+    return seen
+
+print(len(all_xor_vals([1,2,3,4])))
+",O(2 ^ n)
+"def count_solutions(n):
+    total=0
+    def dfs(i, assign):
+        nonlocal total
+        if i==n:
+            a=assign
+            ok=(a[0] or (not a[-1])) if n>0 else True
+            if ok:
+                total+=1
+            return
+        assign.append(False)
+        dfs(i+1, assign)
+        assign.pop()
+        assign.append(True)
+        dfs(i+1, assign)
+        assign.pop()
+    dfs(0, [])
+    return total
+
+print(count_solutions(10))
+",O(2 ^ n)
+"def min_diff(nums):
+    best=[float('inf')]
+    def dfs(i, left, right):
+        if i==len(nums):
+            d=abs(left-right)
+            if d<best[0]:
+                best[0]=d
+            return
+        dfs(i+1, left+nums[i], right)
+        dfs(i+1, left, right+nums[i])
+    dfs(0,0,0)
+    return best[0]
+
+print(min_diff([3,1,4,2,2,1]))
+",O(2 ^ n)
+"class P:
+    def __init__(self, data):
+        self.data=data
+    def gen(self):
+        n=len(self.data)
+        cur=[None]*n
+        def dfs(i):
+            if i==n:
+                yield [x for x in cur if x is not None]
+                return
+            cur[i]=self.data[i]
+            yield from dfs(i+1)
+            cur[i]=None
+            yield from dfs(i+1)
+        yield from dfs(0)
+
+p=P([1,2,3])
+print(sum(1 for _ in p.gen()))
+",O(2 ^ n)
+"def knapsack_bruteforce(w, v, cap):
+    best=0
+    n=len(w)
+    def dfs(i, cw, cv):
+        nonlocal best
+        if cw>cap:
+            return
+        if i==n:
+            if cv>best:
+                best=cv
+            return
+        dfs(i+1, cw+w[i], cv+v[i])
+        dfs(i+1, cw, cv)
+    dfs(0,0,0)
+    return best
+
+print(knapsack_bruteforce([2,3,4],[4,5,10],5))
+",O(2 ^ n)
+"def signs_to_target(nums, tgt):
+    ways=0
+    def back(i, s):
+        nonlocal ways
+        if i==len(nums):
+            if s==tgt:
+                ways+=1
+            return
+        back(i+1, s+nums[i])
+        back(i+1, s-nums[i])
+    back(0,0)
+    return ways
+
+print(signs_to_target([2,1,3,2],2))
+",O(2 ^ n)
+"def powerset(a):
+    res=[]
+    n=len(a)
+    def dfs(i, cur):
+        if i==n:
+            res.append(cur[:])
+            return
+        cur.append(a[i]); dfs(i+1, cur); cur.pop()
+        dfs(i+1, cur)
+    dfs(0,[])
+    return res
+
+print(len(powerset([1,2,3,4,5])))
+",O(2 ^ n)
+"def count_subsets(nums, target):
+    n=len(nums)
+    def go(i, s):
+        if i==n:
+            return 1 if s==target else 0
+        return go(i+1, s+nums[i]) + go(i+1, s)
+    return go(0,0)
+
+print(count_subsets([3,1,2,5,4],6))
+",O(2 ^ n)
+"def fib(k):
+    if k<=1:
+        return k
+    return fib(k-1)+fib(k-2)
+
+print(fib(20))
+",O(2 ^ n)
+"def solve(formula, vars):
+    best=[]
+    m=len(vars)
+    def dfs(i, assign):
+        if i==m:
+            env={vars[j]:assign[j] for j in range(m)}
+            if eval(formula, {}, env):
+                best.append(env)
+            return
+        assign.append(False); dfs(i+1, assign); assign.pop()
+        assign.append(True); dfs(i+1, assign); assign.pop()
+    dfs(0,[])
+    return best
+
+print(len(solve(""(x or y) and (not z)"", [""x"",""y"",""z""])))
+",O(2 ^ n)
+"def letter_case_permutations(s):
+    res=[]
+    n=len(s)
+    def dfs(i, cur):
+        if i==n:
+            res.append("""".join(cur))
+            return
+        c=s[i]
+        if c.isalpha():
+            cur.append(c.lower()); dfs(i+1, cur); cur.pop()
+            cur.append(c.upper()); dfs(i+1, cur); cur.pop()
+        else:
+            cur.append(c); dfs(i+1, cur); cur.pop()
+    dfs(0,[])
+    return res
+
+print(len(letter_case_permutations(""a1b2c"")))
+",O(2 ^ n)
+"def min_diff(nums):
+    total=sum(nums)
+    n=len(nums)
+    ans=[abs(total)]
+    def dfs(i, s):
+        if i==n:
+            d=abs(total-2*s)
+            if d<ans[0]:
+                ans[0]=d
+            return
+        dfs(i+1, s+nums[i])
+        dfs(i+1, s)
+    dfs(0,0)
+    return ans[0]
+
+print(min_diff([5,6,3,9,2,1]))
+",O(2 ^ n)
+"def ways(n):
+    if n<=1:
+        return 1
+    return ways(n-1)+ways(n-2)
+
+print(ways(22))
+",O(2 ^ n)
+"class SubsetSums:
+    def __init__(self, arr):
+        self.arr=arr
+    def __call__(self):
+        n=len(self.arr)
+        out=[]
+        def rec(i, acc):
+            if i==n:
+                out.append(acc)
+                return
+            rec(i+1, acc)
+            rec(i+1, acc+self.arr[i])
+        rec(0,0)
+        return out
+
+print(len(SubsetSums([1,2,3,4,5,6])()))
+",O(2 ^ n)
+"def gray(n):
+    if n==0:
+        return [""""]
+    prev=gray(n-1)
+    return [""0""+x for x in prev] + [""1""+x for x in reversed(prev)]
+
+print(len(gray(5)))
+",O(2 ^ n)
+"def max_subset_xor(nums):
+    n=len(nums)
+    best=0
+    def dfs(i, x):
+        nonlocal best
+        if i==n:
+            if x>best:
+                best=x
+            return
+        dfs(i+1, x)
+        dfs(i+1, x ^ nums[i])
+    dfs(0,0)
+    return best
+
+print(max_subset_xor([3,8,2,6,4,5]))
+",O(2 ^ n)
+"def binaries(n):
+    res=[]
+    def rec(i, cur):
+        if i==n:
+            res.append("""".join(cur))
+            return
+        cur.append(""0""); rec(i+1, cur); cur.pop()
+        cur.append(""1""); rec(i+1, cur); cur.pop()
+    rec(0,[])
+    return res
+
+print(len(binaries(10)))
+",O(2 ^ n)
+"def target_sum(nums, T):
+    n=len(nums)
+    cnt=0
+    def dfs(i, s):
+        nonlocal cnt
+        if i==n:
+            if s==T:
+                cnt+=1
+            return
+        dfs(i+1, s+nums[i])
+        dfs(i+1, s-nums[i])
+    dfs(0,0)
+    return cnt
+
+print(target_sum([1,1,1,1,1],3))
+",O(2 ^ n)
+"def find_subset(nums, target):
+    n=len(nums)
+    ans=None
+    def dfs(i, cur, s):
+        nonlocal ans
+        if ans is not None:
+            return
+        if i==n:
+            if s==target:
+                ans=cur[:]
+            return
+        cur.append(nums[i]); dfs(i+1, cur, s+nums[i]); cur.pop()
+        dfs(i+1, cur, s)
+    dfs(0,[],0)
+    return ans
+
+res=find_subset([2,4,6,10,1],12)
+print(f""{res}"")
+",O(2 ^ n)
+"def all_subsets(seq):
+    n=len(seq)
+    def rec(i):
+        if i==n:
+            yield ()
+            return
+        for tail in rec(i+1):
+            yield tail
+        for tail in rec(i+1):
+            yield (seq[i],)+tail
+    return list(rec(0))
+
+print(len(all_subsets([0,1,2,3,4,5,6])))
+",O(2 ^ n)

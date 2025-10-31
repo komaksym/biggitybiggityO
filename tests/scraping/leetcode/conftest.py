@@ -8,19 +8,20 @@ from src.scraping.leetcode_solutions.src.utils import MyDict
 @pytest.fixture
 def expected_raw_data() -> MyDict:
     """Expected result post files search"""
+
     return {
         "file_paths": [
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_utils/mock_files/mock_files2/distant-barcodes.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_utils/mock_files/mock_files2/distant-barcodes.py"
             ),
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_utils/mock_files/mock_files2/my-calendar-i.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_utils/mock_files/mock_files2/my-calendar-i.py"
             ),
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_utils/mock_files/mock_files1/split-concatenated-strings.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_utils/mock_files/mock_files1/split-concatenated-strings.py"
             ),
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_utils/mock_files/mock_files1/complete-binary-tree-inserter.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_utils/mock_files/mock_files1/complete-binary-tree-inserter.py"
             ),
         ],
         "files": [

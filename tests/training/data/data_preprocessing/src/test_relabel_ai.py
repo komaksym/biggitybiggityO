@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pandas as pd
 import pytest
-from datasets.preprocessing_scripts.scripts.relabel_ai import LLM, Audit
-from datasets.preprocessing_scripts.scripts.relabel_ai import read_data, save_data
+from data.preprocessing_scripts.scripts.relabel_ai import LLM, Audit
+from data.preprocessing_scripts.scripts.relabel_ai import read_data, save_data
 
 BASE_LOCATION: Path = Path(__file__).parent
 

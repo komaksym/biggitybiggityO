@@ -1,12 +1,11 @@
-from configs.config import checkpoint, training_args, DATASET_PATHS
-from evaluate import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics
-from model import set_model
-from transformers import Trainer, BitsAndBytesConfig, AutoModelForSequenceClassification
+from .configs.config import checkpoint, training_args, DATASET_PATHS
+from .evaluate import ConfusionMatrixCallback, RecallScoreCallback, compute_metrics
+from .model import set_model
+from transformers import Trainer, AutoModelForSequenceClassification
 from peft import LoraConfig, get_peft_model
-import torch
-from utils import setup_mlflow
+from .utils import setup_mlflow
 import pandas as pd
-from data import find_paths, generate_prompt, set_tokenizer, tokenize_data, label2id
+from .data import find_paths, generate_prompt, set_tokenizer, tokenize_data, label2id
 from datasets import Dataset
 
 

@@ -1,12 +1,12 @@
-from data import tokenize_data, generate_prompt, label2id
-from evaluate import compute_metrics
+from .data import tokenize_data, generate_prompt, label2id
+from .evaluate import compute_metrics
 from transformers import AutoTokenizer, Trainer
 from pathlib import Path
 from peft import PeftModel
-from model import set_model
+from .model import set_model
 import pandas as pd
 from datasets import Dataset
-from configs.config import checkpoint
+from .configs.config import checkpoint
 
 BASE_LOCATION: Path = Path(__file__).parent
 

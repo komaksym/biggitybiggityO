@@ -1,8 +1,5 @@
 import optuna
-import torch
-import wandb
-from evaluate import (
-    N_CLASSES,
+from .evaluate import (
     ConfusionMatrixCallback,
     RecallScoreCallback,
     compute_metrics,
@@ -11,17 +8,15 @@ from joblib import parallel_config
 from optuna.storages import RDBStorage
 from peft import LoraConfig, get_peft_model
 from transformers import (
-    AutoModel,
     AutoModelForSequenceClassification,
-    BitsAndBytesConfig,
     Trainer,
     TrainingArguments,
 )
 
-from configs.config import DATASET_PATHS
-from data import label2id, set_tokenizer
-from model import DeepseekV2ForSequenceClassification, set_model
-from train import load_data, preprocess_data, setup_model
+from .configs.config import DATASET_PATHS
+from .data import label2id, set_tokenizer
+from .model import DeepseekV2ForSequenceClassification, set_model
+from .train import load_data, preprocess_data, setup_model
 
 # Model
 checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"

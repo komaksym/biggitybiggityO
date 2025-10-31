@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import os
 import mlflow
-from configs.config import experiment_name
+from .configs.config import experiment_name
 
 
 def setup_mlflow():

@@ -52,16 +52,16 @@ def expected_raw_data() -> MyDict:
     return {
         "file_paths": [
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files2/distant-barcodes.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_parse/mock_files/mock_files2/distant-barcodes.py"
             ),
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files2/my-calendar-i.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_parse/mock_files/mock_files2/my-calendar-i.py"
             ),
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files1/split-concatenated-strings.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_parse/mock_files/mock_files1/split-concatenated-strings.py"
             ),
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
             ),
         ],
         "files": [
@@ -91,10 +91,10 @@ def expected_parsed_data() -> tuple[dict[str, list[str]], list[Path]]:
         },
         [
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files2/my-calendar-i.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_parse/mock_files/mock_files2/my-calendar-i.py"
             ),
             Path(
-                "/Users/koval/dev/biggitybiggityO/src/scraping/leetcode_solutions/tests/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
+                "/Users/koval/dev/biggitybiggityO/tests/scraping/leetcode/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
             ),
         ],
     )

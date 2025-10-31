@@ -9,7 +9,7 @@ from transformers import (
     BitsAndBytesConfig
 )
 from transformers.modeling_outputs import SequenceClassifierOutput
-from evaluate import N_CLASSES
+from .evaluate import N_CLASSES
 
 
 # Model loading

@@ -1,6 +1,6 @@
 import pytest
-from datasets.preprocessing_scripts.scripts.split import DatasetSplitter
-from datasets.preprocessing_scripts.scripts.utils import read_data
+from data.preprocessing_scripts.scripts.split import DatasetSplitter
+from data.preprocessing_scripts.scripts.utils import read_data
 from pathlib import Path
 import pandas as pd
 

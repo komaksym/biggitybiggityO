@@ -1,6 +1,5 @@
 import pytest
 from src.training.code.scripts.evaluate import hc_score, compute_metrics
-import torch
 import numpy as np
 from transformers import EvalPrediction
 
@@ -17,6 +16,12 @@ from transformers import EvalPrediction
     ],
 )
 def test_hc_score(y_true, preds, result):
+    """Parametrized test for `hc_score`.
+
+    Verifies hierarchical confusion score for known input arrays and that
+    mismatched-length inputs raise an AssertionError.
+    """
+
     assert hc_score(y_true, preds) == result
 
     # Not equal lengths, should raise AssertionError
@@ -41,6 +46,12 @@ def mock_eval_preds():
         ]
     )
 
+    """Create a mock `EvalPrediction` with logits and labels for testing.
+
+    The logits and label ids are deterministic arrays used to validate
+    `compute_metrics` behavior.
+    """
+
     labels = np.array([2, 2, 2, 3, 1, 6, 2, 2, 2, 2])
 
     return EvalPrediction(predictions=logits, label_ids=labels)
@@ -48,6 +59,12 @@ def mock_eval_preds():
 
 @pytest.fixture
 def expected_metrics():
+    """Return the expected metrics dictionary for the mock predictions.
+
+    This includes accuracy, macro F1, per-class recall mapping and
+    hierarchy score as produced by `compute_metrics`.
+    """
+
     return {
         "accuracy": 0.7,
         "f1_macro": 0.38095238095238093,
@@ -65,6 +82,11 @@ def expected_metrics():
 
 
 def test_compute_metrics(mock_eval_preds, expected_metrics):
+    """Run `compute_metrics` on the mock EvalPrediction and compare results.
+
+    Asserts the returned metric dict exactly matches `expected_metrics`.
+    """
+
     got_metrics = compute_metrics(mock_eval_preds)
 
     assert got_metrics == expected_metrics

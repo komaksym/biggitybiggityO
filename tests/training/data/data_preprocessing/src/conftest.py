@@ -19,4 +19,10 @@ def dummy_source_file_path() -> Path:
 
 @pytest.fixture
 def dummy_target_file_path() -> Path:
+    """Return Path to the dummy target CSV file used by tests.
+
+    The file is located in the sibling `dummy_data` directory and provides
+    a small target dataset used by preprocessing unit tests.
+    """
+
     return BASE_LOCATION.parent / "dummy_data/dummy_target_data.csv"

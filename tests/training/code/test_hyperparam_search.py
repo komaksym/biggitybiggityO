@@ -5,8 +5,10 @@ import torch
 import pytest
 
 
+support = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
+
 @pytest.mark.skipif(
-    not torch.cuda.is_available(), reason="Full hyperparameter search requires a GPU"
+    not support, reason="Full hyperparameter search requires a GPU"
 )
 def test_objective():
     study = optuna.create_study(study_name="test_hyperparam_search", direction="maximize", load_if_exists=True)

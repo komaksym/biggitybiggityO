@@ -38,7 +38,7 @@ def main():
     # Specify the test set path
     try:
         test_set_path = BASE_LOCATION.parents[3] / "data/data/merges/codecomplex+neetcode+leetcode_clean/full_no_exponential+factorial/test_set.csv"
-    except:
+    except ValueError:
         raise ValueError(f"Such path doesn't exist: {test_set_path}")
 
     # Read the test set

@@ -9,16 +9,32 @@ BASE_LOCATION: Path = Path(__file__).parent
 
 @pytest.fixture
 def dummy_train_set_path() -> Path:
+    """Return Path to the dummy train set CSV used by the splitter test.
+
+    The file is placed next to the test module under `dummy_data`.
+    """
+
     return BASE_LOCATION / "dummy_data/dummy_train_set.csv"
 
 
 @pytest.fixture
 def dummy_test_set_path() -> Path:
+    """Return Path to the dummy test set CSV used by the splitter test.
+
+    The file is placed next to the test module under `dummy_data`.
+    """
+
     return BASE_LOCATION / "dummy_data/dummy_test_set.csv"
 
 
 @pytest.fixture
 def expected_split_datasets() -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Build and return expected train and test pandas DataFrames.
+
+    These DataFrames represent the expected output of splitting the
+    dummy source dataset into train and test sets.
+    """
+
     train_set = pd.DataFrame(
         {
             "code": [
@@ -46,7 +62,12 @@ def test_DatasetSplitter(
     dummy_test_set_path: Path,
     expected_split_datasets: tuple[pd.DataFrame, pd.DataFrame],
 ) -> None:
-    """Test DatasetSplitter and check if it splits correctly into train/test sets."""
+    """Test DatasetSplitter and check if it splits correctly into train/test sets.
+
+    Instantiates the `DatasetSplitter` with dummy paths, runs it, asserts
+    that output files exist and their contents match the expected DataFrames.
+    Finally, it removes the generated files.
+    """
 
     splitter = DatasetSplitter(dummy_source_file_path, dummy_train_set_path, dummy_test_set_path)
     splitter.run()

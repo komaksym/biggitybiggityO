@@ -14,12 +14,14 @@ from .evaluate import N_CLASSES
 
 # Model loading
 def set_model(checkpoint, tokenizer, ModelType=AutoModelForSequenceClassification):
+    dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_compute_dtype=dtype,
         bnb_4bit_use_double_quant=True,
-        bnb_4bit_quant_storage=torch.bfloat16,
+        bnb_4bit_quant_storage=dtype,
     )
 
     # Load a pretrained model

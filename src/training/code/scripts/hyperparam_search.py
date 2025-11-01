@@ -12,6 +12,7 @@ from transformers import (
     Trainer,
     TrainingArguments,
 )
+import torch
 
 from .configs.config import DATASET_PATHS
 from .data import label2id, set_tokenizer
@@ -69,7 +70,7 @@ def objective(trial):
         output_dir=f"hps_results/{checkpoint}/",
         save_strategy="no",
         learning_rate=hps_learning_rate,  # Testing
-        bf16=True,
+        bf16=True if torch.cuda.is_bf16_supported() else False,
         num_train_epochs=3,
         max_grad_norm=0.3,  # Per QLoRA paper recommendation
         warmup_ratio=hps_warmup_ratio,  # Per QLoRA paper recommendation

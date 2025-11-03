@@ -45,25 +45,16 @@ def objective(trial):
     batch_size = 4
     gradient_accumulation_steps_ = hps_batch_size // batch_size
 
-    # Load the pretrained model
-    base_model = set_model(checkpoint, tokenizer)
+    # Set up tokenizer
+    tokenizer, data_collator = set_tokenizer(checkpoint)
 
-    # Apply custom classification head for Deepseek v2 architecture
-    #base_model = DeepseekV2ForSequenceClassification(base_model, base_model.config)
+    # Prep the data
+    train_set, eval_set = load_data(DATASET_PATHS)
+    # Preprocess the data
+    train_set, eval_set = preprocess_data(train_set, eval_set, tokenizer, label2id)
 
-    # LoRA config
-    peft_config = LoraConfig(
-        r=hps_lora_rank,
-        lora_alpha=hps_lora_alpha,
-        # target_modules = ['q_proj', 'v_proj'], # Qwen
-        target_modules="all-linear",  # Heavy, universal
-        lora_dropout=hps_lora_dropout,
-        bias="none",
-        task_type="SEQ_CLS",  # might not work with this on
-    )
-
-    # LoRA
-    peft_model = get_peft_model(model=base_model, peft_config=peft_config)
+    # Setup model
+    model = setup_model(tokenizer, checkpoint)
 
     # Training args
     training_args = TrainingArguments(
@@ -106,18 +97,7 @@ def objective(trial):
 
 
 if __name__ == "__main__":
-    # Set up tokenizer
-    tokenizer, data_collator = set_tokenizer(checkpoint)
-
-    # Prep the data
-    train_set, eval_set = load_data(DATASET_PATHS)
-    # Preprocess the data
-    train_set, eval_set = preprocess_data(train_set, eval_set, tokenizer, label2id)
-
-    # Setup model
-    model = setup_model(tokenizer, checkpoint)
-
-    # Run each study in it's own python subprocess to avoid segfaults with bitsandbytes
+        # Run each study in it's own python subprocess to avoid segfaults with bitsandbytes
     with parallel_config("multiprocessing"):
         # Create study
         study = optuna.create_study(

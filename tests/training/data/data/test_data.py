@@ -50,7 +50,7 @@ def tokenizer_path():
     The directory contains the tokenizer files for the 'deepseek-coder-1.3b-base' model.
     """
 
-    return BASE_LOCATION.parents[3] / "src/training/models/best_model/deepseek-ai/deepseek-coder-1.3b-base/"
+    return "deepseek-ai/deepseek-coder-1.3b-base/"
 
 
 @pytest.fixture(scope="module")

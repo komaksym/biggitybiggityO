@@ -50,7 +50,7 @@ def tokenizer_path():
     The directory contains the tokenizer files for the 'deepseek-coder-1.3b-base' model.
     """
 
-    return "deepseek-ai/deepseek-coder-1.3b-base/"
+    return "deepseek-ai/deepseek-coder-1.3b-base"
 
 
 @pytest.fixture(scope="module")
@@ -320,8 +320,6 @@ def test_tokenize_data(df, expected_data, tokenizer):
     got = data_to_test.map(
         lambda x: tokenize_data(x, tokenizer, label2id), batched=True, remove_columns=data_to_test.column_names
     )
-
-    breakpoint()
 
     assert got['input_ids'] == expected_data['input_ids'] 
     assert got['attention_mask'] == expected_data['attention_mask'] 

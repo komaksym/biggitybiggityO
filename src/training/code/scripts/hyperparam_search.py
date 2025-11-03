@@ -12,6 +12,7 @@ from transformers import (
     Trainer,
     TrainingArguments,
 )
+#import wandb
 import torch
 
 from .configs.config import DATASET_PATHS
@@ -52,6 +53,8 @@ def objective(trial):
     train_set, eval_set = load_data(DATASET_PATHS)
     # Preprocess the data
     train_set, eval_set = preprocess_data(train_set, eval_set, tokenizer, label2id)
+    # Perform HPS only on 10% of the data
+    train_set, eval_set = train_set.sample(frac=0.1), eval_set.sample(frac=0.1)
 
     # Setup model
     model = setup_model(tokenizer, checkpoint)
@@ -67,7 +70,7 @@ def objective(trial):
         warmup_ratio=hps_warmup_ratio,  # Per QLoRA paper recommendation
         weight_decay=hps_weight_decay,
         lr_scheduler_type="cosine",
-        report_to="wandb",
+        report_to="none",
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=batch_size,
         gradient_accumulation_steps=gradient_accumulation_steps_,
@@ -78,7 +81,7 @@ def objective(trial):
 
     # Trainer
     trainer = Trainer(
-        model=peft_model,
+        model=model,
         args=training_args,
         train_dataset=train_set,
         eval_dataset=eval_set,

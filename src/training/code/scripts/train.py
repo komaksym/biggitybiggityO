@@ -65,7 +65,7 @@ def setup_model(tokenizer, checkpoint, deepseekv2=False):
         base_model = set_model(checkpoint, tokenizer, AutoModel)
 
         # Wrap custom sequence classification head on top for deepseek v2 architecture (if using deepseek v2)
-        DeepseekV2ForSequenceClassification(base_model, base_model.config)
+        base_model=DeepseekV2ForSequenceClassification(base_model, base_model.config)
         # Apply LoRA
         peft_model = get_peft_model(model=base_model, peft_config=peft_config)
 

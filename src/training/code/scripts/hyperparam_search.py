@@ -33,11 +33,8 @@ def objective(trial):
     # Hyperparameters grid to search
     hps_learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4)
     hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [8, 16, 32])
-    trial.suggest_float("lora_dropout", 0, 0.1)
     hps_weight_decay = trial.suggest_float("weight_decay", 0.01, 0.1)
     hps_warmup_ratio = trial.suggest_float("warmup_ratio", 0.01, 0.1)
-    trial.suggest_categorical("r", [32, 64, 128])
-    trial.suggest_categorical("lora_alpha", [32, 64, 128])
 
     # Augmenting big batch size with gradient accum
     batch_size = 4

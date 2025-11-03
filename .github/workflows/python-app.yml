@@ -34,7 +34,7 @@ jobs:
         if [ -f uv.lock ]; then 
           uv sync
         else
-          uv add flake8 pytest
+          uv add ruff pytest
           uv lock
           uv sync
         fi

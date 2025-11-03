@@ -81,7 +81,23 @@ def test_search_files(folder_path, expected_raw_data) -> None: # 1
 
 @pytest.fixture
 def expected_parsed_data() -> tuple[dict[str, list[str]], list[Path]]:
-    return ({'code': ['\nimport collections\nimport itertools\n\n\nclass Solution(object):\n    def rearrangeBarcodes(self, barcodes):\n        k = 2\n        cnts = collections.Counter(barcodes)\n        bucket_cnt = max(cnts.values())\n        result = [0]*len(barcodes)\n        i = (len(barcodes)-1)%k\n        for c in itertools.chain((c for c, v in cnts.items() if v == bucket_cnt), (c for c, v in cnts.items() if v != bucket_cnt)):\n            for _ in range(cnts[c]):\n                result[i] = c\n                i += k\n                if i >= len(result):\n                    i = (i-1)%k\n        return result\n\nimport collections\n\n\nclass Solution2(object):\n    def rearrangeBarcodes(self, barcodes):\n        cnts = collections.Counter(barcodes)\n        sorted_cnts = [[v, k] for k, v in cnts.items()]\n        sorted_cnts.sort(reverse=True)\n\n        i = 0\n        for v, k in sorted_cnts:\n            for _ in range(v):\n                barcodes[i] = k\n                i += 2\n                if i >= len(barcodes):\n                    i = 1\n        return barcodes\n', '\nclass Solution(object):\n    def splitLoopedString(self, strs):\n        tmp = []\n        for s in strs:\n            tmp += max(s, s[::-1])\n        s = "".join(tmp)\n\n        result, st = "a", 0\n        for i in range(len(strs)):\n            body = "".join([s[st + len(strs[i]):], s[0:st]])\n            for p in strs[i], strs[i][::-1]:\n                for j in range(len(strs[i])):\n                    if p[j] >= result[0]:\n                        result = max(result, "".join([p[j:], body, p[:j]]))\n            st += len(strs[i])\n        return result\n\n'], 'label': ['n', 'n^2']}, [Path('/tests/scraping/leetcode/test_parse/mock_files/mock_files2/my-calendar-i.py'), Path('/tests/scraping/leetcode/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py')])
+    return (
+        {
+            "code": [
+                '\nclass Solution(object):\n    def splitLoopedString(self, strs):\n        tmp = []\n        for s in strs:\n            tmp += max(s, s[::-1])\n        s = "".join(tmp)\n\n        result, st = "a", 0\n        for i in range(len(strs)):\n            body = "".join([s[st + len(strs[i]):], s[0:st]])\n            for p in strs[i], strs[i][::-1]:\n                for j in range(len(strs[i])):\n                    if p[j] >= result[0]:\n                        result = max(result, "".join([p[j:], body, p[:j]]))\n            st += len(strs[i])\n        return result\n\n',
+                "\nimport collections\nimport itertools\n\n\nclass Solution(object):\n    def rearrangeBarcodes(self, barcodes):\n        k = 2\n        cnts = collections.Counter(barcodes)\n        bucket_cnt = max(cnts.values())\n        result = [0]*len(barcodes)\n        i = (len(barcodes)-1)%k\n        for c in itertools.chain((c for c, v in cnts.items() if v == bucket_cnt), (c for c, v in cnts.items() if v != bucket_cnt)):\n            for _ in range(cnts[c]):\n                result[i] = c\n                i += k\n                if i >= len(result):\n                    i = (i-1)%k\n        return result\n\nimport collections\n\n\nclass Solution2(object):\n    def rearrangeBarcodes(self, barcodes):\n        cnts = collections.Counter(barcodes)\n        sorted_cnts = [[v, k] for k, v in cnts.items()]\n        sorted_cnts.sort(reverse=True)\n\n        i = 0\n        for v, k in sorted_cnts:\n            for _ in range(v):\n                barcodes[i] = k\n                i += 2\n                if i >= len(barcodes):\n                    i = 1\n        return barcodes\n",
+            ],
+            "label": ["n^2", "n"],
+        },
+        [
+            Path(
+                "/tests/scraping/leetcode/test_parse/mock_files/mock_files1/complete-binary-tree-inserter.py"
+            ),
+            Path(
+                "/tests/scraping/leetcode/test_parse/mock_files/mock_files2/my-calendar-i.py"
+            ),
+        ],
+    )
 
 
 def test_parse_data(folder_path, expected_parsed_data) -> None: # 2

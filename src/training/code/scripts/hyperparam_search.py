@@ -51,10 +51,10 @@ def objective(trial):
 
     # Prep the data
     train_set, eval_set = load_data(DATASET_PATHS)
-    # Preprocess the data
-    train_set, eval_set = preprocess_data(train_set, eval_set, tokenizer, label2id)
     # Perform HPS only on 10% of the data
     train_set, eval_set = train_set.sample(frac=0.1), eval_set.sample(frac=0.1)
+    # Preprocess the data
+    train_set, eval_set = preprocess_data(train_set, eval_set, tokenizer, label2id)
 
     # Setup model
     model = setup_model(tokenizer, checkpoint)

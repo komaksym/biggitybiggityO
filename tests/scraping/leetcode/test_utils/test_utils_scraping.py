@@ -13,7 +13,7 @@ def src_files_path() -> Path:
     return BASE_LOCATION / "mock_files/"
 
 
-def test_search_files(src_files_path, expected_raw_data) -> None:
+def test_search_files(src_files_path, expected_raw_data) -> None:  # 3
     """Tests search files"""
     got: MyDict = search_files(src_files_path)
 

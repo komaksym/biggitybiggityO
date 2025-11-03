@@ -48,7 +48,7 @@ def preprocess_data(train_set, eval_set, tokenizer, label2id):
 
     return train_set, eval_set
 
-def setup_model(tokenizer, checkpoint):
+def setup_model(tokenizer, checkpoint, deepseekv2=False):
     # LoRA config
     peft_config = LoraConfig(
         r=32,
@@ -60,13 +60,23 @@ def setup_model(tokenizer, checkpoint):
         task_type="SEQ_CLS",  # might not work with this on
     )
 
-    # Load the model
-    base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
+    if deepseekv2:
+        # Load the model
+        base_model = set_model(checkpoint, tokenizer, AutoModel)
 
-    # Wrap custom sequence classification head on top for deepseek v2 architecture (if using deepseek v2)
-    #model = DeepseekV2ForSequenceClassification(model, model.config)
-    # Apply LoRA
-    peft_model = get_peft_model(model=base_model, peft_config=peft_config)
+        # Wrap custom sequence classification head on top for deepseek v2 architecture (if using deepseek v2)
+        model = DeepseekV2ForSequenceClassification(model, model.config)
+        # Apply LoRA
+        peft_model = get_peft_model(model=base_model, peft_config=peft_config)
+
+    else:
+        # Load the model
+        base_model = set_model(checkpoint, tokenizer, AutoModelForSequenceClassification)
+
+        # Wrap custom sequence classification head on top for deepseek v2 architecture (if using deepseek v2)
+        #model = DeepseekV2ForSequenceClassification(model, model.config)
+        # Apply LoRA
+        peft_model = get_peft_model(model=base_model, peft_config=peft_config)
 
     # print(f"Model: {model}")
     # print(f"Model config: {model.config}")

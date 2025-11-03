@@ -18,7 +18,7 @@ def search_files(folder_path: Path) -> MyDict:
     raw_data: MyDict = {"file_paths": [], "files": []}
 
     for file_path in folder_path.glob("**/*.py"):
-        raw_data["file_paths"].append(file_path)
+        raw_data["file_paths"].append(Path(str(file_path).split("biggitybiggityO")[-1]))
         raw_data["files"].append(file_path.read_text())
 
     return raw_data

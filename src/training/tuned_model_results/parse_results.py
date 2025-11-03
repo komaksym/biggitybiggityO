@@ -3,10 +3,8 @@
 - Read the corresponding .json files
 - Extract the paths into a .csv file and make them as keys, the values from the .json make as values
 """
-from pathlib import Path, PurePath
-import shutil
+from pathlib import Path
 import json
-import pdb
 import pandas as pd
 
 # Models leaderboard

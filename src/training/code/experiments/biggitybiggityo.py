@@ -4,8 +4,6 @@
 
 # Imports
 import os
-import pdb
-from inspect import signature
 from pathlib import Path
 
 import numpy as np
@@ -13,12 +11,11 @@ import torch
 import torch.nn as nn
 from accelerate import PartialState
 from peft import LoraConfig, get_peft_model
-from sklearn.metrics import f1_score, make_scorer, recall_score, confusion_matrix
+from sklearn.metrics import f1_score, recall_score, confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from transformers import (
     AutoConfig,
     AutoModel,
-    AutoModelForCausalLM,
     AutoModelForSequenceClassification,
     AutoTokenizer,
     BitsAndBytesConfig,
@@ -29,7 +26,7 @@ from transformers import (
 )
 from transformers.modeling_outputs import SequenceClassifierOutput
 
-from data import Dataset, load_dataset
+from data import load_dataset
 
 
 BASE_LOCATION: Path = Path(__file__).parent

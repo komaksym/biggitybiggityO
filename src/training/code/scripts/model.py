@@ -3,7 +3,6 @@ import torch.nn as nn
 from accelerate import PartialState
 from transformers import (
     AutoConfig,
-    AutoModel,
     AutoModelForSequenceClassification,
     PreTrainedModel,
     BitsAndBytesConfig

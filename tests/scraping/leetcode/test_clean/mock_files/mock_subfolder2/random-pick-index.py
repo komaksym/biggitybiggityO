@@ -18,7 +18,6 @@ class Solution(object):
 
 # Time:  ctor: O(1)
 #        pick: O(n)
-from random import randint
 
 
 class Solution_TLE(object):

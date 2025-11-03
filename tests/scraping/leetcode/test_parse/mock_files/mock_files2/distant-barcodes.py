@@ -19,7 +19,6 @@ class Solution(object):
                     i = (i-1)%k
         return result
 
-import collections
 
 
 class Solution2(object):

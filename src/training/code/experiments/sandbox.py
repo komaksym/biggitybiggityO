@@ -1,29 +1,19 @@
-import os
-import pdb
-from inspect import signature
 
 import numpy as np
 import torch
-import torch.nn as nn
 from accelerate import PartialState
-from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
-from sklearn.metrics import accuracy_score, confusion_matrix, f1_score, make_scorer, recall_score
-from sklearn.preprocessing import LabelEncoder
+from peft import LoraConfig, get_peft_model
+from sklearn.metrics import confusion_matrix, f1_score, recall_score
 from transformers import (
-    AutoConfig,
-    AutoModel,
-    AutoModelForCausalLM,
     AutoModelForSequenceClassification,
     AutoTokenizer,
     BitsAndBytesConfig,
     DataCollatorWithPadding,
-    PreTrainedModel,
     Trainer,
     TrainingArguments,
 )
-from transformers.modeling_outputs import SequenceClassifierOutput
 
-from data import Dataset, load_dataset
+from data import load_dataset
 
 # Quantization configuration (unchanged)
 quant_config = BitsAndBytesConfig(

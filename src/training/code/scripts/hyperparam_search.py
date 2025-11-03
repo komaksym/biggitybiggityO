@@ -6,9 +6,7 @@ from .evaluate import (
 )
 from joblib import parallel_config
 from optuna.storages import RDBStorage
-from peft import LoraConfig, get_peft_model
 from transformers import (
-    AutoModelForSequenceClassification,
     Trainer,
     TrainingArguments,
 )
@@ -17,7 +15,6 @@ import torch
 
 from .configs.config import DATASET_PATHS
 from .data import label2id, set_tokenizer
-from .model import DeepseekV2ForSequenceClassification, set_model
 from .train import load_data, preprocess_data, setup_model
 
 # Model
@@ -36,11 +33,11 @@ def objective(trial):
     # Hyperparameters grid to search
     hps_learning_rate = trial.suggest_float("learning_rate", 2e-5, 4e-4)
     hps_batch_size = trial.suggest_categorical("per_device_train_batch_size", [8, 16, 32])
-    hps_lora_dropout = trial.suggest_float("lora_dropout", 0, 0.1)
+    trial.suggest_float("lora_dropout", 0, 0.1)
     hps_weight_decay = trial.suggest_float("weight_decay", 0.01, 0.1)
     hps_warmup_ratio = trial.suggest_float("warmup_ratio", 0.01, 0.1)
-    hps_lora_rank = trial.suggest_categorical("r", [32, 64, 128])
-    hps_lora_alpha = trial.suggest_categorical("lora_alpha", [32, 64, 128])
+    trial.suggest_categorical("r", [32, 64, 128])
+    trial.suggest_categorical("lora_alpha", [32, 64, 128])
 
     # Augmenting big batch size with gradient accum
     batch_size = 4

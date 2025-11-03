@@ -14,17 +14,6 @@ support = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     not support, reason="Full hyperparameter search requires a GPU"
 )
 def test_objective():
-    # Set up tokenizer
-    tokenizer, data_collator = set_tokenizer(checkpoint)
-
-    # Prep the data
-    train_set, eval_set = load_data(DATASET_PATHS)
-    # Preprocess the data
-    train_set, eval_set = preprocess_data(train_set, eval_set, tokenizer, label2id)
-
-    # Setup model
-    model = setup_model(tokenizer, checkpoint)
-
     study = optuna.create_study(study_name="test_hyperparam_search", direction="maximize", load_if_exists=True)
     study.optimize(objective, n_trials=1)
 

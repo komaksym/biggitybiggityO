@@ -1,4 +1,4 @@
-from .data import label2id
+from .data import id2label
 from transformers import AutoTokenizer 
 import torch
 from pathlib import Path
@@ -6,6 +6,7 @@ from peft import PeftModel
 from .model import set_model
 import re
 from .configs.config import checkpoint 
+import numpy as np
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -67,10 +68,15 @@ def data_preprocessing(inputs):
 def predict(inputs, model, tokenizer):
     """Predict and output the class"""
 
-    tokenized_inputs = tokenizer(inputs)
-    tokenized_inputs = {k: torch.tensor(v, device=model.device) for k, v in tokenized_inputs.items()}
-    outputs = model(**tokenized_inputs)
-    breakpoint()
+    inputs = tokenizer(inputs, return_tensors="pt", padding=True, truncation=True).to(device=model.device)
+
+    # Predicting & decoding inputs
+    preds = model(**inputs)
+    logits = preds.logits[0].to(dtype=torch.float32).cpu().detach().numpy()
+    label_id = np.ravel(np.argmax(logits, axis=-1))[0]
+    pred = id2label[label_id]
+
+    return pred
 
 
 def main():

@@ -106,7 +106,8 @@ def main():
             return o2n_fibonacci(n-1) + o2n_fibonacci(n-2)
     """
     inputs = data_preprocessing(inputs)
-    outputs = predict(inputs, model, tokenizer)
+    output = predict(inputs, model, tokenizer)
+    print(output)
 
 
 if __name__ == "__main__":

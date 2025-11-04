@@ -1,4 +1,4 @@
-from .data import generate_prompt, label2id
+from .data import label2id
 from transformers import AutoTokenizer 
 from pathlib import Path
 from peft import PeftModel
@@ -12,24 +12,24 @@ BASE_LOCATION: Path = Path(__file__).parent
 def data_preprocessing(inputs):
     """Preprocesses data and applies instruction prompt"""
 
-    def remove_comments(code_sample: str) -> str:
+    def remove_comments(inputs: str) -> str:
         """Remove in-code comments."""
 
         return re.sub(
             r"(#.+?$)|([\"']{3,}.+?[\"']{3,})",
             "",
-            code_sample,
+            inputs,
             flags=re.MULTILINE | re.DOTALL,
         )
 
-    def strip_empty_lines(code_sample: str) -> str:
+    def strip_empty_lines(inputs: str) -> str:
         """
         Remove consecutive empty lines and keep only 1 between code lines.
         """
 
         filtered_code: list[str] = []
 
-        for line in code_sample.split("\n"):
+        for line in inputs.split("\n"):
             line: str = line.rstrip()
 
             if line == "":
@@ -43,44 +43,62 @@ def data_preprocessing(inputs):
 
         return "\n".join(filtered_code)
     
-    inputs = remove_comments(inputs)
-    inputs = strip_empty_lines(inputs)
-    print(inputs)
+    def generate_prompt(inputs):
+        """Defines prompt schema for instruction tuning"""
+
+        inputs = f"""
+                Classify the code snippet into: O(1), O(logn), O(n), O(nlogn),
+                O(n ^ 2), O(n ^ 3), np. And return the answer as the corresponding
+                    big O time complexity label.
+                Code: {inputs}"""
+
+        return inputs
     
+    # Preprocess (remove comments)
+    inputs = remove_comments(inputs)
+    # Remove empty lines
+    inputs = strip_empty_lines(inputs)
+    # Generate a prompt
+    inputs = generate_prompt(inputs)
+    return inputs
 
 
-def predict(input):
+def predict(inputs, model, tokenizer):
     """Predict and output the class"""
 
-    pass
+    tokenized_inputs = tokenizer(inputs)
+    outputs = model(**tokenized_inputs)
+    breakpoint()
 
 
 def main():
     ## Path for the pretrained model
-    #pretrained_path = (
-        #BASE_LOCATION.parents[1] / "models/best_model/deepseek-ai/deepseek-coder-1.3b-base/"
-    #)
+    pretrained_path = (
+        BASE_LOCATION.parents[1] / "models/deepseek-ai/deepseek-coder-1.3b-base/"
+    )
+    assert pretrained_path.exists(), "Pretrained checkpoint does not exist"
 
-    ## Loading pretrained tokenizer and model
-    #tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
-    ## Base model
-    #base_model = set_model(checkpoint, tokenizer)
-    ## Load pretrained LoRA adapters on top
-    #model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
+    # Loading pretrained tokenizer and model
+    tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
+    # Base model
+    base_model = set_model(checkpoint, tokenizer)
+    # Load pretrained LoRA adapters on top
+    model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
 
-    ## Enable model eval mode to turn off dropout, grads, etc.
-    #model.eval()
+    # Enable model eval mode to turn off dropout, grads, etc.
+    model.eval()
     
     inputs = """"
     # Sum of a Fibonacci series up to the nth term
-def o2n_fibonacci(n):
-'''Comments'''
-    if n<2: # Comments
-        return n #Comments	
-    print("hello")
-    return o2n_fibonacci(n-1) + o2n_fibonacci(n-2)
+        def o2n_fibonacci(n):
+        '''Comments'''
+            if n<2: # Comments
+                return n #Comments	
+            print("hello")
+            return o2n_fibonacci(n-1) + o2n_fibonacci(n-2)
     """
-    data_preprocessing(inputs)
+    inputs = data_preprocessing(inputs)
+    outputs = predict(inputs, model, tokenizer)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,11 @@
 from .data import label2id
 from transformers import AutoTokenizer 
+import torch
 from pathlib import Path
 from peft import PeftModel
 from .model import set_model
 import re
-from .configs.config import checkpoint
+from .configs.config import checkpoint 
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -67,6 +68,7 @@ def predict(inputs, model, tokenizer):
     """Predict and output the class"""
 
     tokenized_inputs = tokenizer(inputs)
+    tokenized_inputs = {k: torch.tensor(v, device=model.device) for k, v in tokenized_inputs.items()}
     outputs = model(**tokenized_inputs)
     breakpoint()
 

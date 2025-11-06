@@ -64,22 +64,7 @@ def data_preprocessing(inputs):
     inputs = generate_prompt(inputs)
     return inputs
 
-
-def predict(inputs, model, tokenizer):
-    """Predict and output the class"""
-
-    inputs = tokenizer(inputs, return_tensors="pt", padding=True, truncation=True).to(device=model.device)
-
-    # Predicting & decoding inputs
-    preds = model(**inputs)
-    logits = preds.logits[0].to(dtype=torch.float32).cpu().detach().numpy()
-    label_id = np.ravel(np.argmax(logits, axis=-1))[0]
-    pred = id2label[label_id]
-
-    return pred
-
-
-def main():
+def load_model_n_tokenizer():
     ## Path for the pretrained model
     pretrained_path = (
         BASE_LOCATION.parents[1] / "models/deepseek-ai/deepseek-coder-1.3b-base/"
@@ -95,7 +80,31 @@ def main():
 
     # Enable model eval mode to turn off dropout, grads, etc.
     model.eval()
-    
+
+    return model, tokenizer
+
+def predict(inputs):
+    """Predict and output the class"""
+
+    # Load model and tokenizer
+    model, tokenizer = load_model_n_tokenizer()
+
+    # Preprocess the data
+    inputs = data_preprocessing(inputs)
+
+    # Run the pipeline
+    inputs = tokenizer(inputs, return_tensors="pt", padding=True, truncation=True).to(device=model.device)
+
+    # Predicting & decoding inputs
+    preds = model(**inputs)
+    logits = preds.logits[0].to(dtype=torch.float32).cpu().detach().numpy()
+    label_id = np.ravel(np.argmax(logits, axis=-1))[0]
+    pred = id2label[label_id]
+
+    return pred
+
+
+def main():
     inputs = """"
     # Sum of a Fibonacci series up to the nth term
         def o2n_fibonacci(n):
@@ -105,8 +114,7 @@ def main():
             print("hello")
             return o2n_fibonacci(n-1) + o2n_fibonacci(n-2)
     """
-    inputs = data_preprocessing(inputs)
-    output = predict(inputs, model, tokenizer)
+    output = predict(inputs)
     print(output)
 
 

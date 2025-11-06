@@ -72,7 +72,7 @@ def data_preprocessing(inputs):
 def load_model_n_tokenizer():
     ## Path for the pretrained model
     pretrained_path = (
-        BASE_LOCATION.parents[1] / "training/models/deepseek-ai/deepseek-coder-1.3b-base/"
+        BASE_LOCATION.parents[1] / "models/deepseek-ai/deepseek-coder-1.3b-base/"
     )
     assert pretrained_path.exists(), "Pretrained checkpoint does not exist"
 
@@ -120,7 +120,7 @@ def main():
             return o2n_fibonacci(n-1) + o2n_fibonacci(n-2)
     """
     output = predict(inputs)
-    print(output)
+    print(f"Label: {output}")
 
 
 if __name__ == "__main__":

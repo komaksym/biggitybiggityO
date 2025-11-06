@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biggitybiggityO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 48px;
+            max-width: 700px;
+            width: 100%;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #718096;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 8px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            resize: vertical;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            margin-top: 24px;
+            padding: 16px;
+            border-radius: 12px;
+            background: #f0fff4;
+            border: 2px solid #9ae6b4;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: #22543d;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .result-value {
+            font-size: 24px;
+            color: #22543d;
+            font-weight: 700;
+        }
+
+        .error {
+            background: #fff5f5;
+            border-color: #fc8181;
+        }
+
+        .error .result-label,
+        .error .result-value {
+            color: #c53030;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>biggitybiggityO</h1>
+        <p class="subtitle">python code time complexity classifier</p>
+        
+        <form id="complexityForm">
+            <div class="form-group">
+                <label for="codeInput">Enter Python Code:</label>
+                <textarea 
+                    id="codeInput" 
+                    name="code" 
+                    placeholder="def example_function(n):&#10;    for i in range(n):&#10;        print(i)"
+                    required
+                ></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submitBtn">
+                Analyze Complexity
+            </button>
+        </form>
+
+        <div id="result" class="result">
+            <div class="result-label">Time Complexity:</div>
+            <div class="result-value" id="resultValue"></div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('complexityForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const resultDiv = document.getElementById('result');
+        const resultValue = document.getElementById('resultValue');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const code = document.getElementById('codeInput').value;
+            
+            if (!code.trim()) {
+                return;
+            }
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Analyzing...';
+            resultDiv.classList.remove('show', 'error');
+
+            try {
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ code: code })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to analyze code');
+                }
+
+                const data = await response.json();
+                resultValue.textContent = data.label || 'Unknown';
+                resultDiv.classList.add('show');
+                resultDiv.classList.remove('error');
+            } catch (error) {
+                resultValue.textContent = 'Error: ' + error.message;
+                resultDiv.classList.add('show', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Analyze Complexity';
+            }
+        });
+    </script>
+</body>
+</html>
+

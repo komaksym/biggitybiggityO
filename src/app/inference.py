@@ -1,12 +1,17 @@
-from .data import id2label
-from transformers import AutoTokenizer 
-import torch
-from pathlib import Path
-from peft import PeftModel
-from .model import set_model
 import re
-from .configs.config import checkpoint 
+
+from pathlib import Path
+
 import numpy as np
+import torch
+from peft import PeftModel
+from transformers import AutoTokenizer
+
+from ..training.code.scripts.configs.config import checkpoint
+from ..training.code.scripts.data import id2label
+from ..training.code.scripts.model import set_model
+
+
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -67,7 +72,7 @@ def data_preprocessing(inputs):
 def load_model_n_tokenizer():
     ## Path for the pretrained model
     pretrained_path = (
-        BASE_LOCATION.parents[1] / "models/deepseek-ai/deepseek-coder-1.3b-base/"
+        BASE_LOCATION.parents[1] / "training/models/deepseek-ai/deepseek-coder-1.3b-base/"
     )
     assert pretrained_path.exists(), "Pretrained checkpoint does not exist"
 

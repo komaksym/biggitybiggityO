@@ -10,3 +10,4 @@ wheel
 seaborn
 optuna
 wandb
+flash-attn

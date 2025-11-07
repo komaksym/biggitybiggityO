@@ -8,6 +8,7 @@ dependencies = [
     "accelerate>=1.10.1",
     "datasets>=4.1.1",
     "dvc>=3.63.0",
+    "fastapi>=0.118.1",
     "great-expectations>=1.8.0",
     "jupyter>=1.1.1",
     "jupyterlab-vim>=4.1.4",
@@ -29,4 +30,5 @@ dependencies = [
     "torch>=2.8.0",
     "transformers>=4.57.0",
     "trl>=0.23.1",
+    "uvicorn>=0.37.0",
 ]

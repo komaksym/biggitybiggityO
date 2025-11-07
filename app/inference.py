@@ -1,19 +1,59 @@
 import re
-
 from pathlib import Path
 
 import numpy as np
 import torch
+from accelerate import PartialState
 from peft import PeftModel
-from transformers import AutoTokenizer
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, BitsAndBytesConfig
 
-from ..training.code.scripts.configs.config import checkpoint
-from ..training.code.scripts.data import id2label
-from ..training.code.scripts.model import set_model
-
-
+# Make sure this is the same as in src/training/code/scripts/configs/config.checkpoint
+checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
+# Make sure this is the same as in src/training/code/scripts/data.id2label
+id2label = {
+    0: "O(1)",
+    1: "O(logn)",
+    2: "O(n)",
+    3: "O(nlogn)",
+    4: "O(n ^ 2)",
+    5: "O(n ^ 3)",
+    6: "np",
+}
+# Make sure this is the same as in src/training/code/scripts/evaluate.N_CLASSES
+N_CLASSES = 7
 
 BASE_LOCATION: Path = Path(__file__).parent
+
+def set_model(checkpoint, tokenizer, ModelType=AutoModelForSequenceClassification):
+    """Helper for setting up model"""
+
+    dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=dtype,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_storage=dtype,
+    )
+
+    # Load a pretrained model
+    model = ModelType.from_pretrained(
+        checkpoint,
+        torch_dtype="auto",
+        num_labels=N_CLASSES,
+        trust_remote_code=True,
+        device_map=PartialState().process_index,
+        quantization_config=bnb_config,
+        attn_implementation="flash_attention_2",  # Only for newer models
+    )
+
+    # Accomodating the size of the token embeddings for the potential missing <pad> token
+    model.resize_token_embeddings(len(tokenizer), mean_resizing=False)
+
+    # Passing the pad token id to the model config
+    model.config.pad_token_id = tokenizer.pad_token_id
+    return model
 
 
 def data_preprocessing(inputs):
@@ -49,7 +89,7 @@ def data_preprocessing(inputs):
                 filtered_code.append(line)
 
         return "\n".join(filtered_code)
-    
+
     def generate_prompt(inputs):
         """Defines prompt schema for instruction tuning"""
 
@@ -60,7 +100,7 @@ def data_preprocessing(inputs):
                 Code: {inputs}"""
 
         return inputs
-    
+
     # Preprocess (remove comments)
     inputs = remove_comments(inputs)
     # Remove empty lines
@@ -68,6 +108,7 @@ def data_preprocessing(inputs):
     # Generate a prompt
     inputs = generate_prompt(inputs)
     return inputs
+
 
 def load_model_n_tokenizer():
     ## Path for the pretrained model
@@ -88,6 +129,7 @@ def load_model_n_tokenizer():
 
     return model, tokenizer
 
+
 def predict(inputs):
     """Predict and output the class"""
 
@@ -98,7 +140,9 @@ def predict(inputs):
     inputs = data_preprocessing(inputs)
 
     # Run the pipeline
-    inputs = tokenizer(inputs, return_tensors="pt", padding=True, truncation=True).to(device=model.device)
+    inputs = tokenizer(inputs, return_tensors="pt", padding=True, truncation=True).to(
+        device=model.device
+    )
 
     # Predicting & decoding inputs
     preds = model(**inputs)

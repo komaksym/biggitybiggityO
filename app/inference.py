@@ -7,8 +7,11 @@ from accelerate import PartialState
 from peft import PeftModel
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, BitsAndBytesConfig
 
+
+# Path for pretrained model & tokenizer checkpoint
+pretrained_checkpoint = "itskoma/biggitybiggityO"
 # Make sure this is the same as in src/training/code/scripts/configs/config.checkpoint
-checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
+base_checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 # Make sure this is the same as in src/training/code/scripts/data.id2label
 id2label = {
     0: "O(1)",
@@ -23,6 +26,7 @@ id2label = {
 N_CLASSES = 7
 
 BASE_LOCATION: Path = Path(__file__).parent
+
 
 def set_model(checkpoint, tokenizer, ModelType=AutoModelForSequenceClassification):
     """Helper for setting up model"""
@@ -111,18 +115,14 @@ def data_preprocessing(inputs):
 
 
 def load_model_n_tokenizer():
-    ## Path for the pretrained model
-    pretrained_path = (
-        BASE_LOCATION.parents[0] / "training/models/deepseek-ai/deepseek-coder-1.3b-base/"
-    )
-    assert pretrained_path.exists(), "Pretrained checkpoint does not exist"
-
     # Loading pretrained tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
+    tokenizer = AutoTokenizer.from_pretrained(pretrained_checkpoint)
     # Base model
-    base_model = set_model(checkpoint, tokenizer)
+    base_model = set_model(base_checkpoint, tokenizer)
     # Load pretrained LoRA adapters on top
-    model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
+    model = PeftModel.from_pretrained(
+        base_model, pretrained_checkpoint, dtype="auto", device_map="auto"
+    )
 
     # Enable model eval mode to turn off dropout, grads, etc.
     model.eval()

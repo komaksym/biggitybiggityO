@@ -141,8 +141,9 @@ def predict(inputs, tokenizer, model):
         device=model.device
     )
 
-    # Predicting & decoding inputs
-    preds = model(**inputs)
+    with torch.no_grad():
+        # Predicting & decoding inputs
+        preds = model(**inputs)
     logits = preds.logits[0].to(dtype=torch.float32).cpu().detach().numpy()
     label_id = np.ravel(np.argmax(logits, axis=-1))[0]
     pred = id2label[label_id]

@@ -1,12 +1,9 @@
 from .data import tokenize_data, generate_prompt, label2id
 from .evaluate import compute_metrics
-from transformers import AutoTokenizer, Trainer
+from transformers import AutoTokenizer, Trainer, AutoModel
 from pathlib import Path
-from peft import PeftModel
-from .model import set_model
 import pandas as pd
 from datasets import Dataset
-from .configs.config import checkpoint
 
 BASE_LOCATION: Path = Path(__file__).parent
 
@@ -26,14 +23,12 @@ def prep_data(data_path, tokenizer):
 
 def main():
     # Path for the pretrained model
-    pretrained_path = BASE_LOCATION.parents[1] / "models/best_model/deepseek-ai/deepseek-coder-1.3b-base/"
+    pretrained_checkpoint = "itskoma/biggityO"
 
     # Loading pretrained tokenizer and model
-    tokenizer = AutoTokenizer.from_pretrained(pretrained_path)
+    tokenizer = AutoTokenizer.from_pretrained(pretrained_checkpoint)
     # Base model
-    base_model = set_model(checkpoint, tokenizer)    
-    # Load pretrained LoRA adapters on top
-    model = PeftModel.from_pretrained(base_model, pretrained_path, dtype="auto", device_map="auto")
+    model = AutoModel.from_pretrained(pretrained_checkpoint)
 
     # Specify the test set path
     try:

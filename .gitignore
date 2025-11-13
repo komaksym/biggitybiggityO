@@ -21,3 +21,5 @@ experiments/ngrok_config/policy.yml
 .env
 
 src/training/models/best_model/
+
+models/

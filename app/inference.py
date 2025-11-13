@@ -3,11 +3,8 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from accelerate import PartialState
 from transformers import (
-    AutoModelForSequenceClassification,
     AutoTokenizer,
-    BitsAndBytesConfig,
     AutoModel,
 )
 
@@ -96,11 +93,8 @@ def load_model_n_tokenizer():
     return model, tokenizer
 
 
-def predict(inputs):
+def predict(inputs, tokenizer, model):
     """Predict and output the class"""
-
-    # Load model and tokenizer
-    model, tokenizer = load_model_n_tokenizer()
 
     # Preprocess the data
     inputs = data_preprocessing(inputs)

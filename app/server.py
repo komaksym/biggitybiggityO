@@ -5,10 +5,13 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from .inference import predict, load_model_n_tokenizer
-from contextlib import asynccontextmanager
+import torch
 
 app = FastAPI()
 model, tokenizer = load_model_n_tokenizer()
+# Torch compile the model for inference optimization
+model = torch.compile(model)
+
 
 BASE_DIR = Path(__file__).parent
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))

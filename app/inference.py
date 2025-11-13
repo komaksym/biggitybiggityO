@@ -3,14 +3,15 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from transformers import (
-    AutoTokenizer,
-    AutoModel,
-)
+from accelerate import PartialState
+from peft import PeftModel
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, BitsAndBytesConfig
 
 
 # Path for pretrained model & tokenizer checkpoint
-pretrained_checkpoint = "itskoma/biggityO"
+pretrained_checkpoint = "itskoma/biggityO_lora"
+# Make sure this is the same as in src/training/code/scripts/configs/config.checkpoint
+base_checkpoint = "deepseek-ai/deepseek-coder-1.3b-base"
 # Make sure this is the same as in src/training/code/scripts/data.id2label
 id2label = {
     0: "O(1)",
@@ -25,6 +26,38 @@ id2label = {
 N_CLASSES = 7
 
 BASE_LOCATION: Path = Path(__file__).parent
+
+
+def set_model(checkpoint, tokenizer, ModelType=AutoModelForSequenceClassification):
+    """Helper for setting up model"""
+
+    dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
+
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=dtype,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_storage=dtype,
+    )
+
+    # Load a pretrained model
+    model = ModelType.from_pretrained(
+        checkpoint,
+        torch_dtype="auto",
+        num_labels=N_CLASSES,
+        trust_remote_code=True,
+        device_map=PartialState().process_index,
+        quantization_config=bnb_config,
+        attn_implementation="flash_attention_2",  # Only for newer models
+    )
+
+    # Accomodating the size of the token embeddings for the potential missing <pad> token
+    model.resize_token_embeddings(len(tokenizer), mean_resizing=False)
+
+    # Passing the pad token id to the model config
+    model.config.pad_token_id = tokenizer.pad_token_id
+    return model
 
 
 def data_preprocessing(inputs):
@@ -85,7 +118,11 @@ def load_model_n_tokenizer():
     # Loading pretrained tokenizer and model
     tokenizer = AutoTokenizer.from_pretrained(pretrained_checkpoint)
     # Base model
-    model = AutoModel.from_pretrained(pretrained_checkpoint)
+    base_model = set_model(base_checkpoint, tokenizer)
+    # Load pretrained LoRA adapters on top
+    model = PeftModel.from_pretrained(
+        base_model, pretrained_checkpoint, dtype="auto", device_map="auto"
+    )
 
     # Enable model eval mode to turn off dropout, grads, etc.
     model.eval()
@@ -114,6 +151,9 @@ def predict(inputs, tokenizer, model):
 
 
 def main():
+    # Load model and tokenizer
+    model, tokenizer = load_model_n_tokenizer()
+
     inputs = """"
     # Sum of a Fibonacci series up to the nth term
         def o2n_fibonacci(n):

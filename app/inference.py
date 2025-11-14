@@ -49,7 +49,7 @@ def set_model(checkpoint, tokenizer, ModelType=AutoModelForSequenceClassificatio
         trust_remote_code=True,
         device_map=PartialState().process_index,
         quantization_config=bnb_config,
-        attn_implementation="flash_attention_2",  # Only for newer models
+        #attn_implementation="flash_attention_2",  # Only for newer models
     )
 
     # Accomodating the size of the token embeddings for the potential missing <pad> token

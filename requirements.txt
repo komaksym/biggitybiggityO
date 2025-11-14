@@ -1,4 +1,4 @@
-transformers==4.49.0
+transformers
 accelerate
 peft
 bitsandbytes
@@ -10,4 +10,5 @@ wheel
 seaborn
 optuna
 wandb
-flash-attn
+uvicorn
+fastapi

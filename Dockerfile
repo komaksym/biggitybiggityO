@@ -1,18 +1,25 @@
-FROM nvidia/cuda:12.1.1-runtime-ubuntu22.04
+FROM nvidia/cuda:13.0.2-runtime-ubuntu24.04
 
 WORKDIR /code
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* \
-    && apt-get update --fix-missing \
+RUN apt-get update --fix-missing \
     && apt-get install -y --no-install-recommends \ 
-        python3 python3-pip \
+        python3 python3-pip python3-venv \
     && rm -rf /var/lib/apt/lists/*
-RUN python3 -m pip install --upgrade pip
-RUN ln -s /usr/bin/python3 /usr/bin/python
 
-COPY ./requirements.txt /code/requirements.txt 
+# Create a virtual environment
+RUN python3 -m venv /opt/venv
 
+# Set PATH to use venv Python by default
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Ensure pip in venv is upgraded
+RUN pip install --upgrade pip
+
+# Then install requirements in the venv
+COPY ./requirements.txt /code/requirements.txt
 RUN pip install -r requirements.txt
+
 
 COPY ./app /code/app
 

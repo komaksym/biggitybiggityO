@@ -13,3 +13,4 @@ wandb
 uvicorn
 fastapi
 pytest
+openai

@@ -26,17 +26,14 @@ jobs:
     - name: Install uv and dependencies
       run: |
         pip install uv
-        if [ -f uv.lock ]; then 
-          uv sync
+        if [ -f requirements.txt ]; then 
+          pip install -r requirements.txt
         else
-          uv add ruff pytest
-          uv lock
-          uv sync
+          pip install ruff pytest
         fi
     - name: Test with pytest
       run: |
-        uv run python -m pytest
+        python -m pytest
     - name: Lint with ruff
       run: |
-        uv tool install ruff
         ruff check

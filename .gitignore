@@ -23,3 +23,5 @@ experiments/ngrok_config/policy.yml
 src/training/models/best_model/
 
 models/
+
+.gitattributes

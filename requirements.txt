@@ -12,3 +12,4 @@ optuna
 wandb
 uvicorn
 fastapi
+pytest

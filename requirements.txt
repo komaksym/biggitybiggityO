@@ -13,5 +13,6 @@ wandb
 uvicorn
 fastapi
 pytest
+pytest-asyncio
 openai
 great_expectations

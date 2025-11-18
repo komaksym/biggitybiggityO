@@ -14,3 +14,4 @@ uvicorn
 fastapi
 pytest
 openai
+great_expectations

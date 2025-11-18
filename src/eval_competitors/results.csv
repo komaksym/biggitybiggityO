@@ -1,4 +1,5 @@
-model_name,f1-macro
-gpt-5,0.4575320550143911
-deepseek-chat,0.5419743239443822
-grok-3,0.513904318729137
+model_name;f1-macro
+gpt-5;0.55
+deepseek-chat;0.49
+grok-3;0.53
+biggitybiggityO;0.88

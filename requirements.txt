@@ -14,5 +14,6 @@ uvicorn
 fastapi
 pytest
 pytest-asyncio
+pytest-mock
 openai
 great_expectations

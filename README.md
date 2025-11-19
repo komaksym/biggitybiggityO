@@ -1,69 +1,67 @@
-# biggitybiggityO - End-to-end implementation of code big(O) time complexity classifier
+# 🚀 biggitybiggityO — End-to-End Big-O Time Complexity Classifier
 <p align="center">
   <img src="images/app1.png" alt="Big O Time complexity">
 </p>
 <p align="center">
   <img src="images/app2.png" alt="Big O Time complexity">
 </p>
-Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. <br>
-Or in simple terms, Big O is a **way to measure algorithm's performance**.
 
 
-<p align="center">
-  <img src="images/bigO.jpg" alt="Big O Time complexity">
-</p>
+## 📘 Overview
+This repository delivers a complete pipeline for building a **code time-complexity classifier**:
 
-## What is this repository
-This repository is an end-to-end implementation of code big O time complexity classifier. 
-<br>At first, the data was collected, which consists of both, pre-collected data, such as [CodeComplex](https://arxiv.org/abs/2401.08719), as well as scraped data from other sources (listed below).
+- Collection of real + synthetic complexity-labeled code
+- Additional scraping from LeetCode & NeetCode
+- Preprocessing, cleaning, merging, and organization of datasets
+- Evaluation of multiple pretrained coding models
+- Hyperparameter search and QLoRA finetuning
+- Model testing & experiment tracking
+- REST API + web UI for real-time predictions
+- Reproducible environment via Docker
 
-Then, multiple pretrained models were run through a quick evaluation to figure out which models would be the best candidates for our task in terms of performance and size.
+The final model is built on **deepseek-coder-1.3b-base** for its strong performance-to-size ratio.
 
-<p align="center">
-  <img src="images/base_models_perf.png" alt="Big O Time complexity">
-</p>
-
-Then, the candidates were further evaluated which led to 1 model we chose to go with for finetuning.
-
-The model I picked for finetuning was a model from deepseek-ai - deepseek-coder-1.3b-base for its high performance, and relatively small size.
-
-For finetuning I used [QLoRA](https://arxiv.org/abs/2305.14314).
-
-Before final finetuning hyperparameter search was performed to find the optimal values for hyperparameters, which maximize the F1-macro score.
-
-Note: currently supported classes are: O(1), O(logn), O(n), O(nlogn), O(n^2), O(n^3), np
-
-For the rest of the classes I couldn't find enough data for the system to achieve solid performance.
-
-## Project Outcomes
-By the end of this project, the following were achieved:
-- Research on the topic was performed, e.g. arxiv papers;
-- Data was collected
-- Search of additional data sources was performed and identified
-- Additional data was scraped
-- Datasets were cleaned, preprocessed and merged
-- Experiment tracking was set up
-- Model selection was performed
-- Hyperparameter search was carried out
-- Finetuning was executed
-- Testing was implemented
-- CI pipeline was created
-- API serving was implemented
-- Frontend for the web app was built
-- Dockerfile was created
-
-<p align="center">
+ <p align="center">
   <img src="images/frontier_performance.png" alt="Big O Time complexity">
 </p>
 
-## 🔑 Features  
-- 📥 **Scraping data** – automated collection of data  
-- 🧹 **Data Cleaning & Preprocessing** – ready-to-use datasets for research & analysis  
-- 📂 **Organized Dataset Storage** – structured for smooth EDA workflows  
-- 📈 **Finetuning** – QLoRA finetuning
-- 🎤 **API serving** – serving inference endpoint as an API 
-- **Frontend** - front end for the web app.
-- **Dockerfile** - ready-to-use for quickstart dockerfile.
+## 🎯 Supported Complexity Classes
+
+- `O(1)`
+- `O(log n)`
+- `O(n)`
+- `O(n log n)`
+- `O(n^2)`
+- `O(n^3)`
+- `np` (non-polynomial / not predictable)
+
+> Additional classes were excluded due to insufficient high-quality training samples.
+
+## 🏆 Project Outcomes
+
+By the end of this project, the following components were implemented:
+
+- Literature research on complexity-prediction models  
+- Multi-source dataset creation (real, scraped, synthetic)  
+- Preprocessing pipelines & dataset merging  
+- Model selection with structured evaluations  
+- Hyperparameter search targeting **F1-macro**  
+- QLoRA finetuning and testing  
+- MLflow experiment tracking  
+- REST API serving  
+- Frontend UI  
+- Full CI pipeline  
+- Dockerized deployment
+
+## 🔧 Features
+
+- 📥 **Automated data scraping**  
+- 🧹 **Cleaning & preprocessing pipelines**  
+- 📊 **Experiment tracking with MLflow**  
+- 🧠 **QLoRA-powered finetuning**  
+- 📝 **Time complexity classification API**  
+- 🌐 **Frontend for real-time predictions**  
+- 🐳 **Dockerfile for fast deployment**
 
 ## 📡 Data Sources  
 - [CodeComplex](https://arxiv.org/abs/2401.08719)  
@@ -74,7 +72,7 @@ By the end of this project, the following were achieved:
 Clone the repo and set up the environment:  
 
 ```bash
-# 1. Make sure you run this on a machine that has a Nvidia GPU and nvidia drivers installed and running
+# 1. Ensure NVIDIA GPU and drivers
 nvidia-smi
 
 # 2. Clone the repository
@@ -143,8 +141,9 @@ Contributions are welcome!
 
 This project provides one of the **most complete python code complexity datasets** available — combining multiple sources. It opens the door for:  
 
-- Exploratory Data Analysis on the relationship of code to time complexity
-- Machine learning model building 
-- Research
+- Research on time-complexity prediction
+- ML modeling for Big-O classification
+- Exploratory analysis of algorithmic patterns
+- Reproducible experimentation
 
 👉 If you find this project useful, don’t forget to **⭐ star this repository** to support its growth!  

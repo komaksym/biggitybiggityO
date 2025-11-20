@@ -6,6 +6,8 @@
   <img src="images/app2.png" alt="Big O Time complexity">
 </p>
 
+## 🎥 Quick Loom video
+https://www.loom.com/share/f1c8a11cd25a431da79b71eed1b65b2c
 
 ## 📘 Overview
 This repository delivers a complete pipeline for building a **code time-complexity classifier**:
